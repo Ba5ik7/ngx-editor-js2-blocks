@@ -1,5 +1,7 @@
 # Ngx-EditorJs2 Blocks
 
+DEMO: [https://ba5ik7.github.io/ngx-editor-j](https://ba5ik7.github.io/ngx-editor-js2-blocks)
+
 This repository contains custom blocks for [Ngx-EditorJs2](https://github.com/Ba5ik7/ngx-editorjs2). These blocks extend the editor with additional content types that can be used within the editor environment.
 
 ## Getting Started
@@ -135,4 +137,4 @@ Feel free to submit pull requests to enhance or add new block components.
 
 ## License
 
-This project is licensed under the MIT License.
+MIT License © 2025 [Wesley DuSell](https://github.com/ba5ik7)
