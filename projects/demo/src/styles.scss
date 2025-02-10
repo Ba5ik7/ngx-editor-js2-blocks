@@ -1,25 +1,132 @@
 /* You can add global styles to this file, and also import other style files */
 @use "@angular/material" as mat;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
-// Material dropped support for class based elevation
+body.light-mode {
+  color-scheme: light;
+  color: var(--mat-sys-on-surface);
+  background-color: var(--mat-sys-surface);
+}
+
+body.dark-mode {
+  color-scheme: dark;
+  color: var(--mat-sys-on-surface);
+  background-color: var(--mat-sys-surface);
+}
+
+body {
+  &.red-palette {
+    @include mat.theme(
+      (
+        color: mat.$red-palette,
+      )
+    );
+  }
+
+  &.green-palette {
+    @include mat.theme(
+      (
+        color: mat.$green-palette,
+      )
+    );
+  }
+
+  &.blue-palette {
+    @include mat.theme(
+      (
+        color: mat.$blue-palette,
+      )
+    );
+  }
+
+  &.yellow-palette {
+    @include mat.theme(
+      (
+        color: mat.$yellow-palette,
+      )
+    );
+  }
+
+  &.cyan-palette {
+    @include mat.theme(
+      (
+        color: mat.$cyan-palette,
+      )
+    );
+  }
+
+  &.magenta-palette {
+    @include mat.theme(
+      (
+        color: mat.$magenta-palette,
+      )
+    );
+  }
+
+  &.orange-palette {
+    @include mat.theme(
+      (
+        color: mat.$orange-palette,
+      )
+    );
+  }
+  &.chartreuse-palette {
+    @include mat.theme(
+      (
+        color: mat.$chartreuse-palette,
+      )
+    );
+  }
+  &.spring-green-palette {
+    @include mat.theme(
+      (
+        color: mat.$spring-green-palette,
+      )
+    );
+  }
+  &.azure-palette {
+    @include mat.theme(
+      (
+        color: mat.$azure-palette,
+      )
+    );
+  }
+  &.violet-palette {
+    @include mat.theme(
+      (
+        color: mat.$violet-palette,
+      )
+    );
+  }
+  &.rose-palette {
+    @include mat.theme(
+      (
+        color: mat.$rose-palette,
+      )
+    );
+  }
+}
+
+.flex-spacer {
+  flex-grow: 1;
+}
+
 @for $i from 0 through 24 {
   .mat-elevation-z#{$i} {
     @include mat.elevation($i);
   }
 }
 
-// ! I Need to fix this!!
-// The consumer should not have to incude this in their styles.scss
-.position-relative {
-  position: relative;
-}
-.block {
-  display: block;
-}
-
+// TODO Clean this shit up
+// ! Needs to be a part of Library
 .cdk-drag-preview {
   color: var(--mat-sys-on-secondary-container);
   background-color: var(--mat-sys-secondary-container);
@@ -41,3 +148,4 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .cdk-drag-animating {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
+// TODO END Clean this shit up

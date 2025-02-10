@@ -57,7 +57,7 @@ import {
         }
 
         blockquote {
-          margin: 0px;
+          margin: 20px 0px;
           padding: 5px 0px 5px 20px;
           border-left: 5px solid var(--mat-sys-primary);
         }
