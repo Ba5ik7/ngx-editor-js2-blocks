@@ -1,0 +1,17 @@
+{
+  "name": "@tmdjr/ngx-editor-js2-blockquotes",
+  "version": "0.0.5",
+  "peerDependencies": {
+    "@angular/animations": "^19.0.0",
+    "@angular/cdk": "^19.1.0",
+    "@angular/common": "^19.1.0",
+    "@angular/core": "^19.1.0",
+    "@angular/forms": "^19.0.0",
+    "@angular/material": "^19.1.0",
+    "@tmdjr/ngx-editor-js2": ">=0.0.4"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

@@ -9,6 +9,14 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "ngx-editor-js2-blockquotes": [
+        "./dist/ngx-editor-js2-blockquotes"
+      ],
+      "ngx-editor-js2-image": [
+        "./dist/ngx-editor-js2-image"
+      ]
+    },
     "skipLibCheck": true,
     "isolatedModules": true,
     "esModuleInterop": true,
