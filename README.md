@@ -119,16 +119,30 @@ Your block component should include the following directives:
 
 ## Usage
 
-Once your block component is implemented, you can integrate it into Ngx-EditorJs2 by importing and registering it in the appropriate module.
+Once your block component is implemented, you can integrate it into Ngx-EditorJs2 by importing and registering it in the provider `NGX_EDITORJS_OPTIONS` Consumer Supported Blocks array.
 
-```typescript
-import { ParagraphBlockComponent } from './paragraph-block.component';
+```ts
+import { NGX_EDITORJS_OPTIONS } from '@tmdjr/ngx-editor-js2';
+import { NgxEditorJs2ImageComponent } from '@tmdjr/ngx-editor-js2-image';
 
-@NgModule({
-  declarations: [ParagraphBlockComponent],
-  exports: [ParagraphBlockComponent],
-})
-export class BlocksModule {}
+export const appConfig: ApplicationConfig = {
+  providers: [
+    {
+      provide: NGX_EDITORJS_OPTIONS,
+      useValue: {
+        consumerSupportedBlocks: [
+          {
+            // Customize the block name.
+            name: 'Image',
+            component: NgxEditorJs2ImageComponent,
+            // Must match the component name.
+            componentInstanceName: 'NgxEditorJs2ImageComponent',
+          },
+        ],
+      },
+    },
+  ],
+};
 ```
 
 ## Contributing
