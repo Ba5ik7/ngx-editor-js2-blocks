@@ -1,59 +1,138 @@
-# NgxEditorJs2Blocks
+# Ngx-EditorJs2 Blocks
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+This repository contains custom blocks for [Ngx-EditorJs2](https://github.com/Ba5ik7/ngx-editorjs2). These blocks extend the editor with additional content types that can be used within the editor environment.
 
-## Development server
+## Getting Started
 
-To start a local development server, run:
+### Installation, Building, and Running
 
-```bash
-ng serve
+To use the blocks in your project, clone the repository and install the dependencies:
+
+```sh
+# Clone the repo
+git clone https://github.com/your-repo/ngx-editor-js2-blocks.git
+
+# Navigate to the project directory
+cd ngx-editor-js2-blocks
+
+# Install dependencies
+npm install
+
+# Build All Libraries
+npm run build-all-libraries
+
+# Serve Demo Application
+npm run watch-demo
+
+# Visit localhost:4200
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Creating a Custom Block
 
-## Code scaffolding
+To create a new block, implement the `BlockComponent` interface as shown below.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### BlockComponent Interface
 
-```bash
-ng generate component component-name
+Each block must implement the following interface:
+
+```typescript
+export interface BlockComponent {
+  sortIndex: InputSignal<number>;
+  componentInstanceName: string;
+  formControlName: InputSignal<string>;
+  formGroup: InputSignal<FormGroup>;
+  blockOptionActions: InputSignal<BlockOptionAction[]>;
+  savedAction: Signal<string>;
+  actionCallback?: (action: string) => void;
+}
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### BlockComponent Properties
 
-```bash
-ng generate --help
+| Property              | Type                              | Description |
+|-----------------------|---------------------------------|-------------|
+| `sortIndex`          | `InputSignal<number>`           | The index position of the block within the editor. |
+| `componentInstanceName` | `string`                   | The unique identifier for the block component. |
+| `formControlName`     | `InputSignal<string>`          | The form control name for binding. |
+| `formGroup`          | `InputSignal<FormGroup>`       | The form group containing this block. |
+| `blockOptionActions` | `InputSignal<BlockOptionAction[]>` | A list of available block actions. |
+| `savedAction`        | `Signal<string>`               | Stores the currently selected action. |
+| `actionCallback`     | `(action: string) => void`     | Function to execute when an action is triggered. |
+
+### BlockOptionAction Interface
+
+Each block can have a set of toolbar options defined using `BlockOptionAction`. These define the actions available for formatting or customization.
+
+```typescript
+export interface BlockOptionAction {
+  action: string;
+  icon?: string;
+  text?: string;
+}
 ```
 
-## Building
+### Styling Considerations
 
-To build the project run:
+For the toolbar floating action button (`toolbarFab`) to work correctly, add the following SCSS styles inside your block component’s `:host` selector:
 
-```bash
-ng build
+```scss
+:host {
+  display: block;
+  position: relative;
+}
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Required Directives Explained
 
-## Running unit tests
+Your block component should include the following directives:
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+```html
+<p
+  controlAccessor
+  contentEditable
+  toolbarFab
+  cleanPasteData
+  [ngClass]="savedAction()"
+  [defaultValue]="formGroup().get(formControlName())?.value"
+  [actionCallback]="actionCallbackBind"
+  [autofocus]="autofocus()"
+  [blockOptionActions]="blockOptionActions()"
+  [formControlName]="formControlName()"
+  [componentContextPositionIndex]="sortIndex()"
+></p>
 ```
 
-## Running end-to-end tests
+#### Directive Breakdown
+- **`controlAccessor`** → Provides reactive form control binding.
+- **`contentEditable`** → Makes the block content editable.
+- **`toolbarFab`** → Enables floating action toolbar behavior.
+- **`cleanPasteData`** → Cleans up pasted content to remove unwanted formatting.
+- **`[ngClass]`** → Binds styling based on the selected action.
+- **`[defaultValue]`** → Sets the initial content from the form control.
+- **`[actionCallback]`** → Registers the action handler.
+- **`[autofocus]`** → Automatically focuses the block on creation.
+- **`[blockOptionActions]`** → Passes available toolbar actions.
+- **`[formControlName]`** → Links the component to the form field.
+- **`[componentContextPositionIndex]`** → Keeps track of the block’s order.
 
-For end-to-end (e2e) testing, run:
+## Usage
 
-```bash
-ng e2e
+Once your block component is implemented, you can integrate it into Ngx-EditorJs2 by importing and registering it in the appropriate module.
+
+```typescript
+import { ParagraphBlockComponent } from './paragraph-block.component';
+
+@NgModule({
+  declarations: [ParagraphBlockComponent],
+  exports: [ParagraphBlockComponent],
+})
+export class BlocksModule {}
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Contributing
 
-## Additional Resources
+Feel free to submit pull requests to enhance or add new block components.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## License
+
+This project is licensed under the MIT License.
