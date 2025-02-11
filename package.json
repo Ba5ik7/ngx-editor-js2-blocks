@@ -1,12 +1,12 @@
 {
   "name": "ngx-editor-js2-blocks",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "scripts": {
     "watch-demo": "ng serve demo",
     "watch-ngx-editor-js2-blockquotes": "ng build ngx-editor-js2-blockquotes --watch --configuration development",
     "watch-ngx-editor-js2-codemirror": "ng build ngx-editor-js2-codemirror --watch --configuration development",
     "watch-ngx-editor-js2-image": "ng build ngx-editor-js2-image --watch --configuration development",
-    "build-all-libraries": "npm run build-ngx-editor-js2-blockquotes && npm run build-ngx-editor-js2-image",
+    "build-all-libraries": "npm run build-ngx-editor-js2-blockquotes && npm run build-ngx-editor-js2-image && npm run build-ngx-editor-js2-codemirror",
     "build-demo": "ng build demo --configuration production --base-href \"/ngx-editor-js2-blocks/\"",
     "build-ngx-editor-js2-blockquotes": "ng build ngx-editor-js2-blockquotes --configuration production",
     "build-ngx-editor-js2-codemirror": "ng build ngx-editor-js2-codemirror --configuration production",
@@ -30,7 +30,7 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@tmdjr/ngx-editor-js2": "^0.0.7",
+    "@tmdjr/ngx-editor-js2": "^0.0.8",
     "@angular-devkit/build-angular": "^19.1.6",
     "@angular/cli": "^19.0.6",
     "@angular/compiler-cli": "^19.0.0",

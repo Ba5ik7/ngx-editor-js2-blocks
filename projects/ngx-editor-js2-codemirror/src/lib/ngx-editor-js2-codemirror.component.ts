@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'ngx-editor-js2-codemirror',
-  host: { class: 'cdk-drag-animating' },
+  host: { class: 'cdk-drag-animating no-toolbar-inline' },
   hostDirectives: [CdkDrag],
   imports: [
     CommonModule,

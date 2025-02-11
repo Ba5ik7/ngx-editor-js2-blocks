@@ -1,6 +1,6 @@
 {
   "name": "@tmdjr/ngx-editor-js2-codemirror",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "peerDependencies": {
     "@angular/common": "^19.1.0",
     "@angular/core": "^19.1.0"
