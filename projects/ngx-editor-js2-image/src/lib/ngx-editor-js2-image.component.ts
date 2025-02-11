@@ -17,7 +17,7 @@ type Value = { url: string; title: string };
 
 @Component({
   selector: 'ngx-editor-js2-image',
-  host: { class: 'position-relative block cdk-drag-animating' },
+  host: { class: 'cdk-drag-animating' },
   hostDirectives: [CdkDrag],
   imports: [
     ReactiveFormsModule,

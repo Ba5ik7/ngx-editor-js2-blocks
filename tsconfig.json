@@ -13,6 +13,9 @@
       "ngx-editor-js2-blockquotes": [
         "./dist/ngx-editor-js2-blockquotes"
       ],
+      "ngx-editor-js2-codemirror": [
+        "./dist/ngx-editor-js2-codemirror"
+      ],
       "ngx-editor-js2-image": [
         "./dist/ngx-editor-js2-image"
       ]

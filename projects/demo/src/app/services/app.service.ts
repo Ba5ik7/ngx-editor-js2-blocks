@@ -11,8 +11,16 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
     dataClean: 'Prerequisites',
   },
   {
-    blockId: 'bu23hwyltss',
+    blockId: 'asdfasdf',
     sortIndex: 1,
+    componentInstanceName: 'NgxEditorJs2CodemirrorComponent',
+    savedAction: 'text/typescript',
+    dataClean:
+      "export class SimpleFormGroup {\n  form = new FormGroup({\n    first: new FormControl('Nancy', Validators.minLength(2)),\n    last: new FormControl('Drew'),\n  });\n\n  get first(): any {\n    return this.form.get('first');\n  }\n\n  onSubmit(): void {\n    console.log(this.form.value); // {first: 'Nancy', last: 'Drew'}\n  }\n\n  setValue() {\n    this.form.setValue({first: 'Carson', last: 'Drew'});\n  }\n}",
+  },
+  {
+    blockId: 'bu23hwyltss',
+    sortIndex: 2,
     componentInstanceName: 'ParagraphBlockComponent',
     savedAction: 'large',
     dataClean:
@@ -20,7 +28,7 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
   },
   {
     blockId: 'n177dsd',
-    sortIndex: 2,
+    sortIndex: 3,
     componentInstanceName: 'NgxEditorJs2ImageComponent',
     savedAction: 'stretch',
     dataClean:
@@ -28,7 +36,7 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
   },
   {
     blockId: 'n177d7',
-    sortIndex: 3,
+    sortIndex: 4,
     componentInstanceName: 'NgxEditorJs2BlockquotesComponent',
     savedAction: 'display-large',
     dataClean:
@@ -36,14 +44,14 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
   },
   {
     blockId: 'iovlbzgosuu',
-    sortIndex: 4,
+    sortIndex: 5,
     componentInstanceName: 'HeaderBlockComponent',
     savedAction: 'h3',
     dataClean: 'Woah! This is cool..',
   },
   {
     blockId: 'bu23hwyltsww',
-    sortIndex: 5,
+    sortIndex: 6,
     componentInstanceName: 'ParagraphBlockComponent',
     savedAction: 'small',
     dataClean:
@@ -51,7 +59,7 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
   },
   {
     blockId: 'bu23hwyltwl',
-    sortIndex: 6,
+    sortIndex: 7,
     componentInstanceName: 'ParagraphBlockComponent',
     savedAction: 'meduim',
     dataClean:

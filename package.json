@@ -4,10 +4,12 @@
   "scripts": {
     "watch-demo": "ng serve demo",
     "watch-ngx-editor-js2-blockquotes": "ng build ngx-editor-js2-blockquotes --watch --configuration development",
+    "watch-ngx-editor-js2-codemirror": "ng build ngx-editor-js2-codemirror --watch --configuration development",
     "watch-ngx-editor-js2-image": "ng build ngx-editor-js2-image --watch --configuration development",
     "build-all-libraries": "npm run build-ngx-editor-js2-blockquotes && npm run build-ngx-editor-js2-image",
     "build-demo": "ng build demo --configuration production --base-href \"/ngx-editor-js2-blocks/\"",
     "build-ngx-editor-js2-blockquotes": "ng build ngx-editor-js2-blockquotes --configuration production",
+    "build-ngx-editor-js2-codemirror": "ng build ngx-editor-js2-codemirror --configuration production",
     "build-ngx-editor-js2-image": "ng build ngx-editor-js2-image --configuration production",
     "deployDemo": "npx angular-cli-ghpages --dir=dist/demo/browser"
   },
@@ -32,7 +34,10 @@
     "@angular-devkit/build-angular": "^19.1.6",
     "@angular/cli": "^19.0.6",
     "@angular/compiler-cli": "^19.0.0",
+    "@ctrl/ngx-codemirror": "^7.0.0",
+    "@types/codemirror": "5.60.13",
     "@types/jasmine": "~5.1.0",
+    "codemirror": "5.65.9",
     "jasmine-core": "~5.4.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

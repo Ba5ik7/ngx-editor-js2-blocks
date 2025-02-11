@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @use "@angular/material" as mat;
 
+// ! CODEMIRROR Dependencies
+@use 'codemirror/lib/codemirror';
+@use 'codemirror/theme/material-palenight';
+// ! END CODEMIRROR Dependencies
+
 html,
 body {
   height: 100%;
