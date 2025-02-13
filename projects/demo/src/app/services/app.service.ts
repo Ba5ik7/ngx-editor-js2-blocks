@@ -11,12 +11,12 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
     dataClean: 'Prerequisites',
   },
   {
-    blockId: 'asdfasdf',
+    blockId: 'n177dsd',
     sortIndex: 1,
-    componentInstanceName: 'NgxEditorJs2CodemirrorComponent',
-    savedAction: 'text/typescript',
+    componentInstanceName: 'NgxEditorJs2ImageComponent',
+    savedAction: 'stretch',
     dataClean:
-      "export class SimpleFormGroup {\n  form = new FormGroup({\n    first: new FormControl('Nancy', Validators.minLength(2)),\n    last: new FormControl('Drew'),\n  });\n\n  get first(): any {\n    return this.form.get('first');\n  }\n\n  onSubmit(): void {\n    console.log(this.form.value); // {first: 'Nancy', last: 'Drew'}\n  }\n\n  setValue() {\n    this.form.setValue({first: 'Carson', last: 'Drew'});\n  }\n}",
+      '{"url":"https://res.cloudinary.com/dowdpiikk/image/upload/w_650,q_auto:best,f_auto/v1709445782/lnyst5aqppuin8wt73ci.webp","title":"test"}',
   },
   {
     blockId: 'bu23hwyltss',
@@ -27,43 +27,28 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
       'Evaluation of a template expression should have no visible side effects. Use the syntax for template expressions to help avoid side effects. In general, the correct syntax prevents you from assigning a value to anything in a property binding expression. The syntax also prevents you from using increment and decrement operators.',
   },
   {
-    blockId: 'n177dsd',
-    sortIndex: 3,
-    componentInstanceName: 'NgxEditorJs2ImageComponent',
-    savedAction: 'stretch',
-    dataClean:
-      '{"url":"https://res.cloudinary.com/dowdpiikk/image/upload/w_650,q_auto:best,f_auto/v1709445782/lnyst5aqppuin8wt73ci.webp","title":"test"}',
-  },
-  {
     blockId: 'n177d7',
-    sortIndex: 4,
+    sortIndex: 3,
     componentInstanceName: 'NgxEditorJs2BlockquotesComponent',
     savedAction: 'display-large',
     dataClean:
       '`Design is not just what it looks like and feels like. Design is how it works.',
   },
   {
-    blockId: 'iovlbzgosuu',
-    sortIndex: 5,
-    componentInstanceName: 'HeaderBlockComponent',
-    savedAction: 'h3',
-    dataClean: 'Woah! This is cool..',
-  },
-  {
     blockId: 'bu23hwyltsww',
-    sortIndex: 6,
+    sortIndex: 4,
     componentInstanceName: 'ParagraphBlockComponent',
     savedAction: 'small',
     dataClean:
       'Material Design uses color to create accessible, personal color schemes that communicate your products hierarchy, state, and brand. See Material Designs Color System page to learn more about its use and purpose.',
   },
   {
-    blockId: 'bu23hwyltwl',
-    sortIndex: 7,
-    componentInstanceName: 'ParagraphBlockComponent',
-    savedAction: 'meduim',
+    blockId: 'asdfasdf',
+    sortIndex: 5,
+    componentInstanceName: 'NgxEditorJs2CodemirrorComponent',
+    savedAction: 'text/typescript',
     dataClean:
-      'Skips the very first call to startViewTransition. This can be useful for disabling the animation during the applications initial loading phase.',
+      "export class SimpleFormGroup {\n  form = new FormGroup({\n    first: new FormControl('Nancy', Validators.minLength(2)),\n    last: new FormControl('Drew'),\n  });\n\n  get first(): any {\n    return this.form.get('first');\n  }\n\n  onSubmit(): void {\n    console.log(this.form.value); // {first: 'Nancy', last: 'Drew'}\n  }\n\n  setValue() {\n    this.form.setValue({first: 'Carson', last: 'Drew'});\n  }\n}",
   },
 ];
 
@@ -111,7 +96,7 @@ export const TEST_DATA_TWO: NgxEditorJsBlock[] = [
   providedIn: 'root',
 })
 export class AppService {
-  ngxEditorJsBlocks = new BehaviorSubject<NgxEditorJsBlock[]>([]);
+  ngxEditorJsBlocks = new BehaviorSubject<NgxEditorJsBlock[]>(TEST_DATA);
   ngxEditorJsBlocks$ = this.ngxEditorJsBlocks.asObservable();
 
   requestBlocks = new BehaviorSubject<{}>({});
