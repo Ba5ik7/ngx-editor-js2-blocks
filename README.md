@@ -1,6 +1,6 @@
 # Ngx-EditorJs2 Blocks
 
-DEMO: [https://ba5ik7.github.io/ngx-editor-j](https://ba5ik7.github.io/ngx-editor-js2-blocks)
+DEMO: [https://ba5ik7.github.io/ngx-editor-js2-blocks](https://ba5ik7.github.io/ngx-editor-js2-blocks)
 
 This repository contains custom blocks for [Ngx-EditorJs2](https://github.com/Ba5ik7/ngx-editorjs2). These blocks extend the editor with additional content types that can be used within the editor environment.
 

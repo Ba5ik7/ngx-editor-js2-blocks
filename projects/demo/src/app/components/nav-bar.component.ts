@@ -8,7 +8,11 @@ import { ThemePickerComponent } from './theme-picker.component';
   imports: [MatIcon, MatButtonModule, ThemePickerComponent],
   template: `
     <nav class="docs-navbar-header">
-      <a mat-button routerLink="/">
+      <a
+        mat-button
+        href="https://github.com/Ba5ik7/ngx-editor-js2-blocks"
+        target="_blank"
+      >
         <mat-icon>format_size</mat-icon>Ngx EditorJs 2
       </a>
       <div class="flex-spacer"></div>

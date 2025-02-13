@@ -16,16 +16,23 @@ import { of } from 'rxjs';
         </div>
         <div class="header-start">
           <button
-            mat-flat-button
+            mat-stroked-button
             matTooltip="Simulate loading blocks"
             (click)="loadValue()"
           >
             Load
           </button>
           <button
-            mat-flat-button
+            mat-stroked-button
+            matTooltip="Simulate clearing blocks"
+            (click)="clearValue()"
+          >
+            Clear
+          </button>
+          <button
+            mat-stroked-button
             matTooltip="Open the console for blocks"
-            (click)="getValue()"
+            (click)="saveValue()"
           >
             Save
           </button>
@@ -35,7 +42,14 @@ import { of } from 'rxjs';
   `,
   styles: [
     `
+      @use '@angular/material' as mat;
+
       :host {
+        @include mat.button-overrides(
+          (
+            outlined-label-text-color: var(--mat-sys-on-secondary),
+          )
+        );
         width: 100%;
         .header-background {
           overflow: hidden;
@@ -96,13 +110,19 @@ import { of } from 'rxjs';
 export class HeroComponent {
   appService = inject(AppService);
 
-  getValue() {
+  saveValue() {
     this.appService.requestBlocks.next({});
   }
 
   switch = false;
   loadValue() {
     this.switch = !this.switch;
-    this.appService.ngxEditorJsBlocks.next(this.switch ? TEST_DATA : TEST_DATA_TWO );
+    this.appService.ngxEditorJsBlocks.next(
+      this.switch ? TEST_DATA : TEST_DATA_TWO
+    );
+  }
+
+  clearValue() {
+    this.appService.ngxEditorJsBlocks.next([]);
   }
 }

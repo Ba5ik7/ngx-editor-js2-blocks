@@ -7,7 +7,7 @@
     "watch-ngx-editor-js2-codemirror": "ng build ngx-editor-js2-codemirror --watch --configuration development",
     "watch-ngx-editor-js2-image": "ng build ngx-editor-js2-image --watch --configuration development",
     "build-all-libraries": "npm run build-ngx-editor-js2-blockquotes && npm run build-ngx-editor-js2-image && npm run build-ngx-editor-js2-codemirror",
-    "build-demo": "ng build demo --configuration production --base-href \"/ngx-editor-js2-blocks/\"",
+    "build-demo": "ng build demo --configuration development --base-href \"/ngx-editor-js2-blocks/\"",
     "build-ngx-editor-js2-blockquotes": "ng build ngx-editor-js2-blockquotes --configuration production",
     "build-ngx-editor-js2-codemirror": "ng build ngx-editor-js2-codemirror --configuration production",
     "build-ngx-editor-js2-image": "ng build ngx-editor-js2-image --configuration production",
