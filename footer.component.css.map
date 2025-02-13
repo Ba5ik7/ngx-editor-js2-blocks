@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["footer.component.ts"],
+  "sourcesContent": ["\n      :host {\n        footer {\n          display: flex;\n          color: var(--mat-sys-on-secondary-container);\n          // background: var(--mat-sys-secondary-container);\n          padding: 4px;\n          text-align: right;\n          a {\n            display: flex;\n            font-size: 0.1875em;\n            text-decoration: none;\n            color: var(--mat-sys-on-secondary-container);\n            align-items: center;\n            gap: 0.5em;\n            svg {\n              width: 16px;\n              path {\n\n                fill: var(--mat-sys-on-secondary-container);\n              }\n            }\n          }\n        }\n      }\n    "],
+  "mappings": ";AAEQ,MAAA;AACE,WAAA;AACA,SAAA,IAAA;AAEA,WAAA;AACA,cAAA;;AACA,MAAA,OAAA;AACE,WAAA;AACA,aAAA;AACA,mBAAA;AACA,SAAA,IAAA;AACA,eAAA;AACA,OAAA;;AACA,MAAA,OAAA,EAAA;AACE,SAAA;;AACA,MAAA,OAAA,EAAA,IAAA;AAEE,QAAA,IAAA;;",
+  "names": []
+}

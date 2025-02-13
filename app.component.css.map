@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["app.component.ts"],
+  "sourcesContent": ["\n      :host {\n        display: flex;\n        flex-direction: column;\n        min-height: 100vh;\n        main {\n          flex: 1;\n          display: flex;\n          flex-direction: column;\n          align-items: center;\n          gap: 3em;\n          margin-top: 56px;\n          app-document {\n            width: 100%;\n            max-width: 800px;\n            margin-bottom: 3em;\n          }\n        }\n        app-nav-bar {\n          position: fixed;\n          top: 0;\n          left: 0;\n          right: 0;\n          z-index: 2;\n        }\n      }\n    "],
+  "mappings": ";AACM;AACE,WAAA;AACA,kBAAA;AACA,cAAA;;AACA,MAAA;AACE,QAAA;AACA,WAAA;AACA,kBAAA;AACA,eAAA;AACA,OAAA;AACA,cAAA;;AACA,MAAA,KAAA;AACE,SAAA;AACA,aAAA;AACA,iBAAA;;AAGJ,MAAA;AACE,YAAA;AACA,OAAA;AACA,QAAA;AACA,SAAA;AACA,WAAA;;",
+  "names": []
+}
