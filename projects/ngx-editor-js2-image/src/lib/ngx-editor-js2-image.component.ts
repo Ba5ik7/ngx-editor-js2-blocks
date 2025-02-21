@@ -47,11 +47,11 @@ type Value = { url: string; title: string };
           class="image-block"
           [src]="value().url"
           [title]="value().title"
-          onerror="this.onerror=null;this.src='https://dummyimage.com/640x360/000/AAF'"
+          onerror="this.onerror=null;this.src='https://dummyimage.com/600x400/000/fff'"
         />
         <button
           mat-fab
-          class="image-block-button mat-elevation-z2"
+          class="image-block-button"
           (click)="openEditUrlOverlay()"
         >
           <mat-icon>edit</mat-icon>
@@ -71,7 +71,7 @@ type Value = { url: string; title: string };
         position: relative;
         display: flex;
         flex-direction: column;
-        margin-bottom: 22px;
+        margin: 1.5rem 0;
         .flex-start {
           justify-content: flex-start;
         }

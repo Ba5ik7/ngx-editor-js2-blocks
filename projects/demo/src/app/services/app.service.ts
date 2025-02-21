@@ -50,6 +50,21 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
     dataClean:
       "export class SimpleFormGroup {\n  form = new FormGroup({\n    first: new FormControl('Nancy', Validators.minLength(2)),\n    last: new FormControl('Drew'),\n  });\n\n  get first(): any {\n    return this.form.get('first');\n  }\n\n  onSubmit(): void {\n    console.log(this.form.value); // {first: 'Nancy', last: 'Drew'}\n  }\n\n  setValue() {\n    this.form.setValue({first: 'Carson', last: 'Drew'});\n  }\n}",
   },
+  {
+    blockId: 'l13u3k',
+    sortIndex: 6,
+    componentInstanceName: 'HeaderBlockComponent',
+    savedAction: 'h1',
+    dataClean: 'New way of learning...',
+  },
+  {
+    blockId: '8u3uiij5vyj',
+    sortIndex: 7,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'large',
+    dataClean:
+      '<ul><li><a href="https://www.typescriptlang.org/">TypeScript</a> and HTML5 programming</li><li>Angular app-design fundamentals, as described in <a href="https://angular.io/guide/architecture">Angular Concepts</a><br></li><li>The basics of <a href="https://angular.io/guide/architecture-components#template-syntax">Angular template syntax</a><br></li></ul>',
+  },
 ];
 
 export const TEST_DATA_TWO: NgxEditorJsBlock[] = [
@@ -96,7 +111,7 @@ export const TEST_DATA_TWO: NgxEditorJsBlock[] = [
   providedIn: 'root',
 })
 export class AppService {
-  ngxEditorJsBlocks = new BehaviorSubject<NgxEditorJsBlock[]>([]);
+  ngxEditorJsBlocks = new BehaviorSubject<NgxEditorJsBlock[]>(TEST_DATA);
   ngxEditorJsBlocks$ = this.ngxEditorJsBlocks.asObservable();
 
   requestBlocks = new BehaviorSubject<{}>({});

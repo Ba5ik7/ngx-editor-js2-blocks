@@ -49,13 +49,16 @@ type ViewModel = {
         </mat-form-field>
         <div class="action-group">
           <button
+            type="button"
             mat-raised-button
             (click)="updateImage(vm.imageConfigForm)"
             [disabled]="vm.imageConfigForm.invalid"
           >
             Save
           </button>
-          <button mat-raised-button (click)="closeConfig()">Cancel</button>
+          <button type="button" mat-raised-button (click)="closeConfig()">
+            Cancel
+          </button>
         </div>
       </form>
       }
@@ -122,7 +125,9 @@ export class ImageConfigComponent {
   }
 
   closeConfig() {
-    this.imageValue.emit(this.value());
+    this.imageValue.emit(
+      this.value().url ? this.value() : { url: '', title: '' }
+    );
   }
 
   // ! Quick and Drity way to set error messages

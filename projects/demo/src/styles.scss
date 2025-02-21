@@ -154,3 +154,20 @@ body {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 // TODO END Clean this shit up
+
+.cm-editor {
+  font-family: Cascadia Code, Fira Code, Menlo, Monaco, 'Courier New', monospace;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.5px;
+}
+
+// .CodeMirror {
+//   font-family: Cascadia Code, Fira Code, Menlo, Monaco, 'Courier New', monospace !important;
+//   font-size: 16px !important;
+//   font-weight: 400 !important;
+//   line-height: 32px !important;
+//   letter-spacing: 0.5px !important;
+//   height: 100%;
+// }

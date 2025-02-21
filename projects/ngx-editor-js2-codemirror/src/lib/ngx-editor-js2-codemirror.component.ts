@@ -26,10 +26,7 @@ import { CommonModule } from '@angular/common';
   ],
   template: `
     <ng-container [formGroup]="formGroup()">
-      <span
-        controlAccessor
-        [autofocus]="autofocus()"
-      ></span>
+      <span controlAccessor [autofocus]="autofocus()"></span>
       <ngx-codemirror
         toolbarFab
         [actionCallback]="actionCallbackBind"
@@ -45,12 +42,23 @@ import { CommonModule } from '@angular/common';
       :host {
         display: block;
         position: relative;
+        margin: 1.5rem 0;
         .codemirror-container-overlay {
           display: flex;
           height: 100%;
           width: 100%;
           position: absolute;
         }
+      }
+
+      :host ::ng-deep .CodeMirror {
+        font-family: Cascadia Code, Fira Code, Menlo, Monaco, 'Courier New',
+          monospace;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 32px;
+        letter-spacing: 0.5px;
+        height: 100%;
       }
     `,
   ],
@@ -72,6 +80,11 @@ export class NgxEditorJs2CodemirrorComponent implements BlockComponent {
     theme: 'material-palenight',
     mode: 'text/typescript',
     extraKeys: { 'Ctrl-Space': 'autocomplete' },
+    styleActiveLine: true, // Highlight active line
+    matchBrackets: true,
+    indentUnit: 2,
+    tabSize: 2,
+    cursorScrollMargin: 5,
   });
 
   savedAction = signal<string>('display-large');
