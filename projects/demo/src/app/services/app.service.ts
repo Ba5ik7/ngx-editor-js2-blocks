@@ -11,13 +11,21 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
     dataClean: 'Prerequisites',
   },
   {
-    blockId: 'n177dsd',
+    blockId: '9bqhk',
     sortIndex: 1,
-    componentInstanceName: 'NgxEditorJs2ImageComponent',
-    savedAction: 'stretch',
+    componentInstanceName: 'NgxEditorJs2PopQuizComponent',
+    savedAction: 'display-large',
     dataClean:
-      '{"url":"https://res.cloudinary.com/dowdpiikk/image/upload/w_650,q_auto:best,f_auto/v1709445782/lnyst5aqppuin8wt73ci.webp","title":"test"}',
+      '{"question":"Which of the following statements is true about Angular\'s default RouteReuseStrategy?","correctAnswer":"It reuses components when the route configuration remains the same.","correctAnswerResponse":"That\'s correct! Angular\'s default RouteReuseStrategy reuses components when the route configuration remains the same. This prevents components from being destroyed and recreated when only the fragment or query parameters change.","incorrectAnswerResponse":"That\'s incorrect. The correct answer is C. Angular\'s default RouteReuseStrategy reuses components when the route configuration remains the same. This prevents components from being destroyed and recreated when only the fragment or query parameters change.","ratioOptions":[{"value":"It only reuses components when the route configuration changes."},{"value":"It only reuses components when the route parameters change."},{"value":"It reuses components when the route configuration remains the same."},{"value":"It never reuses components."}]}',
   },
+  // {
+  //   blockId: 'n177dsd',
+  //   sortIndex: 1,
+  //   componentInstanceName: 'NgxEditorJs2ImageComponent',
+  //   savedAction: 'stretch',
+  //   dataClean:
+  //     '{"url":"https://res.cloudinary.com/dowdpiikk/image/upload/w_650,q_auto:best,f_auto/v1709445782/lnyst5aqppuin8wt73ci.webp","title":"test"}',
+  // },
   {
     blockId: 'bu23hwyltss',
     sortIndex: 2,

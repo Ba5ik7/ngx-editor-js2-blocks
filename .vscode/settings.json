@@ -52,14 +52,13 @@
   "workbench.editor.tabSizing": "shrink",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "newUntitledFile",
-  "editor.selectionHighlight": true,
-  "editor.foldingHighlight": true,
-  "editor.guides.highlightActiveBracketPair": true,
-  "editor.unicodeHighlight.includeStrings": true,
-  "editor.inlineSuggest.syntaxHighlightingEnabled": true,
-  "better-comments.highlightPlainText": true,
+  "editor.selectionHighlight": false,
+  "editor.foldingHighlight": false,
+  "editor.guides.highlightActiveBracketPair": false,
+  "editor.unicodeHighlight.includeStrings": false,
+  "editor.inlineSuggest.syntaxHighlightingEnabled": false,
+  "better-comments.highlightPlainText": false,
   "angular-jest-test-runner.debug.projectPath": "${workspaceFolder}/projects/ngx-editor-js2/",
-
 }
 
 // {

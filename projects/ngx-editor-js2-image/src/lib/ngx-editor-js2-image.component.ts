@@ -31,7 +31,6 @@ type Value = { url: string; title: string };
   ],
   template: `
     <ng-container [formGroup]="formGroup()">
-      @if (!openOverlay()) {
       <span
         controlAccessor
         toolbarFab
@@ -42,6 +41,7 @@ type Value = { url: string; title: string };
         [formControlName]="formControlName()"
         [componentContextPositionIndex]="sortIndex()"
       ></span>
+      @if (!openOverlay()) {
       <div class="image-container" [ngClass]="savedAction()">
         <img
           class="image-block"

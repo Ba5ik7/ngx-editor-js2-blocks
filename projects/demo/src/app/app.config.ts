@@ -4,9 +4,12 @@ import {
 } from '@angular/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { NGX_EDITORJS_OPTIONS } from '@tmdjr/ngx-editor-js2';
+// Imports are for debugging purposes only
+// Use @tmdjr/**
 import { NgxEditorJs2BlockquotesComponent } from 'ngx-editor-js2-blockquotes';
 import { NgxEditorJs2CodemirrorComponent } from 'ngx-editor-js2-codemirror';
 import { NgxEditorJs2ImageComponent } from 'ngx-editor-js2-image';
+import { NgxEditorJs2PopQuizComponent } from 'ngx-editor-js2-pop-quiz';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -30,6 +33,11 @@ export const appConfig: ApplicationConfig = {
             name: 'Codemirror',
             component: NgxEditorJs2CodemirrorComponent,
             componentInstanceName: 'NgxEditorJs2CodemirrorComponent',
+          },
+          {
+            name: 'Pop Quiz',
+            component: NgxEditorJs2PopQuizComponent,
+            componentInstanceName: 'NgxEditorJs2PopQuizComponent',
           },
         ],
       },
