@@ -60,8 +60,20 @@ export class NgxEditorJs2PopQuizComponent implements BlockComponent {
   sortIndex = input<number>(0);
   componentInstanceName = 'NgxEditorJs2PopQuizComponent';
   autofocus = input<boolean>(true);
-  formGroup = input.required<FormGroup>();
-  formControlName = input.required<string>();
+  formGroup = input.required<FormGroup, FormGroup>(
+    {
+      transform: (value) => {
+        this.popQuizService.parentFormGroup = value;
+        return value;
+      }
+    },
+  );
+  formControlName = input.required<string, string>({
+    transform: (value) => {
+      this.popQuizService.parentFormControlName = value;
+      return value;
+    }
+  });
   blockOptionActions = input<BlockOptionAction[]>([
     { action: 'medium', icon: 'density_small' },
     { action: 'display-small', icon: 'density_medium' },
@@ -75,7 +87,7 @@ export class NgxEditorJs2PopQuizComponent implements BlockComponent {
   ngOnInit() {
     try {
       const possibleSavedValue = this.formGroup().get(this.formControlName());
-      const value = this.popQuizService.setQuizConfigValue(
+      this.popQuizService.setQuizConfigValue(
         JSON.parse(possibleSavedValue?.value ? possibleSavedValue.value : '{}')
       );
     } catch (error) {

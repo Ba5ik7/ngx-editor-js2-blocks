@@ -10,10 +10,17 @@ import { BehaviorSubject } from 'rxjs';
 
 export interface QuizConfig {
   question: string;
-  correctAnswer: string;
-  ratioOptions: { value: string }[];
-  correctAnswerResponse: string;
-  incorrectAnswerResponse: string;
+  choices: { value: string }[];
+  answer: string;
+  correctResponse: string;
+  incorrectResponse: string;
+}
+
+export interface QuizConfigFormRawData {
+  questionGroup: { question: string };
+  choicesOptionsGroup: { choices: { value: string }[] };
+  answerGroup: { answer: string };
+  responsesGroup: { correctResponse: string; incorrectResponse: string };
 }
 
 export interface QuizConfigForm {
@@ -24,7 +31,9 @@ export interface QuizConfigForm {
 }
 
 export type QuestionGroup = FormGroup<{ question: FormControl<string> }>;
-export type ChoicesOptionsGroup = FormGroup<{ choices: FormArray<FormControl<string>> }>;
+export type ChoicesOptionsGroup = FormGroup<{
+  choices: FormArray<FormControl<string>>;
+}>;
 export type AnswerGroup = FormGroup<{ answer: FormControl<string> }>;
 export type ResponsesGroup = FormGroup<{
   correctResponse: FormControl<string>;
@@ -37,12 +46,15 @@ export type ResponsesGroup = FormGroup<{
 export class NgxEditorJs2PopQuizService {
   formBuilder = inject(NonNullableFormBuilder);
 
+  parentFormGroup!: FormGroup;
+  parentFormControlName!: string;
+
   quizConfigValue = new BehaviorSubject<QuizConfig>({
     question: '',
-    correctAnswer: '',
-    ratioOptions: [],
-    correctAnswerResponse: '',
-    incorrectAnswerResponse: '',
+    answer: '',
+    choices: [],
+    correctResponse: '',
+    incorrectResponse: '',
   });
   quizConfigValue$ = this.quizConfigValue.asObservable();
 
@@ -68,5 +80,53 @@ export class NgxEditorJs2PopQuizService {
   setQuizConfigValue(value: QuizConfig) {
     this.quizConfigValue.next(value);
     return value;
+  }
+
+  initializeQuizConfigForm(value: QuizConfig) {
+    const form = this.quizConfigForm.value;
+    const choicesArray = form.get('choicesOptionsGroup.choices') as FormArray;
+    if (!choicesArray || choicesArray.length === 0) {
+      value.choices.forEach((choice) => {
+        choicesArray.push(
+          this.formBuilder.group({
+            value: new FormControl<string>(choice.value),
+          })
+        );
+      });
+    }
+    form.setValue(this.marshalFormValueIntoFormGroup(value));
+    return form;
+  }
+
+  marshalFormValueIntoFormGroup(value: any) {
+    return {
+      answerGroup: {
+        answer: value.answer,
+      },
+      choicesOptionsGroup: {
+        choices: value.choices,
+      },
+      questionGroup: {
+        question: value.question,
+      },
+      responsesGroup: {
+        correctResponse: value.correctResponse,
+        incorrectResponse: value.incorrectResponse,
+      },
+    };
+  }
+
+  updatePranetFormGroupValue(value: QuizConfigFormRawData) {
+    // Need to Marshal the value back into QuizConfig
+    const marshaledValue = {
+      question: value.questionGroup.question,
+      answer: value.answerGroup.answer,
+      choices: value.choicesOptionsGroup.choices,
+      correctResponse: value.responsesGroup.correctResponse,
+      incorrectResponse: value.responsesGroup.incorrectResponse,
+    };
+    this.parentFormGroup
+      .get(this.parentFormControlName)
+      ?.setValue(JSON.stringify(marshaledValue));
   }
 }

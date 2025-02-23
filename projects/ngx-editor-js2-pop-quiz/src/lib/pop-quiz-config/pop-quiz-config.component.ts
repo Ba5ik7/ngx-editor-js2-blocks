@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormArray, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatStepperModule } from '@angular/material/stepper';
 
 import {
@@ -14,7 +14,7 @@ import { ResponsesComponent } from './steps/responses.component';
 import { ChoicesComponent } from './steps/choices.component';
 import { AnswerComponent } from './steps/answer.component';
 import { ResultsComponent } from './steps/results.component';
-import { combineLatest, map } from 'rxjs';
+import { combineLatest, map, tap } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 
 @Component({
@@ -82,11 +82,12 @@ import { AsyncPipe } from '@angular/common';
 export class PopQuizConfigComponent {
   popQuizService = inject(NgxEditorJs2PopQuizService);
 
-  viewModel$ = combineLatest([
-    this.popQuizService.quizConfigForm$,
-    this.popQuizService.quizConfigValue$,
-  ]).pipe(
-    map(([form, _value]) => ({
+  viewModel$ = combineLatest({
+    form: this.popQuizService.quizConfigForm$,
+    value: this.popQuizService.quizConfigValue$,
+  }).pipe(
+    map(({ value }) => this.popQuizService.initializeQuizConfigForm(value)),
+    map((form) => ({
       questionGroup: form.get('questionGroup') as QuestionGroup,
       choicesOptionsGroup: form.get(
         'choicesOptionsGroup'

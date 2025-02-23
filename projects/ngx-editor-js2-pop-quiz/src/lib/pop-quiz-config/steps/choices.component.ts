@@ -4,7 +4,6 @@ import {
   FormArray,
   FormBuilder,
   FormGroup,
-  NonNullableFormBuilder,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
@@ -53,7 +52,7 @@ import { MatStepperNext, MatStepperPrevious } from '@angular/material/stepper';
       </ng-container>
       <div class="action-group">
         <button mat-flat-button matStepperNext>Next</button>
-        <button mat-flat-button matStepperPrevious>Back</button>
+        <button mat-flat-button matStepperPrevious>Previous</button>
       </div>
     </form>
   `,
