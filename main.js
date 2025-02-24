@@ -41467,8 +41467,22 @@ function QuestionComponent_Conditional_7_Template(rf, ctx) {
     \u0275\u0275elementEnd();
   }
 }
+function ResponsesComponent_Conditional_7_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-error");
+    \u0275\u0275text(1, " Question is required ");
+    \u0275\u0275elementEnd();
+  }
+}
+function ResponsesComponent_Conditional_14_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-error");
+    \u0275\u0275text(1, " Question is required ");
+    \u0275\u0275elementEnd();
+  }
+}
 var _c013 = (a0) => ({
-  "error": a0
+  error: a0
 });
 function ChoicesComponent_For_7_Conditional_6_Template(rf, ctx) {
   if (rf & 1) {
@@ -41524,6 +41538,13 @@ function AnswerComponent_Conditional_0_For_8_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", (tmp_13_0 = choice_r1.get("value")) == null ? null : tmp_13_0.value, " ");
   }
 }
+function AnswerComponent_Conditional_0_Conditional_9_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-error");
+    \u0275\u0275text(1, "Please choose an answer");
+    \u0275\u0275elementEnd();
+  }
+}
 function AnswerComponent_Conditional_0_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "form", 0)(1, "h3");
@@ -41534,19 +41555,24 @@ function AnswerComponent_Conditional_0_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(6, "mat-select", 1);
     \u0275\u0275repeaterCreate(7, AnswerComponent_Conditional_0_For_8_Template, 2, 2, "mat-option", 2, \u0275\u0275repeaterTrackByIndex);
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(9, "div", 3)(10, "button", 4);
-    \u0275\u0275text(11, "Previous");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "button", 5);
-    \u0275\u0275text(13, "Next");
+    \u0275\u0275template(9, AnswerComponent_Conditional_0_Conditional_9_Template, 2, 0, "mat-error");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(10, "div", 3)(11, "button", 4);
+    \u0275\u0275text(12, "Previous");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(13, "button", 5);
+    \u0275\u0275text(14, "Next");
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
+    let tmp_4_0;
     const ctx_r1 = \u0275\u0275nextContext();
     \u0275\u0275property("formGroup", ctx_r1.answerFormGroup());
     \u0275\u0275advance(7);
     \u0275\u0275repeater(ctx.controls);
+    \u0275\u0275advance(2);
+    \u0275\u0275conditional(((tmp_4_0 = ctx_r1.answerFormGroup().get("answer")) == null ? null : tmp_4_0.hasError("required")) ? 9 : -1);
   }
 }
 function ResultsComponent_Conditional_4_For_8_Template(rf, ctx) {
@@ -41690,11 +41716,11 @@ var NgxEditorJs2PopQuizService = class _NgxEditorJs2PopQuizService {
       choices: this.formBuilder.array([], [validateRatioOptions()])
     }),
     answerGroup: this.formBuilder.group({
-      answer: new FormControl("")
+      answer: new FormControl("", [Validators.required])
     }),
     responsesGroup: this.formBuilder.group({
-      correctResponse: new FormControl(""),
-      incorrectResponse: new FormControl("")
+      correctResponse: new FormControl("", [Validators.required]),
+      incorrectResponse: new FormControl("", [Validators.required])
     })
   }));
   quizConfigForm$ = this.quizConfigForm.asObservable();
@@ -41835,8 +41861,8 @@ var ResponsesComponent = class _ResponsesComponent {
     inputs: {
       responsesFormGroup: [1, "responsesFormGroup"]
     },
-    decls: 18,
-    vars: 3,
+    decls: 20,
+    vars: 5,
     consts: [[3, "formGroup"], ["matInput", "", 3, "formControlName"], [1, "action-group"], ["mat-flat-button", "", "matStepperPrevious", ""], ["mat-flat-button", "", "matStepperNext", ""]],
     template: function ResponsesComponent_Template(rf, ctx) {
       if (rf & 1) {
@@ -41847,31 +41873,39 @@ var ResponsesComponent = class _ResponsesComponent {
         \u0275\u0275text(5, "Create a Response when the User is Correct");
         \u0275\u0275elementEnd();
         \u0275\u0275element(6, "textarea", 1);
+        \u0275\u0275template(7, ResponsesComponent_Conditional_7_Template, 2, 0, "mat-error");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(7, "h3");
-        \u0275\u0275text(8, "Create a Response when the User is Incorrect");
+        \u0275\u0275elementStart(8, "h3");
+        \u0275\u0275text(9, "Create a Response when the User is Incorrect");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(9, "mat-form-field")(10, "mat-label");
-        \u0275\u0275text(11, "Create a Response when the User is Incorrect");
+        \u0275\u0275elementStart(10, "mat-form-field")(11, "mat-label");
+        \u0275\u0275text(12, "Create a Response when the User is Incorrect");
         \u0275\u0275elementEnd();
-        \u0275\u0275element(12, "textarea", 1);
+        \u0275\u0275element(13, "textarea", 1);
+        \u0275\u0275template(14, ResponsesComponent_Conditional_14_Template, 2, 0, "mat-error");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(13, "div", 2)(14, "button", 3);
-        \u0275\u0275text(15, "Previous");
+        \u0275\u0275elementStart(15, "div", 2)(16, "button", 3);
+        \u0275\u0275text(17, "Previous");
         \u0275\u0275elementEnd();
-        \u0275\u0275elementStart(16, "button", 4);
-        \u0275\u0275text(17, "Next");
+        \u0275\u0275elementStart(18, "button", 4);
+        \u0275\u0275text(19, "Next");
         \u0275\u0275elementEnd()()();
       }
       if (rf & 2) {
+        let tmp_2_0;
+        let tmp_4_0;
         \u0275\u0275property("formGroup", ctx.responsesFormGroup());
         \u0275\u0275advance(6);
         \u0275\u0275property("formControlName", "correctResponse");
+        \u0275\u0275advance();
+        \u0275\u0275conditional(((tmp_2_0 = ctx.responsesFormGroup().get("correctResponse")) == null ? null : tmp_2_0.hasError("required")) ? 7 : -1);
         \u0275\u0275advance(6);
         \u0275\u0275property("formControlName", "incorrectResponse");
+        \u0275\u0275advance();
+        \u0275\u0275conditional(((tmp_4_0 = ctx.responsesFormGroup().get("incorrectResponse")) == null ? null : tmp_4_0.hasError("required")) ? 14 : -1);
       }
     },
-    dependencies: [ReactiveFormsModule, \u0275NgNoValidate, DefaultValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, MatFormFieldModule, MatFormField, MatLabel, MatInput, MatStepperNext, MatStepperPrevious, MatButton],
+    dependencies: [ReactiveFormsModule, \u0275NgNoValidate, DefaultValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, MatFormFieldModule, MatFormField, MatLabel, MatError, MatInput, MatStepperNext, MatStepperPrevious, MatButton],
     styles: ["[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:space-between;margin-top:1rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font:var(--mat-sys-headline-small);font-weight:100}"]
   });
 };
@@ -41887,11 +41921,17 @@ var ResponsesComponent = class _ResponsesComponent {
       <mat-form-field>
         <mat-label>Create a Response when the User is Correct</mat-label>
         <textarea matInput [formControlName]="'correctResponse'"></textarea>
+        @if(responsesFormGroup().get('correctResponse')?.hasError('required')) {
+        <mat-error> Question is required </mat-error>
+        }
       </mat-form-field>
       <h3>Create a Response when the User is Incorrect</h3>
       <mat-form-field>
         <mat-label>Create a Response when the User is Incorrect</mat-label>
         <textarea matInput [formControlName]="'incorrectResponse'"></textarea>
+        @if(responsesFormGroup().get('incorrectResponse')?.hasError('required')) {
+        <mat-error> Question is required </mat-error>
+        }
       </mat-form-field>
       <div class="action-group">
         <button mat-flat-button matStepperPrevious>Previous</button>
@@ -41905,6 +41945,7 @@ var ResponsesComponent = class _ResponsesComponent {
 })();
 var ChoicesComponent = class _ChoicesComponent {
   formBuilder = inject(FormBuilder);
+  popQuizService = inject(NgxEditorJs2PopQuizService);
   choicesFormGroup = input.required({
     transform: (value) => {
       this.choicesFormGroupSub.next(value);
@@ -41921,12 +41962,13 @@ var ChoicesComponent = class _ChoicesComponent {
     choices.push(this.formBuilder.group({
       value: ["", [Validators.required]]
     }));
-    return this.choicesFormGroupSub.next(this.choicesFormGroup());
+    this.choicesFormGroupSub.next(this.choicesFormGroup());
   }
   removeRatioOption(index) {
     const choices = this.choicesFormGroup().get("choices");
     choices.removeAt(index);
-    return this.choicesFormGroupSub.next(this.choicesFormGroup());
+    this.choicesFormGroupSub.next(this.choicesFormGroup());
+    this.popQuizService.quizConfigForm.value.controls.answerGroup.get("answer")?.setValue("");
   }
   static \u0275fac = function ChoicesComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _ChoicesComponent)();
@@ -41990,9 +42032,15 @@ var ChoicesComponent = class _ChoicesComponent {
       template: `
     <form [formGroup]="choicesFormGroup()">
       <h3>
-        Create the Possible Answers <span
-          [ngClass]="{ 'error': (this.choicesFormGroup().get('choices'))?.hasError('notEnoughOptions') }"
-        >(Create at least 2 choices)</span>
+        Create the Possible Answers
+        <span
+          [ngClass]="{
+            error: this.choicesFormGroup()
+              .get('choices')
+              ?.hasError('notEnoughOptions')
+          }"
+          >(Create at least 2 choices)</span
+        >
       </h3>
       <ng-container formArrayName="choices">
         @for (option of (viewModel$ | async)!.controls; track option) {
@@ -42001,8 +42049,9 @@ var ChoicesComponent = class _ChoicesComponent {
             <mat-form-field>
               <mat-label>Option {{ $index + 1 }}</mat-label>
               <textarea matInput formControlName="value"></textarea>
-              @if((this.choicesFormGroup().get('choices'))?.get($index.toString())) {
-                <mat-error> Question is required </mat-error>
+              @if((this.choicesFormGroup().get('choices'))?.get($index.toString()))
+              {
+              <mat-error> Question is required </mat-error>
               }
             </mat-form-field>
             <button mat-icon-button (click)="removeRatioOption($index)">
@@ -42031,6 +42080,9 @@ var ChoicesComponent = class _ChoicesComponent {
 var AnswerComponent = class _AnswerComponent {
   answerFormGroup = input.required();
   choices$ = inject(NgxEditorJs2PopQuizService).quizConfigForm$.pipe(map((form) => form.controls.choicesOptionsGroup.controls.choices));
+  ngOnInit() {
+    this.answerFormGroup().get("answer")?.markAsTouched();
+  }
   static \u0275fac = function AnswerComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _AnswerComponent)();
   };
@@ -42042,10 +42094,10 @@ var AnswerComponent = class _AnswerComponent {
     },
     decls: 2,
     vars: 3,
-    consts: [[3, "formGroup"], ["formControlName", "answer"], [3, "value"], [1, "action-group"], ["mat-flat-button", "", "matStepperPrevious", ""], ["mat-flat-button", "", "matStepperNext", ""]],
+    consts: [[3, "formGroup"], ["formControlName", "answer", "required", ""], [3, "value"], [1, "action-group"], ["mat-flat-button", "", "matStepperPrevious", ""], ["mat-flat-button", "", "matStepperNext", ""]],
     template: function AnswerComponent_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275template(0, AnswerComponent_Conditional_0_Template, 14, 1, "form", 0);
+        \u0275\u0275template(0, AnswerComponent_Conditional_0_Template, 15, 2, "form", 0);
         \u0275\u0275pipe(1, "async");
       }
       if (rf & 2) {
@@ -42053,7 +42105,7 @@ var AnswerComponent = class _AnswerComponent {
         \u0275\u0275conditional((tmp_0_0 = \u0275\u0275pipeBind1(1, 1, ctx.choices$)) ? 0 : -1, tmp_0_0);
       }
     },
-    dependencies: [AsyncPipe, ReactiveFormsModule, \u0275NgNoValidate, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, MatStepperNext, MatStepperPrevious, MatButton, MatFormField, MatOption, MatLabel, MatSelect],
+    dependencies: [AsyncPipe, ReactiveFormsModule, \u0275NgNoValidate, NgControlStatus, NgControlStatusGroup, RequiredValidator, FormGroupDirective, FormControlName, MatStepperNext, MatStepperPrevious, MatButton, MatFormFieldModule, MatFormField, MatLabel, MatError, MatOption, MatSelect],
     styles: ["[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   mat-form-field[_ngcontent-%COMP%]{margin-bottom:1.5rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:space-between}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font:var(--mat-sys-headline-small);font-weight:100}"]
   });
 };
@@ -42062,20 +42114,23 @@ var AnswerComponent = class _AnswerComponent {
     type: Component,
     args: [{
       selector: "pop-quiz-answer",
-      imports: [AsyncPipe, ReactiveFormsModule, MatStepperNext, MatStepperPrevious, MatButton, MatFormField, MatOption, MatLabel, MatSelect],
+      imports: [AsyncPipe, ReactiveFormsModule, MatStepperNext, MatStepperPrevious, MatButton, MatFormFieldModule, MatOption, MatLabel, MatSelect],
       template: `
     @if (choices$ | async; as choices) {
     <form [formGroup]="answerFormGroup()">
       <h3>Select the Correct Answer</h3>
       <mat-form-field>
         <mat-label>Answer</mat-label>
-        <mat-select formControlName="answer">
+        <mat-select formControlName="answer" required>
           @for (choice of choices.controls; track $index) {
           <mat-option [value]="choice.get('value')?.value">
             {{ choice.get('value')?.value }}
           </mat-option>
           }
         </mat-select>
+        @if (answerFormGroup().get('answer')?.hasError('required')) {
+        <mat-error>Please choose an answer</mat-error>
+        }
       </mat-form-field>
       <div class="action-group">
         <button mat-flat-button matStepperPrevious>Previous</button>
@@ -42189,7 +42244,8 @@ var PopQuizConfigComponent = class _PopQuizConfigComponent {
     choicesOptionsGroup: form.get("choicesOptionsGroup"),
     answerGroup: form.get("answerGroup"),
     responsesGroup: form.get("responsesGroup"),
-    quizConfigForm: form
+    quizConfigForm: form,
+    selectedIndex: form.get("questionGroup")?.valid ? 4 : 0
   })));
   static \u0275fac = function PopQuizConfigComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _PopQuizConfigComponent)();
@@ -42222,6 +42278,7 @@ var PopQuizConfigComponent = class _PopQuizConfigComponent {
       imports: [AsyncPipe, ReactiveFormsModule, MatStepperModule, QuestionComponent, ResponsesComponent, ChoicesComponent, AnswerComponent, ResultsComponent],
       template: `
     @if (viewModel$ | async; as vm) {
+    <!-- <mat-stepper class="mat-stepper" linear [selectedIndex]="vm.selectedIndex"> -->
     <mat-stepper class="mat-stepper" linear>
       <mat-step [stepControl]="vm.questionGroup">
         <ng-template matStepLabel>Question?</ng-template>
