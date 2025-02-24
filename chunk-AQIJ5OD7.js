@@ -24936,8 +24936,8 @@ var Location = class _Location {
    * @returns True if the given URL path is equal to the current normalized path, false
    * otherwise.
    */
-  isCurrentPathEqualTo(path, query = "") {
-    return this.path() == this.normalize(path + normalizeQueryParams(query));
+  isCurrentPathEqualTo(path, query2 = "") {
+    return this.path() == this.normalize(path + normalizeQueryParams(query2));
   }
   /**
    * Normalizes a URL path by stripping any trailing slashes.
@@ -24975,9 +24975,9 @@ var Location = class _Location {
    * @param state Location history state.
    *
    */
-  go(path, query = "", state2 = null) {
-    this._locationStrategy.pushState(state2, "", path, query);
-    this._notifyUrlChangeListeners(this.prepareExternalUrl(path + normalizeQueryParams(query)), state2);
+  go(path, query2 = "", state2 = null) {
+    this._locationStrategy.pushState(state2, "", path, query2);
+    this._notifyUrlChangeListeners(this.prepareExternalUrl(path + normalizeQueryParams(query2)), state2);
   }
   /**
    * Changes the browser's URL to a normalized version of the given URL, and replaces
@@ -24987,9 +24987,9 @@ var Location = class _Location {
    * @param query Query parameters.
    * @param state Location history state.
    */
-  replaceState(path, query = "", state2 = null) {
-    this._locationStrategy.replaceState(state2, "", path, query);
-    this._notifyUrlChangeListeners(this.prepareExternalUrl(path + normalizeQueryParams(query)), state2);
+  replaceState(path, query2 = "", state2 = null) {
+    this._locationStrategy.replaceState(state2, "", path, query2);
+    this._notifyUrlChangeListeners(this.prepareExternalUrl(path + normalizeQueryParams(query2)), state2);
   }
   /**
    * Navigates forward in the platform's history.
@@ -29343,6 +29343,13 @@ function animate(timings, styles = null) {
     timings
   };
 }
+function group(steps, options = null) {
+  return {
+    type: AnimationMetadataType.Group,
+    steps,
+    options
+  };
+}
 function sequence(steps, options = null) {
   return {
     type: AnimationMetadataType.Sequence,
@@ -29370,6 +29377,20 @@ function transition(stateChangeExpr, steps, options = null) {
     type: AnimationMetadataType.Transition,
     expr: stateChangeExpr,
     animation: steps,
+    options
+  };
+}
+function animateChild(options = null) {
+  return {
+    type: AnimationMetadataType.AnimateChild,
+    options
+  };
+}
+function query(selector, animation, options = null) {
+  return {
+    type: AnimationMetadataType.Query,
+    selector,
+    animation,
     options
   };
 }
@@ -29779,6 +29800,7 @@ export {
   combineLatest,
   mergeMap,
   concat,
+  defer,
   forkJoin,
   fromEvent,
   iif,
@@ -29881,6 +29903,7 @@ export {
   contentChild,
   ContentChildren,
   ContentChild,
+  ViewChildren,
   ViewChild,
   NgModuleRef$1,
   ɵɵdefineComponent,
@@ -29907,6 +29930,7 @@ export {
   ɵɵclassMapInterpolate1,
   ɵɵconditional,
   ɵɵrepeaterTrackByIndex,
+  ɵɵrepeaterTrackByIdentity,
   ɵɵrepeaterCreate,
   ɵɵrepeater,
   ɵɵelementStart,
@@ -29936,6 +29960,8 @@ export {
   ɵɵtwoWayBindingSet,
   ɵɵtwoWayListener,
   ɵɵProvidersFeature,
+  ɵɵpureFunction1,
+  ɵɵpureFunction2,
   ɵɵpipe,
   ɵɵpipeBind1,
   ɵɵtemplateRefExtractor,
@@ -29983,10 +30009,13 @@ export {
   AUTO_STYLE,
   trigger,
   animate,
+  group,
   sequence,
   style,
   state,
   transition,
+  animateChild,
+  query,
   NoopAnimationPlayer,
   AnimationGroupPlayer,
   ɵPRE_STYLE
@@ -30084,4 +30113,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-TEXDSUAL.js.map
+//# sourceMappingURL=chunk-AQIJ5OD7.js.map

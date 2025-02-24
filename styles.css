@@ -2210,6 +2210,19 @@ body.rose-palette {
 .cdk-drag-animating {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
+.cm-editor {
+  font-family:
+    Cascadia Code,
+    Fira Code,
+    Menlo,
+    Monaco,
+    "Courier New",
+    monospace;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.5px;
+}
 
 /* angular:styles/global:styles */
 /*# sourceMappingURL=styles.css.map */

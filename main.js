@@ -73,6 +73,7 @@ import {
   TracingService,
   Version,
   ViewChild,
+  ViewChildren,
   ViewContainerRef,
   ViewEncapsulation,
   XSS_SECURITY_URL,
@@ -84,6 +85,7 @@ import {
   afterRender,
   allowSanitizationBypassAndThrow,
   animate,
+  animateChild,
   animationFrameScheduler,
   asapScheduler,
   assertInInjectionContext,
@@ -104,6 +106,7 @@ import {
   createPlatformFactory,
   debounceTime,
   defaultIfEmpty,
+  defer,
   delay,
   distinctUntilChanged,
   effect,
@@ -117,6 +120,7 @@ import {
   from,
   fromEvent,
   getDOM,
+  group,
   iif,
   inject,
   input,
@@ -141,6 +145,7 @@ import {
   parseCookieValue,
   performanceMarkFeature,
   platformCore,
+  query,
   resource,
   runInInjectionContext,
   setClassMetadata,
@@ -206,11 +211,14 @@ import {
   ɵɵprojection,
   ɵɵprojectionDef,
   ɵɵproperty,
+  ɵɵpureFunction1,
+  ɵɵpureFunction2,
   ɵɵqueryAdvance,
   ɵɵqueryRefresh,
   ɵɵreference,
   ɵɵrepeater,
   ɵɵrepeaterCreate,
+  ɵɵrepeaterTrackByIdentity,
   ɵɵrepeaterTrackByIndex,
   ɵɵresetView,
   ɵɵrestoreView,
@@ -226,7 +234,7 @@ import {
   ɵɵtwoWayProperty,
   ɵɵviewQuery,
   ɵɵviewQuerySignal
-} from "./chunk-TEXDSUAL.js";
+} from "./chunk-AQIJ5OD7.js";
 import {
   __async,
   __commonJS,
@@ -6579,7 +6587,7 @@ var AsyncAnimationRendererFactory = class _AsyncAnimationRendererFactory {
    * @internal
    */
   loadImpl() {
-    const loadFn = () => this.moduleImpl ?? import("./chunk-I4ILNMPT.js").then((m) => m);
+    const loadFn = () => this.moduleImpl ?? import("./chunk-RFRWLMVU.js").then((m) => m);
     let moduleImplPromise;
     if (this.loadingSchedulerFn) {
       moduleImplPromise = this.loadingSchedulerFn(loadFn);
@@ -9736,10 +9744,10 @@ var NgForm = class _NgForm extends ControlContainer {
   addFormGroup(dir) {
     resolvedPromise$1.then(() => {
       const container = this._findContainer(dir.path);
-      const group = new FormGroup({});
-      setUpFormContainer(group, dir);
-      container.registerControl(dir.name, group);
-      group.updateValueAndValidity({
+      const group2 = new FormGroup({});
+      setUpFormContainer(group2, dir);
+      container.registerControl(dir.name, group2);
+      group2.updateValueAndValidity({
         emitEvent: false
       });
     });
@@ -14174,11 +14182,11 @@ var MediaMatcher = class _MediaMatcher {
    * Confirms the layout engine will trigger for the selector query provided and returns the
    * MediaQueryList for the query provided.
    */
-  matchMedia(query) {
+  matchMedia(query2) {
     if (this._platform.WEBKIT || this._platform.BLINK) {
-      createEmptyStyleRule(query, this._nonce);
+      createEmptyStyleRule(query2, this._nonce);
     }
-    return this._matchMedia(query);
+    return this._matchMedia(query2);
   }
   static \u0275fac = function MediaMatcher_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _MediaMatcher)();
@@ -14197,8 +14205,8 @@ var MediaMatcher = class _MediaMatcher {
     }]
   }], () => [], null);
 })();
-function createEmptyStyleRule(query, nonce) {
-  if (mediaQueriesForWebkitCompatibility.has(query)) {
+function createEmptyStyleRule(query2, nonce) {
+  if (mediaQueriesForWebkitCompatibility.has(query2)) {
     return;
   }
   try {
@@ -14211,17 +14219,17 @@ function createEmptyStyleRule(query, nonce) {
       document.head.appendChild(mediaQueryStyleNode);
     }
     if (mediaQueryStyleNode.sheet) {
-      mediaQueryStyleNode.sheet.insertRule(`@media ${query} {body{ }}`, 0);
-      mediaQueriesForWebkitCompatibility.add(query);
+      mediaQueryStyleNode.sheet.insertRule(`@media ${query2} {body{ }}`, 0);
+      mediaQueriesForWebkitCompatibility.add(query2);
     }
   } catch (e) {
     console.error(e);
   }
 }
-function noopMatchMedia(query) {
+function noopMatchMedia(query2) {
   return {
-    matches: query === "all" || query === "",
-    media: query,
+    matches: query2 === "all" || query2 === "",
+    media: query2,
     addListener: () => {
     },
     removeListener: () => {
@@ -14259,7 +14267,7 @@ var BreakpointObserver = class _BreakpointObserver {
    */
   observe(value) {
     const queries = splitQueries(coerceArray(value));
-    const observables = queries.map((query) => this._registerQuery(query).observable);
+    const observables = queries.map((query2) => this._registerQuery(query2).observable);
     let stateObservable = combineLatest(observables);
     stateObservable = concat(stateObservable.pipe(take(1)), stateObservable.pipe(skip(1), debounceTime(0)));
     return stateObservable.pipe(map((breakpointStates) => {
@@ -14269,20 +14277,20 @@ var BreakpointObserver = class _BreakpointObserver {
       };
       breakpointStates.forEach(({
         matches,
-        query
+        query: query2
       }) => {
         response.matches = response.matches || matches;
-        response.breakpoints[query] = matches;
+        response.breakpoints[query2] = matches;
       });
       return response;
     }));
   }
   /** Registers a specific query to be listened for. */
-  _registerQuery(query) {
-    if (this._queries.has(query)) {
-      return this._queries.get(query);
+  _registerQuery(query2) {
+    if (this._queries.has(query2)) {
+      return this._queries.get(query2);
     }
-    const mql = this._mediaMatcher.matchMedia(query);
+    const mql = this._mediaMatcher.matchMedia(query2);
     const queryObservable = new Observable((observer) => {
       const handler = (e) => this._zone.run(() => observer.next(e));
       mql.addListener(handler);
@@ -14292,14 +14300,14 @@ var BreakpointObserver = class _BreakpointObserver {
     }).pipe(startWith(mql), map(({
       matches
     }) => ({
-      query,
+      query: query2,
       matches
     })), takeUntil(this._destroySubject));
     const output2 = {
       observable: queryObservable,
       mql
     };
-    this._queries.set(query, output2);
+    this._queries.set(query2, output2);
     return output2;
   }
   static \u0275fac = function BreakpointObserver_Factory(__ngFactoryType__) {
@@ -14320,7 +14328,7 @@ var BreakpointObserver = class _BreakpointObserver {
   }], () => [], null);
 })();
 function splitQueries(queries) {
-  return queries.map((query) => query.split(",")).reduce((a1, a2) => a1.concat(a2)).map((query) => query.trim());
+  return queries.map((query2) => query2.split(",")).reduce((a1, a2) => a1.concat(a2)).map((query2) => query2.trim());
 }
 
 // node_modules/@angular/cdk/fesm2022/a11y.mjs
@@ -14925,6 +14933,17 @@ var ListKeyManager = class {
         this._activeItemIndex = newIndex;
         this._typeahead?.setCurrentSelectedItemIndex(newIndex);
       }
+    }
+  }
+};
+var ActiveDescendantKeyManager = class extends ListKeyManager {
+  setActiveItem(index) {
+    if (this.activeItem) {
+      this.activeItem.setInactiveStyles();
+    }
+    super.setActiveItem(index);
+    if (this.activeItem) {
+      this.activeItem.setActiveStyles();
     }
   }
 };
@@ -18798,6 +18817,29 @@ var MatOption = class _MatOption {
     }]
   });
 })();
+function _countGroupLabelsBeforeOption(optionIndex, options, optionGroups) {
+  if (optionGroups.length) {
+    let optionsArray = options.toArray();
+    let groups = optionGroups.toArray();
+    let groupCounter = 0;
+    for (let i = 0; i < optionIndex + 1; i++) {
+      if (optionsArray[i].group && optionsArray[i].group === groups[groupCounter]) {
+        groupCounter++;
+      }
+    }
+    return groupCounter;
+  }
+  return 0;
+}
+function _getOptionScrollPosition(optionOffset, optionHeight, currentScrollPosition, panelHeight) {
+  if (optionOffset < currentScrollPosition) {
+    return optionOffset;
+  }
+  if (optionOffset + optionHeight > currentScrollPosition + panelHeight) {
+    return Math.max(0, optionOffset - panelHeight + optionHeight);
+  }
+  return currentScrollPosition;
+}
 var MatOptionModule = class _MatOptionModule {
   static \u0275fac = function MatOptionModule_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _MatOptionModule)();
@@ -35786,7 +35828,13 @@ var NgxEditorJs2CodemirrorComponent = class _NgxEditorJs2CodemirrorComponent {
     mode: "text/typescript",
     extraKeys: {
       "Ctrl-Space": "autocomplete"
-    }
+    },
+    styleActiveLine: true,
+    // Highlight active line
+    matchBrackets: true,
+    indentUnit: 2,
+    tabSize: 2,
+    cursorScrollMargin: 5
   });
   savedAction = signal("display-large");
   actionCallbackBind = this.actionCallback.bind(this);
@@ -35829,7 +35877,7 @@ var NgxEditorJs2CodemirrorComponent = class _NgxEditorJs2CodemirrorComponent {
       }
     },
     dependencies: [CommonModule, ReactiveFormsModule, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, ControlAccessorDirective, AutofocusDirective, ToolbarFabDirective, CodemirrorModule, CodemirrorComponent],
-    styles: ["[_nghost-%COMP%]{display:block;position:relative}[_nghost-%COMP%]   .codemirror-container-overlay[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;position:absolute}"]
+    styles: ["[_nghost-%COMP%]{display:block;position:relative;margin:1.5rem 0}[_nghost-%COMP%]   .codemirror-container-overlay[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;position:absolute}[_nghost-%COMP%]     .CodeMirror{font-family:Cascadia Code,Fira Code,Menlo,Monaco,Courier New,monospace;font-size:16px;font-weight:400;line-height:32px;letter-spacing:.5px;height:100%}"]
   });
 };
 (() => {
@@ -35844,10 +35892,7 @@ var NgxEditorJs2CodemirrorComponent = class _NgxEditorJs2CodemirrorComponent {
       imports: [CommonModule, ReactiveFormsModule, ControlAccessorDirective, AutofocusDirective, ToolbarFabDirective, CodemirrorModule],
       template: `
     <ng-container [formGroup]="formGroup()">
-      <span
-        controlAccessor
-        [autofocus]="autofocus()"
-      ></span>
+      <span controlAccessor [autofocus]="autofocus()"></span>
       <ngx-codemirror
         toolbarFab
         [actionCallback]="actionCallbackBind"
@@ -35858,7 +35903,7 @@ var NgxEditorJs2CodemirrorComponent = class _NgxEditorJs2CodemirrorComponent {
       ></ngx-codemirror>
     </ng-container>
   `,
-      styles: [":host{display:block;position:relative}:host .codemirror-container-overlay{display:flex;height:100%;width:100%;position:absolute}\n"]
+      styles: [":host{display:block;position:relative;margin:1.5rem 0}:host .codemirror-container-overlay{display:flex;height:100%;width:100%;position:absolute}:host ::ng-deep .CodeMirror{font-family:Cascadia Code,Fira Code,Menlo,Monaco,Courier New,monospace;font-size:16px;font-weight:400;line-height:32px;letter-spacing:.5px;height:100%}\n"]
     }]
   }], null, null);
 })();
@@ -36887,7 +36932,7 @@ function ImageConfigComponent_Conditional_1_Template(rf, ctx) {
       const ctx_r2 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r2.closeConfig());
     });
-    \u0275\u0275text(17, "Cancel");
+    \u0275\u0275text(17, " Cancel ");
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
@@ -36903,36 +36948,33 @@ function ImageConfigComponent_Conditional_1_Template(rf, ctx) {
     \u0275\u0275property("disabled", vm_r2.imageConfigForm.invalid);
   }
 }
-function NgxEditorJs2ImageComponent_Conditional_1_Template(rf, ctx) {
+function NgxEditorJs2ImageComponent_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
-    \u0275\u0275element(0, "span", 2);
-    \u0275\u0275elementStart(1, "div", 3);
-    \u0275\u0275element(2, "img", 4);
-    \u0275\u0275elementStart(3, "button", 5);
-    \u0275\u0275listener("click", function NgxEditorJs2ImageComponent_Conditional_1_Template_button_click_3_listener() {
+    \u0275\u0275elementStart(0, "div", 2);
+    \u0275\u0275element(1, "img", 4);
+    \u0275\u0275elementStart(2, "button", 5);
+    \u0275\u0275listener("click", function NgxEditorJs2ImageComponent_Conditional_2_Template_button_click_2_listener() {
       \u0275\u0275restoreView(_r1);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.openEditUrlOverlay());
     });
-    \u0275\u0275elementStart(4, "mat-icon");
-    \u0275\u0275text(5, "edit");
+    \u0275\u0275elementStart(3, "mat-icon");
+    \u0275\u0275text(4, "edit");
     \u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext();
-    \u0275\u0275property("actionCallback", ctx_r1.actionCallbackBind)("autofocus", ctx_r1.autofocus())("blockOptionActions", ctx_r1.blockOptionActions())("formControlName", ctx_r1.formControlName())("componentContextPositionIndex", ctx_r1.sortIndex());
-    \u0275\u0275advance();
     \u0275\u0275property("ngClass", ctx_r1.savedAction());
     \u0275\u0275advance();
     \u0275\u0275property("src", ctx_r1.value().url, \u0275\u0275sanitizeUrl)("title", ctx_r1.value().title);
   }
 }
-function NgxEditorJs2ImageComponent_Conditional_2_Template(rf, ctx) {
+function NgxEditorJs2ImageComponent_Conditional_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r3 = \u0275\u0275getCurrentView();
     \u0275\u0275elementStart(0, "image-config", 6);
-    \u0275\u0275listener("imageValue", function NgxEditorJs2ImageComponent_Conditional_2_Template_image_config_imageValue_0_listener($event) {
+    \u0275\u0275listener("imageValue", function NgxEditorJs2ImageComponent_Conditional_3_Template_image_config_imageValue_0_listener($event) {
       \u0275\u0275restoreView(_r3);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.updateImage($event));
@@ -36972,7 +37014,10 @@ var ImageConfigComponent = class _ImageConfigComponent {
     this.imageValue.emit(imageConfigForm.value);
   }
   closeConfig() {
-    this.imageValue.emit(this.value());
+    this.imageValue.emit(this.value().url ? this.value() : {
+      url: "",
+      title: ""
+    });
   }
   // ! Quick and Drity way to set error messages
   // ! Breaks all my believes in "clean code"
@@ -37003,7 +37048,7 @@ var ImageConfigComponent = class _ImageConfigComponent {
     },
     decls: 3,
     vars: 3,
-    consts: [[1, "image-block-modal"], [3, "formGroup"], ["mat-dialog-title", ""], ["matInput", "", "type", "text", "formControlName", "title"], ["matInput", "", "type", "text", "formControlName", "url"], [1, "action-group"], ["mat-raised-button", "", 3, "click", "disabled"], ["mat-raised-button", "", 3, "click"]],
+    consts: [[1, "image-block-modal"], [3, "formGroup"], ["mat-dialog-title", ""], ["matInput", "", "type", "text", "formControlName", "title"], ["matInput", "", "type", "text", "formControlName", "url"], [1, "action-group"], ["type", "button", "mat-raised-button", "", 3, "click", "disabled"], ["type", "button", "mat-raised-button", "", 3, "click"]],
     template: function ImageConfigComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementStart(0, "div", 0);
@@ -37048,13 +37093,16 @@ var ImageConfigComponent = class _ImageConfigComponent {
         </mat-form-field>
         <div class="action-group">
           <button
+            type="button"
             mat-raised-button
             (click)="updateImage(vm.imageConfigForm)"
             [disabled]="vm.imageConfigForm.invalid"
           >
             Save
           </button>
-          <button mat-raised-button (click)="closeConfig()">Cancel</button>
+          <button type="button" mat-raised-button (click)="closeConfig()">
+            Cancel
+          </button>
         </div>
       </form>
       }
@@ -37125,23 +37173,26 @@ var NgxEditorJs2ImageComponent = class _NgxEditorJs2ImageComponent {
       blockOptionActions: [1, "blockOptionActions"]
     },
     features: [\u0275\u0275HostDirectivesFeature([CdkDrag])],
-    decls: 3,
-    vars: 2,
-    consts: [[3, "formGroup"], [3, "value"], ["controlAccessor", "", "toolbarFab", "", 1, "image-container-overlay", 3, "actionCallback", "autofocus", "blockOptionActions", "formControlName", "componentContextPositionIndex"], [1, "image-container", 3, "ngClass"], ["onerror", "this.onerror=null;this.src='https://dummyimage.com/640x360/000/AAF'", 1, "image-block", 3, "src", "title"], ["mat-fab", "", 1, "image-block-button", "mat-elevation-z2", 3, "click"], [3, "imageValue", "value"]],
+    decls: 4,
+    vars: 7,
+    consts: [[3, "formGroup"], ["controlAccessor", "", "toolbarFab", "", 1, "image-container-overlay", 3, "actionCallback", "autofocus", "blockOptionActions", "formControlName", "componentContextPositionIndex"], [1, "image-container", 3, "ngClass"], [3, "value"], ["onerror", "this.onerror=null;this.src='https://dummyimage.com/600x400/000/fff'", 1, "image-block", 3, "src", "title"], ["mat-fab", "", 1, "image-block-button", 3, "click"], [3, "imageValue", "value"]],
     template: function NgxEditorJs2ImageComponent_Template(rf, ctx) {
       if (rf & 1) {
         \u0275\u0275elementContainerStart(0, 0);
-        \u0275\u0275template(1, NgxEditorJs2ImageComponent_Conditional_1_Template, 6, 8)(2, NgxEditorJs2ImageComponent_Conditional_2_Template, 1, 1, "image-config", 1);
+        \u0275\u0275element(1, "span", 1);
+        \u0275\u0275template(2, NgxEditorJs2ImageComponent_Conditional_2_Template, 5, 3, "div", 2)(3, NgxEditorJs2ImageComponent_Conditional_3_Template, 1, 1, "image-config", 3);
         \u0275\u0275elementContainerEnd();
       }
       if (rf & 2) {
         \u0275\u0275property("formGroup", ctx.formGroup());
         \u0275\u0275advance();
-        \u0275\u0275conditional(!ctx.openOverlay() ? 1 : 2);
+        \u0275\u0275property("actionCallback", ctx.actionCallbackBind)("autofocus", ctx.autofocus())("blockOptionActions", ctx.blockOptionActions())("formControlName", ctx.formControlName())("componentContextPositionIndex", ctx.sortIndex());
+        \u0275\u0275advance();
+        \u0275\u0275conditional(!ctx.openOverlay() ? 2 : 3);
       }
     },
     dependencies: [ReactiveFormsModule, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, ControlAccessorDirective, AutofocusDirective, ToolbarFabDirective, ImageConfigComponent, MatFabButton, MatIcon, NgClass],
-    styles: ["[_nghost-%COMP%]{position:relative;display:flex;flex-direction:column;margin-bottom:22px}[_nghost-%COMP%]   .flex-start[_ngcontent-%COMP%]{justify-content:flex-start}[_nghost-%COMP%]   .flex-end[_ngcontent-%COMP%]{justify-content:flex-end}[_nghost-%COMP%]   .center[_ngcontent-%COMP%]{justify-content:center}[_nghost-%COMP%]   .stretch[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{width:100%}[_nghost-%COMP%]   .image-container-overlay[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;position:absolute}[_nghost-%COMP%]   :is(.image-container-overlay[_ngcontent-%COMP%]:hover ~ .image-container[_ngcontent-%COMP%]   .image-block-button[_ngcontent-%COMP%], .image-block-button[_ngcontent-%COMP%]:hover){display:block}[_nghost-%COMP%]   .image-container[_ngcontent-%COMP%]{display:flex}[_nghost-%COMP%]   .image-container[_ngcontent-%COMP%]   .image-block[_ngcontent-%COMP%]{min-width:0}[_nghost-%COMP%]   .image-container[_ngcontent-%COMP%]   .image-block-button[_ngcontent-%COMP%]{position:absolute;top:6px;left:6px;display:none}"]
+    styles: ["[_nghost-%COMP%]{position:relative;display:flex;flex-direction:column;margin:1.5rem 0}[_nghost-%COMP%]   .flex-start[_ngcontent-%COMP%]{justify-content:flex-start}[_nghost-%COMP%]   .flex-end[_ngcontent-%COMP%]{justify-content:flex-end}[_nghost-%COMP%]   .center[_ngcontent-%COMP%]{justify-content:center}[_nghost-%COMP%]   .stretch[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{width:100%}[_nghost-%COMP%]   .image-container-overlay[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;position:absolute}[_nghost-%COMP%]   :is(.image-container-overlay[_ngcontent-%COMP%]:hover ~ .image-container[_ngcontent-%COMP%]   .image-block-button[_ngcontent-%COMP%], .image-block-button[_ngcontent-%COMP%]:hover){display:block}[_nghost-%COMP%]   .image-container[_ngcontent-%COMP%]{display:flex}[_nghost-%COMP%]   .image-container[_ngcontent-%COMP%]   .image-block[_ngcontent-%COMP%]{min-width:0}[_nghost-%COMP%]   .image-container[_ngcontent-%COMP%]   .image-block-button[_ngcontent-%COMP%]{position:absolute;top:6px;left:6px;display:none}"]
   });
 };
 (() => {
@@ -37156,7 +37207,6 @@ var NgxEditorJs2ImageComponent = class _NgxEditorJs2ImageComponent {
       imports: [ReactiveFormsModule, ControlAccessorDirective, AutofocusDirective, ToolbarFabDirective, ImageConfigComponent, MatFabButton, MatIcon, NgClass],
       template: `
     <ng-container [formGroup]="formGroup()">
-      @if (!openOverlay()) {
       <span
         controlAccessor
         toolbarFab
@@ -37167,16 +37217,17 @@ var NgxEditorJs2ImageComponent = class _NgxEditorJs2ImageComponent {
         [formControlName]="formControlName()"
         [componentContextPositionIndex]="sortIndex()"
       ></span>
+      @if (!openOverlay()) {
       <div class="image-container" [ngClass]="savedAction()">
         <img
           class="image-block"
           [src]="value().url"
           [title]="value().title"
-          onerror="this.onerror=null;this.src='https://dummyimage.com/640x360/000/AAF'"
+          onerror="this.onerror=null;this.src='https://dummyimage.com/600x400/000/fff'"
         />
         <button
           mat-fab
-          class="image-block-button mat-elevation-z2"
+          class="image-block-button"
           (click)="openEditUrlOverlay()"
         >
           <mat-icon>edit</mat-icon>
@@ -37190,7 +37241,5125 @@ var NgxEditorJs2ImageComponent = class _NgxEditorJs2ImageComponent {
       }
     </ng-container>
   `,
-      styles: [":host{position:relative;display:flex;flex-direction:column;margin-bottom:22px}:host .flex-start{justify-content:flex-start}:host .flex-end{justify-content:flex-end}:host .center{justify-content:center}:host .stretch img{width:100%}:host .image-container-overlay{display:flex;height:100%;width:100%;position:absolute}:host :is(.image-container-overlay:hover~.image-container .image-block-button,.image-block-button:hover){display:block}:host .image-container{display:flex}:host .image-container .image-block{min-width:0}:host .image-container .image-block-button{position:absolute;top:6px;left:6px;display:none}\n"]
+      styles: [":host{position:relative;display:flex;flex-direction:column;margin:1.5rem 0}:host .flex-start{justify-content:flex-start}:host .flex-end{justify-content:flex-end}:host .center{justify-content:center}:host .stretch img{width:100%}:host .image-container-overlay{display:flex;height:100%;width:100%;position:absolute}:host :is(.image-container-overlay:hover~.image-container .image-block-button,.image-block-button:hover){display:block}:host .image-container{display:flex}:host .image-container .image-block{min-width:0}:host .image-container .image-block-button{position:absolute;top:6px;left:6px;display:none}\n"]
+    }]
+  }], null, null);
+})();
+
+// node_modules/@angular/cdk/fesm2022/stepper.mjs
+var _c09 = ["*"];
+function CdkStep_ng_template_0_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275projection(0);
+  }
+}
+var CdkStepHeader = class _CdkStepHeader {
+  _elementRef = inject(ElementRef);
+  constructor() {
+  }
+  /** Focuses the step header. */
+  focus() {
+    this._elementRef.nativeElement.focus();
+  }
+  static \u0275fac = function CdkStepHeader_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _CdkStepHeader)();
+  };
+  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
+    type: _CdkStepHeader,
+    selectors: [["", "cdkStepHeader", ""]],
+    hostAttrs: ["role", "tab"]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkStepHeader, [{
+    type: Directive,
+    args: [{
+      selector: "[cdkStepHeader]",
+      host: {
+        "role": "tab"
+      }
+    }]
+  }], () => [], null);
+})();
+var CdkStepLabel = class _CdkStepLabel {
+  template = inject(TemplateRef);
+  constructor() {
+  }
+  static \u0275fac = function CdkStepLabel_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _CdkStepLabel)();
+  };
+  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
+    type: _CdkStepLabel,
+    selectors: [["", "cdkStepLabel", ""]]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkStepLabel, [{
+    type: Directive,
+    args: [{
+      selector: "[cdkStepLabel]"
+    }]
+  }], () => [], null);
+})();
+var STEP_STATE = {
+  NUMBER: "number",
+  EDIT: "edit",
+  DONE: "done",
+  ERROR: "error"
+};
+var STEPPER_GLOBAL_OPTIONS = new InjectionToken("STEPPER_GLOBAL_OPTIONS");
+var CdkStep = class _CdkStep {
+  _stepperOptions;
+  _stepper = inject(CdkStepper);
+  _displayDefaultIndicatorType;
+  /** Template for step label if it exists. */
+  stepLabel;
+  /** Forms that have been projected into the step. */
+  _childForms;
+  /** Template for step content. */
+  content;
+  /** The top level abstract control of the step. */
+  stepControl;
+  /** Whether user has attempted to move away from the step. */
+  interacted = false;
+  /** Emits when the user has attempted to move away from the step. */
+  interactedStream = new EventEmitter();
+  /** Plain text label of the step. */
+  label;
+  /** Error message to display when there's an error. */
+  errorMessage;
+  /** Aria label for the tab. */
+  ariaLabel;
+  /**
+   * Reference to the element that the tab is labelled by.
+   * Will be cleared if `aria-label` is set at the same time.
+   */
+  ariaLabelledby;
+  /** State of the step. */
+  state;
+  /** Whether the user can return to this step once it has been marked as completed. */
+  editable = true;
+  /** Whether the completion of step is optional. */
+  optional = false;
+  /** Whether step is marked as completed. */
+  get completed() {
+    return this._completedOverride == null ? this._getDefaultCompleted() : this._completedOverride;
+  }
+  set completed(value) {
+    this._completedOverride = value;
+  }
+  _completedOverride = null;
+  _getDefaultCompleted() {
+    return this.stepControl ? this.stepControl.valid && this.interacted : this.interacted;
+  }
+  /** Whether step has an error. */
+  get hasError() {
+    return this._customError == null ? this._getDefaultError() : this._customError;
+  }
+  set hasError(value) {
+    this._customError = value;
+  }
+  _customError = null;
+  _getDefaultError() {
+    return this.stepControl && this.stepControl.invalid && this.interacted;
+  }
+  constructor() {
+    const stepperOptions = inject(STEPPER_GLOBAL_OPTIONS, {
+      optional: true
+    });
+    this._stepperOptions = stepperOptions ? stepperOptions : {};
+    this._displayDefaultIndicatorType = this._stepperOptions.displayDefaultIndicatorType !== false;
+  }
+  /** Selects this step component. */
+  select() {
+    this._stepper.selected = this;
+  }
+  /** Resets the step to its initial state. Note that this includes resetting form data. */
+  reset() {
+    this.interacted = false;
+    if (this._completedOverride != null) {
+      this._completedOverride = false;
+    }
+    if (this._customError != null) {
+      this._customError = false;
+    }
+    if (this.stepControl) {
+      this._childForms?.forEach((form) => form.resetForm?.());
+      this.stepControl.reset();
+    }
+  }
+  ngOnChanges() {
+    this._stepper._stateChanged();
+  }
+  _markAsInteracted() {
+    if (!this.interacted) {
+      this.interacted = true;
+      this.interactedStream.emit(this);
+    }
+  }
+  /** Determines whether the error state can be shown. */
+  _showError() {
+    return this._stepperOptions.showError ?? this._customError != null;
+  }
+  static \u0275fac = function CdkStep_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _CdkStep)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _CdkStep,
+    selectors: [["cdk-step"]],
+    contentQueries: function CdkStep_ContentQueries(rf, ctx, dirIndex) {
+      if (rf & 1) {
+        \u0275\u0275contentQuery(dirIndex, CdkStepLabel, 5);
+        \u0275\u0275contentQuery(
+          dirIndex,
+          // Note: we look for `ControlContainer` here, because both `NgForm` and `FormGroupDirective`
+          // provides themselves as such, but we don't want to have a concrete reference to both of
+          // the directives. The type is marked as `Partial` in case we run into a class that provides
+          // itself as `ControlContainer` but doesn't have the same interface as the directives.
+          ControlContainer,
+          5
+        );
+      }
+      if (rf & 2) {
+        let _t;
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.stepLabel = _t.first);
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._childForms = _t);
+      }
+    },
+    viewQuery: function CdkStep_Query(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275viewQuery(TemplateRef, 7);
+      }
+      if (rf & 2) {
+        let _t;
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.content = _t.first);
+      }
+    },
+    inputs: {
+      stepControl: "stepControl",
+      label: "label",
+      errorMessage: "errorMessage",
+      ariaLabel: [0, "aria-label", "ariaLabel"],
+      ariaLabelledby: [0, "aria-labelledby", "ariaLabelledby"],
+      state: "state",
+      editable: [2, "editable", "editable", booleanAttribute],
+      optional: [2, "optional", "optional", booleanAttribute],
+      completed: [2, "completed", "completed", booleanAttribute],
+      hasError: [2, "hasError", "hasError", booleanAttribute]
+    },
+    outputs: {
+      interactedStream: "interacted"
+    },
+    exportAs: ["cdkStep"],
+    features: [\u0275\u0275InputTransformsFeature, \u0275\u0275NgOnChangesFeature],
+    ngContentSelectors: _c09,
+    decls: 1,
+    vars: 0,
+    template: function CdkStep_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275projectionDef();
+        \u0275\u0275template(0, CdkStep_ng_template_0_Template, 1, 0, "ng-template");
+      }
+    },
+    encapsulation: 2,
+    changeDetection: 0
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkStep, [{
+    type: Component,
+    args: [{
+      selector: "cdk-step",
+      exportAs: "cdkStep",
+      template: "<ng-template><ng-content/></ng-template>",
+      encapsulation: ViewEncapsulation.None,
+      changeDetection: ChangeDetectionStrategy.OnPush
+    }]
+  }], () => [], {
+    stepLabel: [{
+      type: ContentChild,
+      args: [CdkStepLabel]
+    }],
+    _childForms: [{
+      type: ContentChildren,
+      args: [
+        // Note: we look for `ControlContainer` here, because both `NgForm` and `FormGroupDirective`
+        // provides themselves as such, but we don't want to have a concrete reference to both of
+        // the directives. The type is marked as `Partial` in case we run into a class that provides
+        // itself as `ControlContainer` but doesn't have the same interface as the directives.
+        ControlContainer,
+        {
+          descendants: true
+        }
+      ]
+    }],
+    content: [{
+      type: ViewChild,
+      args: [TemplateRef, {
+        static: true
+      }]
+    }],
+    stepControl: [{
+      type: Input
+    }],
+    interactedStream: [{
+      type: Output,
+      args: ["interacted"]
+    }],
+    label: [{
+      type: Input
+    }],
+    errorMessage: [{
+      type: Input
+    }],
+    ariaLabel: [{
+      type: Input,
+      args: ["aria-label"]
+    }],
+    ariaLabelledby: [{
+      type: Input,
+      args: ["aria-labelledby"]
+    }],
+    state: [{
+      type: Input
+    }],
+    editable: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    optional: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    completed: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    hasError: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }]
+  });
+})();
+var CdkStepper = class _CdkStepper {
+  _dir = inject(Directionality, {
+    optional: true
+  });
+  _changeDetectorRef = inject(ChangeDetectorRef);
+  _elementRef = inject(ElementRef);
+  /** Emits when the component is destroyed. */
+  _destroyed = new Subject();
+  /** Used for managing keyboard focus. */
+  _keyManager;
+  /** Full list of steps inside the stepper, including inside nested steppers. */
+  _steps;
+  /** Steps that belong to the current stepper, excluding ones from nested steppers. */
+  steps = new QueryList();
+  /** The list of step headers of the steps in the stepper. */
+  _stepHeader;
+  /** List of step headers sorted based on their DOM order. */
+  _sortedHeaders = new QueryList();
+  /** Whether the validity of previous steps should be checked or not. */
+  linear = false;
+  /** The index of the selected step. */
+  get selectedIndex() {
+    return this._selectedIndex;
+  }
+  set selectedIndex(index) {
+    if (this.steps && this._steps) {
+      if (!this._isValidIndex(index) && (typeof ngDevMode === "undefined" || ngDevMode)) {
+        throw Error("cdkStepper: Cannot assign out-of-bounds value to `selectedIndex`.");
+      }
+      this.selected?._markAsInteracted();
+      if (this._selectedIndex !== index && !this._anyControlsInvalidOrPending(index) && (index >= this._selectedIndex || this.steps.toArray()[index].editable)) {
+        this._updateSelectedItemIndex(index);
+      }
+    } else {
+      this._selectedIndex = index;
+    }
+  }
+  _selectedIndex = 0;
+  /** The step that is selected. */
+  get selected() {
+    return this.steps ? this.steps.toArray()[this.selectedIndex] : void 0;
+  }
+  set selected(step) {
+    this.selectedIndex = step && this.steps ? this.steps.toArray().indexOf(step) : -1;
+  }
+  /** Event emitted when the selected step has changed. */
+  selectionChange = new EventEmitter();
+  /** Output to support two-way binding on `[(selectedIndex)]` */
+  selectedIndexChange = new EventEmitter();
+  /** Used to track unique ID for each stepper component. */
+  _groupId = inject(_IdGenerator).getId("cdk-stepper-");
+  /** Orientation of the stepper. */
+  get orientation() {
+    return this._orientation;
+  }
+  set orientation(value) {
+    this._orientation = value;
+    if (this._keyManager) {
+      this._keyManager.withVerticalOrientation(value === "vertical");
+    }
+  }
+  _orientation = "horizontal";
+  constructor() {
+  }
+  ngAfterContentInit() {
+    this._steps.changes.pipe(startWith(this._steps), takeUntil(this._destroyed)).subscribe((steps) => {
+      this.steps.reset(steps.filter((step) => step._stepper === this));
+      this.steps.notifyOnChanges();
+    });
+  }
+  ngAfterViewInit() {
+    this._stepHeader.changes.pipe(startWith(this._stepHeader), takeUntil(this._destroyed)).subscribe((headers) => {
+      this._sortedHeaders.reset(headers.toArray().sort((a, b) => {
+        const documentPosition = a._elementRef.nativeElement.compareDocumentPosition(b._elementRef.nativeElement);
+        return documentPosition & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1;
+      }));
+      this._sortedHeaders.notifyOnChanges();
+    });
+    this._keyManager = new FocusKeyManager(this._sortedHeaders).withWrap().withHomeAndEnd().withVerticalOrientation(this._orientation === "vertical");
+    (this._dir ? this._dir.change : of()).pipe(startWith(this._layoutDirection()), takeUntil(this._destroyed)).subscribe((direction) => this._keyManager.withHorizontalOrientation(direction));
+    this._keyManager.updateActiveItem(this._selectedIndex);
+    this.steps.changes.subscribe(() => {
+      if (!this.selected) {
+        this._selectedIndex = Math.max(this._selectedIndex - 1, 0);
+      }
+    });
+    if (!this._isValidIndex(this._selectedIndex)) {
+      this._selectedIndex = 0;
+    }
+  }
+  ngOnDestroy() {
+    this._keyManager?.destroy();
+    this.steps.destroy();
+    this._sortedHeaders.destroy();
+    this._destroyed.next();
+    this._destroyed.complete();
+  }
+  /** Selects and focuses the next step in list. */
+  next() {
+    this.selectedIndex = Math.min(this._selectedIndex + 1, this.steps.length - 1);
+  }
+  /** Selects and focuses the previous step in list. */
+  previous() {
+    this.selectedIndex = Math.max(this._selectedIndex - 1, 0);
+  }
+  /** Resets the stepper to its initial state. Note that this includes clearing form data. */
+  reset() {
+    this._updateSelectedItemIndex(0);
+    this.steps.forEach((step) => step.reset());
+    this._stateChanged();
+  }
+  /** Returns a unique id for each step label element. */
+  _getStepLabelId(i) {
+    return `${this._groupId}-label-${i}`;
+  }
+  /** Returns unique id for each step content element. */
+  _getStepContentId(i) {
+    return `${this._groupId}-content-${i}`;
+  }
+  /** Marks the component to be change detected. */
+  _stateChanged() {
+    this._changeDetectorRef.markForCheck();
+  }
+  /** Returns position state of the step with the given index. */
+  _getAnimationDirection(index) {
+    const position = index - this._selectedIndex;
+    if (position < 0) {
+      return this._layoutDirection() === "rtl" ? "next" : "previous";
+    } else if (position > 0) {
+      return this._layoutDirection() === "rtl" ? "previous" : "next";
+    }
+    return "current";
+  }
+  /** Returns the type of icon to be displayed. */
+  _getIndicatorType(index, state2 = STEP_STATE.NUMBER) {
+    const step = this.steps.toArray()[index];
+    const isCurrentStep = this._isCurrentStep(index);
+    return step._displayDefaultIndicatorType ? this._getDefaultIndicatorLogic(step, isCurrentStep) : this._getGuidelineLogic(step, isCurrentStep, state2);
+  }
+  _getDefaultIndicatorLogic(step, isCurrentStep) {
+    if (step._showError() && step.hasError && !isCurrentStep) {
+      return STEP_STATE.ERROR;
+    } else if (!step.completed || isCurrentStep) {
+      return STEP_STATE.NUMBER;
+    } else {
+      return step.editable ? STEP_STATE.EDIT : STEP_STATE.DONE;
+    }
+  }
+  _getGuidelineLogic(step, isCurrentStep, state2 = STEP_STATE.NUMBER) {
+    if (step._showError() && step.hasError && !isCurrentStep) {
+      return STEP_STATE.ERROR;
+    } else if (step.completed && !isCurrentStep) {
+      return STEP_STATE.DONE;
+    } else if (step.completed && isCurrentStep) {
+      return state2;
+    } else if (step.editable && isCurrentStep) {
+      return STEP_STATE.EDIT;
+    } else {
+      return state2;
+    }
+  }
+  _isCurrentStep(index) {
+    return this._selectedIndex === index;
+  }
+  /** Returns the index of the currently-focused step header. */
+  _getFocusIndex() {
+    return this._keyManager ? this._keyManager.activeItemIndex : this._selectedIndex;
+  }
+  _updateSelectedItemIndex(newIndex) {
+    const stepsArray = this.steps.toArray();
+    this.selectionChange.emit({
+      selectedIndex: newIndex,
+      previouslySelectedIndex: this._selectedIndex,
+      selectedStep: stepsArray[newIndex],
+      previouslySelectedStep: stepsArray[this._selectedIndex]
+    });
+    this._containsFocus() ? this._keyManager.setActiveItem(newIndex) : this._keyManager.updateActiveItem(newIndex);
+    this._selectedIndex = newIndex;
+    this.selectedIndexChange.emit(this._selectedIndex);
+    this._stateChanged();
+  }
+  _onKeydown(event) {
+    const hasModifier = hasModifierKey(event);
+    const keyCode = event.keyCode;
+    const manager = this._keyManager;
+    if (manager.activeItemIndex != null && !hasModifier && (keyCode === SPACE || keyCode === ENTER)) {
+      this.selectedIndex = manager.activeItemIndex;
+      event.preventDefault();
+    } else {
+      manager.setFocusOrigin("keyboard").onKeydown(event);
+    }
+  }
+  _anyControlsInvalidOrPending(index) {
+    if (this.linear && index >= 0) {
+      return this.steps.toArray().slice(0, index).some((step) => {
+        const control = step.stepControl;
+        const isIncomplete = control ? control.invalid || control.pending || !step.interacted : !step.completed;
+        return isIncomplete && !step.optional && !step._completedOverride;
+      });
+    }
+    return false;
+  }
+  _layoutDirection() {
+    return this._dir && this._dir.value === "rtl" ? "rtl" : "ltr";
+  }
+  /** Checks whether the stepper contains the focused element. */
+  _containsFocus() {
+    const stepperElement = this._elementRef.nativeElement;
+    const focusedElement = _getFocusedElementPierceShadowDom();
+    return stepperElement === focusedElement || stepperElement.contains(focusedElement);
+  }
+  /** Checks whether the passed-in index is a valid step index. */
+  _isValidIndex(index) {
+    return index > -1 && (!this.steps || index < this.steps.length);
+  }
+  static \u0275fac = function CdkStepper_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _CdkStepper)();
+  };
+  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
+    type: _CdkStepper,
+    selectors: [["", "cdkStepper", ""]],
+    contentQueries: function CdkStepper_ContentQueries(rf, ctx, dirIndex) {
+      if (rf & 1) {
+        \u0275\u0275contentQuery(dirIndex, CdkStep, 5);
+        \u0275\u0275contentQuery(dirIndex, CdkStepHeader, 5);
+      }
+      if (rf & 2) {
+        let _t;
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._steps = _t);
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._stepHeader = _t);
+      }
+    },
+    inputs: {
+      linear: [2, "linear", "linear", booleanAttribute],
+      selectedIndex: [2, "selectedIndex", "selectedIndex", numberAttribute],
+      selected: "selected",
+      orientation: "orientation"
+    },
+    outputs: {
+      selectionChange: "selectionChange",
+      selectedIndexChange: "selectedIndexChange"
+    },
+    exportAs: ["cdkStepper"],
+    features: [\u0275\u0275InputTransformsFeature]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkStepper, [{
+    type: Directive,
+    args: [{
+      selector: "[cdkStepper]",
+      exportAs: "cdkStepper"
+    }]
+  }], () => [], {
+    _steps: [{
+      type: ContentChildren,
+      args: [CdkStep, {
+        descendants: true
+      }]
+    }],
+    _stepHeader: [{
+      type: ContentChildren,
+      args: [CdkStepHeader, {
+        descendants: true
+      }]
+    }],
+    linear: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    selectedIndex: [{
+      type: Input,
+      args: [{
+        transform: numberAttribute
+      }]
+    }],
+    selected: [{
+      type: Input
+    }],
+    selectionChange: [{
+      type: Output
+    }],
+    selectedIndexChange: [{
+      type: Output
+    }],
+    orientation: [{
+      type: Input
+    }]
+  });
+})();
+var CdkStepperNext = class _CdkStepperNext {
+  _stepper = inject(CdkStepper);
+  /** Type of the next button. Defaults to "submit" if not specified. */
+  type = "submit";
+  constructor() {
+  }
+  static \u0275fac = function CdkStepperNext_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _CdkStepperNext)();
+  };
+  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
+    type: _CdkStepperNext,
+    selectors: [["button", "cdkStepperNext", ""]],
+    hostVars: 1,
+    hostBindings: function CdkStepperNext_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275listener("click", function CdkStepperNext_click_HostBindingHandler() {
+          return ctx._stepper.next();
+        });
+      }
+      if (rf & 2) {
+        \u0275\u0275hostProperty("type", ctx.type);
+      }
+    },
+    inputs: {
+      type: "type"
+    }
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkStepperNext, [{
+    type: Directive,
+    args: [{
+      selector: "button[cdkStepperNext]",
+      host: {
+        "[type]": "type",
+        "(click)": "_stepper.next()"
+      }
+    }]
+  }], () => [], {
+    type: [{
+      type: Input
+    }]
+  });
+})();
+var CdkStepperPrevious = class _CdkStepperPrevious {
+  _stepper = inject(CdkStepper);
+  /** Type of the previous button. Defaults to "button" if not specified. */
+  type = "button";
+  constructor() {
+  }
+  static \u0275fac = function CdkStepperPrevious_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _CdkStepperPrevious)();
+  };
+  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
+    type: _CdkStepperPrevious,
+    selectors: [["button", "cdkStepperPrevious", ""]],
+    hostVars: 1,
+    hostBindings: function CdkStepperPrevious_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275listener("click", function CdkStepperPrevious_click_HostBindingHandler() {
+          return ctx._stepper.previous();
+        });
+      }
+      if (rf & 2) {
+        \u0275\u0275hostProperty("type", ctx.type);
+      }
+    },
+    inputs: {
+      type: "type"
+    }
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkStepperPrevious, [{
+    type: Directive,
+    args: [{
+      selector: "button[cdkStepperPrevious]",
+      host: {
+        "[type]": "type",
+        "(click)": "_stepper.previous()"
+      }
+    }]
+  }], () => [], {
+    type: [{
+      type: Input
+    }]
+  });
+})();
+var CdkStepperModule = class _CdkStepperModule {
+  static \u0275fac = function CdkStepperModule_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _CdkStepperModule)();
+  };
+  static \u0275mod = /* @__PURE__ */ \u0275\u0275defineNgModule({
+    type: _CdkStepperModule
+  });
+  static \u0275inj = /* @__PURE__ */ \u0275\u0275defineInjector({
+    imports: [BidiModule]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkStepperModule, [{
+    type: NgModule,
+    args: [{
+      imports: [BidiModule, CdkStep, CdkStepper, CdkStepHeader, CdkStepLabel, CdkStepperNext, CdkStepperPrevious],
+      exports: [CdkStep, CdkStepper, CdkStepHeader, CdkStepLabel, CdkStepperNext, CdkStepperPrevious]
+    }]
+  }], null, null);
+})();
+
+// node_modules/@angular/material/fesm2022/stepper.mjs
+function MatStepHeader_Conditional_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainer(0, 2);
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275property("ngTemplateOutlet", ctx_r0.iconOverrides[ctx_r0.state])("ngTemplateOutletContext", ctx_r0._getIconContext());
+  }
+}
+function MatStepHeader_Conditional_4_Case_0_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 7);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r0._getDefaultTextForState(ctx_r0.state));
+  }
+}
+function MatStepHeader_Conditional_4_Case_1_Conditional_0_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 8);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r0._intl.completedLabel);
+  }
+}
+function MatStepHeader_Conditional_4_Case_1_Conditional_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 8);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext(3);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r0._intl.editableLabel);
+  }
+}
+function MatStepHeader_Conditional_4_Case_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275template(0, MatStepHeader_Conditional_4_Case_1_Conditional_0_Template, 2, 1, "span", 8)(1, MatStepHeader_Conditional_4_Case_1_Conditional_1_Template, 2, 1, "span", 8);
+    \u0275\u0275elementStart(2, "mat-icon", 7);
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext(2);
+    \u0275\u0275conditional(ctx_r0.state === "done" ? 0 : ctx_r0.state === "edit" ? 1 : -1);
+    \u0275\u0275advance(3);
+    \u0275\u0275textInterpolate(ctx_r0._getDefaultTextForState(ctx_r0.state));
+  }
+}
+function MatStepHeader_Conditional_4_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275template(0, MatStepHeader_Conditional_4_Case_0_Template, 2, 1, "span", 7)(1, MatStepHeader_Conditional_4_Case_1_Template, 4, 2);
+  }
+  if (rf & 2) {
+    let tmp_1_0;
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275conditional((tmp_1_0 = ctx_r0.state) === "number" ? 0 : 1);
+  }
+}
+function MatStepHeader_Conditional_6_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 4);
+    \u0275\u0275elementContainer(1, 9);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    \u0275\u0275advance();
+    \u0275\u0275property("ngTemplateOutlet", ctx.template);
+  }
+}
+function MatStepHeader_Conditional_7_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 4);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r0.label);
+  }
+}
+function MatStepHeader_Conditional_8_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 5);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r0._intl.optionalLabel);
+  }
+}
+function MatStepHeader_Conditional_9_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 6);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r0.errorMessage);
+  }
+}
+var _c010 = ["*"];
+function MatStep_ng_template_0_ng_template_1_Template(rf, ctx) {
+}
+function MatStep_ng_template_0_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275projection(0);
+    \u0275\u0275template(1, MatStep_ng_template_0_ng_template_1_Template, 0, 0, "ng-template", 0);
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275advance();
+    \u0275\u0275property("cdkPortalOutlet", ctx_r0._portal);
+  }
+}
+var _c16 = (a0, a1) => ({
+  step: a0,
+  i: a1
+});
+var _c25 = (a0) => ({
+  "animationDuration": a0
+});
+var _c35 = (a0, a1) => ({
+  "value": a0,
+  "params": a1
+});
+function MatStepper_Conditional_0_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275projection(0);
+  }
+}
+function MatStepper_Case_1_For_3_Conditional_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275element(0, "div", 6);
+  }
+}
+function MatStepper_Case_1_For_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainer(0, 5);
+    \u0275\u0275template(1, MatStepper_Case_1_For_3_Conditional_1_Template, 1, 0, "div", 6);
+  }
+  if (rf & 2) {
+    const step_r1 = ctx.$implicit;
+    const \u0275$index_8_r2 = ctx.$index;
+    const \u0275$count_8_r3 = ctx.$count;
+    \u0275\u0275nextContext(2);
+    const stepTemplate_r4 = \u0275\u0275reference(4);
+    \u0275\u0275property("ngTemplateOutlet", stepTemplate_r4)("ngTemplateOutletContext", \u0275\u0275pureFunction2(3, _c16, step_r1, \u0275$index_8_r2));
+    \u0275\u0275advance();
+    \u0275\u0275conditional(!(\u0275$index_8_r2 === \u0275$count_8_r3 - 1) ? 1 : -1);
+  }
+}
+function MatStepper_Case_1_For_6_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r5 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 7);
+    \u0275\u0275listener("@horizontalStepTransition.done", function MatStepper_Case_1_For_6_Template_div_animation_horizontalStepTransition_done_0_listener($event) {
+      \u0275\u0275restoreView(_r5);
+      const ctx_r5 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r5._animationDone.next($event));
+    });
+    \u0275\u0275elementContainer(1, 8);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const step_r7 = ctx.$implicit;
+    const \u0275$index_16_r8 = ctx.$index;
+    const ctx_r5 = \u0275\u0275nextContext(2);
+    \u0275\u0275classProp("mat-horizontal-stepper-content-inactive", ctx_r5.selectedIndex !== \u0275$index_16_r8);
+    \u0275\u0275property("@horizontalStepTransition", \u0275\u0275pureFunction2(8, _c35, ctx_r5._getAnimationDirection(\u0275$index_16_r8), \u0275\u0275pureFunction1(6, _c25, ctx_r5._getAnimationDuration())))("id", ctx_r5._getStepContentId(\u0275$index_16_r8));
+    \u0275\u0275attribute("aria-labelledby", ctx_r5._getStepLabelId(\u0275$index_16_r8));
+    \u0275\u0275advance();
+    \u0275\u0275property("ngTemplateOutlet", step_r7.content);
+  }
+}
+function MatStepper_Case_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 1)(1, "div", 2);
+    \u0275\u0275repeaterCreate(2, MatStepper_Case_1_For_3_Template, 2, 6, null, null, \u0275\u0275repeaterTrackByIdentity);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "div", 3);
+    \u0275\u0275repeaterCreate(5, MatStepper_Case_1_For_6_Template, 2, 11, "div", 4, \u0275\u0275repeaterTrackByIdentity);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r5 = \u0275\u0275nextContext();
+    \u0275\u0275advance(2);
+    \u0275\u0275repeater(ctx_r5.steps);
+    \u0275\u0275advance(3);
+    \u0275\u0275repeater(ctx_r5.steps);
+  }
+}
+function MatStepper_Case_2_For_1_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r9 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 9);
+    \u0275\u0275elementContainer(1, 5);
+    \u0275\u0275elementStart(2, "div", 10)(3, "div", 11);
+    \u0275\u0275listener("@verticalStepTransition.done", function MatStepper_Case_2_For_1_Template_div_animation_verticalStepTransition_done_3_listener($event) {
+      \u0275\u0275restoreView(_r9);
+      const ctx_r5 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r5._animationDone.next($event));
+    });
+    \u0275\u0275elementStart(4, "div", 12);
+    \u0275\u0275elementContainer(5, 8);
+    \u0275\u0275elementEnd()()()();
+  }
+  if (rf & 2) {
+    const step_r10 = ctx.$implicit;
+    const \u0275$index_22_r11 = ctx.$index;
+    const \u0275$count_22_r12 = ctx.$count;
+    const ctx_r5 = \u0275\u0275nextContext(2);
+    const stepTemplate_r4 = \u0275\u0275reference(4);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngTemplateOutlet", stepTemplate_r4)("ngTemplateOutletContext", \u0275\u0275pureFunction2(10, _c16, step_r10, \u0275$index_22_r11));
+    \u0275\u0275advance();
+    \u0275\u0275classProp("mat-stepper-vertical-line", !(\u0275$index_22_r11 === \u0275$count_22_r12 - 1));
+    \u0275\u0275advance();
+    \u0275\u0275classProp("mat-vertical-stepper-content-inactive", ctx_r5.selectedIndex !== \u0275$index_22_r11);
+    \u0275\u0275property("@verticalStepTransition", \u0275\u0275pureFunction2(15, _c35, ctx_r5._getAnimationDirection(\u0275$index_22_r11), \u0275\u0275pureFunction1(13, _c25, ctx_r5._getAnimationDuration())))("id", ctx_r5._getStepContentId(\u0275$index_22_r11));
+    \u0275\u0275attribute("aria-labelledby", ctx_r5._getStepLabelId(\u0275$index_22_r11));
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngTemplateOutlet", step_r10.content);
+  }
+}
+function MatStepper_Case_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275repeaterCreate(0, MatStepper_Case_2_For_1_Template, 6, 18, "div", 9, \u0275\u0275repeaterTrackByIdentity);
+  }
+  if (rf & 2) {
+    const ctx_r5 = \u0275\u0275nextContext();
+    \u0275\u0275repeater(ctx_r5.steps);
+  }
+}
+function MatStepper_ng_template_3_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r13 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "mat-step-header", 13);
+    \u0275\u0275listener("click", function MatStepper_ng_template_3_Template_mat_step_header_click_0_listener() {
+      const step_r14 = \u0275\u0275restoreView(_r13).step;
+      return \u0275\u0275resetView(step_r14.select());
+    })("keydown", function MatStepper_ng_template_3_Template_mat_step_header_keydown_0_listener($event) {
+      \u0275\u0275restoreView(_r13);
+      const ctx_r5 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r5._onKeydown($event));
+    });
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const step_r14 = ctx.step;
+    const i_r15 = ctx.i;
+    const ctx_r5 = \u0275\u0275nextContext();
+    \u0275\u0275classProp("mat-horizontal-stepper-header", ctx_r5.orientation === "horizontal")("mat-vertical-stepper-header", ctx_r5.orientation === "vertical");
+    \u0275\u0275property("tabIndex", ctx_r5._getFocusIndex() === i_r15 ? 0 : -1)("id", ctx_r5._getStepLabelId(i_r15))("index", i_r15)("state", ctx_r5._getIndicatorType(i_r15, step_r14.state))("label", step_r14.stepLabel || step_r14.label)("selected", ctx_r5.selectedIndex === i_r15)("active", ctx_r5._stepIsNavigable(i_r15, step_r14))("optional", step_r14.optional)("errorMessage", step_r14.errorMessage)("iconOverrides", ctx_r5._iconOverrides)("disableRipple", ctx_r5.disableRipple || !ctx_r5._stepIsNavigable(i_r15, step_r14))("color", step_r14.color || ctx_r5.color);
+    \u0275\u0275attribute("aria-posinset", i_r15 + 1)("aria-setsize", ctx_r5.steps.length)("aria-controls", ctx_r5._getStepContentId(i_r15))("aria-selected", ctx_r5.selectedIndex == i_r15)("aria-label", step_r14.ariaLabel || null)("aria-labelledby", !step_r14.ariaLabel && step_r14.ariaLabelledby ? step_r14.ariaLabelledby : null)("aria-disabled", ctx_r5._stepIsNavigable(i_r15, step_r14) ? null : true);
+  }
+}
+var MatStepLabel = class _MatStepLabel extends CdkStepLabel {
+  static \u0275fac = /* @__PURE__ */ (() => {
+    let \u0275MatStepLabel_BaseFactory;
+    return function MatStepLabel_Factory(__ngFactoryType__) {
+      return (\u0275MatStepLabel_BaseFactory || (\u0275MatStepLabel_BaseFactory = \u0275\u0275getInheritedFactory(_MatStepLabel)))(__ngFactoryType__ || _MatStepLabel);
+    };
+  })();
+  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
+    type: _MatStepLabel,
+    selectors: [["", "matStepLabel", ""]],
+    features: [\u0275\u0275InheritDefinitionFeature]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatStepLabel, [{
+    type: Directive,
+    args: [{
+      selector: "[matStepLabel]"
+    }]
+  }], null, null);
+})();
+var MatStepperIntl = class _MatStepperIntl {
+  /**
+   * Stream that emits whenever the labels here are changed. Use this to notify
+   * components if the labels have changed after initialization.
+   */
+  changes = new Subject();
+  /** Label that is rendered below optional steps. */
+  optionalLabel = "Optional";
+  /** Label that is used to indicate step as completed to screen readers. */
+  completedLabel = "Completed";
+  /** Label that is used to indicate step as editable to screen readers. */
+  editableLabel = "Editable";
+  static \u0275fac = function MatStepperIntl_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _MatStepperIntl)();
+  };
+  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
+    token: _MatStepperIntl,
+    factory: _MatStepperIntl.\u0275fac,
+    providedIn: "root"
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatStepperIntl, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root"
+    }]
+  }], null, null);
+})();
+function MAT_STEPPER_INTL_PROVIDER_FACTORY(parentIntl) {
+  return parentIntl || new MatStepperIntl();
+}
+var MAT_STEPPER_INTL_PROVIDER = {
+  provide: MatStepperIntl,
+  deps: [[new Optional(), new SkipSelf(), MatStepperIntl]],
+  useFactory: MAT_STEPPER_INTL_PROVIDER_FACTORY
+};
+var MatStepHeader = class _MatStepHeader extends CdkStepHeader {
+  _intl = inject(MatStepperIntl);
+  _focusMonitor = inject(FocusMonitor);
+  _intlSubscription;
+  /** State of the given step. */
+  state;
+  /** Label of the given step. */
+  label;
+  /** Error message to display when there's an error. */
+  errorMessage;
+  /** Overrides for the header icons, passed in via the stepper. */
+  iconOverrides;
+  /** Index of the given step. */
+  index;
+  /** Whether the given step is selected. */
+  selected;
+  /** Whether the given step label is active. */
+  active;
+  /** Whether the given step is optional. */
+  optional;
+  /** Whether the ripple should be disabled. */
+  disableRipple;
+  /**
+   * Theme color of the step header. This API is supported in M2 themes only, it
+   * has no effect in M3 themes. For color customization in M3, see https://material.angular.io/components/stepper/styling.
+   *
+   * For information on applying color variants in M3, see
+   * https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants
+   */
+  color;
+  constructor() {
+    super();
+    inject(_CdkPrivateStyleLoader).load(_StructuralStylesLoader);
+    inject(_CdkPrivateStyleLoader).load(_VisuallyHiddenLoader);
+    const changeDetectorRef = inject(ChangeDetectorRef);
+    this._intlSubscription = this._intl.changes.subscribe(() => changeDetectorRef.markForCheck());
+  }
+  ngAfterViewInit() {
+    this._focusMonitor.monitor(this._elementRef, true);
+  }
+  ngOnDestroy() {
+    this._intlSubscription.unsubscribe();
+    this._focusMonitor.stopMonitoring(this._elementRef);
+  }
+  /** Focuses the step header. */
+  focus(origin, options) {
+    if (origin) {
+      this._focusMonitor.focusVia(this._elementRef, origin, options);
+    } else {
+      this._elementRef.nativeElement.focus(options);
+    }
+  }
+  /** Returns string label of given step if it is a text label. */
+  _stringLabel() {
+    return this.label instanceof MatStepLabel ? null : this.label;
+  }
+  /** Returns MatStepLabel if the label of given step is a template label. */
+  _templateLabel() {
+    return this.label instanceof MatStepLabel ? this.label : null;
+  }
+  /** Returns the host HTML element. */
+  _getHostElement() {
+    return this._elementRef.nativeElement;
+  }
+  /** Template context variables that are exposed to the `matStepperIcon` instances. */
+  _getIconContext() {
+    return {
+      index: this.index,
+      active: this.active,
+      optional: this.optional
+    };
+  }
+  _getDefaultTextForState(state2) {
+    if (state2 == "number") {
+      return `${this.index + 1}`;
+    }
+    if (state2 == "edit") {
+      return "create";
+    }
+    if (state2 == "error") {
+      return "warning";
+    }
+    return state2;
+  }
+  static \u0275fac = function MatStepHeader_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _MatStepHeader)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _MatStepHeader,
+    selectors: [["mat-step-header"]],
+    hostAttrs: ["role", "tab", 1, "mat-step-header"],
+    hostVars: 2,
+    hostBindings: function MatStepHeader_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        \u0275\u0275classMap("mat-" + (ctx.color || "primary"));
+      }
+    },
+    inputs: {
+      state: "state",
+      label: "label",
+      errorMessage: "errorMessage",
+      iconOverrides: "iconOverrides",
+      index: "index",
+      selected: "selected",
+      active: "active",
+      optional: "optional",
+      disableRipple: "disableRipple",
+      color: "color"
+    },
+    features: [\u0275\u0275InheritDefinitionFeature],
+    decls: 10,
+    vars: 17,
+    consts: [["matRipple", "", 1, "mat-step-header-ripple", "mat-focus-indicator", 3, "matRippleTrigger", "matRippleDisabled"], [1, "mat-step-icon-content"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "mat-step-label"], [1, "mat-step-text-label"], [1, "mat-step-optional"], [1, "mat-step-sub-label-error"], ["aria-hidden", "true"], [1, "cdk-visually-hidden"], [3, "ngTemplateOutlet"]],
+    template: function MatStepHeader_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275element(0, "div", 0);
+        \u0275\u0275elementStart(1, "div")(2, "div", 1);
+        \u0275\u0275template(3, MatStepHeader_Conditional_3_Template, 1, 2, "ng-container", 2)(4, MatStepHeader_Conditional_4_Template, 2, 1);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(5, "div", 3);
+        \u0275\u0275template(6, MatStepHeader_Conditional_6_Template, 2, 1, "div", 4)(7, MatStepHeader_Conditional_7_Template, 2, 1, "div", 4)(8, MatStepHeader_Conditional_8_Template, 2, 1, "div", 5)(9, MatStepHeader_Conditional_9_Template, 2, 1, "div", 6);
+        \u0275\u0275elementEnd();
+      }
+      if (rf & 2) {
+        let tmp_8_0;
+        \u0275\u0275property("matRippleTrigger", ctx._getHostElement())("matRippleDisabled", ctx.disableRipple);
+        \u0275\u0275advance();
+        \u0275\u0275classMapInterpolate1("mat-step-icon-state-", ctx.state, " mat-step-icon");
+        \u0275\u0275classProp("mat-step-icon-selected", ctx.selected);
+        \u0275\u0275advance(2);
+        \u0275\u0275conditional(ctx.iconOverrides && ctx.iconOverrides[ctx.state] ? 3 : 4);
+        \u0275\u0275advance(2);
+        \u0275\u0275classProp("mat-step-label-active", ctx.active)("mat-step-label-selected", ctx.selected)("mat-step-label-error", ctx.state == "error");
+        \u0275\u0275advance();
+        \u0275\u0275conditional((tmp_8_0 = ctx._templateLabel()) ? 6 : ctx._stringLabel() ? 7 : -1, tmp_8_0);
+        \u0275\u0275advance(2);
+        \u0275\u0275conditional(ctx.optional && ctx.state != "error" ? 8 : -1);
+        \u0275\u0275advance();
+        \u0275\u0275conditional(ctx.state === "error" ? 9 : -1);
+      }
+    },
+    dependencies: [MatRipple, NgTemplateOutlet, MatIcon],
+    styles: ['.mat-step-header{overflow:hidden;outline:none;cursor:pointer;position:relative;box-sizing:content-box;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-step-header:focus .mat-focus-indicator::before{content:""}.mat-step-header:hover[aria-disabled=true]{cursor:default}.mat-step-header:hover:not([aria-disabled]),.mat-step-header:hover[aria-disabled=false]{background-color:var(--mat-stepper-header-hover-state-layer-color, color-mix(in srgb, var(--mat-sys-inverse-surface) calc(var(--mat-sys-hover-state-layer-opacity) * 100%), transparent));border-radius:var(--mat-stepper-header-hover-state-layer-shape, var(--mat-sys-corner-medium))}.mat-step-header.cdk-keyboard-focused,.mat-step-header.cdk-program-focused{background-color:var(--mat-stepper-header-focus-state-layer-color, color-mix(in srgb, var(--mat-sys-inverse-surface) calc(var(--mat-sys-focus-state-layer-opacity) * 100%), transparent));border-radius:var(--mat-stepper-header-focus-state-layer-shape, var(--mat-sys-corner-medium))}@media(hover: none){.mat-step-header:hover{background:none}}@media(forced-colors: active){.mat-step-header{outline:solid 1px}.mat-step-header[aria-selected=true] .mat-step-label{text-decoration:underline}.mat-step-header[aria-disabled=true]{outline-color:GrayText}.mat-step-header[aria-disabled=true] .mat-step-label,.mat-step-header[aria-disabled=true] .mat-step-icon,.mat-step-header[aria-disabled=true] .mat-step-optional{color:GrayText}}.mat-step-optional{font-size:12px;color:var(--mat-stepper-header-optional-label-text-color, var(--mat-sys-on-surface-variant))}.mat-step-sub-label-error{font-size:12px;font-weight:normal}.mat-step-icon{border-radius:50%;height:24px;width:24px;flex-shrink:0;position:relative;color:var(--mat-stepper-header-icon-foreground-color, var(--mat-sys-surface));background-color:var(--mat-stepper-header-icon-background-color, var(--mat-sys-on-surface-variant))}.mat-step-icon-content{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);display:flex}.mat-step-icon .mat-icon{font-size:16px;height:16px;width:16px}.mat-step-icon-state-error{background-color:var(--mat-stepper-header-error-state-icon-background-color, transparent);color:var(--mat-stepper-header-error-state-icon-foreground-color, var(--mat-sys-error))}.mat-step-icon-state-error .mat-icon{font-size:24px;height:24px;width:24px}.mat-step-label{display:inline-block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:50px;vertical-align:middle;font-family:var(--mat-stepper-header-label-text-font, var(--mat-sys-title-small-font));font-size:var(--mat-stepper-header-label-text-size, var(--mat-sys-title-small-size));font-weight:var(--mat-stepper-header-label-text-weight, var(--mat-sys-title-small-weight));color:var(--mat-stepper-header-label-text-color, var(--mat-sys-on-surface-variant))}.mat-step-label.mat-step-label-active{color:var(--mat-stepper-header-selected-state-label-text-color, var(--mat-sys-on-surface-variant))}.mat-step-label.mat-step-label-error{color:var(--mat-stepper-header-error-state-label-text-color, var(--mat-sys-error));font-size:var(--mat-stepper-header-error-state-label-text-size, var(--mat-sys-title-small-size))}.mat-step-label.mat-step-label-selected{font-size:var(--mat-stepper-header-selected-state-label-text-size, var(--mat-sys-title-small-size));font-weight:var(--mat-stepper-header-selected-state-label-text-weight, var(--mat-sys-title-small-weight))}.mat-step-text-label{text-overflow:ellipsis;overflow:hidden}.mat-step-header .mat-step-header-ripple{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none}.mat-step-icon-selected{background-color:var(--mat-stepper-header-selected-state-icon-background-color, var(--mat-sys-primary));color:var(--mat-stepper-header-selected-state-icon-foreground-color, var(--mat-sys-on-primary))}.mat-step-icon-state-done{background-color:var(--mat-stepper-header-done-state-icon-background-color);color:var(--mat-stepper-header-done-state-icon-foreground-color)}.mat-step-icon-state-edit{background-color:var(--mat-stepper-header-edit-state-icon-background-color, var(--mat-sys-primary));color:var(--mat-stepper-header-edit-state-icon-foreground-color, var(--mat-sys-on-primary))}'],
+    encapsulation: 2,
+    changeDetection: 0
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatStepHeader, [{
+    type: Component,
+    args: [{
+      selector: "mat-step-header",
+      host: {
+        "class": "mat-step-header",
+        "[class]": '"mat-" + (color || "primary")',
+        "role": "tab"
+      },
+      encapsulation: ViewEncapsulation.None,
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      imports: [MatRipple, NgTemplateOutlet, MatIcon],
+      template: `<div class="mat-step-header-ripple mat-focus-indicator" matRipple
+     [matRippleTrigger]="_getHostElement()"
+     [matRippleDisabled]="disableRipple"></div>
+
+<div class="mat-step-icon-state-{{state}} mat-step-icon" [class.mat-step-icon-selected]="selected">
+  <div class="mat-step-icon-content">
+    @if (iconOverrides && iconOverrides[state]) {
+      <ng-container
+        [ngTemplateOutlet]="iconOverrides[state]"
+        [ngTemplateOutletContext]="_getIconContext()"></ng-container>
+    } @else {
+      @switch (state) {
+        @case ('number') {
+          <span aria-hidden="true">{{_getDefaultTextForState(state)}}</span>
+        }
+
+        @default {
+          @if (state === 'done') {
+            <span class="cdk-visually-hidden">{{_intl.completedLabel}}</span>
+          } @else if (state === 'edit') {
+            <span class="cdk-visually-hidden">{{_intl.editableLabel}}</span>
+          }
+
+          <mat-icon aria-hidden="true">{{_getDefaultTextForState(state)}}</mat-icon>
+        }
+      }
+    }
+  </div>
+</div>
+<div class="mat-step-label"
+     [class.mat-step-label-active]="active"
+     [class.mat-step-label-selected]="selected"
+     [class.mat-step-label-error]="state == 'error'">
+  @if (_templateLabel(); as templateLabel) {
+    <!-- If there is a label template, use it. -->
+    <div class="mat-step-text-label">
+      <ng-container [ngTemplateOutlet]="templateLabel.template"></ng-container>
+    </div>
+  } @else if (_stringLabel()) {
+    <!-- If there is no label template, fall back to the text label. -->
+    <div class="mat-step-text-label">{{label}}</div>
+  }
+
+  @if (optional && state != 'error') {
+    <div class="mat-step-optional">{{_intl.optionalLabel}}</div>
+  }
+
+  @if (state === 'error') {
+    <div class="mat-step-sub-label-error">{{errorMessage}}</div>
+  }
+</div>
+
+`,
+      styles: ['.mat-step-header{overflow:hidden;outline:none;cursor:pointer;position:relative;box-sizing:content-box;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-step-header:focus .mat-focus-indicator::before{content:""}.mat-step-header:hover[aria-disabled=true]{cursor:default}.mat-step-header:hover:not([aria-disabled]),.mat-step-header:hover[aria-disabled=false]{background-color:var(--mat-stepper-header-hover-state-layer-color, color-mix(in srgb, var(--mat-sys-inverse-surface) calc(var(--mat-sys-hover-state-layer-opacity) * 100%), transparent));border-radius:var(--mat-stepper-header-hover-state-layer-shape, var(--mat-sys-corner-medium))}.mat-step-header.cdk-keyboard-focused,.mat-step-header.cdk-program-focused{background-color:var(--mat-stepper-header-focus-state-layer-color, color-mix(in srgb, var(--mat-sys-inverse-surface) calc(var(--mat-sys-focus-state-layer-opacity) * 100%), transparent));border-radius:var(--mat-stepper-header-focus-state-layer-shape, var(--mat-sys-corner-medium))}@media(hover: none){.mat-step-header:hover{background:none}}@media(forced-colors: active){.mat-step-header{outline:solid 1px}.mat-step-header[aria-selected=true] .mat-step-label{text-decoration:underline}.mat-step-header[aria-disabled=true]{outline-color:GrayText}.mat-step-header[aria-disabled=true] .mat-step-label,.mat-step-header[aria-disabled=true] .mat-step-icon,.mat-step-header[aria-disabled=true] .mat-step-optional{color:GrayText}}.mat-step-optional{font-size:12px;color:var(--mat-stepper-header-optional-label-text-color, var(--mat-sys-on-surface-variant))}.mat-step-sub-label-error{font-size:12px;font-weight:normal}.mat-step-icon{border-radius:50%;height:24px;width:24px;flex-shrink:0;position:relative;color:var(--mat-stepper-header-icon-foreground-color, var(--mat-sys-surface));background-color:var(--mat-stepper-header-icon-background-color, var(--mat-sys-on-surface-variant))}.mat-step-icon-content{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);display:flex}.mat-step-icon .mat-icon{font-size:16px;height:16px;width:16px}.mat-step-icon-state-error{background-color:var(--mat-stepper-header-error-state-icon-background-color, transparent);color:var(--mat-stepper-header-error-state-icon-foreground-color, var(--mat-sys-error))}.mat-step-icon-state-error .mat-icon{font-size:24px;height:24px;width:24px}.mat-step-label{display:inline-block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:50px;vertical-align:middle;font-family:var(--mat-stepper-header-label-text-font, var(--mat-sys-title-small-font));font-size:var(--mat-stepper-header-label-text-size, var(--mat-sys-title-small-size));font-weight:var(--mat-stepper-header-label-text-weight, var(--mat-sys-title-small-weight));color:var(--mat-stepper-header-label-text-color, var(--mat-sys-on-surface-variant))}.mat-step-label.mat-step-label-active{color:var(--mat-stepper-header-selected-state-label-text-color, var(--mat-sys-on-surface-variant))}.mat-step-label.mat-step-label-error{color:var(--mat-stepper-header-error-state-label-text-color, var(--mat-sys-error));font-size:var(--mat-stepper-header-error-state-label-text-size, var(--mat-sys-title-small-size))}.mat-step-label.mat-step-label-selected{font-size:var(--mat-stepper-header-selected-state-label-text-size, var(--mat-sys-title-small-size));font-weight:var(--mat-stepper-header-selected-state-label-text-weight, var(--mat-sys-title-small-weight))}.mat-step-text-label{text-overflow:ellipsis;overflow:hidden}.mat-step-header .mat-step-header-ripple{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none}.mat-step-icon-selected{background-color:var(--mat-stepper-header-selected-state-icon-background-color, var(--mat-sys-primary));color:var(--mat-stepper-header-selected-state-icon-foreground-color, var(--mat-sys-on-primary))}.mat-step-icon-state-done{background-color:var(--mat-stepper-header-done-state-icon-background-color);color:var(--mat-stepper-header-done-state-icon-foreground-color)}.mat-step-icon-state-edit{background-color:var(--mat-stepper-header-edit-state-icon-background-color, var(--mat-sys-primary));color:var(--mat-stepper-header-edit-state-icon-foreground-color, var(--mat-sys-on-primary))}']
+    }]
+  }], () => [], {
+    state: [{
+      type: Input
+    }],
+    label: [{
+      type: Input
+    }],
+    errorMessage: [{
+      type: Input
+    }],
+    iconOverrides: [{
+      type: Input
+    }],
+    index: [{
+      type: Input
+    }],
+    selected: [{
+      type: Input
+    }],
+    active: [{
+      type: Input
+    }],
+    optional: [{
+      type: Input
+    }],
+    disableRipple: [{
+      type: Input
+    }],
+    color: [{
+      type: Input
+    }]
+  });
+})();
+var DEFAULT_HORIZONTAL_ANIMATION_DURATION = "500ms";
+var DEFAULT_VERTICAL_ANIMATION_DURATION = "225ms";
+var matStepperAnimations = {
+  /** Animation that transitions the step along the X axis in a horizontal stepper. */
+  horizontalStepTransition: trigger("horizontalStepTransition", [
+    state("previous", style({
+      transform: "translate3d(-100%, 0, 0)",
+      visibility: "hidden"
+    })),
+    // Transition to `inherit`, rather than `visible`,
+    // because visibility on a child element the one from the parent,
+    // making this element focusable inside of a `hidden` element.
+    state("current", style({
+      transform: "none",
+      visibility: "inherit"
+    })),
+    state("next", style({
+      transform: "translate3d(100%, 0, 0)",
+      visibility: "hidden"
+    })),
+    transition("* => *", group([animate("{{animationDuration}} cubic-bezier(0.35, 0, 0.25, 1)"), query("@*", animateChild(), {
+      optional: true
+    })]), {
+      params: {
+        "animationDuration": DEFAULT_HORIZONTAL_ANIMATION_DURATION
+      }
+    })
+  ]),
+  /** Animation that transitions the step along the Y axis in a vertical stepper. */
+  verticalStepTransition: trigger("verticalStepTransition", [
+    state("previous", style({
+      height: "0px",
+      visibility: "hidden"
+    })),
+    state("next", style({
+      height: "0px",
+      visibility: "hidden"
+    })),
+    // Transition to `inherit`, rather than `visible`,
+    // because visibility on a child element the one from the parent,
+    // making this element focusable inside of a `hidden` element.
+    state("current", style({
+      height: "*",
+      visibility: "inherit"
+    })),
+    transition("* <=> current", group([animate("{{animationDuration}} cubic-bezier(0.4, 0.0, 0.2, 1)"), query("@*", animateChild(), {
+      optional: true
+    })]), {
+      params: {
+        "animationDuration": DEFAULT_VERTICAL_ANIMATION_DURATION
+      }
+    })
+  ])
+};
+var MatStepperIcon = class _MatStepperIcon {
+  templateRef = inject(TemplateRef);
+  /** Name of the icon to be overridden. */
+  name;
+  constructor() {
+  }
+  static \u0275fac = function MatStepperIcon_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _MatStepperIcon)();
+  };
+  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
+    type: _MatStepperIcon,
+    selectors: [["ng-template", "matStepperIcon", ""]],
+    inputs: {
+      name: [0, "matStepperIcon", "name"]
+    }
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatStepperIcon, [{
+    type: Directive,
+    args: [{
+      selector: "ng-template[matStepperIcon]"
+    }]
+  }], () => [], {
+    name: [{
+      type: Input,
+      args: ["matStepperIcon"]
+    }]
+  });
+})();
+var MatStepContent = class _MatStepContent {
+  _template = inject(TemplateRef);
+  constructor() {
+  }
+  static \u0275fac = function MatStepContent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _MatStepContent)();
+  };
+  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
+    type: _MatStepContent,
+    selectors: [["ng-template", "matStepContent", ""]]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatStepContent, [{
+    type: Directive,
+    args: [{
+      selector: "ng-template[matStepContent]"
+    }]
+  }], () => [], null);
+})();
+var MatStep = class _MatStep extends CdkStep {
+  _errorStateMatcher = inject(ErrorStateMatcher, {
+    skipSelf: true
+  });
+  _viewContainerRef = inject(ViewContainerRef);
+  _isSelected = Subscription.EMPTY;
+  /** Content for step label given by `<ng-template matStepLabel>`. */
+  // We need an initializer here to avoid a TS error.
+  stepLabel = void 0;
+  /**
+   * Theme color for the particular step. This API is supported in M2 themes
+   * only, it has no effect in M3 themes. For color customization in M3, see https://material.angular.io/components/stepper/styling.
+   *
+   * For information on applying color variants in M3, see
+   * https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants
+   */
+  color;
+  /** Content that will be rendered lazily. */
+  _lazyContent;
+  /** Currently-attached portal containing the lazy content. */
+  _portal;
+  ngAfterContentInit() {
+    this._isSelected = this._stepper.steps.changes.pipe(switchMap(() => {
+      return this._stepper.selectionChange.pipe(map((event) => event.selectedStep === this), startWith(this._stepper.selected === this));
+    })).subscribe((isSelected) => {
+      if (isSelected && this._lazyContent && !this._portal) {
+        this._portal = new TemplatePortal(this._lazyContent._template, this._viewContainerRef);
+      }
+    });
+  }
+  ngOnDestroy() {
+    this._isSelected.unsubscribe();
+  }
+  /** Custom error state matcher that additionally checks for validity of interacted form. */
+  isErrorState(control, form) {
+    const originalErrorState = this._errorStateMatcher.isErrorState(control, form);
+    const customErrorState = !!(control && control.invalid && this.interacted);
+    return originalErrorState || customErrorState;
+  }
+  static \u0275fac = /* @__PURE__ */ (() => {
+    let \u0275MatStep_BaseFactory;
+    return function MatStep_Factory(__ngFactoryType__) {
+      return (\u0275MatStep_BaseFactory || (\u0275MatStep_BaseFactory = \u0275\u0275getInheritedFactory(_MatStep)))(__ngFactoryType__ || _MatStep);
+    };
+  })();
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _MatStep,
+    selectors: [["mat-step"]],
+    contentQueries: function MatStep_ContentQueries(rf, ctx, dirIndex) {
+      if (rf & 1) {
+        \u0275\u0275contentQuery(dirIndex, MatStepLabel, 5);
+        \u0275\u0275contentQuery(dirIndex, MatStepContent, 5);
+      }
+      if (rf & 2) {
+        let _t;
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.stepLabel = _t.first);
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._lazyContent = _t.first);
+      }
+    },
+    hostAttrs: ["hidden", ""],
+    inputs: {
+      color: "color"
+    },
+    exportAs: ["matStep"],
+    features: [\u0275\u0275ProvidersFeature([{
+      provide: ErrorStateMatcher,
+      useExisting: _MatStep
+    }, {
+      provide: CdkStep,
+      useExisting: _MatStep
+    }]), \u0275\u0275InheritDefinitionFeature],
+    ngContentSelectors: _c010,
+    decls: 1,
+    vars: 0,
+    consts: [[3, "cdkPortalOutlet"]],
+    template: function MatStep_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275projectionDef();
+        \u0275\u0275template(0, MatStep_ng_template_0_Template, 2, 1, "ng-template");
+      }
+    },
+    dependencies: [CdkPortalOutlet],
+    encapsulation: 2,
+    changeDetection: 0
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatStep, [{
+    type: Component,
+    args: [{
+      selector: "mat-step",
+      providers: [{
+        provide: ErrorStateMatcher,
+        useExisting: MatStep
+      }, {
+        provide: CdkStep,
+        useExisting: MatStep
+      }],
+      encapsulation: ViewEncapsulation.None,
+      exportAs: "matStep",
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      imports: [CdkPortalOutlet],
+      host: {
+        "hidden": ""
+        // Hide the steps so they don't affect the layout.
+      },
+      template: '<ng-template>\n  <ng-content></ng-content>\n  <ng-template [cdkPortalOutlet]="_portal"></ng-template>\n</ng-template>\n'
+    }]
+  }], null, {
+    stepLabel: [{
+      type: ContentChild,
+      args: [MatStepLabel]
+    }],
+    color: [{
+      type: Input
+    }],
+    _lazyContent: [{
+      type: ContentChild,
+      args: [MatStepContent, {
+        static: false
+      }]
+    }]
+  });
+})();
+var MatStepper = class _MatStepper extends CdkStepper {
+  /** The list of step headers of the steps in the stepper. */
+  // We need an initializer here to avoid a TS error.
+  _stepHeader = void 0;
+  /** Full list of steps inside the stepper, including inside nested steppers. */
+  // We need an initializer here to avoid a TS error.
+  _steps = void 0;
+  /** Steps that belong to the current stepper, excluding ones from nested steppers. */
+  steps = new QueryList();
+  /** Custom icon overrides passed in by the consumer. */
+  _icons;
+  /** Event emitted when the current step is done transitioning in. */
+  animationDone = new EventEmitter();
+  /** Whether ripples should be disabled for the step headers. */
+  disableRipple;
+  /**
+   * Theme color for all of the steps in stepper. This API is supported in M2
+   * themes only, it has no effect in M3 themes. For color customization in M3, see https://material.angular.io/components/stepper/styling.
+   *
+   * For information on applying color variants in M3, see
+   * https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants
+   */
+  color;
+  /**
+   * Whether the label should display in bottom or end position.
+   * Only applies in the `horizontal` orientation.
+   */
+  labelPosition = "end";
+  /**
+   * Position of the stepper's header.
+   * Only applies in the `horizontal` orientation.
+   */
+  headerPosition = "top";
+  /** Consumer-specified template-refs to be used to override the header icons. */
+  _iconOverrides = {};
+  /** Stream of animation `done` events when the body expands/collapses. */
+  _animationDone = new Subject();
+  /** Duration for the animation. Will be normalized to milliseconds if no units are set. */
+  get animationDuration() {
+    return this._animationDuration;
+  }
+  set animationDuration(value) {
+    this._animationDuration = /^\d+$/.test(value) ? value + "ms" : value;
+  }
+  _animationDuration = "";
+  /** Whether the stepper is rendering on the server. */
+  _isServer = !inject(Platform).isBrowser;
+  constructor() {
+    super();
+    const elementRef = inject(ElementRef);
+    const nodeName = elementRef.nativeElement.nodeName.toLowerCase();
+    this.orientation = nodeName === "mat-vertical-stepper" ? "vertical" : "horizontal";
+  }
+  ngAfterContentInit() {
+    super.ngAfterContentInit();
+    this._icons.forEach(({
+      name,
+      templateRef
+    }) => this._iconOverrides[name] = templateRef);
+    this.steps.changes.pipe(takeUntil(this._destroyed)).subscribe(() => {
+      this._stateChanged();
+    });
+    this._animationDone.pipe(takeUntil(this._destroyed)).subscribe((event) => {
+      if (event.toState === "current") {
+        this.animationDone.emit();
+      }
+    });
+  }
+  _stepIsNavigable(index, step) {
+    return step.completed || this.selectedIndex === index || !this.linear;
+  }
+  _getAnimationDuration() {
+    if (this.animationDuration) {
+      return this.animationDuration;
+    }
+    return this.orientation === "horizontal" ? DEFAULT_HORIZONTAL_ANIMATION_DURATION : DEFAULT_VERTICAL_ANIMATION_DURATION;
+  }
+  static \u0275fac = function MatStepper_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _MatStepper)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _MatStepper,
+    selectors: [["mat-stepper"], ["mat-vertical-stepper"], ["mat-horizontal-stepper"], ["", "matStepper", ""]],
+    contentQueries: function MatStepper_ContentQueries(rf, ctx, dirIndex) {
+      if (rf & 1) {
+        \u0275\u0275contentQuery(dirIndex, MatStep, 5);
+        \u0275\u0275contentQuery(dirIndex, MatStepperIcon, 5);
+      }
+      if (rf & 2) {
+        let _t;
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._steps = _t);
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._icons = _t);
+      }
+    },
+    viewQuery: function MatStepper_Query(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275viewQuery(MatStepHeader, 5);
+      }
+      if (rf & 2) {
+        let _t;
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._stepHeader = _t);
+      }
+    },
+    hostAttrs: ["role", "tablist"],
+    hostVars: 11,
+    hostBindings: function MatStepper_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        \u0275\u0275attribute("aria-orientation", ctx.orientation);
+        \u0275\u0275classProp("mat-stepper-horizontal", ctx.orientation === "horizontal")("mat-stepper-vertical", ctx.orientation === "vertical")("mat-stepper-label-position-end", ctx.orientation === "horizontal" && ctx.labelPosition == "end")("mat-stepper-label-position-bottom", ctx.orientation === "horizontal" && ctx.labelPosition == "bottom")("mat-stepper-header-position-bottom", ctx.headerPosition === "bottom");
+      }
+    },
+    inputs: {
+      disableRipple: "disableRipple",
+      color: "color",
+      labelPosition: "labelPosition",
+      headerPosition: "headerPosition",
+      animationDuration: "animationDuration"
+    },
+    outputs: {
+      animationDone: "animationDone"
+    },
+    exportAs: ["matStepper", "matVerticalStepper", "matHorizontalStepper"],
+    features: [\u0275\u0275ProvidersFeature([{
+      provide: CdkStepper,
+      useExisting: _MatStepper
+    }]), \u0275\u0275InheritDefinitionFeature],
+    ngContentSelectors: _c010,
+    decls: 5,
+    vars: 2,
+    consts: [["stepTemplate", ""], [1, "mat-horizontal-stepper-wrapper"], [1, "mat-horizontal-stepper-header-container"], [1, "mat-horizontal-content-container"], ["role", "tabpanel", 1, "mat-horizontal-stepper-content", 3, "id", "mat-horizontal-stepper-content-inactive"], [3, "ngTemplateOutlet", "ngTemplateOutletContext"], [1, "mat-stepper-horizontal-line"], ["role", "tabpanel", 1, "mat-horizontal-stepper-content", 3, "id"], [3, "ngTemplateOutlet"], [1, "mat-step"], [1, "mat-vertical-content-container"], ["role", "tabpanel", 1, "mat-vertical-stepper-content", 3, "id"], [1, "mat-vertical-content"], [3, "click", "keydown", "tabIndex", "id", "index", "state", "label", "selected", "active", "optional", "errorMessage", "iconOverrides", "disableRipple", "color"]],
+    template: function MatStepper_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275projectionDef();
+        \u0275\u0275template(0, MatStepper_Conditional_0_Template, 1, 0)(1, MatStepper_Case_1_Template, 7, 0, "div", 1)(2, MatStepper_Case_2_Template, 2, 0)(3, MatStepper_ng_template_3_Template, 1, 23, "ng-template", null, 0, \u0275\u0275templateRefExtractor);
+      }
+      if (rf & 2) {
+        let tmp_2_0;
+        \u0275\u0275conditional(ctx._isServer ? 0 : -1);
+        \u0275\u0275advance();
+        \u0275\u0275conditional((tmp_2_0 = ctx.orientation) === "horizontal" ? 1 : tmp_2_0 === "vertical" ? 2 : -1);
+      }
+    },
+    dependencies: [NgTemplateOutlet, MatStepHeader],
+    styles: ['.mat-stepper-vertical,.mat-stepper-horizontal{display:block;font-family:var(--mat-stepper-container-text-font, var(--mat-sys-body-medium-font));background:var(--mat-stepper-container-color, var(--mat-sys-surface))}.mat-horizontal-stepper-header-container{white-space:nowrap;display:flex;align-items:center}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header-container{align-items:flex-start}.mat-stepper-header-position-bottom .mat-horizontal-stepper-header-container{order:1}.mat-stepper-horizontal-line{border-top-width:1px;border-top-style:solid;flex:auto;height:0;margin:0 -16px;min-width:32px;border-top-color:var(--mat-stepper-line-color, var(--mat-sys-outline))}.mat-stepper-label-position-bottom .mat-stepper-horizontal-line{margin:0;min-width:0;position:relative;top:calc(calc((var(--mat-stepper-header-height, 72px) - 24px) / 2) + 12px)}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::before,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::before,.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::after,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::after{border-top-width:1px;border-top-style:solid;content:"";display:inline-block;height:0;position:absolute;width:calc(50% - 20px)}.mat-horizontal-stepper-header{display:flex;height:72px;overflow:hidden;align-items:center;padding:0 24px;height:var(--mat-stepper-header-height, 72px)}.mat-horizontal-stepper-header .mat-step-icon{margin-right:8px;flex:none}[dir=rtl] .mat-horizontal-stepper-header .mat-step-icon{margin-right:0;margin-left:8px}.mat-horizontal-stepper-header::before,.mat-horizontal-stepper-header::after{border-top-color:var(--mat-stepper-line-color, var(--mat-sys-outline))}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header{padding:calc((var(--mat-stepper-header-height, 72px) - 24px) / 2) 24px}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header::before,.mat-stepper-label-position-bottom .mat-horizontal-stepper-header::after{top:calc(calc((var(--mat-stepper-header-height, 72px) - 24px) / 2) + 12px)}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header{box-sizing:border-box;flex-direction:column;height:auto}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::after,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::after{right:0}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::before,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::before{left:0}[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:last-child::before,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:first-child::after{display:none}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-icon{margin-right:0;margin-left:0}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-label{padding:16px 0 0 0;text-align:center;width:100%}.mat-vertical-stepper-header{display:flex;align-items:center;height:24px;padding:calc((var(--mat-stepper-header-height, 72px) - 24px) / 2) 24px}.mat-vertical-stepper-header .mat-step-icon{margin-right:12px}[dir=rtl] .mat-vertical-stepper-header .mat-step-icon{margin-right:0;margin-left:12px}.mat-horizontal-stepper-wrapper{display:flex;flex-direction:column}.mat-horizontal-stepper-content{outline:0}.mat-horizontal-stepper-content.mat-horizontal-stepper-content-inactive{height:0;overflow:hidden}.mat-horizontal-stepper-content:not(.mat-horizontal-stepper-content-inactive){visibility:inherit !important}.mat-horizontal-content-container{overflow:hidden;padding:0 24px 24px 24px}@media(forced-colors: active){.mat-horizontal-content-container{outline:solid 1px}}.mat-stepper-header-position-bottom .mat-horizontal-content-container{padding:24px 24px 0 24px}.mat-vertical-content-container{margin-left:36px;border:0;position:relative}@media(forced-colors: active){.mat-vertical-content-container{outline:solid 1px}}[dir=rtl] .mat-vertical-content-container{margin-left:0;margin-right:36px}.mat-stepper-vertical-line::before{content:"";position:absolute;left:0;border-left-width:1px;border-left-style:solid;border-left-color:var(--mat-stepper-line-color, var(--mat-sys-outline));top:calc(8px - calc((var(--mat-stepper-header-height, 72px) - 24px) / 2));bottom:calc(8px - calc((var(--mat-stepper-header-height, 72px) - 24px) / 2))}[dir=rtl] .mat-stepper-vertical-line::before{left:auto;right:0}.mat-vertical-stepper-content{overflow:hidden;outline:0}.mat-vertical-stepper-content:not(.mat-vertical-stepper-content-inactive){visibility:inherit !important}.mat-vertical-content{padding:0 24px 24px 24px}.mat-step:last-child .mat-vertical-content-container{border:none}'],
+    encapsulation: 2,
+    data: {
+      animation: [matStepperAnimations.horizontalStepTransition, matStepperAnimations.verticalStepTransition]
+    },
+    changeDetection: 0
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatStepper, [{
+    type: Component,
+    args: [{
+      selector: "mat-stepper, mat-vertical-stepper, mat-horizontal-stepper, [matStepper]",
+      exportAs: "matStepper, matVerticalStepper, matHorizontalStepper",
+      host: {
+        "[class.mat-stepper-horizontal]": 'orientation === "horizontal"',
+        "[class.mat-stepper-vertical]": 'orientation === "vertical"',
+        "[class.mat-stepper-label-position-end]": 'orientation === "horizontal" && labelPosition == "end"',
+        "[class.mat-stepper-label-position-bottom]": 'orientation === "horizontal" && labelPosition == "bottom"',
+        "[class.mat-stepper-header-position-bottom]": 'headerPosition === "bottom"',
+        "[attr.aria-orientation]": "orientation",
+        "role": "tablist"
+      },
+      animations: [matStepperAnimations.horizontalStepTransition, matStepperAnimations.verticalStepTransition],
+      providers: [{
+        provide: CdkStepper,
+        useExisting: MatStepper
+      }],
+      encapsulation: ViewEncapsulation.None,
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      imports: [NgTemplateOutlet, MatStepHeader],
+      template: `<!--
+  We need to project the content somewhere to avoid hydration errors. Some observations:
+  1. This is only necessary on the server.
+  2. We get a hydration error if there aren't any nodes after the \`ng-content\`.
+  3. We get a hydration error if \`ng-content\` is wrapped in another element.
+-->
+@if (_isServer) {
+  <ng-content/>
+}
+
+@switch (orientation) {
+  @case ('horizontal') {
+    <div class="mat-horizontal-stepper-wrapper">
+      <div class="mat-horizontal-stepper-header-container">
+        @for (step of steps; track step; let i = $index, isLast = $last) {
+          <ng-container
+            [ngTemplateOutlet]="stepTemplate"
+            [ngTemplateOutletContext]="{step: step, i: i}"></ng-container>
+          @if (!isLast) {
+            <div class="mat-stepper-horizontal-line"></div>
+          }
+        }
+      </div>
+
+      <div class="mat-horizontal-content-container">
+        @for (step of steps; track step; let i = $index) {
+          <div class="mat-horizontal-stepper-content" role="tabpanel"
+               [@horizontalStepTransition]="{
+                  'value': _getAnimationDirection(i),
+                  'params': {'animationDuration': _getAnimationDuration()}
+                }"
+               (@horizontalStepTransition.done)="_animationDone.next($event)"
+               [id]="_getStepContentId(i)"
+               [attr.aria-labelledby]="_getStepLabelId(i)"
+               [class.mat-horizontal-stepper-content-inactive]="selectedIndex !== i">
+            <ng-container [ngTemplateOutlet]="step.content"></ng-container>
+          </div>
+        }
+      </div>
+    </div>
+  }
+
+  @case ('vertical') {
+    @for (step of steps; track step; let i = $index, isLast = $last) {
+      <div class="mat-step">
+        <ng-container
+          [ngTemplateOutlet]="stepTemplate"
+          [ngTemplateOutletContext]="{step: step, i: i}"></ng-container>
+        <div class="mat-vertical-content-container" [class.mat-stepper-vertical-line]="!isLast">
+          <div class="mat-vertical-stepper-content" role="tabpanel"
+               [@verticalStepTransition]="{
+                  'value': _getAnimationDirection(i),
+                  'params': {'animationDuration': _getAnimationDuration()}
+                }"
+               (@verticalStepTransition.done)="_animationDone.next($event)"
+               [id]="_getStepContentId(i)"
+               [attr.aria-labelledby]="_getStepLabelId(i)"
+               [class.mat-vertical-stepper-content-inactive]="selectedIndex !== i">
+            <div class="mat-vertical-content">
+              <ng-container [ngTemplateOutlet]="step.content"></ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  }
+}
+
+<!-- Common step templating -->
+<ng-template let-step="step" let-i="i" #stepTemplate>
+  <mat-step-header
+    [class.mat-horizontal-stepper-header]="orientation === 'horizontal'"
+    [class.mat-vertical-stepper-header]="orientation === 'vertical'"
+    (click)="step.select()"
+    (keydown)="_onKeydown($event)"
+    [tabIndex]="_getFocusIndex() === i ? 0 : -1"
+    [id]="_getStepLabelId(i)"
+    [attr.aria-posinset]="i + 1"
+    [attr.aria-setsize]="steps.length"
+    [attr.aria-controls]="_getStepContentId(i)"
+    [attr.aria-selected]="selectedIndex == i"
+    [attr.aria-label]="step.ariaLabel || null"
+    [attr.aria-labelledby]="(!step.ariaLabel && step.ariaLabelledby) ? step.ariaLabelledby : null"
+    [attr.aria-disabled]="_stepIsNavigable(i, step) ? null : true"
+    [index]="i"
+    [state]="_getIndicatorType(i, step.state)"
+    [label]="step.stepLabel || step.label"
+    [selected]="selectedIndex === i"
+    [active]="_stepIsNavigable(i, step)"
+    [optional]="step.optional"
+    [errorMessage]="step.errorMessage"
+    [iconOverrides]="_iconOverrides"
+    [disableRipple]="disableRipple || !_stepIsNavigable(i, step)"
+    [color]="step.color || color"></mat-step-header>
+</ng-template>
+`,
+      styles: ['.mat-stepper-vertical,.mat-stepper-horizontal{display:block;font-family:var(--mat-stepper-container-text-font, var(--mat-sys-body-medium-font));background:var(--mat-stepper-container-color, var(--mat-sys-surface))}.mat-horizontal-stepper-header-container{white-space:nowrap;display:flex;align-items:center}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header-container{align-items:flex-start}.mat-stepper-header-position-bottom .mat-horizontal-stepper-header-container{order:1}.mat-stepper-horizontal-line{border-top-width:1px;border-top-style:solid;flex:auto;height:0;margin:0 -16px;min-width:32px;border-top-color:var(--mat-stepper-line-color, var(--mat-sys-outline))}.mat-stepper-label-position-bottom .mat-stepper-horizontal-line{margin:0;min-width:0;position:relative;top:calc(calc((var(--mat-stepper-header-height, 72px) - 24px) / 2) + 12px)}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::before,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::before,.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::after,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::after{border-top-width:1px;border-top-style:solid;content:"";display:inline-block;height:0;position:absolute;width:calc(50% - 20px)}.mat-horizontal-stepper-header{display:flex;height:72px;overflow:hidden;align-items:center;padding:0 24px;height:var(--mat-stepper-header-height, 72px)}.mat-horizontal-stepper-header .mat-step-icon{margin-right:8px;flex:none}[dir=rtl] .mat-horizontal-stepper-header .mat-step-icon{margin-right:0;margin-left:8px}.mat-horizontal-stepper-header::before,.mat-horizontal-stepper-header::after{border-top-color:var(--mat-stepper-line-color, var(--mat-sys-outline))}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header{padding:calc((var(--mat-stepper-header-height, 72px) - 24px) / 2) 24px}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header::before,.mat-stepper-label-position-bottom .mat-horizontal-stepper-header::after{top:calc(calc((var(--mat-stepper-header-height, 72px) - 24px) / 2) + 12px)}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header{box-sizing:border-box;flex-direction:column;height:auto}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::after,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::after{right:0}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::before,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::before{left:0}[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:last-child::before,[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:first-child::after{display:none}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-icon{margin-right:0;margin-left:0}.mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-label{padding:16px 0 0 0;text-align:center;width:100%}.mat-vertical-stepper-header{display:flex;align-items:center;height:24px;padding:calc((var(--mat-stepper-header-height, 72px) - 24px) / 2) 24px}.mat-vertical-stepper-header .mat-step-icon{margin-right:12px}[dir=rtl] .mat-vertical-stepper-header .mat-step-icon{margin-right:0;margin-left:12px}.mat-horizontal-stepper-wrapper{display:flex;flex-direction:column}.mat-horizontal-stepper-content{outline:0}.mat-horizontal-stepper-content.mat-horizontal-stepper-content-inactive{height:0;overflow:hidden}.mat-horizontal-stepper-content:not(.mat-horizontal-stepper-content-inactive){visibility:inherit !important}.mat-horizontal-content-container{overflow:hidden;padding:0 24px 24px 24px}@media(forced-colors: active){.mat-horizontal-content-container{outline:solid 1px}}.mat-stepper-header-position-bottom .mat-horizontal-content-container{padding:24px 24px 0 24px}.mat-vertical-content-container{margin-left:36px;border:0;position:relative}@media(forced-colors: active){.mat-vertical-content-container{outline:solid 1px}}[dir=rtl] .mat-vertical-content-container{margin-left:0;margin-right:36px}.mat-stepper-vertical-line::before{content:"";position:absolute;left:0;border-left-width:1px;border-left-style:solid;border-left-color:var(--mat-stepper-line-color, var(--mat-sys-outline));top:calc(8px - calc((var(--mat-stepper-header-height, 72px) - 24px) / 2));bottom:calc(8px - calc((var(--mat-stepper-header-height, 72px) - 24px) / 2))}[dir=rtl] .mat-stepper-vertical-line::before{left:auto;right:0}.mat-vertical-stepper-content{overflow:hidden;outline:0}.mat-vertical-stepper-content:not(.mat-vertical-stepper-content-inactive){visibility:inherit !important}.mat-vertical-content{padding:0 24px 24px 24px}.mat-step:last-child .mat-vertical-content-container{border:none}']
+    }]
+  }], () => [], {
+    _stepHeader: [{
+      type: ViewChildren,
+      args: [MatStepHeader]
+    }],
+    _steps: [{
+      type: ContentChildren,
+      args: [MatStep, {
+        descendants: true
+      }]
+    }],
+    _icons: [{
+      type: ContentChildren,
+      args: [MatStepperIcon, {
+        descendants: true
+      }]
+    }],
+    animationDone: [{
+      type: Output
+    }],
+    disableRipple: [{
+      type: Input
+    }],
+    color: [{
+      type: Input
+    }],
+    labelPosition: [{
+      type: Input
+    }],
+    headerPosition: [{
+      type: Input
+    }],
+    animationDuration: [{
+      type: Input
+    }]
+  });
+})();
+var MatStepperNext = class _MatStepperNext extends CdkStepperNext {
+  static \u0275fac = /* @__PURE__ */ (() => {
+    let \u0275MatStepperNext_BaseFactory;
+    return function MatStepperNext_Factory(__ngFactoryType__) {
+      return (\u0275MatStepperNext_BaseFactory || (\u0275MatStepperNext_BaseFactory = \u0275\u0275getInheritedFactory(_MatStepperNext)))(__ngFactoryType__ || _MatStepperNext);
+    };
+  })();
+  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
+    type: _MatStepperNext,
+    selectors: [["button", "matStepperNext", ""]],
+    hostAttrs: [1, "mat-stepper-next"],
+    hostVars: 1,
+    hostBindings: function MatStepperNext_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        \u0275\u0275hostProperty("type", ctx.type);
+      }
+    },
+    features: [\u0275\u0275InheritDefinitionFeature]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatStepperNext, [{
+    type: Directive,
+    args: [{
+      selector: "button[matStepperNext]",
+      host: {
+        "class": "mat-stepper-next",
+        "[type]": "type"
+      }
+    }]
+  }], null, null);
+})();
+var MatStepperPrevious = class _MatStepperPrevious extends CdkStepperPrevious {
+  static \u0275fac = /* @__PURE__ */ (() => {
+    let \u0275MatStepperPrevious_BaseFactory;
+    return function MatStepperPrevious_Factory(__ngFactoryType__) {
+      return (\u0275MatStepperPrevious_BaseFactory || (\u0275MatStepperPrevious_BaseFactory = \u0275\u0275getInheritedFactory(_MatStepperPrevious)))(__ngFactoryType__ || _MatStepperPrevious);
+    };
+  })();
+  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
+    type: _MatStepperPrevious,
+    selectors: [["button", "matStepperPrevious", ""]],
+    hostAttrs: [1, "mat-stepper-previous"],
+    hostVars: 1,
+    hostBindings: function MatStepperPrevious_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        \u0275\u0275hostProperty("type", ctx.type);
+      }
+    },
+    features: [\u0275\u0275InheritDefinitionFeature]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatStepperPrevious, [{
+    type: Directive,
+    args: [{
+      selector: "button[matStepperPrevious]",
+      host: {
+        "class": "mat-stepper-previous",
+        "[type]": "type"
+      }
+    }]
+  }], null, null);
+})();
+var MatStepperModule = class _MatStepperModule {
+  static \u0275fac = function MatStepperModule_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _MatStepperModule)();
+  };
+  static \u0275mod = /* @__PURE__ */ \u0275\u0275defineNgModule({
+    type: _MatStepperModule
+  });
+  static \u0275inj = /* @__PURE__ */ \u0275\u0275defineInjector({
+    providers: [MAT_STEPPER_INTL_PROVIDER, ErrorStateMatcher],
+    imports: [MatCommonModule, PortalModule, CdkStepperModule, MatIconModule, MatRippleModule, MatStepper, MatStepHeader, MatCommonModule]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatStepperModule, [{
+    type: NgModule,
+    args: [{
+      imports: [MatCommonModule, PortalModule, CdkStepperModule, MatIconModule, MatRippleModule, MatStep, MatStepLabel, MatStepper, MatStepperNext, MatStepperPrevious, MatStepHeader, MatStepperIcon, MatStepContent],
+      exports: [MatCommonModule, MatStep, MatStepLabel, MatStepper, MatStepperNext, MatStepperPrevious, MatStepHeader, MatStepperIcon, MatStepContent],
+      providers: [MAT_STEPPER_INTL_PROVIDER, ErrorStateMatcher]
+    }]
+  }], null, null);
+})();
+
+// node_modules/@angular/material/fesm2022/select.mjs
+var _c011 = ["trigger"];
+var _c17 = ["panel"];
+var _c26 = [[["mat-select-trigger"]], "*"];
+var _c36 = ["mat-select-trigger", "*"];
+function MatSelect_Conditional_4_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 4);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r1.placeholder);
+  }
+}
+function MatSelect_Conditional_5_Conditional_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275projection(0);
+  }
+}
+function MatSelect_Conditional_5_Conditional_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 11);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(ctx_r1.triggerValue);
+  }
+}
+function MatSelect_Conditional_5_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 5);
+    \u0275\u0275template(1, MatSelect_Conditional_5_Conditional_1_Template, 1, 0)(2, MatSelect_Conditional_5_Conditional_2_Template, 2, 1, "span", 11);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275advance();
+    \u0275\u0275conditional(ctx_r1.customTrigger ? 1 : 2);
+  }
+}
+function MatSelect_ng_template_10_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r3 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 12, 1);
+    \u0275\u0275listener("@transformPanel.done", function MatSelect_ng_template_10_Template_div_animation_transformPanel_done_0_listener($event) {
+      \u0275\u0275restoreView(_r3);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1._panelDoneAnimatingStream.next($event.toState));
+    })("keydown", function MatSelect_ng_template_10_Template_div_keydown_0_listener($event) {
+      \u0275\u0275restoreView(_r3);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1._handleKeydown($event));
+    });
+    \u0275\u0275projection(2, 1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275classMapInterpolate1("mat-mdc-select-panel mdc-menu-surface mdc-menu-surface--open ", ctx_r1._getPanelTheme(), "");
+    \u0275\u0275property("ngClass", ctx_r1.panelClass)("@transformPanel", "showing");
+    \u0275\u0275attribute("id", ctx_r1.id + "-panel")("aria-multiselectable", ctx_r1.multiple)("aria-label", ctx_r1.ariaLabel || null)("aria-labelledby", ctx_r1._getPanelAriaLabelledby());
+  }
+}
+var matSelectAnimations = {
+  /**
+   * This animation ensures the select's overlay panel animation (transformPanel) is called when
+   * closing the select.
+   * This is needed due to https://github.com/angular/angular/issues/23302
+   */
+  transformPanelWrap: trigger("transformPanelWrap", [transition("* => void", query("@transformPanel", [animateChild()], {
+    optional: true
+  }))]),
+  /** This animation transforms the select's overlay panel on and off the page. */
+  transformPanel: trigger("transformPanel", [state("void", style({
+    opacity: 0,
+    transform: "scale(1, 0.8)"
+  })), transition("void => showing", animate("120ms cubic-bezier(0, 0, 0.2, 1)", style({
+    opacity: 1,
+    transform: "scale(1, 1)"
+  }))), transition("* => void", animate("100ms linear", style({
+    opacity: 0
+  })))])
+};
+function getMatSelectDynamicMultipleError() {
+  return Error("Cannot change `multiple` mode of select after initialization.");
+}
+function getMatSelectNonArrayValueError() {
+  return Error("Value must be an array in multiple-selection mode.");
+}
+function getMatSelectNonFunctionValueError() {
+  return Error("`compareWith` must be a function.");
+}
+var MAT_SELECT_SCROLL_STRATEGY = new InjectionToken("mat-select-scroll-strategy", {
+  providedIn: "root",
+  factory: () => {
+    const overlay = inject(Overlay);
+    return () => overlay.scrollStrategies.reposition();
+  }
+});
+function MAT_SELECT_SCROLL_STRATEGY_PROVIDER_FACTORY(overlay) {
+  return () => overlay.scrollStrategies.reposition();
+}
+var MAT_SELECT_CONFIG = new InjectionToken("MAT_SELECT_CONFIG");
+var MAT_SELECT_SCROLL_STRATEGY_PROVIDER = {
+  provide: MAT_SELECT_SCROLL_STRATEGY,
+  deps: [Overlay],
+  useFactory: MAT_SELECT_SCROLL_STRATEGY_PROVIDER_FACTORY
+};
+var MAT_SELECT_TRIGGER = new InjectionToken("MatSelectTrigger");
+var MatSelectChange = class {
+  source;
+  value;
+  constructor(source, value) {
+    this.source = source;
+    this.value = value;
+  }
+};
+var MatSelect = class _MatSelect {
+  _viewportRuler = inject(ViewportRuler);
+  _changeDetectorRef = inject(ChangeDetectorRef);
+  _elementRef = inject(ElementRef);
+  _dir = inject(Directionality, {
+    optional: true
+  });
+  _idGenerator = inject(_IdGenerator);
+  _parentFormField = inject(MAT_FORM_FIELD, {
+    optional: true
+  });
+  ngControl = inject(NgControl, {
+    self: true,
+    optional: true
+  });
+  _liveAnnouncer = inject(LiveAnnouncer);
+  _defaultOptions = inject(MAT_SELECT_CONFIG, {
+    optional: true
+  });
+  _initialized = new Subject();
+  /** All of the defined select options. */
+  options;
+  // TODO(crisbeto): this is only necessary for the non-MDC select, but it's technically a
+  // public API so we have to keep it. It should be deprecated and removed eventually.
+  /** All of the defined groups of options. */
+  optionGroups;
+  /** User-supplied override of the trigger element. */
+  customTrigger;
+  /**
+   * This position config ensures that the top "start" corner of the overlay
+   * is aligned with with the top "start" of the origin by default (overlapping
+   * the trigger completely). If the panel cannot fit below the trigger, it
+   * will fall back to a position above the trigger.
+   */
+  _positions = [{
+    originX: "start",
+    originY: "bottom",
+    overlayX: "start",
+    overlayY: "top"
+  }, {
+    originX: "end",
+    originY: "bottom",
+    overlayX: "end",
+    overlayY: "top"
+  }, {
+    originX: "start",
+    originY: "top",
+    overlayX: "start",
+    overlayY: "bottom",
+    panelClass: "mat-mdc-select-panel-above"
+  }, {
+    originX: "end",
+    originY: "top",
+    overlayX: "end",
+    overlayY: "bottom",
+    panelClass: "mat-mdc-select-panel-above"
+  }];
+  /** Scrolls a particular option into the view. */
+  _scrollOptionIntoView(index) {
+    const option = this.options.toArray()[index];
+    if (option) {
+      const panel = this.panel.nativeElement;
+      const labelCount = _countGroupLabelsBeforeOption(index, this.options, this.optionGroups);
+      const element = option._getHostElement();
+      if (index === 0 && labelCount === 1) {
+        panel.scrollTop = 0;
+      } else {
+        panel.scrollTop = _getOptionScrollPosition(element.offsetTop, element.offsetHeight, panel.scrollTop, panel.offsetHeight);
+      }
+    }
+  }
+  /** Called when the panel has been opened and the overlay has settled on its final position. */
+  _positioningSettled() {
+    this._scrollOptionIntoView(this._keyManager.activeItemIndex || 0);
+  }
+  /** Creates a change event object that should be emitted by the select. */
+  _getChangeEvent(value) {
+    return new MatSelectChange(this, value);
+  }
+  /** Factory function used to create a scroll strategy for this select. */
+  _scrollStrategyFactory = inject(MAT_SELECT_SCROLL_STRATEGY);
+  /** Whether or not the overlay panel is open. */
+  _panelOpen = false;
+  /** Comparison function to specify which option is displayed. Defaults to object equality. */
+  _compareWith = (o1, o2) => o1 === o2;
+  /** Unique id for this input. */
+  _uid = this._idGenerator.getId("mat-select-");
+  /** Current `aria-labelledby` value for the select trigger. */
+  _triggerAriaLabelledBy = null;
+  /**
+   * Keeps track of the previous form control assigned to the select.
+   * Used to detect if it has changed.
+   */
+  _previousControl;
+  /** Emits whenever the component is destroyed. */
+  _destroy = new Subject();
+  /** Tracks the error state of the select. */
+  _errorStateTracker;
+  /**
+   * Emits whenever the component state changes and should cause the parent
+   * form-field to update. Implemented as part of `MatFormFieldControl`.
+   * @docs-private
+   */
+  stateChanges = new Subject();
+  /**
+   * Disable the automatic labeling to avoid issues like #27241.
+   * @docs-private
+   */
+  disableAutomaticLabeling = true;
+  /**
+   * Implemented as part of MatFormFieldControl.
+   * @docs-private
+   */
+  userAriaDescribedBy;
+  /** Deals with the selection logic. */
+  _selectionModel;
+  /** Manages keyboard events for options in the panel. */
+  _keyManager;
+  /** Ideal origin for the overlay panel. */
+  _preferredOverlayOrigin;
+  /** Width of the overlay panel. */
+  _overlayWidth;
+  /** `View -> model callback called when value changes` */
+  _onChange = () => {
+  };
+  /** `View -> model callback called when select has been touched` */
+  _onTouched = () => {
+  };
+  /** ID for the DOM node containing the select's value. */
+  _valueId = this._idGenerator.getId("mat-select-value-");
+  /** Emits when the panel element is finished transforming in. */
+  _panelDoneAnimatingStream = new Subject();
+  /** Strategy that will be used to handle scrolling while the select panel is open. */
+  _scrollStrategy;
+  _overlayPanelClass = this._defaultOptions?.overlayPanelClass || "";
+  /** Whether the select is focused. */
+  get focused() {
+    return this._focused || this._panelOpen;
+  }
+  _focused = false;
+  /** A name for this control that can be used by `mat-form-field`. */
+  controlType = "mat-select";
+  /** Trigger that opens the select. */
+  trigger;
+  /** Panel containing the select options. */
+  panel;
+  /** Overlay pane containing the options. */
+  _overlayDir;
+  /** Classes to be passed to the select panel. Supports the same syntax as `ngClass`. */
+  panelClass;
+  /** Whether the select is disabled. */
+  disabled = false;
+  /** Whether ripples in the select are disabled. */
+  disableRipple = false;
+  /** Tab index of the select. */
+  tabIndex = 0;
+  /** Whether checkmark indicator for single-selection options is hidden. */
+  get hideSingleSelectionIndicator() {
+    return this._hideSingleSelectionIndicator;
+  }
+  set hideSingleSelectionIndicator(value) {
+    this._hideSingleSelectionIndicator = value;
+    this._syncParentProperties();
+  }
+  _hideSingleSelectionIndicator = this._defaultOptions?.hideSingleSelectionIndicator ?? false;
+  /** Placeholder to be shown if no value has been selected. */
+  get placeholder() {
+    return this._placeholder;
+  }
+  set placeholder(value) {
+    this._placeholder = value;
+    this.stateChanges.next();
+  }
+  _placeholder;
+  /** Whether the component is required. */
+  get required() {
+    return this._required ?? this.ngControl?.control?.hasValidator(Validators.required) ?? false;
+  }
+  set required(value) {
+    this._required = value;
+    this.stateChanges.next();
+  }
+  _required;
+  /** Whether the user should be allowed to select multiple options. */
+  get multiple() {
+    return this._multiple;
+  }
+  set multiple(value) {
+    if (this._selectionModel && (typeof ngDevMode === "undefined" || ngDevMode)) {
+      throw getMatSelectDynamicMultipleError();
+    }
+    this._multiple = value;
+  }
+  _multiple = false;
+  /** Whether to center the active option over the trigger. */
+  disableOptionCentering = this._defaultOptions?.disableOptionCentering ?? false;
+  /**
+   * Function to compare the option values with the selected values. The first argument
+   * is a value from an option. The second is a value from the selection. A boolean
+   * should be returned.
+   */
+  get compareWith() {
+    return this._compareWith;
+  }
+  set compareWith(fn) {
+    if (typeof fn !== "function" && (typeof ngDevMode === "undefined" || ngDevMode)) {
+      throw getMatSelectNonFunctionValueError();
+    }
+    this._compareWith = fn;
+    if (this._selectionModel) {
+      this._initializeSelection();
+    }
+  }
+  /** Value of the select control. */
+  get value() {
+    return this._value;
+  }
+  set value(newValue) {
+    const hasAssigned = this._assignValue(newValue);
+    if (hasAssigned) {
+      this._onChange(newValue);
+    }
+  }
+  _value;
+  /** Aria label of the select. */
+  ariaLabel = "";
+  /** Input that can be used to specify the `aria-labelledby` attribute. */
+  ariaLabelledby;
+  /** Object used to control when error messages are shown. */
+  get errorStateMatcher() {
+    return this._errorStateTracker.matcher;
+  }
+  set errorStateMatcher(value) {
+    this._errorStateTracker.matcher = value;
+  }
+  /** Time to wait in milliseconds after the last keystroke before moving focus to an item. */
+  typeaheadDebounceInterval;
+  /**
+   * Function used to sort the values in a select in multiple mode.
+   * Follows the same logic as `Array.prototype.sort`.
+   */
+  sortComparator;
+  /** Unique id of the element. */
+  get id() {
+    return this._id;
+  }
+  set id(value) {
+    this._id = value || this._uid;
+    this.stateChanges.next();
+  }
+  _id;
+  /** Whether the select is in an error state. */
+  get errorState() {
+    return this._errorStateTracker.errorState;
+  }
+  set errorState(value) {
+    this._errorStateTracker.errorState = value;
+  }
+  /**
+   * Width of the panel. If set to `auto`, the panel will match the trigger width.
+   * If set to null or an empty string, the panel will grow to match the longest option's text.
+   */
+  panelWidth = this._defaultOptions && typeof this._defaultOptions.panelWidth !== "undefined" ? this._defaultOptions.panelWidth : "auto";
+  /**
+   * By default selecting an option with a `null` or `undefined` value will reset the select's
+   * value. Enable this option if the reset behavior doesn't match your requirements and instead
+   * the nullable options should become selected. The value of this input can be controlled app-wide
+   * using the `MAT_SELECT_CONFIG` injection token.
+   */
+  canSelectNullableOptions = this._defaultOptions?.canSelectNullableOptions ?? false;
+  /** Combined stream of all of the child options' change events. */
+  optionSelectionChanges = defer(() => {
+    const options = this.options;
+    if (options) {
+      return options.changes.pipe(startWith(options), switchMap(() => merge(...options.map((option) => option.onSelectionChange))));
+    }
+    return this._initialized.pipe(switchMap(() => this.optionSelectionChanges));
+  });
+  /** Event emitted when the select panel has been toggled. */
+  openedChange = new EventEmitter();
+  /** Event emitted when the select has been opened. */
+  _openedStream = this.openedChange.pipe(filter((o) => o), map(() => {
+  }));
+  /** Event emitted when the select has been closed. */
+  _closedStream = this.openedChange.pipe(filter((o) => !o), map(() => {
+  }));
+  /** Event emitted when the selected value has been changed by the user. */
+  selectionChange = new EventEmitter();
+  /**
+   * Event that emits whenever the raw value of the select changes. This is here primarily
+   * to facilitate the two-way binding for the `value` input.
+   * @docs-private
+   */
+  valueChange = new EventEmitter();
+  constructor() {
+    const defaultErrorStateMatcher = inject(ErrorStateMatcher);
+    const parentForm = inject(NgForm, {
+      optional: true
+    });
+    const parentFormGroup = inject(FormGroupDirective, {
+      optional: true
+    });
+    const tabIndex = inject(new HostAttributeToken("tabindex"), {
+      optional: true
+    });
+    if (this.ngControl) {
+      this.ngControl.valueAccessor = this;
+    }
+    if (this._defaultOptions?.typeaheadDebounceInterval != null) {
+      this.typeaheadDebounceInterval = this._defaultOptions.typeaheadDebounceInterval;
+    }
+    this._errorStateTracker = new _ErrorStateTracker(defaultErrorStateMatcher, this.ngControl, parentFormGroup, parentForm, this.stateChanges);
+    this._scrollStrategy = this._scrollStrategyFactory();
+    this.tabIndex = tabIndex == null ? 0 : parseInt(tabIndex) || 0;
+    this.id = this.id;
+  }
+  ngOnInit() {
+    this._selectionModel = new SelectionModel(this.multiple);
+    this.stateChanges.next();
+    this._panelDoneAnimatingStream.pipe(distinctUntilChanged(), takeUntil(this._destroy)).subscribe(() => this._panelDoneAnimating(this.panelOpen));
+    this._viewportRuler.change().pipe(takeUntil(this._destroy)).subscribe(() => {
+      if (this.panelOpen) {
+        this._overlayWidth = this._getOverlayWidth(this._preferredOverlayOrigin);
+        this._changeDetectorRef.detectChanges();
+      }
+    });
+  }
+  ngAfterContentInit() {
+    this._initialized.next();
+    this._initialized.complete();
+    this._initKeyManager();
+    this._selectionModel.changed.pipe(takeUntil(this._destroy)).subscribe((event) => {
+      event.added.forEach((option) => option.select());
+      event.removed.forEach((option) => option.deselect());
+    });
+    this.options.changes.pipe(startWith(null), takeUntil(this._destroy)).subscribe(() => {
+      this._resetOptions();
+      this._initializeSelection();
+    });
+  }
+  ngDoCheck() {
+    const newAriaLabelledby = this._getTriggerAriaLabelledby();
+    const ngControl = this.ngControl;
+    if (newAriaLabelledby !== this._triggerAriaLabelledBy) {
+      const element = this._elementRef.nativeElement;
+      this._triggerAriaLabelledBy = newAriaLabelledby;
+      if (newAriaLabelledby) {
+        element.setAttribute("aria-labelledby", newAriaLabelledby);
+      } else {
+        element.removeAttribute("aria-labelledby");
+      }
+    }
+    if (ngControl) {
+      if (this._previousControl !== ngControl.control) {
+        if (this._previousControl !== void 0 && ngControl.disabled !== null && ngControl.disabled !== this.disabled) {
+          this.disabled = ngControl.disabled;
+        }
+        this._previousControl = ngControl.control;
+      }
+      this.updateErrorState();
+    }
+  }
+  ngOnChanges(changes) {
+    if (changes["disabled"] || changes["userAriaDescribedBy"]) {
+      this.stateChanges.next();
+    }
+    if (changes["typeaheadDebounceInterval"] && this._keyManager) {
+      this._keyManager.withTypeAhead(this.typeaheadDebounceInterval);
+    }
+  }
+  ngOnDestroy() {
+    this._keyManager?.destroy();
+    this._destroy.next();
+    this._destroy.complete();
+    this.stateChanges.complete();
+    this._clearFromModal();
+  }
+  /** Toggles the overlay panel open or closed. */
+  toggle() {
+    this.panelOpen ? this.close() : this.open();
+  }
+  /** Opens the overlay panel. */
+  open() {
+    if (!this._canOpen()) {
+      return;
+    }
+    if (this._parentFormField) {
+      this._preferredOverlayOrigin = this._parentFormField.getConnectedOverlayOrigin();
+    }
+    this._overlayWidth = this._getOverlayWidth(this._preferredOverlayOrigin);
+    this._applyModalPanelOwnership();
+    this._panelOpen = true;
+    this._keyManager.withHorizontalOrientation(null);
+    this._highlightCorrectOption();
+    this._changeDetectorRef.markForCheck();
+    this.stateChanges.next();
+  }
+  /**
+   * Track which modal we have modified the `aria-owns` attribute of. When the combobox trigger is
+   * inside an aria-modal, we apply aria-owns to the parent modal with the `id` of the options
+   * panel. Track the modal we have changed so we can undo the changes on destroy.
+   */
+  _trackedModal = null;
+  /**
+   * If the autocomplete trigger is inside of an `aria-modal` element, connect
+   * that modal to the options panel with `aria-owns`.
+   *
+   * For some browser + screen reader combinations, when navigation is inside
+   * of an `aria-modal` element, the screen reader treats everything outside
+   * of that modal as hidden or invisible.
+   *
+   * This causes a problem when the combobox trigger is _inside_ of a modal, because the
+   * options panel is rendered _outside_ of that modal, preventing screen reader navigation
+   * from reaching the panel.
+   *
+   * We can work around this issue by applying `aria-owns` to the modal with the `id` of
+   * the options panel. This effectively communicates to assistive technology that the
+   * options panel is part of the same interaction as the modal.
+   *
+   * At time of this writing, this issue is present in VoiceOver.
+   * See https://github.com/angular/components/issues/20694
+   */
+  _applyModalPanelOwnership() {
+    const modal = this._elementRef.nativeElement.closest('body > .cdk-overlay-container [aria-modal="true"]');
+    if (!modal) {
+      return;
+    }
+    const panelId = `${this.id}-panel`;
+    if (this._trackedModal) {
+      removeAriaReferencedId(this._trackedModal, "aria-owns", panelId);
+    }
+    addAriaReferencedId(modal, "aria-owns", panelId);
+    this._trackedModal = modal;
+  }
+  /** Clears the reference to the listbox overlay element from the modal it was added to. */
+  _clearFromModal() {
+    if (!this._trackedModal) {
+      return;
+    }
+    const panelId = `${this.id}-panel`;
+    removeAriaReferencedId(this._trackedModal, "aria-owns", panelId);
+    this._trackedModal = null;
+  }
+  /** Closes the overlay panel and focuses the host element. */
+  close() {
+    if (this._panelOpen) {
+      this._panelOpen = false;
+      this._keyManager.withHorizontalOrientation(this._isRtl() ? "rtl" : "ltr");
+      this._changeDetectorRef.markForCheck();
+      this._onTouched();
+      this.stateChanges.next();
+    }
+  }
+  /**
+   * Sets the select's value. Part of the ControlValueAccessor interface
+   * required to integrate with Angular's core forms API.
+   *
+   * @param value New value to be written to the model.
+   */
+  writeValue(value) {
+    this._assignValue(value);
+  }
+  /**
+   * Saves a callback function to be invoked when the select's value
+   * changes from user input. Part of the ControlValueAccessor interface
+   * required to integrate with Angular's core forms API.
+   *
+   * @param fn Callback to be triggered when the value changes.
+   */
+  registerOnChange(fn) {
+    this._onChange = fn;
+  }
+  /**
+   * Saves a callback function to be invoked when the select is blurred
+   * by the user. Part of the ControlValueAccessor interface required
+   * to integrate with Angular's core forms API.
+   *
+   * @param fn Callback to be triggered when the component has been touched.
+   */
+  registerOnTouched(fn) {
+    this._onTouched = fn;
+  }
+  /**
+   * Disables the select. Part of the ControlValueAccessor interface required
+   * to integrate with Angular's core forms API.
+   *
+   * @param isDisabled Sets whether the component is disabled.
+   */
+  setDisabledState(isDisabled) {
+    this.disabled = isDisabled;
+    this._changeDetectorRef.markForCheck();
+    this.stateChanges.next();
+  }
+  /** Whether or not the overlay panel is open. */
+  get panelOpen() {
+    return this._panelOpen;
+  }
+  /** The currently selected option. */
+  get selected() {
+    return this.multiple ? this._selectionModel?.selected || [] : this._selectionModel?.selected[0];
+  }
+  /** The value displayed in the trigger. */
+  get triggerValue() {
+    if (this.empty) {
+      return "";
+    }
+    if (this._multiple) {
+      const selectedOptions = this._selectionModel.selected.map((option) => option.viewValue);
+      if (this._isRtl()) {
+        selectedOptions.reverse();
+      }
+      return selectedOptions.join(", ");
+    }
+    return this._selectionModel.selected[0].viewValue;
+  }
+  /** Refreshes the error state of the select. */
+  updateErrorState() {
+    this._errorStateTracker.updateErrorState();
+  }
+  /** Whether the element is in RTL mode. */
+  _isRtl() {
+    return this._dir ? this._dir.value === "rtl" : false;
+  }
+  /** Handles all keydown events on the select. */
+  _handleKeydown(event) {
+    if (!this.disabled) {
+      this.panelOpen ? this._handleOpenKeydown(event) : this._handleClosedKeydown(event);
+    }
+  }
+  /** Handles keyboard events while the select is closed. */
+  _handleClosedKeydown(event) {
+    const keyCode = event.keyCode;
+    const isArrowKey = keyCode === DOWN_ARROW || keyCode === UP_ARROW || keyCode === LEFT_ARROW || keyCode === RIGHT_ARROW;
+    const isOpenKey = keyCode === ENTER || keyCode === SPACE;
+    const manager = this._keyManager;
+    if (!manager.isTyping() && isOpenKey && !hasModifierKey(event) || (this.multiple || event.altKey) && isArrowKey) {
+      event.preventDefault();
+      this.open();
+    } else if (!this.multiple) {
+      const previouslySelectedOption = this.selected;
+      manager.onKeydown(event);
+      const selectedOption = this.selected;
+      if (selectedOption && previouslySelectedOption !== selectedOption) {
+        this._liveAnnouncer.announce(selectedOption.viewValue, 1e4);
+      }
+    }
+  }
+  /** Handles keyboard events when the selected is open. */
+  _handleOpenKeydown(event) {
+    const manager = this._keyManager;
+    const keyCode = event.keyCode;
+    const isArrowKey = keyCode === DOWN_ARROW || keyCode === UP_ARROW;
+    const isTyping = manager.isTyping();
+    if (isArrowKey && event.altKey) {
+      event.preventDefault();
+      this.close();
+    } else if (!isTyping && (keyCode === ENTER || keyCode === SPACE) && manager.activeItem && !hasModifierKey(event)) {
+      event.preventDefault();
+      manager.activeItem._selectViaInteraction();
+    } else if (!isTyping && this._multiple && keyCode === A && event.ctrlKey) {
+      event.preventDefault();
+      const hasDeselectedOptions = this.options.some((opt) => !opt.disabled && !opt.selected);
+      this.options.forEach((option) => {
+        if (!option.disabled) {
+          hasDeselectedOptions ? option.select() : option.deselect();
+        }
+      });
+    } else {
+      const previouslyFocusedIndex = manager.activeItemIndex;
+      manager.onKeydown(event);
+      if (this._multiple && isArrowKey && event.shiftKey && manager.activeItem && manager.activeItemIndex !== previouslyFocusedIndex) {
+        manager.activeItem._selectViaInteraction();
+      }
+    }
+  }
+  _onFocus() {
+    if (!this.disabled) {
+      this._focused = true;
+      this.stateChanges.next();
+    }
+  }
+  /**
+   * Calls the touched callback only if the panel is closed. Otherwise, the trigger will
+   * "blur" to the panel when it opens, causing a false positive.
+   */
+  _onBlur() {
+    this._focused = false;
+    this._keyManager?.cancelTypeahead();
+    if (!this.disabled && !this.panelOpen) {
+      this._onTouched();
+      this._changeDetectorRef.markForCheck();
+      this.stateChanges.next();
+    }
+  }
+  /**
+   * Callback that is invoked when the overlay panel has been attached.
+   */
+  _onAttached() {
+    this._overlayDir.positionChange.pipe(take(1)).subscribe(() => {
+      this._changeDetectorRef.detectChanges();
+      this._positioningSettled();
+    });
+  }
+  /** Returns the theme to be used on the panel. */
+  _getPanelTheme() {
+    return this._parentFormField ? `mat-${this._parentFormField.color}` : "";
+  }
+  /** Whether the select has a value. */
+  get empty() {
+    return !this._selectionModel || this._selectionModel.isEmpty();
+  }
+  _initializeSelection() {
+    Promise.resolve().then(() => {
+      if (this.ngControl) {
+        this._value = this.ngControl.value;
+      }
+      this._setSelectionByValue(this._value);
+      this.stateChanges.next();
+    });
+  }
+  /**
+   * Sets the selected option based on a value. If no option can be
+   * found with the designated value, the select trigger is cleared.
+   */
+  _setSelectionByValue(value) {
+    this.options.forEach((option) => option.setInactiveStyles());
+    this._selectionModel.clear();
+    if (this.multiple && value) {
+      if (!Array.isArray(value) && (typeof ngDevMode === "undefined" || ngDevMode)) {
+        throw getMatSelectNonArrayValueError();
+      }
+      value.forEach((currentValue) => this._selectOptionByValue(currentValue));
+      this._sortValues();
+    } else {
+      const correspondingOption = this._selectOptionByValue(value);
+      if (correspondingOption) {
+        this._keyManager.updateActiveItem(correspondingOption);
+      } else if (!this.panelOpen) {
+        this._keyManager.updateActiveItem(-1);
+      }
+    }
+    this._changeDetectorRef.markForCheck();
+  }
+  /**
+   * Finds and selects and option based on its value.
+   * @returns Option that has the corresponding value.
+   */
+  _selectOptionByValue(value) {
+    const correspondingOption = this.options.find((option) => {
+      if (this._selectionModel.isSelected(option)) {
+        return false;
+      }
+      try {
+        return (option.value != null || this.canSelectNullableOptions) && this._compareWith(option.value, value);
+      } catch (error) {
+        if (typeof ngDevMode === "undefined" || ngDevMode) {
+          console.warn(error);
+        }
+        return false;
+      }
+    });
+    if (correspondingOption) {
+      this._selectionModel.select(correspondingOption);
+    }
+    return correspondingOption;
+  }
+  /** Assigns a specific value to the select. Returns whether the value has changed. */
+  _assignValue(newValue) {
+    if (newValue !== this._value || this._multiple && Array.isArray(newValue)) {
+      if (this.options) {
+        this._setSelectionByValue(newValue);
+      }
+      this._value = newValue;
+      return true;
+    }
+    return false;
+  }
+  // `skipPredicate` determines if key manager should avoid putting a given option in the tab
+  // order. Allow disabled list items to receive focus via keyboard to align with WAI ARIA
+  // recommendation.
+  //
+  // Normally WAI ARIA's instructions are to exclude disabled items from the tab order, but it
+  // makes a few exceptions for compound widgets.
+  //
+  // From [Developing a Keyboard Interface](
+  // https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/):
+  //   "For the following composite widget elements, keep them focusable when disabled: Options in a
+  //   Listbox..."
+  //
+  // The user can focus disabled options using the keyboard, but the user cannot click disabled
+  // options.
+  _skipPredicate = (option) => {
+    if (this.panelOpen) {
+      return false;
+    }
+    return option.disabled;
+  };
+  /** Gets how wide the overlay panel should be. */
+  _getOverlayWidth(preferredOrigin) {
+    if (this.panelWidth === "auto") {
+      const refToMeasure = preferredOrigin instanceof CdkOverlayOrigin ? preferredOrigin.elementRef : preferredOrigin || this._elementRef;
+      return refToMeasure.nativeElement.getBoundingClientRect().width;
+    }
+    return this.panelWidth === null ? "" : this.panelWidth;
+  }
+  /** Syncs the parent state with the individual options. */
+  _syncParentProperties() {
+    if (this.options) {
+      for (const option of this.options) {
+        option._changeDetectorRef.markForCheck();
+      }
+    }
+  }
+  /** Sets up a key manager to listen to keyboard events on the overlay panel. */
+  _initKeyManager() {
+    this._keyManager = new ActiveDescendantKeyManager(this.options).withTypeAhead(this.typeaheadDebounceInterval).withVerticalOrientation().withHorizontalOrientation(this._isRtl() ? "rtl" : "ltr").withHomeAndEnd().withPageUpDown().withAllowedModifierKeys(["shiftKey"]).skipPredicate(this._skipPredicate);
+    this._keyManager.tabOut.subscribe(() => {
+      if (this.panelOpen) {
+        if (!this.multiple && this._keyManager.activeItem) {
+          this._keyManager.activeItem._selectViaInteraction();
+        }
+        this.focus();
+        this.close();
+      }
+    });
+    this._keyManager.change.subscribe(() => {
+      if (this._panelOpen && this.panel) {
+        this._scrollOptionIntoView(this._keyManager.activeItemIndex || 0);
+      } else if (!this._panelOpen && !this.multiple && this._keyManager.activeItem) {
+        this._keyManager.activeItem._selectViaInteraction();
+      }
+    });
+  }
+  /** Drops current option subscriptions and IDs and resets from scratch. */
+  _resetOptions() {
+    const changedOrDestroyed = merge(this.options.changes, this._destroy);
+    this.optionSelectionChanges.pipe(takeUntil(changedOrDestroyed)).subscribe((event) => {
+      this._onSelect(event.source, event.isUserInput);
+      if (event.isUserInput && !this.multiple && this._panelOpen) {
+        this.close();
+        this.focus();
+      }
+    });
+    merge(...this.options.map((option) => option._stateChanges)).pipe(takeUntil(changedOrDestroyed)).subscribe(() => {
+      this._changeDetectorRef.detectChanges();
+      this.stateChanges.next();
+    });
+  }
+  /** Invoked when an option is clicked. */
+  _onSelect(option, isUserInput) {
+    const wasSelected = this._selectionModel.isSelected(option);
+    if (!this.canSelectNullableOptions && option.value == null && !this._multiple) {
+      option.deselect();
+      this._selectionModel.clear();
+      if (this.value != null) {
+        this._propagateChanges(option.value);
+      }
+    } else {
+      if (wasSelected !== option.selected) {
+        option.selected ? this._selectionModel.select(option) : this._selectionModel.deselect(option);
+      }
+      if (isUserInput) {
+        this._keyManager.setActiveItem(option);
+      }
+      if (this.multiple) {
+        this._sortValues();
+        if (isUserInput) {
+          this.focus();
+        }
+      }
+    }
+    if (wasSelected !== this._selectionModel.isSelected(option)) {
+      this._propagateChanges();
+    }
+    this.stateChanges.next();
+  }
+  /** Sorts the selected values in the selected based on their order in the panel. */
+  _sortValues() {
+    if (this.multiple) {
+      const options = this.options.toArray();
+      this._selectionModel.sort((a, b) => {
+        return this.sortComparator ? this.sortComparator(a, b, options) : options.indexOf(a) - options.indexOf(b);
+      });
+      this.stateChanges.next();
+    }
+  }
+  /** Emits change event to set the model value. */
+  _propagateChanges(fallbackValue) {
+    let valueToEmit;
+    if (this.multiple) {
+      valueToEmit = this.selected.map((option) => option.value);
+    } else {
+      valueToEmit = this.selected ? this.selected.value : fallbackValue;
+    }
+    this._value = valueToEmit;
+    this.valueChange.emit(valueToEmit);
+    this._onChange(valueToEmit);
+    this.selectionChange.emit(this._getChangeEvent(valueToEmit));
+    this._changeDetectorRef.markForCheck();
+  }
+  /**
+   * Highlights the selected item. If no option is selected, it will highlight
+   * the first *enabled* option.
+   */
+  _highlightCorrectOption() {
+    if (this._keyManager) {
+      if (this.empty) {
+        let firstEnabledOptionIndex = -1;
+        for (let index = 0; index < this.options.length; index++) {
+          const option = this.options.get(index);
+          if (!option.disabled) {
+            firstEnabledOptionIndex = index;
+            break;
+          }
+        }
+        this._keyManager.setActiveItem(firstEnabledOptionIndex);
+      } else {
+        this._keyManager.setActiveItem(this._selectionModel.selected[0]);
+      }
+    }
+  }
+  /** Whether the panel is allowed to open. */
+  _canOpen() {
+    return !this._panelOpen && !this.disabled && this.options?.length > 0;
+  }
+  /** Focuses the select element. */
+  focus(options) {
+    this._elementRef.nativeElement.focus(options);
+  }
+  /** Gets the aria-labelledby for the select panel. */
+  _getPanelAriaLabelledby() {
+    if (this.ariaLabel) {
+      return null;
+    }
+    const labelId = this._parentFormField?.getLabelId() || null;
+    const labelExpression = labelId ? labelId + " " : "";
+    return this.ariaLabelledby ? labelExpression + this.ariaLabelledby : labelId;
+  }
+  /** Determines the `aria-activedescendant` to be set on the host. */
+  _getAriaActiveDescendant() {
+    if (this.panelOpen && this._keyManager && this._keyManager.activeItem) {
+      return this._keyManager.activeItem.id;
+    }
+    return null;
+  }
+  /** Gets the aria-labelledby of the select component trigger. */
+  _getTriggerAriaLabelledby() {
+    if (this.ariaLabel) {
+      return null;
+    }
+    const labelId = this._parentFormField?.getLabelId();
+    let value = (labelId ? labelId + " " : "") + this._valueId;
+    if (this.ariaLabelledby) {
+      value += " " + this.ariaLabelledby;
+    }
+    return value;
+  }
+  /** Called when the overlay panel is done animating. */
+  _panelDoneAnimating(isOpen) {
+    this.openedChange.emit(isOpen);
+  }
+  /**
+   * Implemented as part of MatFormFieldControl.
+   * @docs-private
+   */
+  setDescribedByIds(ids) {
+    if (ids.length) {
+      this._elementRef.nativeElement.setAttribute("aria-describedby", ids.join(" "));
+    } else {
+      this._elementRef.nativeElement.removeAttribute("aria-describedby");
+    }
+  }
+  /**
+   * Implemented as part of MatFormFieldControl.
+   * @docs-private
+   */
+  onContainerClick() {
+    this.focus();
+    this.open();
+  }
+  /**
+   * Implemented as part of MatFormFieldControl.
+   * @docs-private
+   */
+  get shouldLabelFloat() {
+    return this.panelOpen || !this.empty || this.focused && !!this.placeholder;
+  }
+  static \u0275fac = function MatSelect_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _MatSelect)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _MatSelect,
+    selectors: [["mat-select"]],
+    contentQueries: function MatSelect_ContentQueries(rf, ctx, dirIndex) {
+      if (rf & 1) {
+        \u0275\u0275contentQuery(dirIndex, MAT_SELECT_TRIGGER, 5);
+        \u0275\u0275contentQuery(dirIndex, MatOption, 5);
+        \u0275\u0275contentQuery(dirIndex, MAT_OPTGROUP, 5);
+      }
+      if (rf & 2) {
+        let _t;
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.customTrigger = _t.first);
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.options = _t);
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.optionGroups = _t);
+      }
+    },
+    viewQuery: function MatSelect_Query(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275viewQuery(_c011, 5);
+        \u0275\u0275viewQuery(_c17, 5);
+        \u0275\u0275viewQuery(CdkConnectedOverlay, 5);
+      }
+      if (rf & 2) {
+        let _t;
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.trigger = _t.first);
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.panel = _t.first);
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._overlayDir = _t.first);
+      }
+    },
+    hostAttrs: ["role", "combobox", "aria-haspopup", "listbox", 1, "mat-mdc-select"],
+    hostVars: 19,
+    hostBindings: function MatSelect_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275listener("keydown", function MatSelect_keydown_HostBindingHandler($event) {
+          return ctx._handleKeydown($event);
+        })("focus", function MatSelect_focus_HostBindingHandler() {
+          return ctx._onFocus();
+        })("blur", function MatSelect_blur_HostBindingHandler() {
+          return ctx._onBlur();
+        });
+      }
+      if (rf & 2) {
+        \u0275\u0275attribute("id", ctx.id)("tabindex", ctx.disabled ? -1 : ctx.tabIndex)("aria-controls", ctx.panelOpen ? ctx.id + "-panel" : null)("aria-expanded", ctx.panelOpen)("aria-label", ctx.ariaLabel || null)("aria-required", ctx.required.toString())("aria-disabled", ctx.disabled.toString())("aria-invalid", ctx.errorState)("aria-activedescendant", ctx._getAriaActiveDescendant());
+        \u0275\u0275classProp("mat-mdc-select-disabled", ctx.disabled)("mat-mdc-select-invalid", ctx.errorState)("mat-mdc-select-required", ctx.required)("mat-mdc-select-empty", ctx.empty)("mat-mdc-select-multiple", ctx.multiple);
+      }
+    },
+    inputs: {
+      userAriaDescribedBy: [0, "aria-describedby", "userAriaDescribedBy"],
+      panelClass: "panelClass",
+      disabled: [2, "disabled", "disabled", booleanAttribute],
+      disableRipple: [2, "disableRipple", "disableRipple", booleanAttribute],
+      tabIndex: [2, "tabIndex", "tabIndex", (value) => value == null ? 0 : numberAttribute(value)],
+      hideSingleSelectionIndicator: [2, "hideSingleSelectionIndicator", "hideSingleSelectionIndicator", booleanAttribute],
+      placeholder: "placeholder",
+      required: [2, "required", "required", booleanAttribute],
+      multiple: [2, "multiple", "multiple", booleanAttribute],
+      disableOptionCentering: [2, "disableOptionCentering", "disableOptionCentering", booleanAttribute],
+      compareWith: "compareWith",
+      value: "value",
+      ariaLabel: [0, "aria-label", "ariaLabel"],
+      ariaLabelledby: [0, "aria-labelledby", "ariaLabelledby"],
+      errorStateMatcher: "errorStateMatcher",
+      typeaheadDebounceInterval: [2, "typeaheadDebounceInterval", "typeaheadDebounceInterval", numberAttribute],
+      sortComparator: "sortComparator",
+      id: "id",
+      panelWidth: "panelWidth",
+      canSelectNullableOptions: [2, "canSelectNullableOptions", "canSelectNullableOptions", booleanAttribute]
+    },
+    outputs: {
+      openedChange: "openedChange",
+      _openedStream: "opened",
+      _closedStream: "closed",
+      selectionChange: "selectionChange",
+      valueChange: "valueChange"
+    },
+    exportAs: ["matSelect"],
+    features: [\u0275\u0275ProvidersFeature([{
+      provide: MatFormFieldControl,
+      useExisting: _MatSelect
+    }, {
+      provide: MAT_OPTION_PARENT_COMPONENT,
+      useExisting: _MatSelect
+    }]), \u0275\u0275InputTransformsFeature, \u0275\u0275NgOnChangesFeature],
+    ngContentSelectors: _c36,
+    decls: 11,
+    vars: 8,
+    consts: [["fallbackOverlayOrigin", "cdkOverlayOrigin", "trigger", ""], ["panel", ""], ["cdk-overlay-origin", "", 1, "mat-mdc-select-trigger", 3, "click"], [1, "mat-mdc-select-value"], [1, "mat-mdc-select-placeholder", "mat-mdc-select-min-line"], [1, "mat-mdc-select-value-text"], [1, "mat-mdc-select-arrow-wrapper"], [1, "mat-mdc-select-arrow"], ["viewBox", "0 0 24 24", "width", "24px", "height", "24px", "focusable", "false", "aria-hidden", "true"], ["d", "M7 10l5 5 5-5z"], ["cdk-connected-overlay", "", "cdkConnectedOverlayLockPosition", "", "cdkConnectedOverlayHasBackdrop", "", "cdkConnectedOverlayBackdropClass", "cdk-overlay-transparent-backdrop", 3, "backdropClick", "attach", "detach", "cdkConnectedOverlayPanelClass", "cdkConnectedOverlayScrollStrategy", "cdkConnectedOverlayOrigin", "cdkConnectedOverlayOpen", "cdkConnectedOverlayPositions", "cdkConnectedOverlayWidth"], [1, "mat-mdc-select-min-line"], ["role", "listbox", "tabindex", "-1", 3, "keydown", "ngClass"]],
+    template: function MatSelect_Template(rf, ctx) {
+      if (rf & 1) {
+        const _r1 = \u0275\u0275getCurrentView();
+        \u0275\u0275projectionDef(_c26);
+        \u0275\u0275elementStart(0, "div", 2, 0);
+        \u0275\u0275listener("click", function MatSelect_Template_div_click_0_listener() {
+          \u0275\u0275restoreView(_r1);
+          return \u0275\u0275resetView(ctx.open());
+        });
+        \u0275\u0275elementStart(3, "div", 3);
+        \u0275\u0275template(4, MatSelect_Conditional_4_Template, 2, 1, "span", 4)(5, MatSelect_Conditional_5_Template, 3, 1, "span", 5);
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(6, "div", 6)(7, "div", 7);
+        \u0275\u0275namespaceSVG();
+        \u0275\u0275elementStart(8, "svg", 8);
+        \u0275\u0275element(9, "path", 9);
+        \u0275\u0275elementEnd()()()();
+        \u0275\u0275template(10, MatSelect_ng_template_10_Template, 3, 9, "ng-template", 10);
+        \u0275\u0275listener("backdropClick", function MatSelect_Template_ng_template_backdropClick_10_listener() {
+          \u0275\u0275restoreView(_r1);
+          return \u0275\u0275resetView(ctx.close());
+        })("attach", function MatSelect_Template_ng_template_attach_10_listener() {
+          \u0275\u0275restoreView(_r1);
+          return \u0275\u0275resetView(ctx._onAttached());
+        })("detach", function MatSelect_Template_ng_template_detach_10_listener() {
+          \u0275\u0275restoreView(_r1);
+          return \u0275\u0275resetView(ctx.close());
+        });
+      }
+      if (rf & 2) {
+        const fallbackOverlayOrigin_r4 = \u0275\u0275reference(1);
+        \u0275\u0275advance(3);
+        \u0275\u0275attribute("id", ctx._valueId);
+        \u0275\u0275advance();
+        \u0275\u0275conditional(ctx.empty ? 4 : 5);
+        \u0275\u0275advance(6);
+        \u0275\u0275property("cdkConnectedOverlayPanelClass", ctx._overlayPanelClass)("cdkConnectedOverlayScrollStrategy", ctx._scrollStrategy)("cdkConnectedOverlayOrigin", ctx._preferredOverlayOrigin || fallbackOverlayOrigin_r4)("cdkConnectedOverlayOpen", ctx.panelOpen)("cdkConnectedOverlayPositions", ctx._positions)("cdkConnectedOverlayWidth", ctx._overlayWidth);
+      }
+    },
+    dependencies: [CdkOverlayOrigin, CdkConnectedOverlay, NgClass],
+    styles: ['.mat-mdc-select{display:inline-block;width:100%;outline:none;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;color:var(--mat-select-enabled-trigger-text-color, var(--mat-sys-on-surface));font-family:var(--mat-select-trigger-text-font, var(--mat-sys-body-large-font));line-height:var(--mat-select-trigger-text-line-height, var(--mat-sys-body-large-line-height));font-size:var(--mat-select-trigger-text-size, var(--mat-sys-body-large-size));font-weight:var(--mat-select-trigger-text-weight, var(--mat-sys-body-large-weight));letter-spacing:var(--mat-select-trigger-text-tracking, var(--mat-sys-body-large-tracking))}div.mat-mdc-select-panel{box-shadow:var(--mat-select-container-elevation-shadow, 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12))}.mat-mdc-select-disabled{color:var(--mat-select-disabled-trigger-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-select-disabled .mat-mdc-select-placeholder{color:var(--mat-select-disabled-trigger-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-select-trigger{display:inline-flex;align-items:center;cursor:pointer;position:relative;box-sizing:border-box;width:100%}.mat-mdc-select-disabled .mat-mdc-select-trigger{-webkit-user-select:none;user-select:none;cursor:default}.mat-mdc-select-value{width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mat-mdc-select-value-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mat-mdc-select-arrow-wrapper{height:24px;flex-shrink:0;display:inline-flex;align-items:center}.mat-form-field-appearance-fill .mdc-text-field--no-label .mat-mdc-select-arrow-wrapper{transform:none}.mat-mdc-form-field .mat-mdc-select.mat-mdc-select-invalid .mat-mdc-select-arrow,.mat-form-field-invalid:not(.mat-form-field-disabled) .mat-mdc-form-field-infix::after{color:var(--mat-select-invalid-arrow-color, var(--mat-sys-error))}.mat-mdc-select-arrow{width:10px;height:5px;position:relative;color:var(--mat-select-enabled-arrow-color, var(--mat-sys-on-surface-variant))}.mat-mdc-form-field.mat-focused .mat-mdc-select-arrow{color:var(--mat-select-focused-arrow-color, var(--mat-sys-primary))}.mat-mdc-form-field .mat-mdc-select.mat-mdc-select-disabled .mat-mdc-select-arrow{color:var(--mat-select-disabled-arrow-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-select-arrow svg{fill:currentColor;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%)}@media(forced-colors: active){.mat-mdc-select-arrow svg{fill:CanvasText}.mat-mdc-select-disabled .mat-mdc-select-arrow svg{fill:GrayText}}div.mat-mdc-select-panel{width:100%;max-height:275px;outline:0;overflow:auto;padding:8px 0;border-radius:4px;box-sizing:border-box;position:static;background-color:var(--mat-select-panel-background-color, var(--mat-sys-surface-container))}@media(forced-colors: active){div.mat-mdc-select-panel{outline:solid 1px}}.cdk-overlay-pane:not(.mat-mdc-select-panel-above) div.mat-mdc-select-panel{border-top-left-radius:0;border-top-right-radius:0;transform-origin:top center}.mat-mdc-select-panel-above div.mat-mdc-select-panel{border-bottom-left-radius:0;border-bottom-right-radius:0;transform-origin:bottom center}div.mat-mdc-select-panel .mat-mdc-option{--mdc-list-list-item-container-color: var(--mat-select-panel-background-color)}.mat-mdc-select-placeholder{transition:color 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1);color:var(--mat-select-placeholder-text-color, var(--mat-sys-on-surface-variant))}.mat-form-field-no-animations .mat-mdc-select-placeholder,._mat-animation-noopable .mat-mdc-select-placeholder{transition:none}.mat-form-field-hide-placeholder .mat-mdc-select-placeholder{color:rgba(0,0,0,0);-webkit-text-fill-color:rgba(0,0,0,0);transition:none;display:block}.mat-mdc-form-field-type-mat-select:not(.mat-form-field-disabled) .mat-mdc-text-field-wrapper{cursor:pointer}.mat-mdc-form-field-type-mat-select.mat-form-field-appearance-fill .mat-mdc-floating-label{max-width:calc(100% - 18px)}.mat-mdc-form-field-type-mat-select.mat-form-field-appearance-fill .mdc-floating-label--float-above{max-width:calc(100%/0.75 - 24px)}.mat-mdc-form-field-type-mat-select.mat-form-field-appearance-outline .mdc-notched-outline__notch{max-width:calc(100% - 60px)}.mat-mdc-form-field-type-mat-select.mat-form-field-appearance-outline .mdc-text-field--label-floating .mdc-notched-outline__notch{max-width:calc(100% - 24px)}.mat-mdc-select-min-line:empty::before{content:" ";white-space:pre;width:1px;display:inline-block;visibility:hidden}.mat-form-field-appearance-fill .mat-mdc-select-arrow-wrapper{transform:var(--mat-select-arrow-transform, translateY(-8px))}'],
+    encapsulation: 2,
+    data: {
+      animation: [matSelectAnimations.transformPanel]
+    },
+    changeDetection: 0
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatSelect, [{
+    type: Component,
+    args: [{
+      selector: "mat-select",
+      exportAs: "matSelect",
+      encapsulation: ViewEncapsulation.None,
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      host: {
+        "role": "combobox",
+        "aria-haspopup": "listbox",
+        "class": "mat-mdc-select",
+        "[attr.id]": "id",
+        "[attr.tabindex]": "disabled ? -1 : tabIndex",
+        "[attr.aria-controls]": 'panelOpen ? id + "-panel" : null',
+        "[attr.aria-expanded]": "panelOpen",
+        "[attr.aria-label]": "ariaLabel || null",
+        "[attr.aria-required]": "required.toString()",
+        "[attr.aria-disabled]": "disabled.toString()",
+        "[attr.aria-invalid]": "errorState",
+        "[attr.aria-activedescendant]": "_getAriaActiveDescendant()",
+        "[class.mat-mdc-select-disabled]": "disabled",
+        "[class.mat-mdc-select-invalid]": "errorState",
+        "[class.mat-mdc-select-required]": "required",
+        "[class.mat-mdc-select-empty]": "empty",
+        "[class.mat-mdc-select-multiple]": "multiple",
+        "(keydown)": "_handleKeydown($event)",
+        "(focus)": "_onFocus()",
+        "(blur)": "_onBlur()"
+      },
+      animations: [matSelectAnimations.transformPanel],
+      providers: [{
+        provide: MatFormFieldControl,
+        useExisting: MatSelect
+      }, {
+        provide: MAT_OPTION_PARENT_COMPONENT,
+        useExisting: MatSelect
+      }],
+      imports: [CdkOverlayOrigin, CdkConnectedOverlay, NgClass],
+      template: `<div cdk-overlay-origin
+     class="mat-mdc-select-trigger"
+     (click)="open()"
+     #fallbackOverlayOrigin="cdkOverlayOrigin"
+     #trigger>
+
+  <div class="mat-mdc-select-value" [attr.id]="_valueId">
+    @if (empty) {
+      <span class="mat-mdc-select-placeholder mat-mdc-select-min-line">{{placeholder}}</span>
+    } @else {
+      <span class="mat-mdc-select-value-text">
+        @if (customTrigger) {
+          <ng-content select="mat-select-trigger"></ng-content>
+        } @else {
+          <span class="mat-mdc-select-min-line">{{triggerValue}}</span>
+        }
+      </span>
+    }
+  </div>
+
+  <div class="mat-mdc-select-arrow-wrapper">
+    <div class="mat-mdc-select-arrow">
+      <!-- Use an inline SVG, because it works better than a CSS triangle in high contrast mode. -->
+      <svg viewBox="0 0 24 24" width="24px" height="24px" focusable="false" aria-hidden="true">
+        <path d="M7 10l5 5 5-5z"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<ng-template
+  cdk-connected-overlay
+  cdkConnectedOverlayLockPosition
+  cdkConnectedOverlayHasBackdrop
+  cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+  [cdkConnectedOverlayPanelClass]="_overlayPanelClass"
+  [cdkConnectedOverlayScrollStrategy]="_scrollStrategy"
+  [cdkConnectedOverlayOrigin]="_preferredOverlayOrigin || fallbackOverlayOrigin"
+  [cdkConnectedOverlayOpen]="panelOpen"
+  [cdkConnectedOverlayPositions]="_positions"
+  [cdkConnectedOverlayWidth]="_overlayWidth"
+  (backdropClick)="close()"
+  (attach)="_onAttached()"
+  (detach)="close()">
+  <div
+    #panel
+    role="listbox"
+    tabindex="-1"
+    class="mat-mdc-select-panel mdc-menu-surface mdc-menu-surface--open {{ _getPanelTheme() }}"
+    [attr.id]="id + '-panel'"
+    [attr.aria-multiselectable]="multiple"
+    [attr.aria-label]="ariaLabel || null"
+    [attr.aria-labelledby]="_getPanelAriaLabelledby()"
+    [ngClass]="panelClass"
+    [@transformPanel]="'showing'"
+    (@transformPanel.done)="_panelDoneAnimatingStream.next($event.toState)"
+    (keydown)="_handleKeydown($event)">
+    <ng-content></ng-content>
+  </div>
+</ng-template>
+`,
+      styles: ['.mat-mdc-select{display:inline-block;width:100%;outline:none;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;color:var(--mat-select-enabled-trigger-text-color, var(--mat-sys-on-surface));font-family:var(--mat-select-trigger-text-font, var(--mat-sys-body-large-font));line-height:var(--mat-select-trigger-text-line-height, var(--mat-sys-body-large-line-height));font-size:var(--mat-select-trigger-text-size, var(--mat-sys-body-large-size));font-weight:var(--mat-select-trigger-text-weight, var(--mat-sys-body-large-weight));letter-spacing:var(--mat-select-trigger-text-tracking, var(--mat-sys-body-large-tracking))}div.mat-mdc-select-panel{box-shadow:var(--mat-select-container-elevation-shadow, 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12))}.mat-mdc-select-disabled{color:var(--mat-select-disabled-trigger-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-select-disabled .mat-mdc-select-placeholder{color:var(--mat-select-disabled-trigger-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-select-trigger{display:inline-flex;align-items:center;cursor:pointer;position:relative;box-sizing:border-box;width:100%}.mat-mdc-select-disabled .mat-mdc-select-trigger{-webkit-user-select:none;user-select:none;cursor:default}.mat-mdc-select-value{width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mat-mdc-select-value-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mat-mdc-select-arrow-wrapper{height:24px;flex-shrink:0;display:inline-flex;align-items:center}.mat-form-field-appearance-fill .mdc-text-field--no-label .mat-mdc-select-arrow-wrapper{transform:none}.mat-mdc-form-field .mat-mdc-select.mat-mdc-select-invalid .mat-mdc-select-arrow,.mat-form-field-invalid:not(.mat-form-field-disabled) .mat-mdc-form-field-infix::after{color:var(--mat-select-invalid-arrow-color, var(--mat-sys-error))}.mat-mdc-select-arrow{width:10px;height:5px;position:relative;color:var(--mat-select-enabled-arrow-color, var(--mat-sys-on-surface-variant))}.mat-mdc-form-field.mat-focused .mat-mdc-select-arrow{color:var(--mat-select-focused-arrow-color, var(--mat-sys-primary))}.mat-mdc-form-field .mat-mdc-select.mat-mdc-select-disabled .mat-mdc-select-arrow{color:var(--mat-select-disabled-arrow-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-select-arrow svg{fill:currentColor;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%)}@media(forced-colors: active){.mat-mdc-select-arrow svg{fill:CanvasText}.mat-mdc-select-disabled .mat-mdc-select-arrow svg{fill:GrayText}}div.mat-mdc-select-panel{width:100%;max-height:275px;outline:0;overflow:auto;padding:8px 0;border-radius:4px;box-sizing:border-box;position:static;background-color:var(--mat-select-panel-background-color, var(--mat-sys-surface-container))}@media(forced-colors: active){div.mat-mdc-select-panel{outline:solid 1px}}.cdk-overlay-pane:not(.mat-mdc-select-panel-above) div.mat-mdc-select-panel{border-top-left-radius:0;border-top-right-radius:0;transform-origin:top center}.mat-mdc-select-panel-above div.mat-mdc-select-panel{border-bottom-left-radius:0;border-bottom-right-radius:0;transform-origin:bottom center}div.mat-mdc-select-panel .mat-mdc-option{--mdc-list-list-item-container-color: var(--mat-select-panel-background-color)}.mat-mdc-select-placeholder{transition:color 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1);color:var(--mat-select-placeholder-text-color, var(--mat-sys-on-surface-variant))}.mat-form-field-no-animations .mat-mdc-select-placeholder,._mat-animation-noopable .mat-mdc-select-placeholder{transition:none}.mat-form-field-hide-placeholder .mat-mdc-select-placeholder{color:rgba(0,0,0,0);-webkit-text-fill-color:rgba(0,0,0,0);transition:none;display:block}.mat-mdc-form-field-type-mat-select:not(.mat-form-field-disabled) .mat-mdc-text-field-wrapper{cursor:pointer}.mat-mdc-form-field-type-mat-select.mat-form-field-appearance-fill .mat-mdc-floating-label{max-width:calc(100% - 18px)}.mat-mdc-form-field-type-mat-select.mat-form-field-appearance-fill .mdc-floating-label--float-above{max-width:calc(100%/0.75 - 24px)}.mat-mdc-form-field-type-mat-select.mat-form-field-appearance-outline .mdc-notched-outline__notch{max-width:calc(100% - 60px)}.mat-mdc-form-field-type-mat-select.mat-form-field-appearance-outline .mdc-text-field--label-floating .mdc-notched-outline__notch{max-width:calc(100% - 24px)}.mat-mdc-select-min-line:empty::before{content:" ";white-space:pre;width:1px;display:inline-block;visibility:hidden}.mat-form-field-appearance-fill .mat-mdc-select-arrow-wrapper{transform:var(--mat-select-arrow-transform, translateY(-8px))}']
+    }]
+  }], () => [], {
+    options: [{
+      type: ContentChildren,
+      args: [MatOption, {
+        descendants: true
+      }]
+    }],
+    optionGroups: [{
+      type: ContentChildren,
+      args: [MAT_OPTGROUP, {
+        descendants: true
+      }]
+    }],
+    customTrigger: [{
+      type: ContentChild,
+      args: [MAT_SELECT_TRIGGER]
+    }],
+    userAriaDescribedBy: [{
+      type: Input,
+      args: ["aria-describedby"]
+    }],
+    trigger: [{
+      type: ViewChild,
+      args: ["trigger"]
+    }],
+    panel: [{
+      type: ViewChild,
+      args: ["panel"]
+    }],
+    _overlayDir: [{
+      type: ViewChild,
+      args: [CdkConnectedOverlay]
+    }],
+    panelClass: [{
+      type: Input
+    }],
+    disabled: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    disableRipple: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    tabIndex: [{
+      type: Input,
+      args: [{
+        transform: (value) => value == null ? 0 : numberAttribute(value)
+      }]
+    }],
+    hideSingleSelectionIndicator: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    placeholder: [{
+      type: Input
+    }],
+    required: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    multiple: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    disableOptionCentering: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    compareWith: [{
+      type: Input
+    }],
+    value: [{
+      type: Input
+    }],
+    ariaLabel: [{
+      type: Input,
+      args: ["aria-label"]
+    }],
+    ariaLabelledby: [{
+      type: Input,
+      args: ["aria-labelledby"]
+    }],
+    errorStateMatcher: [{
+      type: Input
+    }],
+    typeaheadDebounceInterval: [{
+      type: Input,
+      args: [{
+        transform: numberAttribute
+      }]
+    }],
+    sortComparator: [{
+      type: Input
+    }],
+    id: [{
+      type: Input
+    }],
+    panelWidth: [{
+      type: Input
+    }],
+    canSelectNullableOptions: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    openedChange: [{
+      type: Output
+    }],
+    _openedStream: [{
+      type: Output,
+      args: ["opened"]
+    }],
+    _closedStream: [{
+      type: Output,
+      args: ["closed"]
+    }],
+    selectionChange: [{
+      type: Output
+    }],
+    valueChange: [{
+      type: Output
+    }]
+  });
+})();
+var MatSelectTrigger = class _MatSelectTrigger {
+  static \u0275fac = function MatSelectTrigger_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _MatSelectTrigger)();
+  };
+  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
+    type: _MatSelectTrigger,
+    selectors: [["mat-select-trigger"]],
+    features: [\u0275\u0275ProvidersFeature([{
+      provide: MAT_SELECT_TRIGGER,
+      useExisting: _MatSelectTrigger
+    }])]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatSelectTrigger, [{
+    type: Directive,
+    args: [{
+      selector: "mat-select-trigger",
+      providers: [{
+        provide: MAT_SELECT_TRIGGER,
+        useExisting: MatSelectTrigger
+      }]
+    }]
+  }], null, null);
+})();
+var MatSelectModule = class _MatSelectModule {
+  static \u0275fac = function MatSelectModule_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _MatSelectModule)();
+  };
+  static \u0275mod = /* @__PURE__ */ \u0275\u0275defineNgModule({
+    type: _MatSelectModule
+  });
+  static \u0275inj = /* @__PURE__ */ \u0275\u0275defineInjector({
+    providers: [MAT_SELECT_SCROLL_STRATEGY_PROVIDER],
+    imports: [OverlayModule, MatOptionModule, MatCommonModule, CdkScrollableModule, MatFormFieldModule, MatOptionModule, MatCommonModule]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatSelectModule, [{
+    type: NgModule,
+    args: [{
+      imports: [OverlayModule, MatOptionModule, MatCommonModule, MatSelect, MatSelectTrigger],
+      exports: [CdkScrollableModule, MatFormFieldModule, MatSelect, MatSelectTrigger, MatOptionModule, MatCommonModule],
+      providers: [MAT_SELECT_SCROLL_STRATEGY_PROVIDER]
+    }]
+  }], null, null);
+})();
+
+// node_modules/@angular/material/fesm2022/radio.mjs
+var _c012 = ["input"];
+var _c18 = ["formField"];
+var _c27 = ["*"];
+var MatRadioChange = class {
+  source;
+  value;
+  constructor(source, value) {
+    this.source = source;
+    this.value = value;
+  }
+};
+var MAT_RADIO_GROUP_CONTROL_VALUE_ACCESSOR = {
+  provide: NG_VALUE_ACCESSOR,
+  useExisting: forwardRef(() => MatRadioGroup),
+  multi: true
+};
+var MAT_RADIO_GROUP = new InjectionToken("MatRadioGroup");
+var MAT_RADIO_DEFAULT_OPTIONS = new InjectionToken("mat-radio-default-options", {
+  providedIn: "root",
+  factory: MAT_RADIO_DEFAULT_OPTIONS_FACTORY
+});
+function MAT_RADIO_DEFAULT_OPTIONS_FACTORY() {
+  return {
+    color: "accent",
+    disabledInteractive: false
+  };
+}
+var MatRadioGroup = class _MatRadioGroup {
+  _changeDetector = inject(ChangeDetectorRef);
+  /** Selected value for the radio group. */
+  _value = null;
+  /** The HTML name attribute applied to radio buttons in this group. */
+  _name = inject(_IdGenerator).getId("mat-radio-group-");
+  /** The currently selected radio button. Should match value. */
+  _selected = null;
+  /** Whether the `value` has been set to its initial value. */
+  _isInitialized = false;
+  /** Whether the labels should appear after or before the radio-buttons. Defaults to 'after' */
+  _labelPosition = "after";
+  /** Whether the radio group is disabled. */
+  _disabled = false;
+  /** Whether the radio group is required. */
+  _required = false;
+  /** Subscription to changes in amount of radio buttons. */
+  _buttonChanges;
+  /** The method to be called in order to update ngModel */
+  _controlValueAccessorChangeFn = () => {
+  };
+  /**
+   * onTouch function registered via registerOnTouch (ControlValueAccessor).
+   * @docs-private
+   */
+  onTouched = () => {
+  };
+  /**
+   * Event emitted when the group value changes.
+   * Change events are only emitted when the value changes due to user interaction with
+   * a radio button (the same behavior as `<input type-"radio">`).
+   */
+  change = new EventEmitter();
+  /** Child radio buttons. */
+  _radios;
+  /**
+   * Theme color of the radio buttons in the group. This API is supported in M2
+   * themes only, it has no effect in M3 themes. For color customization in M3, see https://material.angular.io/components/radio/styling.
+   *
+   * For information on applying color variants in M3, see
+   * https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants
+   */
+  color;
+  /** Name of the radio button group. All radio buttons inside this group will use this name. */
+  get name() {
+    return this._name;
+  }
+  set name(value) {
+    this._name = value;
+    this._updateRadioButtonNames();
+  }
+  /** Whether the labels should appear after or before the radio-buttons. Defaults to 'after' */
+  get labelPosition() {
+    return this._labelPosition;
+  }
+  set labelPosition(v) {
+    this._labelPosition = v === "before" ? "before" : "after";
+    this._markRadiosForCheck();
+  }
+  /**
+   * Value for the radio-group. Should equal the value of the selected radio button if there is
+   * a corresponding radio button with a matching value. If there is not such a corresponding
+   * radio button, this value persists to be applied in case a new radio button is added with a
+   * matching value.
+   */
+  get value() {
+    return this._value;
+  }
+  set value(newValue) {
+    if (this._value !== newValue) {
+      this._value = newValue;
+      this._updateSelectedRadioFromValue();
+      this._checkSelectedRadioButton();
+    }
+  }
+  _checkSelectedRadioButton() {
+    if (this._selected && !this._selected.checked) {
+      this._selected.checked = true;
+    }
+  }
+  /**
+   * The currently selected radio button. If set to a new radio button, the radio group value
+   * will be updated to match the new selected button.
+   */
+  get selected() {
+    return this._selected;
+  }
+  set selected(selected) {
+    this._selected = selected;
+    this.value = selected ? selected.value : null;
+    this._checkSelectedRadioButton();
+  }
+  /** Whether the radio group is disabled */
+  get disabled() {
+    return this._disabled;
+  }
+  set disabled(value) {
+    this._disabled = value;
+    this._markRadiosForCheck();
+  }
+  /** Whether the radio group is required */
+  get required() {
+    return this._required;
+  }
+  set required(value) {
+    this._required = value;
+    this._markRadiosForCheck();
+  }
+  /** Whether buttons in the group should be interactive while they're disabled. */
+  get disabledInteractive() {
+    return this._disabledInteractive;
+  }
+  set disabledInteractive(value) {
+    this._disabledInteractive = value;
+    this._markRadiosForCheck();
+  }
+  _disabledInteractive = false;
+  constructor() {
+  }
+  /**
+   * Initialize properties once content children are available.
+   * This allows us to propagate relevant attributes to associated buttons.
+   */
+  ngAfterContentInit() {
+    this._isInitialized = true;
+    this._buttonChanges = this._radios.changes.subscribe(() => {
+      if (this.selected && !this._radios.find((radio) => radio === this.selected)) {
+        this._selected = null;
+      }
+    });
+  }
+  ngOnDestroy() {
+    this._buttonChanges?.unsubscribe();
+  }
+  /**
+   * Mark this group as being "touched" (for ngModel). Meant to be called by the contained
+   * radio buttons upon their blur.
+   */
+  _touch() {
+    if (this.onTouched) {
+      this.onTouched();
+    }
+  }
+  _updateRadioButtonNames() {
+    if (this._radios) {
+      this._radios.forEach((radio) => {
+        radio.name = this.name;
+        radio._markForCheck();
+      });
+    }
+  }
+  /** Updates the `selected` radio button from the internal _value state. */
+  _updateSelectedRadioFromValue() {
+    const isAlreadySelected = this._selected !== null && this._selected.value === this._value;
+    if (this._radios && !isAlreadySelected) {
+      this._selected = null;
+      this._radios.forEach((radio) => {
+        radio.checked = this.value === radio.value;
+        if (radio.checked) {
+          this._selected = radio;
+        }
+      });
+    }
+  }
+  /** Dispatch change event with current selection and group value. */
+  _emitChangeEvent() {
+    if (this._isInitialized) {
+      this.change.emit(new MatRadioChange(this._selected, this._value));
+    }
+  }
+  _markRadiosForCheck() {
+    if (this._radios) {
+      this._radios.forEach((radio) => radio._markForCheck());
+    }
+  }
+  /**
+   * Sets the model value. Implemented as part of ControlValueAccessor.
+   * @param value
+   */
+  writeValue(value) {
+    this.value = value;
+    this._changeDetector.markForCheck();
+  }
+  /**
+   * Registers a callback to be triggered when the model value changes.
+   * Implemented as part of ControlValueAccessor.
+   * @param fn Callback to be registered.
+   */
+  registerOnChange(fn) {
+    this._controlValueAccessorChangeFn = fn;
+  }
+  /**
+   * Registers a callback to be triggered when the control is touched.
+   * Implemented as part of ControlValueAccessor.
+   * @param fn Callback to be registered.
+   */
+  registerOnTouched(fn) {
+    this.onTouched = fn;
+  }
+  /**
+   * Sets the disabled state of the control. Implemented as a part of ControlValueAccessor.
+   * @param isDisabled Whether the control should be disabled.
+   */
+  setDisabledState(isDisabled) {
+    this.disabled = isDisabled;
+    this._changeDetector.markForCheck();
+  }
+  static \u0275fac = function MatRadioGroup_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _MatRadioGroup)();
+  };
+  static \u0275dir = /* @__PURE__ */ \u0275\u0275defineDirective({
+    type: _MatRadioGroup,
+    selectors: [["mat-radio-group"]],
+    contentQueries: function MatRadioGroup_ContentQueries(rf, ctx, dirIndex) {
+      if (rf & 1) {
+        \u0275\u0275contentQuery(dirIndex, MatRadioButton, 5);
+      }
+      if (rf & 2) {
+        let _t;
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._radios = _t);
+      }
+    },
+    hostAttrs: ["role", "radiogroup", 1, "mat-mdc-radio-group"],
+    inputs: {
+      color: "color",
+      name: "name",
+      labelPosition: "labelPosition",
+      value: "value",
+      selected: "selected",
+      disabled: [2, "disabled", "disabled", booleanAttribute],
+      required: [2, "required", "required", booleanAttribute],
+      disabledInteractive: [2, "disabledInteractive", "disabledInteractive", booleanAttribute]
+    },
+    outputs: {
+      change: "change"
+    },
+    exportAs: ["matRadioGroup"],
+    features: [\u0275\u0275ProvidersFeature([MAT_RADIO_GROUP_CONTROL_VALUE_ACCESSOR, {
+      provide: MAT_RADIO_GROUP,
+      useExisting: _MatRadioGroup
+    }]), \u0275\u0275InputTransformsFeature]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatRadioGroup, [{
+    type: Directive,
+    args: [{
+      selector: "mat-radio-group",
+      exportAs: "matRadioGroup",
+      providers: [MAT_RADIO_GROUP_CONTROL_VALUE_ACCESSOR, {
+        provide: MAT_RADIO_GROUP,
+        useExisting: MatRadioGroup
+      }],
+      host: {
+        "role": "radiogroup",
+        "class": "mat-mdc-radio-group"
+      }
+    }]
+  }], () => [], {
+    change: [{
+      type: Output
+    }],
+    _radios: [{
+      type: ContentChildren,
+      args: [forwardRef(() => MatRadioButton), {
+        descendants: true
+      }]
+    }],
+    color: [{
+      type: Input
+    }],
+    name: [{
+      type: Input
+    }],
+    labelPosition: [{
+      type: Input
+    }],
+    value: [{
+      type: Input
+    }],
+    selected: [{
+      type: Input
+    }],
+    disabled: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    required: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    disabledInteractive: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }]
+  });
+})();
+var MatRadioButton = class _MatRadioButton {
+  _elementRef = inject(ElementRef);
+  _changeDetector = inject(ChangeDetectorRef);
+  _focusMonitor = inject(FocusMonitor);
+  _radioDispatcher = inject(UniqueSelectionDispatcher);
+  _defaultOptions = inject(MAT_RADIO_DEFAULT_OPTIONS, {
+    optional: true
+  });
+  _ngZone = inject(NgZone);
+  _renderer = inject(Renderer2);
+  _uniqueId = inject(_IdGenerator).getId("mat-radio-");
+  _cleanupClick;
+  /** The unique ID for the radio button. */
+  id = this._uniqueId;
+  /** Analog to HTML 'name' attribute used to group radios for unique selection. */
+  name;
+  /** Used to set the 'aria-label' attribute on the underlying input element. */
+  ariaLabel;
+  /** The 'aria-labelledby' attribute takes precedence as the element's text alternative. */
+  ariaLabelledby;
+  /** The 'aria-describedby' attribute is read after the element's label and field type. */
+  ariaDescribedby;
+  /** Whether ripples are disabled inside the radio button */
+  disableRipple = false;
+  /** Tabindex of the radio button. */
+  tabIndex = 0;
+  /** Whether this radio button is checked. */
+  get checked() {
+    return this._checked;
+  }
+  set checked(value) {
+    if (this._checked !== value) {
+      this._checked = value;
+      if (value && this.radioGroup && this.radioGroup.value !== this.value) {
+        this.radioGroup.selected = this;
+      } else if (!value && this.radioGroup && this.radioGroup.value === this.value) {
+        this.radioGroup.selected = null;
+      }
+      if (value) {
+        this._radioDispatcher.notify(this.id, this.name);
+      }
+      this._changeDetector.markForCheck();
+    }
+  }
+  /** The value of this radio button. */
+  get value() {
+    return this._value;
+  }
+  set value(value) {
+    if (this._value !== value) {
+      this._value = value;
+      if (this.radioGroup !== null) {
+        if (!this.checked) {
+          this.checked = this.radioGroup.value === value;
+        }
+        if (this.checked) {
+          this.radioGroup.selected = this;
+        }
+      }
+    }
+  }
+  /** Whether the label should appear after or before the radio button. Defaults to 'after' */
+  get labelPosition() {
+    return this._labelPosition || this.radioGroup && this.radioGroup.labelPosition || "after";
+  }
+  set labelPosition(value) {
+    this._labelPosition = value;
+  }
+  _labelPosition;
+  /** Whether the radio button is disabled. */
+  get disabled() {
+    return this._disabled || this.radioGroup !== null && this.radioGroup.disabled;
+  }
+  set disabled(value) {
+    this._setDisabled(value);
+  }
+  /** Whether the radio button is required. */
+  get required() {
+    return this._required || this.radioGroup && this.radioGroup.required;
+  }
+  set required(value) {
+    this._required = value;
+  }
+  /**
+   * Theme color of the radio button. This API is supported in M2 themes only, it
+   * has no effect in M3 themes. For color customization in M3, see https://material.angular.io/components/radio/styling.
+   *
+   * For information on applying color variants in M3, see
+   * https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants
+   */
+  get color() {
+    return this._color || this.radioGroup && this.radioGroup.color || this._defaultOptions && this._defaultOptions.color || "accent";
+  }
+  set color(newValue) {
+    this._color = newValue;
+  }
+  _color;
+  /** Whether the radio button should remain interactive when it is disabled. */
+  get disabledInteractive() {
+    return this._disabledInteractive || this.radioGroup !== null && this.radioGroup.disabledInteractive;
+  }
+  set disabledInteractive(value) {
+    this._disabledInteractive = value;
+  }
+  _disabledInteractive;
+  /**
+   * Event emitted when the checked state of this radio button changes.
+   * Change events are only emitted when the value changes due to user interaction with
+   * the radio button (the same behavior as `<input type-"radio">`).
+   */
+  change = new EventEmitter();
+  /** The parent radio group. May or may not be present. */
+  radioGroup;
+  /** ID of the native input element inside `<mat-radio-button>` */
+  get inputId() {
+    return `${this.id || this._uniqueId}-input`;
+  }
+  /** Whether this radio is checked. */
+  _checked = false;
+  /** Whether this radio is disabled. */
+  _disabled;
+  /** Whether this radio is required. */
+  _required;
+  /** Value assigned to this radio. */
+  _value = null;
+  /** Unregister function for _radioDispatcher */
+  _removeUniqueSelectionListener = () => {
+  };
+  /** Previous value of the input's tabindex. */
+  _previousTabIndex;
+  /** The native `<input type=radio>` element */
+  _inputElement;
+  /** Trigger elements for the ripple events. */
+  _rippleTrigger;
+  /** Whether animations are disabled. */
+  _noopAnimations;
+  _injector = inject(Injector);
+  constructor() {
+    inject(_CdkPrivateStyleLoader).load(_StructuralStylesLoader);
+    const radioGroup = inject(MAT_RADIO_GROUP, {
+      optional: true
+    });
+    const animationMode = inject(ANIMATION_MODULE_TYPE, {
+      optional: true
+    });
+    const tabIndex = inject(new HostAttributeToken("tabindex"), {
+      optional: true
+    });
+    this.radioGroup = radioGroup;
+    this._noopAnimations = animationMode === "NoopAnimations";
+    this._disabledInteractive = this._defaultOptions?.disabledInteractive ?? false;
+    if (tabIndex) {
+      this.tabIndex = numberAttribute(tabIndex, 0);
+    }
+  }
+  /** Focuses the radio button. */
+  focus(options, origin) {
+    if (origin) {
+      this._focusMonitor.focusVia(this._inputElement, origin, options);
+    } else {
+      this._inputElement.nativeElement.focus(options);
+    }
+  }
+  /**
+   * Marks the radio button as needing checking for change detection.
+   * This method is exposed because the parent radio group will directly
+   * update bound properties of the radio button.
+   */
+  _markForCheck() {
+    this._changeDetector.markForCheck();
+  }
+  ngOnInit() {
+    if (this.radioGroup) {
+      this.checked = this.radioGroup.value === this._value;
+      if (this.checked) {
+        this.radioGroup.selected = this;
+      }
+      this.name = this.radioGroup.name;
+    }
+    this._removeUniqueSelectionListener = this._radioDispatcher.listen((id, name) => {
+      if (id !== this.id && name === this.name) {
+        this.checked = false;
+      }
+    });
+  }
+  ngDoCheck() {
+    this._updateTabIndex();
+  }
+  ngAfterViewInit() {
+    this._updateTabIndex();
+    this._focusMonitor.monitor(this._elementRef, true).subscribe((focusOrigin) => {
+      if (!focusOrigin && this.radioGroup) {
+        this.radioGroup._touch();
+      }
+    });
+    this._ngZone.runOutsideAngular(() => {
+      this._cleanupClick = this._renderer.listen(this._inputElement.nativeElement, "click", this._onInputClick);
+    });
+  }
+  ngOnDestroy() {
+    this._cleanupClick?.();
+    this._focusMonitor.stopMonitoring(this._elementRef);
+    this._removeUniqueSelectionListener();
+  }
+  /** Dispatch change event with current value. */
+  _emitChangeEvent() {
+    this.change.emit(new MatRadioChange(this, this._value));
+  }
+  _isRippleDisabled() {
+    return this.disableRipple || this.disabled;
+  }
+  /** Triggered when the radio button receives an interaction from the user. */
+  _onInputInteraction(event) {
+    event.stopPropagation();
+    if (!this.checked && !this.disabled) {
+      const groupValueChanged = this.radioGroup && this.value !== this.radioGroup.value;
+      this.checked = true;
+      this._emitChangeEvent();
+      if (this.radioGroup) {
+        this.radioGroup._controlValueAccessorChangeFn(this.value);
+        if (groupValueChanged) {
+          this.radioGroup._emitChangeEvent();
+        }
+      }
+    }
+  }
+  /** Triggered when the user clicks on the touch target. */
+  _onTouchTargetClick(event) {
+    this._onInputInteraction(event);
+    if (!this.disabled || this.disabledInteractive) {
+      this._inputElement?.nativeElement.focus();
+    }
+  }
+  /** Sets the disabled state and marks for check if a change occurred. */
+  _setDisabled(value) {
+    if (this._disabled !== value) {
+      this._disabled = value;
+      this._changeDetector.markForCheck();
+    }
+  }
+  /** Called when the input is clicked. */
+  _onInputClick = (event) => {
+    if (this.disabled && this.disabledInteractive) {
+      event.preventDefault();
+    }
+  };
+  /** Gets the tabindex for the underlying input element. */
+  _updateTabIndex() {
+    const group2 = this.radioGroup;
+    let value;
+    if (!group2 || !group2.selected || this.disabled) {
+      value = this.tabIndex;
+    } else {
+      value = group2.selected === this ? this.tabIndex : -1;
+    }
+    if (value !== this._previousTabIndex) {
+      const input2 = this._inputElement?.nativeElement;
+      if (input2) {
+        input2.setAttribute("tabindex", value + "");
+        this._previousTabIndex = value;
+        afterNextRender(() => {
+          queueMicrotask(() => {
+            if (group2 && group2.selected && group2.selected !== this && document.activeElement === input2) {
+              group2.selected?._inputElement.nativeElement.focus();
+              if (document.activeElement === input2) {
+                this._inputElement.nativeElement.blur();
+              }
+            }
+          });
+        }, {
+          injector: this._injector
+        });
+      }
+    }
+  }
+  static \u0275fac = function MatRadioButton_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _MatRadioButton)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _MatRadioButton,
+    selectors: [["mat-radio-button"]],
+    viewQuery: function MatRadioButton_Query(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275viewQuery(_c012, 5);
+        \u0275\u0275viewQuery(_c18, 7, ElementRef);
+      }
+      if (rf & 2) {
+        let _t;
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._inputElement = _t.first);
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._rippleTrigger = _t.first);
+      }
+    },
+    hostAttrs: [1, "mat-mdc-radio-button"],
+    hostVars: 19,
+    hostBindings: function MatRadioButton_HostBindings(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275listener("focus", function MatRadioButton_focus_HostBindingHandler() {
+          return ctx._inputElement.nativeElement.focus();
+        });
+      }
+      if (rf & 2) {
+        \u0275\u0275attribute("id", ctx.id)("tabindex", null)("aria-label", null)("aria-labelledby", null)("aria-describedby", null);
+        \u0275\u0275classProp("mat-primary", ctx.color === "primary")("mat-accent", ctx.color === "accent")("mat-warn", ctx.color === "warn")("mat-mdc-radio-checked", ctx.checked)("mat-mdc-radio-disabled", ctx.disabled)("mat-mdc-radio-disabled-interactive", ctx.disabledInteractive)("_mat-animation-noopable", ctx._noopAnimations);
+      }
+    },
+    inputs: {
+      id: "id",
+      name: "name",
+      ariaLabel: [0, "aria-label", "ariaLabel"],
+      ariaLabelledby: [0, "aria-labelledby", "ariaLabelledby"],
+      ariaDescribedby: [0, "aria-describedby", "ariaDescribedby"],
+      disableRipple: [2, "disableRipple", "disableRipple", booleanAttribute],
+      tabIndex: [2, "tabIndex", "tabIndex", (value) => value == null ? 0 : numberAttribute(value)],
+      checked: [2, "checked", "checked", booleanAttribute],
+      value: "value",
+      labelPosition: "labelPosition",
+      disabled: [2, "disabled", "disabled", booleanAttribute],
+      required: [2, "required", "required", booleanAttribute],
+      color: "color",
+      disabledInteractive: [2, "disabledInteractive", "disabledInteractive", booleanAttribute]
+    },
+    outputs: {
+      change: "change"
+    },
+    exportAs: ["matRadioButton"],
+    features: [\u0275\u0275InputTransformsFeature],
+    ngContentSelectors: _c27,
+    decls: 13,
+    vars: 17,
+    consts: [["formField", ""], ["input", ""], ["mat-internal-form-field", "", 3, "labelPosition"], [1, "mdc-radio"], [1, "mat-mdc-radio-touch-target", 3, "click"], ["type", "radio", 1, "mdc-radio__native-control", 3, "change", "id", "checked", "disabled", "required"], [1, "mdc-radio__background"], [1, "mdc-radio__outer-circle"], [1, "mdc-radio__inner-circle"], ["mat-ripple", "", 1, "mat-radio-ripple", "mat-focus-indicator", 3, "matRippleTrigger", "matRippleDisabled", "matRippleCentered"], [1, "mat-ripple-element", "mat-radio-persistent-ripple"], [1, "mdc-label", 3, "for"]],
+    template: function MatRadioButton_Template(rf, ctx) {
+      if (rf & 1) {
+        const _r1 = \u0275\u0275getCurrentView();
+        \u0275\u0275projectionDef();
+        \u0275\u0275elementStart(0, "div", 2, 0)(2, "div", 3)(3, "div", 4);
+        \u0275\u0275listener("click", function MatRadioButton_Template_div_click_3_listener($event) {
+          \u0275\u0275restoreView(_r1);
+          return \u0275\u0275resetView(ctx._onTouchTargetClick($event));
+        });
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(4, "input", 5, 1);
+        \u0275\u0275listener("change", function MatRadioButton_Template_input_change_4_listener($event) {
+          \u0275\u0275restoreView(_r1);
+          return \u0275\u0275resetView(ctx._onInputInteraction($event));
+        });
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(6, "div", 6);
+        \u0275\u0275element(7, "div", 7)(8, "div", 8);
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(9, "div", 9);
+        \u0275\u0275element(10, "div", 10);
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementStart(11, "label", 11);
+        \u0275\u0275projection(12);
+        \u0275\u0275elementEnd()();
+      }
+      if (rf & 2) {
+        \u0275\u0275property("labelPosition", ctx.labelPosition);
+        \u0275\u0275advance(2);
+        \u0275\u0275classProp("mdc-radio--disabled", ctx.disabled);
+        \u0275\u0275advance(2);
+        \u0275\u0275property("id", ctx.inputId)("checked", ctx.checked)("disabled", ctx.disabled && !ctx.disabledInteractive)("required", ctx.required);
+        \u0275\u0275attribute("name", ctx.name)("value", ctx.value)("aria-label", ctx.ariaLabel)("aria-labelledby", ctx.ariaLabelledby)("aria-describedby", ctx.ariaDescribedby)("aria-disabled", ctx.disabled && ctx.disabledInteractive ? "true" : null);
+        \u0275\u0275advance(5);
+        \u0275\u0275property("matRippleTrigger", ctx._rippleTrigger.nativeElement)("matRippleDisabled", ctx._isRippleDisabled())("matRippleCentered", true);
+        \u0275\u0275advance(2);
+        \u0275\u0275property("for", ctx.inputId);
+      }
+    },
+    dependencies: [MatRipple, _MatInternalFormField],
+    styles: ['.mat-mdc-radio-button{-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-radio-button .mdc-radio{display:inline-block;position:relative;flex:0 0 auto;box-sizing:content-box;width:20px;height:20px;cursor:pointer;will-change:opacity,transform,border-color,color;padding:calc((var(--mdc-radio-state-layer-size, 40px) - 20px)/2)}.mat-mdc-radio-button .mdc-radio:hover .mdc-radio__native-control:not([disabled]):not(:focus)~.mdc-radio__background::before{opacity:.04;transform:scale(1)}.mat-mdc-radio-button .mdc-radio:hover .mdc-radio__native-control:not([disabled])~.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-unselected-hover-icon-color, var(--mat-sys-on-surface))}.mat-mdc-radio-button .mdc-radio:hover .mdc-radio__native-control:enabled:checked+.mdc-radio__background .mdc-radio__outer-circle,.mat-mdc-radio-button .mdc-radio:hover .mdc-radio__native-control:enabled:checked+.mdc-radio__background .mdc-radio__inner-circle{border-color:var(--mdc-radio-selected-hover-icon-color, var(--mat-sys-primary))}.mat-mdc-radio-button .mdc-radio:active .mdc-radio__native-control:enabled:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-unselected-pressed-icon-color, var(--mat-sys-on-surface))}.mat-mdc-radio-button .mdc-radio:active .mdc-radio__native-control:enabled:checked+.mdc-radio__background .mdc-radio__outer-circle,.mat-mdc-radio-button .mdc-radio:active .mdc-radio__native-control:enabled:checked+.mdc-radio__background .mdc-radio__inner-circle{border-color:var(--mdc-radio-selected-pressed-icon-color, var(--mat-sys-primary))}.mat-mdc-radio-button .mdc-radio__background{display:inline-block;position:relative;box-sizing:border-box;width:20px;height:20px}.mat-mdc-radio-button .mdc-radio__background::before{position:absolute;transform:scale(0, 0);border-radius:50%;opacity:0;pointer-events:none;content:"";transition:opacity 90ms cubic-bezier(0.4, 0, 0.6, 1),transform 90ms cubic-bezier(0.4, 0, 0.6, 1);width:var(--mdc-radio-state-layer-size, 40px);height:var(--mdc-radio-state-layer-size, 40px);top:calc(-1*(var(--mdc-radio-state-layer-size, 40px) - 20px)/2);left:calc(-1*(var(--mdc-radio-state-layer-size, 40px) - 20px)/2)}.mat-mdc-radio-button .mdc-radio__outer-circle{position:absolute;top:0;left:0;box-sizing:border-box;width:100%;height:100%;border-width:2px;border-style:solid;border-radius:50%;transition:border-color 90ms cubic-bezier(0.4, 0, 0.6, 1)}.mat-mdc-radio-button .mdc-radio__inner-circle{position:absolute;top:0;left:0;box-sizing:border-box;width:100%;height:100%;transform:scale(0, 0);border-width:10px;border-style:solid;border-radius:50%;transition:transform 90ms cubic-bezier(0.4, 0, 0.6, 1),border-color 90ms cubic-bezier(0.4, 0, 0.6, 1)}.mat-mdc-radio-button .mdc-radio__native-control{position:absolute;margin:0;padding:0;opacity:0;top:0;right:0;left:0;cursor:inherit;z-index:1;width:var(--mdc-radio-state-layer-size, 40px);height:var(--mdc-radio-state-layer-size, 40px)}.mat-mdc-radio-button .mdc-radio__native-control:checked+.mdc-radio__background,.mat-mdc-radio-button .mdc-radio__native-control:disabled+.mdc-radio__background{transition:opacity 90ms cubic-bezier(0, 0, 0.2, 1),transform 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-radio-button .mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__outer-circle,.mat-mdc-radio-button .mdc-radio__native-control:disabled+.mdc-radio__background .mdc-radio__outer-circle{transition:border-color 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-radio-button .mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__inner-circle,.mat-mdc-radio-button .mdc-radio__native-control:disabled+.mdc-radio__background .mdc-radio__inner-circle{transition:transform 90ms cubic-bezier(0, 0, 0.2, 1),border-color 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-radio-button .mdc-radio__native-control:focus+.mdc-radio__background::before{transform:scale(1);opacity:.12;transition:opacity 90ms cubic-bezier(0, 0, 0.2, 1),transform 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-radio-button .mdc-radio__native-control:disabled:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-disabled-unselected-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-radio-disabled-unselected-icon-opacity, 0.38)}.mat-mdc-radio-button .mdc-radio__native-control:disabled+.mdc-radio__background{cursor:default}.mat-mdc-radio-button .mdc-radio__native-control:disabled+.mdc-radio__background .mdc-radio__inner-circle,.mat-mdc-radio-button .mdc-radio__native-control:disabled+.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-disabled-selected-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-radio-disabled-selected-icon-opacity, 0.38)}.mat-mdc-radio-button .mdc-radio__native-control:enabled:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-unselected-icon-color, var(--mat-sys-on-surface-variant))}.mat-mdc-radio-button .mdc-radio__native-control:enabled:checked+.mdc-radio__background .mdc-radio__outer-circle,.mat-mdc-radio-button .mdc-radio__native-control:enabled:checked+.mdc-radio__background .mdc-radio__inner-circle{border-color:var(--mdc-radio-selected-icon-color, var(--mat-sys-primary))}.mat-mdc-radio-button .mdc-radio__native-control:enabled:focus:checked+.mdc-radio__background .mdc-radio__inner-circle,.mat-mdc-radio-button .mdc-radio__native-control:enabled:focus:checked+.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-selected-focus-icon-color, var(--mat-sys-primary))}.mat-mdc-radio-button .mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__inner-circle{transform:scale(0.5);transition:transform 90ms cubic-bezier(0, 0, 0.2, 1),border-color 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled{pointer-events:auto}.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled .mdc-radio__native-control:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-disabled-unselected-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-radio-disabled-unselected-icon-opacity, 0.38)}.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled:hover .mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__inner-circle,.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled:hover .mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__outer-circle,.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled .mdc-radio__native-control:checked:focus+.mdc-radio__background .mdc-radio__inner-circle,.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled .mdc-radio__native-control:checked:focus+.mdc-radio__background .mdc-radio__outer-circle,.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled .mdc-radio__native-control+.mdc-radio__background .mdc-radio__inner-circle,.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled .mdc-radio__native-control+.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-disabled-selected-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-radio-disabled-selected-icon-opacity, 0.38)}.mat-mdc-radio-button._mat-animation-noopable .mdc-radio__background::before,.mat-mdc-radio-button._mat-animation-noopable .mdc-radio__outer-circle,.mat-mdc-radio-button._mat-animation-noopable .mdc-radio__inner-circle{transition:none !important}.mat-mdc-radio-button .mdc-radio__background::before{background-color:var(--mat-radio-ripple-color, var(--mat-sys-on-surface))}.mat-mdc-radio-button.mat-mdc-radio-checked .mat-ripple-element,.mat-mdc-radio-button.mat-mdc-radio-checked .mdc-radio__background::before{background-color:var(--mat-radio-checked-ripple-color, var(--mat-sys-primary))}.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled .mat-ripple-element,.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled .mdc-radio__background::before{background-color:var(--mat-radio-ripple-color, var(--mat-sys-on-surface))}.mat-mdc-radio-button .mat-internal-form-field{color:var(--mat-radio-label-text-color, var(--mat-sys-on-surface));font-family:var(--mat-radio-label-text-font, var(--mat-sys-body-medium-font));line-height:var(--mat-radio-label-text-line-height, var(--mat-sys-body-medium-line-height));font-size:var(--mat-radio-label-text-size, var(--mat-sys-body-medium-size));letter-spacing:var(--mat-radio-label-text-tracking, var(--mat-sys-body-medium-tracking));font-weight:var(--mat-radio-label-text-weight, var(--mat-sys-body-medium-weight))}.mat-mdc-radio-button .mdc-radio--disabled+label{color:var(--mat-radio-disabled-label-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-radio-button .mat-radio-ripple{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:50%}.mat-mdc-radio-button .mat-radio-ripple .mat-ripple-element{opacity:.14}.mat-mdc-radio-button .mat-radio-ripple::before{border-radius:50%}.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control:focus:enabled:not(:checked)~.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-unselected-focus-icon-color, var(--mat-sys-on-surface))}.mat-mdc-radio-button.cdk-focused .mat-focus-indicator::before{content:""}.mat-mdc-radio-disabled{cursor:default;pointer-events:none}.mat-mdc-radio-disabled.mat-mdc-radio-disabled-interactive{pointer-events:auto}.mat-mdc-radio-touch-target{position:absolute;top:50%;left:50%;height:48px;width:48px;transform:translate(-50%, -50%);display:var(--mat-radio-touch-target-display, block)}[dir=rtl] .mat-mdc-radio-touch-target{left:auto;right:50%;transform:translate(50%, -50%)}'],
+    encapsulation: 2,
+    changeDetection: 0
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatRadioButton, [{
+    type: Component,
+    args: [{
+      selector: "mat-radio-button",
+      host: {
+        "class": "mat-mdc-radio-button",
+        "[attr.id]": "id",
+        "[class.mat-primary]": 'color === "primary"',
+        "[class.mat-accent]": 'color === "accent"',
+        "[class.mat-warn]": 'color === "warn"',
+        "[class.mat-mdc-radio-checked]": "checked",
+        "[class.mat-mdc-radio-disabled]": "disabled",
+        "[class.mat-mdc-radio-disabled-interactive]": "disabledInteractive",
+        "[class._mat-animation-noopable]": "_noopAnimations",
+        // Needs to be removed since it causes some a11y issues (see #21266).
+        "[attr.tabindex]": "null",
+        "[attr.aria-label]": "null",
+        "[attr.aria-labelledby]": "null",
+        "[attr.aria-describedby]": "null",
+        // Note: under normal conditions focus shouldn't land on this element, however it may be
+        // programmatically set, for example inside of a focus trap, in this case we want to forward
+        // the focus to the native element.
+        "(focus)": "_inputElement.nativeElement.focus()"
+      },
+      exportAs: "matRadioButton",
+      encapsulation: ViewEncapsulation.None,
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      imports: [MatRipple, _MatInternalFormField],
+      template: `<div mat-internal-form-field [labelPosition]="labelPosition" #formField>
+  <div class="mdc-radio" [class.mdc-radio--disabled]="disabled">
+    <!-- Render this element first so the input is on top. -->
+    <div class="mat-mdc-radio-touch-target" (click)="_onTouchTargetClick($event)"></div>
+    <input #input class="mdc-radio__native-control" type="radio"
+           [id]="inputId"
+           [checked]="checked"
+           [disabled]="disabled && !disabledInteractive"
+           [attr.name]="name"
+           [attr.value]="value"
+           [required]="required"
+           [attr.aria-label]="ariaLabel"
+           [attr.aria-labelledby]="ariaLabelledby"
+           [attr.aria-describedby]="ariaDescribedby"
+           [attr.aria-disabled]="disabled && disabledInteractive ? 'true' : null"
+           (change)="_onInputInteraction($event)">
+    <div class="mdc-radio__background">
+      <div class="mdc-radio__outer-circle"></div>
+      <div class="mdc-radio__inner-circle"></div>
+    </div>
+    <div mat-ripple class="mat-radio-ripple mat-focus-indicator"
+         [matRippleTrigger]="_rippleTrigger.nativeElement"
+         [matRippleDisabled]="_isRippleDisabled()"
+         [matRippleCentered]="true">
+      <div class="mat-ripple-element mat-radio-persistent-ripple"></div>
+    </div>
+  </div>
+  <label class="mdc-label" [for]="inputId">
+    <ng-content></ng-content>
+  </label>
+</div>
+`,
+      styles: ['.mat-mdc-radio-button{-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-radio-button .mdc-radio{display:inline-block;position:relative;flex:0 0 auto;box-sizing:content-box;width:20px;height:20px;cursor:pointer;will-change:opacity,transform,border-color,color;padding:calc((var(--mdc-radio-state-layer-size, 40px) - 20px)/2)}.mat-mdc-radio-button .mdc-radio:hover .mdc-radio__native-control:not([disabled]):not(:focus)~.mdc-radio__background::before{opacity:.04;transform:scale(1)}.mat-mdc-radio-button .mdc-radio:hover .mdc-radio__native-control:not([disabled])~.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-unselected-hover-icon-color, var(--mat-sys-on-surface))}.mat-mdc-radio-button .mdc-radio:hover .mdc-radio__native-control:enabled:checked+.mdc-radio__background .mdc-radio__outer-circle,.mat-mdc-radio-button .mdc-radio:hover .mdc-radio__native-control:enabled:checked+.mdc-radio__background .mdc-radio__inner-circle{border-color:var(--mdc-radio-selected-hover-icon-color, var(--mat-sys-primary))}.mat-mdc-radio-button .mdc-radio:active .mdc-radio__native-control:enabled:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-unselected-pressed-icon-color, var(--mat-sys-on-surface))}.mat-mdc-radio-button .mdc-radio:active .mdc-radio__native-control:enabled:checked+.mdc-radio__background .mdc-radio__outer-circle,.mat-mdc-radio-button .mdc-radio:active .mdc-radio__native-control:enabled:checked+.mdc-radio__background .mdc-radio__inner-circle{border-color:var(--mdc-radio-selected-pressed-icon-color, var(--mat-sys-primary))}.mat-mdc-radio-button .mdc-radio__background{display:inline-block;position:relative;box-sizing:border-box;width:20px;height:20px}.mat-mdc-radio-button .mdc-radio__background::before{position:absolute;transform:scale(0, 0);border-radius:50%;opacity:0;pointer-events:none;content:"";transition:opacity 90ms cubic-bezier(0.4, 0, 0.6, 1),transform 90ms cubic-bezier(0.4, 0, 0.6, 1);width:var(--mdc-radio-state-layer-size, 40px);height:var(--mdc-radio-state-layer-size, 40px);top:calc(-1*(var(--mdc-radio-state-layer-size, 40px) - 20px)/2);left:calc(-1*(var(--mdc-radio-state-layer-size, 40px) - 20px)/2)}.mat-mdc-radio-button .mdc-radio__outer-circle{position:absolute;top:0;left:0;box-sizing:border-box;width:100%;height:100%;border-width:2px;border-style:solid;border-radius:50%;transition:border-color 90ms cubic-bezier(0.4, 0, 0.6, 1)}.mat-mdc-radio-button .mdc-radio__inner-circle{position:absolute;top:0;left:0;box-sizing:border-box;width:100%;height:100%;transform:scale(0, 0);border-width:10px;border-style:solid;border-radius:50%;transition:transform 90ms cubic-bezier(0.4, 0, 0.6, 1),border-color 90ms cubic-bezier(0.4, 0, 0.6, 1)}.mat-mdc-radio-button .mdc-radio__native-control{position:absolute;margin:0;padding:0;opacity:0;top:0;right:0;left:0;cursor:inherit;z-index:1;width:var(--mdc-radio-state-layer-size, 40px);height:var(--mdc-radio-state-layer-size, 40px)}.mat-mdc-radio-button .mdc-radio__native-control:checked+.mdc-radio__background,.mat-mdc-radio-button .mdc-radio__native-control:disabled+.mdc-radio__background{transition:opacity 90ms cubic-bezier(0, 0, 0.2, 1),transform 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-radio-button .mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__outer-circle,.mat-mdc-radio-button .mdc-radio__native-control:disabled+.mdc-radio__background .mdc-radio__outer-circle{transition:border-color 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-radio-button .mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__inner-circle,.mat-mdc-radio-button .mdc-radio__native-control:disabled+.mdc-radio__background .mdc-radio__inner-circle{transition:transform 90ms cubic-bezier(0, 0, 0.2, 1),border-color 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-radio-button .mdc-radio__native-control:focus+.mdc-radio__background::before{transform:scale(1);opacity:.12;transition:opacity 90ms cubic-bezier(0, 0, 0.2, 1),transform 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-radio-button .mdc-radio__native-control:disabled:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-disabled-unselected-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-radio-disabled-unselected-icon-opacity, 0.38)}.mat-mdc-radio-button .mdc-radio__native-control:disabled+.mdc-radio__background{cursor:default}.mat-mdc-radio-button .mdc-radio__native-control:disabled+.mdc-radio__background .mdc-radio__inner-circle,.mat-mdc-radio-button .mdc-radio__native-control:disabled+.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-disabled-selected-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-radio-disabled-selected-icon-opacity, 0.38)}.mat-mdc-radio-button .mdc-radio__native-control:enabled:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-unselected-icon-color, var(--mat-sys-on-surface-variant))}.mat-mdc-radio-button .mdc-radio__native-control:enabled:checked+.mdc-radio__background .mdc-radio__outer-circle,.mat-mdc-radio-button .mdc-radio__native-control:enabled:checked+.mdc-radio__background .mdc-radio__inner-circle{border-color:var(--mdc-radio-selected-icon-color, var(--mat-sys-primary))}.mat-mdc-radio-button .mdc-radio__native-control:enabled:focus:checked+.mdc-radio__background .mdc-radio__inner-circle,.mat-mdc-radio-button .mdc-radio__native-control:enabled:focus:checked+.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-selected-focus-icon-color, var(--mat-sys-primary))}.mat-mdc-radio-button .mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__inner-circle{transform:scale(0.5);transition:transform 90ms cubic-bezier(0, 0, 0.2, 1),border-color 90ms cubic-bezier(0, 0, 0.2, 1)}.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled{pointer-events:auto}.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled .mdc-radio__native-control:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-disabled-unselected-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-radio-disabled-unselected-icon-opacity, 0.38)}.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled:hover .mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__inner-circle,.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled:hover .mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__outer-circle,.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled .mdc-radio__native-control:checked:focus+.mdc-radio__background .mdc-radio__inner-circle,.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled .mdc-radio__native-control:checked:focus+.mdc-radio__background .mdc-radio__outer-circle,.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled .mdc-radio__native-control+.mdc-radio__background .mdc-radio__inner-circle,.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled .mdc-radio__native-control+.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-disabled-selected-icon-color, var(--mat-sys-on-surface));opacity:var(--mdc-radio-disabled-selected-icon-opacity, 0.38)}.mat-mdc-radio-button._mat-animation-noopable .mdc-radio__background::before,.mat-mdc-radio-button._mat-animation-noopable .mdc-radio__outer-circle,.mat-mdc-radio-button._mat-animation-noopable .mdc-radio__inner-circle{transition:none !important}.mat-mdc-radio-button .mdc-radio__background::before{background-color:var(--mat-radio-ripple-color, var(--mat-sys-on-surface))}.mat-mdc-radio-button.mat-mdc-radio-checked .mat-ripple-element,.mat-mdc-radio-button.mat-mdc-radio-checked .mdc-radio__background::before{background-color:var(--mat-radio-checked-ripple-color, var(--mat-sys-primary))}.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled .mat-ripple-element,.mat-mdc-radio-button.mat-mdc-radio-disabled-interactive .mdc-radio--disabled .mdc-radio__background::before{background-color:var(--mat-radio-ripple-color, var(--mat-sys-on-surface))}.mat-mdc-radio-button .mat-internal-form-field{color:var(--mat-radio-label-text-color, var(--mat-sys-on-surface));font-family:var(--mat-radio-label-text-font, var(--mat-sys-body-medium-font));line-height:var(--mat-radio-label-text-line-height, var(--mat-sys-body-medium-line-height));font-size:var(--mat-radio-label-text-size, var(--mat-sys-body-medium-size));letter-spacing:var(--mat-radio-label-text-tracking, var(--mat-sys-body-medium-tracking));font-weight:var(--mat-radio-label-text-weight, var(--mat-sys-body-medium-weight))}.mat-mdc-radio-button .mdc-radio--disabled+label{color:var(--mat-radio-disabled-label-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-radio-button .mat-radio-ripple{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:50%}.mat-mdc-radio-button .mat-radio-ripple .mat-ripple-element{opacity:.14}.mat-mdc-radio-button .mat-radio-ripple::before{border-radius:50%}.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control:focus:enabled:not(:checked)~.mdc-radio__background .mdc-radio__outer-circle{border-color:var(--mdc-radio-unselected-focus-icon-color, var(--mat-sys-on-surface))}.mat-mdc-radio-button.cdk-focused .mat-focus-indicator::before{content:""}.mat-mdc-radio-disabled{cursor:default;pointer-events:none}.mat-mdc-radio-disabled.mat-mdc-radio-disabled-interactive{pointer-events:auto}.mat-mdc-radio-touch-target{position:absolute;top:50%;left:50%;height:48px;width:48px;transform:translate(-50%, -50%);display:var(--mat-radio-touch-target-display, block)}[dir=rtl] .mat-mdc-radio-touch-target{left:auto;right:50%;transform:translate(50%, -50%)}']
+    }]
+  }], () => [], {
+    id: [{
+      type: Input
+    }],
+    name: [{
+      type: Input
+    }],
+    ariaLabel: [{
+      type: Input,
+      args: ["aria-label"]
+    }],
+    ariaLabelledby: [{
+      type: Input,
+      args: ["aria-labelledby"]
+    }],
+    ariaDescribedby: [{
+      type: Input,
+      args: ["aria-describedby"]
+    }],
+    disableRipple: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    tabIndex: [{
+      type: Input,
+      args: [{
+        transform: (value) => value == null ? 0 : numberAttribute(value)
+      }]
+    }],
+    checked: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    value: [{
+      type: Input
+    }],
+    labelPosition: [{
+      type: Input
+    }],
+    disabled: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    required: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    color: [{
+      type: Input
+    }],
+    disabledInteractive: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    change: [{
+      type: Output
+    }],
+    _inputElement: [{
+      type: ViewChild,
+      args: ["input"]
+    }],
+    _rippleTrigger: [{
+      type: ViewChild,
+      args: ["formField", {
+        read: ElementRef,
+        static: true
+      }]
+    }]
+  });
+})();
+var MatRadioModule = class _MatRadioModule {
+  static \u0275fac = function MatRadioModule_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _MatRadioModule)();
+  };
+  static \u0275mod = /* @__PURE__ */ \u0275\u0275defineNgModule({
+    type: _MatRadioModule
+  });
+  static \u0275inj = /* @__PURE__ */ \u0275\u0275defineInjector({
+    imports: [MatCommonModule, MatRippleModule, MatRadioButton, MatCommonModule]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatRadioModule, [{
+    type: NgModule,
+    args: [{
+      imports: [MatCommonModule, MatRippleModule, MatRadioGroup, MatRadioButton],
+      exports: [MatCommonModule, MatRadioGroup, MatRadioButton]
+    }]
+  }], null, null);
+})();
+
+// dist/ngx-editor-js2-pop-quiz/fesm2022/tmdjr-ngx-editor-js2-pop-quiz.mjs
+function QuestionComponent_Conditional_7_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-error");
+    \u0275\u0275text(1, " Question is required ");
+    \u0275\u0275elementEnd();
+  }
+}
+var _c013 = (a0) => ({
+  "error": a0
+});
+function ChoicesComponent_For_7_Conditional_6_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-error");
+    \u0275\u0275text(1, " Question is required ");
+    \u0275\u0275elementEnd();
+  }
+}
+function ChoicesComponent_For_7_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementContainerStart(0, 3);
+    \u0275\u0275elementStart(1, "div", 9)(2, "mat-form-field")(3, "mat-label");
+    \u0275\u0275text(4);
+    \u0275\u0275elementEnd();
+    \u0275\u0275element(5, "textarea", 10);
+    \u0275\u0275template(6, ChoicesComponent_For_7_Conditional_6_Template, 2, 0, "mat-error");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(7, "button", 11);
+    \u0275\u0275listener("click", function ChoicesComponent_For_7_Template_button_click_7_listener() {
+      const $index_r2 = \u0275\u0275restoreView(_r1).$index;
+      const ctx_r2 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r2.removeRatioOption($index_r2));
+    });
+    \u0275\u0275elementStart(8, "mat-icon", 12);
+    \u0275\u0275text(9, "delete");
+    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementContainerEnd();
+  }
+  if (rf & 2) {
+    let tmp_12_0;
+    const $index_r2 = ctx.$index;
+    const ctx_r2 = \u0275\u0275nextContext();
+    \u0275\u0275property("formGroupName", $index_r2);
+    \u0275\u0275advance(4);
+    \u0275\u0275textInterpolate1("Option ", $index_r2 + 1, "");
+    \u0275\u0275advance(2);
+    \u0275\u0275conditional(((tmp_12_0 = ctx_r2.choicesFormGroup().get("choices")) == null ? null : tmp_12_0.get($index_r2.toString())) ? 6 : -1);
+  }
+}
+function AnswerComponent_Conditional_0_For_8_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-option", 2);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    let tmp_12_0;
+    let tmp_13_0;
+    const choice_r1 = ctx.$implicit;
+    \u0275\u0275property("value", (tmp_12_0 = choice_r1.get("value")) == null ? null : tmp_12_0.value);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", (tmp_13_0 = choice_r1.get("value")) == null ? null : tmp_13_0.value, " ");
+  }
+}
+function AnswerComponent_Conditional_0_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "form", 0)(1, "h3");
+    \u0275\u0275text(2, "Select the Correct Answer");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "mat-form-field")(4, "mat-label");
+    \u0275\u0275text(5, "Answer");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "mat-select", 1);
+    \u0275\u0275repeaterCreate(7, AnswerComponent_Conditional_0_For_8_Template, 2, 2, "mat-option", 2, \u0275\u0275repeaterTrackByIndex);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(9, "div", 3)(10, "button", 4);
+    \u0275\u0275text(11, "Previous");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(12, "button", 5);
+    \u0275\u0275text(13, "Next");
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275property("formGroup", ctx_r1.answerFormGroup());
+    \u0275\u0275advance(7);
+    \u0275\u0275repeater(ctx.controls);
+  }
+}
+function ResultsComponent_Conditional_4_For_8_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-radio-button", 6);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const option_r1 = ctx.$implicit;
+    \u0275\u0275property("value", option_r1.value);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate(option_r1.value);
+  }
+}
+function ResultsComponent_Conditional_4_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 1)(1, "div", 5)(2, "h1");
+    \u0275\u0275text(3, "Quiz");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "p");
+    \u0275\u0275text(5);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "mat-radio-group", 6);
+    \u0275\u0275repeaterCreate(7, ResultsComponent_Conditional_4_For_8_Template, 2, 2, "mat-radio-button", 6, \u0275\u0275repeaterTrackByIndex);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(9, "div", 7)(10, "button", 8);
+    \u0275\u0275text(11, "Submit");
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const formPreview_r2 = ctx;
+    \u0275\u0275advance(5);
+    \u0275\u0275textInterpolate(formPreview_r2.question);
+    \u0275\u0275advance();
+    \u0275\u0275property("value", formPreview_r2.answer);
+    \u0275\u0275advance();
+    \u0275\u0275repeater(formPreview_r2.choices);
+  }
+}
+function PopQuizConfigComponent_Conditional_0_ng_template_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275text(0, "Question?");
+  }
+}
+function PopQuizConfigComponent_Conditional_0_ng_template_5_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275text(0, "Choices");
+  }
+}
+function PopQuizConfigComponent_Conditional_0_ng_template_8_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275text(0, "Answer");
+  }
+}
+function PopQuizConfigComponent_Conditional_0_ng_template_11_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275text(0, "Responses");
+  }
+}
+function PopQuizConfigComponent_Conditional_0_ng_template_14_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275text(0, "Results");
+  }
+}
+function PopQuizConfigComponent_Conditional_0_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-stepper", 0)(1, "mat-step", 1);
+    \u0275\u0275template(2, PopQuizConfigComponent_Conditional_0_ng_template_2_Template, 1, 0, "ng-template", 2);
+    \u0275\u0275element(3, "pop-quiz-question", 3);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "mat-step", 1);
+    \u0275\u0275template(5, PopQuizConfigComponent_Conditional_0_ng_template_5_Template, 1, 0, "ng-template", 2);
+    \u0275\u0275element(6, "pop-quiz-choices", 4);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(7, "mat-step", 1);
+    \u0275\u0275template(8, PopQuizConfigComponent_Conditional_0_ng_template_8_Template, 1, 0, "ng-template", 2);
+    \u0275\u0275element(9, "pop-quiz-answer", 5);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(10, "mat-step", 1);
+    \u0275\u0275template(11, PopQuizConfigComponent_Conditional_0_ng_template_11_Template, 1, 0, "ng-template", 2);
+    \u0275\u0275element(12, "pop-quiz-responses", 6);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(13, "mat-step", 1);
+    \u0275\u0275template(14, PopQuizConfigComponent_Conditional_0_ng_template_14_Template, 1, 0, "ng-template", 2);
+    \u0275\u0275element(15, "pop-quiz-results", 7);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const vm_r1 = ctx;
+    \u0275\u0275advance();
+    \u0275\u0275property("stepControl", vm_r1.questionGroup);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("questionFormGroup", vm_r1.questionGroup);
+    \u0275\u0275advance();
+    \u0275\u0275property("stepControl", vm_r1.choicesOptionsGroup);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("choicesFormGroup", vm_r1.choicesOptionsGroup);
+    \u0275\u0275advance();
+    \u0275\u0275property("stepControl", vm_r1.answerGroup);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("answerFormGroup", vm_r1.answerGroup);
+    \u0275\u0275advance();
+    \u0275\u0275property("stepControl", vm_r1.responsesGroup);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("responsesFormGroup", vm_r1.responsesGroup);
+    \u0275\u0275advance();
+    \u0275\u0275property("stepControl", vm_r1.quizConfigForm);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("resultsFormGroup", vm_r1.quizConfigForm);
+  }
+}
+function validateRatioOptions() {
+  return (control) => {
+    const optionsArray = control;
+    if (optionsArray.controls.length < 2) {
+      return {
+        notEnoughOptions: true
+      };
+    }
+    return null;
+  };
+}
+var NgxEditorJs2PopQuizService = class _NgxEditorJs2PopQuizService {
+  formBuilder = inject(NonNullableFormBuilder);
+  parentFormGroup;
+  parentFormControlName;
+  quizConfigValue = new BehaviorSubject({
+    question: "",
+    answer: "",
+    choices: [],
+    correctResponse: "",
+    incorrectResponse: ""
+  });
+  quizConfigValue$ = this.quizConfigValue.asObservable();
+  quizConfigForm = new BehaviorSubject(this.formBuilder.group({
+    questionGroup: this.formBuilder.group({
+      question: new FormControl("", [Validators.required])
+    }),
+    choicesOptionsGroup: this.formBuilder.group({
+      choices: this.formBuilder.array([], [validateRatioOptions()])
+    }),
+    answerGroup: this.formBuilder.group({
+      answer: new FormControl("")
+    }),
+    responsesGroup: this.formBuilder.group({
+      correctResponse: new FormControl(""),
+      incorrectResponse: new FormControl("")
+    })
+  }));
+  quizConfigForm$ = this.quizConfigForm.asObservable();
+  setQuizConfigValue(value) {
+    this.quizConfigValue.next(value);
+    return value;
+  }
+  initializeQuizConfigForm(value) {
+    const form = this.quizConfigForm.value;
+    const choicesArray = form.get("choicesOptionsGroup.choices");
+    if (!choicesArray || choicesArray.length === 0) {
+      value.choices.forEach((choice) => {
+        choicesArray.push(this.formBuilder.group({
+          value: [choice.value, [Validators.required]]
+        }));
+      });
+    }
+    form.setValue(this.marshalFormValueIntoFormGroup(value));
+    return form;
+  }
+  marshalFormValueIntoFormGroup(value) {
+    return {
+      answerGroup: {
+        answer: value.answer
+      },
+      choicesOptionsGroup: {
+        choices: value.choices
+      },
+      questionGroup: {
+        question: value.question
+      },
+      responsesGroup: {
+        correctResponse: value.correctResponse,
+        incorrectResponse: value.incorrectResponse
+      }
+    };
+  }
+  updateParentFormGroupValue(value) {
+    this.parentFormGroup.get(this.parentFormControlName)?.setValue(JSON.stringify(value));
+  }
+  marshalFormGroupIntoFormValue(value) {
+    return {
+      question: value.questionGroup.question,
+      answer: value.answerGroup.answer,
+      choices: value.choicesOptionsGroup.choices,
+      correctResponse: value.responsesGroup.correctResponse,
+      incorrectResponse: value.responsesGroup.incorrectResponse
+    };
+  }
+  static \u0275fac = function NgxEditorJs2PopQuizService_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _NgxEditorJs2PopQuizService)();
+  };
+  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
+    token: _NgxEditorJs2PopQuizService,
+    factory: _NgxEditorJs2PopQuizService.\u0275fac
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgxEditorJs2PopQuizService, [{
+    type: Injectable
+  }], null, null);
+})();
+var QuestionComponent = class _QuestionComponent {
+  questionFormGroup = input.required();
+  static \u0275fac = function QuestionComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _QuestionComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _QuestionComponent,
+    selectors: [["pop-quiz-question"]],
+    inputs: {
+      questionFormGroup: [1, "questionFormGroup"]
+    },
+    decls: 11,
+    vars: 3,
+    consts: [[3, "formGroup"], ["matInput", "", 3, "formControlName"], [1, "action-group"], ["mat-flat-button", "", "matStepperNext", ""]],
+    template: function QuestionComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275elementStart(0, "form", 0)(1, "h3");
+        \u0275\u0275text(2, "Create a Question to ask the User");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(3, "mat-form-field")(4, "mat-label");
+        \u0275\u0275text(5, "Create a Question to ask.");
+        \u0275\u0275elementEnd();
+        \u0275\u0275element(6, "textarea", 1);
+        \u0275\u0275template(7, QuestionComponent_Conditional_7_Template, 2, 0, "mat-error");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(8, "div", 2)(9, "button", 3);
+        \u0275\u0275text(10, "Next");
+        \u0275\u0275elementEnd()()();
+      }
+      if (rf & 2) {
+        let tmp_2_0;
+        \u0275\u0275property("formGroup", ctx.questionFormGroup());
+        \u0275\u0275advance(6);
+        \u0275\u0275property("formControlName", "question");
+        \u0275\u0275advance();
+        \u0275\u0275conditional(((tmp_2_0 = ctx.questionFormGroup().get("question")) == null ? null : tmp_2_0.hasError("required")) ? 7 : -1);
+      }
+    },
+    dependencies: [ReactiveFormsModule, \u0275NgNoValidate, DefaultValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, MatFormFieldModule, MatFormField, MatLabel, MatError, MatInput, MatStepperNext, MatButton],
+    styles: ["[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;margin-top:1rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font:var(--mat-sys-headline-small);font-weight:100}"]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(QuestionComponent, [{
+    type: Component,
+    args: [{
+      selector: "pop-quiz-question",
+      imports: [ReactiveFormsModule, MatFormFieldModule, MatInput, MatStepperNext, MatButton],
+      template: `
+    <form [formGroup]="questionFormGroup()">
+      <h3>Create a Question to ask the User</h3>
+      <mat-form-field>
+        <mat-label>Create a Question to ask.</mat-label>
+        <textarea matInput [formControlName]="'question'"></textarea>
+        @if(questionFormGroup().get('question')?.hasError('required')) {
+        <mat-error> Question is required </mat-error>
+        }
+      </mat-form-field>
+      <div class="action-group">
+        <button mat-flat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  `,
+      styles: [":host form{display:flex;flex-direction:column}:host form .action-group{display:flex;justify-content:flex-end;margin-top:1rem}:host form h3{font:var(--mat-sys-headline-small);font-weight:100}\n"]
+    }]
+  }], null, null);
+})();
+var ResponsesComponent = class _ResponsesComponent {
+  responsesFormGroup = input.required();
+  static \u0275fac = function ResponsesComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _ResponsesComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _ResponsesComponent,
+    selectors: [["pop-quiz-responses"]],
+    inputs: {
+      responsesFormGroup: [1, "responsesFormGroup"]
+    },
+    decls: 18,
+    vars: 3,
+    consts: [[3, "formGroup"], ["matInput", "", 3, "formControlName"], [1, "action-group"], ["mat-flat-button", "", "matStepperPrevious", ""], ["mat-flat-button", "", "matStepperNext", ""]],
+    template: function ResponsesComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275elementStart(0, "form", 0)(1, "h3");
+        \u0275\u0275text(2, "Create a Response when the User is Correct");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(3, "mat-form-field")(4, "mat-label");
+        \u0275\u0275text(5, "Create a Response when the User is Correct");
+        \u0275\u0275elementEnd();
+        \u0275\u0275element(6, "textarea", 1);
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(7, "h3");
+        \u0275\u0275text(8, "Create a Response when the User is Incorrect");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(9, "mat-form-field")(10, "mat-label");
+        \u0275\u0275text(11, "Create a Response when the User is Incorrect");
+        \u0275\u0275elementEnd();
+        \u0275\u0275element(12, "textarea", 1);
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(13, "div", 2)(14, "button", 3);
+        \u0275\u0275text(15, "Previous");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(16, "button", 4);
+        \u0275\u0275text(17, "Next");
+        \u0275\u0275elementEnd()()();
+      }
+      if (rf & 2) {
+        \u0275\u0275property("formGroup", ctx.responsesFormGroup());
+        \u0275\u0275advance(6);
+        \u0275\u0275property("formControlName", "correctResponse");
+        \u0275\u0275advance(6);
+        \u0275\u0275property("formControlName", "incorrectResponse");
+      }
+    },
+    dependencies: [ReactiveFormsModule, \u0275NgNoValidate, DefaultValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, MatFormFieldModule, MatFormField, MatLabel, MatInput, MatStepperNext, MatStepperPrevious, MatButton],
+    styles: ["[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:space-between;margin-top:1rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font:var(--mat-sys-headline-small);font-weight:100}"]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ResponsesComponent, [{
+    type: Component,
+    args: [{
+      selector: "pop-quiz-responses",
+      imports: [ReactiveFormsModule, MatFormFieldModule, MatInput, MatStepperNext, MatStepperPrevious, MatButton],
+      template: `
+    <form [formGroup]="responsesFormGroup()">
+      <h3>Create a Response when the User is Correct</h3>
+      <mat-form-field>
+        <mat-label>Create a Response when the User is Correct</mat-label>
+        <textarea matInput [formControlName]="'correctResponse'"></textarea>
+      </mat-form-field>
+      <h3>Create a Response when the User is Incorrect</h3>
+      <mat-form-field>
+        <mat-label>Create a Response when the User is Incorrect</mat-label>
+        <textarea matInput [formControlName]="'incorrectResponse'"></textarea>
+      </mat-form-field>
+      <div class="action-group">
+        <button mat-flat-button matStepperPrevious>Previous</button>
+        <button mat-flat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  `,
+      styles: [":host form{display:flex;flex-direction:column}:host form .action-group{display:flex;justify-content:space-between;margin-top:1rem}:host form h3{font:var(--mat-sys-headline-small);font-weight:100}\n"]
+    }]
+  }], null, null);
+})();
+var ChoicesComponent = class _ChoicesComponent {
+  formBuilder = inject(FormBuilder);
+  choicesFormGroup = input.required({
+    transform: (value) => {
+      this.choicesFormGroupSub.next(value);
+      return value;
+    }
+  });
+  choicesFormGroupSub = new BehaviorSubject(this.formBuilder.group({
+    choices: this.formBuilder.array([])
+  }));
+  choicesFormGroup$ = this.choicesFormGroupSub.asObservable();
+  viewModel$ = this.choicesFormGroup$.pipe(map((formGroup) => formGroup.get("choices")));
+  addRatioOption() {
+    const choices = this.choicesFormGroup().get("choices");
+    choices.push(this.formBuilder.group({
+      value: ["", [Validators.required]]
+    }));
+    return this.choicesFormGroupSub.next(this.choicesFormGroup());
+  }
+  removeRatioOption(index) {
+    const choices = this.choicesFormGroup().get("choices");
+    choices.removeAt(index);
+    return this.choicesFormGroupSub.next(this.choicesFormGroup());
+  }
+  static \u0275fac = function ChoicesComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _ChoicesComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _ChoicesComponent,
+    selectors: [["pop-quiz-choices"]],
+    inputs: {
+      choicesFormGroup: [1, "choicesFormGroup"]
+    },
+    decls: 20,
+    vars: 6,
+    consts: [[3, "formGroup"], [3, "ngClass"], ["formArrayName", "choices"], [3, "formGroupName"], [1, "answers-action-group"], ["mat-button", "", "type", "button", 3, "click"], [1, "action-group"], ["mat-flat-button", "", "matStepperPrevious", ""], ["mat-flat-button", "", "matStepperNext", ""], [1, "radio-option-container"], ["matInput", "", "formControlName", "value"], ["mat-icon-button", "", 3, "click"], [1, "delete"]],
+    template: function ChoicesComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275elementStart(0, "form", 0)(1, "h3");
+        \u0275\u0275text(2, " Create the Possible Answers ");
+        \u0275\u0275elementStart(3, "span", 1);
+        \u0275\u0275text(4, "(Create at least 2 choices)");
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementContainerStart(5, 2);
+        \u0275\u0275repeaterCreate(6, ChoicesComponent_For_7_Template, 10, 3, "ng-container", 3, \u0275\u0275repeaterTrackByIdentity);
+        \u0275\u0275pipe(8, "async");
+        \u0275\u0275elementStart(9, "div", 4)(10, "button", 5);
+        \u0275\u0275listener("click", function ChoicesComponent_Template_button_click_10_listener() {
+          return ctx.addRatioOption();
+        });
+        \u0275\u0275elementStart(11, "mat-icon");
+        \u0275\u0275text(12, "add");
+        \u0275\u0275elementEnd();
+        \u0275\u0275text(13, "Add a Choice ");
+        \u0275\u0275elementEnd()();
+        \u0275\u0275elementContainerEnd();
+        \u0275\u0275element(14, "mat-divider");
+        \u0275\u0275elementStart(15, "div", 6)(16, "button", 7);
+        \u0275\u0275text(17, "Previous");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(18, "button", 8);
+        \u0275\u0275text(19, "Next");
+        \u0275\u0275elementEnd()()();
+      }
+      if (rf & 2) {
+        let tmp_1_0;
+        \u0275\u0275property("formGroup", ctx.choicesFormGroup());
+        \u0275\u0275advance(3);
+        \u0275\u0275property("ngClass", \u0275\u0275pureFunction1(4, _c013, (tmp_1_0 = ctx.choicesFormGroup().get("choices")) == null ? null : tmp_1_0.hasError("notEnoughOptions")));
+        \u0275\u0275advance(3);
+        \u0275\u0275repeater(\u0275\u0275pipeBind1(8, 2, ctx.viewModel$).controls);
+      }
+    },
+    dependencies: [AsyncPipe, ReactiveFormsModule, \u0275NgNoValidate, DefaultValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, FormGroupName, FormArrayName, MatFormFieldModule, MatFormField, MatLabel, MatError, MatInput, MatStepperNext, MatStepperPrevious, MatButtonModule, MatButton, MatIconButton, MatIcon, MatDivider, NgClass],
+    styles: ["[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .error[_ngcontent-%COMP%]{color:var(--mat-sys-error)}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .radio-option-container[_ngcontent-%COMP%]{display:flex;align-items:center;gap:1rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .radio-option-container[_ngcontent-%COMP%]   mat-form-field[_ngcontent-%COMP%]{width:100%}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .radio-option-container[_ngcontent-%COMP%]   .delete[_ngcontent-%COMP%]{color:var(--mat-sys-error)}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .answers-action-group[_ngcontent-%COMP%]{margin-bottom:1.7rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:space-between;margin-top:1rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font:var(--mat-sys-headline-small);font-weight:100}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]{font:var(--mat-sys-body-small)}"]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ChoicesComponent, [{
+    type: Component,
+    args: [{
+      selector: "pop-quiz-choices",
+      imports: [AsyncPipe, ReactiveFormsModule, MatFormFieldModule, MatInput, MatStepperNext, MatStepperPrevious, MatButtonModule, MatIcon, MatDivider, NgClass],
+      template: `
+    <form [formGroup]="choicesFormGroup()">
+      <h3>
+        Create the Possible Answers <span
+          [ngClass]="{ 'error': (this.choicesFormGroup().get('choices'))?.hasError('notEnoughOptions') }"
+        >(Create at least 2 choices)</span>
+      </h3>
+      <ng-container formArrayName="choices">
+        @for (option of (viewModel$ | async)!.controls; track option) {
+        <ng-container [formGroupName]="$index">
+          <div class="radio-option-container">
+            <mat-form-field>
+              <mat-label>Option {{ $index + 1 }}</mat-label>
+              <textarea matInput formControlName="value"></textarea>
+              @if((this.choicesFormGroup().get('choices'))?.get($index.toString())) {
+                <mat-error> Question is required </mat-error>
+              }
+            </mat-form-field>
+            <button mat-icon-button (click)="removeRatioOption($index)">
+              <mat-icon class="delete">delete</mat-icon>
+            </button>
+          </div>
+        </ng-container>
+        }
+        <div class="answers-action-group">
+          <button mat-button type="button" (click)="addRatioOption()">
+            <mat-icon>add</mat-icon>Add a Choice
+          </button>
+        </div>
+      </ng-container>
+      <mat-divider></mat-divider>
+      <div class="action-group">
+        <button mat-flat-button matStepperPrevious>Previous</button>
+        <button mat-flat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  `,
+      styles: [":host form{display:flex;flex-direction:column}:host form .error{color:var(--mat-sys-error)}:host form .radio-option-container{display:flex;align-items:center;gap:1rem}:host form .radio-option-container mat-form-field{width:100%}:host form .radio-option-container .delete{color:var(--mat-sys-error)}:host form .answers-action-group{margin-bottom:1.7rem}:host form .action-group{display:flex;justify-content:space-between;margin-top:1rem}:host form h3{font:var(--mat-sys-headline-small);font-weight:100}:host form h3 span{font:var(--mat-sys-body-small)}\n"]
+    }]
+  }], null, null);
+})();
+var AnswerComponent = class _AnswerComponent {
+  answerFormGroup = input.required();
+  choices$ = inject(NgxEditorJs2PopQuizService).quizConfigForm$.pipe(map((form) => form.controls.choicesOptionsGroup.controls.choices));
+  static \u0275fac = function AnswerComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _AnswerComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _AnswerComponent,
+    selectors: [["pop-quiz-answer"]],
+    inputs: {
+      answerFormGroup: [1, "answerFormGroup"]
+    },
+    decls: 2,
+    vars: 3,
+    consts: [[3, "formGroup"], ["formControlName", "answer"], [3, "value"], [1, "action-group"], ["mat-flat-button", "", "matStepperPrevious", ""], ["mat-flat-button", "", "matStepperNext", ""]],
+    template: function AnswerComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275template(0, AnswerComponent_Conditional_0_Template, 14, 1, "form", 0);
+        \u0275\u0275pipe(1, "async");
+      }
+      if (rf & 2) {
+        let tmp_0_0;
+        \u0275\u0275conditional((tmp_0_0 = \u0275\u0275pipeBind1(1, 1, ctx.choices$)) ? 0 : -1, tmp_0_0);
+      }
+    },
+    dependencies: [AsyncPipe, ReactiveFormsModule, \u0275NgNoValidate, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, MatStepperNext, MatStepperPrevious, MatButton, MatFormField, MatOption, MatLabel, MatSelect],
+    styles: ["[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   mat-form-field[_ngcontent-%COMP%]{margin-bottom:1.5rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:space-between}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font:var(--mat-sys-headline-small);font-weight:100}"]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AnswerComponent, [{
+    type: Component,
+    args: [{
+      selector: "pop-quiz-answer",
+      imports: [AsyncPipe, ReactiveFormsModule, MatStepperNext, MatStepperPrevious, MatButton, MatFormField, MatOption, MatLabel, MatSelect],
+      template: `
+    @if (choices$ | async; as choices) {
+    <form [formGroup]="answerFormGroup()">
+      <h3>Select the Correct Answer</h3>
+      <mat-form-field>
+        <mat-label>Answer</mat-label>
+        <mat-select formControlName="answer">
+          @for (choice of choices.controls; track $index) {
+          <mat-option [value]="choice.get('value')?.value">
+            {{ choice.get('value')?.value }}
+          </mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <div class="action-group">
+        <button mat-flat-button matStepperPrevious>Previous</button>
+        <button mat-flat-button matStepperNext>Next</button>
+      </div>
+    </form>
+    }
+  `,
+      styles: [":host form{display:flex;flex-direction:column}:host form mat-form-field{margin-bottom:1.5rem}:host form .action-group{display:flex;justify-content:space-between}:host form h3{font:var(--mat-sys-headline-small);font-weight:100}\n"]
+    }]
+  }], null, null);
+})();
+var ResultsComponent = class _ResultsComponent {
+  popQuizService = inject(NgxEditorJs2PopQuizService);
+  resultsFormGroup = input.required();
+  resultsFormGroup$ = toObservable2(this.resultsFormGroup);
+  viewModel$ = this.resultsFormGroup$.pipe(map((formGroup) => this.popQuizService.marshalFormGroupIntoFormValue(formGroup.getRawValue())));
+  emitNewFormValue() {
+    this.popQuizService.updateParentFormGroupValue(this.resultsFormGroup().getRawValue());
+  }
+  static \u0275fac = function ResultsComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _ResultsComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _ResultsComponent,
+    selectors: [["pop-quiz-results"]],
+    inputs: {
+      resultsFormGroup: [1, "resultsFormGroup"]
+    },
+    decls: 12,
+    vars: 4,
+    consts: [[3, "formGroup"], [1, "preview-container"], [1, "action-group"], ["mat-flat-button", "", "matStepperPrevious", ""], ["mat-flat-button", "", 3, "click"], [1, "preview"], [3, "value"], [1, "preview-action-group"], ["mat-button", "", "type", "button"]],
+    template: function ResultsComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275elementStart(0, "form", 0)(1, "h3");
+        \u0275\u0275text(2, "Preview of the Pop-Quiz");
+        \u0275\u0275elementEnd();
+        \u0275\u0275element(3, "mat-divider");
+        \u0275\u0275template(4, ResultsComponent_Conditional_4_Template, 12, 2, "div", 1);
+        \u0275\u0275pipe(5, "async");
+        \u0275\u0275element(6, "mat-divider");
+        \u0275\u0275elementStart(7, "div", 2)(8, "button", 3);
+        \u0275\u0275text(9, "Back");
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(10, "button", 4);
+        \u0275\u0275listener("click", function ResultsComponent_Template_button_click_10_listener() {
+          return ctx.emitNewFormValue();
+        });
+        \u0275\u0275text(11, "Save");
+        \u0275\u0275elementEnd()()();
+      }
+      if (rf & 2) {
+        let tmp_1_0;
+        \u0275\u0275property("formGroup", ctx.resultsFormGroup());
+        \u0275\u0275advance(4);
+        \u0275\u0275conditional((tmp_1_0 = \u0275\u0275pipeBind1(5, 2, ctx.viewModel$)) ? 4 : -1, tmp_1_0);
+      }
+    },
+    dependencies: [AsyncPipe, ReactiveFormsModule, \u0275NgNoValidate, NgControlStatusGroup, FormGroupDirective, MatStepperPrevious, MatButton, MatRadioModule, MatRadioGroup, MatRadioButton, MatDivider],
+    styles: ["[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:space-between;margin-top:1rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font:var(--mat-sys-headline-small);font-weight:100}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .preview-container[_ngcontent-%COMP%]{display:flex;gap:1.5rem;flex-direction:column;align-items:flex-end;margin-bottom:1.5rem}"]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ResultsComponent, [{
+    type: Component,
+    args: [{
+      selector: "pop-quiz-results",
+      imports: [AsyncPipe, ReactiveFormsModule, MatStepperPrevious, MatButton, MatRadioModule, MatDivider],
+      template: `
+    <form [formGroup]="resultsFormGroup()">
+      <h3>Preview of the Pop-Quiz</h3>
+      <mat-divider></mat-divider>
+      @if(viewModel$ | async; as formPreview) {
+      <div class="preview-container">
+        <div class="preview">
+          <h1>Quiz</h1>
+          <p>{{ formPreview.question }}</p>
+          <mat-radio-group [value]="formPreview.answer">
+            @for(option of formPreview.choices; track $index) {
+            <mat-radio-button [value]="option.value">{{
+              option.value
+            }}</mat-radio-button>
+            }
+          </mat-radio-group>
+        </div>
+        <div class="preview-action-group">
+          <button mat-button type="button">Submit</button>
+        </div>
+      </div>
+      }
+      <mat-divider></mat-divider>
+      <div class="action-group">
+        <button mat-flat-button matStepperPrevious>Back</button>
+        <button mat-flat-button (click)="emitNewFormValue()">Save</button>
+      </div>
+    </form>
+  `,
+      styles: [":host form{display:flex;flex-direction:column}:host form .action-group{display:flex;justify-content:space-between;margin-top:1rem}:host form h3{font:var(--mat-sys-headline-small);font-weight:100}:host form .preview-container{display:flex;gap:1.5rem;flex-direction:column;align-items:flex-end;margin-bottom:1.5rem}\n"]
+    }]
+  }], null, null);
+})();
+var PopQuizConfigComponent = class _PopQuizConfigComponent {
+  popQuizService = inject(NgxEditorJs2PopQuizService);
+  viewModel$ = combineLatest({
+    form: this.popQuizService.quizConfigForm$,
+    value: this.popQuizService.quizConfigValue$
+  }).pipe(map(({
+    value
+  }) => this.popQuizService.initializeQuizConfigForm(value)), map((form) => ({
+    questionGroup: form.get("questionGroup"),
+    choicesOptionsGroup: form.get("choicesOptionsGroup"),
+    answerGroup: form.get("answerGroup"),
+    responsesGroup: form.get("responsesGroup"),
+    quizConfigForm: form
+  })));
+  static \u0275fac = function PopQuizConfigComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _PopQuizConfigComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _PopQuizConfigComponent,
+    selectors: [["pop-quiz-config"]],
+    decls: 2,
+    vars: 3,
+    consts: [["linear", "", 1, "mat-stepper"], [3, "stepControl"], ["matStepLabel", ""], [3, "questionFormGroup"], [3, "choicesFormGroup"], [3, "answerFormGroup"], [3, "responsesFormGroup"], [3, "resultsFormGroup"]],
+    template: function PopQuizConfigComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275template(0, PopQuizConfigComponent_Conditional_0_Template, 16, 10, "mat-stepper", 0);
+        \u0275\u0275pipe(1, "async");
+      }
+      if (rf & 2) {
+        let tmp_0_0;
+        \u0275\u0275conditional((tmp_0_0 = \u0275\u0275pipeBind1(1, 1, ctx.viewModel$)) ? 0 : -1, tmp_0_0);
+      }
+    },
+    dependencies: [AsyncPipe, ReactiveFormsModule, MatStepperModule, MatStep, MatStepLabel, MatStepper, QuestionComponent, ResponsesComponent, ChoicesComponent, AnswerComponent, ResultsComponent],
+    styles: ["[_nghost-%COMP%]{border:1px solid #ccc;border-radius:var( --mdc-outlined-card-container-shape, var(--mat-sys-corner-medium) )}[_nghost-%COMP%]   pop-quiz-question[_ngcontent-%COMP%]{padding-top:1rem}[_nghost-%COMP%]   :is(mat-stepper.mat-stepper-vertical[_ngcontent-%COMP%], mat-stepper.mat-stepper-horizontal[_ngcontent-%COMP%]){background:none}"]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(PopQuizConfigComponent, [{
+    type: Component,
+    args: [{
+      selector: "pop-quiz-config",
+      imports: [AsyncPipe, ReactiveFormsModule, MatStepperModule, QuestionComponent, ResponsesComponent, ChoicesComponent, AnswerComponent, ResultsComponent],
+      template: `
+    @if (viewModel$ | async; as vm) {
+    <mat-stepper class="mat-stepper" linear>
+      <mat-step [stepControl]="vm.questionGroup">
+        <ng-template matStepLabel>Question?</ng-template>
+        <pop-quiz-question
+          [questionFormGroup]="vm.questionGroup"
+        ></pop-quiz-question>
+      </mat-step>
+      <mat-step [stepControl]="vm.choicesOptionsGroup">
+        <ng-template matStepLabel>Choices</ng-template>
+        <pop-quiz-choices
+          [choicesFormGroup]="vm.choicesOptionsGroup"
+        ></pop-quiz-choices>
+      </mat-step>
+      <mat-step [stepControl]="vm.answerGroup">
+        <ng-template matStepLabel>Answer</ng-template>
+        <pop-quiz-answer [answerFormGroup]="vm.answerGroup"></pop-quiz-answer>
+      </mat-step>
+      <mat-step [stepControl]="vm.responsesGroup">
+        <ng-template matStepLabel>Responses</ng-template>
+        <pop-quiz-responses
+          [responsesFormGroup]="vm.responsesGroup"
+        ></pop-quiz-responses>
+      </mat-step>
+      <mat-step [stepControl]="vm.quizConfigForm">
+        <ng-template matStepLabel>Results</ng-template>
+        <pop-quiz-results
+          [resultsFormGroup]="vm.quizConfigForm"
+        ></pop-quiz-results>
+      </mat-step>
+    </mat-stepper>
+    }
+  `,
+      styles: [":host{border:1px solid #ccc;border-radius:var( --mdc-outlined-card-container-shape, var(--mat-sys-corner-medium) )}:host pop-quiz-question{padding-top:1rem}:host :is(mat-stepper.mat-stepper-vertical,mat-stepper.mat-stepper-horizontal){background:none}\n"]
+    }]
+  }], null, null);
+})();
+var NgxEditorJs2PopQuizComponent = class _NgxEditorJs2PopQuizComponent {
+  popQuizService = inject(NgxEditorJs2PopQuizService);
+  sortIndex = input(0);
+  componentInstanceName = "NgxEditorJs2PopQuizComponent";
+  autofocus = input(true);
+  formGroup = input.required({
+    transform: (value) => {
+      this.popQuizService.parentFormGroup = value;
+      return value;
+    }
+  });
+  formControlName = input.required({
+    transform: (value) => {
+      this.popQuizService.parentFormControlName = value;
+      return value;
+    }
+  });
+  blockOptionActions = input([{
+    action: "medium",
+    icon: "density_small"
+  }, {
+    action: "display-small",
+    icon: "density_medium"
+  }, {
+    action: "display-large",
+    icon: "density_large"
+  }]);
+  value = this.popQuizService.quizConfigValue$;
+  savedAction = signal("display-large");
+  actionCallbackBind = this.actionCallback.bind(this);
+  ngOnInit() {
+    try {
+      const possibleSavedValue = this.formGroup().get(this.formControlName());
+      this.popQuizService.setQuizConfigValue(possibleSavedValue?.getRawValue() ? JSON.parse(possibleSavedValue.value) : this.popQuizService.quizConfigValue.value);
+    } catch (error) {
+      console.warn("Error parseing Quiz values", error);
+    }
+  }
+  actionCallback(action) {
+    this.savedAction.update(() => action);
+  }
+  static \u0275fac = function NgxEditorJs2PopQuizComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _NgxEditorJs2PopQuizComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _NgxEditorJs2PopQuizComponent,
+    selectors: [["ngx-editor-js2-pop-quiz"]],
+    hostAttrs: [1, "cdk-drag-animating", "no-toolbar-inline"],
+    inputs: {
+      sortIndex: [1, "sortIndex"],
+      autofocus: [1, "autofocus"],
+      formGroup: [1, "formGroup"],
+      formControlName: [1, "formControlName"],
+      blockOptionActions: [1, "blockOptionActions"]
+    },
+    features: [\u0275\u0275ProvidersFeature([NgxEditorJs2PopQuizService]), \u0275\u0275HostDirectivesFeature([CdkDrag])],
+    decls: 3,
+    vars: 6,
+    consts: [[3, "formGroup"], ["controlAccessor", "", "toolbarFab", "", 1, "pop-quiz-container-overlay", 3, "actionCallback", "autofocus", "blockOptionActions", "formControlName", "componentContextPositionIndex"]],
+    template: function NgxEditorJs2PopQuizComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275elementContainerStart(0, 0);
+        \u0275\u0275element(1, "span", 1)(2, "pop-quiz-config");
+        \u0275\u0275elementContainerEnd();
+      }
+      if (rf & 2) {
+        \u0275\u0275property("formGroup", ctx.formGroup());
+        \u0275\u0275advance();
+        \u0275\u0275property("actionCallback", ctx.actionCallbackBind)("autofocus", ctx.autofocus())("blockOptionActions", ctx.blockOptionActions())("formControlName", ctx.formControlName())("componentContextPositionIndex", ctx.sortIndex());
+      }
+    },
+    dependencies: [ReactiveFormsModule, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, ControlAccessorDirective, AutofocusDirective, ToolbarFabDirective, PopQuizConfigComponent],
+    styles: ["[_nghost-%COMP%]{position:relative;display:flex;flex-direction:column;margin:1.5rem 0}[_nghost-%COMP%]   .pop-quiz-container-overlay[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;position:absolute}"]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(NgxEditorJs2PopQuizComponent, [{
+    type: Component,
+    args: [{
+      selector: "ngx-editor-js2-pop-quiz",
+      host: {
+        class: "cdk-drag-animating no-toolbar-inline"
+      },
+      hostDirectives: [CdkDrag],
+      imports: [ReactiveFormsModule, ControlAccessorDirective, AutofocusDirective, ToolbarFabDirective, PopQuizConfigComponent],
+      providers: [NgxEditorJs2PopQuizService],
+      template: `
+    <ng-container [formGroup]="formGroup()">
+      <span
+        controlAccessor
+        toolbarFab
+        class="pop-quiz-container-overlay"
+        [actionCallback]="actionCallbackBind"
+        [autofocus]="autofocus()"
+        [blockOptionActions]="blockOptionActions()"
+        [formControlName]="formControlName()"
+        [componentContextPositionIndex]="sortIndex()"
+      ></span>
+      <pop-quiz-config></pop-quiz-config>
+    </ng-container>
+  `,
+      styles: [":host{position:relative;display:flex;flex-direction:column;margin:1.5rem 0}:host .pop-quiz-container-overlay{display:flex;height:100%;width:100%;position:absolute}\n"]
     }]
   }], null, null);
 })();
@@ -37218,6 +42387,11 @@ var appConfig = {
             name: "Codemirror",
             component: NgxEditorJs2CodemirrorComponent,
             componentInstanceName: "NgxEditorJs2CodemirrorComponent"
+          },
+          {
+            name: "Pop Quiz",
+            component: NgxEditorJs2PopQuizComponent,
+            componentInstanceName: "NgxEditorJs2PopQuizComponent"
           }
         ]
       }
@@ -37226,9 +42400,9 @@ var appConfig = {
 };
 
 // node_modules/@angular/material/fesm2022/menu.mjs
-var _c09 = ["mat-menu-item", ""];
-var _c16 = [[["mat-icon"], ["", "matMenuItemIcon", ""]], "*"];
-var _c25 = ["mat-icon, [matMenuItemIcon]", "*"];
+var _c014 = ["mat-menu-item", ""];
+var _c19 = [[["mat-icon"], ["", "matMenuItemIcon", ""]], "*"];
+var _c28 = ["mat-icon, [matMenuItemIcon]", "*"];
 function MatMenuItem_Conditional_4_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275namespaceSVG();
@@ -37237,7 +42411,7 @@ function MatMenuItem_Conditional_4_Template(rf, ctx) {
     \u0275\u0275elementEnd();
   }
 }
-var _c35 = ["*"];
+var _c37 = ["*"];
 function MatMenu_ng_template_0_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
@@ -37389,14 +42563,14 @@ var MatMenuItem = class _MatMenuItem {
     },
     exportAs: ["matMenuItem"],
     features: [\u0275\u0275InputTransformsFeature],
-    attrs: _c09,
-    ngContentSelectors: _c25,
+    attrs: _c014,
+    ngContentSelectors: _c28,
     decls: 5,
     vars: 3,
     consts: [[1, "mat-mdc-menu-item-text"], ["matRipple", "", 1, "mat-mdc-menu-ripple", 3, "matRippleDisabled", "matRippleTrigger"], ["viewBox", "0 0 5 10", "focusable", "false", "aria-hidden", "true", 1, "mat-mdc-menu-submenu-icon"], ["points", "0,0 5,5 0,10"]],
     template: function MatMenuItem_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275projectionDef(_c16);
+        \u0275\u0275projectionDef(_c19);
         \u0275\u0275projection(0);
         \u0275\u0275elementStart(1, "span", 0);
         \u0275\u0275projection(2, 1);
@@ -37921,7 +43095,7 @@ var MatMenu = class _MatMenu {
       provide: MAT_MENU_PANEL,
       useExisting: _MatMenu
     }]), \u0275\u0275InputTransformsFeature],
-    ngContentSelectors: _c35,
+    ngContentSelectors: _c37,
     decls: 1,
     vars: 0,
     consts: [["tabindex", "-1", "role", "menu", 1, "mat-mdc-menu-panel", 3, "click", "animationstart", "animationend", "animationcancel", "id"], [1, "mat-mdc-menu-content"]],
@@ -38607,7 +43781,7 @@ var fadeInItems = matMenuAnimations.fadeInItems;
 var transformMenu = matMenuAnimations.transformMenu;
 
 // node_modules/@angular/material/fesm2022/tooltip.mjs
-var _c010 = ["tooltip"];
+var _c015 = ["tooltip"];
 var SCROLL_THROTTLE_MS = 20;
 function getMatTooltipInvalidPositionError(position) {
   return Error(`Tooltip position "${position}" is invalid.`);
@@ -39470,7 +44644,7 @@ var TooltipComponent = class _TooltipComponent {
     selectors: [["mat-tooltip-component"]],
     viewQuery: function TooltipComponent_Query(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275viewQuery(_c010, 7);
+        \u0275\u0275viewQuery(_c015, 7);
       }
       if (rf & 2) {
         let _t;
@@ -39579,8 +44753,8 @@ var MatTooltipModule = class _MatTooltipModule {
 })();
 
 // node_modules/@angular/material/fesm2022/slide-toggle.mjs
-var _c011 = ["switch"];
-var _c17 = ["*"];
+var _c016 = ["switch"];
+var _c110 = ["*"];
 function MatSlideToggle_Conditional_10_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span", 10);
@@ -39803,7 +44977,7 @@ var MatSlideToggle = class _MatSlideToggle {
     selectors: [["mat-slide-toggle"]],
     viewQuery: function MatSlideToggle_Query(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275viewQuery(_c011, 5);
+        \u0275\u0275viewQuery(_c016, 5);
       }
       if (rf & 2) {
         let _t;
@@ -39846,7 +45020,7 @@ var MatSlideToggle = class _MatSlideToggle {
       useExisting: _MatSlideToggle,
       multi: true
     }]), \u0275\u0275InputTransformsFeature, \u0275\u0275NgOnChangesFeature],
-    ngContentSelectors: _c17,
+    ngContentSelectors: _c110,
     decls: 13,
     vars: 27,
     consts: [["switch", ""], ["mat-internal-form-field", "", 3, "labelPosition"], ["role", "switch", "type", "button", 1, "mdc-switch", 3, "click", "tabIndex", "disabled"], [1, "mdc-switch__track"], [1, "mdc-switch__handle-track"], [1, "mdc-switch__handle"], [1, "mdc-switch__shadow"], [1, "mdc-elevation-overlay"], [1, "mdc-switch__ripple"], ["mat-ripple", "", 1, "mat-mdc-slide-toggle-ripple", "mat-focus-indicator", 3, "matRippleTrigger", "matRippleDisabled", "matRippleCentered"], [1, "mdc-switch__icons"], [1, "mdc-label", 3, "click", "for"], ["viewBox", "0 0 24 24", "aria-hidden", "true", 1, "mdc-switch__icon", "mdc-switch__icon--on"], ["d", "M19.69,5.23L8.96,15.96l-4.23-4.23L2.96,13.5l6,6L21.46,7L19.69,5.23z"], ["viewBox", "0 0 24 24", "aria-hidden", "true", 1, "mdc-switch__icon", "mdc-switch__icon--off"], ["d", "M20 13H4v-2h16v2z"]],
@@ -40379,12 +45553,20 @@ var TEST_DATA = [
     dataClean: "Prerequisites"
   },
   {
-    blockId: "n177dsd",
+    blockId: "9bqhk",
     sortIndex: 1,
-    componentInstanceName: "NgxEditorJs2ImageComponent",
-    savedAction: "stretch",
-    dataClean: '{"url":"https://res.cloudinary.com/dowdpiikk/image/upload/w_650,q_auto:best,f_auto/v1709445782/lnyst5aqppuin8wt73ci.webp","title":"test"}'
+    componentInstanceName: "NgxEditorJs2PopQuizComponent",
+    savedAction: "display-large",
+    dataClean: `{"question":"Which of the following statements is true about Angular's default RouteReuseStrategy?","answer":"It reuses components when the route configuration remains the same.","correctResponse":"That's correct! Angular's default RouteReuseStrategy reuses components when the route configuration remains the same. This prevents components from being destroyed and recreated when only the fragment or query parameters change.","incorrectResponse":"That's incorrect. The correct answer is C. Angular's default RouteReuseStrategy reuses components when the route configuration remains the same. This prevents components from being destroyed and recreated when only the fragment or query parameters change.","choices":[{"value":"It only reuses components when the route configuration changes."},{"value":"It only reuses components when the route parameters change."},{"value":"It reuses components when the route configuration remains the same."},{"value":"It never reuses components."}]}`
   },
+  // {
+  //   blockId: 'n177dsd',
+  //   sortIndex: 1,
+  //   componentInstanceName: 'NgxEditorJs2ImageComponent',
+  //   savedAction: 'stretch',
+  //   dataClean:
+  //     '{"url":"https://res.cloudinary.com/dowdpiikk/image/upload/w_650,q_auto:best,f_auto/v1709445782/lnyst5aqppuin8wt73ci.webp","title":"test"}',
+  // },
   {
     blockId: "bu23hwyltss",
     sortIndex: 2,
@@ -40412,6 +45594,20 @@ var TEST_DATA = [
     componentInstanceName: "NgxEditorJs2CodemirrorComponent",
     savedAction: "text/typescript",
     dataClean: "export class SimpleFormGroup {\n  form = new FormGroup({\n    first: new FormControl('Nancy', Validators.minLength(2)),\n    last: new FormControl('Drew'),\n  });\n\n  get first(): any {\n    return this.form.get('first');\n  }\n\n  onSubmit(): void {\n    console.log(this.form.value); // {first: 'Nancy', last: 'Drew'}\n  }\n\n  setValue() {\n    this.form.setValue({first: 'Carson', last: 'Drew'});\n  }\n}"
+  },
+  {
+    blockId: "l13u3k",
+    sortIndex: 6,
+    componentInstanceName: "HeaderBlockComponent",
+    savedAction: "h1",
+    dataClean: "New way of learning..."
+  },
+  {
+    blockId: "8u3uiij5vyj",
+    sortIndex: 7,
+    componentInstanceName: "ParagraphBlockComponent",
+    savedAction: "large",
+    dataClean: '<ul><li><a href="https://www.typescriptlang.org/">TypeScript</a> and HTML5 programming</li><li>Angular app-design fundamentals, as described in <a href="https://angular.io/guide/architecture">Angular Concepts</a><br></li><li>The basics of <a href="https://angular.io/guide/architecture-components#template-syntax">Angular template syntax</a><br></li></ul>'
   }
 ];
 var TEST_DATA_TWO = [
@@ -40452,7 +45648,7 @@ var TEST_DATA_TWO = [
   }
 ];
 var AppService = class _AppService {
-  ngxEditorJsBlocks = new BehaviorSubject([]);
+  ngxEditorJsBlocks = new BehaviorSubject(TEST_DATA);
   ngxEditorJsBlocks$ = this.ngxEditorJsBlocks.asObservable();
   requestBlocks = new BehaviorSubject({});
   requestBlocks$ = this.requestBlocks.asObservable();
@@ -40568,14 +45764,14 @@ var HeroComponent = class _HeroComponent {
 /*# sourceMappingURL=hero.component.css.map */`] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HeroComponent, { className: "HeroComponent", filePath: "projects/demo/src/app/components/hero.component.ts", lineNumber: 110 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HeroComponent, { className: "HeroComponent", filePath: "projects/demo/src/app/components/hero.component.ts", lineNumber: 108 });
 })();
 
 // node_modules/@angular/material/fesm2022/card.mjs
-var _c012 = ["*"];
-var _c18 = [[["mat-card-title"], ["mat-card-subtitle"], ["", "mat-card-title", ""], ["", "mat-card-subtitle", ""], ["", "matCardTitle", ""], ["", "matCardSubtitle", ""]], [["", "mat-card-image", ""], ["", "matCardImage", ""], ["", "mat-card-sm-image", ""], ["", "matCardImageSmall", ""], ["", "mat-card-md-image", ""], ["", "matCardImageMedium", ""], ["", "mat-card-lg-image", ""], ["", "matCardImageLarge", ""], ["", "mat-card-xl-image", ""], ["", "matCardImageXLarge", ""]], "*"];
-var _c26 = ["mat-card-title, mat-card-subtitle,\n      [mat-card-title], [mat-card-subtitle],\n      [matCardTitle], [matCardSubtitle]", "[mat-card-image], [matCardImage],\n                    [mat-card-sm-image], [matCardImageSmall],\n                    [mat-card-md-image], [matCardImageMedium],\n                    [mat-card-lg-image], [matCardImageLarge],\n                    [mat-card-xl-image], [matCardImageXLarge]", "*"];
-var _c36 = [[["", "mat-card-avatar", ""], ["", "matCardAvatar", ""]], [["mat-card-title"], ["mat-card-subtitle"], ["", "mat-card-title", ""], ["", "mat-card-subtitle", ""], ["", "matCardTitle", ""], ["", "matCardSubtitle", ""]], "*"];
+var _c017 = ["*"];
+var _c111 = [[["mat-card-title"], ["mat-card-subtitle"], ["", "mat-card-title", ""], ["", "mat-card-subtitle", ""], ["", "matCardTitle", ""], ["", "matCardSubtitle", ""]], [["", "mat-card-image", ""], ["", "matCardImage", ""], ["", "mat-card-sm-image", ""], ["", "matCardImageSmall", ""], ["", "mat-card-md-image", ""], ["", "matCardImageMedium", ""], ["", "mat-card-lg-image", ""], ["", "matCardImageLarge", ""], ["", "mat-card-xl-image", ""], ["", "matCardImageXLarge", ""]], "*"];
+var _c29 = ["mat-card-title, mat-card-subtitle,\n      [mat-card-title], [mat-card-subtitle],\n      [matCardTitle], [matCardSubtitle]", "[mat-card-image], [matCardImage],\n                    [mat-card-sm-image], [matCardImageSmall],\n                    [mat-card-md-image], [matCardImageMedium],\n                    [mat-card-lg-image], [matCardImageLarge],\n                    [mat-card-xl-image], [matCardImageXLarge]", "*"];
+var _c38 = [[["", "mat-card-avatar", ""], ["", "matCardAvatar", ""]], [["mat-card-title"], ["mat-card-subtitle"], ["", "mat-card-title", ""], ["", "mat-card-subtitle", ""], ["", "matCardTitle", ""], ["", "matCardSubtitle", ""]], "*"];
 var _c45 = ["[mat-card-avatar], [matCardAvatar]", "mat-card-title, mat-card-subtitle,\n      [mat-card-title], [mat-card-subtitle],\n      [matCardTitle], [matCardSubtitle]", "*"];
 var MAT_CARD_CONFIG = new InjectionToken("MAT_CARD_CONFIG");
 var MatCard = class _MatCard {
@@ -40603,7 +45799,7 @@ var MatCard = class _MatCard {
       appearance: "appearance"
     },
     exportAs: ["matCard"],
-    ngContentSelectors: _c012,
+    ngContentSelectors: _c017,
     decls: 1,
     vars: 0,
     template: function MatCard_Template(rf, ctx) {
@@ -40668,12 +45864,12 @@ var MatCardTitleGroup = class _MatCardTitleGroup {
     type: _MatCardTitleGroup,
     selectors: [["mat-card-title-group"]],
     hostAttrs: [1, "mat-mdc-card-title-group"],
-    ngContentSelectors: _c26,
+    ngContentSelectors: _c29,
     decls: 4,
     vars: 0,
     template: function MatCardTitleGroup_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275projectionDef(_c18);
+        \u0275\u0275projectionDef(_c111);
         \u0275\u0275elementStart(0, "div");
         \u0275\u0275projection(1);
         \u0275\u0275elementEnd();
@@ -40796,7 +45992,7 @@ var MatCardHeader = class _MatCardHeader {
     consts: [[1, "mat-mdc-card-header-text"]],
     template: function MatCardHeader_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275projectionDef(_c36);
+        \u0275\u0275projectionDef(_c38);
         \u0275\u0275projection(0);
         \u0275\u0275elementStart(1, "div", 0);
         \u0275\u0275projection(2, 1);
