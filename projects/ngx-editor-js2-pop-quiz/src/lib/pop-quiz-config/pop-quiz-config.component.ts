@@ -31,7 +31,8 @@ import { AsyncPipe } from '@angular/common';
   ],
   template: `
     @if (viewModel$ | async; as vm) {
-    <mat-stepper class="mat-stepper" linear [selectedIndex]="vm.selectedIndex">
+    <!-- <mat-stepper class="mat-stepper" linear [selectedIndex]="vm.selectedIndex"> -->
+    <mat-stepper class="mat-stepper" linear>
       <mat-step [stepControl]="vm.questionGroup">
         <ng-template matStepLabel>Question?</ng-template>
         <pop-quiz-question
