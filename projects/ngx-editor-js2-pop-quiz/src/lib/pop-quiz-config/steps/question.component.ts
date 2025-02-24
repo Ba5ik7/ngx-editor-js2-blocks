@@ -16,10 +16,13 @@ import { MatStepperNext } from '@angular/material/stepper';
   ],
   template: `
     <form [formGroup]="questionFormGroup()">
-      <h3>Create the Question to ask the User</h3>
+      <h3>Create a Question to ask the User</h3>
       <mat-form-field>
         <mat-label>Create a Question to ask.</mat-label>
         <textarea matInput [formControlName]="'question'"></textarea>
+        @if(questionFormGroup().get('question')?.hasError('required')) {
+        <mat-error> Question is required </mat-error>
+        }
       </mat-form-field>
       <div class="action-group">
         <button mat-flat-button matStepperNext>Next</button>
@@ -34,7 +37,8 @@ import { MatStepperNext } from '@angular/material/stepper';
           flex-direction: column;
           .action-group {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
+            margin-top: 1rem;
           }
           h3 {
             font: var(--mat-sys-headline-small);
@@ -47,10 +51,4 @@ import { MatStepperNext } from '@angular/material/stepper';
 })
 export class QuestionComponent {
   questionFormGroup = input.required<FormGroup>();
-
-  // ngOnInit() {
-  //   this.questionFormGroup().get('question')!.valueChanges.subscribe((value) => {
-  //     console.log(value);
-  //   });
-  // }
 }

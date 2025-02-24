@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormArray, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatStepperModule } from '@angular/material/stepper';
 
 import {
@@ -14,7 +14,7 @@ import { ResponsesComponent } from './steps/responses.component';
 import { ChoicesComponent } from './steps/choices.component';
 import { AnswerComponent } from './steps/answer.component';
 import { ResultsComponent } from './steps/results.component';
-import { combineLatest, map, tap } from 'rxjs';
+import { combineLatest, map } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 
 @Component({
@@ -31,7 +31,7 @@ import { AsyncPipe } from '@angular/common';
   ],
   template: `
     @if (viewModel$ | async; as vm) {
-    <mat-stepper class="mat-stepper" linear>
+    <mat-stepper class="mat-stepper" linear [selectedIndex]="vm.selectedIndex">
       <mat-step [stepControl]="vm.questionGroup">
         <ng-template matStepLabel>Question?</ng-template>
         <pop-quiz-question
@@ -67,7 +67,10 @@ import { AsyncPipe } from '@angular/common';
     `
       :host {
         border: 1px solid #ccc;
-        border-radius: 4px;
+        border-radius: var(
+          --mdc-outlined-card-container-shape,
+          var(--mat-sys-corner-medium)
+        );
         pop-quiz-question {
           padding-top: 1rem;
         }
@@ -95,6 +98,7 @@ export class PopQuizConfigComponent {
       answerGroup: form.get('answerGroup') as AnswerGroup,
       responsesGroup: form.get('responsesGroup') as ResponsesGroup,
       quizConfigForm: form,
+      selectedIndex: form.get('questionGroup')?.valid ? 4 : 0,
     }))
   );
 }

@@ -21,15 +21,21 @@ import { MatStepperNext, MatStepperPrevious } from '@angular/material/stepper';
       <mat-form-field>
         <mat-label>Create a Response when the User is Correct</mat-label>
         <textarea matInput [formControlName]="'correctResponse'"></textarea>
+        @if(responsesFormGroup().get('correctResponse')?.hasError('required')) {
+        <mat-error> Question is required </mat-error>
+        }
       </mat-form-field>
       <h3>Create a Response when the User is Incorrect</h3>
       <mat-form-field>
         <mat-label>Create a Response when the User is Incorrect</mat-label>
         <textarea matInput [formControlName]="'incorrectResponse'"></textarea>
+        @if(responsesFormGroup().get('incorrectResponse')?.hasError('required')) {
+        <mat-error> Question is required </mat-error>
+        }
       </mat-form-field>
       <div class="action-group">
-        <button mat-flat-button matStepperNext>Next</button>
         <button mat-flat-button matStepperPrevious>Previous</button>
+        <button mat-flat-button matStepperNext>Next</button>
       </div>
     </form>
   `,
@@ -42,6 +48,7 @@ import { MatStepperNext, MatStepperPrevious } from '@angular/material/stepper';
           .action-group {
             display: flex;
             justify-content: space-between;
+            margin-top: 1rem;
           }
           h3 {
             font: var(--mat-sys-headline-small);

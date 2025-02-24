@@ -5,6 +5,8 @@ import {
   FormControl,
   FormGroup,
   NonNullableFormBuilder,
+  ValidatorFn,
+  Validators,
 } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 
@@ -40,9 +42,17 @@ export type ResponsesGroup = FormGroup<{
   incorrectResponse: FormControl<string>;
 }>;
 
-@Injectable({
-  providedIn: 'root',
-})
+function validateRatioOptions(): ValidatorFn {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    const optionsArray = control as FormArray;
+    if (optionsArray.controls.length < 2) {
+      return { notEnoughOptions: true };
+    }
+    return null;
+  };
+}
+
+@Injectable()
 export class NgxEditorJs2PopQuizService {
   formBuilder = inject(NonNullableFormBuilder);
 
@@ -61,17 +71,19 @@ export class NgxEditorJs2PopQuizService {
   quizConfigForm = new BehaviorSubject<FormGroup<QuizConfigForm>>(
     this.formBuilder.group({
       questionGroup: this.formBuilder.group({
-        question: new FormControl<string>(''),
+        question: new FormControl<string>('', [Validators.required]),
       }),
       choicesOptionsGroup: this.formBuilder.group({
-        choices: this.formBuilder.array([] as FormControl<string>[]),
+        choices: this.formBuilder.array([] as FormControl<string>[], [
+          validateRatioOptions(),
+        ]),
       }),
       answerGroup: this.formBuilder.group({
-        answer: new FormControl<string>(''),
+        answer: new FormControl<string>('', [Validators.required]),
       }),
       responsesGroup: this.formBuilder.group({
-        correctResponse: new FormControl<string>(''),
-        incorrectResponse: new FormControl<string>(''),
+        correctResponse: new FormControl<string>('', [Validators.required]),
+        incorrectResponse: new FormControl<string>('', [Validators.required]),
       }),
     }) as FormGroup<QuizConfigForm>
   );
@@ -89,7 +101,7 @@ export class NgxEditorJs2PopQuizService {
       value.choices.forEach((choice) => {
         choicesArray.push(
           this.formBuilder.group({
-            value: new FormControl<string>(choice.value),
+            value: [choice.value, [Validators.required]],
           })
         );
       });
@@ -116,17 +128,19 @@ export class NgxEditorJs2PopQuizService {
     };
   }
 
-  updatePranetFormGroupValue(value: QuizConfigFormRawData) {
-    // Need to Marshal the value back into QuizConfig
-    const marshaledValue = {
+  updateParentFormGroupValue(value: QuizConfig) {
+    this.parentFormGroup
+      .get(this.parentFormControlName)
+      ?.setValue(JSON.stringify(value));
+  }
+
+  marshalFormGroupIntoFormValue(value: QuizConfigFormRawData): QuizConfig {
+    return {
       question: value.questionGroup.question,
       answer: value.answerGroup.answer,
       choices: value.choicesOptionsGroup.choices,
       correctResponse: value.responsesGroup.correctResponse,
       incorrectResponse: value.responsesGroup.incorrectResponse,
     };
-    this.parentFormGroup
-      .get(this.parentFormControlName)
-      ?.setValue(JSON.stringify(marshaledValue));
   }
 }

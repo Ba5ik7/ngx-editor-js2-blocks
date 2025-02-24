@@ -23,6 +23,7 @@ import { NgxEditorJs2PopQuizService } from './ngx-editor-js2-pop-quiz.service';
     ToolbarFabDirective,
     PopQuizConfigComponent,
   ],
+  providers: [NgxEditorJs2PopQuizService],
   template: `
     <ng-container [formGroup]="formGroup()">
       <span
@@ -60,19 +61,17 @@ export class NgxEditorJs2PopQuizComponent implements BlockComponent {
   sortIndex = input<number>(0);
   componentInstanceName = 'NgxEditorJs2PopQuizComponent';
   autofocus = input<boolean>(true);
-  formGroup = input.required<FormGroup, FormGroup>(
-    {
-      transform: (value) => {
-        this.popQuizService.parentFormGroup = value;
-        return value;
-      }
+  formGroup = input.required<FormGroup, FormGroup>({
+    transform: (value) => {
+      this.popQuizService.parentFormGroup = value;
+      return value;
     },
-  );
+  });
   formControlName = input.required<string, string>({
     transform: (value) => {
       this.popQuizService.parentFormControlName = value;
       return value;
-    }
+    },
   });
   blockOptionActions = input<BlockOptionAction[]>([
     { action: 'medium', icon: 'density_small' },
@@ -88,7 +87,9 @@ export class NgxEditorJs2PopQuizComponent implements BlockComponent {
     try {
       const possibleSavedValue = this.formGroup().get(this.formControlName());
       this.popQuizService.setQuizConfigValue(
-        JSON.parse(possibleSavedValue?.value ? possibleSavedValue.value : '{}')
+        possibleSavedValue?.getRawValue()
+          ? JSON.parse(possibleSavedValue.value)
+          : this.popQuizService.quizConfigValue.value
       );
     } catch (error) {
       console.warn('Error parseing Quiz values', error);

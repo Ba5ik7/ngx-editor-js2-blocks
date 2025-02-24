@@ -1,5 +1,6 @@
-import { CommonModule } from '@angular/common';
+import { AsyncPipe, NgClass } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
+
 import {
   FormArray,
   FormBuilder,
@@ -7,40 +8,57 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { MatButton } from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDivider } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIcon } from '@angular/material/icon';
 import { MatInput } from '@angular/material/input';
 import { MatStepperNext, MatStepperPrevious } from '@angular/material/stepper';
+import { BehaviorSubject, map } from 'rxjs';
+import { NgxEditorJs2PopQuizService } from '../../ngx-editor-js2-pop-quiz.service';
 
 @Component({
   selector: 'pop-quiz-choices',
   imports: [
-    CommonModule,
+    AsyncPipe,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInput,
     MatStepperNext,
     MatStepperPrevious,
-    MatButton,
+    MatButtonModule,
     MatIcon,
+    MatDivider,
+    NgClass,
   ],
   template: `
     <form [formGroup]="choicesFormGroup()">
       <h3>
-        Create the Possible Answers <span>(Create at least 2 choices)</span>
+        Create the Possible Answers
+        <span
+          [ngClass]="{
+            error: this.choicesFormGroup()
+              .get('choices')
+              ?.hasError('notEnoughOptions')
+          }"
+          >(Create at least 2 choices)</span
+        >
       </h3>
       <ng-container formArrayName="choices">
-        @for (option of choices.controls; track $index) {
+        @for (option of (viewModel$ | async)!.controls; track option) {
         <ng-container [formGroupName]="$index">
           <div class="radio-option-container">
             <mat-form-field>
               <mat-label>Option {{ $index + 1 }}</mat-label>
               <textarea matInput formControlName="value"></textarea>
+              @if((this.choicesFormGroup().get('choices'))?.get($index.toString()))
+              {
+              <mat-error> Question is required </mat-error>
+              }
             </mat-form-field>
-            <a mat-icon-button (click)="removeRatioOption($index)">
+            <button mat-icon-button (click)="removeRatioOption($index)">
               <mat-icon class="delete">delete</mat-icon>
-            </a>
+            </button>
           </div>
         </ng-container>
         }
@@ -50,9 +68,10 @@ import { MatStepperNext, MatStepperPrevious } from '@angular/material/stepper';
           </button>
         </div>
       </ng-container>
+      <mat-divider></mat-divider>
       <div class="action-group">
-        <button mat-flat-button matStepperNext>Next</button>
         <button mat-flat-button matStepperPrevious>Previous</button>
+        <button mat-flat-button matStepperNext>Next</button>
       </div>
     </form>
   `,
@@ -62,6 +81,9 @@ import { MatStepperNext, MatStepperPrevious } from '@angular/material/stepper';
         form {
           display: flex;
           flex-direction: column;
+          .error {
+            color: var(--mat-sys-error);
+          }
           .radio-option-container {
             display: flex;
             align-items: center;
@@ -79,6 +101,7 @@ import { MatStepperNext, MatStepperPrevious } from '@angular/material/stepper';
           .action-group {
             display: flex;
             justify-content: space-between;
+            margin-top: 1rem;
           }
           h3 {
             font: var(--mat-sys-headline-small);
@@ -94,21 +117,44 @@ import { MatStepperNext, MatStepperPrevious } from '@angular/material/stepper';
 })
 export class ChoicesComponent {
   formBuilder = inject(FormBuilder);
-  choicesFormGroup = input.required<FormGroup>();
+  popQuizService = inject(NgxEditorJs2PopQuizService);
+  choicesFormGroup = input.required<FormGroup, FormGroup>({
+    transform: (value) => {
+      this.choicesFormGroupSub.next(value);
+      return value;
+    },
+  });
 
-  get choices(): FormArray {
-    return this.choicesFormGroup().get('choices') as FormArray;
-  }
+  choicesFormGroupSub = new BehaviorSubject<FormGroup>(
+    this.formBuilder.group({
+      choices: this.formBuilder.array([]),
+    })
+  );
+  choicesFormGroup$ = this.choicesFormGroupSub.asObservable();
+
+  viewModel$ = this.choicesFormGroup$.pipe(
+    map((formGroup) => formGroup.get('choices') as FormArray)
+  );
 
   addRatioOption() {
-    this.choices.push(
+    const choices = this.choicesFormGroup().get('choices') as FormArray;
+    choices.push(
       this.formBuilder.group({
         value: ['', [Validators.required]],
       })
     );
+    this.choicesFormGroupSub.next(this.choicesFormGroup());
   }
 
   removeRatioOption(index: number) {
-    this.choices.removeAt(index);
+    const choices = this.choicesFormGroup().get('choices') as FormArray;
+    choices.removeAt(index);
+    this.choicesFormGroupSub.next(this.choicesFormGroup());
+
+    // ! better way to do this invalidation on the prefill answer
+    // ! Buggy
+    this.popQuizService.quizConfigForm.value.controls.answerGroup
+      .get('answer')
+      ?.setValue('');
   }
 }
