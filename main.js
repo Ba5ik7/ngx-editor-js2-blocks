@@ -41663,24 +41663,25 @@ function PopQuizConfigComponent_Conditional_0_Template(rf, ctx) {
   }
   if (rf & 2) {
     const vm_r1 = ctx;
+    \u0275\u0275property("selectedIndex", vm_r1.selectedIndex);
     \u0275\u0275advance();
-    \u0275\u0275property("stepControl", vm_r1.questionGroup);
+    \u0275\u0275property("stepControl", vm_r1.questionGroup)("completed", vm_r1.completed);
     \u0275\u0275advance(2);
     \u0275\u0275property("questionFormGroup", vm_r1.questionGroup);
     \u0275\u0275advance();
-    \u0275\u0275property("stepControl", vm_r1.choicesOptionsGroup);
+    \u0275\u0275property("stepControl", vm_r1.choicesOptionsGroup)("completed", vm_r1.completed);
     \u0275\u0275advance(2);
     \u0275\u0275property("choicesFormGroup", vm_r1.choicesOptionsGroup);
     \u0275\u0275advance();
-    \u0275\u0275property("stepControl", vm_r1.answerGroup);
+    \u0275\u0275property("stepControl", vm_r1.answerGroup)("completed", vm_r1.completed);
     \u0275\u0275advance(2);
     \u0275\u0275property("answerFormGroup", vm_r1.answerGroup);
     \u0275\u0275advance();
-    \u0275\u0275property("stepControl", vm_r1.responsesGroup);
+    \u0275\u0275property("stepControl", vm_r1.responsesGroup)("completed", vm_r1.completed);
     \u0275\u0275advance(2);
     \u0275\u0275property("responsesFormGroup", vm_r1.responsesGroup);
     \u0275\u0275advance();
-    \u0275\u0275property("stepControl", vm_r1.quizConfigForm);
+    \u0275\u0275property("stepControl", vm_r1.quizConfigForm)("completed", vm_r1.completed);
     \u0275\u0275advance(2);
     \u0275\u0275property("resultsFormGroup", vm_r1.quizConfigForm);
   }
@@ -41738,7 +41739,9 @@ var NgxEditorJs2PopQuizService = class _NgxEditorJs2PopQuizService {
         }));
       });
     }
-    form.setValue(this.marshalFormValueIntoFormGroup(value));
+    requestAnimationFrame(() => {
+      form.setValue(this.marshalFormValueIntoFormGroup(value));
+    });
     return form;
   }
   marshalFormValueIntoFormGroup(value) {
@@ -42080,9 +42083,6 @@ var ChoicesComponent = class _ChoicesComponent {
 var AnswerComponent = class _AnswerComponent {
   answerFormGroup = input.required();
   choices$ = inject(NgxEditorJs2PopQuizService).quizConfigForm$.pipe(map((form) => form.controls.choicesOptionsGroup.controls.choices));
-  ngOnInit() {
-    this.answerFormGroup().get("answer")?.markAsTouched();
-  }
   static \u0275fac = function AnswerComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _AnswerComponent)();
   };
@@ -42146,8 +42146,7 @@ var AnswerComponent = class _AnswerComponent {
 var ResultsComponent = class _ResultsComponent {
   popQuizService = inject(NgxEditorJs2PopQuizService);
   resultsFormGroup = input.required();
-  resultsFormGroup$ = toObservable2(this.resultsFormGroup);
-  viewModel$ = this.resultsFormGroup$.pipe(map((formGroup) => this.popQuizService.marshalFormGroupIntoFormValue(formGroup.getRawValue())));
+  viewModel$ = this.popQuizService.quizConfigForm$.pipe(switchMap((formGroup) => formGroup.valueChanges), map((formValue) => this.popQuizService.marshalFormGroupIntoFormValue(formValue)));
   emitNewFormValue() {
     this.popQuizService.updateParentFormGroupValue(this.resultsFormGroup().getRawValue());
   }
@@ -42190,7 +42189,7 @@ var ResultsComponent = class _ResultsComponent {
       }
     },
     dependencies: [AsyncPipe, ReactiveFormsModule, \u0275NgNoValidate, NgControlStatusGroup, FormGroupDirective, MatStepperPrevious, MatButton, MatRadioModule, MatRadioGroup, MatRadioButton, MatDivider],
-    styles: ["[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:space-between;margin-top:1rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font:var(--mat-sys-headline-small);font-weight:100}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .preview-container[_ngcontent-%COMP%]{display:flex;gap:1.5rem;flex-direction:column;align-items:flex-end;margin-bottom:1.5rem}"]
+    styles: ["[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:space-between;margin-top:1rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font:var(--mat-sys-headline-small);font-weight:100}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .preview-container[_ngcontent-%COMP%]{display:flex;gap:1.5rem;flex-direction:column;align-items:flex-end;margin-bottom:1.5rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .preview-container[_ngcontent-%COMP%]   .preview-action-group[_ngcontent-%COMP%]{display:flex;flex-direction:row-reverse}"]
   });
 };
 (() => {
@@ -42228,7 +42227,7 @@ var ResultsComponent = class _ResultsComponent {
       </div>
     </form>
   `,
-      styles: [":host form{display:flex;flex-direction:column}:host form .action-group{display:flex;justify-content:space-between;margin-top:1rem}:host form h3{font:var(--mat-sys-headline-small);font-weight:100}:host form .preview-container{display:flex;gap:1.5rem;flex-direction:column;align-items:flex-end;margin-bottom:1.5rem}\n"]
+      styles: [":host form{display:flex;flex-direction:column}:host form .action-group{display:flex;justify-content:space-between;margin-top:1rem}:host form h3{font:var(--mat-sys-headline-small);font-weight:100}:host form .preview-container{display:flex;gap:1.5rem;flex-direction:column;align-items:flex-end;margin-bottom:1.5rem}:host form .preview-container .preview-action-group{display:flex;flex-direction:row-reverse}\n"]
     }]
   }], null, null);
 })();
@@ -42239,13 +42238,20 @@ var PopQuizConfigComponent = class _PopQuizConfigComponent {
     value: this.popQuizService.quizConfigValue$
   }).pipe(map(({
     value
-  }) => this.popQuizService.initializeQuizConfigForm(value)), map((form) => ({
+  }) => ({
+    form: this.popQuizService.initializeQuizConfigForm(value),
+    value
+  })), map(({
+    form,
+    value
+  }) => ({
     questionGroup: form.get("questionGroup"),
     choicesOptionsGroup: form.get("choicesOptionsGroup"),
     answerGroup: form.get("answerGroup"),
     responsesGroup: form.get("responsesGroup"),
     quizConfigForm: form,
-    selectedIndex: form.get("questionGroup")?.valid ? 4 : 0
+    selectedIndex: value.question ? 4 : 0,
+    completed: value.question ? true : false
   })));
   static \u0275fac = function PopQuizConfigComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _PopQuizConfigComponent)();
@@ -42255,10 +42261,10 @@ var PopQuizConfigComponent = class _PopQuizConfigComponent {
     selectors: [["pop-quiz-config"]],
     decls: 2,
     vars: 3,
-    consts: [["linear", "", 1, "mat-stepper"], [3, "stepControl"], ["matStepLabel", ""], [3, "questionFormGroup"], [3, "choicesFormGroup"], [3, "answerFormGroup"], [3, "responsesFormGroup"], [3, "resultsFormGroup"]],
+    consts: [["linear", "", 1, "mat-stepper", 3, "selectedIndex"], [3, "stepControl", "completed"], ["matStepLabel", ""], [3, "questionFormGroup"], [3, "choicesFormGroup"], [3, "answerFormGroup"], [3, "responsesFormGroup"], [3, "resultsFormGroup"]],
     template: function PopQuizConfigComponent_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275template(0, PopQuizConfigComponent_Conditional_0_Template, 16, 10, "mat-stepper", 0);
+        \u0275\u0275template(0, PopQuizConfigComponent_Conditional_0_Template, 16, 16, "mat-stepper", 0);
         \u0275\u0275pipe(1, "async");
       }
       if (rf & 2) {
@@ -42277,39 +42283,38 @@ var PopQuizConfigComponent = class _PopQuizConfigComponent {
       selector: "pop-quiz-config",
       imports: [AsyncPipe, ReactiveFormsModule, MatStepperModule, QuestionComponent, ResponsesComponent, ChoicesComponent, AnswerComponent, ResultsComponent],
       template: `
-    @if (viewModel$ | async; as vm) {
-    <!-- <mat-stepper class="mat-stepper" linear [selectedIndex]="vm.selectedIndex"> -->
-    <mat-stepper class="mat-stepper" linear>
-      <mat-step [stepControl]="vm.questionGroup">
+      @if (viewModel$ | async; as vm) {
+    <mat-stepper class="mat-stepper" linear [selectedIndex]="vm.selectedIndex">
+      <mat-step [stepControl]="vm.questionGroup" [completed]="vm.completed">
         <ng-template matStepLabel>Question?</ng-template>
         <pop-quiz-question
           [questionFormGroup]="vm.questionGroup"
         ></pop-quiz-question>
       </mat-step>
-      <mat-step [stepControl]="vm.choicesOptionsGroup">
+      <mat-step [stepControl]="vm.choicesOptionsGroup" [completed]="vm.completed">
         <ng-template matStepLabel>Choices</ng-template>
         <pop-quiz-choices
           [choicesFormGroup]="vm.choicesOptionsGroup"
         ></pop-quiz-choices>
       </mat-step>
-      <mat-step [stepControl]="vm.answerGroup">
+      <mat-step [stepControl]="vm.answerGroup" [completed]="vm.completed">
         <ng-template matStepLabel>Answer</ng-template>
         <pop-quiz-answer [answerFormGroup]="vm.answerGroup"></pop-quiz-answer>
       </mat-step>
-      <mat-step [stepControl]="vm.responsesGroup">
+      <mat-step [stepControl]="vm.responsesGroup" [completed]="vm.completed">
         <ng-template matStepLabel>Responses</ng-template>
         <pop-quiz-responses
           [responsesFormGroup]="vm.responsesGroup"
         ></pop-quiz-responses>
       </mat-step>
-      <mat-step [stepControl]="vm.quizConfigForm">
+      <mat-step [stepControl]="vm.quizConfigForm" [completed]="vm.completed">
         <ng-template matStepLabel>Results</ng-template>
         <pop-quiz-results
           [resultsFormGroup]="vm.quizConfigForm"
         ></pop-quiz-results>
       </mat-step>
     </mat-stepper>
-    }
+  }
   `,
       styles: [":host{border:1px solid #ccc;border-radius:var( --mdc-outlined-card-container-shape, var(--mat-sys-corner-medium) )}:host pop-quiz-question{padding-top:1rem}:host :is(mat-stepper.mat-stepper-vertical,mat-stepper.mat-stepper-horizontal){background:none}\n"]
     }]
