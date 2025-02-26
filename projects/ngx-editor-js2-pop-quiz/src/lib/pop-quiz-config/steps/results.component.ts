@@ -5,9 +5,11 @@ import { MatButton } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatStepperPrevious } from '@angular/material/stepper';
 import { MatDivider } from '@angular/material/divider';
-import { NgxEditorJs2PopQuizService } from '../../ngx-editor-js2-pop-quiz.service';
-import { toObservable } from '@angular/core/rxjs-interop';
-import { map } from 'rxjs';
+import {
+  NgxEditorJs2PopQuizService,
+  QuizConfigFormRawData,
+} from '../../ngx-editor-js2-pop-quiz.service';
+import { map, switchMap } from 'rxjs';
 
 @Component({
   selector: 'pop-quiz-results',
@@ -69,7 +71,11 @@ import { map } from 'rxjs';
             gap: 1.5rem;
             flex-direction: column;
             align-items: flex-end;
-           margin-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+            .preview-action-group {
+              display: flex;
+              flex-direction: row-reverse;
+            }
           }
         }
       }
@@ -79,12 +85,14 @@ import { map } from 'rxjs';
 export class ResultsComponent {
   popQuizService = inject(NgxEditorJs2PopQuizService);
   resultsFormGroup = input.required<FormGroup>();
-  resultsFormGroup$ = toObservable(this.resultsFormGroup);
 
-  viewModel$ = this.resultsFormGroup$.pipe(
-    map((formGroup) =>
-      this.popQuizService.marshalFormGroupIntoFormValue(formGroup.getRawValue())
-    )
+  viewModel$ = this.popQuizService.quizConfigForm$.pipe(
+    switchMap((formGroup) => formGroup.valueChanges),
+    map((formValue) =>
+      this.popQuizService.marshalFormGroupIntoFormValue(
+        formValue as unknown as QuizConfigFormRawData
+      )
+    ),
   );
 
   emitNewFormValue() {

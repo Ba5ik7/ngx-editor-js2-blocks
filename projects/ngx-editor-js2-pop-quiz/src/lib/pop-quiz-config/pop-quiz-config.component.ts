@@ -1,6 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewChild } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatStepperModule } from '@angular/material/stepper';
+import { MatStepper, MatStepperModule } from '@angular/material/stepper';
 
 import {
   AnswerGroup,
@@ -14,7 +14,7 @@ import { ResponsesComponent } from './steps/responses.component';
 import { ChoicesComponent } from './steps/choices.component';
 import { AnswerComponent } from './steps/answer.component';
 import { ResultsComponent } from './steps/results.component';
-import { combineLatest, map } from 'rxjs';
+import { combineLatest, map, tap } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 
 @Component({
@@ -30,39 +30,38 @@ import { AsyncPipe } from '@angular/common';
     ResultsComponent,
   ],
   template: `
-    @if (viewModel$ | async; as vm) {
-    <!-- <mat-stepper class="mat-stepper" linear [selectedIndex]="vm.selectedIndex"> -->
-    <mat-stepper class="mat-stepper" linear>
-      <mat-step [stepControl]="vm.questionGroup">
+      @if (viewModel$ | async; as vm) {
+    <mat-stepper class="mat-stepper" linear [selectedIndex]="vm.selectedIndex">
+      <mat-step [stepControl]="vm.questionGroup" [completed]="vm.completed">
         <ng-template matStepLabel>Question?</ng-template>
         <pop-quiz-question
           [questionFormGroup]="vm.questionGroup"
         ></pop-quiz-question>
       </mat-step>
-      <mat-step [stepControl]="vm.choicesOptionsGroup">
+      <mat-step [stepControl]="vm.choicesOptionsGroup" [completed]="vm.completed">
         <ng-template matStepLabel>Choices</ng-template>
         <pop-quiz-choices
           [choicesFormGroup]="vm.choicesOptionsGroup"
         ></pop-quiz-choices>
       </mat-step>
-      <mat-step [stepControl]="vm.answerGroup">
+      <mat-step [stepControl]="vm.answerGroup" [completed]="vm.completed">
         <ng-template matStepLabel>Answer</ng-template>
         <pop-quiz-answer [answerFormGroup]="vm.answerGroup"></pop-quiz-answer>
       </mat-step>
-      <mat-step [stepControl]="vm.responsesGroup">
+      <mat-step [stepControl]="vm.responsesGroup" [completed]="vm.completed">
         <ng-template matStepLabel>Responses</ng-template>
         <pop-quiz-responses
           [responsesFormGroup]="vm.responsesGroup"
         ></pop-quiz-responses>
       </mat-step>
-      <mat-step [stepControl]="vm.quizConfigForm">
+      <mat-step [stepControl]="vm.quizConfigForm" [completed]="vm.completed">
         <ng-template matStepLabel>Results</ng-template>
         <pop-quiz-results
           [resultsFormGroup]="vm.quizConfigForm"
         ></pop-quiz-results>
       </mat-step>
     </mat-stepper>
-    }
+  }
   `,
   styles: [
     `
@@ -90,8 +89,11 @@ export class PopQuizConfigComponent {
     form: this.popQuizService.quizConfigForm$,
     value: this.popQuizService.quizConfigValue$,
   }).pipe(
-    map(({ value }) => this.popQuizService.initializeQuizConfigForm(value)),
-    map((form) => ({
+    map(({ value }) => ({
+      form: this.popQuizService.initializeQuizConfigForm(value),
+      value,
+    })),
+    map(({ form, value }) => ({
       questionGroup: form.get('questionGroup') as QuestionGroup,
       choicesOptionsGroup: form.get(
         'choicesOptionsGroup'
@@ -99,7 +101,8 @@ export class PopQuizConfigComponent {
       answerGroup: form.get('answerGroup') as AnswerGroup,
       responsesGroup: form.get('responsesGroup') as ResponsesGroup,
       quizConfigForm: form,
-      selectedIndex: form.get('questionGroup')?.valid ? 4 : 0,
+      selectedIndex: value.question ? 4 : 0,
+      completed: value.question ? true : false,
     }))
   );
 }

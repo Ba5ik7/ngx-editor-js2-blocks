@@ -106,7 +106,10 @@ export class NgxEditorJs2PopQuizService {
         );
       });
     }
-    form.setValue(this.marshalFormValueIntoFormGroup(value));
+    // ! Hack because the Result component has not subscribed to the form value change yet
+    requestAnimationFrame(() => {
+      form.setValue(this.marshalFormValueIntoFormGroup(value));
+    });
     return form;
   }
 

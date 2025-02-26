@@ -73,8 +73,4 @@ export class AnswerComponent {
   choices$ = inject(NgxEditorJs2PopQuizService).quizConfigForm$.pipe(
     map((form) => form.controls.choicesOptionsGroup.controls.choices)
   );
-
-  ngOnInit() {
-    this.answerFormGroup().get('answer')?.markAsTouched();
-  }
 }
