@@ -9,6 +9,7 @@ import { NGX_EDITORJS_OPTIONS } from '@tmdjr/ngx-editor-js2';
 import { NgxEditorJs2BlockquotesComponent } from 'ngx-editor-js2-blockquotes';
 import { NgxEditorJs2CodemirrorComponent } from 'ngx-editor-js2-codemirror';
 import { NgxEditorJs2ImageComponent } from 'ngx-editor-js2-image';
+import { NgxEditorJs2MfeLoaderComponent } from 'ngx-editor-js2-mfe-loader';
 import { NgxEditorJs2PopQuizComponent } from 'ngx-editor-js2-pop-quiz';
 
 export const appConfig: ApplicationConfig = {
@@ -19,6 +20,11 @@ export const appConfig: ApplicationConfig = {
       provide: NGX_EDITORJS_OPTIONS,
       useValue: {
         consumerSupportedBlocks: [
+          {
+            name: 'MFE Loader',
+            component: NgxEditorJs2MfeLoaderComponent,
+            componentInstanceName: 'NgxEditorJs2MfeLoaderComponent',
+          },
           {
             name: 'Image',
             component: NgxEditorJs2ImageComponent,

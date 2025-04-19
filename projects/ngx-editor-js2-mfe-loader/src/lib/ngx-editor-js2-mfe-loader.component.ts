@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-ngx-editor-js2-mfe-loader',
+  selector: 'ngx-editor-js2-mfe-loader',
   imports: [],
   template: `
     <p>
