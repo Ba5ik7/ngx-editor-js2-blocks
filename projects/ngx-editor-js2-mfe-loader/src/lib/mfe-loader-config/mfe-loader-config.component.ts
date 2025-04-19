@@ -12,7 +12,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { map, mergeMap, of, startWith, tap, withLatestFrom } from 'rxjs';
 
-type Value = { url: string; title: string };
+type Value = {
+  url: string; // remoteEntry
+  remoteName: string; // remote name
+  exposedModule: string; // exposed module key (e.g. './WidgetComponent')
+};
 type ViewModel = {
   mfeLoaderConfigForm: FormGroup;
   configFormErrorMessages: { [key: string]: string };
@@ -29,38 +33,45 @@ type ViewModel = {
     AsyncPipe,
   ],
   template: `
-      @if (viewModel$ | async; as vm) {
-      <form [formGroup]="vm.mfeLoaderConfigForm">
-        <h2 mat-dialog-title>MFE Remote Configurations</h2>
-        <mat-form-field>
-          <mat-label>MFE Title</mat-label>
-          <input matInput type="text" formControlName="title" />
-          @if (vm.mfeLoaderConfigForm.get('title')?.errors) {
-          <mat-error>{{ vm.configFormErrorMessages['title'] }}</mat-error>
-          }
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Remote URL</mat-label>
-          <input matInput type="text" formControlName="url" />
-          @if (vm.mfeLoaderConfigForm.get('url')?.errors) {
-          <mat-error>{{ vm.configFormErrorMessages['url'] }}</mat-error>
-          }
-        </mat-form-field>
-        <div class="action-group">
-          <button
-            type="button"
-            mat-raised-button
-            (click)="updateMfeURL(vm.mfeLoaderConfigForm)"
-            [disabled]="vm.mfeLoaderConfigForm.invalid"
-          >
-            Save
-          </button>
-          <button type="button" mat-raised-button (click)="closeConfig()">
-            Cancel
-          </button>
-        </div>
-      </form>
-      }
+    @if (viewModel$ | async; as vm) {
+    <form [formGroup]="vm.mfeLoaderConfigForm">
+      <h2 mat-dialog-title>MFE Remote Configurations</h2>
+      <mat-form-field>
+        <mat-label>MFE Remote Name</mat-label>
+        <input matInput type="text" formControlName="remoteName" />
+        @if (vm.mfeLoaderConfigForm.get('remoteName')?.errors) {
+        <mat-error>{{ vm.configFormErrorMessages['remoteName'] }}</mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Remote URL</mat-label>
+        <input matInput type="text" formControlName="url" />
+        @if (vm.mfeLoaderConfigForm.get('url')?.errors) {
+        <mat-error>{{ vm.configFormErrorMessages['url'] }}</mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Exposed Module</mat-label>
+        <input matInput type="text" formControlName="exposedModule" />
+        @if (vm.mfeLoaderConfigForm.get('exposedModule')?.errors) {
+        <mat-error>{{ vm.configFormErrorMessages['exposedModule'] }}</mat-error>
+        }
+      </mat-form-field>
+      <div class="action-group">
+        <button
+          type="button"
+          mat-raised-button
+          (click)="updateMfeURL(vm.mfeLoaderConfigForm)"
+          [disabled]="vm.mfeLoaderConfigForm.invalid"
+        >
+          Save
+        </button>
+        <button type="button" mat-raised-button (click)="closeConfig()">
+          Cancel
+        </button>
+      </div>
+    </form>
+    }
   `,
   styles: [
     `
@@ -84,7 +95,7 @@ type ViewModel = {
 export class MfeLoaderConfigComponent {
   formBuilder = inject(FormBuilder);
 
-  value = input<Value>({ url: '', title: '' });
+  value = input<Value>({ url: '', remoteName: '', exposedModule: '' });
   value$ = toObservable(this.value);
 
   mfeValue = output<Value>();
@@ -93,14 +104,16 @@ export class MfeLoaderConfigComponent {
     map((value) => ({
       mfeLoaderConfigForm: this.formBuilder.group({
         url: [value.url, [Validators.required]],
-        title: [value.title, [Validators.required]],
+        remoteName: [value.remoteName, [Validators.required]],
+        exposedModule: [value.exposedModule, [Validators.required]],
       }),
       errorMessages: {
         required: 'Required',
       },
       configFormErrorMessages: {
         url: '',
-        title: '',
+        remoteName: '',
+        exposedModule: '',
       },
     })),
     mergeMap((viewModel: ViewModel) =>
@@ -124,7 +137,9 @@ export class MfeLoaderConfigComponent {
 
   closeConfig() {
     this.mfeValue.emit(
-      this.value().url ? this.value() : { url: '', title: '' }
+      this.value().url
+        ? this.value()
+        : { url: '', remoteName: '', exposedModule: '' }
     );
   }
 

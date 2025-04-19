@@ -1,6 +1,6 @@
 import { CdkDrag } from '@angular/cdk/drag-drop';
 import { NgClass } from '@angular/common';
-import { Component, input, signal } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import {
   ControlAccessorDirective,
@@ -11,8 +11,13 @@ import {
 import { MfeLoaderConfigComponent } from './mfe-loader-config/mfe-loader-config.component';
 import { MatFabButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
+import { LOAD_MFE_COMPONENT } from './mfe-loader.tokens';
 
-type Value = { url: string; title: string };
+type Value = {
+  url: string; // remoteEntry
+  remoteName: string; // remote name
+  exposedModule: string; // exposed module key (e.g. './WidgetComponent')
+};
 
 @Component({
   selector: 'ngx-editor-js2-mfe-loader',
@@ -90,6 +95,8 @@ type Value = { url: string; title: string };
   `,
 })
 export class NgxEditorJs2MfeLoaderComponent {
+  loadMfeComponent = inject(LOAD_MFE_COMPONENT);
+
   sortIndex = input<number>(0);
   componentInstanceName = 'NgxEditorJs2MfeLoaderComponent';
   autofocus = input<boolean>(true);
@@ -101,7 +108,7 @@ export class NgxEditorJs2MfeLoaderComponent {
     { action: 'display-large', icon: 'density_large' },
   ]);
 
-  value = signal<Value>({ url: '', title: '' });
+  value = signal<Value>({ url: '', remoteName: '', exposedModule: '' });
   savedAction = signal<string>('display-large');
   actionCallbackBind = this.actionCallback.bind(this);
 
@@ -118,6 +125,20 @@ export class NgxEditorJs2MfeLoaderComponent {
     } catch (error) {
       console.warn('Error parseing MFE Loader setting value', error);
     }
+  }
+
+  ngAfterViewInit() {
+    const { url, remoteName, exposedModule } = this.value();
+    if (!url || !remoteName || !exposedModule) return;
+
+    this.loadMfeComponent(url, exposedModule)
+      .then((component) => {
+        console.log('[MFE] Loaded component:', component);
+        // TODO: Use ViewContainerRef to dynamically mount this component
+      })
+      .catch((err) =>
+        console.error(`[MFE ${remoteName}] Failed to load remote component`, err)
+      );
   }
 
   actionCallback(action: string) {
