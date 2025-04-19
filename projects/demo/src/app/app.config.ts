@@ -15,7 +15,6 @@ import { NgxEditorJs2PopQuizComponent } from 'ngx-editor-js2-pop-quiz';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideAnimationsAsync(),
-    // provideExperimentalZonelessChangeDetection(),
     {
       provide: NGX_EDITORJS_OPTIONS,
       useValue: {
