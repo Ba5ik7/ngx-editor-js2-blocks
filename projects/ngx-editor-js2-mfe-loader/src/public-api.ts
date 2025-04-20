@@ -3,4 +3,3 @@
  */
 
 export * from './lib/ngx-editor-js2-mfe-loader.component';
-export * from './lib/mfe-loader.tokens';

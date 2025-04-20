@@ -11,8 +11,16 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
     dataClean: 'Prerequisites',
   },
   {
-    blockId: '9bqhk',
+    blockId: '0mhwt',
     sortIndex: 1,
+    componentInstanceName: 'NgxEditorJs2MfeLoaderComponent',
+    savedAction: 'display-large',
+    dataClean:
+      '{"url":"http://localhost:4202/remoteEntry.js","remoteName":"RemoteWidgetComponent","exposedModule":"RemoteWidget"}',
+  },
+  {
+    blockId: '9bqhk',
+    sortIndex: 2,
     componentInstanceName: 'NgxEditorJs2PopQuizComponent',
     savedAction: 'display-large',
     dataClean:
@@ -28,7 +36,7 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
   // },
   {
     blockId: 'bu23hwyltss',
-    sortIndex: 2,
+    sortIndex: 3,
     componentInstanceName: 'ParagraphBlockComponent',
     savedAction: 'large',
     dataClean:
@@ -36,7 +44,7 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
   },
   {
     blockId: 'n177d7',
-    sortIndex: 3,
+    sortIndex: 4,
     componentInstanceName: 'NgxEditorJs2BlockquotesComponent',
     savedAction: 'display-large',
     dataClean:
@@ -44,7 +52,7 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
   },
   {
     blockId: 'bu23hwyltsww',
-    sortIndex: 4,
+    sortIndex: 5,
     componentInstanceName: 'ParagraphBlockComponent',
     savedAction: 'small',
     dataClean:
@@ -52,7 +60,7 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
   },
   {
     blockId: 'asdfasdf',
-    sortIndex: 5,
+    sortIndex: 6,
     componentInstanceName: 'NgxEditorJs2CodemirrorComponent',
     savedAction: 'text/typescript',
     dataClean:
@@ -60,14 +68,14 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
   },
   {
     blockId: 'l13u3k',
-    sortIndex: 6,
+    sortIndex: 7,
     componentInstanceName: 'HeaderBlockComponent',
     savedAction: 'h1',
     dataClean: 'New way of learning...',
   },
   {
     blockId: '8u3uiij5vyj',
-    sortIndex: 7,
+    sortIndex: 8,
     componentInstanceName: 'ParagraphBlockComponent',
     savedAction: 'large',
     dataClean:

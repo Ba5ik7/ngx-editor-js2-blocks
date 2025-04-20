@@ -1,6 +1,13 @@
+import { loadRemoteModule } from '@angular-architects/module-federation';
 import { CdkDrag } from '@angular/cdk/drag-drop';
 import { NgClass } from '@angular/common';
-import { Component, inject, input, signal } from '@angular/core';
+import {
+  Component,
+  input,
+  signal,
+  ViewChild,
+  ViewContainerRef,
+} from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import {
   ControlAccessorDirective,
@@ -11,7 +18,6 @@ import {
 import { MfeLoaderConfigComponent } from './mfe-loader-config/mfe-loader-config.component';
 import { MatFabButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
-import { LOAD_MFE_COMPONENT } from './mfe-loader.tokens';
 
 type Value = {
   url: string; // remoteEntry
@@ -47,7 +53,6 @@ type Value = {
       ></span>
       @if (!openOverlay()) {
       <div class="mfe-container" [ngClass]="savedAction()">
-        <div class="mfe-block"><h1>LOADING...</h1></div>
         <button mat-fab class="mfe-block-button" (click)="openEditUrlOverlay()">
           <mat-icon>edit</mat-icon>
         </button>
@@ -58,6 +63,7 @@ type Value = {
         (mfeValue)="updateMfeRemote($event)"
       ></mfe-loader-config>
       }
+      <ng-container #mfeHost></ng-container>
     </ng-container>
   `,
   styles: `
@@ -95,7 +101,8 @@ type Value = {
   `,
 })
 export class NgxEditorJs2MfeLoaderComponent {
-  loadMfeComponent = inject(LOAD_MFE_COMPONENT);
+  @ViewChild('mfeHost', { read: ViewContainerRef, static: true })
+  private mfeHost!: ViewContainerRef;
 
   sortIndex = input<number>(0);
   componentInstanceName = 'NgxEditorJs2MfeLoaderComponent';
@@ -130,15 +137,7 @@ export class NgxEditorJs2MfeLoaderComponent {
   ngAfterViewInit() {
     const { url, remoteName, exposedModule } = this.value();
     if (!url || !remoteName || !exposedModule) return;
-
-    this.loadMfeComponent(url, exposedModule)
-      .then((component) => {
-        console.log('[MFE] Loaded component:', component);
-        // TODO: Use ViewContainerRef to dynamically mount this component
-      })
-      .catch((err) =>
-        console.error(`[MFE ${remoteName}] Failed to load remote component`, err)
-      );
+    this.updateMfeRemote(this.value());
   }
 
   actionCallback(action: string) {
@@ -149,7 +148,20 @@ export class NgxEditorJs2MfeLoaderComponent {
     this.openOverlay.set(true);
   }
 
-  updateMfeRemote(value: Value) {
+  async updateMfeRemote(value: Value) {
+    try {
+      const remoteComponent = await loadRemoteModule({
+        type: 'module',
+        remoteEntry: value.url,
+        exposedModule: './' + value.exposedModule,
+      });
+
+      this.mfeHost.clear();
+      this.mfeHost.createComponent(remoteComponent[value.remoteName]);
+    } catch (error) {
+      console.error('[MFE LOAD ERROR]', error);
+    }
+
     this.value.set(value);
     this.formGroup()
       .get(this.formControlName())
