@@ -11,6 +11,7 @@ import {
   ToolbarFabDirective,
 } from '@tmdjr/ngx-editor-js2';
 import { CommonModule } from '@angular/common';
+import { timeInterval } from 'rxjs';
 
 @Component({
   selector: 'ngx-editor-js2-codemirror',
@@ -25,9 +26,11 @@ import { CommonModule } from '@angular/common';
     CodemirrorModule,
   ],
   template: `
+  @if( waitForAnimation() ) {
     <ng-container [formGroup]="formGroup()">
       <span controlAccessor [autofocus]="autofocus()"></span>
       <ngx-codemirror
+        class="fade-in"
         toolbarFab
         [actionCallback]="actionCallbackBind"
         [blockOptionActions]="blockOptionActions()"
@@ -36,6 +39,7 @@ import { CommonModule } from '@angular/common';
         [options]="codeMirrorOptions()"
       ></ngx-codemirror>
     </ng-container>
+  }
   `,
   styles: [
     `
@@ -48,6 +52,19 @@ import { CommonModule } from '@angular/common';
           height: 100%;
           width: 100%;
           position: absolute;
+        }
+      }
+
+      :host .fade-in {
+        animation: fadeIn 0.25s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
         }
       }
 
@@ -93,5 +110,14 @@ export class NgxEditorJs2CodemirrorComponent implements BlockComponent {
   actionCallback(action: string) {
     this.codeMirrorOptions.update((prev) => ({ ...prev, mode: action }));
     this.savedAction.update(() => action);
+  }
+
+  // ! Hotfix for perspective: 2500px;
+  // Need create a delay to wait for the animation to finish before showing the component
+  waitForAnimation = signal<boolean>(false);
+  constructor() {
+    setTimeout(() => {
+      this.waitForAnimation.update(() => true);
+    }, 500);
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "ngx-editor-js2-blocks",
-  "version": "0.0.9",
+  "version": "19.0.0",
   "scripts": {
     "watch-demo": "ng serve demo",
     "watch-blockquotes": "ng build ngx-editor-js2-blockquotes --watch --configuration development",
