@@ -220,9 +220,8 @@ let NgxEditorJs2MermaidjsComponent = /*#__PURE__*/(() => {
       this.renderMermaidDiagram(this.value);
     }
     renderMermaidDiagram(mermaidDiagram) {
-      const uniqueId = `mermaid-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
       this.ngZone.runOutsideAngular(() => {
-        this.mermaid.render(uniqueId, mermaidDiagram).then(data => this.ngZone.run(() => this.mermaidDiagramSVG = data.svg), error => console.warn(`Error: ${error}`));
+        this.mermaid.render(this.genUniqueId(), mermaidDiagram).then(data => this.ngZone.run(() => this.mermaidDiagramSVG = data.svg), error => console.warn(`Error: ${error}`));
       });
     }
     actionCallback(action) {
@@ -232,8 +231,12 @@ let NgxEditorJs2MermaidjsComponent = /*#__PURE__*/(() => {
       this.openOverlay.set(true);
     }
     updateMermaidDiagram() {
+      this.renderMermaidDiagram(this.value);
       this.formGroup().get(this.formControlName())?.setValue(this.value);
       this.openOverlay.set(false);
+    }
+    genUniqueId() {
+      return `mermaid-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
     }
     static ɵfac = function NgxEditorJs2MermaidjsComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || NgxEditorJs2MermaidjsComponent)();
