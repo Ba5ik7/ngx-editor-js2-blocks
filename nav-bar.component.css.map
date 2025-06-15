@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["nav-bar.component.ts"],
-  "sourcesContent": ["\n      :host {\n        color: var(--mat-sys-on-primary-container);\n        background-color: var(--mat-sys-primary-container);\n        box-shadow: var(--mat-sys-level5);\n        .docs-navbar-header {\n          display: flex;\n          flex-wrap: wrap;\n          align-items: center;\n          padding: 0.5em 1em;\n          mat-icon {\n            font-size: 2rem;\n            width: 2rem;\n            height: 2rem;\n            margin: 0 0.1em 0.1875em 0;\n            vertical-align: middle;\n          }\n        }\n      }\n    "],
-  "mappings": ";AACM;AACE,SAAA,IAAA;AACA,oBAAA,IAAA;AACA,cAAA,IAAA;;AACA,MAAA,CAAA;AACE,WAAA;AACA,aAAA;AACA,eAAA;AACA,WAAA,MAAA;;AACA,MAAA,CALF,mBAKE;AACE,aAAA;AACA,SAAA;AACA,UAAA;AACA,UAAA,EAAA,MAAA,SAAA;AACA,kBAAA;;",
-  "names": []
-}
