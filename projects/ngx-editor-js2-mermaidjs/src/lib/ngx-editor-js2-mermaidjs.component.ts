@@ -176,11 +176,8 @@ export class NgxEditorJs2MermaidjsComponent {
   }
 
   renderMermaidDiagram(mermaidDiagram: string): void {
-    const uniqueId = `mermaid-${Date.now()}-${Math.floor(
-      Math.random() * 1000
-    )}`;
     this.ngZone.runOutsideAngular(() => {
-      this.mermaid.render(uniqueId, mermaidDiagram).then(
+      this.mermaid.render(this.genUniqueId(), mermaidDiagram).then(
         (data) => this.ngZone.run(() => (this.mermaidDiagramSVG = data.svg)),
         (error) => console.warn(`Error: ${error}`)
       );
@@ -196,7 +193,12 @@ export class NgxEditorJs2MermaidjsComponent {
   }
 
   updateMermaidDiagram() {
+    this.renderMermaidDiagram(this.value);
     this.formGroup().get(this.formControlName())?.setValue(this.value);
     this.openOverlay.set(false);
+  }
+
+  genUniqueId() {
+    return `mermaid-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
   }
 }

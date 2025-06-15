@@ -9,7 +9,7 @@
     "watch-pop-quiz": "ng build ngx-editor-js2-pop-quiz --watch --configuration development",
     "watch-mfe-loader": "ng build ngx-editor-js2-mfe-loader --watch --configuration development",
     "watch-mermaidjs": "ng build ngx-editor-js2-mermaidjs --watch --configuration development",
-    "build-all-libraries": "npm-run-all --parallel build-blockquotes build-image build-codemirror build-pop-quiz build-mfe-loader build-mermiadjs",
+    "build-all-libraries": "npm-run-all --parallel build-blockquotes build-image build-codemirror build-pop-quiz build-mfe-loader build-mermaidjs",
     "build-demo": "ng build demo --configuration development --base-href \"/ngx-editor-js2-blocks/\"",
     "build-blockquotes": "ng build ngx-editor-js2-blockquotes --configuration production",
     "build-image": "ng build ngx-editor-js2-image --configuration production",
@@ -17,7 +17,7 @@
     "build-pop-quiz": "ng build ngx-editor-js2-pop-quiz --configuration production",
     "build-mfe-loader": "ng build ngx-editor-js2-mfe-loader --configuration production",
     "build-mermaidjs": "ng build ngx-editor-js2-mermaidjs --configuration production",
-    "deployDemo": "npx angular-cli-ghpages --dir=dist/demo/browser",
+    "deployDemo": "npx angular-cli-ghpages --dir=dist/demo",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "private": false,
