@@ -4,55 +4,55 @@ import { BehaviorSubject, lastValueFrom, Observable, tap } from 'rxjs';
 
 export const TEST_DATA: NgxEditorJsBlock[] = [
   {
-    blockId: 'iovlbzgosf',
-    sortIndex: 0,
-    componentInstanceName: 'HeaderBlockComponent',
-    savedAction: 'h1',
-    dataClean: 'Prerequisites',
-  },
-  {
-    blockId: '0mhwt',
-    sortIndex: 1,
-    componentInstanceName: 'NgxEditorJs2MfeLoaderComponent',
-    savedAction: 'display-large',
-    dataClean:
-      '{"url":"http://localhost:4202/remoteEntry.js","remoteName":"RemoteWidgetComponent","exposedModule":"RemoteWidget"}',
-  },
-  {
-    blockId: '9bqhk',
-    sortIndex: 2,
-    componentInstanceName: 'NgxEditorJs2PopQuizComponent',
-    savedAction: 'display-large',
-    dataClean:
-      '{"question":"Which of the following statements is true about Angular\'s default RouteReuseStrategy?","answer":"It reuses components when the route configuration remains the same.","correctResponse":"That\'s correct! Angular\'s default RouteReuseStrategy reuses components when the route configuration remains the same. This prevents components from being destroyed and recreated when only the fragment or query parameters change.","incorrectResponse":"That\'s incorrect. The correct answer is C. Angular\'s default RouteReuseStrategy reuses components when the route configuration remains the same. This prevents components from being destroyed and recreated when only the fragment or query parameters change.","choices":[{"value":"It only reuses components when the route configuration changes."},{"value":"It only reuses components when the route parameters change."},{"value":"It reuses components when the route configuration remains the same."},{"value":"It never reuses components."}]}',
-  },
-  // {
-  //   blockId: 'n177dsd',
-  //   sortIndex: 1,
-  //   componentInstanceName: 'NgxEditorJs2ImageComponent',
-  //   savedAction: 'stretch',
-  //   dataClean:
-  //     '{"url":"https://res.cloudinary.com/dowdpiikk/image/upload/w_650,q_auto:best,f_auto/v1709445782/lnyst5aqppuin8wt73ci.webp","title":"test"}',
-  // },
-  {
-    blockId: 'bu23hwyltss',
-    sortIndex: 3,
-    componentInstanceName: 'ParagraphBlockComponent',
-    savedAction: 'large',
-    dataClean:
-      'Evaluation of a template expression should have no visible side effects. Use the syntax for template expressions to help avoid side effects. In general, the correct syntax prevents you from assigning a value to anything in a property binding expression. The syntax also prevents you from using increment and decrement operators.',
-  },
-  {
     blockId: 'n177d7',
-    sortIndex: 4,
+    sortIndex: 0,
     componentInstanceName: 'NgxEditorJs2BlockquotesComponent',
     savedAction: 'display-large',
     dataClean:
       '`Design is not just what it looks like and feels like. Design is how it works.',
   },
   {
-    blockId: 'bu23hwyltsww',
+    blockId: 'n177dsd',
+    sortIndex: 1,
+    componentInstanceName: 'NgxEditorJs2ImageComponent',
+    savedAction: 'stretch',
+    dataClean:
+      '{"url":"https://res.cloudinary.com/dowdpiikk/image/upload/w_650,q_auto:best,f_auto/v1709445782/lnyst5aqppuin8wt73ci.webp","title":"test"}',
+  },
+  {
+    blockId: 'iovlbzgosf',
+    sortIndex: 2,
+    componentInstanceName: 'HeaderBlockComponent',
+    savedAction: 'h1',
+    dataClean: 'Prerequisites',
+  },
+  {
+    blockId: '8u3uiij5vyj',
+    sortIndex: 3,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'large',
+    dataClean:
+      '<ul><li><a href="https://www.typescriptlang.org/">TypeScript</a> and HTML5 programming</li><li>Angular app-design fundamentals, as described in <a href="https://angular.io/guide/architecture">Angular Concepts</a><br></li><li>The basics of <a href="https://angular.io/guide/architecture-components#template-syntax">Angular template syntax</a><br></li></ul>',
+  },
+  {
+    blockId: 'bu23hwyltss',
+    sortIndex: 4,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'large',
+    dataClean:
+      'Evaluation of a template expression should have no visible side effects. Use the syntax for template expressions to help avoid side effects. In general, the correct syntax prevents you from assigning a value to anything in a property binding expression. The syntax also prevents you from using increment and decrement operators.',
+  },
+  {
+    blockId: 'uapf2',
     sortIndex: 5,
+    componentInstanceName: 'NgxEditorJs2MermaidjsComponent',
+    savedAction: 'center',
+    dataClean:
+      'flowchart TD\n    A[Christmas] -->|Get money| B(Go shopping)\n    B --> C{Let me think}\n    C -->|One| D[Laptop]\n    C -->|Two| E[Hello World iPhone]\n    C -->|Three| F[fa:fa-car Car]',
+  },
+  {
+    blockId: 'bu23hwyltsww',
+    sortIndex: 6,
     componentInstanceName: 'ParagraphBlockComponent',
     savedAction: 'small',
     dataClean:
@@ -60,7 +60,7 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
   },
   {
     blockId: 'asdfasdf',
-    sortIndex: 6,
+    sortIndex: 7,
     componentInstanceName: 'NgxEditorJs2CodemirrorComponent',
     savedAction: 'text/typescript',
     dataClean:
@@ -68,18 +68,18 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
   },
   {
     blockId: 'l13u3k',
-    sortIndex: 7,
+    sortIndex: 8,
     componentInstanceName: 'HeaderBlockComponent',
     savedAction: 'h1',
     dataClean: 'New way of learning...',
   },
   {
-    blockId: '8u3uiij5vyj',
-    sortIndex: 8,
-    componentInstanceName: 'ParagraphBlockComponent',
-    savedAction: 'large',
+    blockId: '9bqhk',
+    sortIndex: 9,
+    componentInstanceName: 'NgxEditorJs2PopQuizComponent',
+    savedAction: 'display-large',
     dataClean:
-      '<ul><li><a href="https://www.typescriptlang.org/">TypeScript</a> and HTML5 programming</li><li>Angular app-design fundamentals, as described in <a href="https://angular.io/guide/architecture">Angular Concepts</a><br></li><li>The basics of <a href="https://angular.io/guide/architecture-components#template-syntax">Angular template syntax</a><br></li></ul>',
+      '{"question":"Which of the following statements is true about Angular\'s default RouteReuseStrategy?","answer":"It reuses components when the route configuration remains the same.","correctResponse":"That\'s correct! Angular\'s default RouteReuseStrategy reuses components when the route configuration remains the same. This prevents components from being destroyed and recreated when only the fragment or query parameters change.","incorrectResponse":"That\'s incorrect. The correct answer is C. Angular\'s default RouteReuseStrategy reuses components when the route configuration remains the same. This prevents components from being destroyed and recreated when only the fragment or query parameters change.","choices":[{"value":"It only reuses components when the route configuration changes."},{"value":"It only reuses components when the route parameters change."},{"value":"It reuses components when the route configuration remains the same."},{"value":"It never reuses components."}]}',
   },
 ];
 

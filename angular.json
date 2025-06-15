@@ -274,7 +274,40 @@
 					}
 				}
 			}
-		}
+    },
+    "ngx-editor-js2-mermaidjs": {
+      "projectType": "library",
+      "root": "projects/ngx-editor-js2-mermaidjs",
+      "sourceRoot": "projects/ngx-editor-js2-mermaidjs/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-editor-js2-mermaidjs/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-editor-js2-mermaidjs/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-editor-js2-mermaidjs/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/ngx-editor-js2-mermaidjs/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
 	},
 	"cli": {
 		"analytics": "f2579fbe-d332-40c2-934a-2e7ee8311061"

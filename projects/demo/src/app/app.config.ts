@@ -11,6 +11,7 @@ import { NgxEditorJs2CodemirrorComponent } from 'ngx-editor-js2-codemirror';
 import { NgxEditorJs2ImageComponent } from 'ngx-editor-js2-image';
 import { NgxEditorJs2MfeLoaderComponent } from 'ngx-editor-js2-mfe-loader';
 import { NgxEditorJs2PopQuizComponent } from 'ngx-editor-js2-pop-quiz';
+import { NgxEditorJs2MermaidjsComponent } from 'ngx-editor-js2-mermaidjs';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,9 +21,9 @@ export const appConfig: ApplicationConfig = {
       useValue: {
         consumerSupportedBlocks: [
           {
-            name: 'MFE Loader',
-            component: NgxEditorJs2MfeLoaderComponent,
-            componentInstanceName: 'NgxEditorJs2MfeLoaderComponent',
+            name: 'MermaidJs',
+            component: NgxEditorJs2MermaidjsComponent,
+            componentInstanceName: 'NgxEditorJs2MermaidjsComponent',
           },
           {
             name: 'Image',
@@ -43,6 +44,11 @@ export const appConfig: ApplicationConfig = {
             name: 'Pop Quiz',
             component: NgxEditorJs2PopQuizComponent,
             componentInstanceName: 'NgxEditorJs2PopQuizComponent',
+          },
+          {
+            name: 'MFE Loader',
+            component: NgxEditorJs2MfeLoaderComponent,
+            componentInstanceName: 'NgxEditorJs2MfeLoaderComponent',
           },
         ],
       },

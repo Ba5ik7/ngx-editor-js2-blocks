@@ -1,5 +1,5 @@
 import { Component, input, signal } from '@angular/core';
-import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CdkDrag } from '@angular/cdk/drag-drop';
 import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 
@@ -11,7 +11,6 @@ import {
   ToolbarFabDirective,
 } from '@tmdjr/ngx-editor-js2';
 import { CommonModule } from '@angular/common';
-import { timeInterval } from 'rxjs';
 
 @Component({
   selector: 'ngx-editor-js2-codemirror',
