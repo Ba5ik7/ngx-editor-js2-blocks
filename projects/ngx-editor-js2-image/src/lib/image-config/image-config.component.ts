@@ -50,13 +50,13 @@ type ViewModel = {
         <div class="action-group">
           <button
             type="button"
-            mat-raised-button
+            mat-flat-button
             (click)="updateImage(vm.imageConfigForm)"
             [disabled]="vm.imageConfigForm.invalid"
           >
-            Save
+            Update
           </button>
-          <button type="button" mat-raised-button (click)="closeConfig()">
+          <button type="button" mat-button (click)="closeConfig()">
             Cancel
           </button>
         </div>
@@ -67,8 +67,11 @@ type ViewModel = {
   styles: [
     `
       :host {
-        border: 0.5px solid #ccc;
-        border-radius: 4px;
+        border: 1px solid #ccc;
+        border-radius: var(
+          --mdc-outlined-card-container-shape,
+          var(--mat-sys-corner-medium)
+        );
         padding: 20px;
         form {
           display: flex;

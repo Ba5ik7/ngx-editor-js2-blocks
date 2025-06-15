@@ -1,8 +1,5 @@
 import { Component, effect, model, output, signal } from '@angular/core';
-import {
-  FormsModule,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CodemirrorModule } from '@ctrl/ngx-codemirror';
@@ -18,16 +15,14 @@ import { CodemirrorModule } from '@ctrl/ngx-codemirror';
   ],
   template: `
     <div class="mermaidjs-block-modal">
-        <h2 mat-dialog-title>MermaidJs Configurations</h2>
-        <ngx-codemirror
-          [(ngModel)]="value"
-          [options]="codeMirrorOptions()">
-        </ngx-codemirror>
-        <div class="action-group">
-          <button type="button" mat-raised-button (click)="closeConfig()">
-            Update
-          </button>
-        </div>
+      <h2 mat-dialog-title>MermaidJs Configurations</h2>
+      <ngx-codemirror [(ngModel)]="value" [options]="codeMirrorOptions()">
+      </ngx-codemirror>
+      <div class="action-group">
+        <button type="button" mat-flat-button (click)="closeConfig()">
+          Update
+        </button>
+      </div>
     </div>
   `,
   styles: [
@@ -36,27 +31,17 @@ import { CodemirrorModule } from '@ctrl/ngx-codemirror';
         display: block;
         position: relative;
         margin: 1.5rem 0;
-        border: 0.5px solid #ccc;
-        border-radius: 4px;
         padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: var(
+          --mdc-outlined-card-container-shape,
+          var(--mat-sys-corner-medium)
+        );
 
-          .action-group {
-            display: flex;
-            justify-content: flex-end;
-            gap: 10px;
-          }
-        }
-
-      :host .fade-in {
-        animation: fadeIn 0.25s ease-in-out;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
+        .action-group {
+          margin-top: 20px;
+          display: flex;
+          justify-content: flex-end;
         }
       }
 
