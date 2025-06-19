@@ -1,9 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @use "@angular/material" as mat;
+@use "styles/ngx-editor-js2-blockquotes-drag-preview.scss";
+@use "styles/ngx-editor-js2-codemirror-drag-preview.scss";
+@use "styles/ngx-editor-js2-pop-quiz-drag-preview.scss";
+@use "styles/ngx-editor-js2-image-drag-preview.scss";
+@use "styles/ngx-editor-js2-mfe-loader-drag-preview.scss";
+@use "styles/ngx-editor-js2-mermaidjs-drag-preview.scss";
 
 // ! CODEMIRROR Dependencies
-@use 'codemirror/lib/codemirror';
-@use 'codemirror/theme/material-palenight';
+@use "codemirror/lib/codemirror";
+@use "codemirror/theme/material-palenight";
 // ! END CODEMIRROR Dependencies
 
 html,
@@ -160,7 +166,7 @@ body {
 // TODO END Clean this shit up
 
 .cm-editor {
-  font-family: Cascadia Code, Fira Code, Menlo, Monaco, 'Courier New', monospace;
+  font-family: Cascadia Code, Fira Code, Menlo, Monaco, "Courier New", monospace;
   font-size: 16px;
   font-weight: 400;
   line-height: 32px;
