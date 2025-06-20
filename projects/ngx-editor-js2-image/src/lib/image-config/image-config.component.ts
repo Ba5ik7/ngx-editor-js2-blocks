@@ -69,7 +69,7 @@ type ViewModel = {
       :host {
         border: 1px solid #ccc;
         border-radius: var(
-          --mdc-outlined-card-container-shape,
+          --mat-card-outlined-container-shape,
           var(--mat-sys-corner-medium)
         );
         padding: 20px;

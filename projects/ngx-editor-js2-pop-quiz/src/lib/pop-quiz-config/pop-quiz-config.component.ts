@@ -68,7 +68,7 @@ import { AsyncPipe } from '@angular/common';
       :host {
         border: 1px solid #ccc;
         border-radius: var(
-          --mdc-outlined-card-container-shape,
+          --mat-card-outlined-container-shape,
           var(--mat-sys-corner-medium)
         );
         pop-quiz-question {
