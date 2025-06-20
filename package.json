@@ -3,31 +3,24 @@
   "version": "19.0.0",
   "scripts": {
     "watch-demo": "ng serve demo",
-
     "blockquotes:watch": "ng build ngx-editor-js2-blockquotes --watch --configuration development",
     "blockquotes:postbuild": "chokidar 'dist/ngx-editor-js2-blockquotes/**/*' -i 'dist/ngx-editor-js2-blockquotes/styles/**/*' -c 'npm run postbuild -- ngx-editor-js2-blockquotes'",
     "blockquotes:watch:postbuild": "npm-run-all --parallel blockquotes:watch blockquotes:postbuild",
-
     "image:watch": "ng build ngx-editor-js2-image --watch --configuration development",
     "image:postbuild": "chokidar 'dist/ngx-editor-js2-image/**/*' -i 'dist/ngx-editor-js2-image/styles/**/*' -c 'npm run postbuild -- ngx-editor-js2-image'",
     "image:watch:postbuild": "npm-run-all --parallel image:watch image:postbuild",
-
     "codemirror:watch": "ng build ngx-editor-js2-codemirror --watch --configuration development",
     "codemirror:postbuild": "chokidar 'dist/ngx-editor-js2-codemirror/**/*' -i 'dist/ngx-editor-js2-codemirror/styles/**/*' -c 'npm run postbuild -- ngx-editor-js2-codemirror'",
     "codemirror:watch:postbuild": "npm-run-all --parallel codemirror:watch codemirror:postbuild",
-
     "pop-quiz:watch": "ng build ngx-editor-js2-pop-quiz --watch --configuration development",
     "pop-quiz:postbuild": "chokidar 'dist/ngx-editor-js2-pop-quiz/**/*' -i 'dist/ngx-editor-js2-pop-quiz/styles/**/*' -c 'npm run postbuild -- ngx-editor-js2-pop-quiz'",
     "pop-quiz:watch:postbuild": "npm-run-all --parallel pop-quiz:watch pop-quiz:postbuild",
-
     "mfe-loader:watch": "ng build ngx-editor-js2-mfe-loader --watch --configuration development",
     "mfe-loader:postbuild": "chokidar 'dist/ngx-editor-js2-mfe-loader/**/*' -i 'dist/ngx-editor-js2-mfe-loader/styles/**/*' -c 'npm run postbuild -- ngx-editor-js2-mfe-loader'",
     "mfe-loader:watch:postbuild": "npm-run-all --parallel mfe-loader:watch mfe-loader:postbuild",
-
     "mermaidjs:watch": "ng build ngx-editor-js2-mermaidjs --watch --configuration development",
     "mermaidjs:postbuild": "chokidar 'dist/ngx-editor-js2-mermaidjs/**/*' -i 'dist/ngx-editor-js2-mermaidjs/styles/**/*' -c 'npm run postbuild -- ngx-editor-js2-mermaidjs'",
     "mermaidjs:watch:postbuild": "npm-run-all --parallel mermaidjs:watch mermaidjs:postbuild",
-
     "build-demo": "ng build demo --configuration development --base-href \"/ngx-editor-js2-blocks/\"",
     "build-all-libraries": "npm-run-all --parallel build-blockquotes build-image build-codemirror build-pop-quiz build-mfe-loader build-mermaidjs",
     "build-blockquotes": "ng build ngx-editor-js2-blockquotes --configuration production && npm run postbuild -- ngx-editor-js2-blockquotes",
@@ -37,32 +30,31 @@
     "build-mfe-loader": "ng build ngx-editor-js2-mfe-loader --configuration production && npm run postbuild -- ngx-editor-js2-mfe-loader",
     "build-mermaidjs": "ng build ngx-editor-js2-mermaidjs --configuration production && npm run postbuild -- ngx-editor-js2-mermaidjs",
     "postbuild": "node ./postbuild.js",
-
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js",
     "deployDemo": "npx angular-cli-ghpages --dir=dist/demo"
   },
   "private": false,
   "dependencies": {
     "@angular-architects/module-federation": "^19.0.3",
-    "@angular/animations": "^19.0.0",
+    "@angular/animations": "^20.0.4",
     "@angular/cdk": "^19.1.3",
-    "@angular/common": "^19.0.0",
-    "@angular/compiler": "^19.0.0",
-    "@angular/core": "^19.0.0",
-    "@angular/forms": "^19.0.0",
+    "@angular/common": "^20.0.4",
+    "@angular/compiler": "^20.0.4",
+    "@angular/core": "^20.0.4",
+    "@angular/forms": "^20.0.4",
     "@angular/material": "^19.1.3",
-    "@angular/platform-browser": "^19.0.0",
-    "@angular/platform-browser-dynamic": "^19.0.0",
-    "@angular/router": "^19.0.0",
+    "@angular/platform-browser": "^20.0.4",
+    "@angular/platform-browser-dynamic": "^20.0.4",
+    "@angular/router": "^20.0.4",
     "mermaid": "^11.6.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^19.1.6",
-    "@angular/cli": "^19.0.6",
-    "@angular/compiler-cli": "^19.0.0",
+    "@angular/build": "^20.0.3",
+    "@angular/cli": "^20.0.3",
+    "@angular/compiler-cli": "^20.0.4",
     "@ctrl/ngx-codemirror": "^7.0.0",
     "@tmdjr/ngx-editor-js2": "^0.0.9",
     "@types/codemirror": "5.60.13",
@@ -75,9 +67,9 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "ng-packagr": "^19.1.0",
+    "ng-packagr": "^20.0.1",
     "ngx-build-plus": "^19.0.0",
     "npm-run-all": "^4.1.5",
-    "typescript": "~5.6.2"
+    "typescript": "~5.8.3"
   }
 }
