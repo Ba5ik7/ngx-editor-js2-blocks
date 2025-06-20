@@ -70,7 +70,8 @@
                 "dist/ngx-editor-js2-pop-quiz",
                 "dist/ngx-editor-js2-image",
                 "dist/ngx-editor-js2-mfe-loader",
-                "dist/ngx-editor-js2-mermaidjs"
+                "dist/ngx-editor-js2-mermaidjs",
+                "node_modules/@tmdjr/ngx-editor-js2/styles"
               ]
             },
             "scripts": [],

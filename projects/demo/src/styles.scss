@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @use "@angular/material" as mat;
+
+// @use "@tmdjr/ngx-editor-js2/styles/drag-preview.scss";
+// @use "~@tmdjr/ngx-editor-js2/styles/drag-preview.scss";
+@use "drag-preview.scss";
+
 @use "styles/ngx-editor-js2-blockquotes-drag-preview.scss";
 @use "styles/ngx-editor-js2-codemirror-drag-preview.scss";
 @use "styles/ngx-editor-js2-pop-quiz-drag-preview.scss";
