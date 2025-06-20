@@ -100,13 +100,13 @@ type Value = { url: string; title: string };
           .image-block {
             min-width: 0;
           }
+        }
 
-          .image-block-button {
-            position: absolute;
-            top: 6px;
-            left: 6px;
-            display: none;
-          }
+        .image-block-button {
+          position: absolute;
+          top: 6px;
+          left: 6px;
+          display: none;
         }
       }
     `,

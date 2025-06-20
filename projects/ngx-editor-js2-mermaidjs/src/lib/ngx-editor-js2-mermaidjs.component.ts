@@ -124,13 +124,13 @@ mermaid.parseError = function (err: any, hash: any) {
           .mermaidjs-block {
             min-width: 0;
           }
+        }
 
-          .mermaidjs-block-button {
-            position: absolute;
-            top: 6px;
-            left: 6px;
-            display: none;
-          }
+        .mermaidjs-block-button {
+          position: absolute;
+          top: 6px;
+          left: 6px;
+          display: none;
         }
       }
   `,
