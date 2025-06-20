@@ -8,24 +8,19 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   BasePortalHost: () => (/* binding */ BasePortalHost),
 /* harmony export */   BasePortalOutlet: () => (/* binding */ BasePortalOutlet),
 /* harmony export */   CdkPortal: () => (/* binding */ CdkPortal),
 /* harmony export */   CdkPortalOutlet: () => (/* binding */ CdkPortalOutlet),
 /* harmony export */   ComponentPortal: () => (/* binding */ ComponentPortal),
 /* harmony export */   DomPortal: () => (/* binding */ DomPortal),
-/* harmony export */   DomPortalHost: () => (/* binding */ DomPortalHost),
 /* harmony export */   DomPortalOutlet: () => (/* binding */ DomPortalOutlet),
 /* harmony export */   Portal: () => (/* binding */ Portal),
 /* harmony export */   PortalHostDirective: () => (/* binding */ PortalHostDirective),
-/* harmony export */   PortalInjector: () => (/* binding */ PortalInjector),
 /* harmony export */   PortalModule: () => (/* binding */ PortalModule),
 /* harmony export */   TemplatePortal: () => (/* binding */ TemplatePortal),
 /* harmony export */   TemplatePortalDirective: () => (/* binding */ TemplatePortalDirective)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 9516);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 59694);
-
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
 
 
 
@@ -128,20 +123,10 @@ class ComponentPortal extends Portal {
   /** Injector used for the instantiation of the component. */
   injector;
   /**
-   * @deprecated No longer in use. To be removed.
-   * @breaking-change 18.0.0
-   */
-  componentFactoryResolver;
-  /**
    * List of DOM nodes that should be projected through `<ng-content>` of the attached component.
    */
   projectableNodes;
-  constructor(component, viewContainerRef, injector,
-  /**
-   * @deprecated No longer in use. To be removed.
-   * @breaking-change 18.0.0
-   */
-  _componentFactoryResolver, projectableNodes) {
+  constructor(component, viewContainerRef, injector, projectableNodes) {
     super();
     this.component = component;
     this.viewContainerRef = viewContainerRef;
@@ -270,11 +255,6 @@ class BasePortalOutlet {
     }
   }
 }
-/**
- * @deprecated Use `BasePortalOutlet` instead.
- * @breaking-change 9.0.0
- */
-class BasePortalHost extends BasePortalOutlet {}
 
 /**
  * A PortalOutlet for attaching portals to an arbitrary DOM element outside of the Angular
@@ -284,35 +264,19 @@ class DomPortalOutlet extends BasePortalOutlet {
   outletElement;
   _appRef;
   _defaultInjector;
-  _document;
   /**
    * @param outletElement Element into which the content is projected.
-   * @param _unusedComponentFactoryResolver Used to resolve the component factory.
-   *   Only required when attaching component portals.
    * @param _appRef Reference to the application. Only used in component portals when there
    *   is no `ViewContainerRef` available.
    * @param _defaultInjector Injector to use as a fallback when the portal being attached doesn't
    *   have one. Only used for component portals.
-   * @param _document Reference to the document. Used when attaching a DOM portal. Will eventually
-   *   become a required parameter.
    */
   constructor(/** Element into which the content is projected. */
-  outletElement,
-  /**
-   * @deprecated No longer in use. To be removed.
-   * @breaking-change 18.0.0
-   */
-  _unusedComponentFactoryResolver, _appRef, _defaultInjector,
-  /**
-   * @deprecated `_document` Parameter to be made required.
-   * @breaking-change 10.0.0
-   */
-  _document) {
+  outletElement, _appRef, _defaultInjector) {
     super();
     this.outletElement = outletElement;
     this._appRef = _appRef;
     this._defaultInjector = _defaultInjector;
-    this._document = _document;
   }
   /**
    * Attach the given ComponentPortal to DOM element.
@@ -341,17 +305,20 @@ class DomPortalOutlet extends BasePortalOutlet {
       if ((typeof ngDevMode === 'undefined' || ngDevMode) && !this._appRef) {
         throw Error('Cannot attach component portal to outlet without an ApplicationRef.');
       }
+      const appRef = this._appRef;
+      const elementInjector = portal.injector || this._defaultInjector || _angular_core__WEBPACK_IMPORTED_MODULE_0__.Injector.NULL;
+      const environmentInjector = elementInjector.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__.EnvironmentInjector, appRef.injector);
       componentRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.createComponent)(portal.component, {
-        elementInjector: portal.injector || this._defaultInjector || _angular_core__WEBPACK_IMPORTED_MODULE_0__.Injector.NULL,
-        environmentInjector: this._appRef.injector,
+        elementInjector,
+        environmentInjector,
         projectableNodes: portal.projectableNodes || undefined
       });
-      this._appRef.attachView(componentRef.hostView);
+      appRef.attachView(componentRef.hostView);
       this.setDisposeFn(() => {
         // Verify that the ApplicationRef has registered views before trying to detach a host view.
         // This check also protects the `detachView` from being called on a destroyed ApplicationRef.
-        if (this._appRef.viewCount > 0) {
-          this._appRef.detachView(componentRef.hostView);
+        if (appRef.viewCount > 0) {
+          appRef.detachView(componentRef.hostView);
         }
         componentRef.destroy();
       });
@@ -404,7 +371,7 @@ class DomPortalOutlet extends BasePortalOutlet {
     }
     // Anchor used to save the element's previous position so
     // that we can restore it when the portal is detached.
-    const anchorNode = this._document.createComment('dom-portal');
+    const anchorNode = this.outletElement.ownerDocument.createComment('dom-portal');
     element.parentNode.insertBefore(anchorNode, element);
     this.outletElement.appendChild(element);
     this._attachedPortal = portal;
@@ -427,11 +394,6 @@ class DomPortalOutlet extends BasePortalOutlet {
     return componentRef.hostView.rootNodes[0];
   }
 }
-/**
- * @deprecated Use `DomPortalOutlet` instead.
- * @breaking-change 9.0.0
- */
-class DomPortalHost extends DomPortalOutlet {}
 
 /**
  * Directive version of a `TemplatePortal`. Because the directive *is* a TemplatePortal,
@@ -498,7 +460,7 @@ let CdkPortalOutlet = /*#__PURE__*/(() => {
     _moduleRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgModuleRef, {
       optional: true
     });
-    _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT);
+    _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT);
     _viewContainerRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewContainerRef);
     /** Whether the portal component is initialized. */
     _isInitialized = false;
@@ -682,34 +644,6 @@ let PortalModule = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-
-/**
- * Custom injector to be used when providing custom
- * injection tokens to components inside a portal.
- * @docs-private
- * @deprecated Use `Injector.create` instead.
- * @breaking-change 11.0.0
- */
-class PortalInjector {
-  _parentInjector;
-  _customTokens;
-  constructor(_parentInjector, _customTokens) {
-    this._parentInjector = _parentInjector;
-    this._customTokens = _customTokens;
-  }
-  get(token, notFoundValue) {
-    const value = this._customTokens.get(token);
-    if (typeof value !== 'undefined') {
-      return value;
-    }
-    return this._parentInjector.get(token, notFoundValue);
-  }
-}
-
-/**
- * Generated bundle index. Do not edit.
- */
-
 
 
 /***/ })

@@ -1,30 +1,88 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[6556],{
 
-/***/ 84175:
-/*!************************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2022/button.mjs ***!
-  \************************************************************/
+/***/ 8126:
+/*!****************************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/common-module-cKSwHniA.mjs ***!
+  \****************************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   MAT_BUTTON_CONFIG: () => (/* binding */ MAT_BUTTON_CONFIG),
-/* harmony export */   MAT_FAB_DEFAULT_OPTIONS: () => (/* binding */ MAT_FAB_DEFAULT_OPTIONS),
-/* harmony export */   MAT_FAB_DEFAULT_OPTIONS_FACTORY: () => (/* binding */ MAT_FAB_DEFAULT_OPTIONS_FACTORY),
-/* harmony export */   MatAnchor: () => (/* binding */ MatAnchor),
-/* harmony export */   MatButton: () => (/* binding */ MatButton),
-/* harmony export */   MatButtonModule: () => (/* binding */ MatButtonModule),
-/* harmony export */   MatFabAnchor: () => (/* binding */ MatFabAnchor),
-/* harmony export */   MatFabButton: () => (/* binding */ MatFabButton),
-/* harmony export */   MatIconAnchor: () => (/* binding */ MatIconAnchor),
-/* harmony export */   MatIconButton: () => (/* binding */ MatIconButton),
-/* harmony export */   MatMiniFabAnchor: () => (/* binding */ MatMiniFabAnchor),
-/* harmony export */   MatMiniFabButton: () => (/* binding */ MatMiniFabButton)
+/* harmony export */   M: () => (/* binding */ MatCommonModule),
+/* harmony export */   a: () => (/* binding */ MATERIAL_SANITY_CHECKS)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 9516);
-/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/a11y */ 6020);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/core */ 84718);
-/* harmony import */ var _angular_cdk_private__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/cdk/private */ 77824);
+/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/a11y */ 56593);
+/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/bidi */ 48073);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 27940);
+
+
+
+
+
+/**
+ * Injection token that configures whether the Material sanity checks are enabled.
+ * @deprecated No longer used and will be removed.
+ * @breaking-change 21.0.0
+ */
+const MATERIAL_SANITY_CHECKS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_2__.InjectionToken('mat-sanity-checks', {
+  providedIn: 'root',
+  factory: () => true
+});
+/**
+ * Module that captures anything that should be loaded and/or run for *all* Angular Material
+ * components. This includes Bidi, etc.
+ *
+ * This module should be imported to each top-level component module (e.g., MatTabsModule).
+ * @deprecated No longer used and will be removed.
+ * @breaking-change 21.0.0
+ */
+let MatCommonModule = /*#__PURE__*/(() => {
+  class MatCommonModule {
+    constructor() {
+      // While A11yModule also does this, we repeat it here to avoid importing A11yModule
+      // in MatCommonModule.
+      (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__.HighContrastModeDetector)._applyBodyHighContrastModeCssClasses();
+    }
+    static ɵfac = function MatCommonModule_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || MatCommonModule)();
+    };
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({
+      type: MatCommonModule
+    });
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({
+      imports: [_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__.BidiModule, _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__.BidiModule]
+    });
+  }
+  return MatCommonModule;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+
+/***/ }),
+
+/***/ 8923:
+/*!**************************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/icon-button-DxiIc1ex.mjs ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   M: () => (/* binding */ MatIconButton),
+/* harmony export */   a: () => (/* binding */ MatButtonBase),
+/* harmony export */   b: () => (/* binding */ MAT_BUTTON_CONFIG),
+/* harmony export */   c: () => (/* binding */ MatIconAnchor)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/a11y */ 56593);
+/* harmony import */ var _angular_cdk_private__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/private */ 98959);
+/* harmony import */ var _ripple_loader_BnMiRtmT_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ripple-loader-BnMiRtmT.mjs */ 36987);
+/* harmony import */ var _structural_styles_CObeNzjn_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./structural-styles-CObeNzjn.mjs */ 79735);
+/* harmony import */ var _animation_DfMFjxHu_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./animation-DfMFjxHu.mjs */ 73388);
+
+
 
 
 
@@ -32,79 +90,39 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /** Injection token that can be used to provide the default options the button component. */
-const _c0 = ["mat-button", ""];
-const _c1 = [[["", 8, "material-icons", 3, "iconPositionEnd", ""], ["mat-icon", 3, "iconPositionEnd", ""], ["", "matButtonIcon", "", 3, "iconPositionEnd", ""]], "*", [["", "iconPositionEnd", "", 8, "material-icons"], ["mat-icon", "iconPositionEnd", ""], ["", "matButtonIcon", "", "iconPositionEnd", ""]]];
-const _c2 = [".material-icons:not([iconPositionEnd]), mat-icon:not([iconPositionEnd]), [matButtonIcon]:not([iconPositionEnd])", "*", ".material-icons[iconPositionEnd], mat-icon[iconPositionEnd], [matButtonIcon][iconPositionEnd]"];
-const _c3 = ".mat-mdc-button-base{text-decoration:none}.mdc-button{-webkit-user-select:none;user-select:none;position:relative;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-width:64px;border:none;outline:none;line-height:inherit;-webkit-appearance:none;overflow:visible;vertical-align:middle;background:rgba(0,0,0,0);padding:0 8px}.mdc-button::-moz-focus-inner{padding:0;border:0}.mdc-button:active{outline:none}.mdc-button:hover{cursor:pointer}.mdc-button:disabled{cursor:default;pointer-events:none}.mdc-button[hidden]{display:none}.mdc-button .mdc-button__label{position:relative}.mat-mdc-button{padding:0 var(--mat-text-button-horizontal-padding, 12px);height:var(--mdc-text-button-container-height, 40px);font-family:var(--mdc-text-button-label-text-font, var(--mat-sys-label-large-font));font-size:var(--mdc-text-button-label-text-size, var(--mat-sys-label-large-size));letter-spacing:var(--mdc-text-button-label-text-tracking, var(--mat-sys-label-large-tracking));text-transform:var(--mdc-text-button-label-text-transform);font-weight:var(--mdc-text-button-label-text-weight, var(--mat-sys-label-large-weight))}.mat-mdc-button,.mat-mdc-button .mdc-button__ripple{border-radius:var(--mdc-text-button-container-shape, var(--mat-sys-corner-full))}.mat-mdc-button:not(:disabled){color:var(--mdc-text-button-label-text-color, var(--mat-sys-primary))}.mat-mdc-button[disabled],.mat-mdc-button.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mdc-text-button-disabled-label-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-button.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-button:has(.material-icons,mat-icon,[matButtonIcon]){padding:0 var(--mat-text-button-with-icon-horizontal-padding, 16px)}.mat-mdc-button>.mat-icon{margin-right:var(--mat-text-button-icon-spacing, 8px);margin-left:var(--mat-text-button-icon-offset, -4px)}[dir=rtl] .mat-mdc-button>.mat-icon{margin-right:var(--mat-text-button-icon-offset, -4px);margin-left:var(--mat-text-button-icon-spacing, 8px)}.mat-mdc-button .mdc-button__label+.mat-icon{margin-right:var(--mat-text-button-icon-offset, -4px);margin-left:var(--mat-text-button-icon-spacing, 8px)}[dir=rtl] .mat-mdc-button .mdc-button__label+.mat-icon{margin-right:var(--mat-text-button-icon-spacing, 8px);margin-left:var(--mat-text-button-icon-offset, -4px)}.mat-mdc-button .mat-ripple-element{background-color:var(--mat-text-button-ripple-color, color-mix(in srgb, var(--mat-sys-primary) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-button .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-text-button-state-layer-color, var(--mat-sys-primary))}.mat-mdc-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-text-button-disabled-state-layer-color, var(--mat-sys-on-surface-variant))}.mat-mdc-button:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-text-button-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-button.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-button.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-button.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-text-button-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-button:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-text-button-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-button .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;left:0;right:0;transform:translateY(-50%);display:var(--mat-text-button-touch-target-display, block)}.mat-mdc-unelevated-button{transition:box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);height:var(--mdc-filled-button-container-height, 40px);font-family:var(--mdc-filled-button-label-text-font, var(--mat-sys-label-large-font));font-size:var(--mdc-filled-button-label-text-size, var(--mat-sys-label-large-size));letter-spacing:var(--mdc-filled-button-label-text-tracking, var(--mat-sys-label-large-tracking));text-transform:var(--mdc-filled-button-label-text-transform);font-weight:var(--mdc-filled-button-label-text-weight, var(--mat-sys-label-large-weight));padding:0 var(--mat-filled-button-horizontal-padding, 24px)}.mat-mdc-unelevated-button>.mat-icon{margin-right:var(--mat-filled-button-icon-spacing, 8px);margin-left:var(--mat-filled-button-icon-offset, -8px)}[dir=rtl] .mat-mdc-unelevated-button>.mat-icon{margin-right:var(--mat-filled-button-icon-offset, -8px);margin-left:var(--mat-filled-button-icon-spacing, 8px)}.mat-mdc-unelevated-button .mdc-button__label+.mat-icon{margin-right:var(--mat-filled-button-icon-offset, -8px);margin-left:var(--mat-filled-button-icon-spacing, 8px)}[dir=rtl] .mat-mdc-unelevated-button .mdc-button__label+.mat-icon{margin-right:var(--mat-filled-button-icon-spacing, 8px);margin-left:var(--mat-filled-button-icon-offset, -8px)}.mat-mdc-unelevated-button .mat-ripple-element{background-color:var(--mat-filled-button-ripple-color, color-mix(in srgb, var(--mat-sys-on-primary) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-unelevated-button .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-filled-button-state-layer-color, var(--mat-sys-on-primary))}.mat-mdc-unelevated-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-filled-button-disabled-state-layer-color, var(--mat-sys-on-surface-variant))}.mat-mdc-unelevated-button:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-filled-button-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-unelevated-button.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-unelevated-button.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-unelevated-button.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-filled-button-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-unelevated-button:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-filled-button-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-unelevated-button .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;left:0;right:0;transform:translateY(-50%);display:var(--mat-filled-button-touch-target-display, block)}.mat-mdc-unelevated-button:not(:disabled){color:var(--mdc-filled-button-label-text-color, var(--mat-sys-on-primary));background-color:var(--mdc-filled-button-container-color, var(--mat-sys-primary))}.mat-mdc-unelevated-button,.mat-mdc-unelevated-button .mdc-button__ripple{border-radius:var(--mdc-filled-button-container-shape, var(--mat-sys-corner-full))}.mat-mdc-unelevated-button[disabled],.mat-mdc-unelevated-button.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mdc-filled-button-disabled-label-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));background-color:var(--mdc-filled-button-disabled-container-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent))}.mat-mdc-unelevated-button.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-raised-button{transition:box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);box-shadow:var(--mdc-protected-button-container-elevation-shadow, var(--mat-sys-level1));height:var(--mdc-protected-button-container-height, 40px);font-family:var(--mdc-protected-button-label-text-font, var(--mat-sys-label-large-font));font-size:var(--mdc-protected-button-label-text-size, var(--mat-sys-label-large-size));letter-spacing:var(--mdc-protected-button-label-text-tracking, var(--mat-sys-label-large-tracking));text-transform:var(--mdc-protected-button-label-text-transform);font-weight:var(--mdc-protected-button-label-text-weight, var(--mat-sys-label-large-weight));padding:0 var(--mat-protected-button-horizontal-padding, 24px)}.mat-mdc-raised-button>.mat-icon{margin-right:var(--mat-protected-button-icon-spacing, 8px);margin-left:var(--mat-protected-button-icon-offset, -8px)}[dir=rtl] .mat-mdc-raised-button>.mat-icon{margin-right:var(--mat-protected-button-icon-offset, -8px);margin-left:var(--mat-protected-button-icon-spacing, 8px)}.mat-mdc-raised-button .mdc-button__label+.mat-icon{margin-right:var(--mat-protected-button-icon-offset, -8px);margin-left:var(--mat-protected-button-icon-spacing, 8px)}[dir=rtl] .mat-mdc-raised-button .mdc-button__label+.mat-icon{margin-right:var(--mat-protected-button-icon-spacing, 8px);margin-left:var(--mat-protected-button-icon-offset, -8px)}.mat-mdc-raised-button .mat-ripple-element{background-color:var(--mat-protected-button-ripple-color, color-mix(in srgb, var(--mat-sys-primary) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-raised-button .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-protected-button-state-layer-color, var(--mat-sys-primary))}.mat-mdc-raised-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-protected-button-disabled-state-layer-color, var(--mat-sys-on-surface-variant))}.mat-mdc-raised-button:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-protected-button-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-raised-button.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-raised-button.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-raised-button.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-protected-button-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-raised-button:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-protected-button-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-raised-button .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;left:0;right:0;transform:translateY(-50%);display:var(--mat-protected-button-touch-target-display, block)}.mat-mdc-raised-button:not(:disabled){color:var(--mdc-protected-button-label-text-color, var(--mat-sys-primary));background-color:var(--mdc-protected-button-container-color, var(--mat-sys-surface))}.mat-mdc-raised-button,.mat-mdc-raised-button .mdc-button__ripple{border-radius:var(--mdc-protected-button-container-shape, var(--mat-sys-corner-full))}.mat-mdc-raised-button:hover{box-shadow:var(--mdc-protected-button-hover-container-elevation-shadow, var(--mat-sys-level2))}.mat-mdc-raised-button:focus{box-shadow:var(--mdc-protected-button-focus-container-elevation-shadow, var(--mat-sys-level1))}.mat-mdc-raised-button:active,.mat-mdc-raised-button:focus:active{box-shadow:var(--mdc-protected-button-pressed-container-elevation-shadow, var(--mat-sys-level1))}.mat-mdc-raised-button[disabled],.mat-mdc-raised-button.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mdc-protected-button-disabled-label-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));background-color:var(--mdc-protected-button-disabled-container-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent))}.mat-mdc-raised-button[disabled].mat-mdc-button-disabled,.mat-mdc-raised-button.mat-mdc-button-disabled.mat-mdc-button-disabled{box-shadow:var(--mdc-protected-button-disabled-container-elevation-shadow, var(--mat-sys-level0))}.mat-mdc-raised-button.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-outlined-button{border-style:solid;transition:border 280ms cubic-bezier(0.4, 0, 0.2, 1);height:var(--mdc-outlined-button-container-height, 40px);font-family:var(--mdc-outlined-button-label-text-font, var(--mat-sys-label-large-font));font-size:var(--mdc-outlined-button-label-text-size, var(--mat-sys-label-large-size));letter-spacing:var(--mdc-outlined-button-label-text-tracking, var(--mat-sys-label-large-tracking));text-transform:var(--mdc-outlined-button-label-text-transform);font-weight:var(--mdc-outlined-button-label-text-weight, var(--mat-sys-label-large-weight));border-radius:var(--mdc-outlined-button-container-shape, var(--mat-sys-corner-full));border-width:var(--mdc-outlined-button-outline-width, 1px);padding:0 var(--mat-outlined-button-horizontal-padding, 24px)}.mat-mdc-outlined-button>.mat-icon{margin-right:var(--mat-outlined-button-icon-spacing, 8px);margin-left:var(--mat-outlined-button-icon-offset, -8px)}[dir=rtl] .mat-mdc-outlined-button>.mat-icon{margin-right:var(--mat-outlined-button-icon-offset, -8px);margin-left:var(--mat-outlined-button-icon-spacing, 8px)}.mat-mdc-outlined-button .mdc-button__label+.mat-icon{margin-right:var(--mat-outlined-button-icon-offset, -8px);margin-left:var(--mat-outlined-button-icon-spacing, 8px)}[dir=rtl] .mat-mdc-outlined-button .mdc-button__label+.mat-icon{margin-right:var(--mat-outlined-button-icon-spacing, 8px);margin-left:var(--mat-outlined-button-icon-offset, -8px)}.mat-mdc-outlined-button .mat-ripple-element{background-color:var(--mat-outlined-button-ripple-color, color-mix(in srgb, var(--mat-sys-primary) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-outlined-button .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-outlined-button-state-layer-color, var(--mat-sys-primary))}.mat-mdc-outlined-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-outlined-button-disabled-state-layer-color, var(--mat-sys-on-surface-variant))}.mat-mdc-outlined-button:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-outlined-button-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-outlined-button.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-outlined-button.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-outlined-button.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-outlined-button-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-outlined-button:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-outlined-button-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-outlined-button .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;left:0;right:0;transform:translateY(-50%);display:var(--mat-outlined-button-touch-target-display, block)}.mat-mdc-outlined-button:not(:disabled){color:var(--mdc-outlined-button-label-text-color, var(--mat-sys-primary));border-color:var(--mdc-outlined-button-outline-color, var(--mat-sys-outline))}.mat-mdc-outlined-button[disabled],.mat-mdc-outlined-button.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mdc-outlined-button-disabled-label-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));border-color:var(--mdc-outlined-button-disabled-outline-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent))}.mat-mdc-outlined-button.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-outlined-button .mdc-button__ripple{border-width:var(--mdc-outlined-button-outline-width, 1px);border-style:solid;border-color:rgba(0,0,0,0)}.mat-mdc-button,.mat-mdc-unelevated-button,.mat-mdc-raised-button,.mat-mdc-outlined-button{-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-button .mat-mdc-button-ripple,.mat-mdc-button .mat-mdc-button-persistent-ripple,.mat-mdc-button .mat-mdc-button-persistent-ripple::before,.mat-mdc-unelevated-button .mat-mdc-button-ripple,.mat-mdc-unelevated-button .mat-mdc-button-persistent-ripple,.mat-mdc-unelevated-button .mat-mdc-button-persistent-ripple::before,.mat-mdc-raised-button .mat-mdc-button-ripple,.mat-mdc-raised-button .mat-mdc-button-persistent-ripple,.mat-mdc-raised-button .mat-mdc-button-persistent-ripple::before,.mat-mdc-outlined-button .mat-mdc-button-ripple,.mat-mdc-outlined-button .mat-mdc-button-persistent-ripple,.mat-mdc-outlined-button .mat-mdc-button-persistent-ripple::before{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:inherit}.mat-mdc-button .mat-mdc-button-ripple,.mat-mdc-unelevated-button .mat-mdc-button-ripple,.mat-mdc-raised-button .mat-mdc-button-ripple,.mat-mdc-outlined-button .mat-mdc-button-ripple{overflow:hidden}.mat-mdc-button .mat-mdc-button-persistent-ripple::before,.mat-mdc-unelevated-button .mat-mdc-button-persistent-ripple::before,.mat-mdc-raised-button .mat-mdc-button-persistent-ripple::before,.mat-mdc-outlined-button .mat-mdc-button-persistent-ripple::before{content:\"\";opacity:0}.mat-mdc-button .mdc-button__label,.mat-mdc-button .mat-icon,.mat-mdc-unelevated-button .mdc-button__label,.mat-mdc-unelevated-button .mat-icon,.mat-mdc-raised-button .mdc-button__label,.mat-mdc-raised-button .mat-icon,.mat-mdc-outlined-button .mdc-button__label,.mat-mdc-outlined-button .mat-icon{z-index:1;position:relative}.mat-mdc-button .mat-focus-indicator,.mat-mdc-unelevated-button .mat-focus-indicator,.mat-mdc-raised-button .mat-focus-indicator,.mat-mdc-outlined-button .mat-focus-indicator{top:0;left:0;right:0;bottom:0;position:absolute}.mat-mdc-button:focus>.mat-focus-indicator::before,.mat-mdc-unelevated-button:focus>.mat-focus-indicator::before,.mat-mdc-raised-button:focus>.mat-focus-indicator::before,.mat-mdc-outlined-button:focus>.mat-focus-indicator::before{content:\"\"}.mat-mdc-button._mat-animation-noopable,.mat-mdc-unelevated-button._mat-animation-noopable,.mat-mdc-raised-button._mat-animation-noopable,.mat-mdc-outlined-button._mat-animation-noopable{transition:none !important;animation:none !important}.mat-mdc-button>.mat-icon,.mat-mdc-unelevated-button>.mat-icon,.mat-mdc-raised-button>.mat-icon,.mat-mdc-outlined-button>.mat-icon{display:inline-block;position:relative;vertical-align:top;font-size:1.125rem;height:1.125rem;width:1.125rem}.mat-mdc-outlined-button .mat-mdc-button-ripple,.mat-mdc-outlined-button .mdc-button__ripple{top:-1px;left:-1px;bottom:-1px;right:-1px}.mat-mdc-unelevated-button .mat-focus-indicator::before,.mat-mdc-raised-button .mat-focus-indicator::before{margin:calc(calc(var(--mat-focus-indicator-border-width, 3px) + 2px)*-1)}.mat-mdc-outlined-button .mat-focus-indicator::before{margin:calc(calc(var(--mat-focus-indicator-border-width, 3px) + 3px)*-1)}";
-const _c4 = "@media(forced-colors: active){.mat-mdc-button:not(.mdc-button--outlined),.mat-mdc-unelevated-button:not(.mdc-button--outlined),.mat-mdc-raised-button:not(.mdc-button--outlined),.mat-mdc-outlined-button:not(.mdc-button--outlined),.mat-mdc-icon-button.mat-mdc-icon-button{outline:solid 1px}}";
-const _c5 = ["mat-fab", ""];
-const _c6 = ["mat-mini-fab", ""];
-const _c7 = ".mat-mdc-fab-base{-webkit-user-select:none;user-select:none;position:relative;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;width:56px;height:56px;padding:0;border:none;fill:currentColor;text-decoration:none;cursor:pointer;-moz-appearance:none;-webkit-appearance:none;overflow:visible;transition:box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),opacity 15ms linear 30ms,transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);flex-shrink:0;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-fab-base .mat-mdc-button-ripple,.mat-mdc-fab-base .mat-mdc-button-persistent-ripple,.mat-mdc-fab-base .mat-mdc-button-persistent-ripple::before{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:inherit}.mat-mdc-fab-base .mat-mdc-button-ripple{overflow:hidden}.mat-mdc-fab-base .mat-mdc-button-persistent-ripple::before{content:\"\";opacity:0}.mat-mdc-fab-base .mdc-button__label,.mat-mdc-fab-base .mat-icon{z-index:1;position:relative}.mat-mdc-fab-base .mat-focus-indicator{top:0;left:0;right:0;bottom:0;position:absolute}.mat-mdc-fab-base:focus>.mat-focus-indicator::before{content:\"\"}.mat-mdc-fab-base._mat-animation-noopable{transition:none !important;animation:none !important}.mat-mdc-fab-base::before{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;border:1px solid rgba(0,0,0,0);border-radius:inherit;content:\"\";pointer-events:none}.mat-mdc-fab-base[hidden]{display:none}.mat-mdc-fab-base::-moz-focus-inner{padding:0;border:0}.mat-mdc-fab-base:active,.mat-mdc-fab-base:focus{outline:none}.mat-mdc-fab-base:hover{cursor:pointer}.mat-mdc-fab-base>svg{width:100%}.mat-mdc-fab-base .mat-icon,.mat-mdc-fab-base .material-icons{transition:transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1);fill:currentColor;will-change:transform}.mat-mdc-fab-base .mat-focus-indicator::before{margin:calc(calc(var(--mat-focus-indicator-border-width, 3px) + 2px)*-1)}.mat-mdc-fab-base[disabled],.mat-mdc-fab-base.mat-mdc-button-disabled{cursor:default;pointer-events:none}.mat-mdc-fab-base[disabled],.mat-mdc-fab-base[disabled]:focus,.mat-mdc-fab-base.mat-mdc-button-disabled,.mat-mdc-fab-base.mat-mdc-button-disabled:focus{box-shadow:none}.mat-mdc-fab-base.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-fab{background-color:var(--mdc-fab-container-color, var(--mat-sys-primary-container));border-radius:var(--mdc-fab-container-shape, var(--mat-sys-corner-large));color:var(--mat-fab-foreground-color, var(--mat-sys-on-primary-container, inherit));box-shadow:var(--mdc-fab-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-fab:hover{box-shadow:var(--mdc-fab-hover-container-elevation-shadow, var(--mat-sys-level4))}.mat-mdc-fab:focus{box-shadow:var(--mdc-fab-focus-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-fab:active,.mat-mdc-fab:focus:active{box-shadow:var(--mdc-fab-pressed-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-fab[disabled],.mat-mdc-fab.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mat-fab-disabled-state-foreground-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));background-color:var(--mat-fab-disabled-state-container-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent))}.mat-mdc-fab.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-fab .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;left:50%;width:48px;transform:translate(-50%, -50%);display:var(--mat-fab-touch-target-display, block)}.mat-mdc-fab .mat-ripple-element{background-color:var(--mat-fab-ripple-color, color-mix(in srgb, var(--mat-sys-on-primary-container) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-fab .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-fab-state-layer-color, var(--mat-sys-on-primary-container))}.mat-mdc-fab.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-fab-disabled-state-layer-color)}.mat-mdc-fab:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-fab.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-fab.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-fab.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-fab:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-mini-fab{width:40px;height:40px;background-color:var(--mdc-fab-small-container-color, var(--mat-sys-primary-container));border-radius:var(--mdc-fab-small-container-shape, var(--mat-sys-corner-medium));color:var(--mat-fab-small-foreground-color, var(--mat-sys-on-primary-container, inherit));box-shadow:var(--mdc-fab-small-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-mini-fab:hover{box-shadow:var(--mdc-fab-small-hover-container-elevation-shadow, var(--mat-sys-level4))}.mat-mdc-mini-fab:focus{box-shadow:var(--mdc-fab-small-focus-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-mini-fab:active,.mat-mdc-mini-fab:focus:active{box-shadow:var(--mdc-fab-small-pressed-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-mini-fab[disabled],.mat-mdc-mini-fab.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mat-fab-small-disabled-state-foreground-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));background-color:var(--mat-fab-small-disabled-state-container-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent))}.mat-mdc-mini-fab.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-mini-fab .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;left:50%;width:48px;transform:translate(-50%, -50%);display:var(--mat-fab-small-touch-target-display)}.mat-mdc-mini-fab .mat-ripple-element{background-color:var(--mat-fab-small-ripple-color, color-mix(in srgb, var(--mat-sys-on-primary-container) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-mini-fab .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-fab-small-state-layer-color, var(--mat-sys-on-primary-container))}.mat-mdc-mini-fab.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-fab-small-disabled-state-layer-color)}.mat-mdc-mini-fab:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-small-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-mini-fab.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-mini-fab.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-mini-fab.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-small-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-mini-fab:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-small-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-extended-fab{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;border-radius:24px;padding-left:20px;padding-right:20px;width:auto;max-width:100%;line-height:normal;height:var(--mdc-extended-fab-container-height, 56px);border-radius:var(--mdc-extended-fab-container-shape, var(--mat-sys-corner-large));font-family:var(--mdc-extended-fab-label-text-font, var(--mat-sys-label-large-font));font-size:var(--mdc-extended-fab-label-text-size, var(--mat-sys-label-large-size));font-weight:var(--mdc-extended-fab-label-text-weight, var(--mat-sys-label-large-weight));letter-spacing:var(--mdc-extended-fab-label-text-tracking, var(--mat-sys-label-large-tracking));box-shadow:var(--mdc-extended-fab-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-extended-fab:hover{box-shadow:var(--mdc-extended-fab-hover-container-elevation-shadow, var(--mat-sys-level4))}.mat-mdc-extended-fab:focus{box-shadow:var(--mdc-extended-fab-focus-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-extended-fab:active,.mat-mdc-extended-fab:focus:active{box-shadow:var(--mdc-extended-fab-pressed-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-extended-fab[disabled],.mat-mdc-extended-fab.mat-mdc-button-disabled{cursor:default;pointer-events:none}.mat-mdc-extended-fab[disabled],.mat-mdc-extended-fab[disabled]:focus,.mat-mdc-extended-fab.mat-mdc-button-disabled,.mat-mdc-extended-fab.mat-mdc-button-disabled:focus{box-shadow:none}.mat-mdc-extended-fab.mat-mdc-button-disabled-interactive{pointer-events:auto}[dir=rtl] .mat-mdc-extended-fab .mdc-button__label+.mat-icon,[dir=rtl] .mat-mdc-extended-fab .mdc-button__label+.material-icons,.mat-mdc-extended-fab>.mat-icon,.mat-mdc-extended-fab>.material-icons{margin-left:-8px;margin-right:12px}.mat-mdc-extended-fab .mdc-button__label+.mat-icon,.mat-mdc-extended-fab .mdc-button__label+.material-icons,[dir=rtl] .mat-mdc-extended-fab>.mat-icon,[dir=rtl] .mat-mdc-extended-fab>.material-icons{margin-left:12px;margin-right:-8px}.mat-mdc-extended-fab .mat-mdc-button-touch-target{width:100%}";
-const _c8 = ["mat-icon-button", ""];
-const _c9 = ["*"];
-const _c10 = ".mat-mdc-icon-button{-webkit-user-select:none;user-select:none;display:inline-block;position:relative;box-sizing:border-box;border:none;outline:none;background-color:rgba(0,0,0,0);fill:currentColor;color:inherit;text-decoration:none;cursor:pointer;z-index:0;overflow:visible;border-radius:50%;flex-shrink:0;text-align:center;width:var(--mdc-icon-button-state-layer-size, 40px);height:var(--mdc-icon-button-state-layer-size, 40px);padding:calc(calc(var(--mdc-icon-button-state-layer-size, 40px) - var(--mdc-icon-button-icon-size, 24px)) / 2);font-size:var(--mdc-icon-button-icon-size, 24px);color:var(--mdc-icon-button-icon-color, var(--mat-sys-on-surface-variant));-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-icon-button .mat-mdc-button-ripple,.mat-mdc-icon-button .mat-mdc-button-persistent-ripple,.mat-mdc-icon-button .mat-mdc-button-persistent-ripple::before{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:inherit}.mat-mdc-icon-button .mat-mdc-button-ripple{overflow:hidden}.mat-mdc-icon-button .mat-mdc-button-persistent-ripple::before{content:\"\";opacity:0}.mat-mdc-icon-button .mdc-button__label,.mat-mdc-icon-button .mat-icon{z-index:1;position:relative}.mat-mdc-icon-button .mat-focus-indicator{top:0;left:0;right:0;bottom:0;position:absolute}.mat-mdc-icon-button:focus>.mat-focus-indicator::before{content:\"\"}.mat-mdc-icon-button .mat-ripple-element{background-color:var(--mat-icon-button-ripple-color, color-mix(in srgb, var(--mat-sys-on-surface-variant) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-icon-button .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-icon-button-state-layer-color, var(--mat-sys-on-surface-variant))}.mat-mdc-icon-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-icon-button-disabled-state-layer-color, var(--mat-sys-on-surface-variant))}.mat-mdc-icon-button:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-icon-button-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-icon-button.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-icon-button.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-icon-button.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-icon-button-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-icon-button:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-icon-button-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-icon-button .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;left:50%;width:48px;transform:translate(-50%, -50%);display:var(--mat-icon-button-touch-target-display, block)}.mat-mdc-icon-button._mat-animation-noopable{transition:none !important;animation:none !important}.mat-mdc-icon-button[disabled],.mat-mdc-icon-button.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mdc-icon-button-disabled-icon-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-icon-button.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-icon-button img,.mat-mdc-icon-button svg{width:var(--mdc-icon-button-icon-size, 24px);height:var(--mdc-icon-button-icon-size, 24px);vertical-align:baseline}.mat-mdc-icon-button .mat-mdc-button-persistent-ripple{border-radius:50%}.mat-mdc-icon-button[hidden]{display:none}.mat-mdc-icon-button.mat-unthemed:not(.mdc-ripple-upgraded):focus::before,.mat-mdc-icon-button.mat-primary:not(.mdc-ripple-upgraded):focus::before,.mat-mdc-icon-button.mat-accent:not(.mdc-ripple-upgraded):focus::before,.mat-mdc-icon-button.mat-warn:not(.mdc-ripple-upgraded):focus::before{background:rgba(0,0,0,0);opacity:1}";
+const _c0 = ["mat-icon-button", ""];
+const _c1 = ["*"];
 const MAT_BUTTON_CONFIG = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('MAT_BUTTON_CONFIG');
-/** Shared host configuration for all buttons */
-const MAT_BUTTON_HOST = {
-  '[attr.disabled]': '_getDisabledAttribute()',
-  '[attr.aria-disabled]': '_getAriaDisabled()',
-  '[class.mat-mdc-button-disabled]': 'disabled',
-  '[class.mat-mdc-button-disabled-interactive]': 'disabledInteractive',
-  '[class._mat-animation-noopable]': '_animationMode === "NoopAnimations"',
-  // MDC automatically applies the primary theme color to the button, but we want to support
-  // an unthemed version. If color is undefined, apply a CSS class that makes it easy to
-  // select and style this "theme".
-  '[class.mat-unthemed]': '!color',
-  // Add a class that applies to all buttons. This makes it easier to target if somebody
-  // wants to target all Material buttons.
-  '[class.mat-mdc-button-base]': 'true',
-  '[class]': 'color ? "mat-" + color : ""'
-};
-/** List of classes to add to buttons instances based on host attribute selector. */
-const HOST_SELECTOR_MDC_CLASS_PAIR = [{
-  attribute: 'mat-button',
-  mdcClasses: ['mdc-button', 'mat-mdc-button']
-}, {
-  attribute: 'mat-flat-button',
-  mdcClasses: ['mdc-button', 'mdc-button--unelevated', 'mat-mdc-unelevated-button']
-}, {
-  attribute: 'mat-raised-button',
-  mdcClasses: ['mdc-button', 'mdc-button--raised', 'mat-mdc-raised-button']
-}, {
-  attribute: 'mat-stroked-button',
-  mdcClasses: ['mdc-button', 'mdc-button--outlined', 'mat-mdc-outlined-button']
-}, {
-  attribute: 'mat-fab',
-  mdcClasses: ['mdc-fab', 'mat-mdc-fab-base', 'mat-mdc-fab']
-}, {
-  attribute: 'mat-mini-fab',
-  mdcClasses: ['mdc-fab', 'mat-mdc-fab-base', 'mdc-fab--mini', 'mat-mdc-mini-fab']
-}, {
-  attribute: 'mat-icon-button',
-  mdcClasses: ['mdc-icon-button', 'mat-mdc-icon-button']
-}];
-/** Base class for all buttons.  */
+function transformTabIndex(value) {
+  return value == null ? undefined : (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.numberAttribute)(value);
+}
+/** Base class for all buttons. */
 let MatButtonBase = /*#__PURE__*/(() => {
   class MatButtonBase {
     _elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
     _ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone);
-    _animationMode = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ANIMATION_MODULE_TYPE, {
+    _animationsDisabled = (0,_animation_DfMFjxHu_mjs__WEBPACK_IMPORTED_MODULE_3__._)();
+    _config = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(MAT_BUTTON_CONFIG, {
       optional: true
     });
     _focusMonitor = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_1__.FocusMonitor);
+    _cleanupClick;
+    _renderer = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2);
     /**
      * Handles the lazy creation of the MatButton ripple.
      * Used to improve initial load time of large applications.
      */
-    _rippleLoader = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_material_core__WEBPACK_IMPORTED_MODULE_2__.MatRippleLoader);
+    _rippleLoader = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_ripple_loader_BnMiRtmT_mjs__WEBPACK_IMPORTED_MODULE_4__.M);
+    /** Whether the button is set on an anchor node. */
+    _isAnchor;
     /** Whether this button is a FAB. Used to apply the correct class on the ripple. */
     _isFab = false;
     /**
      * Theme color of the button. This API is supported in M2 themes only, it has
-     * no effect in M3 themes. For color customization in M3, see https://material.angular.io/components/button/styling.
+     * no effect in M3 themes. For color customization in M3, see https://material.angular.dev/components/button/styling.
      *
      * For information on applying color variants in M3, see
-     * https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants
+     * https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants
      */
     color;
     /** Whether the ripple effect is disabled or not. */
@@ -130,7 +148,9 @@ let MatButtonBase = /*#__PURE__*/(() => {
     /**
      * Natively disabled buttons prevent focus and any pointer events from reaching the button.
      * In some scenarios this might not be desirable, because it can prevent users from finding out
-     * why the button is disabled (e.g. via tooltip).
+     * why the button is disabled (e.g. via tooltip). This is also useful for buttons that may
+     * become disabled when activated, which would cause focus to be transferred to the document
+     * body instead of remaining on the button.
      *
      * Enabling this input will change the button so that it is styled to be disabled and will be
      * marked as `aria-disabled`, but it will allow the button to receive events and focus.
@@ -139,33 +159,35 @@ let MatButtonBase = /*#__PURE__*/(() => {
      * meant to be tabbable and you have to prevent the button action (e.g. form submissions).
      */
     disabledInteractive;
+    /** Tab index for the button. */
+    tabIndex;
+    /**
+     * Backwards-compatibility input that handles pre-existing `[tabindex]` bindings.
+     * @docs-private
+     */
+    set _tabindex(value) {
+      this.tabIndex = value;
+    }
     constructor() {
-      (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_cdk_private__WEBPACK_IMPORTED_MODULE_3__._CdkPrivateStyleLoader).load(_angular_material_core__WEBPACK_IMPORTED_MODULE_2__._StructuralStylesLoader);
-      const config = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(MAT_BUTTON_CONFIG, {
-        optional: true
-      });
+      (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_cdk_private__WEBPACK_IMPORTED_MODULE_2__._CdkPrivateStyleLoader).load(_structural_styles_CObeNzjn_mjs__WEBPACK_IMPORTED_MODULE_5__._);
       const element = this._elementRef.nativeElement;
-      const classList = element.classList;
-      this.disabledInteractive = config?.disabledInteractive ?? false;
-      this.color = config?.color ?? null;
+      this._isAnchor = element.tagName === 'A';
+      this.disabledInteractive = this._config?.disabledInteractive ?? false;
+      this.color = this._config?.color ?? null;
       this._rippleLoader?.configureRipple(element, {
         className: 'mat-mdc-button-ripple'
       });
-      // For each of the variant selectors that is present in the button's host
-      // attributes, add the correct corresponding MDC classes.
-      for (const {
-        attribute,
-        mdcClasses
-      } of HOST_SELECTOR_MDC_CLASS_PAIR) {
-        if (element.hasAttribute(attribute)) {
-          classList.add(...mdcClasses);
-        }
-      }
     }
     ngAfterViewInit() {
       this._focusMonitor.monitor(this._elementRef, true);
+      // Some internal tests depend on the timing of this,
+      // otherwise we could bind it in the constructor.
+      if (this._isAnchor) {
+        this._setupAsAnchor();
+      }
     }
     ngOnDestroy() {
+      this._cleanupClick?.();
       this._focusMonitor.stopMonitoring(this._elementRef);
       this._rippleLoader?.destroyRipple(this._elementRef.nativeElement);
     }
@@ -181,6 +203,9 @@ let MatButtonBase = /*#__PURE__*/(() => {
       if (this.ariaDisabled != null) {
         return this.ariaDisabled;
       }
+      if (this._isAnchor) {
+        return this.disabled || null;
+      }
       return this.disabled && this.disabledInteractive ? true : null;
     }
     _getDisabledAttribute() {
@@ -189,492 +214,46 @@ let MatButtonBase = /*#__PURE__*/(() => {
     _updateRippleDisabled() {
       this._rippleLoader?.setDisabled(this._elementRef.nativeElement, this.disableRipple || this.disabled);
     }
+    _getTabIndex() {
+      if (this._isAnchor) {
+        return this.disabled && !this.disabledInteractive ? -1 : this.tabIndex;
+      }
+      return this.tabIndex;
+    }
+    _setupAsAnchor() {
+      this._cleanupClick = this._ngZone.runOutsideAngular(() => this._renderer.listen(this._elementRef.nativeElement, 'click', event => {
+        if (this.disabled) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+        }
+      }));
+    }
     static ɵfac = function MatButtonBase_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || MatButtonBase)();
     };
     static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
       type: MatButtonBase,
+      hostAttrs: [1, "mat-mdc-button-base"],
+      hostVars: 13,
+      hostBindings: function MatButtonBase_HostBindings(rf, ctx) {
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("disabled", ctx._getDisabledAttribute())("aria-disabled", ctx._getAriaDisabled())("tabindex", ctx._getTabIndex());
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.color ? "mat-" + ctx.color : "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-mdc-button-disabled", ctx.disabled)("mat-mdc-button-disabled-interactive", ctx.disabledInteractive)("mat-unthemed", !ctx.color)("_mat-animation-noopable", ctx._animationsDisabled);
+        }
+      },
       inputs: {
         color: "color",
         disableRipple: [2, "disableRipple", "disableRipple", _angular_core__WEBPACK_IMPORTED_MODULE_0__.booleanAttribute],
         disabled: [2, "disabled", "disabled", _angular_core__WEBPACK_IMPORTED_MODULE_0__.booleanAttribute],
         ariaDisabled: [2, "aria-disabled", "ariaDisabled", _angular_core__WEBPACK_IMPORTED_MODULE_0__.booleanAttribute],
-        disabledInteractive: [2, "disabledInteractive", "disabledInteractive", _angular_core__WEBPACK_IMPORTED_MODULE_0__.booleanAttribute]
-      },
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInputTransformsFeature"]]
+        disabledInteractive: [2, "disabledInteractive", "disabledInteractive", _angular_core__WEBPACK_IMPORTED_MODULE_0__.booleanAttribute],
+        tabIndex: [2, "tabIndex", "tabIndex", transformTabIndex],
+        _tabindex: [2, "tabindex", "_tabindex", transformTabIndex]
+      }
     });
   }
   return MatButtonBase;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-/** Shared host configuration for buttons using the `<a>` tag. */
-const MAT_ANCHOR_HOST = {
-  // Note that this is basically a noop on anchors,
-  // but it appears that some internal apps depend on it.
-  '[attr.disabled]': '_getDisabledAttribute()',
-  '[class.mat-mdc-button-disabled]': 'disabled',
-  '[class.mat-mdc-button-disabled-interactive]': 'disabledInteractive',
-  '[class._mat-animation-noopable]': '_animationMode === "NoopAnimations"',
-  // Note that we ignore the user-specified tabindex when it's disabled for
-  // consistency with the `mat-button` applied on native buttons where even
-  // though they have an index, they're not tabbable.
-  '[attr.tabindex]': 'disabled && !disabledInteractive ? -1 : tabIndex',
-  '[attr.aria-disabled]': '_getAriaDisabled()',
-  // MDC automatically applies the primary theme color to the button, but we want to support
-  // an unthemed version. If color is undefined, apply a CSS class that makes it easy to
-  // select and style this "theme".
-  '[class.mat-unthemed]': '!color',
-  // Add a class that applies to all buttons. This makes it easier to target if somebody
-  // wants to target all Material buttons.
-  '[class.mat-mdc-button-base]': 'true',
-  '[class]': 'color ? "mat-" + color : ""'
-};
-/**
- * Anchor button base.
- */
-let MatAnchorBase = /*#__PURE__*/(() => {
-  class MatAnchorBase extends MatButtonBase {
-    _renderer = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2);
-    _cleanupClick;
-    tabIndex;
-    ngOnInit() {
-      this._ngZone.runOutsideAngular(() => {
-        this._cleanupClick = this._renderer.listen(this._elementRef.nativeElement, 'click', this._haltDisabledEvents);
-      });
-    }
-    ngOnDestroy() {
-      super.ngOnDestroy();
-      this._cleanupClick?.();
-    }
-    _haltDisabledEvents = event => {
-      // A disabled button shouldn't apply any actions
-      if (this.disabled) {
-        event.preventDefault();
-        event.stopImmediatePropagation();
-      }
-    };
-    _getAriaDisabled() {
-      if (this.ariaDisabled != null) {
-        return this.ariaDisabled;
-      }
-      return this.disabled || null;
-    }
-    static ɵfac = /* @__PURE__ */(() => {
-      let ɵMatAnchorBase_BaseFactory;
-      return function MatAnchorBase_Factory(__ngFactoryType__) {
-        return (ɵMatAnchorBase_BaseFactory || (ɵMatAnchorBase_BaseFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetInheritedFactory"](MatAnchorBase)))(__ngFactoryType__ || MatAnchorBase);
-      };
-    })();
-    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-      type: MatAnchorBase,
-      inputs: {
-        tabIndex: [2, "tabIndex", "tabIndex", value => {
-          return value == null ? undefined : (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.numberAttribute)(value);
-        }]
-      },
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInputTransformsFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]]
-    });
-  }
-  return MatAnchorBase;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Material Design button component. Users interact with a button to perform an action.
- * See https://material.io/components/buttons
- *
- * The `MatButton` class applies to native button elements and captures the appearances for
- * "text button", "outlined button", and "contained button" per the Material Design
- * specification. `MatButton` additionally captures an additional "flat" appearance, which matches
- * "contained" but without elevation.
- */
-let MatButton = /*#__PURE__*/(() => {
-  class MatButton extends MatButtonBase {
-    static ɵfac = /* @__PURE__ */(() => {
-      let ɵMatButton_BaseFactory;
-      return function MatButton_Factory(__ngFactoryType__) {
-        return (ɵMatButton_BaseFactory || (ɵMatButton_BaseFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetInheritedFactory"](MatButton)))(__ngFactoryType__ || MatButton);
-      };
-    })();
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: MatButton,
-      selectors: [["button", "mat-button", ""], ["button", "mat-raised-button", ""], ["button", "mat-flat-button", ""], ["button", "mat-stroked-button", ""]],
-      hostVars: 14,
-      hostBindings: function MatButton_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("disabled", ctx._getDisabledAttribute())("aria-disabled", ctx._getAriaDisabled());
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.color ? "mat-" + ctx.color : "");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-mdc-button-disabled", ctx.disabled)("mat-mdc-button-disabled-interactive", ctx.disabledInteractive)("_mat-animation-noopable", ctx._animationMode === "NoopAnimations")("mat-unthemed", !ctx.color)("mat-mdc-button-base", true);
-        }
-      },
-      exportAs: ["matButton"],
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
-      attrs: _c0,
-      ngContentSelectors: _c2,
-      decls: 7,
-      vars: 4,
-      consts: [[1, "mat-mdc-button-persistent-ripple"], [1, "mdc-button__label"], [1, "mat-focus-indicator"], [1, "mat-mdc-button-touch-target"]],
-      template: function MatButton_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "span", 0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span", 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](3, 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](4, 2);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "span", 2)(6, "span", 3);
-        }
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mdc-button__ripple", !ctx._isFab)("mdc-fab__ripple", ctx._isFab);
-        }
-      },
-      styles: [".mat-mdc-button-base{text-decoration:none}.mdc-button{-webkit-user-select:none;user-select:none;position:relative;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-width:64px;border:none;outline:none;line-height:inherit;-webkit-appearance:none;overflow:visible;vertical-align:middle;background:rgba(0,0,0,0);padding:0 8px}.mdc-button::-moz-focus-inner{padding:0;border:0}.mdc-button:active{outline:none}.mdc-button:hover{cursor:pointer}.mdc-button:disabled{cursor:default;pointer-events:none}.mdc-button[hidden]{display:none}.mdc-button .mdc-button__label{position:relative}.mat-mdc-button{padding:0 var(--mat-text-button-horizontal-padding, 12px);height:var(--mdc-text-button-container-height, 40px);font-family:var(--mdc-text-button-label-text-font, var(--mat-sys-label-large-font));font-size:var(--mdc-text-button-label-text-size, var(--mat-sys-label-large-size));letter-spacing:var(--mdc-text-button-label-text-tracking, var(--mat-sys-label-large-tracking));text-transform:var(--mdc-text-button-label-text-transform);font-weight:var(--mdc-text-button-label-text-weight, var(--mat-sys-label-large-weight))}.mat-mdc-button,.mat-mdc-button .mdc-button__ripple{border-radius:var(--mdc-text-button-container-shape, var(--mat-sys-corner-full))}.mat-mdc-button:not(:disabled){color:var(--mdc-text-button-label-text-color, var(--mat-sys-primary))}.mat-mdc-button[disabled],.mat-mdc-button.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mdc-text-button-disabled-label-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-button.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-button:has(.material-icons,mat-icon,[matButtonIcon]){padding:0 var(--mat-text-button-with-icon-horizontal-padding, 16px)}.mat-mdc-button>.mat-icon{margin-right:var(--mat-text-button-icon-spacing, 8px);margin-left:var(--mat-text-button-icon-offset, -4px)}[dir=rtl] .mat-mdc-button>.mat-icon{margin-right:var(--mat-text-button-icon-offset, -4px);margin-left:var(--mat-text-button-icon-spacing, 8px)}.mat-mdc-button .mdc-button__label+.mat-icon{margin-right:var(--mat-text-button-icon-offset, -4px);margin-left:var(--mat-text-button-icon-spacing, 8px)}[dir=rtl] .mat-mdc-button .mdc-button__label+.mat-icon{margin-right:var(--mat-text-button-icon-spacing, 8px);margin-left:var(--mat-text-button-icon-offset, -4px)}.mat-mdc-button .mat-ripple-element{background-color:var(--mat-text-button-ripple-color, color-mix(in srgb, var(--mat-sys-primary) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-button .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-text-button-state-layer-color, var(--mat-sys-primary))}.mat-mdc-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-text-button-disabled-state-layer-color, var(--mat-sys-on-surface-variant))}.mat-mdc-button:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-text-button-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-button.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-button.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-button.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-text-button-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-button:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-text-button-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-button .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;left:0;right:0;transform:translateY(-50%);display:var(--mat-text-button-touch-target-display, block)}.mat-mdc-unelevated-button{transition:box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);height:var(--mdc-filled-button-container-height, 40px);font-family:var(--mdc-filled-button-label-text-font, var(--mat-sys-label-large-font));font-size:var(--mdc-filled-button-label-text-size, var(--mat-sys-label-large-size));letter-spacing:var(--mdc-filled-button-label-text-tracking, var(--mat-sys-label-large-tracking));text-transform:var(--mdc-filled-button-label-text-transform);font-weight:var(--mdc-filled-button-label-text-weight, var(--mat-sys-label-large-weight));padding:0 var(--mat-filled-button-horizontal-padding, 24px)}.mat-mdc-unelevated-button>.mat-icon{margin-right:var(--mat-filled-button-icon-spacing, 8px);margin-left:var(--mat-filled-button-icon-offset, -8px)}[dir=rtl] .mat-mdc-unelevated-button>.mat-icon{margin-right:var(--mat-filled-button-icon-offset, -8px);margin-left:var(--mat-filled-button-icon-spacing, 8px)}.mat-mdc-unelevated-button .mdc-button__label+.mat-icon{margin-right:var(--mat-filled-button-icon-offset, -8px);margin-left:var(--mat-filled-button-icon-spacing, 8px)}[dir=rtl] .mat-mdc-unelevated-button .mdc-button__label+.mat-icon{margin-right:var(--mat-filled-button-icon-spacing, 8px);margin-left:var(--mat-filled-button-icon-offset, -8px)}.mat-mdc-unelevated-button .mat-ripple-element{background-color:var(--mat-filled-button-ripple-color, color-mix(in srgb, var(--mat-sys-on-primary) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-unelevated-button .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-filled-button-state-layer-color, var(--mat-sys-on-primary))}.mat-mdc-unelevated-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-filled-button-disabled-state-layer-color, var(--mat-sys-on-surface-variant))}.mat-mdc-unelevated-button:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-filled-button-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-unelevated-button.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-unelevated-button.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-unelevated-button.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-filled-button-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-unelevated-button:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-filled-button-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-unelevated-button .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;left:0;right:0;transform:translateY(-50%);display:var(--mat-filled-button-touch-target-display, block)}.mat-mdc-unelevated-button:not(:disabled){color:var(--mdc-filled-button-label-text-color, var(--mat-sys-on-primary));background-color:var(--mdc-filled-button-container-color, var(--mat-sys-primary))}.mat-mdc-unelevated-button,.mat-mdc-unelevated-button .mdc-button__ripple{border-radius:var(--mdc-filled-button-container-shape, var(--mat-sys-corner-full))}.mat-mdc-unelevated-button[disabled],.mat-mdc-unelevated-button.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mdc-filled-button-disabled-label-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));background-color:var(--mdc-filled-button-disabled-container-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent))}.mat-mdc-unelevated-button.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-raised-button{transition:box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);box-shadow:var(--mdc-protected-button-container-elevation-shadow, var(--mat-sys-level1));height:var(--mdc-protected-button-container-height, 40px);font-family:var(--mdc-protected-button-label-text-font, var(--mat-sys-label-large-font));font-size:var(--mdc-protected-button-label-text-size, var(--mat-sys-label-large-size));letter-spacing:var(--mdc-protected-button-label-text-tracking, var(--mat-sys-label-large-tracking));text-transform:var(--mdc-protected-button-label-text-transform);font-weight:var(--mdc-protected-button-label-text-weight, var(--mat-sys-label-large-weight));padding:0 var(--mat-protected-button-horizontal-padding, 24px)}.mat-mdc-raised-button>.mat-icon{margin-right:var(--mat-protected-button-icon-spacing, 8px);margin-left:var(--mat-protected-button-icon-offset, -8px)}[dir=rtl] .mat-mdc-raised-button>.mat-icon{margin-right:var(--mat-protected-button-icon-offset, -8px);margin-left:var(--mat-protected-button-icon-spacing, 8px)}.mat-mdc-raised-button .mdc-button__label+.mat-icon{margin-right:var(--mat-protected-button-icon-offset, -8px);margin-left:var(--mat-protected-button-icon-spacing, 8px)}[dir=rtl] .mat-mdc-raised-button .mdc-button__label+.mat-icon{margin-right:var(--mat-protected-button-icon-spacing, 8px);margin-left:var(--mat-protected-button-icon-offset, -8px)}.mat-mdc-raised-button .mat-ripple-element{background-color:var(--mat-protected-button-ripple-color, color-mix(in srgb, var(--mat-sys-primary) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-raised-button .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-protected-button-state-layer-color, var(--mat-sys-primary))}.mat-mdc-raised-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-protected-button-disabled-state-layer-color, var(--mat-sys-on-surface-variant))}.mat-mdc-raised-button:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-protected-button-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-raised-button.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-raised-button.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-raised-button.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-protected-button-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-raised-button:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-protected-button-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-raised-button .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;left:0;right:0;transform:translateY(-50%);display:var(--mat-protected-button-touch-target-display, block)}.mat-mdc-raised-button:not(:disabled){color:var(--mdc-protected-button-label-text-color, var(--mat-sys-primary));background-color:var(--mdc-protected-button-container-color, var(--mat-sys-surface))}.mat-mdc-raised-button,.mat-mdc-raised-button .mdc-button__ripple{border-radius:var(--mdc-protected-button-container-shape, var(--mat-sys-corner-full))}.mat-mdc-raised-button:hover{box-shadow:var(--mdc-protected-button-hover-container-elevation-shadow, var(--mat-sys-level2))}.mat-mdc-raised-button:focus{box-shadow:var(--mdc-protected-button-focus-container-elevation-shadow, var(--mat-sys-level1))}.mat-mdc-raised-button:active,.mat-mdc-raised-button:focus:active{box-shadow:var(--mdc-protected-button-pressed-container-elevation-shadow, var(--mat-sys-level1))}.mat-mdc-raised-button[disabled],.mat-mdc-raised-button.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mdc-protected-button-disabled-label-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));background-color:var(--mdc-protected-button-disabled-container-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent))}.mat-mdc-raised-button[disabled].mat-mdc-button-disabled,.mat-mdc-raised-button.mat-mdc-button-disabled.mat-mdc-button-disabled{box-shadow:var(--mdc-protected-button-disabled-container-elevation-shadow, var(--mat-sys-level0))}.mat-mdc-raised-button.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-outlined-button{border-style:solid;transition:border 280ms cubic-bezier(0.4, 0, 0.2, 1);height:var(--mdc-outlined-button-container-height, 40px);font-family:var(--mdc-outlined-button-label-text-font, var(--mat-sys-label-large-font));font-size:var(--mdc-outlined-button-label-text-size, var(--mat-sys-label-large-size));letter-spacing:var(--mdc-outlined-button-label-text-tracking, var(--mat-sys-label-large-tracking));text-transform:var(--mdc-outlined-button-label-text-transform);font-weight:var(--mdc-outlined-button-label-text-weight, var(--mat-sys-label-large-weight));border-radius:var(--mdc-outlined-button-container-shape, var(--mat-sys-corner-full));border-width:var(--mdc-outlined-button-outline-width, 1px);padding:0 var(--mat-outlined-button-horizontal-padding, 24px)}.mat-mdc-outlined-button>.mat-icon{margin-right:var(--mat-outlined-button-icon-spacing, 8px);margin-left:var(--mat-outlined-button-icon-offset, -8px)}[dir=rtl] .mat-mdc-outlined-button>.mat-icon{margin-right:var(--mat-outlined-button-icon-offset, -8px);margin-left:var(--mat-outlined-button-icon-spacing, 8px)}.mat-mdc-outlined-button .mdc-button__label+.mat-icon{margin-right:var(--mat-outlined-button-icon-offset, -8px);margin-left:var(--mat-outlined-button-icon-spacing, 8px)}[dir=rtl] .mat-mdc-outlined-button .mdc-button__label+.mat-icon{margin-right:var(--mat-outlined-button-icon-spacing, 8px);margin-left:var(--mat-outlined-button-icon-offset, -8px)}.mat-mdc-outlined-button .mat-ripple-element{background-color:var(--mat-outlined-button-ripple-color, color-mix(in srgb, var(--mat-sys-primary) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-outlined-button .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-outlined-button-state-layer-color, var(--mat-sys-primary))}.mat-mdc-outlined-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-outlined-button-disabled-state-layer-color, var(--mat-sys-on-surface-variant))}.mat-mdc-outlined-button:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-outlined-button-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-outlined-button.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-outlined-button.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-outlined-button.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-outlined-button-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-outlined-button:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-outlined-button-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-outlined-button .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;left:0;right:0;transform:translateY(-50%);display:var(--mat-outlined-button-touch-target-display, block)}.mat-mdc-outlined-button:not(:disabled){color:var(--mdc-outlined-button-label-text-color, var(--mat-sys-primary));border-color:var(--mdc-outlined-button-outline-color, var(--mat-sys-outline))}.mat-mdc-outlined-button[disabled],.mat-mdc-outlined-button.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mdc-outlined-button-disabled-label-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));border-color:var(--mdc-outlined-button-disabled-outline-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent))}.mat-mdc-outlined-button.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-outlined-button .mdc-button__ripple{border-width:var(--mdc-outlined-button-outline-width, 1px);border-style:solid;border-color:rgba(0,0,0,0)}.mat-mdc-button,.mat-mdc-unelevated-button,.mat-mdc-raised-button,.mat-mdc-outlined-button{-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-button .mat-mdc-button-ripple,.mat-mdc-button .mat-mdc-button-persistent-ripple,.mat-mdc-button .mat-mdc-button-persistent-ripple::before,.mat-mdc-unelevated-button .mat-mdc-button-ripple,.mat-mdc-unelevated-button .mat-mdc-button-persistent-ripple,.mat-mdc-unelevated-button .mat-mdc-button-persistent-ripple::before,.mat-mdc-raised-button .mat-mdc-button-ripple,.mat-mdc-raised-button .mat-mdc-button-persistent-ripple,.mat-mdc-raised-button .mat-mdc-button-persistent-ripple::before,.mat-mdc-outlined-button .mat-mdc-button-ripple,.mat-mdc-outlined-button .mat-mdc-button-persistent-ripple,.mat-mdc-outlined-button .mat-mdc-button-persistent-ripple::before{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:inherit}.mat-mdc-button .mat-mdc-button-ripple,.mat-mdc-unelevated-button .mat-mdc-button-ripple,.mat-mdc-raised-button .mat-mdc-button-ripple,.mat-mdc-outlined-button .mat-mdc-button-ripple{overflow:hidden}.mat-mdc-button .mat-mdc-button-persistent-ripple::before,.mat-mdc-unelevated-button .mat-mdc-button-persistent-ripple::before,.mat-mdc-raised-button .mat-mdc-button-persistent-ripple::before,.mat-mdc-outlined-button .mat-mdc-button-persistent-ripple::before{content:\"\";opacity:0}.mat-mdc-button .mdc-button__label,.mat-mdc-button .mat-icon,.mat-mdc-unelevated-button .mdc-button__label,.mat-mdc-unelevated-button .mat-icon,.mat-mdc-raised-button .mdc-button__label,.mat-mdc-raised-button .mat-icon,.mat-mdc-outlined-button .mdc-button__label,.mat-mdc-outlined-button .mat-icon{z-index:1;position:relative}.mat-mdc-button .mat-focus-indicator,.mat-mdc-unelevated-button .mat-focus-indicator,.mat-mdc-raised-button .mat-focus-indicator,.mat-mdc-outlined-button .mat-focus-indicator{top:0;left:0;right:0;bottom:0;position:absolute}.mat-mdc-button:focus>.mat-focus-indicator::before,.mat-mdc-unelevated-button:focus>.mat-focus-indicator::before,.mat-mdc-raised-button:focus>.mat-focus-indicator::before,.mat-mdc-outlined-button:focus>.mat-focus-indicator::before{content:\"\"}.mat-mdc-button._mat-animation-noopable,.mat-mdc-unelevated-button._mat-animation-noopable,.mat-mdc-raised-button._mat-animation-noopable,.mat-mdc-outlined-button._mat-animation-noopable{transition:none !important;animation:none !important}.mat-mdc-button>.mat-icon,.mat-mdc-unelevated-button>.mat-icon,.mat-mdc-raised-button>.mat-icon,.mat-mdc-outlined-button>.mat-icon{display:inline-block;position:relative;vertical-align:top;font-size:1.125rem;height:1.125rem;width:1.125rem}.mat-mdc-outlined-button .mat-mdc-button-ripple,.mat-mdc-outlined-button .mdc-button__ripple{top:-1px;left:-1px;bottom:-1px;right:-1px}.mat-mdc-unelevated-button .mat-focus-indicator::before,.mat-mdc-raised-button .mat-focus-indicator::before{margin:calc(calc(var(--mat-focus-indicator-border-width, 3px) + 2px)*-1)}.mat-mdc-outlined-button .mat-focus-indicator::before{margin:calc(calc(var(--mat-focus-indicator-border-width, 3px) + 3px)*-1)}", "@media(forced-colors: active){.mat-mdc-button:not(.mdc-button--outlined),.mat-mdc-unelevated-button:not(.mdc-button--outlined),.mat-mdc-raised-button:not(.mdc-button--outlined),.mat-mdc-outlined-button:not(.mdc-button--outlined),.mat-mdc-icon-button.mat-mdc-icon-button{outline:solid 1px}}"],
-      encapsulation: 2,
-      changeDetection: 0
-    });
-  }
-  return MatButton;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-/**
- * Material Design button component for anchor elements. Anchor elements are used to provide
- * links for the user to navigate across different routes or pages.
- * See https://material.io/components/buttons
- *
- * The `MatAnchor` class applies to native anchor elements and captures the appearances for
- * "text button", "outlined button", and "contained button" per the Material Design
- * specification. `MatAnchor` additionally captures an additional "flat" appearance, which matches
- * "contained" but without elevation.
- */
-let MatAnchor = /*#__PURE__*/(() => {
-  class MatAnchor extends MatAnchorBase {
-    static ɵfac = /* @__PURE__ */(() => {
-      let ɵMatAnchor_BaseFactory;
-      return function MatAnchor_Factory(__ngFactoryType__) {
-        return (ɵMatAnchor_BaseFactory || (ɵMatAnchor_BaseFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetInheritedFactory"](MatAnchor)))(__ngFactoryType__ || MatAnchor);
-      };
-    })();
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: MatAnchor,
-      selectors: [["a", "mat-button", ""], ["a", "mat-raised-button", ""], ["a", "mat-flat-button", ""], ["a", "mat-stroked-button", ""]],
-      hostVars: 15,
-      hostBindings: function MatAnchor_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("disabled", ctx._getDisabledAttribute())("tabindex", ctx.disabled && !ctx.disabledInteractive ? -1 : ctx.tabIndex)("aria-disabled", ctx._getAriaDisabled());
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.color ? "mat-" + ctx.color : "");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-mdc-button-disabled", ctx.disabled)("mat-mdc-button-disabled-interactive", ctx.disabledInteractive)("_mat-animation-noopable", ctx._animationMode === "NoopAnimations")("mat-unthemed", !ctx.color)("mat-mdc-button-base", true);
-        }
-      },
-      exportAs: ["matButton", "matAnchor"],
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
-      attrs: _c0,
-      ngContentSelectors: _c2,
-      decls: 7,
-      vars: 4,
-      consts: [[1, "mat-mdc-button-persistent-ripple"], [1, "mdc-button__label"], [1, "mat-focus-indicator"], [1, "mat-mdc-button-touch-target"]],
-      template: function MatAnchor_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "span", 0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span", 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](3, 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](4, 2);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "span", 2)(6, "span", 3);
-        }
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mdc-button__ripple", !ctx._isFab)("mdc-fab__ripple", ctx._isFab);
-        }
-      },
-      styles: [_c3, _c4],
-      encapsulation: 2,
-      changeDetection: 0
-    });
-  }
-  return MatAnchor;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/** Injection token to be used to override the default options for FAB. */
-const MAT_FAB_DEFAULT_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('mat-mdc-fab-default-options', {
-  providedIn: 'root',
-  factory: MAT_FAB_DEFAULT_OPTIONS_FACTORY
-});
-/** @docs-private */
-function MAT_FAB_DEFAULT_OPTIONS_FACTORY() {
-  return {
-    // The FAB by default has its color set to accent.
-    color: 'accent'
-  };
-}
-// Default FAB configuration.
-const defaults = /*#__PURE__*/MAT_FAB_DEFAULT_OPTIONS_FACTORY();
-/**
- * Material Design floating action button (FAB) component. These buttons represent the primary
- * or most common action for users to interact with.
- * See https://material.io/components/buttons-floating-action-button/
- *
- * The `MatFabButton` class has two appearances: normal and extended.
- */
-let MatFabButton = /*#__PURE__*/(() => {
-  class MatFabButton extends MatButtonBase {
-    _options = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(MAT_FAB_DEFAULT_OPTIONS, {
-      optional: true
-    });
-    _isFab = true;
-    extended;
-    constructor() {
-      super();
-      this._options = this._options || defaults;
-      this.color = this._options.color || defaults.color;
-    }
-    static ɵfac = function MatFabButton_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || MatFabButton)();
-    };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: MatFabButton,
-      selectors: [["button", "mat-fab", ""]],
-      hostVars: 18,
-      hostBindings: function MatFabButton_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("disabled", ctx._getDisabledAttribute())("aria-disabled", ctx._getAriaDisabled());
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.color ? "mat-" + ctx.color : "");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-mdc-button-disabled", ctx.disabled)("mat-mdc-button-disabled-interactive", ctx.disabledInteractive)("_mat-animation-noopable", ctx._animationMode === "NoopAnimations")("mat-unthemed", !ctx.color)("mat-mdc-button-base", true)("mdc-fab--extended", ctx.extended)("mat-mdc-extended-fab", ctx.extended);
-        }
-      },
-      inputs: {
-        extended: [2, "extended", "extended", _angular_core__WEBPACK_IMPORTED_MODULE_0__.booleanAttribute]
-      },
-      exportAs: ["matButton"],
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInputTransformsFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
-      attrs: _c5,
-      ngContentSelectors: _c2,
-      decls: 7,
-      vars: 4,
-      consts: [[1, "mat-mdc-button-persistent-ripple"], [1, "mdc-button__label"], [1, "mat-focus-indicator"], [1, "mat-mdc-button-touch-target"]],
-      template: function MatFabButton_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "span", 0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span", 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](3, 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](4, 2);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "span", 2)(6, "span", 3);
-        }
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mdc-button__ripple", !ctx._isFab)("mdc-fab__ripple", ctx._isFab);
-        }
-      },
-      styles: [".mat-mdc-fab-base{-webkit-user-select:none;user-select:none;position:relative;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;width:56px;height:56px;padding:0;border:none;fill:currentColor;text-decoration:none;cursor:pointer;-moz-appearance:none;-webkit-appearance:none;overflow:visible;transition:box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),opacity 15ms linear 30ms,transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);flex-shrink:0;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-fab-base .mat-mdc-button-ripple,.mat-mdc-fab-base .mat-mdc-button-persistent-ripple,.mat-mdc-fab-base .mat-mdc-button-persistent-ripple::before{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:inherit}.mat-mdc-fab-base .mat-mdc-button-ripple{overflow:hidden}.mat-mdc-fab-base .mat-mdc-button-persistent-ripple::before{content:\"\";opacity:0}.mat-mdc-fab-base .mdc-button__label,.mat-mdc-fab-base .mat-icon{z-index:1;position:relative}.mat-mdc-fab-base .mat-focus-indicator{top:0;left:0;right:0;bottom:0;position:absolute}.mat-mdc-fab-base:focus>.mat-focus-indicator::before{content:\"\"}.mat-mdc-fab-base._mat-animation-noopable{transition:none !important;animation:none !important}.mat-mdc-fab-base::before{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;border:1px solid rgba(0,0,0,0);border-radius:inherit;content:\"\";pointer-events:none}.mat-mdc-fab-base[hidden]{display:none}.mat-mdc-fab-base::-moz-focus-inner{padding:0;border:0}.mat-mdc-fab-base:active,.mat-mdc-fab-base:focus{outline:none}.mat-mdc-fab-base:hover{cursor:pointer}.mat-mdc-fab-base>svg{width:100%}.mat-mdc-fab-base .mat-icon,.mat-mdc-fab-base .material-icons{transition:transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1);fill:currentColor;will-change:transform}.mat-mdc-fab-base .mat-focus-indicator::before{margin:calc(calc(var(--mat-focus-indicator-border-width, 3px) + 2px)*-1)}.mat-mdc-fab-base[disabled],.mat-mdc-fab-base.mat-mdc-button-disabled{cursor:default;pointer-events:none}.mat-mdc-fab-base[disabled],.mat-mdc-fab-base[disabled]:focus,.mat-mdc-fab-base.mat-mdc-button-disabled,.mat-mdc-fab-base.mat-mdc-button-disabled:focus{box-shadow:none}.mat-mdc-fab-base.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-fab{background-color:var(--mdc-fab-container-color, var(--mat-sys-primary-container));border-radius:var(--mdc-fab-container-shape, var(--mat-sys-corner-large));color:var(--mat-fab-foreground-color, var(--mat-sys-on-primary-container, inherit));box-shadow:var(--mdc-fab-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-fab:hover{box-shadow:var(--mdc-fab-hover-container-elevation-shadow, var(--mat-sys-level4))}.mat-mdc-fab:focus{box-shadow:var(--mdc-fab-focus-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-fab:active,.mat-mdc-fab:focus:active{box-shadow:var(--mdc-fab-pressed-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-fab[disabled],.mat-mdc-fab.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mat-fab-disabled-state-foreground-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));background-color:var(--mat-fab-disabled-state-container-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent))}.mat-mdc-fab.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-fab .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;left:50%;width:48px;transform:translate(-50%, -50%);display:var(--mat-fab-touch-target-display, block)}.mat-mdc-fab .mat-ripple-element{background-color:var(--mat-fab-ripple-color, color-mix(in srgb, var(--mat-sys-on-primary-container) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-fab .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-fab-state-layer-color, var(--mat-sys-on-primary-container))}.mat-mdc-fab.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-fab-disabled-state-layer-color)}.mat-mdc-fab:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-fab.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-fab.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-fab.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-fab:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-mini-fab{width:40px;height:40px;background-color:var(--mdc-fab-small-container-color, var(--mat-sys-primary-container));border-radius:var(--mdc-fab-small-container-shape, var(--mat-sys-corner-medium));color:var(--mat-fab-small-foreground-color, var(--mat-sys-on-primary-container, inherit));box-shadow:var(--mdc-fab-small-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-mini-fab:hover{box-shadow:var(--mdc-fab-small-hover-container-elevation-shadow, var(--mat-sys-level4))}.mat-mdc-mini-fab:focus{box-shadow:var(--mdc-fab-small-focus-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-mini-fab:active,.mat-mdc-mini-fab:focus:active{box-shadow:var(--mdc-fab-small-pressed-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-mini-fab[disabled],.mat-mdc-mini-fab.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mat-fab-small-disabled-state-foreground-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));background-color:var(--mat-fab-small-disabled-state-container-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent))}.mat-mdc-mini-fab.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-mini-fab .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;left:50%;width:48px;transform:translate(-50%, -50%);display:var(--mat-fab-small-touch-target-display)}.mat-mdc-mini-fab .mat-ripple-element{background-color:var(--mat-fab-small-ripple-color, color-mix(in srgb, var(--mat-sys-on-primary-container) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-mini-fab .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-fab-small-state-layer-color, var(--mat-sys-on-primary-container))}.mat-mdc-mini-fab.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-fab-small-disabled-state-layer-color)}.mat-mdc-mini-fab:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-small-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-mini-fab.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-mini-fab.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-mini-fab.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-small-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-mini-fab:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-small-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-extended-fab{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;border-radius:24px;padding-left:20px;padding-right:20px;width:auto;max-width:100%;line-height:normal;height:var(--mdc-extended-fab-container-height, 56px);border-radius:var(--mdc-extended-fab-container-shape, var(--mat-sys-corner-large));font-family:var(--mdc-extended-fab-label-text-font, var(--mat-sys-label-large-font));font-size:var(--mdc-extended-fab-label-text-size, var(--mat-sys-label-large-size));font-weight:var(--mdc-extended-fab-label-text-weight, var(--mat-sys-label-large-weight));letter-spacing:var(--mdc-extended-fab-label-text-tracking, var(--mat-sys-label-large-tracking));box-shadow:var(--mdc-extended-fab-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-extended-fab:hover{box-shadow:var(--mdc-extended-fab-hover-container-elevation-shadow, var(--mat-sys-level4))}.mat-mdc-extended-fab:focus{box-shadow:var(--mdc-extended-fab-focus-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-extended-fab:active,.mat-mdc-extended-fab:focus:active{box-shadow:var(--mdc-extended-fab-pressed-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-extended-fab[disabled],.mat-mdc-extended-fab.mat-mdc-button-disabled{cursor:default;pointer-events:none}.mat-mdc-extended-fab[disabled],.mat-mdc-extended-fab[disabled]:focus,.mat-mdc-extended-fab.mat-mdc-button-disabled,.mat-mdc-extended-fab.mat-mdc-button-disabled:focus{box-shadow:none}.mat-mdc-extended-fab.mat-mdc-button-disabled-interactive{pointer-events:auto}[dir=rtl] .mat-mdc-extended-fab .mdc-button__label+.mat-icon,[dir=rtl] .mat-mdc-extended-fab .mdc-button__label+.material-icons,.mat-mdc-extended-fab>.mat-icon,.mat-mdc-extended-fab>.material-icons{margin-left:-8px;margin-right:12px}.mat-mdc-extended-fab .mdc-button__label+.mat-icon,.mat-mdc-extended-fab .mdc-button__label+.material-icons,[dir=rtl] .mat-mdc-extended-fab>.mat-icon,[dir=rtl] .mat-mdc-extended-fab>.material-icons{margin-left:12px;margin-right:-8px}.mat-mdc-extended-fab .mat-mdc-button-touch-target{width:100%}"],
-      encapsulation: 2,
-      changeDetection: 0
-    });
-  }
-  return MatFabButton;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-/**
- * Material Design mini floating action button (FAB) component. These buttons represent the primary
- * or most common action for users to interact with.
- * See https://material.io/components/buttons-floating-action-button/
- */
-let MatMiniFabButton = /*#__PURE__*/(() => {
-  class MatMiniFabButton extends MatButtonBase {
-    _options = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(MAT_FAB_DEFAULT_OPTIONS, {
-      optional: true
-    });
-    _isFab = true;
-    constructor() {
-      super();
-      this._options = this._options || defaults;
-      this.color = this._options.color || defaults.color;
-    }
-    static ɵfac = function MatMiniFabButton_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || MatMiniFabButton)();
-    };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: MatMiniFabButton,
-      selectors: [["button", "mat-mini-fab", ""]],
-      hostVars: 14,
-      hostBindings: function MatMiniFabButton_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("disabled", ctx._getDisabledAttribute())("aria-disabled", ctx._getAriaDisabled());
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.color ? "mat-" + ctx.color : "");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-mdc-button-disabled", ctx.disabled)("mat-mdc-button-disabled-interactive", ctx.disabledInteractive)("_mat-animation-noopable", ctx._animationMode === "NoopAnimations")("mat-unthemed", !ctx.color)("mat-mdc-button-base", true);
-        }
-      },
-      exportAs: ["matButton"],
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
-      attrs: _c6,
-      ngContentSelectors: _c2,
-      decls: 7,
-      vars: 4,
-      consts: [[1, "mat-mdc-button-persistent-ripple"], [1, "mdc-button__label"], [1, "mat-focus-indicator"], [1, "mat-mdc-button-touch-target"]],
-      template: function MatMiniFabButton_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "span", 0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span", 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](3, 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](4, 2);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "span", 2)(6, "span", 3);
-        }
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mdc-button__ripple", !ctx._isFab)("mdc-fab__ripple", ctx._isFab);
-        }
-      },
-      styles: [_c7],
-      encapsulation: 2,
-      changeDetection: 0
-    });
-  }
-  return MatMiniFabButton;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-/**
- * Material Design floating action button (FAB) component for anchor elements. Anchor elements
- * are used to provide links for the user to navigate across different routes or pages.
- * See https://material.io/components/buttons-floating-action-button/
- *
- * The `MatFabAnchor` class has two appearances: normal and extended.
- */
-let MatFabAnchor = /*#__PURE__*/(() => {
-  class MatFabAnchor extends MatAnchor {
-    _options = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(MAT_FAB_DEFAULT_OPTIONS, {
-      optional: true
-    });
-    _isFab = true;
-    extended;
-    constructor() {
-      super();
-      this._options = this._options || defaults;
-      this.color = this._options.color || defaults.color;
-    }
-    static ɵfac = function MatFabAnchor_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || MatFabAnchor)();
-    };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: MatFabAnchor,
-      selectors: [["a", "mat-fab", ""]],
-      hostVars: 19,
-      hostBindings: function MatFabAnchor_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("disabled", ctx._getDisabledAttribute())("tabindex", ctx.disabled && !ctx.disabledInteractive ? -1 : ctx.tabIndex)("aria-disabled", ctx._getAriaDisabled());
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.color ? "mat-" + ctx.color : "");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-mdc-button-disabled", ctx.disabled)("mat-mdc-button-disabled-interactive", ctx.disabledInteractive)("_mat-animation-noopable", ctx._animationMode === "NoopAnimations")("mat-unthemed", !ctx.color)("mat-mdc-button-base", true)("mdc-fab--extended", ctx.extended)("mat-mdc-extended-fab", ctx.extended);
-        }
-      },
-      inputs: {
-        extended: [2, "extended", "extended", _angular_core__WEBPACK_IMPORTED_MODULE_0__.booleanAttribute]
-      },
-      exportAs: ["matButton", "matAnchor"],
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInputTransformsFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
-      attrs: _c5,
-      ngContentSelectors: _c2,
-      decls: 7,
-      vars: 4,
-      consts: [[1, "mat-mdc-button-persistent-ripple"], [1, "mdc-button__label"], [1, "mat-focus-indicator"], [1, "mat-mdc-button-touch-target"]],
-      template: function MatFabAnchor_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "span", 0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span", 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](3, 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](4, 2);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "span", 2)(6, "span", 3);
-        }
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mdc-button__ripple", !ctx._isFab)("mdc-fab__ripple", ctx._isFab);
-        }
-      },
-      styles: [_c7],
-      encapsulation: 2,
-      changeDetection: 0
-    });
-  }
-  return MatFabAnchor;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-/**
- * Material Design mini floating action button (FAB) component for anchor elements. Anchor elements
- * are used to provide links for the user to navigate across different routes or pages.
- * See https://material.io/components/buttons-floating-action-button/
- */
-let MatMiniFabAnchor = /*#__PURE__*/(() => {
-  class MatMiniFabAnchor extends MatAnchor {
-    _options = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(MAT_FAB_DEFAULT_OPTIONS, {
-      optional: true
-    });
-    _isFab = true;
-    constructor() {
-      super();
-      this._options = this._options || defaults;
-      this.color = this._options.color || defaults.color;
-    }
-    static ɵfac = function MatMiniFabAnchor_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || MatMiniFabAnchor)();
-    };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: MatMiniFabAnchor,
-      selectors: [["a", "mat-mini-fab", ""]],
-      hostVars: 15,
-      hostBindings: function MatMiniFabAnchor_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("disabled", ctx._getDisabledAttribute())("tabindex", ctx.disabled && !ctx.disabledInteractive ? -1 : ctx.tabIndex)("aria-disabled", ctx._getAriaDisabled());
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.color ? "mat-" + ctx.color : "");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-mdc-button-disabled", ctx.disabled)("mat-mdc-button-disabled-interactive", ctx.disabledInteractive)("_mat-animation-noopable", ctx._animationMode === "NoopAnimations")("mat-unthemed", !ctx.color)("mat-mdc-button-base", true);
-        }
-      },
-      exportAs: ["matButton", "matAnchor"],
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
-      attrs: _c6,
-      ngContentSelectors: _c2,
-      decls: 7,
-      vars: 4,
-      consts: [[1, "mat-mdc-button-persistent-ripple"], [1, "mdc-button__label"], [1, "mat-focus-indicator"], [1, "mat-mdc-button-touch-target"]],
-      template: function MatMiniFabAnchor_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "span", 0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span", 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](3, 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](4, 2);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "span", 2)(6, "span", 3);
-        }
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mdc-button__ripple", !ctx._isFab)("mdc-fab__ripple", ctx._isFab);
-        }
-      },
-      styles: [_c7],
-      encapsulation: 2,
-      changeDetection: 0
-    });
-  }
-  return MatMiniFabAnchor;
 })();
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
@@ -698,19 +277,12 @@ let MatIconButton = /*#__PURE__*/(() => {
     };
     static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: MatIconButton,
-      selectors: [["button", "mat-icon-button", ""]],
-      hostVars: 14,
-      hostBindings: function MatIconButton_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("disabled", ctx._getDisabledAttribute())("aria-disabled", ctx._getAriaDisabled());
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.color ? "mat-" + ctx.color : "");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-mdc-button-disabled", ctx.disabled)("mat-mdc-button-disabled-interactive", ctx.disabledInteractive)("_mat-animation-noopable", ctx._animationMode === "NoopAnimations")("mat-unthemed", !ctx.color)("mat-mdc-button-base", true);
-        }
-      },
-      exportAs: ["matButton"],
+      selectors: [["button", "mat-icon-button", ""], ["a", "mat-icon-button", ""], ["button", "matIconButton", ""], ["a", "matIconButton", ""]],
+      hostAttrs: [1, "mdc-icon-button", "mat-mdc-icon-button"],
+      exportAs: ["matButton", "matAnchor"],
       features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
-      attrs: _c8,
-      ngContentSelectors: _c9,
+      attrs: _c0,
+      ngContentSelectors: _c1,
       decls: 4,
       vars: 0,
       consts: [[1, "mat-mdc-button-persistent-ripple", "mdc-icon-button__ripple"], [1, "mat-focus-indicator"], [1, "mat-mdc-button-touch-target"]],
@@ -722,7 +294,7 @@ let MatIconButton = /*#__PURE__*/(() => {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "span", 1)(3, "span", 2);
         }
       },
-      styles: [".mat-mdc-icon-button{-webkit-user-select:none;user-select:none;display:inline-block;position:relative;box-sizing:border-box;border:none;outline:none;background-color:rgba(0,0,0,0);fill:currentColor;color:inherit;text-decoration:none;cursor:pointer;z-index:0;overflow:visible;border-radius:50%;flex-shrink:0;text-align:center;width:var(--mdc-icon-button-state-layer-size, 40px);height:var(--mdc-icon-button-state-layer-size, 40px);padding:calc(calc(var(--mdc-icon-button-state-layer-size, 40px) - var(--mdc-icon-button-icon-size, 24px)) / 2);font-size:var(--mdc-icon-button-icon-size, 24px);color:var(--mdc-icon-button-icon-color, var(--mat-sys-on-surface-variant));-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-icon-button .mat-mdc-button-ripple,.mat-mdc-icon-button .mat-mdc-button-persistent-ripple,.mat-mdc-icon-button .mat-mdc-button-persistent-ripple::before{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:inherit}.mat-mdc-icon-button .mat-mdc-button-ripple{overflow:hidden}.mat-mdc-icon-button .mat-mdc-button-persistent-ripple::before{content:\"\";opacity:0}.mat-mdc-icon-button .mdc-button__label,.mat-mdc-icon-button .mat-icon{z-index:1;position:relative}.mat-mdc-icon-button .mat-focus-indicator{top:0;left:0;right:0;bottom:0;position:absolute}.mat-mdc-icon-button:focus>.mat-focus-indicator::before{content:\"\"}.mat-mdc-icon-button .mat-ripple-element{background-color:var(--mat-icon-button-ripple-color, color-mix(in srgb, var(--mat-sys-on-surface-variant) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-icon-button .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-icon-button-state-layer-color, var(--mat-sys-on-surface-variant))}.mat-mdc-icon-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-icon-button-disabled-state-layer-color, var(--mat-sys-on-surface-variant))}.mat-mdc-icon-button:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-icon-button-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-icon-button.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-icon-button.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-icon-button.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-icon-button-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-icon-button:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-icon-button-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-icon-button .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;left:50%;width:48px;transform:translate(-50%, -50%);display:var(--mat-icon-button-touch-target-display, block)}.mat-mdc-icon-button._mat-animation-noopable{transition:none !important;animation:none !important}.mat-mdc-icon-button[disabled],.mat-mdc-icon-button.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mdc-icon-button-disabled-icon-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-icon-button.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-icon-button img,.mat-mdc-icon-button svg{width:var(--mdc-icon-button-icon-size, 24px);height:var(--mdc-icon-button-icon-size, 24px);vertical-align:baseline}.mat-mdc-icon-button .mat-mdc-button-persistent-ripple{border-radius:50%}.mat-mdc-icon-button[hidden]{display:none}.mat-mdc-icon-button.mat-unthemed:not(.mdc-ripple-upgraded):focus::before,.mat-mdc-icon-button.mat-primary:not(.mdc-ripple-upgraded):focus::before,.mat-mdc-icon-button.mat-accent:not(.mdc-ripple-upgraded):focus::before,.mat-mdc-icon-button.mat-warn:not(.mdc-ripple-upgraded):focus::before{background:rgba(0,0,0,0);opacity:1}", _c4],
+      styles: [".mat-mdc-icon-button{-webkit-user-select:none;user-select:none;display:inline-block;position:relative;box-sizing:border-box;border:none;outline:none;background-color:rgba(0,0,0,0);fill:currentColor;text-decoration:none;cursor:pointer;z-index:0;overflow:visible;border-radius:var(--mat-icon-button-container-shape, var(--mat-sys-corner-full, 50%));flex-shrink:0;text-align:center;width:var(--mat-icon-button-state-layer-size, 40px);height:var(--mat-icon-button-state-layer-size, 40px);padding:calc(calc(var(--mat-icon-button-state-layer-size, 40px) - var(--mat-icon-button-icon-size, 24px)) / 2);font-size:var(--mat-icon-button-icon-size, 24px);color:var(--mat-icon-button-icon-color, var(--mat-sys-on-surface-variant));-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-icon-button .mat-mdc-button-ripple,.mat-mdc-icon-button .mat-mdc-button-persistent-ripple,.mat-mdc-icon-button .mat-mdc-button-persistent-ripple::before{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:inherit}.mat-mdc-icon-button .mat-mdc-button-ripple{overflow:hidden}.mat-mdc-icon-button .mat-mdc-button-persistent-ripple::before{content:\"\";opacity:0}.mat-mdc-icon-button .mdc-button__label,.mat-mdc-icon-button .mat-icon{z-index:1;position:relative}.mat-mdc-icon-button .mat-focus-indicator{top:0;left:0;right:0;bottom:0;position:absolute;border-radius:inherit}.mat-mdc-icon-button:focus>.mat-focus-indicator::before{content:\"\";border-radius:inherit}.mat-mdc-icon-button .mat-ripple-element{background-color:var(--mat-icon-button-ripple-color, color-mix(in srgb, var(--mat-sys-on-surface-variant) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-icon-button .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-icon-button-state-layer-color, var(--mat-sys-on-surface-variant))}.mat-mdc-icon-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-icon-button-disabled-state-layer-color, var(--mat-sys-on-surface-variant))}.mat-mdc-icon-button:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-icon-button-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-icon-button.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-icon-button.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-icon-button.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-icon-button-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-icon-button:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-icon-button-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-icon-button .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;display:var(--mat-icon-button-touch-target-display, block);left:50%;width:48px;transform:translate(-50%, -50%)}.mat-mdc-icon-button._mat-animation-noopable{transition:none !important;animation:none !important}.mat-mdc-icon-button[disabled],.mat-mdc-icon-button.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mat-icon-button-disabled-icon-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-icon-button.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-icon-button img,.mat-mdc-icon-button svg{width:var(--mat-icon-button-icon-size, 24px);height:var(--mat-icon-button-icon-size, 24px);vertical-align:baseline}.mat-mdc-icon-button .mat-mdc-button-persistent-ripple{border-radius:var(--mat-icon-button-container-shape, var(--mat-sys-corner-full, 50%))}.mat-mdc-icon-button[hidden]{display:none}.mat-mdc-icon-button.mat-unthemed:not(.mdc-ripple-upgraded):focus::before,.mat-mdc-icon-button.mat-primary:not(.mdc-ripple-upgraded):focus::before,.mat-mdc-icon-button.mat-accent:not(.mdc-ripple-upgraded):focus::before,.mat-mdc-icon-button.mat-warn:not(.mdc-ripple-upgraded):focus::before{background:rgba(0,0,0,0);opacity:1}\n", "@media(forced-colors: active){.mat-mdc-button:not(.mdc-button--outlined),.mat-mdc-unelevated-button:not(.mdc-button--outlined),.mat-mdc-raised-button:not(.mdc-button--outlined),.mat-mdc-outlined-button:not(.mdc-button--outlined),.mat-mdc-button-base.mat-tonal-button,.mat-mdc-icon-button.mat-mdc-icon-button,.mat-mdc-outlined-button .mdc-button__ripple{outline:solid 1px}}\n"],
       encapsulation: 2,
       changeDetection: 0
     });
@@ -732,65 +304,1325 @@ let MatIconButton = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+// tslint:disable:variable-name
 /**
  * Material Design icon button component for anchor elements. This button displays a single
  * interaction icon that allows users to navigate across different routes or pages.
  * See https://material.io/develop/web/components/buttons/icon-buttons/
  */
-let MatIconAnchor = /*#__PURE__*/(() => {
-  class MatIconAnchor extends MatAnchorBase {
-    static ɵfac = /* @__PURE__ */(() => {
-      let ɵMatIconAnchor_BaseFactory;
-      return function MatIconAnchor_Factory(__ngFactoryType__) {
-        return (ɵMatIconAnchor_BaseFactory || (ɵMatIconAnchor_BaseFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetInheritedFactory"](MatIconAnchor)))(__ngFactoryType__ || MatIconAnchor);
-      };
-    })();
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: MatIconAnchor,
-      selectors: [["a", "mat-icon-button", ""]],
-      hostVars: 15,
-      hostBindings: function MatIconAnchor_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("disabled", ctx._getDisabledAttribute())("tabindex", ctx.disabled && !ctx.disabledInteractive ? -1 : ctx.tabIndex)("aria-disabled", ctx._getAriaDisabled());
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.color ? "mat-" + ctx.color : "");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-mdc-button-disabled", ctx.disabled)("mat-mdc-button-disabled-interactive", ctx.disabledInteractive)("_mat-animation-noopable", ctx._animationMode === "NoopAnimations")("mat-unthemed", !ctx.color)("mat-mdc-button-base", true);
+const MatIconAnchor = MatIconButton;
+
+
+/***/ }),
+
+/***/ 29968:
+/*!*********************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/ripple-BYgV4oZC.mjs ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   M: () => (/* binding */ MatRipple),
+/* harmony export */   R: () => (/* binding */ RippleRenderer),
+/* harmony export */   a: () => (/* binding */ MAT_RIPPLE_GLOBAL_OPTIONS),
+/* harmony export */   b: () => (/* binding */ RippleState),
+/* harmony export */   c: () => (/* binding */ RippleRef),
+/* harmony export */   d: () => (/* binding */ defaultRippleAnimationConfig)
+/* harmony export */ });
+/* harmony import */ var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/platform */ 49583);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/a11y */ 56593);
+/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/cdk/coercion */ 33981);
+/* harmony import */ var _angular_cdk_private__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/private */ 98959);
+/* harmony import */ var _animation_DfMFjxHu_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./animation-DfMFjxHu.mjs */ 73388);
+
+
+
+
+
+
+
+
+/** Possible states for a ripple element. */
+var RippleState = /*#__PURE__*/function (RippleState) {
+  RippleState[RippleState["FADING_IN"] = 0] = "FADING_IN";
+  RippleState[RippleState["VISIBLE"] = 1] = "VISIBLE";
+  RippleState[RippleState["FADING_OUT"] = 2] = "FADING_OUT";
+  RippleState[RippleState["HIDDEN"] = 3] = "HIDDEN";
+  return RippleState;
+}(RippleState || {});
+/**
+ * Reference to a previously launched ripple element.
+ */
+class RippleRef {
+  _renderer;
+  element;
+  config;
+  _animationForciblyDisabledThroughCss;
+  /** Current state of the ripple. */
+  state = RippleState.HIDDEN;
+  constructor(_renderer, /** Reference to the ripple HTML element. */
+  element, /** Ripple configuration used for the ripple. */
+  config, /* Whether animations are forcibly disabled for ripples through CSS. */
+  _animationForciblyDisabledThroughCss = false) {
+    this._renderer = _renderer;
+    this.element = element;
+    this.config = config;
+    this._animationForciblyDisabledThroughCss = _animationForciblyDisabledThroughCss;
+  }
+  /** Fades out the ripple element. */
+  fadeOut() {
+    this._renderer.fadeOutRipple(this);
+  }
+}
+
+/** Options used to bind a passive capturing event. */
+const passiveCapturingEventOptions$1 = /*#__PURE__*/(0,_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_0__.normalizePassiveListenerOptions)({
+  passive: true,
+  capture: true
+});
+/** Manages events through delegation so that as few event handlers as possible are bound. */
+class RippleEventManager {
+  _events = /*#__PURE__*/new Map();
+  /** Adds an event handler. */
+  addHandler(ngZone, name, element, handler) {
+    const handlersForEvent = this._events.get(name);
+    if (handlersForEvent) {
+      const handlersForElement = handlersForEvent.get(element);
+      if (handlersForElement) {
+        handlersForElement.add(handler);
+      } else {
+        handlersForEvent.set(element, new Set([handler]));
+      }
+    } else {
+      this._events.set(name, new Map([[element, new Set([handler])]]));
+      ngZone.runOutsideAngular(() => {
+        document.addEventListener(name, this._delegateEventHandler, passiveCapturingEventOptions$1);
+      });
+    }
+  }
+  /** Removes an event handler. */
+  removeHandler(name, element, handler) {
+    const handlersForEvent = this._events.get(name);
+    if (!handlersForEvent) {
+      return;
+    }
+    const handlersForElement = handlersForEvent.get(element);
+    if (!handlersForElement) {
+      return;
+    }
+    handlersForElement.delete(handler);
+    if (handlersForElement.size === 0) {
+      handlersForEvent.delete(element);
+    }
+    if (handlersForEvent.size === 0) {
+      this._events.delete(name);
+      document.removeEventListener(name, this._delegateEventHandler, passiveCapturingEventOptions$1);
+    }
+  }
+  /** Event handler that is bound and which dispatches the events to the different targets. */
+  _delegateEventHandler = event => {
+    const target = (0,_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_0__._getEventTarget)(event);
+    if (target) {
+      this._events.get(event.type)?.forEach((handlers, element) => {
+        if (element === target || element.contains(target)) {
+          handlers.forEach(handler => handler.handleEvent(event));
         }
-      },
-      exportAs: ["matButton", "matAnchor"],
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
-      attrs: _c8,
-      ngContentSelectors: _c9,
-      decls: 4,
+      });
+    }
+  };
+}
+
+/**
+ * Default ripple animation configuration for ripples without an explicit
+ * animation config specified.
+ */
+const defaultRippleAnimationConfig = {
+  enterDuration: 225,
+  exitDuration: 150
+};
+/**
+ * Timeout for ignoring mouse events. Mouse events will be temporary ignored after touch
+ * events to avoid synthetic mouse events.
+ */
+const ignoreMouseEventsTimeout = 800;
+/** Options used to bind a passive capturing event. */
+const passiveCapturingEventOptions = /*#__PURE__*/(0,_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_0__.normalizePassiveListenerOptions)({
+  passive: true,
+  capture: true
+});
+/** Events that signal that the pointer is down. */
+const pointerDownEvents = ['mousedown', 'touchstart'];
+/** Events that signal that the pointer is up. */
+const pointerUpEvents = ['mouseup', 'mouseleave', 'touchend', 'touchcancel'];
+let _MatRippleStylesLoader = /*#__PURE__*/(() => {
+  class _MatRippleStylesLoader {
+    static ɵfac = function _MatRippleStylesLoader_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _MatRippleStylesLoader)();
+    };
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+      type: _MatRippleStylesLoader,
+      selectors: [["ng-component"]],
+      hostAttrs: ["mat-ripple-style-loader", ""],
+      decls: 0,
       vars: 0,
-      consts: [[1, "mat-mdc-button-persistent-ripple", "mdc-icon-button__ripple"], [1, "mat-focus-indicator"], [1, "mat-mdc-button-touch-target"]],
-      template: function MatIconAnchor_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "span", 0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "span", 1)(3, "span", 2);
-        }
-      },
-      styles: [_c10, _c4],
+      template: function _MatRippleStylesLoader_Template(rf, ctx) {},
+      styles: [".mat-ripple{overflow:hidden;position:relative}.mat-ripple:not(:empty){transform:translateZ(0)}.mat-ripple.mat-ripple-unbounded{overflow:visible}.mat-ripple-element{position:absolute;border-radius:50%;pointer-events:none;transition:opacity,transform 0ms cubic-bezier(0, 0, 0.2, 1);transform:scale3d(0, 0, 0);background-color:var(--mat-ripple-color, color-mix(in srgb, var(--mat-sys-on-surface) 10%, transparent))}@media(forced-colors: active){.mat-ripple-element{display:none}}.cdk-drag-preview .mat-ripple-element,.cdk-drag-placeholder .mat-ripple-element{display:none}\n"],
       encapsulation: 2,
       changeDetection: 0
     });
   }
-  return MatIconAnchor;
+  return _MatRippleStylesLoader;
 })();
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+/**
+ * Helper service that performs DOM manipulations. Not intended to be used outside this module.
+ * The constructor takes a reference to the ripple directive's host element and a map of DOM
+ * event handlers to be installed on the element that triggers ripple animations.
+ * This will eventually become a custom renderer once Angular support exists.
+ * @docs-private
+ */
+class RippleRenderer {
+  _target;
+  _ngZone;
+  _platform;
+  /** Element where the ripples are being added to. */
+  _containerElement;
+  /** Element which triggers the ripple elements on mouse events. */
+  _triggerElement;
+  /** Whether the pointer is currently down or not. */
+  _isPointerDown = false;
+  /**
+   * Map of currently active ripple references.
+   * The ripple reference is mapped to its element event listeners.
+   * The reason why `| null` is used is that event listeners are added only
+   * when the condition is truthy (see the `_startFadeOutTransition` method).
+   */
+  _activeRipples = /*#__PURE__*/new Map();
+  /** Latest non-persistent ripple that was triggered. */
+  _mostRecentTransientRipple;
+  /** Time in milliseconds when the last touchstart event happened. */
+  _lastTouchStartEvent;
+  /** Whether pointer-up event listeners have been registered. */
+  _pointerUpEventsRegistered = false;
+  /**
+   * Cached dimensions of the ripple container. Set when the first
+   * ripple is shown and cleared once no more ripples are visible.
+   */
+  _containerRect;
+  static _eventManager = /*#__PURE__*/new RippleEventManager();
+  constructor(_target, _ngZone, elementOrElementRef, _platform, injector) {
+    this._target = _target;
+    this._ngZone = _ngZone;
+    this._platform = _platform;
+    // Only do anything if we're on the browser.
+    if (_platform.isBrowser) {
+      this._containerElement = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_3__.coerceElement)(elementOrElementRef);
+    }
+    if (injector) {
+      injector.get(_angular_cdk_private__WEBPACK_IMPORTED_MODULE_4__._CdkPrivateStyleLoader).load(_MatRippleStylesLoader);
+    }
+  }
+  /**
+   * Fades in a ripple at the given coordinates.
+   * @param x Coordinate within the element, along the X axis at which to start the ripple.
+   * @param y Coordinate within the element, along the Y axis at which to start the ripple.
+   * @param config Extra ripple options.
+   */
+  fadeInRipple(x, y, config = {}) {
+    const containerRect = this._containerRect = this._containerRect || this._containerElement.getBoundingClientRect();
+    const animationConfig = {
+      ...defaultRippleAnimationConfig,
+      ...config.animation
+    };
+    if (config.centered) {
+      x = containerRect.left + containerRect.width / 2;
+      y = containerRect.top + containerRect.height / 2;
+    }
+    const radius = config.radius || distanceToFurthestCorner(x, y, containerRect);
+    const offsetX = x - containerRect.left;
+    const offsetY = y - containerRect.top;
+    const enterDuration = animationConfig.enterDuration;
+    const ripple = document.createElement('div');
+    ripple.classList.add('mat-ripple-element');
+    ripple.style.left = `${offsetX - radius}px`;
+    ripple.style.top = `${offsetY - radius}px`;
+    ripple.style.height = `${radius * 2}px`;
+    ripple.style.width = `${radius * 2}px`;
+    // If a custom color has been specified, set it as inline style. If no color is
+    // set, the default color will be applied through the ripple theme styles.
+    if (config.color != null) {
+      ripple.style.backgroundColor = config.color;
+    }
+    ripple.style.transitionDuration = `${enterDuration}ms`;
+    this._containerElement.appendChild(ripple);
+    // By default the browser does not recalculate the styles of dynamically created
+    // ripple elements. This is critical to ensure that the `scale` animates properly.
+    // We enforce a style recalculation by calling `getComputedStyle` and *accessing* a property.
+    // See: https://gist.github.com/paulirish/5d52fb081b3570c81e3a
+    const computedStyles = window.getComputedStyle(ripple);
+    const userTransitionProperty = computedStyles.transitionProperty;
+    const userTransitionDuration = computedStyles.transitionDuration;
+    // Note: We detect whether animation is forcibly disabled through CSS (e.g. through
+    // `transition: none` or `display: none`). This is technically unexpected since animations are
+    // controlled through the animation config, but this exists for backwards compatibility. This
+    // logic does not need to be super accurate since it covers some edge cases which can be easily
+    // avoided by users.
+    const animationForciblyDisabledThroughCss = userTransitionProperty === 'none' ||
+    // Note: The canonical unit for serialized CSS `<time>` properties is seconds. Additionally
+    // some browsers expand the duration for every property (in our case `opacity` and `transform`).
+    userTransitionDuration === '0s' || userTransitionDuration === '0s, 0s' ||
+    // If the container is 0x0, it's likely `display: none`.
+    containerRect.width === 0 && containerRect.height === 0;
+    // Exposed reference to the ripple that will be returned.
+    const rippleRef = new RippleRef(this, ripple, config, animationForciblyDisabledThroughCss);
+    // Start the enter animation by setting the transform/scale to 100%. The animation will
+    // execute as part of this statement because we forced a style recalculation before.
+    // Note: We use a 3d transform here in order to avoid an issue in Safari where
+    // the ripples aren't clipped when inside the shadow DOM (see #24028).
+    ripple.style.transform = 'scale3d(1, 1, 1)';
+    rippleRef.state = RippleState.FADING_IN;
+    if (!config.persistent) {
+      this._mostRecentTransientRipple = rippleRef;
+    }
+    let eventListeners = null;
+    // Do not register the `transition` event listener if fade-in and fade-out duration
+    // are set to zero. The events won't fire anyway and we can save resources here.
+    if (!animationForciblyDisabledThroughCss && (enterDuration || animationConfig.exitDuration)) {
+      this._ngZone.runOutsideAngular(() => {
+        const onTransitionEnd = () => {
+          // Clear the fallback timer since the transition fired correctly.
+          if (eventListeners) {
+            eventListeners.fallbackTimer = null;
+          }
+          clearTimeout(fallbackTimer);
+          this._finishRippleTransition(rippleRef);
+        };
+        const onTransitionCancel = () => this._destroyRipple(rippleRef);
+        // In some cases where there's a higher load on the browser, it can choose not to dispatch
+        // neither `transitionend` nor `transitioncancel` (see b/227356674). This timer serves as a
+        // fallback for such cases so that the ripple doesn't become stuck. We add a 100ms buffer
+        // because timers aren't precise. Note that another approach can be to transition the ripple
+        // to the `VISIBLE` state immediately above and to `FADING_IN` afterwards inside
+        // `transitionstart`. We go with the timer because it's one less event listener and
+        // it's less likely to break existing tests.
+        const fallbackTimer = setTimeout(onTransitionCancel, enterDuration + 100);
+        ripple.addEventListener('transitionend', onTransitionEnd);
+        // If the transition is cancelled (e.g. due to DOM removal), we destroy the ripple
+        // directly as otherwise we would keep it part of the ripple container forever.
+        // https://www.w3.org/TR/css-transitions-1/#:~:text=no%20longer%20in%20the%20document.
+        ripple.addEventListener('transitioncancel', onTransitionCancel);
+        eventListeners = {
+          onTransitionEnd,
+          onTransitionCancel,
+          fallbackTimer
+        };
+      });
+    }
+    // Add the ripple reference to the list of all active ripples.
+    this._activeRipples.set(rippleRef, eventListeners);
+    // In case there is no fade-in transition duration, we need to manually call the transition
+    // end listener because `transitionend` doesn't fire if there is no transition.
+    if (animationForciblyDisabledThroughCss || !enterDuration) {
+      this._finishRippleTransition(rippleRef);
+    }
+    return rippleRef;
+  }
+  /** Fades out a ripple reference. */
+  fadeOutRipple(rippleRef) {
+    // For ripples already fading out or hidden, this should be a noop.
+    if (rippleRef.state === RippleState.FADING_OUT || rippleRef.state === RippleState.HIDDEN) {
+      return;
+    }
+    const rippleEl = rippleRef.element;
+    const animationConfig = {
+      ...defaultRippleAnimationConfig,
+      ...rippleRef.config.animation
+    };
+    // This starts the fade-out transition and will fire the transition end listener that
+    // removes the ripple element from the DOM.
+    rippleEl.style.transitionDuration = `${animationConfig.exitDuration}ms`;
+    rippleEl.style.opacity = '0';
+    rippleRef.state = RippleState.FADING_OUT;
+    // In case there is no fade-out transition duration, we need to manually call the
+    // transition end listener because `transitionend` doesn't fire if there is no transition.
+    if (rippleRef._animationForciblyDisabledThroughCss || !animationConfig.exitDuration) {
+      this._finishRippleTransition(rippleRef);
+    }
+  }
+  /** Fades out all currently active ripples. */
+  fadeOutAll() {
+    this._getActiveRipples().forEach(ripple => ripple.fadeOut());
+  }
+  /** Fades out all currently active non-persistent ripples. */
+  fadeOutAllNonPersistent() {
+    this._getActiveRipples().forEach(ripple => {
+      if (!ripple.config.persistent) {
+        ripple.fadeOut();
+      }
+    });
+  }
+  /** Sets up the trigger event listeners */
+  setupTriggerEvents(elementOrElementRef) {
+    const element = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_3__.coerceElement)(elementOrElementRef);
+    if (!this._platform.isBrowser || !element || element === this._triggerElement) {
+      return;
+    }
+    // Remove all previously registered event listeners from the trigger element.
+    this._removeTriggerEvents();
+    this._triggerElement = element;
+    // Use event delegation for the trigger events since they're
+    // set up during creation and are performance-sensitive.
+    pointerDownEvents.forEach(type => {
+      RippleRenderer._eventManager.addHandler(this._ngZone, type, element, this);
+    });
+  }
+  /**
+   * Handles all registered events.
+   * @docs-private
+   */
+  handleEvent(event) {
+    if (event.type === 'mousedown') {
+      this._onMousedown(event);
+    } else if (event.type === 'touchstart') {
+      this._onTouchStart(event);
+    } else {
+      this._onPointerUp();
+    }
+    // If pointer-up events haven't been registered yet, do so now.
+    // We do this on-demand in order to reduce the total number of event listeners
+    // registered by the ripples, which speeds up the rendering time for large UIs.
+    if (!this._pointerUpEventsRegistered) {
+      // The events for hiding the ripple are bound directly on the trigger, because:
+      // 1. Some of them occur frequently (e.g. `mouseleave`) and any advantage we get from
+      // delegation will be diminished by having to look through all the data structures often.
+      // 2. They aren't as performance-sensitive, because they're bound only after the user
+      // has interacted with an element.
+      this._ngZone.runOutsideAngular(() => {
+        pointerUpEvents.forEach(type => {
+          this._triggerElement.addEventListener(type, this, passiveCapturingEventOptions);
+        });
+      });
+      this._pointerUpEventsRegistered = true;
+    }
+  }
+  /** Method that will be called if the fade-in or fade-in transition completed. */
+  _finishRippleTransition(rippleRef) {
+    if (rippleRef.state === RippleState.FADING_IN) {
+      this._startFadeOutTransition(rippleRef);
+    } else if (rippleRef.state === RippleState.FADING_OUT) {
+      this._destroyRipple(rippleRef);
+    }
+  }
+  /**
+   * Starts the fade-out transition of the given ripple if it's not persistent and the pointer
+   * is not held down anymore.
+   */
+  _startFadeOutTransition(rippleRef) {
+    const isMostRecentTransientRipple = rippleRef === this._mostRecentTransientRipple;
+    const {
+      persistent
+    } = rippleRef.config;
+    rippleRef.state = RippleState.VISIBLE;
+    // When the timer runs out while the user has kept their pointer down, we want to
+    // keep only the persistent ripples and the latest transient ripple. We do this,
+    // because we don't want stacked transient ripples to appear after their enter
+    // animation has finished.
+    if (!persistent && (!isMostRecentTransientRipple || !this._isPointerDown)) {
+      rippleRef.fadeOut();
+    }
+  }
+  /** Destroys the given ripple by removing it from the DOM and updating its state. */
+  _destroyRipple(rippleRef) {
+    const eventListeners = this._activeRipples.get(rippleRef) ?? null;
+    this._activeRipples.delete(rippleRef);
+    // Clear out the cached bounding rect if we have no more ripples.
+    if (!this._activeRipples.size) {
+      this._containerRect = null;
+    }
+    // If the current ref is the most recent transient ripple, unset it
+    // avoid memory leaks.
+    if (rippleRef === this._mostRecentTransientRipple) {
+      this._mostRecentTransientRipple = null;
+    }
+    rippleRef.state = RippleState.HIDDEN;
+    if (eventListeners !== null) {
+      rippleRef.element.removeEventListener('transitionend', eventListeners.onTransitionEnd);
+      rippleRef.element.removeEventListener('transitioncancel', eventListeners.onTransitionCancel);
+      if (eventListeners.fallbackTimer !== null) {
+        clearTimeout(eventListeners.fallbackTimer);
+      }
+    }
+    rippleRef.element.remove();
+  }
+  /** Function being called whenever the trigger is being pressed using mouse. */
+  _onMousedown(event) {
+    // Screen readers will fire fake mouse events for space/enter. Skip launching a
+    // ripple in this case for consistency with the non-screen-reader experience.
+    const isFakeMousedown = (0,_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__.isFakeMousedownFromScreenReader)(event);
+    const isSyntheticEvent = this._lastTouchStartEvent && Date.now() < this._lastTouchStartEvent + ignoreMouseEventsTimeout;
+    if (!this._target.rippleDisabled && !isFakeMousedown && !isSyntheticEvent) {
+      this._isPointerDown = true;
+      this.fadeInRipple(event.clientX, event.clientY, this._target.rippleConfig);
+    }
+  }
+  /** Function being called whenever the trigger is being pressed using touch. */
+  _onTouchStart(event) {
+    if (!this._target.rippleDisabled && !(0,_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__.isFakeTouchstartFromScreenReader)(event)) {
+      // Some browsers fire mouse events after a `touchstart` event. Those synthetic mouse
+      // events will launch a second ripple if we don't ignore mouse events for a specific
+      // time after a touchstart event.
+      this._lastTouchStartEvent = Date.now();
+      this._isPointerDown = true;
+      // Use `changedTouches` so we skip any touches where the user put
+      // their finger down, but used another finger to tap the element again.
+      const touches = event.changedTouches;
+      // According to the typings the touches should always be defined, but in some cases
+      // the browser appears to not assign them in tests which leads to flakes.
+      if (touches) {
+        for (let i = 0; i < touches.length; i++) {
+          this.fadeInRipple(touches[i].clientX, touches[i].clientY, this._target.rippleConfig);
+        }
+      }
+    }
+  }
+  /** Function being called whenever the trigger is being released. */
+  _onPointerUp() {
+    if (!this._isPointerDown) {
+      return;
+    }
+    this._isPointerDown = false;
+    // Fade-out all ripples that are visible and not persistent.
+    this._getActiveRipples().forEach(ripple => {
+      // By default, only ripples that are completely visible will fade out on pointer release.
+      // If the `terminateOnPointerUp` option is set, ripples that still fade in will also fade out.
+      const isVisible = ripple.state === RippleState.VISIBLE || ripple.config.terminateOnPointerUp && ripple.state === RippleState.FADING_IN;
+      if (!ripple.config.persistent && isVisible) {
+        ripple.fadeOut();
+      }
+    });
+  }
+  _getActiveRipples() {
+    return Array.from(this._activeRipples.keys());
+  }
+  /** Removes previously registered event listeners from the trigger element. */
+  _removeTriggerEvents() {
+    const trigger = this._triggerElement;
+    if (trigger) {
+      pointerDownEvents.forEach(type => RippleRenderer._eventManager.removeHandler(type, trigger, this));
+      if (this._pointerUpEventsRegistered) {
+        pointerUpEvents.forEach(type => trigger.removeEventListener(type, this, passiveCapturingEventOptions));
+        this._pointerUpEventsRegistered = false;
+      }
+    }
+  }
+}
+/**
+ * Returns the distance from the point (x, y) to the furthest corner of a rectangle.
+ */
+function distanceToFurthestCorner(x, y, rect) {
+  const distX = Math.max(Math.abs(x - rect.left), Math.abs(x - rect.right));
+  const distY = Math.max(Math.abs(y - rect.top), Math.abs(y - rect.bottom));
+  return Math.sqrt(distX * distX + distY * distY);
+}
+
+/** Injection token that can be used to specify the global ripple options. */
+const MAT_RIPPLE_GLOBAL_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('mat-ripple-global-options');
+let MatRipple = /*#__PURE__*/(() => {
+  class MatRipple {
+    _elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ElementRef);
+    _animationsDisabled = (0,_animation_DfMFjxHu_mjs__WEBPACK_IMPORTED_MODULE_5__._)();
+    /** Custom color for all ripples. */
+    color;
+    /** Whether the ripples should be visible outside the component's bounds. */
+    unbounded;
+    /**
+     * Whether the ripple always originates from the center of the host element's bounds, rather
+     * than originating from the location of the click event.
+     */
+    centered;
+    /**
+     * If set, the radius in pixels of foreground ripples when fully expanded. If unset, the radius
+     * will be the distance from the center of the ripple to the furthest corner of the host element's
+     * bounding rectangle.
+     */
+    radius = 0;
+    /**
+     * Configuration for the ripple animation. Allows modifying the enter and exit animation
+     * duration of the ripples. The animation durations will be overwritten if the
+     * `NoopAnimationsModule` is being used.
+     */
+    animation;
+    /**
+     * Whether click events will not trigger the ripple. Ripples can be still launched manually
+     * by using the `launch()` method.
+     */
+    get disabled() {
+      return this._disabled;
+    }
+    set disabled(value) {
+      if (value) {
+        this.fadeOutAllNonPersistent();
+      }
+      this._disabled = value;
+      this._setupTriggerEventsIfEnabled();
+    }
+    _disabled = false;
+    /**
+     * The element that triggers the ripple when click events are received.
+     * Defaults to the directive's host element.
+     */
+    get trigger() {
+      return this._trigger || this._elementRef.nativeElement;
+    }
+    set trigger(trigger) {
+      this._trigger = trigger;
+      this._setupTriggerEventsIfEnabled();
+    }
+    _trigger;
+    /** Renderer for the ripple DOM manipulations. */
+    _rippleRenderer;
+    /** Options that are set globally for all ripples. */
+    _globalOptions;
+    /** @docs-private Whether ripple directive is initialized and the input bindings are set. */
+    _isInitialized = false;
+    constructor() {
+      const ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.NgZone);
+      const platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_0__.Platform);
+      const globalOptions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(MAT_RIPPLE_GLOBAL_OPTIONS, {
+        optional: true
+      });
+      const injector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injector);
+      // Note: cannot use `inject()` here, because this class
+      // gets instantiated manually in the ripple loader.
+      this._globalOptions = globalOptions || {};
+      this._rippleRenderer = new RippleRenderer(this, ngZone, this._elementRef, platform, injector);
+    }
+    ngOnInit() {
+      this._isInitialized = true;
+      this._setupTriggerEventsIfEnabled();
+    }
+    ngOnDestroy() {
+      this._rippleRenderer._removeTriggerEvents();
+    }
+    /** Fades out all currently showing ripple elements. */
+    fadeOutAll() {
+      this._rippleRenderer.fadeOutAll();
+    }
+    /** Fades out all currently showing non-persistent ripple elements. */
+    fadeOutAllNonPersistent() {
+      this._rippleRenderer.fadeOutAllNonPersistent();
+    }
+    /**
+     * Ripple configuration from the directive's input values.
+     * @docs-private Implemented as part of RippleTarget
+     */
+    get rippleConfig() {
+      return {
+        centered: this.centered,
+        radius: this.radius,
+        color: this.color,
+        animation: {
+          ...this._globalOptions.animation,
+          ...(this._animationsDisabled ? {
+            enterDuration: 0,
+            exitDuration: 0
+          } : {}),
+          ...this.animation
+        },
+        terminateOnPointerUp: this._globalOptions.terminateOnPointerUp
+      };
+    }
+    /**
+     * Whether ripples on pointer-down are disabled or not.
+     * @docs-private Implemented as part of RippleTarget
+     */
+    get rippleDisabled() {
+      return this.disabled || !!this._globalOptions.disabled;
+    }
+    /** Sets up the trigger event listeners if ripples are enabled. */
+    _setupTriggerEventsIfEnabled() {
+      if (!this.disabled && this._isInitialized) {
+        this._rippleRenderer.setupTriggerEvents(this.trigger);
+      }
+    }
+    /** Launches a manual ripple at the specified coordinated or just by the ripple config. */
+    launch(configOrX, y = 0, config) {
+      if (typeof configOrX === 'number') {
+        return this._rippleRenderer.fadeInRipple(configOrX, y, {
+          ...this.rippleConfig,
+          ...config
+        });
+      } else {
+        return this._rippleRenderer.fadeInRipple(0, 0, {
+          ...this.rippleConfig,
+          ...configOrX
+        });
+      }
+    }
+    static ɵfac = function MatRipple_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || MatRipple)();
+    };
+    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
+      type: MatRipple,
+      selectors: [["", "mat-ripple", ""], ["", "matRipple", ""]],
+      hostAttrs: [1, "mat-ripple"],
+      hostVars: 2,
+      hostBindings: function MatRipple_HostBindings(rf, ctx) {
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassProp"]("mat-ripple-unbounded", ctx.unbounded);
+        }
+      },
+      inputs: {
+        color: [0, "matRippleColor", "color"],
+        unbounded: [0, "matRippleUnbounded", "unbounded"],
+        centered: [0, "matRippleCentered", "centered"],
+        radius: [0, "matRippleRadius", "radius"],
+        animation: [0, "matRippleAnimation", "animation"],
+        disabled: [0, "matRippleDisabled", "disabled"],
+        trigger: [0, "matRippleTrigger", "trigger"]
+      },
+      exportAs: ["matRipple"]
+    });
+  }
+  return MatRipple;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+
+/***/ }),
+
+/***/ 36987:
+/*!****************************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/ripple-loader-BnMiRtmT.mjs ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   M: () => (/* binding */ MatRippleLoader)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/platform */ 49583);
+/* harmony import */ var _animation_DfMFjxHu_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./animation-DfMFjxHu.mjs */ 73388);
+/* harmony import */ var _ripple_BYgV4oZC_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ripple-BYgV4oZC.mjs */ 29968);
+
+
+
+
+
+
+/** The options for the MatRippleLoader's event listeners. */
+const eventListenerOptions = {
+  capture: true
+};
+/**
+ * The events that should trigger the initialization of the ripple.
+ * Note that we use `mousedown`, rather than `click`, for mouse devices because
+ * we can't rely on `mouseenter` in the shadow DOM and `click` happens too late.
+ */
+const rippleInteractionEvents = ['focus', 'mousedown', 'mouseenter', 'touchstart'];
+/** The attribute attached to a component whose ripple has not yet been initialized. */
+const matRippleUninitialized = 'mat-ripple-loader-uninitialized';
+/** Additional classes that should be added to the ripple when it is rendered. */
+const matRippleClassName = 'mat-ripple-loader-class-name';
+/** Whether the ripple should be centered. */
+const matRippleCentered = 'mat-ripple-loader-centered';
+/** Whether the ripple should be disabled. */
+const matRippleDisabled = 'mat-ripple-loader-disabled';
+/**
+ * Handles attaching ripples on demand.
+ *
+ * This service allows us to avoid eagerly creating & attaching MatRipples.
+ * It works by creating & attaching a ripple only when a component is first interacted with.
+ *
+ * @docs-private
+ */
+let MatRippleLoader = /*#__PURE__*/(() => {
+  class MatRippleLoader {
+    _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT);
+    _animationsDisabled = (0,_animation_DfMFjxHu_mjs__WEBPACK_IMPORTED_MODULE_2__._)();
+    _globalRippleOptions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_ripple_BYgV4oZC_mjs__WEBPACK_IMPORTED_MODULE_3__.a, {
+      optional: true
+    });
+    _platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_1__.Platform);
+    _ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone);
+    _injector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Injector);
+    _eventCleanups;
+    _hosts = new Map();
+    constructor() {
+      const renderer = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.RendererFactory2).createRenderer(null, null);
+      this._eventCleanups = this._ngZone.runOutsideAngular(() => rippleInteractionEvents.map(name => renderer.listen(this._document, name, this._onInteraction, eventListenerOptions)));
+    }
+    ngOnDestroy() {
+      const hosts = this._hosts.keys();
+      for (const host of hosts) {
+        this.destroyRipple(host);
+      }
+      this._eventCleanups.forEach(cleanup => cleanup());
+    }
+    /**
+     * Configures the ripple that will be rendered by the ripple loader.
+     *
+     * Stores the given information about how the ripple should be configured on the host
+     * element so that it can later be retrived & used when the ripple is actually created.
+     */
+    configureRipple(host, config) {
+      // Indicates that the ripple has not yet been rendered for this component.
+      host.setAttribute(matRippleUninitialized, this._globalRippleOptions?.namespace ?? '');
+      // Store the additional class name(s) that should be added to the ripple element.
+      if (config.className || !host.hasAttribute(matRippleClassName)) {
+        host.setAttribute(matRippleClassName, config.className || '');
+      }
+      // Store whether the ripple should be centered.
+      if (config.centered) {
+        host.setAttribute(matRippleCentered, '');
+      }
+      if (config.disabled) {
+        host.setAttribute(matRippleDisabled, '');
+      }
+    }
+    /** Sets the disabled state on the ripple instance corresponding to the given host element. */
+    setDisabled(host, disabled) {
+      const ripple = this._hosts.get(host);
+      // If the ripple has already been instantiated, just disable it.
+      if (ripple) {
+        ripple.target.rippleDisabled = disabled;
+        if (!disabled && !ripple.hasSetUpEvents) {
+          ripple.hasSetUpEvents = true;
+          ripple.renderer.setupTriggerEvents(host);
+        }
+      } else if (disabled) {
+        // Otherwise, set an attribute so we know what the
+        // disabled state should be when the ripple is initialized.
+        host.setAttribute(matRippleDisabled, '');
+      } else {
+        host.removeAttribute(matRippleDisabled);
+      }
+    }
+    /**
+     * Handles creating and attaching component internals
+     * when a component is initially interacted with.
+     */
+    _onInteraction = event => {
+      const eventTarget = (0,_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_1__._getEventTarget)(event);
+      if (eventTarget instanceof HTMLElement) {
+        // TODO(wagnermaciel): Consider batching these events to improve runtime performance.
+        const element = eventTarget.closest(`[${matRippleUninitialized}="${this._globalRippleOptions?.namespace ?? ''}"]`);
+        if (element) {
+          this._createRipple(element);
+        }
+      }
+    };
+    /** Creates a MatRipple and appends it to the given element. */
+    _createRipple(host) {
+      if (!this._document || this._hosts.has(host)) {
+        return;
+      }
+      // Create the ripple element.
+      host.querySelector('.mat-ripple')?.remove();
+      const rippleEl = this._document.createElement('span');
+      rippleEl.classList.add('mat-ripple', host.getAttribute(matRippleClassName));
+      host.append(rippleEl);
+      const globalOptions = this._globalRippleOptions;
+      const enterDuration = this._animationsDisabled ? 0 : globalOptions?.animation?.enterDuration ?? _ripple_BYgV4oZC_mjs__WEBPACK_IMPORTED_MODULE_3__.d.enterDuration;
+      const exitDuration = this._animationsDisabled ? 0 : globalOptions?.animation?.exitDuration ?? _ripple_BYgV4oZC_mjs__WEBPACK_IMPORTED_MODULE_3__.d.exitDuration;
+      const target = {
+        rippleDisabled: this._animationsDisabled || globalOptions?.disabled || host.hasAttribute(matRippleDisabled),
+        rippleConfig: {
+          centered: host.hasAttribute(matRippleCentered),
+          terminateOnPointerUp: globalOptions?.terminateOnPointerUp,
+          animation: {
+            enterDuration,
+            exitDuration
+          }
+        }
+      };
+      const renderer = new _ripple_BYgV4oZC_mjs__WEBPACK_IMPORTED_MODULE_3__.R(target, this._ngZone, rippleEl, this._platform, this._injector);
+      const hasSetUpEvents = !target.rippleDisabled;
+      if (hasSetUpEvents) {
+        renderer.setupTriggerEvents(host);
+      }
+      this._hosts.set(host, {
+        target,
+        renderer,
+        hasSetUpEvents
+      });
+      host.removeAttribute(matRippleUninitialized);
+    }
+    destroyRipple(host) {
+      const ripple = this._hosts.get(host);
+      if (ripple) {
+        ripple.renderer._removeTriggerEvents();
+        this._hosts.delete(host);
+      }
+    }
+    static ɵfac = function MatRippleLoader_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || MatRippleLoader)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: MatRippleLoader,
+      factory: MatRippleLoader.ɵfac,
+      providedIn: 'root'
+    });
+  }
+  return MatRippleLoader;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+
+/***/ }),
+
+/***/ 73388:
+/*!************************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/animation-DfMFjxHu.mjs ***!
+  \************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ AnimationCurves),
+/* harmony export */   M: () => (/* binding */ MATERIAL_ANIMATIONS),
+/* harmony export */   _: () => (/* binding */ _animationsDisabled),
+/* harmony export */   a: () => (/* binding */ AnimationDurations)
+/* harmony export */ });
+/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/layout */ 285);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+
+
+
+/** Injection token used to configure the animations in Angular Material. */
+const MATERIAL_ANIMATIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('MATERIAL_ANIMATIONS');
+/**
+ * @deprecated No longer used, will be removed.
+ * @breaking-change 21.0.0
+ * @docs-private
+ */
+let AnimationCurves = /*#__PURE__*/(() => {
+  class AnimationCurves {
+    static STANDARD_CURVE = 'cubic-bezier(0.4,0.0,0.2,1)';
+    static DECELERATION_CURVE = 'cubic-bezier(0.0,0.0,0.2,1)';
+    static ACCELERATION_CURVE = 'cubic-bezier(0.4,0.0,1,1)';
+    static SHARP_CURVE = 'cubic-bezier(0.4,0.0,0.6,1)';
+  }
+  return AnimationCurves;
+})();
+/**
+ * @deprecated No longer used, will be removed.
+ * @breaking-change 21.0.0
+ * @docs-private
+ */
+let AnimationDurations = /*#__PURE__*/(() => {
+  class AnimationDurations {
+    static COMPLEX = '375ms';
+    static ENTERING = '225ms';
+    static EXITING = '195ms';
+  }
+  return AnimationDurations;
+})();
+/**
+ * Returns whether animations have been disabled by DI. Must be called in a DI context.
+ * @docs-private
+ */
+function _animationsDisabled() {
+  if ((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(MATERIAL_ANIMATIONS, {
+    optional: true
+  })?.animationsDisabled || (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ANIMATION_MODULE_TYPE, {
+    optional: true
+  }) === 'NoopAnimations') {
+    return true;
+  }
+  const mediaMatcher = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__.MediaMatcher);
+  return mediaMatcher.matchMedia('(prefers-reduced-motion)').matches;
+}
+
+
+/***/ }),
+
+/***/ 79735:
+/*!********************************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/structural-styles-CObeNzjn.mjs ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   _: () => (/* binding */ _StructuralStylesLoader)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+
+
+
+/**
+ * Component used to load structural styles for focus indicators.
+ * @docs-private
+ */
+let _StructuralStylesLoader = /*#__PURE__*/(() => {
+  class _StructuralStylesLoader {
+    static ɵfac = function _StructuralStylesLoader_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _StructuralStylesLoader)();
+    };
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: _StructuralStylesLoader,
+      selectors: [["structural-styles"]],
+      decls: 0,
+      vars: 0,
+      template: function _StructuralStylesLoader_Template(rf, ctx) {},
+      styles: [".mat-focus-indicator{position:relative}.mat-focus-indicator::before{top:0;left:0;right:0;bottom:0;position:absolute;box-sizing:border-box;pointer-events:none;display:var(--mat-focus-indicator-display, none);border-width:var(--mat-focus-indicator-border-width, 3px);border-style:var(--mat-focus-indicator-border-style, solid);border-color:var(--mat-focus-indicator-border-color, transparent);border-radius:var(--mat-focus-indicator-border-radius, 4px)}.mat-focus-indicator:focus::before{content:\"\"}@media(forced-colors: active){html{--mat-focus-indicator-display: block}}\n"],
+      encapsulation: 2,
+      changeDetection: 0
+    });
+  }
+  return _StructuralStylesLoader;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+
+/***/ }),
+
+/***/ 84175:
+/*!************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/button.mjs ***!
+  \************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MAT_BUTTON_CONFIG: () => (/* reexport safe */ _icon_button_DxiIc1ex_mjs__WEBPACK_IMPORTED_MODULE_0__.b),
+/* harmony export */   MAT_FAB_DEFAULT_OPTIONS: () => (/* binding */ MAT_FAB_DEFAULT_OPTIONS),
+/* harmony export */   MAT_FAB_DEFAULT_OPTIONS_FACTORY: () => (/* binding */ MAT_FAB_DEFAULT_OPTIONS_FACTORY),
+/* harmony export */   MatAnchor: () => (/* binding */ MatAnchor),
+/* harmony export */   MatButton: () => (/* binding */ MatButton),
+/* harmony export */   MatButtonModule: () => (/* binding */ MatButtonModule),
+/* harmony export */   MatFabAnchor: () => (/* binding */ MatFabAnchor),
+/* harmony export */   MatFabButton: () => (/* binding */ MatFabButton),
+/* harmony export */   MatIconAnchor: () => (/* reexport safe */ _icon_button_DxiIc1ex_mjs__WEBPACK_IMPORTED_MODULE_0__.c),
+/* harmony export */   MatIconButton: () => (/* reexport safe */ _icon_button_DxiIc1ex_mjs__WEBPACK_IMPORTED_MODULE_0__.M),
+/* harmony export */   MatMiniFabAnchor: () => (/* binding */ MatMiniFabAnchor),
+/* harmony export */   MatMiniFabButton: () => (/* binding */ MatMiniFabButton)
+/* harmony export */ });
+/* harmony import */ var _icon_button_DxiIc1ex_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./icon-button-DxiIc1ex.mjs */ 8923);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _index_BFRo2fUq_mjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./index-BFRo2fUq.mjs */ 89061);
+/* harmony import */ var _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./common-module-cKSwHniA.mjs */ 8126);
+/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/a11y */ 56593);
+/* harmony import */ var _angular_cdk_private__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/cdk/private */ 98959);
+/* harmony import */ var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/platform */ 49583);
+/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/cdk/layout */ 285);
+/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/coercion */ 33981);
+/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/cdk/bidi */ 48073);
+
+const _c0 = ["matButton", ""];
+const _c1 = [[["", 8, "material-icons", 3, "iconPositionEnd", ""], ["mat-icon", 3, "iconPositionEnd", ""], ["", "matButtonIcon", "", 3, "iconPositionEnd", ""]], "*", [["", "iconPositionEnd", "", 8, "material-icons"], ["mat-icon", "iconPositionEnd", ""], ["", "matButtonIcon", "", "iconPositionEnd", ""]]];
+const _c2 = [".material-icons:not([iconPositionEnd]), mat-icon:not([iconPositionEnd]), [matButtonIcon]:not([iconPositionEnd])", "*", ".material-icons[iconPositionEnd], mat-icon[iconPositionEnd], [matButtonIcon][iconPositionEnd]"];
+const _c3 = ["mat-fab", ""];
+const _c4 = ["mat-mini-fab", ""];
+const _c5 = ".mat-mdc-fab-base{-webkit-user-select:none;user-select:none;position:relative;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;width:56px;height:56px;padding:0;border:none;fill:currentColor;text-decoration:none;cursor:pointer;-moz-appearance:none;-webkit-appearance:none;overflow:visible;transition:box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),opacity 15ms linear 30ms,transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);flex-shrink:0;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-fab-base .mat-mdc-button-ripple,.mat-mdc-fab-base .mat-mdc-button-persistent-ripple,.mat-mdc-fab-base .mat-mdc-button-persistent-ripple::before{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:inherit}.mat-mdc-fab-base .mat-mdc-button-ripple{overflow:hidden}.mat-mdc-fab-base .mat-mdc-button-persistent-ripple::before{content:\"\";opacity:0}.mat-mdc-fab-base .mdc-button__label,.mat-mdc-fab-base .mat-icon{z-index:1;position:relative}.mat-mdc-fab-base .mat-focus-indicator{top:0;left:0;right:0;bottom:0;position:absolute}.mat-mdc-fab-base:focus>.mat-focus-indicator::before{content:\"\"}.mat-mdc-fab-base._mat-animation-noopable{transition:none !important;animation:none !important}.mat-mdc-fab-base::before{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;border:1px solid rgba(0,0,0,0);border-radius:inherit;content:\"\";pointer-events:none}.mat-mdc-fab-base[hidden]{display:none}.mat-mdc-fab-base::-moz-focus-inner{padding:0;border:0}.mat-mdc-fab-base:active,.mat-mdc-fab-base:focus{outline:none}.mat-mdc-fab-base:hover{cursor:pointer}.mat-mdc-fab-base>svg{width:100%}.mat-mdc-fab-base .mat-icon,.mat-mdc-fab-base .material-icons{transition:transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1);fill:currentColor;will-change:transform}.mat-mdc-fab-base .mat-focus-indicator::before{margin:calc(calc(var(--mat-focus-indicator-border-width, 3px) + 2px)*-1)}.mat-mdc-fab-base[disabled],.mat-mdc-fab-base.mat-mdc-button-disabled{cursor:default;pointer-events:none}.mat-mdc-fab-base[disabled],.mat-mdc-fab-base[disabled]:focus,.mat-mdc-fab-base.mat-mdc-button-disabled,.mat-mdc-fab-base.mat-mdc-button-disabled:focus{box-shadow:none}.mat-mdc-fab-base.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-fab{background-color:var(--mat-fab-container-color, var(--mat-sys-primary-container));border-radius:var(--mat-fab-container-shape, var(--mat-sys-corner-large));color:var(--mat-fab-foreground-color, var(--mat-sys-on-primary-container, inherit));box-shadow:var(--mat-fab-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-fab:hover{box-shadow:var(--mat-fab-hover-container-elevation-shadow, var(--mat-sys-level4))}.mat-mdc-fab:focus{box-shadow:var(--mat-fab-focus-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-fab:active,.mat-mdc-fab:focus:active{box-shadow:var(--mat-fab-pressed-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-fab[disabled],.mat-mdc-fab.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mat-fab-disabled-state-foreground-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));background-color:var(--mat-fab-disabled-state-container-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent))}.mat-mdc-fab.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-fab .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;display:var(--mat-fab-touch-target-display, block);left:50%;width:48px;transform:translate(-50%, -50%)}.mat-mdc-fab .mat-ripple-element{background-color:var(--mat-fab-ripple-color, color-mix(in srgb, var(--mat-sys-on-primary-container) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-fab .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-fab-state-layer-color, var(--mat-sys-on-primary-container))}.mat-mdc-fab.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-fab-disabled-state-layer-color)}.mat-mdc-fab:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-fab.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-fab.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-fab.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-fab:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-mini-fab{width:40px;height:40px;background-color:var(--mat-fab-small-container-color, var(--mat-sys-primary-container));border-radius:var(--mat-fab-small-container-shape, var(--mat-sys-corner-medium));color:var(--mat-fab-small-foreground-color, var(--mat-sys-on-primary-container, inherit));box-shadow:var(--mat-fab-small-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-mini-fab:hover{box-shadow:var(--mat-fab-small-hover-container-elevation-shadow, var(--mat-sys-level4))}.mat-mdc-mini-fab:focus{box-shadow:var(--mat-fab-small-focus-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-mini-fab:active,.mat-mdc-mini-fab:focus:active{box-shadow:var(--mat-fab-small-pressed-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-mini-fab[disabled],.mat-mdc-mini-fab.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mat-fab-small-disabled-state-foreground-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));background-color:var(--mat-fab-small-disabled-state-container-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent))}.mat-mdc-mini-fab.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-mini-fab .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;display:var(--mat-fab-small-touch-target-display);left:50%;width:48px;transform:translate(-50%, -50%)}.mat-mdc-mini-fab .mat-ripple-element{background-color:var(--mat-fab-small-ripple-color, color-mix(in srgb, var(--mat-sys-on-primary-container) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-mini-fab .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-fab-small-state-layer-color, var(--mat-sys-on-primary-container))}.mat-mdc-mini-fab.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-fab-small-disabled-state-layer-color)}.mat-mdc-mini-fab:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-small-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-mini-fab.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-mini-fab.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-mini-fab.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-small-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-mini-fab:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-small-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-extended-fab{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;padding-left:20px;padding-right:20px;width:auto;max-width:100%;line-height:normal;box-shadow:var(--mat-fab-extended-container-elevation-shadow, var(--mat-sys-level3));height:var(--mat-fab-extended-container-height, 56px);border-radius:var(--mat-fab-extended-container-shape, var(--mat-sys-corner-large));font-family:var(--mat-fab-extended-label-text-font, var(--mat-sys-label-large-font));font-size:var(--mat-fab-extended-label-text-size, var(--mat-sys-label-large-size));font-weight:var(--mat-fab-extended-label-text-weight, var(--mat-sys-label-large-weight));letter-spacing:var(--mat-fab-extended-label-text-tracking, var(--mat-sys-label-large-tracking))}.mat-mdc-extended-fab:hover{box-shadow:var(--mat-fab-extended-hover-container-elevation-shadow, var(--mat-sys-level4))}.mat-mdc-extended-fab:focus{box-shadow:var(--mat-fab-extended-focus-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-extended-fab:active,.mat-mdc-extended-fab:focus:active{box-shadow:var(--mat-fab-extended-pressed-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-extended-fab[disabled],.mat-mdc-extended-fab.mat-mdc-button-disabled{cursor:default;pointer-events:none}.mat-mdc-extended-fab[disabled],.mat-mdc-extended-fab[disabled]:focus,.mat-mdc-extended-fab.mat-mdc-button-disabled,.mat-mdc-extended-fab.mat-mdc-button-disabled:focus{box-shadow:none}.mat-mdc-extended-fab.mat-mdc-button-disabled-interactive{pointer-events:auto}[dir=rtl] .mat-mdc-extended-fab .mdc-button__label+.mat-icon,[dir=rtl] .mat-mdc-extended-fab .mdc-button__label+.material-icons,.mat-mdc-extended-fab>.mat-icon,.mat-mdc-extended-fab>.material-icons{margin-left:-8px;margin-right:12px}.mat-mdc-extended-fab .mdc-button__label+.mat-icon,.mat-mdc-extended-fab .mdc-button__label+.material-icons,[dir=rtl] .mat-mdc-extended-fab>.mat-icon,[dir=rtl] .mat-mdc-extended-fab>.material-icons{margin-left:12px;margin-right:-8px}.mat-mdc-extended-fab .mat-mdc-button-touch-target{width:100%}\n";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Classes that need to be set for each appearance of the button.
+ * Note that we use a `Map` here to avoid issues with property renaming.
+ */
+const APPEARANCE_CLASSES = /*#__PURE__*/new Map([['text', ['mat-mdc-button']], ['filled', ['mdc-button--unelevated', 'mat-mdc-unelevated-button']], ['elevated', ['mdc-button--raised', 'mat-mdc-raised-button']], ['outlined', ['mdc-button--outlined', 'mat-mdc-outlined-button']], ['tonal', ['mat-tonal-button']]]);
+/**
+ * Material Design button component. Users interact with a button to perform an action.
+ * See https://m3.material.io/components/buttons/overview
+ */
+let MatButton = /*#__PURE__*/(() => {
+  class MatButton extends _icon_button_DxiIc1ex_mjs__WEBPACK_IMPORTED_MODULE_0__.a {
+    /** Appearance of the button. */
+    get appearance() {
+      return this._appearance;
+    }
+    set appearance(value) {
+      // Allow empty string so users can do `<button matButton></button>`
+      // without having to write out `="text"` every time.
+      this.setAppearance(value || this._config?.defaultAppearance || 'text');
+    }
+    _appearance = null;
+    constructor() {
+      super();
+      const inferredAppearance = _inferAppearance(this._elementRef.nativeElement);
+      // Only set the appearance if we managed to infer it from the static attributes, rather than
+      // doing something like `setAppearance(inferredAppearance || 'text')`, because doing so can
+      // cause the fallback appearance's classes to be set and then immediately replaced when
+      // the input value is assigned.
+      if (inferredAppearance) {
+        this.setAppearance(inferredAppearance);
+      }
+    }
+    /** Programmatically sets the appearance of the button. */
+    setAppearance(appearance) {
+      if (appearance === this._appearance) {
+        return;
+      }
+      const classList = this._elementRef.nativeElement.classList;
+      const previousClasses = this._appearance ? APPEARANCE_CLASSES.get(this._appearance) : null;
+      const newClasses = APPEARANCE_CLASSES.get(appearance);
+      if ((typeof ngDevMode === 'undefined' || ngDevMode) && !newClasses) {
+        throw new Error(`Unsupported MatButton appearance "${appearance}"`);
+      }
+      if (previousClasses) {
+        classList.remove(...previousClasses);
+      }
+      classList.add(...newClasses);
+      this._appearance = appearance;
+    }
+    static ɵfac = function MatButton_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || MatButton)();
+    };
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+      type: MatButton,
+      selectors: [["button", "matButton", ""], ["a", "matButton", ""], ["button", "mat-button", ""], ["button", "mat-raised-button", ""], ["button", "mat-flat-button", ""], ["button", "mat-stroked-button", ""], ["a", "mat-button", ""], ["a", "mat-raised-button", ""], ["a", "mat-flat-button", ""], ["a", "mat-stroked-button", ""]],
+      hostAttrs: [1, "mdc-button"],
+      inputs: {
+        appearance: [0, "matButton", "appearance"]
+      },
+      exportAs: ["matButton", "matAnchor"],
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]],
+      attrs: _c0,
+      ngContentSelectors: _c2,
+      decls: 7,
+      vars: 4,
+      consts: [[1, "mat-mdc-button-persistent-ripple"], [1, "mdc-button__label"], [1, "mat-focus-indicator"], [1, "mat-mdc-button-touch-target"]],
+      template: function MatButton_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"](_c1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "span", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "span", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](3, 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](4, 2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](5, "span", 2)(6, "span", 3);
+        }
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassProp"]("mdc-button__ripple", !ctx._isFab)("mdc-fab__ripple", ctx._isFab);
+        }
+      },
+      styles: [".mat-mdc-button-base{text-decoration:none}.mdc-button{-webkit-user-select:none;user-select:none;position:relative;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-width:64px;border:none;outline:none;line-height:inherit;-webkit-appearance:none;overflow:visible;vertical-align:middle;background:rgba(0,0,0,0);padding:0 8px}.mdc-button::-moz-focus-inner{padding:0;border:0}.mdc-button:active{outline:none}.mdc-button:hover{cursor:pointer}.mdc-button:disabled{cursor:default;pointer-events:none}.mdc-button[hidden]{display:none}.mdc-button .mdc-button__label{position:relative}.mat-mdc-button{padding:0 var(--mat-button-text-horizontal-padding, 12px);height:var(--mat-button-text-container-height, 40px);font-family:var(--mat-button-text-label-text-font, var(--mat-sys-label-large-font));font-size:var(--mat-button-text-label-text-size, var(--mat-sys-label-large-size));letter-spacing:var(--mat-button-text-label-text-tracking, var(--mat-sys-label-large-tracking));text-transform:var(--mat-button-text-label-text-transform);font-weight:var(--mat-button-text-label-text-weight, var(--mat-sys-label-large-weight))}.mat-mdc-button,.mat-mdc-button .mdc-button__ripple{border-radius:var(--mat-button-text-container-shape, var(--mat-sys-corner-full))}.mat-mdc-button:not(:disabled){color:var(--mat-button-text-label-text-color, var(--mat-sys-primary))}.mat-mdc-button[disabled],.mat-mdc-button.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mat-button-text-disabled-label-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent))}.mat-mdc-button.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-button:has(.material-icons,mat-icon,[matButtonIcon]){padding:0 var(--mat-button-text-with-icon-horizontal-padding, 16px)}.mat-mdc-button>.mat-icon{margin-right:var(--mat-button-text-icon-spacing, 8px);margin-left:var(--mat-button-text-icon-offset, -4px)}[dir=rtl] .mat-mdc-button>.mat-icon{margin-right:var(--mat-button-text-icon-offset, -4px);margin-left:var(--mat-button-text-icon-spacing, 8px)}.mat-mdc-button .mdc-button__label+.mat-icon{margin-right:var(--mat-button-text-icon-offset, -4px);margin-left:var(--mat-button-text-icon-spacing, 8px)}[dir=rtl] .mat-mdc-button .mdc-button__label+.mat-icon{margin-right:var(--mat-button-text-icon-spacing, 8px);margin-left:var(--mat-button-text-icon-offset, -4px)}.mat-mdc-button .mat-ripple-element{background-color:var(--mat-button-text-ripple-color, color-mix(in srgb, var(--mat-sys-primary) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-button .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-button-text-state-layer-color, var(--mat-sys-primary))}.mat-mdc-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-button-text-disabled-state-layer-color, var(--mat-sys-on-surface-variant))}.mat-mdc-button:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-button-text-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-button.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-button.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-button.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-button-text-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-button:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-button-text-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-button .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;display:var(--mat-button-text-touch-target-display, block);left:0;right:0;transform:translateY(-50%)}.mat-mdc-unelevated-button{transition:box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);height:var(--mat-button-filled-container-height, 40px);font-family:var(--mat-button-filled-label-text-font, var(--mat-sys-label-large-font));font-size:var(--mat-button-filled-label-text-size, var(--mat-sys-label-large-size));letter-spacing:var(--mat-button-filled-label-text-tracking, var(--mat-sys-label-large-tracking));text-transform:var(--mat-button-filled-label-text-transform);font-weight:var(--mat-button-filled-label-text-weight, var(--mat-sys-label-large-weight));padding:0 var(--mat-button-filled-horizontal-padding, 24px)}.mat-mdc-unelevated-button>.mat-icon{margin-right:var(--mat-button-filled-icon-spacing, 8px);margin-left:var(--mat-button-filled-icon-offset, -8px)}[dir=rtl] .mat-mdc-unelevated-button>.mat-icon{margin-right:var(--mat-button-filled-icon-offset, -8px);margin-left:var(--mat-button-filled-icon-spacing, 8px)}.mat-mdc-unelevated-button .mdc-button__label+.mat-icon{margin-right:var(--mat-button-filled-icon-offset, -8px);margin-left:var(--mat-button-filled-icon-spacing, 8px)}[dir=rtl] .mat-mdc-unelevated-button .mdc-button__label+.mat-icon{margin-right:var(--mat-button-filled-icon-spacing, 8px);margin-left:var(--mat-button-filled-icon-offset, -8px)}.mat-mdc-unelevated-button .mat-ripple-element{background-color:var(--mat-button-filled-ripple-color, color-mix(in srgb, var(--mat-sys-on-primary) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-unelevated-button .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-button-filled-state-layer-color, var(--mat-sys-on-primary))}.mat-mdc-unelevated-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-button-filled-disabled-state-layer-color, var(--mat-sys-on-surface-variant))}.mat-mdc-unelevated-button:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-button-filled-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-unelevated-button.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-unelevated-button.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-unelevated-button.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-button-filled-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-unelevated-button:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-button-filled-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-unelevated-button .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;display:var(--mat-button-filled-touch-target-display, block);left:0;right:0;transform:translateY(-50%)}.mat-mdc-unelevated-button:not(:disabled){color:var(--mat-button-filled-label-text-color, var(--mat-sys-on-primary));background-color:var(--mat-button-filled-container-color, var(--mat-sys-primary))}.mat-mdc-unelevated-button,.mat-mdc-unelevated-button .mdc-button__ripple{border-radius:var(--mat-button-filled-container-shape, var(--mat-sys-corner-full))}.mat-mdc-unelevated-button[disabled],.mat-mdc-unelevated-button.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mat-button-filled-disabled-label-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));background-color:var(--mat-button-filled-disabled-container-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent))}.mat-mdc-unelevated-button.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-raised-button{transition:box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);box-shadow:var(--mat-button-protected-container-elevation-shadow, var(--mat-sys-level1));height:var(--mat-button-protected-container-height, 40px);font-family:var(--mat-button-protected-label-text-font, var(--mat-sys-label-large-font));font-size:var(--mat-button-protected-label-text-size, var(--mat-sys-label-large-size));letter-spacing:var(--mat-button-protected-label-text-tracking, var(--mat-sys-label-large-tracking));text-transform:var(--mat-button-protected-label-text-transform);font-weight:var(--mat-button-protected-label-text-weight, var(--mat-sys-label-large-weight));padding:0 var(--mat-button-protected-horizontal-padding, 24px)}.mat-mdc-raised-button>.mat-icon{margin-right:var(--mat-button-protected-icon-spacing, 8px);margin-left:var(--mat-button-protected-icon-offset, -8px)}[dir=rtl] .mat-mdc-raised-button>.mat-icon{margin-right:var(--mat-button-protected-icon-offset, -8px);margin-left:var(--mat-button-protected-icon-spacing, 8px)}.mat-mdc-raised-button .mdc-button__label+.mat-icon{margin-right:var(--mat-button-protected-icon-offset, -8px);margin-left:var(--mat-button-protected-icon-spacing, 8px)}[dir=rtl] .mat-mdc-raised-button .mdc-button__label+.mat-icon{margin-right:var(--mat-button-protected-icon-spacing, 8px);margin-left:var(--mat-button-protected-icon-offset, -8px)}.mat-mdc-raised-button .mat-ripple-element{background-color:var(--mat-button-protected-ripple-color, color-mix(in srgb, var(--mat-sys-primary) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-raised-button .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-button-protected-state-layer-color, var(--mat-sys-primary))}.mat-mdc-raised-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-button-protected-disabled-state-layer-color, var(--mat-sys-on-surface-variant))}.mat-mdc-raised-button:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-button-protected-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-raised-button.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-raised-button.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-raised-button.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-button-protected-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-raised-button:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-button-protected-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-raised-button .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;display:var(--mat-button-protected-touch-target-display, block);left:0;right:0;transform:translateY(-50%)}.mat-mdc-raised-button:not(:disabled){color:var(--mat-button-protected-label-text-color, var(--mat-sys-primary));background-color:var(--mat-button-protected-container-color, var(--mat-sys-surface))}.mat-mdc-raised-button,.mat-mdc-raised-button .mdc-button__ripple{border-radius:var(--mat-button-protected-container-shape, var(--mat-sys-corner-full))}.mat-mdc-raised-button:hover{box-shadow:var(--mat-button-protected-hover-container-elevation-shadow, var(--mat-sys-level2))}.mat-mdc-raised-button:focus{box-shadow:var(--mat-button-protected-focus-container-elevation-shadow, var(--mat-sys-level1))}.mat-mdc-raised-button:active,.mat-mdc-raised-button:focus:active{box-shadow:var(--mat-button-protected-pressed-container-elevation-shadow, var(--mat-sys-level1))}.mat-mdc-raised-button[disabled],.mat-mdc-raised-button.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mat-button-protected-disabled-label-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));background-color:var(--mat-button-protected-disabled-container-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent))}.mat-mdc-raised-button[disabled].mat-mdc-button-disabled,.mat-mdc-raised-button.mat-mdc-button-disabled.mat-mdc-button-disabled{box-shadow:var(--mat-button-protected-disabled-container-elevation-shadow, var(--mat-sys-level0))}.mat-mdc-raised-button.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-outlined-button{border-style:solid;transition:border 280ms cubic-bezier(0.4, 0, 0.2, 1);height:var(--mat-button-outlined-container-height, 40px);font-family:var(--mat-button-outlined-label-text-font, var(--mat-sys-label-large-font));font-size:var(--mat-button-outlined-label-text-size, var(--mat-sys-label-large-size));letter-spacing:var(--mat-button-outlined-label-text-tracking, var(--mat-sys-label-large-tracking));text-transform:var(--mat-button-outlined-label-text-transform);font-weight:var(--mat-button-outlined-label-text-weight, var(--mat-sys-label-large-weight));border-radius:var(--mat-button-outlined-container-shape, var(--mat-sys-corner-full));border-width:var(--mat-button-outlined-outline-width, 1px);padding:0 var(--mat-button-outlined-horizontal-padding, 24px)}.mat-mdc-outlined-button>.mat-icon{margin-right:var(--mat-button-outlined-icon-spacing, 8px);margin-left:var(--mat-button-outlined-icon-offset, -8px)}[dir=rtl] .mat-mdc-outlined-button>.mat-icon{margin-right:var(--mat-button-outlined-icon-offset, -8px);margin-left:var(--mat-button-outlined-icon-spacing, 8px)}.mat-mdc-outlined-button .mdc-button__label+.mat-icon{margin-right:var(--mat-button-outlined-icon-offset, -8px);margin-left:var(--mat-button-outlined-icon-spacing, 8px)}[dir=rtl] .mat-mdc-outlined-button .mdc-button__label+.mat-icon{margin-right:var(--mat-button-outlined-icon-spacing, 8px);margin-left:var(--mat-button-outlined-icon-offset, -8px)}.mat-mdc-outlined-button .mat-ripple-element{background-color:var(--mat-button-outlined-ripple-color, color-mix(in srgb, var(--mat-sys-primary) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-outlined-button .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-button-outlined-state-layer-color, var(--mat-sys-primary))}.mat-mdc-outlined-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-button-outlined-disabled-state-layer-color, var(--mat-sys-on-surface-variant))}.mat-mdc-outlined-button:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-button-outlined-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-outlined-button.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-outlined-button.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-outlined-button.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-button-outlined-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-outlined-button:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-button-outlined-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-outlined-button .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;display:var(--mat-button-outlined-touch-target-display, block);left:0;right:0;transform:translateY(-50%)}.mat-mdc-outlined-button:not(:disabled){color:var(--mat-button-outlined-label-text-color, var(--mat-sys-primary));border-color:var(--mat-button-outlined-outline-color, var(--mat-sys-outline))}.mat-mdc-outlined-button[disabled],.mat-mdc-outlined-button.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mat-button-outlined-disabled-label-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));border-color:var(--mat-button-outlined-disabled-outline-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent))}.mat-mdc-outlined-button.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-tonal-button{transition:box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);height:var(--mat-button-tonal-container-height, 40px);font-family:var(--mat-button-tonal-label-text-font, var(--mat-sys-label-large-font));font-size:var(--mat-button-tonal-label-text-size, var(--mat-sys-label-large-size));letter-spacing:var(--mat-button-tonal-label-text-tracking, var(--mat-sys-label-large-tracking));text-transform:var(--mat-button-tonal-label-text-transform);font-weight:var(--mat-button-tonal-label-text-weight, var(--mat-sys-label-large-weight));padding:0 var(--mat-button-tonal-horizontal-padding, 24px)}.mat-tonal-button:not(:disabled){color:var(--mat-button-tonal-label-text-color, var(--mat-sys-on-secondary-container));background-color:var(--mat-button-tonal-container-color, var(--mat-sys-secondary-container))}.mat-tonal-button,.mat-tonal-button .mdc-button__ripple{border-radius:var(--mat-button-tonal-container-shape, var(--mat-sys-corner-full))}.mat-tonal-button[disabled],.mat-tonal-button.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mat-button-tonal-disabled-label-text-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));background-color:var(--mat-button-tonal-disabled-container-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent))}.mat-tonal-button.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-tonal-button>.mat-icon{margin-right:var(--mat-button-tonal-icon-spacing, 8px);margin-left:var(--mat-button-tonal-icon-offset, -8px)}[dir=rtl] .mat-tonal-button>.mat-icon{margin-right:var(--mat-button-tonal-icon-offset, -8px);margin-left:var(--mat-button-tonal-icon-spacing, 8px)}.mat-tonal-button .mdc-button__label+.mat-icon{margin-right:var(--mat-button-tonal-icon-offset, -8px);margin-left:var(--mat-button-tonal-icon-spacing, 8px)}[dir=rtl] .mat-tonal-button .mdc-button__label+.mat-icon{margin-right:var(--mat-button-tonal-icon-spacing, 8px);margin-left:var(--mat-button-tonal-icon-offset, -8px)}.mat-tonal-button .mat-ripple-element{background-color:var(--mat-button-tonal-ripple-color, color-mix(in srgb, var(--mat-sys-on-secondary-container) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-tonal-button .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-button-tonal-state-layer-color, var(--mat-sys-on-secondary-container))}.mat-tonal-button.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-button-tonal-disabled-state-layer-color, var(--mat-sys-on-surface-variant))}.mat-tonal-button:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-button-tonal-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-tonal-button.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-tonal-button.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-tonal-button.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-button-tonal-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-tonal-button:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-button-tonal-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-tonal-button .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;display:var(--mat-button-tonal-touch-target-display, block);left:0;right:0;transform:translateY(-50%)}.mat-mdc-button,.mat-mdc-unelevated-button,.mat-mdc-raised-button,.mat-mdc-outlined-button,.mat-tonal-button{-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-button .mat-mdc-button-ripple,.mat-mdc-button .mat-mdc-button-persistent-ripple,.mat-mdc-button .mat-mdc-button-persistent-ripple::before,.mat-mdc-unelevated-button .mat-mdc-button-ripple,.mat-mdc-unelevated-button .mat-mdc-button-persistent-ripple,.mat-mdc-unelevated-button .mat-mdc-button-persistent-ripple::before,.mat-mdc-raised-button .mat-mdc-button-ripple,.mat-mdc-raised-button .mat-mdc-button-persistent-ripple,.mat-mdc-raised-button .mat-mdc-button-persistent-ripple::before,.mat-mdc-outlined-button .mat-mdc-button-ripple,.mat-mdc-outlined-button .mat-mdc-button-persistent-ripple,.mat-mdc-outlined-button .mat-mdc-button-persistent-ripple::before,.mat-tonal-button .mat-mdc-button-ripple,.mat-tonal-button .mat-mdc-button-persistent-ripple,.mat-tonal-button .mat-mdc-button-persistent-ripple::before{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:inherit}.mat-mdc-button .mat-mdc-button-ripple,.mat-mdc-unelevated-button .mat-mdc-button-ripple,.mat-mdc-raised-button .mat-mdc-button-ripple,.mat-mdc-outlined-button .mat-mdc-button-ripple,.mat-tonal-button .mat-mdc-button-ripple{overflow:hidden}.mat-mdc-button .mat-mdc-button-persistent-ripple::before,.mat-mdc-unelevated-button .mat-mdc-button-persistent-ripple::before,.mat-mdc-raised-button .mat-mdc-button-persistent-ripple::before,.mat-mdc-outlined-button .mat-mdc-button-persistent-ripple::before,.mat-tonal-button .mat-mdc-button-persistent-ripple::before{content:\"\";opacity:0}.mat-mdc-button .mdc-button__label,.mat-mdc-button .mat-icon,.mat-mdc-unelevated-button .mdc-button__label,.mat-mdc-unelevated-button .mat-icon,.mat-mdc-raised-button .mdc-button__label,.mat-mdc-raised-button .mat-icon,.mat-mdc-outlined-button .mdc-button__label,.mat-mdc-outlined-button .mat-icon,.mat-tonal-button .mdc-button__label,.mat-tonal-button .mat-icon{z-index:1;position:relative}.mat-mdc-button .mat-focus-indicator,.mat-mdc-unelevated-button .mat-focus-indicator,.mat-mdc-raised-button .mat-focus-indicator,.mat-mdc-outlined-button .mat-focus-indicator,.mat-tonal-button .mat-focus-indicator{top:0;left:0;right:0;bottom:0;position:absolute;border-radius:inherit}.mat-mdc-button:focus>.mat-focus-indicator::before,.mat-mdc-unelevated-button:focus>.mat-focus-indicator::before,.mat-mdc-raised-button:focus>.mat-focus-indicator::before,.mat-mdc-outlined-button:focus>.mat-focus-indicator::before,.mat-tonal-button:focus>.mat-focus-indicator::before{content:\"\";border-radius:inherit}.mat-mdc-button._mat-animation-noopable,.mat-mdc-unelevated-button._mat-animation-noopable,.mat-mdc-raised-button._mat-animation-noopable,.mat-mdc-outlined-button._mat-animation-noopable,.mat-tonal-button._mat-animation-noopable{transition:none !important;animation:none !important}.mat-mdc-button>.mat-icon,.mat-mdc-unelevated-button>.mat-icon,.mat-mdc-raised-button>.mat-icon,.mat-mdc-outlined-button>.mat-icon,.mat-tonal-button>.mat-icon{display:inline-block;position:relative;vertical-align:top;font-size:1.125rem;height:1.125rem;width:1.125rem}.mat-mdc-outlined-button .mat-mdc-button-ripple,.mat-mdc-outlined-button .mdc-button__ripple{top:-1px;left:-1px;bottom:-1px;right:-1px}.mat-mdc-unelevated-button .mat-focus-indicator::before,.mat-tonal-button .mat-focus-indicator::before,.mat-mdc-raised-button .mat-focus-indicator::before{margin:calc(calc(var(--mat-focus-indicator-border-width, 3px) + 2px)*-1)}.mat-mdc-outlined-button .mat-focus-indicator::before{margin:calc(calc(var(--mat-focus-indicator-border-width, 3px) + 3px)*-1)}\n", "@media(forced-colors: active){.mat-mdc-button:not(.mdc-button--outlined),.mat-mdc-unelevated-button:not(.mdc-button--outlined),.mat-mdc-raised-button:not(.mdc-button--outlined),.mat-mdc-outlined-button:not(.mdc-button--outlined),.mat-mdc-button-base.mat-tonal-button,.mat-mdc-icon-button.mat-mdc-icon-button,.mat-mdc-outlined-button .mdc-button__ripple{outline:solid 1px}}\n"],
+      encapsulation: 2,
+      changeDetection: 0
+    });
+  }
+  return MatButton;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+/** Infers the button's appearance from its static attributes. */
+function _inferAppearance(button) {
+  if (button.hasAttribute('mat-raised-button')) {
+    return 'elevated';
+  }
+  if (button.hasAttribute('mat-stroked-button')) {
+    return 'outlined';
+  }
+  if (button.hasAttribute('mat-flat-button')) {
+    return 'filled';
+  }
+  if (button.hasAttribute('mat-button')) {
+    return 'text';
+  }
+  return null;
+}
+// tslint:disable:variable-name
+/**
+ * Material Design button component for anchor elements. Anchor elements are used to provide
+ * links for the user to navigate across different routes or pages.
+ * See https://m3.material.io/components/buttons/overview
+ */
+const MatAnchor = MatButton;
+
+/** Injection token to be used to override the default options for FAB. */
+const MAT_FAB_DEFAULT_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('mat-mdc-fab-default-options', {
+  providedIn: 'root',
+  factory: MAT_FAB_DEFAULT_OPTIONS_FACTORY
+});
+/**
+ * @docs-private
+ * @deprecated No longer used, will be removed.
+ * @breaking-change 21.0.0
+ */
+function MAT_FAB_DEFAULT_OPTIONS_FACTORY() {
+  return {
+    // The FAB by default has its color set to accent.
+    color: 'accent'
+  };
+}
+// Default FAB configuration.
+const defaults = /*#__PURE__*/MAT_FAB_DEFAULT_OPTIONS_FACTORY();
+/**
+ * Material Design floating action button (FAB) component. These buttons represent the primary
+ * or most common action for users to interact with.
+ * See https://m3.material.io/components/floating-action-button/overview
+ *
+ * The `MatFabButton` class has two appearances: normal and extended.
+ */
+let MatFabButton = /*#__PURE__*/(() => {
+  class MatFabButton extends _icon_button_DxiIc1ex_mjs__WEBPACK_IMPORTED_MODULE_0__.a {
+    _options = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(MAT_FAB_DEFAULT_OPTIONS, {
+      optional: true
+    });
+    _isFab = true;
+    extended;
+    constructor() {
+      super();
+      this._options = this._options || defaults;
+      this.color = this._options.color || defaults.color;
+    }
+    static ɵfac = function MatFabButton_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || MatFabButton)();
+    };
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+      type: MatFabButton,
+      selectors: [["button", "mat-fab", ""], ["a", "mat-fab", ""], ["button", "matFab", ""], ["a", "matFab", ""]],
+      hostAttrs: [1, "mdc-fab", "mat-mdc-fab-base", "mat-mdc-fab"],
+      hostVars: 4,
+      hostBindings: function MatFabButton_HostBindings(rf, ctx) {
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassProp"]("mdc-fab--extended", ctx.extended)("mat-mdc-extended-fab", ctx.extended);
+        }
+      },
+      inputs: {
+        extended: [2, "extended", "extended", _angular_core__WEBPACK_IMPORTED_MODULE_1__.booleanAttribute]
+      },
+      exportAs: ["matButton", "matAnchor"],
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]],
+      attrs: _c3,
+      ngContentSelectors: _c2,
+      decls: 7,
+      vars: 4,
+      consts: [[1, "mat-mdc-button-persistent-ripple"], [1, "mdc-button__label"], [1, "mat-focus-indicator"], [1, "mat-mdc-button-touch-target"]],
+      template: function MatFabButton_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"](_c1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "span", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "span", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](3, 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](4, 2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](5, "span", 2)(6, "span", 3);
+        }
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassProp"]("mdc-button__ripple", !ctx._isFab)("mdc-fab__ripple", ctx._isFab);
+        }
+      },
+      styles: [".mat-mdc-fab-base{-webkit-user-select:none;user-select:none;position:relative;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;width:56px;height:56px;padding:0;border:none;fill:currentColor;text-decoration:none;cursor:pointer;-moz-appearance:none;-webkit-appearance:none;overflow:visible;transition:box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),opacity 15ms linear 30ms,transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);flex-shrink:0;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-fab-base .mat-mdc-button-ripple,.mat-mdc-fab-base .mat-mdc-button-persistent-ripple,.mat-mdc-fab-base .mat-mdc-button-persistent-ripple::before{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none;border-radius:inherit}.mat-mdc-fab-base .mat-mdc-button-ripple{overflow:hidden}.mat-mdc-fab-base .mat-mdc-button-persistent-ripple::before{content:\"\";opacity:0}.mat-mdc-fab-base .mdc-button__label,.mat-mdc-fab-base .mat-icon{z-index:1;position:relative}.mat-mdc-fab-base .mat-focus-indicator{top:0;left:0;right:0;bottom:0;position:absolute}.mat-mdc-fab-base:focus>.mat-focus-indicator::before{content:\"\"}.mat-mdc-fab-base._mat-animation-noopable{transition:none !important;animation:none !important}.mat-mdc-fab-base::before{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;border:1px solid rgba(0,0,0,0);border-radius:inherit;content:\"\";pointer-events:none}.mat-mdc-fab-base[hidden]{display:none}.mat-mdc-fab-base::-moz-focus-inner{padding:0;border:0}.mat-mdc-fab-base:active,.mat-mdc-fab-base:focus{outline:none}.mat-mdc-fab-base:hover{cursor:pointer}.mat-mdc-fab-base>svg{width:100%}.mat-mdc-fab-base .mat-icon,.mat-mdc-fab-base .material-icons{transition:transform 180ms 90ms cubic-bezier(0, 0, 0.2, 1);fill:currentColor;will-change:transform}.mat-mdc-fab-base .mat-focus-indicator::before{margin:calc(calc(var(--mat-focus-indicator-border-width, 3px) + 2px)*-1)}.mat-mdc-fab-base[disabled],.mat-mdc-fab-base.mat-mdc-button-disabled{cursor:default;pointer-events:none}.mat-mdc-fab-base[disabled],.mat-mdc-fab-base[disabled]:focus,.mat-mdc-fab-base.mat-mdc-button-disabled,.mat-mdc-fab-base.mat-mdc-button-disabled:focus{box-shadow:none}.mat-mdc-fab-base.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-fab{background-color:var(--mat-fab-container-color, var(--mat-sys-primary-container));border-radius:var(--mat-fab-container-shape, var(--mat-sys-corner-large));color:var(--mat-fab-foreground-color, var(--mat-sys-on-primary-container, inherit));box-shadow:var(--mat-fab-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-fab:hover{box-shadow:var(--mat-fab-hover-container-elevation-shadow, var(--mat-sys-level4))}.mat-mdc-fab:focus{box-shadow:var(--mat-fab-focus-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-fab:active,.mat-mdc-fab:focus:active{box-shadow:var(--mat-fab-pressed-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-fab[disabled],.mat-mdc-fab.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mat-fab-disabled-state-foreground-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));background-color:var(--mat-fab-disabled-state-container-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent))}.mat-mdc-fab.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-fab .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;display:var(--mat-fab-touch-target-display, block);left:50%;width:48px;transform:translate(-50%, -50%)}.mat-mdc-fab .mat-ripple-element{background-color:var(--mat-fab-ripple-color, color-mix(in srgb, var(--mat-sys-on-primary-container) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-fab .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-fab-state-layer-color, var(--mat-sys-on-primary-container))}.mat-mdc-fab.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-fab-disabled-state-layer-color)}.mat-mdc-fab:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-fab.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-fab.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-fab.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-fab:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-mini-fab{width:40px;height:40px;background-color:var(--mat-fab-small-container-color, var(--mat-sys-primary-container));border-radius:var(--mat-fab-small-container-shape, var(--mat-sys-corner-medium));color:var(--mat-fab-small-foreground-color, var(--mat-sys-on-primary-container, inherit));box-shadow:var(--mat-fab-small-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-mini-fab:hover{box-shadow:var(--mat-fab-small-hover-container-elevation-shadow, var(--mat-sys-level4))}.mat-mdc-mini-fab:focus{box-shadow:var(--mat-fab-small-focus-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-mini-fab:active,.mat-mdc-mini-fab:focus:active{box-shadow:var(--mat-fab-small-pressed-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-mini-fab[disabled],.mat-mdc-mini-fab.mat-mdc-button-disabled{cursor:default;pointer-events:none;color:var(--mat-fab-small-disabled-state-foreground-color, color-mix(in srgb, var(--mat-sys-on-surface) 38%, transparent));background-color:var(--mat-fab-small-disabled-state-container-color, color-mix(in srgb, var(--mat-sys-on-surface) 12%, transparent))}.mat-mdc-mini-fab.mat-mdc-button-disabled-interactive{pointer-events:auto}.mat-mdc-mini-fab .mat-mdc-button-touch-target{position:absolute;top:50%;height:48px;display:var(--mat-fab-small-touch-target-display);left:50%;width:48px;transform:translate(-50%, -50%)}.mat-mdc-mini-fab .mat-ripple-element{background-color:var(--mat-fab-small-ripple-color, color-mix(in srgb, var(--mat-sys-on-primary-container) calc(var(--mat-sys-pressed-state-layer-opacity) * 100%), transparent))}.mat-mdc-mini-fab .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-fab-small-state-layer-color, var(--mat-sys-on-primary-container))}.mat-mdc-mini-fab.mat-mdc-button-disabled .mat-mdc-button-persistent-ripple::before{background-color:var(--mat-fab-small-disabled-state-layer-color)}.mat-mdc-mini-fab:hover>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-small-hover-state-layer-opacity, var(--mat-sys-hover-state-layer-opacity))}.mat-mdc-mini-fab.cdk-program-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-mini-fab.cdk-keyboard-focused>.mat-mdc-button-persistent-ripple::before,.mat-mdc-mini-fab.mat-mdc-button-disabled-interactive:focus>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-small-focus-state-layer-opacity, var(--mat-sys-focus-state-layer-opacity))}.mat-mdc-mini-fab:active>.mat-mdc-button-persistent-ripple::before{opacity:var(--mat-fab-small-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity))}.mat-mdc-extended-fab{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;padding-left:20px;padding-right:20px;width:auto;max-width:100%;line-height:normal;box-shadow:var(--mat-fab-extended-container-elevation-shadow, var(--mat-sys-level3));height:var(--mat-fab-extended-container-height, 56px);border-radius:var(--mat-fab-extended-container-shape, var(--mat-sys-corner-large));font-family:var(--mat-fab-extended-label-text-font, var(--mat-sys-label-large-font));font-size:var(--mat-fab-extended-label-text-size, var(--mat-sys-label-large-size));font-weight:var(--mat-fab-extended-label-text-weight, var(--mat-sys-label-large-weight));letter-spacing:var(--mat-fab-extended-label-text-tracking, var(--mat-sys-label-large-tracking))}.mat-mdc-extended-fab:hover{box-shadow:var(--mat-fab-extended-hover-container-elevation-shadow, var(--mat-sys-level4))}.mat-mdc-extended-fab:focus{box-shadow:var(--mat-fab-extended-focus-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-extended-fab:active,.mat-mdc-extended-fab:focus:active{box-shadow:var(--mat-fab-extended-pressed-container-elevation-shadow, var(--mat-sys-level3))}.mat-mdc-extended-fab[disabled],.mat-mdc-extended-fab.mat-mdc-button-disabled{cursor:default;pointer-events:none}.mat-mdc-extended-fab[disabled],.mat-mdc-extended-fab[disabled]:focus,.mat-mdc-extended-fab.mat-mdc-button-disabled,.mat-mdc-extended-fab.mat-mdc-button-disabled:focus{box-shadow:none}.mat-mdc-extended-fab.mat-mdc-button-disabled-interactive{pointer-events:auto}[dir=rtl] .mat-mdc-extended-fab .mdc-button__label+.mat-icon,[dir=rtl] .mat-mdc-extended-fab .mdc-button__label+.material-icons,.mat-mdc-extended-fab>.mat-icon,.mat-mdc-extended-fab>.material-icons{margin-left:-8px;margin-right:12px}.mat-mdc-extended-fab .mdc-button__label+.mat-icon,.mat-mdc-extended-fab .mdc-button__label+.material-icons,[dir=rtl] .mat-mdc-extended-fab>.mat-icon,[dir=rtl] .mat-mdc-extended-fab>.material-icons{margin-left:12px;margin-right:-8px}.mat-mdc-extended-fab .mat-mdc-button-touch-target{width:100%}\n"],
+      encapsulation: 2,
+      changeDetection: 0
+    });
+  }
+  return MatFabButton;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+/**
+ * Material Design mini floating action button (FAB) component. These buttons represent the primary
+ * or most common action for users to interact with.
+ * See https://m3.material.io/components/floating-action-button/overview
+ */
+let MatMiniFabButton = /*#__PURE__*/(() => {
+  class MatMiniFabButton extends _icon_button_DxiIc1ex_mjs__WEBPACK_IMPORTED_MODULE_0__.a {
+    _options = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(MAT_FAB_DEFAULT_OPTIONS, {
+      optional: true
+    });
+    _isFab = true;
+    constructor() {
+      super();
+      this._options = this._options || defaults;
+      this.color = this._options.color || defaults.color;
+    }
+    static ɵfac = function MatMiniFabButton_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || MatMiniFabButton)();
+    };
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+      type: MatMiniFabButton,
+      selectors: [["button", "mat-mini-fab", ""], ["a", "mat-mini-fab", ""], ["button", "matMiniFab", ""], ["a", "matMiniFab", ""]],
+      hostAttrs: [1, "mdc-fab", "mat-mdc-fab-base", "mdc-fab--mini", "mat-mdc-mini-fab"],
+      exportAs: ["matButton", "matAnchor"],
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]],
+      attrs: _c4,
+      ngContentSelectors: _c2,
+      decls: 7,
+      vars: 4,
+      consts: [[1, "mat-mdc-button-persistent-ripple"], [1, "mdc-button__label"], [1, "mat-focus-indicator"], [1, "mat-mdc-button-touch-target"]],
+      template: function MatMiniFabButton_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"](_c1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "span", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "span", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](3, 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](4, 2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](5, "span", 2)(6, "span", 3);
+        }
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassProp"]("mdc-button__ripple", !ctx._isFab)("mdc-fab__ripple", ctx._isFab);
+        }
+      },
+      styles: [_c5],
+      encapsulation: 2,
+      changeDetection: 0
+    });
+  }
+  return MatMiniFabButton;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+// tslint:disable:variable-name
+/**
+ * Material Design floating action button (FAB) component for anchor elements. Anchor elements
+ * are used to provide links for the user to navigate across different routes or pages.
+ * See https://m3.material.io/components/floating-action-button/overview
+ *
+ * The `MatFabAnchor` class has two appearances: normal and extended.
+ */
+const MatFabAnchor = MatFabButton;
+/**
+ * Material Design mini floating action button (FAB) component for anchor elements. Anchor elements
+ * are used to provide links for the user to navigate across different routes or pages.
+ * See https://m3.material.io/components/floating-action-button/overview
+ */
+const MatMiniFabAnchor = MatMiniFabButton;
 let MatButtonModule = /*#__PURE__*/(() => {
   class MatButtonModule {
     static ɵfac = function MatButtonModule_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || MatButtonModule)();
     };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
       type: MatButtonModule
     });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-      imports: [_angular_material_core__WEBPACK_IMPORTED_MODULE_2__.MatCommonModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_2__.MatRippleModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_2__.MatCommonModule]
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
+      imports: [_common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_8__.M, _index_BFRo2fUq_mjs__WEBPACK_IMPORTED_MODULE_9__.M, _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_8__.M]
     });
   }
   return MatButtonModule;
@@ -799,10 +1631,42 @@ let MatButtonModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
-/**
- * Generated bundle index. Do not edit.
- */
 
+/***/ }),
+
+/***/ 89061:
+/*!********************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/index-BFRo2fUq.mjs ***!
+  \********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   M: () => (/* binding */ MatRippleModule)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./common-module-cKSwHniA.mjs */ 8126);
+
+
+
+
+let MatRippleModule = /*#__PURE__*/(() => {
+  class MatRippleModule {
+    static ɵfac = function MatRippleModule_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || MatRippleModule)();
+    };
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+      type: MatRippleModule
+    });
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+      imports: [_common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_1__.M, _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_1__.M]
+    });
+  }
+  return MatRippleModule;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
 
 
 /***/ })

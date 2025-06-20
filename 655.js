@@ -1,154 +1,187 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[655],{
 
-/***/ 10655:
-/*!***************************************************************!*\
-  !*** ./node_modules/@angular/animations/fesm2022/browser.mjs ***!
-  \***************************************************************/
+/***/ 1871:
+/*!*********************************************************************!*\
+  !*** ./node_modules/@angular/animations/fesm2022/util-CPU6TNml.mjs ***!
+  \*********************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   AnimationDriver: () => (/* binding */ AnimationDriver),
-/* harmony export */   NoopAnimationDriver: () => (/* binding */ NoopAnimationDriver),
-/* harmony export */   "ɵAnimation": () => (/* binding */ Animation),
-/* harmony export */   "ɵAnimationEngine": () => (/* binding */ AnimationEngine),
-/* harmony export */   "ɵAnimationRenderer": () => (/* binding */ AnimationRenderer),
-/* harmony export */   "ɵAnimationRendererFactory": () => (/* binding */ AnimationRendererFactory),
-/* harmony export */   "ɵAnimationStyleNormalizer": () => (/* binding */ AnimationStyleNormalizer),
-/* harmony export */   "ɵBaseAnimationRenderer": () => (/* binding */ BaseAnimationRenderer),
-/* harmony export */   "ɵNoopAnimationStyleNormalizer": () => (/* binding */ NoopAnimationStyleNormalizer),
-/* harmony export */   "ɵWebAnimationsDriver": () => (/* binding */ WebAnimationsDriver),
-/* harmony export */   "ɵWebAnimationsPlayer": () => (/* binding */ WebAnimationsPlayer),
-/* harmony export */   "ɵWebAnimationsStyleNormalizer": () => (/* binding */ WebAnimationsStyleNormalizer),
-/* harmony export */   "ɵallowPreviousPlayerStylesMerge": () => (/* binding */ allowPreviousPlayerStylesMerge),
-/* harmony export */   "ɵcamelCaseToDashCase": () => (/* binding */ camelCaseToDashCase),
-/* harmony export */   "ɵcontainsElement": () => (/* binding */ containsElement),
-/* harmony export */   "ɵcreateEngine": () => (/* binding */ createEngine),
-/* harmony export */   "ɵgetParentElement": () => (/* binding */ getParentElement),
-/* harmony export */   "ɵinvokeQuery": () => (/* binding */ invokeQuery),
-/* harmony export */   "ɵnormalizeKeyframes": () => (/* binding */ normalizeKeyframes),
-/* harmony export */   "ɵvalidateStyleProperty": () => (/* binding */ validateStyleProperty),
-/* harmony export */   "ɵvalidateWebAnimatableStyleProperty": () => (/* binding */ validateWebAnimatableStyleProperty)
+/* harmony export */   ENTER_CLASSNAME: () => (/* binding */ ENTER_CLASSNAME),
+/* harmony export */   LEAVE_CLASSNAME: () => (/* binding */ LEAVE_CLASSNAME),
+/* harmony export */   NG_ANIMATING_CLASSNAME: () => (/* binding */ NG_ANIMATING_CLASSNAME),
+/* harmony export */   NG_ANIMATING_SELECTOR: () => (/* binding */ NG_ANIMATING_SELECTOR),
+/* harmony export */   NG_TRIGGER_CLASSNAME: () => (/* binding */ NG_TRIGGER_CLASSNAME),
+/* harmony export */   NG_TRIGGER_SELECTOR: () => (/* binding */ NG_TRIGGER_SELECTOR),
+/* harmony export */   SUBSTITUTION_EXPR_START: () => (/* binding */ SUBSTITUTION_EXPR_START),
+/* harmony export */   allowPreviousPlayerStylesMerge: () => (/* binding */ allowPreviousPlayerStylesMerge),
+/* harmony export */   balancePreviousStylesIntoKeyframes: () => (/* binding */ balancePreviousStylesIntoKeyframes),
+/* harmony export */   buildingFailed: () => (/* binding */ buildingFailed),
+/* harmony export */   camelCaseToDashCase: () => (/* binding */ camelCaseToDashCase),
+/* harmony export */   computeStyle: () => (/* binding */ computeStyle),
+/* harmony export */   containsElement: () => (/* binding */ containsElement),
+/* harmony export */   createAnimationFailed: () => (/* binding */ createAnimationFailed),
+/* harmony export */   dashCaseToCamelCase: () => (/* binding */ dashCaseToCamelCase),
+/* harmony export */   eraseStyles: () => (/* binding */ eraseStyles),
+/* harmony export */   extractStyleParams: () => (/* binding */ extractStyleParams),
+/* harmony export */   getOrSetDefaultValue: () => (/* binding */ getOrSetDefaultValue),
+/* harmony export */   getParentElement: () => (/* binding */ getParentElement),
+/* harmony export */   interpolateParams: () => (/* binding */ interpolateParams),
+/* harmony export */   invalidCssUnitValue: () => (/* binding */ invalidCssUnitValue),
+/* harmony export */   invalidDefinition: () => (/* binding */ invalidDefinition),
+/* harmony export */   invalidExpression: () => (/* binding */ invalidExpression),
+/* harmony export */   invalidKeyframes: () => (/* binding */ invalidKeyframes),
+/* harmony export */   invalidOffset: () => (/* binding */ invalidOffset),
+/* harmony export */   invalidParallelAnimation: () => (/* binding */ invalidParallelAnimation),
+/* harmony export */   invalidQuery: () => (/* binding */ invalidQuery),
+/* harmony export */   invalidStagger: () => (/* binding */ invalidStagger),
+/* harmony export */   invalidState: () => (/* binding */ invalidState),
+/* harmony export */   invalidStyleValue: () => (/* binding */ invalidStyleValue),
+/* harmony export */   invalidTransitionAlias: () => (/* binding */ invalidTransitionAlias),
+/* harmony export */   invalidTrigger: () => (/* binding */ invalidTrigger),
+/* harmony export */   invokeQuery: () => (/* binding */ invokeQuery),
+/* harmony export */   keyframeOffsetsOutOfOrder: () => (/* binding */ keyframeOffsetsOutOfOrder),
+/* harmony export */   keyframesMissingOffsets: () => (/* binding */ keyframesMissingOffsets),
+/* harmony export */   listenOnPlayer: () => (/* binding */ listenOnPlayer),
+/* harmony export */   makeAnimationEvent: () => (/* binding */ makeAnimationEvent),
+/* harmony export */   missingEvent: () => (/* binding */ missingEvent),
+/* harmony export */   missingOrDestroyedAnimation: () => (/* binding */ missingOrDestroyedAnimation),
+/* harmony export */   missingPlayer: () => (/* binding */ missingPlayer),
+/* harmony export */   missingTrigger: () => (/* binding */ missingTrigger),
+/* harmony export */   normalizeAnimationEntry: () => (/* binding */ normalizeAnimationEntry),
+/* harmony export */   normalizeKeyframes: () => (/* binding */ normalizeKeyframes$1),
+/* harmony export */   normalizeKeyframes$1: () => (/* binding */ normalizeKeyframes),
+/* harmony export */   normalizeStyles: () => (/* binding */ normalizeStyles),
+/* harmony export */   optimizeGroupPlayer: () => (/* binding */ optimizeGroupPlayer),
+/* harmony export */   parseTimelineCommand: () => (/* binding */ parseTimelineCommand),
+/* harmony export */   registerFailed: () => (/* binding */ registerFailed),
+/* harmony export */   resolveTiming: () => (/* binding */ resolveTiming),
+/* harmony export */   resolveTimingValue: () => (/* binding */ resolveTimingValue),
+/* harmony export */   setStyles: () => (/* binding */ setStyles),
+/* harmony export */   transitionFailed: () => (/* binding */ transitionFailed),
+/* harmony export */   triggerBuildFailed: () => (/* binding */ triggerBuildFailed),
+/* harmony export */   triggerTransitionsFailed: () => (/* binding */ triggerTransitionsFailed),
+/* harmony export */   unregisteredTrigger: () => (/* binding */ unregisteredTrigger),
+/* harmony export */   unsupportedTriggerEvent: () => (/* binding */ unsupportedTriggerEvent),
+/* harmony export */   validateStyleParams: () => (/* binding */ validateStyleParams),
+/* harmony export */   validateStyleProperty: () => (/* binding */ validateStyleProperty),
+/* harmony export */   validateWebAnimatableStyleProperty: () => (/* binding */ validateWebAnimatableStyleProperty),
+/* harmony export */   validationFailed: () => (/* binding */ validationFailed),
+/* harmony export */   visitDslNode: () => (/* binding */ visitDslNode)
 /* harmony export */ });
-/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/animations */ 73840);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 9516);
+/* harmony import */ var _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./private_export-B_vy_9K7.mjs */ 20748);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
 /**
- * @license Angular v19.1.5
- * (c) 2010-2024 Google LLC. https://angular.io/
+ * @license Angular v20.0.4
+ * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
 
 
 
-
 const LINE_START = '\n - ';
 function invalidTimingValue(exp) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3000 /* RuntimeErrorCode.INVALID_TIMING_VALUE */, ngDevMode && `The provided timing value "${exp}" is invalid.`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3000 /* RuntimeErrorCode.INVALID_TIMING_VALUE */, ngDevMode && `The provided timing value "${exp}" is invalid.`);
 }
 function negativeStepValue() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3100 /* RuntimeErrorCode.NEGATIVE_STEP_VALUE */, ngDevMode && 'Duration values below 0 are not allowed for this animation step.');
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3100 /* RuntimeErrorCode.NEGATIVE_STEP_VALUE */, ngDevMode && 'Duration values below 0 are not allowed for this animation step.');
 }
 function negativeDelayValue() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3101 /* RuntimeErrorCode.NEGATIVE_DELAY_VALUE */, ngDevMode && 'Delay values below 0 are not allowed for this animation step.');
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3101 /* RuntimeErrorCode.NEGATIVE_DELAY_VALUE */, ngDevMode && 'Delay values below 0 are not allowed for this animation step.');
 }
 function invalidStyleParams(varName) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3001 /* RuntimeErrorCode.INVALID_STYLE_PARAMS */, ngDevMode && `Unable to resolve the local animation param ${varName} in the given list of values`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3001 /* RuntimeErrorCode.INVALID_STYLE_PARAMS */, ngDevMode && `Unable to resolve the local animation param ${varName} in the given list of values`);
 }
 function invalidParamValue(varName) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3003 /* RuntimeErrorCode.INVALID_PARAM_VALUE */, ngDevMode && `Please provide a value for the animation param ${varName}`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3003 /* RuntimeErrorCode.INVALID_PARAM_VALUE */, ngDevMode && `Please provide a value for the animation param ${varName}`);
 }
 function invalidNodeType(nodeType) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3004 /* RuntimeErrorCode.INVALID_NODE_TYPE */, ngDevMode && `Unable to resolve animation metadata node #${nodeType}`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3004 /* RuntimeErrorCode.INVALID_NODE_TYPE */, ngDevMode && `Unable to resolve animation metadata node #${nodeType}`);
 }
 function invalidCssUnitValue(userProvidedProperty, value) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3005 /* RuntimeErrorCode.INVALID_CSS_UNIT_VALUE */, ngDevMode && `Please provide a CSS unit value for ${userProvidedProperty}:${value}`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3005 /* RuntimeErrorCode.INVALID_CSS_UNIT_VALUE */, ngDevMode && `Please provide a CSS unit value for ${userProvidedProperty}:${value}`);
 }
 function invalidTrigger() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3006 /* RuntimeErrorCode.INVALID_TRIGGER */, ngDevMode && "animation triggers cannot be prefixed with an `@` sign (e.g. trigger('@foo', [...]))");
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3006 /* RuntimeErrorCode.INVALID_TRIGGER */, ngDevMode && "animation triggers cannot be prefixed with an `@` sign (e.g. trigger('@foo', [...]))");
 }
 function invalidDefinition() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3007 /* RuntimeErrorCode.INVALID_DEFINITION */, ngDevMode && 'only state() and transition() definitions can sit inside of a trigger()');
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3007 /* RuntimeErrorCode.INVALID_DEFINITION */, ngDevMode && 'only state() and transition() definitions can sit inside of a trigger()');
 }
 function invalidState(metadataName, missingSubs) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3008 /* RuntimeErrorCode.INVALID_STATE */, ngDevMode && `state("${metadataName}", ...) must define default values for all the following style substitutions: ${missingSubs.join(', ')}`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3008 /* RuntimeErrorCode.INVALID_STATE */, ngDevMode && `state("${metadataName}", ...) must define default values for all the following style substitutions: ${missingSubs.join(', ')}`);
 }
 function invalidStyleValue(value) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3002 /* RuntimeErrorCode.INVALID_STYLE_VALUE */, ngDevMode && `The provided style string value ${value} is not allowed.`);
-}
-function invalidProperty(prop) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3009 /* RuntimeErrorCode.INVALID_PROPERTY */, ngDevMode && `The provided animation property "${prop}" is not a supported CSS property for animations`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3002 /* RuntimeErrorCode.INVALID_STYLE_VALUE */, ngDevMode && `The provided style string value ${value} is not allowed.`);
 }
 function invalidParallelAnimation(prop, firstStart, firstEnd, secondStart, secondEnd) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3010 /* RuntimeErrorCode.INVALID_PARALLEL_ANIMATION */, ngDevMode && `The CSS property "${prop}" that exists between the times of "${firstStart}ms" and "${firstEnd}ms" is also being animated in a parallel animation between the times of "${secondStart}ms" and "${secondEnd}ms"`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3010 /* RuntimeErrorCode.INVALID_PARALLEL_ANIMATION */, ngDevMode && `The CSS property "${prop}" that exists between the times of "${firstStart}ms" and "${firstEnd}ms" is also being animated in a parallel animation between the times of "${secondStart}ms" and "${secondEnd}ms"`);
 }
 function invalidKeyframes() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3011 /* RuntimeErrorCode.INVALID_KEYFRAMES */, ngDevMode && `keyframes() must be placed inside of a call to animate()`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3011 /* RuntimeErrorCode.INVALID_KEYFRAMES */, ngDevMode && `keyframes() must be placed inside of a call to animate()`);
 }
 function invalidOffset() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3012 /* RuntimeErrorCode.INVALID_OFFSET */, ngDevMode && `Please ensure that all keyframe offsets are between 0 and 1`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3012 /* RuntimeErrorCode.INVALID_OFFSET */, ngDevMode && `Please ensure that all keyframe offsets are between 0 and 1`);
 }
 function keyframeOffsetsOutOfOrder() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3200 /* RuntimeErrorCode.KEYFRAME_OFFSETS_OUT_OF_ORDER */, ngDevMode && `Please ensure that all keyframe offsets are in order`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3200 /* RuntimeErrorCode.KEYFRAME_OFFSETS_OUT_OF_ORDER */, ngDevMode && `Please ensure that all keyframe offsets are in order`);
 }
 function keyframesMissingOffsets() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3202 /* RuntimeErrorCode.KEYFRAMES_MISSING_OFFSETS */, ngDevMode && `Not all style() steps within the declared keyframes() contain offsets`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3202 /* RuntimeErrorCode.KEYFRAMES_MISSING_OFFSETS */, ngDevMode && `Not all style() steps within the declared keyframes() contain offsets`);
 }
 function invalidStagger() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3013 /* RuntimeErrorCode.INVALID_STAGGER */, ngDevMode && `stagger() can only be used inside of query()`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3013 /* RuntimeErrorCode.INVALID_STAGGER */, ngDevMode && `stagger() can only be used inside of query()`);
 }
 function invalidQuery(selector) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3014 /* RuntimeErrorCode.INVALID_QUERY */, ngDevMode && `\`query("${selector}")\` returned zero elements. (Use \`query("${selector}", { optional: true })\` if you wish to allow this.)`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3014 /* RuntimeErrorCode.INVALID_QUERY */, ngDevMode && `\`query("${selector}")\` returned zero elements. (Use \`query("${selector}", { optional: true })\` if you wish to allow this.)`);
 }
 function invalidExpression(expr) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3015 /* RuntimeErrorCode.INVALID_EXPRESSION */, ngDevMode && `The provided transition expression "${expr}" is not supported`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3015 /* RuntimeErrorCode.INVALID_EXPRESSION */, ngDevMode && `The provided transition expression "${expr}" is not supported`);
 }
 function invalidTransitionAlias(alias) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3016 /* RuntimeErrorCode.INVALID_TRANSITION_ALIAS */, ngDevMode && `The transition alias value "${alias}" is not supported`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3016 /* RuntimeErrorCode.INVALID_TRANSITION_ALIAS */, ngDevMode && `The transition alias value "${alias}" is not supported`);
 }
 function validationFailed(errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3500 /* RuntimeErrorCode.VALIDATION_FAILED */, ngDevMode && `animation validation failed:\n${errors.map(err => err.message).join('\n')}`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3500 /* RuntimeErrorCode.VALIDATION_FAILED */, ngDevMode && `animation validation failed:\n${errors.map(err => err.message).join('\n')}`);
 }
 function buildingFailed(errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3501 /* RuntimeErrorCode.BUILDING_FAILED */, ngDevMode && `animation building failed:\n${errors.map(err => err.message).join('\n')}`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3501 /* RuntimeErrorCode.BUILDING_FAILED */, ngDevMode && `animation building failed:\n${errors.map(err => err.message).join('\n')}`);
 }
 function triggerBuildFailed(name, errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3404 /* RuntimeErrorCode.TRIGGER_BUILD_FAILED */, ngDevMode && `The animation trigger "${name}" has failed to build due to the following errors:\n - ${errors.map(err => err.message).join('\n - ')}`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3404 /* RuntimeErrorCode.TRIGGER_BUILD_FAILED */, ngDevMode && `The animation trigger "${name}" has failed to build due to the following errors:\n - ${errors.map(err => err.message).join('\n - ')}`);
 }
 function animationFailed(errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3502 /* RuntimeErrorCode.ANIMATION_FAILED */, ngDevMode && `Unable to animate due to the following errors:${LINE_START}${errors.map(err => err.message).join(LINE_START)}`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3502 /* RuntimeErrorCode.ANIMATION_FAILED */, ngDevMode && `Unable to animate due to the following errors:${LINE_START}${errors.map(err => err.message).join(LINE_START)}`);
 }
 function registerFailed(errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3503 /* RuntimeErrorCode.REGISTRATION_FAILED */, ngDevMode && `Unable to build the animation due to the following errors: ${errors.map(err => err.message).join('\n')}`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3503 /* RuntimeErrorCode.REGISTRATION_FAILED */, ngDevMode && `Unable to build the animation due to the following errors: ${errors.map(err => err.message).join('\n')}`);
 }
 function missingOrDestroyedAnimation() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3300 /* RuntimeErrorCode.MISSING_OR_DESTROYED_ANIMATION */, ngDevMode && "The requested animation doesn't exist or has already been destroyed");
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3300 /* RuntimeErrorCode.MISSING_OR_DESTROYED_ANIMATION */, ngDevMode && "The requested animation doesn't exist or has already been destroyed");
 }
 function createAnimationFailed(errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3504 /* RuntimeErrorCode.CREATE_ANIMATION_FAILED */, ngDevMode && `Unable to create the animation due to the following errors:${errors.map(err => err.message).join('\n')}`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3504 /* RuntimeErrorCode.CREATE_ANIMATION_FAILED */, ngDevMode && `Unable to create the animation due to the following errors:${errors.map(err => err.message).join('\n')}`);
 }
 function missingPlayer(id) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3301 /* RuntimeErrorCode.MISSING_PLAYER */, ngDevMode && `Unable to find the timeline player referenced by ${id}`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3301 /* RuntimeErrorCode.MISSING_PLAYER */, ngDevMode && `Unable to find the timeline player referenced by ${id}`);
 }
 function missingTrigger(phase, name) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3302 /* RuntimeErrorCode.MISSING_TRIGGER */, ngDevMode && `Unable to listen on the animation trigger event "${phase}" because the animation trigger "${name}" doesn\'t exist!`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3302 /* RuntimeErrorCode.MISSING_TRIGGER */, ngDevMode && `Unable to listen on the animation trigger event "${phase}" because the animation trigger "${name}" doesn\'t exist!`);
 }
 function missingEvent(name) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3303 /* RuntimeErrorCode.MISSING_EVENT */, ngDevMode && `Unable to listen on the animation trigger "${name}" because the provided event is undefined!`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3303 /* RuntimeErrorCode.MISSING_EVENT */, ngDevMode && `Unable to listen on the animation trigger "${name}" because the provided event is undefined!`);
 }
 function unsupportedTriggerEvent(phase, name) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3400 /* RuntimeErrorCode.UNSUPPORTED_TRIGGER_EVENT */, ngDevMode && `The provided animation trigger event "${phase}" for the animation trigger "${name}" is not supported!`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3400 /* RuntimeErrorCode.UNSUPPORTED_TRIGGER_EVENT */, ngDevMode && `The provided animation trigger event "${phase}" for the animation trigger "${name}" is not supported!`);
 }
 function unregisteredTrigger(name) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3401 /* RuntimeErrorCode.UNREGISTERED_TRIGGER */, ngDevMode && `The provided animation trigger "${name}" has not been registered!`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3401 /* RuntimeErrorCode.UNREGISTERED_TRIGGER */, ngDevMode && `The provided animation trigger "${name}" has not been registered!`);
 }
 function triggerTransitionsFailed(errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3402 /* RuntimeErrorCode.TRIGGER_TRANSITIONS_FAILED */, ngDevMode && `Unable to process animations due to the following failed trigger transitions\n ${errors.map(err => err.message).join('\n')}`);
-}
-function triggerParsingFailed(name, errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3403 /* RuntimeErrorCode.TRIGGER_PARSING_FAILED */, ngDevMode && `Animation parsing for the ${name} trigger have failed:${LINE_START}${errors.map(err => err.message).join(LINE_START)}`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3402 /* RuntimeErrorCode.TRIGGER_TRANSITIONS_FAILED */, ngDevMode && `Unable to process animations due to the following failed trigger transitions\n ${errors.map(err => err.message).join('\n')}`);
 }
 function transitionFailed(name, errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3505 /* RuntimeErrorCode.TRANSITION_FAILED */, ngDevMode && `@${name} has failed due to:\n ${errors.map(err => err.message).join('\n- ')}`);
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3505 /* RuntimeErrorCode.TRANSITION_FAILED */, ngDevMode && `@${name} has failed due to:\n ${errors.map(err => err.message).join('\n- ')}`);
 }
 
 /**
@@ -160,11 +193,11 @@ const ANIMATABLE_PROP_SET = /*#__PURE__*/new Set(['-moz-outline-radius', '-moz-o
 function optimizeGroupPlayer(players) {
   switch (players.length) {
     case 0:
-      return new _angular_animations__WEBPACK_IMPORTED_MODULE_0__.NoopAnimationPlayer();
+      return new _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.NoopAnimationPlayer();
     case 1:
       return players[0];
     default:
-      return new _angular_animations__WEBPACK_IMPORTED_MODULE_0__["ɵAnimationGroupPlayer"](players);
+      return new _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationGroupPlayer(players);
   }
 }
 function normalizeKeyframes$1(normalizer, keyframes, preStyles = new Map(), postStyles = new Map()) {
@@ -182,10 +215,10 @@ function normalizeKeyframes$1(normalizer, keyframes, preStyles = new Map(), post
       if (prop !== 'offset') {
         normalizedProp = normalizer.normalizePropertyName(normalizedProp, errors);
         switch (normalizedValue) {
-          case _angular_animations__WEBPACK_IMPORTED_MODULE_0__["ɵPRE_STYLE"]:
+          case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__["ɵPRE_STYLE"]:
             normalizedValue = preStyles.get(prop);
             break;
-          case _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AUTO_STYLE:
+          case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AUTO_STYLE:
             normalizedValue = postStyles.get(prop);
             break;
           default:
@@ -308,91 +341,6 @@ function invokeQuery(element, selector, multi) {
   const elem = element.querySelector(selector);
   return elem ? [elem] : [];
 }
-function hypenatePropsKeys(original) {
-  const newMap = new Map();
-  original.forEach((val, prop) => {
-    const newProp = prop.replace(/([a-z])([A-Z])/g, '$1-$2');
-    newMap.set(newProp, val);
-  });
-  return newMap;
-}
-
-/**
- * @publicApi
- *
- * `AnimationDriver` implentation for Noop animations
- */
-let NoopAnimationDriver = /*#__PURE__*/(() => {
-  class NoopAnimationDriver {
-    /**
-     * @returns Whether `prop` is a valid CSS property
-     */
-    validateStyleProperty(prop) {
-      return validateStyleProperty(prop);
-    }
-    /**
-     *
-     * @returns Whether elm1 contains elm2.
-     */
-    containsElement(elm1, elm2) {
-      return containsElement(elm1, elm2);
-    }
-    /**
-     * @returns Rhe parent of the given element or `null` if the element is the `document`
-     */
-    getParentElement(element) {
-      return getParentElement(element);
-    }
-    /**
-     * @returns The result of the query selector on the element. The array will contain up to 1 item
-     *     if `multi` is  `false`.
-     */
-    query(element, selector, multi) {
-      return invokeQuery(element, selector, multi);
-    }
-    /**
-     * @returns The `defaultValue` or empty string
-     */
-    computeStyle(element, prop, defaultValue) {
-      return defaultValue || '';
-    }
-    /**
-     * @returns An `NoopAnimationPlayer`
-     */
-    animate(element, keyframes, duration, delay, easing, previousPlayers = [], scrubberAccessRequested) {
-      return new _angular_animations__WEBPACK_IMPORTED_MODULE_0__.NoopAnimationPlayer(duration, delay);
-    }
-    static ɵfac = function NoopAnimationDriver_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || NoopAnimationDriver)();
-    };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
-      token: NoopAnimationDriver,
-      factory: NoopAnimationDriver.ɵfac
-    });
-  }
-  return NoopAnimationDriver;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-/**
- * @publicApi
- */
-class AnimationDriver {
-  /**
-   * @deprecated Use the NoopAnimationDriver class.
-   */
-  static NOOP = /*#__PURE__*/new NoopAnimationDriver();
-}
-class AnimationStyleNormalizer {}
-class NoopAnimationStyleNormalizer {
-  normalizePropertyName(propertyName, errors) {
-    return propertyName;
-  }
-  normalizeStyleValue(userProvidedProperty, normalizedProperty, value, errors) {
-    return value;
-  }
-}
 const ONE_SECOND = 1000;
 const SUBSTITUTION_EXPR_START = '{{';
 const SUBSTITUTION_EXPR_END = '}}';
@@ -498,7 +446,7 @@ function eraseStyles(element, styles) {
 function normalizeAnimationEntry(steps) {
   if (Array.isArray(steps)) {
     if (steps.length == 1) return steps[0];
-    return (0,_angular_animations__WEBPACK_IMPORTED_MODULE_0__.sequence)(steps);
+    return (0,_private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.sequence)(steps);
   }
   return steps;
 }
@@ -513,7 +461,7 @@ function validateStyleParams(value, options, errors) {
     });
   }
 }
-const PARAM_REGEX = /*#__PURE__*/new RegExp(`${SUBSTITUTION_EXPR_START}\\s*(.+?)\\s*${SUBSTITUTION_EXPR_END}`, 'g');
+const PARAM_REGEX = /* @__PURE__ */new RegExp(`${SUBSTITUTION_EXPR_START}\\s*(.+?)\\s*${SUBSTITUTION_EXPR_END}`, 'g');
 function extractStyleParams(value) {
   let params = [];
   if (typeof value === 'string') {
@@ -570,31 +518,31 @@ function balancePreviousStylesIntoKeyframes(element, keyframes, previousStyles) 
 }
 function visitDslNode(visitor, node, context) {
   switch (node.type) {
-    case _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Trigger:
+    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Trigger:
       return visitor.visitTrigger(node, context);
-    case _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.State:
+    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.State:
       return visitor.visitState(node, context);
-    case _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Transition:
+    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Transition:
       return visitor.visitTransition(node, context);
-    case _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Sequence:
+    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Sequence:
       return visitor.visitSequence(node, context);
-    case _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Group:
+    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Group:
       return visitor.visitGroup(node, context);
-    case _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Animate:
+    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Animate:
       return visitor.visitAnimate(node, context);
-    case _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Keyframes:
+    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Keyframes:
       return visitor.visitKeyframes(node, context);
-    case _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Style:
+    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Style:
       return visitor.visitStyle(node, context);
-    case _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Reference:
+    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Reference:
       return visitor.visitReference(node, context);
-    case _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.AnimateChild:
+    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.AnimateChild:
       return visitor.visitAnimateChild(node, context);
-    case _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.AnimateRef:
+    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.AnimateRef:
       return visitor.visitAnimateRef(node, context);
-    case _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Query:
+    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Query:
       return visitor.visitQuery(node, context);
-    case _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Stagger:
+    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Stagger:
       return visitor.visitStagger(node, context);
     default:
       throw invalidNodeType(node.type);
@@ -603,10 +551,137 @@ function visitDslNode(visitor, node, context) {
 function computeStyle(element, prop) {
   return window.getComputedStyle(element)[prop];
 }
+
+
+/***/ }),
+
+/***/ 10655:
+/*!***************************************************************!*\
+  !*** ./node_modules/@angular/animations/fesm2022/browser.mjs ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AnimationDriver: () => (/* binding */ AnimationDriver),
+/* harmony export */   NoopAnimationDriver: () => (/* binding */ NoopAnimationDriver),
+/* harmony export */   "ɵAnimation": () => (/* binding */ Animation),
+/* harmony export */   "ɵAnimationEngine": () => (/* binding */ AnimationEngine),
+/* harmony export */   "ɵAnimationRenderer": () => (/* binding */ AnimationRenderer),
+/* harmony export */   "ɵAnimationRendererFactory": () => (/* binding */ AnimationRendererFactory),
+/* harmony export */   "ɵAnimationStyleNormalizer": () => (/* binding */ AnimationStyleNormalizer),
+/* harmony export */   "ɵBaseAnimationRenderer": () => (/* binding */ BaseAnimationRenderer),
+/* harmony export */   "ɵENTER_CLASSNAME": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.ENTER_CLASSNAME),
+/* harmony export */   "ɵLEAVE_CLASSNAME": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.LEAVE_CLASSNAME),
+/* harmony export */   "ɵNoopAnimationStyleNormalizer": () => (/* binding */ NoopAnimationStyleNormalizer),
+/* harmony export */   "ɵTransitionAnimationPlayer": () => (/* binding */ TransitionAnimationPlayer),
+/* harmony export */   "ɵWebAnimationsDriver": () => (/* binding */ WebAnimationsDriver),
+/* harmony export */   "ɵWebAnimationsPlayer": () => (/* binding */ WebAnimationsPlayer),
+/* harmony export */   "ɵWebAnimationsStyleNormalizer": () => (/* binding */ WebAnimationsStyleNormalizer),
+/* harmony export */   "ɵallowPreviousPlayerStylesMerge": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.allowPreviousPlayerStylesMerge),
+/* harmony export */   "ɵcamelCaseToDashCase": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.camelCaseToDashCase),
+/* harmony export */   "ɵcontainsElement": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.containsElement),
+/* harmony export */   "ɵcreateEngine": () => (/* binding */ createEngine),
+/* harmony export */   "ɵgetParentElement": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getParentElement),
+/* harmony export */   "ɵinvokeQuery": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invokeQuery),
+/* harmony export */   "ɵnormalizeKeyframes": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeKeyframes$1),
+/* harmony export */   "ɵvalidateStyleProperty": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.validateStyleProperty),
+/* harmony export */   "ɵvalidateWebAnimatableStyleProperty": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.validateWebAnimatableStyleProperty)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util-CPU6TNml.mjs */ 1871);
+/* harmony import */ var _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./private_export-B_vy_9K7.mjs */ 20748);
+/**
+ * @license Angular v20.0.4
+ * (c) 2010-2025 Google LLC. https://angular.io/
+ * License: MIT
+ */
+
+
+
+
+
+
+/**
+ * @publicApi
+ *
+ * `AnimationDriver` implentation for Noop animations
+ */
+let NoopAnimationDriver = /*#__PURE__*/(() => {
+  class NoopAnimationDriver {
+    /**
+     * @returns Whether `prop` is a valid CSS property
+     */
+    validateStyleProperty(prop) {
+      return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.validateStyleProperty)(prop);
+    }
+    /**
+     *
+     * @returns Whether elm1 contains elm2.
+     */
+    containsElement(elm1, elm2) {
+      return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.containsElement)(elm1, elm2);
+    }
+    /**
+     * @returns Rhe parent of the given element or `null` if the element is the `document`
+     */
+    getParentElement(element) {
+      return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getParentElement)(element);
+    }
+    /**
+     * @returns The result of the query selector on the element. The array will contain up to 1 item
+     *     if `multi` is  `false`.
+     */
+    query(element, selector, multi) {
+      return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invokeQuery)(element, selector, multi);
+    }
+    /**
+     * @returns The `defaultValue` or empty string
+     */
+    computeStyle(element, prop, defaultValue) {
+      return defaultValue || '';
+    }
+    /**
+     * @returns An `NoopAnimationPlayer`
+     */
+    animate(element, keyframes, duration, delay, easing, previousPlayers = [], scrubberAccessRequested) {
+      return new _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.NoopAnimationPlayer(duration, delay);
+    }
+    static ɵfac = function NoopAnimationDriver_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || NoopAnimationDriver)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: NoopAnimationDriver,
+      factory: NoopAnimationDriver.ɵfac
+    });
+  }
+  return NoopAnimationDriver;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+/**
+ * @publicApi
+ */
+class AnimationDriver {
+  /**
+   * @deprecated Use the NoopAnimationDriver class.
+   */
+  static NOOP = /*#__PURE__*/new NoopAnimationDriver();
+}
+class AnimationStyleNormalizer {}
+class NoopAnimationStyleNormalizer {
+  normalizePropertyName(propertyName, errors) {
+    return propertyName;
+  }
+  normalizeStyleValue(userProvidedProperty, normalizedProperty, value, errors) {
+    return value;
+  }
+}
 const DIMENSIONAL_PROP_SET = /*#__PURE__*/new Set(['width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight', 'left', 'top', 'bottom', 'right', 'fontSize', 'outlineWidth', 'outlineOffset', 'paddingTop', 'paddingLeft', 'paddingBottom', 'paddingRight', 'marginTop', 'marginLeft', 'marginBottom', 'marginRight', 'borderRadius', 'borderWidth', 'borderTopWidth', 'borderLeftWidth', 'borderRightWidth', 'borderBottomWidth', 'textIndent', 'perspective']);
 class WebAnimationsStyleNormalizer extends AnimationStyleNormalizer {
   normalizePropertyName(propertyName, errors) {
-    return dashCaseToCamelCase(propertyName);
+    return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.dashCaseToCamelCase)(propertyName);
   }
   normalizeStyleValue(userProvidedProperty, normalizedProperty, value, errors) {
     let unit = '';
@@ -617,7 +692,7 @@ class WebAnimationsStyleNormalizer extends AnimationStyleNormalizer {
       } else {
         const valAndSuffixMatch = value.match(/^[+-]?[\d\.]+([a-z]*)$/);
         if (valAndSuffixMatch && valAndSuffixMatch[1].length == 0) {
-          errors.push(invalidCssUnitValue(userProvidedProperty, value));
+          errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidCssUnitValue)(userProvidedProperty, value));
         }
       }
     }
@@ -636,9 +711,6 @@ function warnTriggerBuild(name, warnings) {
 }
 function warnRegister(warnings) {
   console.warn(`Animation built with the following warnings:${createListOfWarnings(warnings)}`);
-}
-function triggerParsingWarnings(name, warnings) {
-  console.warn(`Animation parsing for the ${name} trigger presents the following warnings:${createListOfWarnings(warnings)}`);
 }
 function pushUnrecognizedPropertiesWarning(warnings, props) {
   if (props.length) {
@@ -666,7 +738,7 @@ function parseInnerTransitionStr(eventStr, expressions, errors) {
   }
   const match = eventStr.match(/^(\*|[-\w]+)\s*(<?[=-]>)\s*(\*|[-\w]+)$/);
   if (match == null || match.length < 4) {
-    errors.push(invalidExpression(eventStr));
+    errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidExpression)(eventStr));
     return expressions;
   }
   const fromState = match[1];
@@ -690,7 +762,7 @@ function parseAnimationAlias(alias, errors) {
     case ':decrement':
       return (fromState, toState) => parseFloat(toState) < parseFloat(fromState);
     default:
-      errors.push(invalidTransitionAlias(alias));
+      errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidTransitionAlias)(alias));
       return '* => *';
   }
 }
@@ -716,7 +788,7 @@ function makeLambdaFromStates(lhs, rhs) {
   };
 }
 const SELF_TOKEN = ':self';
-const SELF_TOKEN_REGEX = /*#__PURE__*/new RegExp(`s*${SELF_TOKEN}s*,?`, 'g');
+const SELF_TOKEN_REGEX = /* @__PURE__ */new RegExp(`s*${SELF_TOKEN}s*,?`, 'g');
 /*
  * [Validation]
  * The visitor code below will traverse the animation AST generated by the animation verb functions
@@ -765,7 +837,7 @@ class AnimationAstBuilderVisitor {
   build(metadata, errors, warnings) {
     const context = new AnimationAstBuilderContext(errors);
     this._resetContextStyleTimingState(context);
-    const ast = visitDslNode(this, normalizeAnimationEntry(metadata), context);
+    const ast = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeAnimationEntry)(metadata), context);
     if (typeof ngDevMode === 'undefined' || ngDevMode) {
       if (context.unsupportedCSSPropertiesFound.size) {
         pushUnrecognizedPropertiesWarning(warnings, [...context.unsupportedCSSPropertiesFound.keys()]);
@@ -785,11 +857,11 @@ class AnimationAstBuilderVisitor {
     const states = [];
     const transitions = [];
     if (metadata.name.charAt(0) == '@') {
-      context.errors.push(invalidTrigger());
+      context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidTrigger)());
     }
     metadata.definitions.forEach(def => {
       this._resetContextStyleTimingState(context);
-      if (def.type == _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.State) {
+      if (def.type == _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.State) {
         const stateDef = def;
         const name = stateDef.name;
         name.toString().split(/\s*,\s*/).forEach(n => {
@@ -797,17 +869,17 @@ class AnimationAstBuilderVisitor {
           states.push(this.visitState(stateDef, context));
         });
         stateDef.name = name;
-      } else if (def.type == _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Transition) {
+      } else if (def.type == _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Transition) {
         const transition = this.visitTransition(def, context);
         queryCount += transition.queryCount;
         depCount += transition.depCount;
         transitions.push(transition);
       } else {
-        context.errors.push(invalidDefinition());
+        context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidDefinition)());
       }
     });
     return {
-      type: _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Trigger,
+      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Trigger,
       name: metadata.name,
       states,
       transitions,
@@ -825,7 +897,7 @@ class AnimationAstBuilderVisitor {
       styleAst.styles.forEach(style => {
         if (style instanceof Map) {
           style.forEach(value => {
-            extractStyleParams(value).forEach(sub => {
+            (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.extractStyleParams)(value).forEach(sub => {
               if (!params.hasOwnProperty(sub)) {
                 missingSubs.add(sub);
               }
@@ -834,11 +906,11 @@ class AnimationAstBuilderVisitor {
         }
       });
       if (missingSubs.size) {
-        context.errors.push(invalidState(metadata.name, [...missingSubs.values()]));
+        context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidState)(metadata.name, [...missingSubs.values()]));
       }
     }
     return {
-      type: _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.State,
+      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.State,
       name: metadata.name,
       style: styleAst,
       options: astParams ? {
@@ -849,10 +921,10 @@ class AnimationAstBuilderVisitor {
   visitTransition(metadata, context) {
     context.queryCount = 0;
     context.depCount = 0;
-    const animation = visitDslNode(this, normalizeAnimationEntry(metadata.animation), context);
+    const animation = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeAnimationEntry)(metadata.animation), context);
     const matchers = parseTransitionExpr(metadata.expr, context.errors);
     return {
-      type: _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Transition,
+      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Transition,
       matchers,
       animation,
       queryCount: context.queryCount,
@@ -862,8 +934,8 @@ class AnimationAstBuilderVisitor {
   }
   visitSequence(metadata, context) {
     return {
-      type: _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Sequence,
-      steps: metadata.steps.map(s => visitDslNode(this, s, context)),
+      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Sequence,
+      steps: metadata.steps.map(s => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, s, context)),
       options: normalizeAnimationOptions(metadata.options)
     };
   }
@@ -872,13 +944,13 @@ class AnimationAstBuilderVisitor {
     let furthestTime = 0;
     const steps = metadata.steps.map(step => {
       context.currentTime = currentTime;
-      const innerAst = visitDslNode(this, step, context);
+      const innerAst = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, step, context);
       furthestTime = Math.max(furthestTime, context.currentTime);
       return innerAst;
     });
     context.currentTime = furthestTime;
     return {
-      type: _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Group,
+      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Group,
       steps,
       options: normalizeAnimationOptions(metadata.options)
     };
@@ -887,8 +959,8 @@ class AnimationAstBuilderVisitor {
     const timingAst = constructTimingAst(metadata.timings, context.errors);
     context.currentAnimateTimings = timingAst;
     let styleAst;
-    let styleMetadata = metadata.styles ? metadata.styles : (0,_angular_animations__WEBPACK_IMPORTED_MODULE_0__.style)({});
-    if (styleMetadata.type == _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Keyframes) {
+    let styleMetadata = metadata.styles ? metadata.styles : (0,_private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.style)({});
+    if (styleMetadata.type == _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Keyframes) {
       styleAst = this.visitKeyframes(styleMetadata, context);
     } else {
       let styleMetadata = metadata.styles;
@@ -899,7 +971,7 @@ class AnimationAstBuilderVisitor {
         if (timingAst.easing) {
           newStyleData['easing'] = timingAst.easing;
         }
-        styleMetadata = (0,_angular_animations__WEBPACK_IMPORTED_MODULE_0__.style)(newStyleData);
+        styleMetadata = (0,_private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.style)(newStyleData);
       }
       context.currentTime += timingAst.duration + timingAst.delay;
       const _styleAst = this.visitStyle(styleMetadata, context);
@@ -908,7 +980,7 @@ class AnimationAstBuilderVisitor {
     }
     context.currentAnimateTimings = null;
     return {
-      type: _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Animate,
+      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Animate,
       timings: timingAst,
       style: styleAst,
       options: null
@@ -924,10 +996,10 @@ class AnimationAstBuilderVisitor {
     const metadataStyles = Array.isArray(metadata.styles) ? metadata.styles : [metadata.styles];
     for (let styleTuple of metadataStyles) {
       if (typeof styleTuple === 'string') {
-        if (styleTuple === _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AUTO_STYLE) {
+        if (styleTuple === _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE) {
           styles.push(styleTuple);
         } else {
-          context.errors.push(invalidStyleValue(styleTuple));
+          context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidStyleValue)(styleTuple));
         }
       } else {
         styles.push(new Map(Object.entries(styleTuple)));
@@ -943,7 +1015,7 @@ class AnimationAstBuilderVisitor {
         }
         if (!containsDynamicStyles) {
           for (let value of styleData.values()) {
-            if (value.toString().indexOf(SUBSTITUTION_EXPR_START) >= 0) {
+            if (value.toString().indexOf(_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.SUBSTITUTION_EXPR_START) >= 0) {
               containsDynamicStyles = true;
               break;
             }
@@ -952,7 +1024,7 @@ class AnimationAstBuilderVisitor {
       }
     });
     return {
-      type: _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Style,
+      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Style,
       styles,
       easing: collectedEasing,
       offset: metadata.offset,
@@ -984,7 +1056,7 @@ class AnimationAstBuilderVisitor {
         let updateCollectedStyle = true;
         if (collectedEntry) {
           if (startTime != endTime && startTime >= collectedEntry.startTime && endTime <= collectedEntry.endTime) {
-            context.errors.push(invalidParallelAnimation(prop, collectedEntry.startTime, collectedEntry.endTime, startTime, endTime));
+            context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidParallelAnimation)(prop, collectedEntry.startTime, collectedEntry.endTime, startTime, endTime));
             updateCollectedStyle = false;
           }
           // we always choose the smaller start time value since we
@@ -999,19 +1071,19 @@ class AnimationAstBuilderVisitor {
           });
         }
         if (context.options) {
-          validateStyleParams(value, context.options, context.errors);
+          (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.validateStyleParams)(value, context.options, context.errors);
         }
       });
     });
   }
   visitKeyframes(metadata, context) {
     const ast = {
-      type: _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Keyframes,
+      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Keyframes,
       styles: [],
       options: null
     };
     if (!context.currentAnimateTimings) {
-      context.errors.push(invalidKeyframes());
+      context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidKeyframes)());
       return ast;
     }
     const MAX_KEYFRAME_OFFSET = 1;
@@ -1035,15 +1107,15 @@ class AnimationAstBuilderVisitor {
       return style;
     });
     if (keyframesOutOfRange) {
-      context.errors.push(invalidOffset());
+      context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidOffset)());
     }
     if (offsetsOutOfOrder) {
-      context.errors.push(keyframeOffsetsOutOfOrder());
+      context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.keyframeOffsetsOutOfOrder)());
     }
     const length = metadata.steps.length;
     let generatedOffset = 0;
     if (totalKeyframesWithOffsets > 0 && totalKeyframesWithOffsets < length) {
-      context.errors.push(keyframesMissingOffsets());
+      context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.keyframesMissingOffsets)());
     } else if (totalKeyframesWithOffsets == 0) {
       generatedOffset = MAX_KEYFRAME_OFFSET / (length - 1);
     }
@@ -1064,21 +1136,21 @@ class AnimationAstBuilderVisitor {
   }
   visitReference(metadata, context) {
     return {
-      type: _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Reference,
-      animation: visitDslNode(this, normalizeAnimationEntry(metadata.animation), context),
+      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Reference,
+      animation: (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeAnimationEntry)(metadata.animation), context),
       options: normalizeAnimationOptions(metadata.options)
     };
   }
   visitAnimateChild(metadata, context) {
     context.depCount++;
     return {
-      type: _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.AnimateChild,
+      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.AnimateChild,
       options: normalizeAnimationOptions(metadata.options)
     };
   }
   visitAnimateRef(metadata, context) {
     return {
-      type: _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.AnimateRef,
+      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.AnimateRef,
       animation: this.visitReference(metadata.animation, context),
       options: normalizeAnimationOptions(metadata.options)
     };
@@ -1090,12 +1162,12 @@ class AnimationAstBuilderVisitor {
     context.currentQuery = metadata;
     const [selector, includeSelf] = normalizeSelector(metadata.selector);
     context.currentQuerySelector = parentSelector.length ? parentSelector + ' ' + selector : selector;
-    getOrSetDefaultValue(context.collectedStyles, context.currentQuerySelector, new Map());
-    const animation = visitDslNode(this, normalizeAnimationEntry(metadata.animation), context);
+    (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(context.collectedStyles, context.currentQuerySelector, new Map());
+    const animation = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeAnimationEntry)(metadata.animation), context);
     context.currentQuery = null;
     context.currentQuerySelector = parentSelector;
     return {
-      type: _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Query,
+      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Query,
       selector,
       limit: options.limit || 0,
       optional: !!options.optional,
@@ -1107,16 +1179,16 @@ class AnimationAstBuilderVisitor {
   }
   visitStagger(metadata, context) {
     if (!context.currentQuery) {
-      context.errors.push(invalidStagger());
+      context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidStagger)());
     }
     const timings = metadata.timings === 'full' ? {
       duration: 0,
       delay: 0,
       easing: 'full'
-    } : resolveTiming(metadata.timings, context.errors, true);
+    } : (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTiming)(metadata.timings, context.errors, true);
     return {
-      type: _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Stagger,
-      animation: visitDslNode(this, normalizeAnimationEntry(metadata.animation), context),
+      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Stagger,
+      animation: (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeAnimationEntry)(metadata.animation), context),
       timings,
       options: null
     };
@@ -1129,7 +1201,7 @@ function normalizeSelector(selector) {
   }
   // Note: the :enter and :leave aren't normalized here since those
   // selectors are filled in at runtime during timeline building
-  selector = selector.replace(/@\*/g, NG_TRIGGER_SELECTOR).replace(/@\w+/g, match => NG_TRIGGER_SELECTOR + '-' + match.slice(1)).replace(/:animating/g, NG_ANIMATING_SELECTOR);
+  selector = selector.replace(/@\*/g, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_SELECTOR).replace(/@\w+/g, match => _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_SELECTOR + '-' + match.slice(1)).replace(/:animating/g, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_ANIMATING_SELECTOR);
   return [selector, hasAmpersand];
 }
 function normalizeParams(obj) {
@@ -1176,7 +1248,7 @@ function constructTimingAst(value, errors) {
     return value;
   }
   if (typeof value == 'number') {
-    const duration = resolveTiming(value, errors).duration;
+    const duration = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTiming)(value, errors).duration;
     return makeTimingAst(duration, 0, '');
   }
   const strValue = value;
@@ -1187,7 +1259,7 @@ function constructTimingAst(value, errors) {
     ast.strValue = strValue;
     return ast;
   }
-  const timings = resolveTiming(strValue, errors);
+  const timings = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTiming)(strValue, errors);
   return makeTimingAst(timings.duration, timings.delay, timings.easing);
 }
 function normalizeAnimationOptions(options) {
@@ -1245,9 +1317,9 @@ class ElementInstructionMap {
 }
 const ONE_FRAME_IN_MILLISECONDS = 1;
 const ENTER_TOKEN = ':enter';
-const ENTER_TOKEN_REGEX = /*#__PURE__*/new RegExp(ENTER_TOKEN, 'g');
+const ENTER_TOKEN_REGEX = /* @__PURE__ */new RegExp(ENTER_TOKEN, 'g');
 const LEAVE_TOKEN = ':leave';
-const LEAVE_TOKEN_REGEX = /*#__PURE__*/new RegExp(LEAVE_TOKEN, 'g');
+const LEAVE_TOKEN_REGEX = /* @__PURE__ */new RegExp(LEAVE_TOKEN, 'g');
 /*
  * The code within this file aims to generate web-animations-compatible keyframes from Angular's
  * animation DSL code.
@@ -1334,10 +1406,10 @@ class AnimationTimelineBuilderVisitor {
     subInstructions = subInstructions || new ElementInstructionMap();
     const context = new AnimationTimelineContext(driver, rootElement, subInstructions, enterClassName, leaveClassName, errors, []);
     context.options = options;
-    const delay = options.delay ? resolveTimingValue(options.delay) : 0;
+    const delay = options.delay ? (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(options.delay) : 0;
     context.currentTimeline.delayNextStep(delay);
     context.currentTimeline.setStyles([startingStyles], null, context.errors, options);
-    visitDslNode(this, ast, context);
+    (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, ast, context);
     // this checks to see if an actual animation happened
     const timelines = context.timelines.filter(timeline => timeline.containsAnimation());
     // note: we just want to apply the final styles for the rootElement, so we do not
@@ -1394,7 +1466,7 @@ class AnimationTimelineBuilderVisitor {
     for (const animationRefOptions of animationsRefsOptions) {
       const animationDelay = animationRefOptions?.delay;
       if (animationDelay) {
-        const animationDelayValue = typeof animationDelay === 'number' ? animationDelay : resolveTimingValue(interpolateParams(animationDelay, animationRefOptions?.params ?? {}, context.errors));
+        const animationDelayValue = typeof animationDelay === 'number' ? animationDelay : (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.interpolateParams)(animationDelay, animationRefOptions?.params ?? {}, context.errors));
         innerContext.delayNextStep(animationDelayValue);
       }
     }
@@ -1404,8 +1476,8 @@ class AnimationTimelineBuilderVisitor {
     let furthestTime = startTime;
     // this is a special-case for when a user wants to skip a sub
     // animation from being fired entirely.
-    const duration = options.duration != null ? resolveTimingValue(options.duration) : null;
-    const delay = options.delay != null ? resolveTimingValue(options.delay) : null;
+    const duration = options.duration != null ? (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(options.duration) : null;
+    const delay = options.delay != null ? (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(options.delay) : null;
     if (duration !== 0) {
       instructions.forEach(instruction => {
         const instructionTimings = context.appendInstructionToTimeline(instruction, duration, delay);
@@ -1416,7 +1488,7 @@ class AnimationTimelineBuilderVisitor {
   }
   visitReference(ast, context) {
     context.updateOptions(ast.options, true);
-    visitDslNode(this, ast.animation, context);
+    (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, ast.animation, context);
     context.previousNode = ast;
   }
   visitSequence(ast, context) {
@@ -1427,16 +1499,16 @@ class AnimationTimelineBuilderVisitor {
       ctx = context.createSubContext(options);
       ctx.transformIntoNewTimeline();
       if (options.delay != null) {
-        if (ctx.previousNode.type == _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Style) {
+        if (ctx.previousNode.type == _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Style) {
           ctx.currentTimeline.snapshotCurrentStyles();
           ctx.previousNode = DEFAULT_NOOP_PREVIOUS_NODE;
         }
-        const delay = resolveTimingValue(options.delay);
+        const delay = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(options.delay);
         ctx.delayNextStep(delay);
       }
     }
     if (ast.steps.length) {
-      ast.steps.forEach(s => visitDslNode(this, s, ctx));
+      ast.steps.forEach(s => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, s, ctx));
       // this is here just in case the inner steps only contain or end with a style() call
       ctx.currentTimeline.applyStylesToKeyframe();
       // this means that some animation function within the sequence
@@ -1451,13 +1523,13 @@ class AnimationTimelineBuilderVisitor {
   visitGroup(ast, context) {
     const innerTimelines = [];
     let furthestTime = context.currentTimeline.currentTime;
-    const delay = ast.options && ast.options.delay ? resolveTimingValue(ast.options.delay) : 0;
+    const delay = ast.options && ast.options.delay ? (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(ast.options.delay) : 0;
     ast.steps.forEach(s => {
       const innerContext = context.createSubContext(ast.options);
       if (delay) {
         innerContext.delayNextStep(delay);
       }
-      visitDslNode(this, s, innerContext);
+      (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, s, innerContext);
       furthestTime = Math.max(furthestTime, innerContext.currentTimeline.currentTime);
       innerTimelines.push(innerContext.currentTimeline);
     });
@@ -1471,8 +1543,8 @@ class AnimationTimelineBuilderVisitor {
   _visitTiming(ast, context) {
     if (ast.dynamic) {
       const strValue = ast.strValue;
-      const timingValue = context.params ? interpolateParams(strValue, context.params, context.errors) : strValue;
-      return resolveTiming(timingValue, context.errors);
+      const timingValue = context.params ? (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.interpolateParams)(strValue, context.params, context.errors) : strValue;
+      return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTiming)(timingValue, context.errors);
     } else {
       return {
         duration: ast.duration,
@@ -1489,7 +1561,7 @@ class AnimationTimelineBuilderVisitor {
       timeline.snapshotCurrentStyles();
     }
     const style = ast.style;
-    if (style.type == _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Keyframes) {
+    if (style.type == _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Keyframes) {
       this.visitKeyframes(style, context);
     } else {
       context.incrementTime(timings.duration);
@@ -1541,8 +1613,8 @@ class AnimationTimelineBuilderVisitor {
     // to ensure the styles are applied before the children are animated
     const startTime = context.currentTimeline.currentTime;
     const options = ast.options || {};
-    const delay = options.delay ? resolveTimingValue(options.delay) : 0;
-    if (delay && (context.previousNode.type === _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Style || startTime == 0 && context.currentTimeline.hasCurrentStyleProperties())) {
+    const delay = options.delay ? (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(options.delay) : 0;
+    if (delay && (context.previousNode.type === _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Style || startTime == 0 && context.currentTimeline.hasCurrentStyleProperties())) {
       context.currentTimeline.snapshotCurrentStyles();
       context.previousNode = DEFAULT_NOOP_PREVIOUS_NODE;
     }
@@ -1559,7 +1631,7 @@ class AnimationTimelineBuilderVisitor {
       if (element === context.element) {
         sameElementTimeline = innerContext.currentTimeline;
       }
-      visitDslNode(this, ast.animation, innerContext);
+      (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, ast.animation, innerContext);
       // this is here just incase the inner steps only contain or end
       // with a style() call (which is here to signal that this is a preparatory
       // call to style an element before it is animated again)
@@ -1597,7 +1669,7 @@ class AnimationTimelineBuilderVisitor {
       timeline.delayNextStep(delay);
     }
     const startingTime = timeline.currentTime;
-    visitDslNode(this, ast.animation, context);
+    (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, ast.animation, context);
     context.previousNode = ast;
     // time = duration + delay
     // the reason why this computation is so complex is because
@@ -1644,10 +1716,10 @@ class AnimationTimelineContext {
     let optionsToUpdate = this.options;
     // NOTE: this will get patched up when other animation methods support duration overrides
     if (newOptions.duration != null) {
-      optionsToUpdate.duration = resolveTimingValue(newOptions.duration);
+      optionsToUpdate.duration = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(newOptions.duration);
     }
     if (newOptions.delay != null) {
-      optionsToUpdate.delay = resolveTimingValue(newOptions.delay);
+      optionsToUpdate.delay = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(newOptions.delay);
     }
     const newParams = newOptions.params;
     if (newParams) {
@@ -1657,7 +1729,7 @@ class AnimationTimelineContext {
       }
       Object.keys(newParams).forEach(name => {
         if (!skipIfExists || !paramsToUpdate.hasOwnProperty(name)) {
-          paramsToUpdate[name] = interpolateParams(newParams[name], paramsToUpdate, this.errors);
+          paramsToUpdate[name] = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.interpolateParams)(newParams[name], paramsToUpdate, this.errors);
         }
       });
     }
@@ -1730,7 +1802,7 @@ class AnimationTimelineContext {
       results.push(...elements);
     }
     if (!optional && results.length == 0) {
-      errors.push(invalidQuery(originalSelector));
+      errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidQuery)(originalSelector));
     }
     return results;
   }
@@ -1842,8 +1914,8 @@ class TimelineBuilder {
     // We use `_globalTimelineStyles` here because there may be
     // styles in previous keyframes that are not present in this timeline
     for (let [prop, value] of this._globalTimelineStyles) {
-      this._backFill.set(prop, value || _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AUTO_STYLE);
-      this._currentKeyframe.set(prop, _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AUTO_STYLE);
+      this._backFill.set(prop, value || _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE);
+      this._currentKeyframe.set(prop, _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE);
     }
     this._currentEmptyStepKeyframe = this._currentKeyframe;
   }
@@ -1854,10 +1926,10 @@ class TimelineBuilder {
     const params = options && options.params || {};
     const styles = flattenStyles(input, this._globalTimelineStyles);
     for (let [prop, value] of styles) {
-      const val = interpolateParams(value, params, errors);
+      const val = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.interpolateParams)(value, params, errors);
       this._pendingStyles.set(prop, val);
       if (!this._localTimelineStyles.has(prop)) {
-        this._backFill.set(prop, this._globalTimelineStyles.get(prop) ?? _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AUTO_STYLE);
+        this._backFill.set(prop, this._globalTimelineStyles.get(prop) ?? _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE);
       }
       this._updateStyle(prop, val);
     }
@@ -1907,9 +1979,9 @@ class TimelineBuilder {
     this._keyframes.forEach((keyframe, time) => {
       const finalKeyframe = new Map([...this._backFill, ...keyframe]);
       finalKeyframe.forEach((value, prop) => {
-        if (value === _angular_animations__WEBPACK_IMPORTED_MODULE_0__["ɵPRE_STYLE"]) {
+        if (value === _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__["ɵPRE_STYLE"]) {
           preStyleProps.add(prop);
-        } else if (value === _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AUTO_STYLE) {
+        } else if (value === _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE) {
           postStyleProps.add(prop);
         }
       });
@@ -2010,7 +2082,7 @@ function flattenStyles(input, allStyles) {
     if (token === '*') {
       allProperties ??= allStyles.keys();
       for (let prop of allProperties) {
-        styles.set(prop, _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AUTO_STYLE);
+        styles.set(prop, _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE);
       }
     } else {
       for (let [prop, val] of token) {
@@ -2083,9 +2155,9 @@ class AnimationTransitionFactory {
     }
     timelines.forEach(tl => {
       const elm = tl.element;
-      const preProps = getOrSetDefaultValue(preStyleMap, elm, new Set());
+      const preProps = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(preStyleMap, elm, new Set());
       tl.preStyleProps.forEach(prop => preProps.add(prop));
-      const postProps = getOrSetDefaultValue(postStyleMap, elm, new Set());
+      const postProps = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(postStyleMap, elm, new Set());
       tl.postStyleProps.forEach(prop => postProps.add(prop));
       if (elm !== element) {
         queriedElements.add(elm);
@@ -2176,7 +2248,7 @@ class AnimationStateStyles {
       if (typeof value !== 'string') {
         value.forEach((val, prop) => {
           if (val) {
-            val = interpolateParams(val, combinedParams, errors);
+            val = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.interpolateParams)(val, combinedParams, errors);
           }
           const normalizedProp = this.normalizer.normalizePropertyName(prop, errors);
           val = this.normalizer.normalizeStyleValue(prop, normalizedProp, val, errors);
@@ -2210,7 +2282,7 @@ class AnimationTrigger {
     ast.transitions.forEach(ast => {
       this.transitionFactories.push(new AnimationTransitionFactory(name, ast, this.states));
     });
-    this.fallbackTransition = createFallbackTransition(name, this.states, this._normalizer);
+    this.fallbackTransition = createFallbackTransition(name, this.states);
   }
   get containsQueries() {
     return this.ast.queryCount > 0;
@@ -2226,12 +2298,12 @@ class AnimationTrigger {
 function createFallbackTransition(triggerName, states, normalizer) {
   const matchers = [(fromState, toState) => true];
   const animation = {
-    type: _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Sequence,
+    type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Sequence,
     steps: [],
     options: null
   };
   const transition = {
-    type: _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Transition,
+    type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Transition,
     animation,
     matchers,
     options: null,
@@ -2249,7 +2321,7 @@ function balanceProperties(stateMap, key1, key2) {
     stateMap.set(key1, stateMap.get(key2));
   }
 }
-const EMPTY_INSTRUCTION_MAP = /*#__PURE__*/new ElementInstructionMap();
+const EMPTY_INSTRUCTION_MAP = /* @__PURE__ */new ElementInstructionMap();
 class TimelineAnimationEngine {
   bodyNode;
   _driver;
@@ -2267,7 +2339,7 @@ class TimelineAnimationEngine {
     const warnings = [];
     const ast = buildAnimationAst(this._driver, metadata, errors, warnings);
     if (errors.length) {
-      throw registerFailed(errors);
+      throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.registerFailed)(errors);
     } else {
       if (typeof ngDevMode === 'undefined' || ngDevMode) {
         if (warnings.length) {
@@ -2279,7 +2351,7 @@ class TimelineAnimationEngine {
   }
   _buildPlayer(i, preStyles, postStyles) {
     const element = i.element;
-    const keyframes = normalizeKeyframes$1(this._normalizer, i.keyframes, preStyles, postStyles);
+    const keyframes = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeKeyframes)(this._normalizer, i.keyframes, preStyles, postStyles);
     return this._driver.animate(element, keyframes, i.duration, i.delay, i.easing, [], true);
   }
   create(id, element, options = {}) {
@@ -2288,28 +2360,28 @@ class TimelineAnimationEngine {
     let instructions;
     const autoStylesMap = new Map();
     if (ast) {
-      instructions = buildAnimationTimelines(this._driver, element, ast, ENTER_CLASSNAME, LEAVE_CLASSNAME, new Map(), new Map(), options, EMPTY_INSTRUCTION_MAP, errors);
+      instructions = buildAnimationTimelines(this._driver, element, ast, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.ENTER_CLASSNAME, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.LEAVE_CLASSNAME, new Map(), new Map(), options, EMPTY_INSTRUCTION_MAP, errors);
       instructions.forEach(inst => {
-        const styles = getOrSetDefaultValue(autoStylesMap, inst.element, new Map());
+        const styles = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(autoStylesMap, inst.element, new Map());
         inst.postStyleProps.forEach(prop => styles.set(prop, null));
       });
     } else {
-      errors.push(missingOrDestroyedAnimation());
+      errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.missingOrDestroyedAnimation)());
       instructions = [];
     }
     if (errors.length) {
-      throw createAnimationFailed(errors);
+      throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.createAnimationFailed)(errors);
     }
     autoStylesMap.forEach((styles, element) => {
       styles.forEach((_, prop) => {
-        styles.set(prop, this._driver.computeStyle(element, prop, _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AUTO_STYLE));
+        styles.set(prop, this._driver.computeStyle(element, prop, _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE));
       });
     });
     const players = instructions.map(i => {
       const styles = autoStylesMap.get(i.element);
       return this._buildPlayer(i, new Map(), styles);
     });
-    const player = optimizeGroupPlayer(players);
+    const player = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(players);
     this._playersById.set(id, player);
     player.onDestroy(() => this.destroy(id));
     this.players.push(player);
@@ -2327,14 +2399,14 @@ class TimelineAnimationEngine {
   _getPlayer(id) {
     const player = this._playersById.get(id);
     if (!player) {
-      throw missingPlayer(id);
+      throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.missingPlayer)(id);
     }
     return player;
   }
   listen(id, element, eventName, callback) {
     // triggerName, fromState, toState are all ignored for timeline animations
-    const baseEvent = makeAnimationEvent(element, '', '', '');
-    listenOnPlayer(this._getPlayer(id), eventName, baseEvent, callback);
+    const baseEvent = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.makeAnimationEvent)(element, '', '', '');
+    (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.listenOnPlayer)(this._getPlayer(id), eventName, baseEvent, callback);
     return () => {};
   }
   command(id, element, command, args) {
@@ -2437,7 +2509,7 @@ class StateValue {
   }
 }
 const VOID_VALUE = 'void';
-const DEFAULT_STATE_VALUE = /*#__PURE__*/new StateValue(VOID_VALUE);
+const DEFAULT_STATE_VALUE = /* @__PURE__ */new StateValue(VOID_VALUE);
 class AnimationTransitionNamespace {
   id;
   hostElement;
@@ -2456,25 +2528,25 @@ class AnimationTransitionNamespace {
   }
   listen(element, name, phase, callback) {
     if (!this._triggers.has(name)) {
-      throw missingTrigger(phase, name);
+      throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.missingTrigger)(phase, name);
     }
     if (phase == null || phase.length == 0) {
-      throw missingEvent(name);
+      throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.missingEvent)(name);
     }
     if (!isTriggerEventValid(phase)) {
-      throw unsupportedTriggerEvent(phase, name);
+      throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.unsupportedTriggerEvent)(phase, name);
     }
-    const listeners = getOrSetDefaultValue(this._elementListeners, element, []);
+    const listeners = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(this._elementListeners, element, []);
     const data = {
       name,
       phase,
       callback
     };
     listeners.push(data);
-    const triggersWithStates = getOrSetDefaultValue(this._engine.statesByElement, element, new Map());
+    const triggersWithStates = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(this._engine.statesByElement, element, new Map());
     if (!triggersWithStates.has(name)) {
-      addClass(element, NG_TRIGGER_CLASSNAME);
-      addClass(element, NG_TRIGGER_CLASSNAME + '-' + name);
+      addClass(element, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_CLASSNAME);
+      addClass(element, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_CLASSNAME + '-' + name);
       triggersWithStates.set(name, DEFAULT_STATE_VALUE);
     }
     return () => {
@@ -2504,7 +2576,7 @@ class AnimationTransitionNamespace {
   _getTrigger(name) {
     const trigger = this._triggers.get(name);
     if (!trigger) {
-      throw unregisteredTrigger(name);
+      throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.unregisteredTrigger)(name);
     }
     return trigger;
   }
@@ -2513,8 +2585,8 @@ class AnimationTransitionNamespace {
     const player = new TransitionAnimationPlayer(this.id, triggerName, element);
     let triggersWithStates = this._engine.statesByElement.get(element);
     if (!triggersWithStates) {
-      addClass(element, NG_TRIGGER_CLASSNAME);
-      addClass(element, NG_TRIGGER_CLASSNAME + '-' + triggerName);
+      addClass(element, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_CLASSNAME);
+      addClass(element, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_CLASSNAME + '-' + triggerName);
       this._engine.statesByElement.set(element, triggersWithStates = new Map());
     }
     let fromState = triggersWithStates.get(triggerName);
@@ -2545,14 +2617,14 @@ class AnimationTransitionNamespace {
           this._engine.reportError(errors);
         } else {
           this._engine.afterFlush(() => {
-            eraseStyles(element, fromStyles);
-            setStyles(element, toStyles);
+            (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(element, fromStyles);
+            (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(element, toStyles);
           });
         }
       }
       return;
     }
-    const playersOnElement = getOrSetDefaultValue(this._engine.playersByElement, element, []);
+    const playersOnElement = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(this._engine.playersByElement, element, []);
     playersOnElement.forEach(player => {
       // only remove the player if it is queued on the EXACT same trigger/namespace
       // we only also deal with queued players here because if the animation has
@@ -2621,7 +2693,7 @@ class AnimationTransitionNamespace {
     }
   }
   _signalRemovalForInnerTriggers(rootElement, context) {
-    const elements = this._engine.driver.query(rootElement, NG_TRIGGER_SELECTOR, true);
+    const elements = this._engine.driver.query(rootElement, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_SELECTOR, true);
     // emulate a leave animation for all inner nodes within this node.
     // If there are no animations found for any of the nodes then clear the cache
     // for the element.
@@ -2659,7 +2731,7 @@ class AnimationTransitionNamespace {
       if (players.length) {
         this._engine.markElementAsRemoved(this.id, element, true, context, previousTriggersValues);
         if (destroyAfterComplete) {
-          optimizeGroupPlayer(players).onDone(() => this._engine.processLeaveNode(element));
+          (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(players).onDone(() => this._engine.processLeaveNode(element));
         }
         return true;
       }
@@ -2757,9 +2829,9 @@ class AnimationTransitionNamespace {
       if (listeners) {
         listeners.forEach(listener => {
           if (listener.name == entry.triggerName) {
-            const baseEvent = makeAnimationEvent(element, entry.triggerName, entry.fromState.value, entry.toState.value);
+            const baseEvent = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.makeAnimationEvent)(element, entry.triggerName, entry.fromState.value, entry.toState.value);
             baseEvent['_data'] = microtaskId;
-            listenOnPlayer(entry.player, listener.phase, baseEvent, listener.callback);
+            (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.listenOnPlayer)(entry.player, listener.phase, baseEvent, listener.callback);
           }
         });
       }
@@ -3025,10 +3097,10 @@ class TransitionAnimationEngine {
     return entry.transition.build(this.driver, entry.element, entry.fromState.value, entry.toState.value, enterClassName, leaveClassName, entry.fromState.options, entry.toState.options, subTimelines, skipBuildAst);
   }
   destroyInnerAnimations(containerElement) {
-    let elements = this.driver.query(containerElement, NG_TRIGGER_SELECTOR, true);
+    let elements = this.driver.query(containerElement, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_SELECTOR, true);
     elements.forEach(element => this.destroyActiveAnimationsForElement(element));
     if (this.playersByQueriedElement.size == 0) return;
-    elements = this.driver.query(containerElement, NG_ANIMATING_SELECTOR, true);
+    elements = this.driver.query(containerElement, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_ANIMATING_SELECTOR, true);
     elements.forEach(element => this.finishActiveQueriedAnimationOnElement(element));
   }
   destroyActiveAnimationsForElement(element) {
@@ -3055,7 +3127,7 @@ class TransitionAnimationEngine {
   whenRenderingDone() {
     return new Promise(resolve => {
       if (this.players.length) {
-        return optimizeGroupPlayer(this.players).onDone(() => resolve());
+        return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(this.players).onDone(() => resolve());
       } else {
         resolve();
       }
@@ -3121,7 +3193,7 @@ class TransitionAnimationEngine {
       const quietFns = this._whenQuietFns;
       this._whenQuietFns = [];
       if (players.length) {
-        optimizeGroupPlayer(players).onDone(() => {
+        (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(players).onDone(() => {
           quietFns.forEach(fn => fn());
         });
       } else {
@@ -3130,7 +3202,7 @@ class TransitionAnimationEngine {
     }
   }
   reportError(errors) {
-    throw triggerTransitionsFailed(errors);
+    throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.triggerTransitionsFailed)(errors);
   }
   _flushAnimations(cleanupFns, microtaskId) {
     const subTimelines = new ElementInstructionMap();
@@ -3157,7 +3229,7 @@ class TransitionAnimationEngine {
     const enterNodeMapIds = new Map();
     let i = 0;
     enterNodeMap.forEach((nodes, root) => {
-      const className = ENTER_CLASSNAME + i++;
+      const className = _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.ENTER_CLASSNAME + i++;
       enterNodeMapIds.set(root, className);
       nodes.forEach(node => addClass(node, className));
     });
@@ -3180,7 +3252,7 @@ class TransitionAnimationEngine {
     const leaveNodeMapIds = new Map();
     const leaveNodeMap = buildRootMap(allTriggerElements, Array.from(mergedLeaveNodes));
     leaveNodeMap.forEach((nodes, root) => {
-      const className = LEAVE_CLASSNAME + i++;
+      const className = _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.LEAVE_CLASSNAME + i++;
       leaveNodeMapIds.set(root, className);
       nodes.forEach(node => addClass(node, className));
     });
@@ -3238,8 +3310,8 @@ class TransitionAnimationEngine {
         // projection and/or dynamic component insertion) therefore it's
         // important to still style the element.
         if (nodeIsOrphaned) {
-          player.onStart(() => eraseStyles(element, instruction.fromStyles));
-          player.onDestroy(() => setStyles(element, instruction.toStyles));
+          player.onStart(() => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(element, instruction.fromStyles));
+          player.onDestroy(() => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(element, instruction.toStyles));
           skippedPlayers.push(player);
           return;
         }
@@ -3247,8 +3319,8 @@ class TransitionAnimationEngine {
         // then it SHOULD NOT render an animation and cancel the
         // previously running animations.
         if (entry.isFallbackTransition) {
-          player.onStart(() => eraseStyles(element, instruction.fromStyles));
-          player.onDestroy(() => setStyles(element, instruction.toStyles));
+          player.onStart(() => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(element, instruction.fromStyles));
+          player.onDestroy(() => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(element, instruction.toStyles));
           skippedPlayers.push(player);
           return;
         }
@@ -3272,7 +3344,7 @@ class TransitionAnimationEngine {
           element
         };
         queuedInstructions.push(tuple);
-        instruction.queriedElements.forEach(element => getOrSetDefaultValue(queriedElements, element, []).push(player));
+        instruction.queriedElements.forEach(element => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(queriedElements, element, []).push(player));
         instruction.preStyleProps.forEach((stringMap, element) => {
           if (stringMap.size) {
             let setVal = allPreStyleElements.get(element);
@@ -3294,7 +3366,7 @@ class TransitionAnimationEngine {
     if (erroneousTransitions.length) {
       const errors = [];
       erroneousTransitions.forEach(instruction => {
-        errors.push(transitionFailed(instruction.triggerName, instruction.errors));
+        errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.transitionFailed)(instruction.triggerName, instruction.errors));
       });
       allPlayers.forEach(player => player.destroy());
       this.reportError(errors);
@@ -3316,7 +3388,7 @@ class TransitionAnimationEngine {
       const element = player.element;
       const previousPlayers = this._getPreviousPlayers(element, false, player.namespaceId, player.triggerName, null);
       previousPlayers.forEach(prevPlayer => {
-        getOrSetDefaultValue(allPreviousPlayersMap, element, []).push(prevPlayer);
+        (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(allPreviousPlayersMap, element, []).push(prevPlayer);
         prevPlayer.destroy();
       });
     });
@@ -3332,7 +3404,7 @@ class TransitionAnimationEngine {
     });
     // POST STAGE: fill the * styles
     const postStylesMap = new Map();
-    const allLeaveQueriedNodes = cloakAndComputeStyles(postStylesMap, this.driver, leaveNodesWithoutAnimations, allPostStyleElements, _angular_animations__WEBPACK_IMPORTED_MODULE_0__.AUTO_STYLE);
+    const allLeaveQueriedNodes = cloakAndComputeStyles(postStylesMap, this.driver, leaveNodesWithoutAnimations, allPostStyleElements, _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE);
     allLeaveQueriedNodes.forEach(node => {
       if (replacePostStylesAsPre(node, allPreStyleElements, allPostStyleElements)) {
         replaceNodes.push(node);
@@ -3341,7 +3413,7 @@ class TransitionAnimationEngine {
     // PRE STAGE: fill the ! styles
     const preStylesMap = new Map();
     enterNodeMap.forEach((nodes, root) => {
-      cloakAndComputeStyles(preStylesMap, this.driver, new Set(nodes), allPreStyleElements, _angular_animations__WEBPACK_IMPORTED_MODULE_0__["ɵPRE_STYLE"]);
+      cloakAndComputeStyles(preStylesMap, this.driver, new Set(nodes), allPreStyleElements, _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__["ɵPRE_STYLE"]);
     });
     replaceNodes.forEach(node => {
       const post = postStylesMap.get(node);
@@ -3361,7 +3433,7 @@ class TransitionAnimationEngine {
       // means that it is independent and therefore should be set for animation
       if (subTimelines.has(element)) {
         if (disabledElementsSet.has(element)) {
-          player.onDestroy(() => setStyles(element, instruction.toStyles));
+          player.onDestroy(() => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(element, instruction.toStyles));
           player.disabled = true;
           player.overrideTotalTime(instruction.totalTime);
           skippedPlayers.push(player);
@@ -3394,13 +3466,13 @@ class TransitionAnimationEngine {
         } else {
           const parentPlayers = this.playersByElement.get(parentWithAnimation);
           if (parentPlayers && parentPlayers.length) {
-            player.parentPlayer = optimizeGroupPlayer(parentPlayers);
+            player.parentPlayer = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(parentPlayers);
           }
           skippedPlayers.push(player);
         }
       } else {
-        eraseStyles(element, instruction.fromStyles);
-        player.onDestroy(() => setStyles(element, instruction.toStyles));
+        (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(element, instruction.fromStyles);
+        player.onDestroy(() => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(element, instruction.toStyles));
         // there still might be a ancestor player animating this
         // element therefore we will still add it as a sub player
         // even if its animation may be disabled
@@ -3416,7 +3488,7 @@ class TransitionAnimationEngine {
       // will still complete itself after the next tick since it's Noop
       const playersForElement = skippedPlayersMap.get(player.element);
       if (playersForElement && playersForElement.length) {
-        const innerPlayer = optimizeGroupPlayer(playersForElement);
+        const innerPlayer = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(playersForElement);
         player.setRealPlayer(innerPlayer);
       }
     });
@@ -3436,7 +3508,7 @@ class TransitionAnimationEngine {
     for (let i = 0; i < allLeaveNodes.length; i++) {
       const element = allLeaveNodes[i];
       const details = element[REMOVAL_FLAG];
-      removeClass(element, LEAVE_CLASSNAME);
+      removeClass(element, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.LEAVE_CLASSNAME);
       // this means the element has a removal animation that is being
       // taken care of and therefore the inner elements will hang around
       // until that animation is over (or the parent queried animation)
@@ -3450,7 +3522,7 @@ class TransitionAnimationEngine {
         if (queriedPlayerResults && queriedPlayerResults.length) {
           players.push(...queriedPlayerResults);
         }
-        let queriedInnerElements = this.driver.query(element, NG_ANIMATING_SELECTOR, true);
+        let queriedInnerElements = this.driver.query(element, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_ANIMATING_SELECTOR, true);
         for (let j = 0; j < queriedInnerElements.length; j++) {
           let queriedPlayers = queriedElements.get(queriedInnerElements[j]);
           if (queriedPlayers && queriedPlayers.length) {
@@ -3521,7 +3593,7 @@ class TransitionAnimationEngine {
     for (const timelineInstruction of instruction.timelines) {
       const element = timelineInstruction.element;
       const isQueriedElement = element !== rootElement;
-      const players = getOrSetDefaultValue(allPreviousPlayersMap, element, []);
+      const players = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(allPreviousPlayersMap, element, []);
       const previousPlayers = this._getPreviousPlayers(element, isQueriedElement, targetNameSpaceId, targetTriggerName, instruction.toState);
       previousPlayers.forEach(player => {
         const realPlayer = player.getRealPlayer();
@@ -3534,7 +3606,7 @@ class TransitionAnimationEngine {
     }
     // this needs to be done so that the PRE/POST styles can be
     // computed properly without interfering with the previous animation
-    eraseStyles(rootElement, instruction.fromStyles);
+    (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(rootElement, instruction.fromStyles);
   }
   _buildAnimation(namespaceId, instruction, allPreviousPlayersMap, skippedPlayersMap, preStylesMap, postStylesMap) {
     const triggerName = instruction.triggerName;
@@ -3549,7 +3621,7 @@ class TransitionAnimationEngine {
       allConsumedElements.add(element);
       // FIXME (matsko): make sure to-be-removed animations are removed properly
       const details = element[REMOVAL_FLAG];
-      if (details && details.removedBeforeQueried) return new _angular_animations__WEBPACK_IMPORTED_MODULE_0__.NoopAnimationPlayer(timelineInstruction.duration, timelineInstruction.delay);
+      if (details && details.removedBeforeQueried) return new _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.NoopAnimationPlayer(timelineInstruction.duration, timelineInstruction.delay);
       const isQueriedElement = element !== rootElement;
       const previousPlayers = flattenGroupPlayers((allPreviousPlayersMap.get(element) || EMPTY_PLAYER_ARRAY).map(p => p.getRealPlayer())).filter(p => {
         // the `element` is not apart of the AnimationPlayer definition, but
@@ -3561,7 +3633,7 @@ class TransitionAnimationEngine {
       });
       const preStyles = preStylesMap.get(element);
       const postStyles = postStylesMap.get(element);
-      const keyframes = normalizeKeyframes$1(this._normalizer, timelineInstruction.keyframes, preStyles, postStyles);
+      const keyframes = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeKeyframes)(this._normalizer, timelineInstruction.keyframes, preStyles, postStyles);
       const player = this._buildPlayer(timelineInstruction, keyframes, previousPlayers);
       // this means that this particular player belongs to a sub trigger. It is
       // important that we match this player up with the corresponding (@trigger.listener)
@@ -3576,19 +3648,19 @@ class TransitionAnimationEngine {
       return player;
     });
     allQueriedPlayers.forEach(player => {
-      getOrSetDefaultValue(this.playersByQueriedElement, player.element, []).push(player);
+      (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(this.playersByQueriedElement, player.element, []).push(player);
       player.onDone(() => deleteOrUnsetInMap(this.playersByQueriedElement, player.element, player));
     });
-    allConsumedElements.forEach(element => addClass(element, NG_ANIMATING_CLASSNAME));
-    const player = optimizeGroupPlayer(allNewPlayers);
+    allConsumedElements.forEach(element => addClass(element, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_ANIMATING_CLASSNAME));
+    const player = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(allNewPlayers);
     player.onDestroy(() => {
-      allConsumedElements.forEach(element => removeClass(element, NG_ANIMATING_CLASSNAME));
-      setStyles(rootElement, instruction.toStyles);
+      allConsumedElements.forEach(element => removeClass(element, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_ANIMATING_CLASSNAME));
+      (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(rootElement, instruction.toStyles);
     });
     // this basically makes all of the callbacks for sub element animations
     // be dependent on the upper players for when they finish
     allSubElements.forEach(element => {
-      getOrSetDefaultValue(skippedPlayersMap, element, []).push(player);
+      (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(skippedPlayersMap, element, []).push(player);
     });
     return player;
   }
@@ -3598,14 +3670,14 @@ class TransitionAnimationEngine {
     }
     // special case for when an empty transition|definition is provided
     // ... there is no point in rendering an empty animation
-    return new _angular_animations__WEBPACK_IMPORTED_MODULE_0__.NoopAnimationPlayer(instruction.duration, instruction.delay);
+    return new _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.NoopAnimationPlayer(instruction.duration, instruction.delay);
   }
 }
 class TransitionAnimationPlayer {
   namespaceId;
   triggerName;
   element;
-  _player = /*#__PURE__*/new _angular_animations__WEBPACK_IMPORTED_MODULE_0__.NoopAnimationPlayer();
+  _player = /*#__PURE__*/new _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.NoopAnimationPlayer();
   _containsRealPlayer = false;
   _queuedCallbacks = /*#__PURE__*/new Map();
   destroyed = false;
@@ -3623,7 +3695,7 @@ class TransitionAnimationPlayer {
     if (this._containsRealPlayer) return;
     this._player = player;
     this._queuedCallbacks.forEach((callbacks, phase) => {
-      callbacks.forEach(callback => listenOnPlayer(player, phase, undefined, callback));
+      callbacks.forEach(callback => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.listenOnPlayer)(player, phase, undefined, callback));
     });
     this._queuedCallbacks.clear();
     this._containsRealPlayer = true;
@@ -3645,7 +3717,7 @@ class TransitionAnimationPlayer {
     player.onDestroy(() => this.destroy());
   }
   _queueEvent(name, callback) {
-    getOrSetDefaultValue(this._queuedCallbacks, name, []).push(callback);
+    (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(this._queuedCallbacks, name, []).push(callback);
   }
   onDone(fn) {
     if (this.queued) {
@@ -3810,7 +3882,7 @@ function removeClass(element, className) {
   element.classList?.remove(className);
 }
 function removeNodesAfterAnimationDone(engine, element, players) {
-  optimizeGroupPlayer(players).onDone(() => engine.processLeaveNode(element));
+  (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(players).onDone(() => engine.processLeaveNode(element));
 }
 function flattenGroupPlayers(players) {
   const finalPlayers = [];
@@ -3820,7 +3892,7 @@ function flattenGroupPlayers(players) {
 function _flattenGroupPlayersRecur(players, finalPlayers) {
   for (let i = 0; i < players.length; i++) {
     const player = players[i];
-    if (player instanceof _angular_animations__WEBPACK_IMPORTED_MODULE_0__["ɵAnimationGroupPlayer"]) {
+    if (player instanceof _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationGroupPlayer) {
       _flattenGroupPlayersRecur(player.players, finalPlayers);
     } else {
       finalPlayers.push(player);
@@ -3872,7 +3944,7 @@ class AnimationEngine {
       const warnings = [];
       const ast = buildAnimationAst(this._driver, metadata, errors, warnings);
       if (errors.length) {
-        throw triggerBuildFailed(name, errors);
+        throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.triggerBuildFailed)(name, errors);
       }
       if (typeof ngDevMode === 'undefined' || ngDevMode) {
         if (warnings.length) {
@@ -3901,7 +3973,7 @@ class AnimationEngine {
   }
   process(namespaceId, element, property, value) {
     if (property.charAt(0) == '@') {
-      const [id, action] = parseTimelineCommand(property);
+      const [id, action] = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.parseTimelineCommand)(property);
       const args = value;
       this._timelineEngine.command(id, element, action, args);
     } else {
@@ -3911,7 +3983,7 @@ class AnimationEngine {
   listen(namespaceId, element, eventName, eventPhase, callback) {
     // @@listen
     if (eventName.charAt(0) == '@') {
-      const [id, action] = parseTimelineCommand(eventName);
+      const [id, action] = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.parseTimelineCommand)(eventName);
       return this._timelineEngine.listen(id, element, action, callback);
     }
     return this._transitionEngine.listen(namespaceId, element, eventName, eventPhase, callback);
@@ -3983,7 +4055,7 @@ let SpecialCasedStyles = /*#__PURE__*/(() => {
     start() {
       if (this._state < 1 /* SpecialCasedStylesState.Started */) {
         if (this._startStyles) {
-          setStyles(this._element, this._startStyles, this._initialStyles);
+          (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(this._element, this._startStyles, this._initialStyles);
         }
         this._state = 1 /* SpecialCasedStylesState.Started */;
       }
@@ -3991,9 +4063,9 @@ let SpecialCasedStyles = /*#__PURE__*/(() => {
     finish() {
       this.start();
       if (this._state < 2 /* SpecialCasedStylesState.Finished */) {
-        setStyles(this._element, this._initialStyles);
+        (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(this._element, this._initialStyles);
         if (this._endStyles) {
-          setStyles(this._element, this._endStyles);
+          (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(this._element, this._endStyles);
           this._endStyles = null;
         }
         this._state = 1 /* SpecialCasedStylesState.Started */;
@@ -4004,14 +4076,14 @@ let SpecialCasedStyles = /*#__PURE__*/(() => {
       if (this._state < 3 /* SpecialCasedStylesState.Destroyed */) {
         SpecialCasedStyles.initialStylesByElement.delete(this._element);
         if (this._startStyles) {
-          eraseStyles(this._element, this._startStyles);
+          (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(this._element, this._startStyles);
           this._endStyles = null;
         }
         if (this._endStyles) {
-          eraseStyles(this._element, this._endStyles);
+          (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(this._element, this._endStyles);
           this._endStyles = null;
         }
-        setStyles(this._element, this._initialStyles);
+        (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(this._element, this._initialStyles);
         this._state = 3 /* SpecialCasedStylesState.Destroyed */;
       }
     }
@@ -4200,7 +4272,7 @@ class WebAnimationsPlayer {
       const finalKeyframe = this._finalKeyframe;
       finalKeyframe.forEach((val, prop) => {
         if (prop !== 'offset') {
-          styles.set(prop, this._finished ? val : computeStyle(this.element, prop));
+          styles.set(prop, this._finished ? val : (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.computeStyle)(this.element, prop));
         }
       });
     }
@@ -4217,29 +4289,29 @@ class WebAnimationsDriver {
   validateStyleProperty(prop) {
     // Perform actual validation in dev mode only, in prod mode this check is a noop.
     if (typeof ngDevMode === 'undefined' || ngDevMode) {
-      return validateStyleProperty(prop);
+      return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.validateStyleProperty)(prop);
     }
     return true;
   }
   validateAnimatableStyleProperty(prop) {
     // Perform actual validation in dev mode only, in prod mode this check is a noop.
     if (typeof ngDevMode === 'undefined' || ngDevMode) {
-      const cssProp = camelCaseToDashCase(prop);
-      return validateWebAnimatableStyleProperty(cssProp);
+      const cssProp = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.camelCaseToDashCase)(prop);
+      return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.validateWebAnimatableStyleProperty)(cssProp);
     }
     return true;
   }
   containsElement(elm1, elm2) {
-    return containsElement(elm1, elm2);
+    return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.containsElement)(elm1, elm2);
   }
   getParentElement(element) {
-    return getParentElement(element);
+    return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getParentElement)(element);
   }
   query(element, selector, multi) {
-    return invokeQuery(element, selector, multi);
+    return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invokeQuery)(element, selector, multi);
   }
   computeStyle(element, prop, defaultValue) {
-    return computeStyle(element, prop);
+    return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.computeStyle)(element, prop);
   }
   animate(element, keyframes, duration, delay, easing, previousPlayers = []) {
     const fill = delay == 0 ? 'both' : 'forwards';
@@ -4255,13 +4327,13 @@ class WebAnimationsDriver {
     }
     const previousStyles = new Map();
     const previousWebAnimationPlayers = previousPlayers.filter(player => player instanceof WebAnimationsPlayer);
-    if (allowPreviousPlayerStylesMerge(duration, delay)) {
+    if ((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.allowPreviousPlayerStylesMerge)(duration, delay)) {
       previousWebAnimationPlayers.forEach(player => {
         player.currentSnapshot.forEach((val, prop) => previousStyles.set(prop, val));
       });
     }
-    let _keyframes = normalizeKeyframes(keyframes).map(styles => new Map(styles));
-    _keyframes = balancePreviousStylesIntoKeyframes(element, _keyframes, previousStyles);
+    let _keyframes = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeKeyframes$1)(keyframes).map(styles => new Map(styles));
+    _keyframes = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.balancePreviousStylesIntoKeyframes)(element, _keyframes, previousStyles);
     const specialStyles = packageNonAnimatableStyles(element, _keyframes);
     return new WebAnimationsPlayer(element, _keyframes, playerOptions, specialStyles);
   }
@@ -4282,7 +4354,7 @@ class Animation {
     const warnings = [];
     const ast = buildAnimationAst(_driver, input, errors, warnings);
     if (errors.length) {
-      throw validationFailed(errors);
+      throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.validationFailed)(errors);
     }
     if (typeof ngDevMode === 'undefined' || ngDevMode) {
       if (warnings.length) {
@@ -4292,13 +4364,13 @@ class Animation {
     this._animationAst = ast;
   }
   buildTimelines(element, startingStyles, destinationStyles, options, subInstructions) {
-    const start = Array.isArray(startingStyles) ? normalizeStyles(startingStyles) : startingStyles;
-    const dest = Array.isArray(destinationStyles) ? normalizeStyles(destinationStyles) : destinationStyles;
+    const start = Array.isArray(startingStyles) ? (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeStyles)(startingStyles) : startingStyles;
+    const dest = Array.isArray(destinationStyles) ? (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeStyles)(destinationStyles) : destinationStyles;
     const errors = [];
     subInstructions = subInstructions || new ElementInstructionMap();
-    const result = buildAnimationTimelines(this._driver, element, this._animationAst, ENTER_CLASSNAME, LEAVE_CLASSNAME, start, dest, options, subInstructions, errors);
+    const result = buildAnimationTimelines(this._driver, element, this._animationAst, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.ENTER_CLASSNAME, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.LEAVE_CLASSNAME, start, dest, options, subInstructions, errors);
     if (errors.length) {
-      throw buildingFailed(errors);
+      throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.buildingFailed)(errors);
     }
     return result;
   }
@@ -4571,24 +4643,1261 @@ class AnimationRendererFactory {
   }
 }
 
+
+/***/ }),
+
+/***/ 20748:
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@angular/animations/fesm2022/private_export-B_vy_9K7.mjs ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AUTO_STYLE: () => (/* binding */ AUTO_STYLE),
+/* harmony export */   AnimationGroupPlayer: () => (/* binding */ AnimationGroupPlayer),
+/* harmony export */   AnimationMetadataType: () => (/* binding */ AnimationMetadataType),
+/* harmony export */   NoopAnimationPlayer: () => (/* binding */ NoopAnimationPlayer),
+/* harmony export */   animate: () => (/* binding */ animate),
+/* harmony export */   animateChild: () => (/* binding */ animateChild),
+/* harmony export */   animation: () => (/* binding */ animation),
+/* harmony export */   group: () => (/* binding */ group),
+/* harmony export */   keyframes: () => (/* binding */ keyframes),
+/* harmony export */   query: () => (/* binding */ query),
+/* harmony export */   sequence: () => (/* binding */ sequence),
+/* harmony export */   stagger: () => (/* binding */ stagger),
+/* harmony export */   state: () => (/* binding */ state),
+/* harmony export */   style: () => (/* binding */ style),
+/* harmony export */   transition: () => (/* binding */ transition),
+/* harmony export */   trigger: () => (/* binding */ trigger),
+/* harmony export */   useAnimation: () => (/* binding */ useAnimation),
+/* harmony export */   "ɵPRE_STYLE": () => (/* binding */ ɵPRE_STYLE)
+/* harmony export */ });
 /**
- * @module
- * @description
- * Entry point for all animation APIs of the animation browser package.
+ * @license Angular v20.0.4
+ * (c) 2010-2025 Google LLC. https://angular.io/
+ * License: MIT
  */
 
 /**
- * @module
- * @description
- * Entry point for all public APIs of this package.
+ * @description Constants for the categories of parameters that can be defined for animations.
+ *
+ * A corresponding function defines a set of parameters for each category, and
+ * collects them into a corresponding `AnimationMetadata` object.
+ *
+ * @publicApi
  */
+var AnimationMetadataType = /*#__PURE__*/function (AnimationMetadataType) {
+  /**
+   * Associates a named animation state with a set of CSS styles.
+   * See [`state()`](api/animations/state)
+   */
+  AnimationMetadataType[AnimationMetadataType["State"] = 0] = "State";
+  /**
+   * Data for a transition from one animation state to another.
+   * See `transition()`
+   */
+  AnimationMetadataType[AnimationMetadataType["Transition"] = 1] = "Transition";
+  /**
+   * Contains a set of animation steps.
+   * See `sequence()`
+   */
+  AnimationMetadataType[AnimationMetadataType["Sequence"] = 2] = "Sequence";
+  /**
+   * Contains a set of animation steps.
+   * See `group()`
+   */
+  AnimationMetadataType[AnimationMetadataType["Group"] = 3] = "Group";
+  /**
+   * Contains an animation step.
+   * See `animate()`
+   */
+  AnimationMetadataType[AnimationMetadataType["Animate"] = 4] = "Animate";
+  /**
+   * Contains a set of animation steps.
+   * See `keyframes()`
+   */
+  AnimationMetadataType[AnimationMetadataType["Keyframes"] = 5] = "Keyframes";
+  /**
+   * Contains a set of CSS property-value pairs into a named style.
+   * See `style()`
+   */
+  AnimationMetadataType[AnimationMetadataType["Style"] = 6] = "Style";
+  /**
+   * Associates an animation with an entry trigger that can be attached to an element.
+   * See `trigger()`
+   */
+  AnimationMetadataType[AnimationMetadataType["Trigger"] = 7] = "Trigger";
+  /**
+   * Contains a re-usable animation.
+   * See `animation()`
+   */
+  AnimationMetadataType[AnimationMetadataType["Reference"] = 8] = "Reference";
+  /**
+   * Contains data to use in executing child animations returned by a query.
+   * See `animateChild()`
+   */
+  AnimationMetadataType[AnimationMetadataType["AnimateChild"] = 9] = "AnimateChild";
+  /**
+   * Contains animation parameters for a re-usable animation.
+   * See `useAnimation()`
+   */
+  AnimationMetadataType[AnimationMetadataType["AnimateRef"] = 10] = "AnimateRef";
+  /**
+   * Contains child-animation query data.
+   * See `query()`
+   */
+  AnimationMetadataType[AnimationMetadataType["Query"] = 11] = "Query";
+  /**
+   * Contains data for staggering an animation sequence.
+   * See `stagger()`
+   */
+  AnimationMetadataType[AnimationMetadataType["Stagger"] = 12] = "Stagger";
+  return AnimationMetadataType;
+}(AnimationMetadataType || {});
+/**
+ * Specifies automatic styling.
+ *
+ * @publicApi
+ */
+const AUTO_STYLE = '*';
+/**
+ * Creates a named animation trigger, containing a  list of [`state()`](api/animations/state)
+ * and `transition()` entries to be evaluated when the expression
+ * bound to the trigger changes.
+ *
+ * @param name An identifying string.
+ * @param definitions  An animation definition object, containing an array of
+ * [`state()`](api/animations/state) and `transition()` declarations.
+ *
+ * @return An object that encapsulates the trigger data.
+ *
+ * @usageNotes
+ * Define an animation trigger in the `animations` section of `@Component` metadata.
+ * In the template, reference the trigger by name and bind it to a trigger expression that
+ * evaluates to a defined animation state, using the following format:
+ *
+ * `[@triggerName]="expression"`
+ *
+ * Animation trigger bindings convert all values to strings, and then match the
+ * previous and current values against any linked transitions.
+ * Booleans can be specified as `1` or `true` and `0` or `false`.
+ *
+ * ### Usage Example
+ *
+ * The following example creates an animation trigger reference based on the provided
+ * name value.
+ * The provided animation value is expected to be an array consisting of state and
+ * transition declarations.
+ *
+ * ```ts
+ * @Component({
+ *   selector: "my-component",
+ *   templateUrl: "my-component-tpl.html",
+ *   animations: [
+ *     trigger("myAnimationTrigger", [
+ *       state(...),
+ *       state(...),
+ *       transition(...),
+ *       transition(...)
+ *     ])
+ *   ]
+ * })
+ * class MyComponent {
+ *   myStatusExp = "something";
+ * }
+ * ```
+ *
+ * The template associated with this component makes use of the defined trigger
+ * by binding to an element within its template code.
+ *
+ * ```html
+ * <!-- somewhere inside of my-component-tpl.html -->
+ * <div [@myAnimationTrigger]="myStatusExp">...</div>
+ * ```
+ *
+ * ### Using an inline function
+ * The `transition` animation method also supports reading an inline function which can decide
+ * if its associated animation should be run.
+ *
+ * ```ts
+ * // this method is run each time the `myAnimationTrigger` trigger value changes.
+ * function myInlineMatcherFn(fromState: string, toState: string, element: any, params: {[key:
+ string]: any}): boolean {
+ *   // notice that `element` and `params` are also available here
+ *   return toState == 'yes-please-animate';
+ * }
+ *
+ * @Component({
+ *   selector: 'my-component',
+ *   templateUrl: 'my-component-tpl.html',
+ *   animations: [
+ *     trigger('myAnimationTrigger', [
+ *       transition(myInlineMatcherFn, [
+ *         // the animation sequence code
+ *       ]),
+ *     ])
+ *   ]
+ * })
+ * class MyComponent {
+ *   myStatusExp = "yes-please-animate";
+ * }
+ * ```
+ *
+ * ### Disabling Animations
+ * When true, the special animation control binding `@.disabled` binding prevents
+ * all animations from rendering.
+ * Place the  `@.disabled` binding on an element to disable
+ * animations on the element itself, as well as any inner animation triggers
+ * within the element.
+ *
+ * The following example shows how to use this feature:
+ *
+ * ```angular-ts
+ * @Component({
+ *   selector: 'my-component',
+ *   template: `
+ *     <div [@.disabled]="isDisabled">
+ *       <div [@childAnimation]="exp"></div>
+ *     </div>
+ *   `,
+ *   animations: [
+ *     trigger("childAnimation", [
+ *       // ...
+ *     ])
+ *   ]
+ * })
+ * class MyComponent {
+ *   isDisabled = true;
+ *   exp = '...';
+ * }
+ * ```
+ *
+ * When `@.disabled` is true, it prevents the `@childAnimation` trigger from animating,
+ * along with any inner animations.
+ *
+ * ### Disable animations application-wide
+ * When an area of the template is set to have animations disabled,
+ * **all** inner components have their animations disabled as well.
+ * This means that you can disable all animations for an app
+ * by placing a host binding set on `@.disabled` on the topmost Angular component.
+ *
+ * ```ts
+ * import {Component, HostBinding} from '@angular/core';
+ *
+ * @Component({
+ *   selector: 'app-component',
+ *   templateUrl: 'app.component.html',
+ * })
+ * class AppComponent {
+ *   @HostBinding('@.disabled')
+ *   public animationsDisabled = true;
+ * }
+ * ```
+ *
+ * ### Overriding disablement of inner animations
+ * Despite inner animations being disabled, a parent animation can `query()`
+ * for inner elements located in disabled areas of the template and still animate
+ * them if needed. This is also the case for when a sub animation is
+ * queried by a parent and then later animated using `animateChild()`.
+ *
+ * ### Detecting when an animation is disabled
+ * If a region of the DOM (or the entire application) has its animations disabled, the animation
+ * trigger callbacks still fire, but for zero seconds. When the callback fires, it provides
+ * an instance of an `AnimationEvent`. If animations are disabled,
+ * the `.disabled` flag on the event is true.
+ *
+ * @publicApi
+ */
+function trigger(name, definitions) {
+  return {
+    type: AnimationMetadataType.Trigger,
+    name,
+    definitions,
+    options: {}
+  };
+}
+/**
+ * Defines an animation step that combines styling information with timing information.
+ *
+ * @param timings Sets `AnimateTimings` for the parent animation.
+ * A string in the format "duration [delay] [easing]".
+ *  - Duration and delay are expressed as a number and optional time unit,
+ * such as "1s" or "10ms" for one second and 10 milliseconds, respectively.
+ * The default unit is milliseconds.
+ *  - The easing value controls how the animation accelerates and decelerates
+ * during its runtime. Value is one of  `ease`, `ease-in`, `ease-out`,
+ * `ease-in-out`, or a `cubic-bezier()` function call.
+ * If not supplied, no easing is applied.
+ *
+ * For example, the string "1s 100ms ease-out" specifies a duration of
+ * 1000 milliseconds, and delay of 100 ms, and the "ease-out" easing style,
+ * which decelerates near the end of the duration.
+ * @param styles Sets AnimationStyles for the parent animation.
+ * A function call to either `style()` or `keyframes()`
+ * that returns a collection of CSS style entries to be applied to the parent animation.
+ * When null, uses the styles from the destination state.
+ * This is useful when describing an animation step that will complete an animation;
+ * see "Animating to the final state" in `transitions()`.
+ * @returns An object that encapsulates the animation step.
+ *
+ * @usageNotes
+ * Call within an animation `sequence()`, {@link /api/animations/group group()}, or
+ * `transition()` call to specify an animation step
+ * that applies given style data to the parent animation for a given amount of time.
+ *
+ * ### Syntax Examples
+ * **Timing examples**
+ *
+ * The following examples show various `timings` specifications.
+ * - `animate(500)` : Duration is 500 milliseconds.
+ * - `animate("1s")` : Duration is 1000 milliseconds.
+ * - `animate("100ms 0.5s")` : Duration is 100 milliseconds, delay is 500 milliseconds.
+ * - `animate("5s ease-in")` : Duration is 5000 milliseconds, easing in.
+ * - `animate("5s 10ms cubic-bezier(.17,.67,.88,.1)")` : Duration is 5000 milliseconds, delay is 10
+ * milliseconds, easing according to a bezier curve.
+ *
+ * **Style examples**
+ *
+ * The following example calls `style()` to set a single CSS style.
+ * ```ts
+ * animate(500, style({ background: "red" }))
+ * ```
+ * The following example calls `keyframes()` to set a CSS style
+ * to different values for successive keyframes.
+ * ```ts
+ * animate(500, keyframes(
+ *  [
+ *   style({ background: "blue" }),
+ *   style({ background: "red" })
+ *  ])
+ * ```
+ *
+ * @publicApi
+ */
+function animate(timings, styles = null) {
+  return {
+    type: AnimationMetadataType.Animate,
+    styles,
+    timings
+  };
+}
+/**
+ * @description Defines a list of animation steps to be run in parallel.
+ *
+ * @param steps An array of animation step objects.
+ * - When steps are defined by `style()` or `animate()`
+ * function calls, each call within the group is executed instantly.
+ * - To specify offset styles to be applied at a later time, define steps with
+ * `keyframes()`, or use `animate()` calls with a delay value.
+ * For example:
+ *
+ * ```ts
+ * group([
+ *   animate("1s", style({ background: "black" })),
+ *   animate("2s", style({ color: "white" }))
+ * ])
+ * ```
+ *
+ * @param options An options object containing a delay and
+ * developer-defined parameters that provide styling defaults and
+ * can be overridden on invocation.
+ *
+ * @return An object that encapsulates the group data.
+ *
+ * @usageNotes
+ * Grouped animations are useful when a series of styles must be
+ * animated at different starting times and closed off at different ending times.
+ *
+ * When called within a `sequence()` or a
+ * `transition()` call, does not continue to the next
+ * instruction until all of the inner animation steps have completed.
+ *
+ * @publicApi
+ */
+function group(steps, options = null) {
+  return {
+    type: AnimationMetadataType.Group,
+    steps,
+    options
+  };
+}
+/**
+ * Defines a list of animation steps to be run sequentially, one by one.
+ *
+ * @param steps An array of animation step objects.
+ * - Steps defined by `style()` calls apply the styling data immediately.
+ * - Steps defined by `animate()` calls apply the styling data over time
+ *   as specified by the timing data.
+ *
+ * ```ts
+ * sequence([
+ *   style({ opacity: 0 }),
+ *   animate("1s", style({ opacity: 1 }))
+ * ])
+ * ```
+ *
+ * @param options An options object containing a delay and
+ * developer-defined parameters that provide styling defaults and
+ * can be overridden on invocation.
+ *
+ * @return An object that encapsulates the sequence data.
+ *
+ * @usageNotes
+ * When you pass an array of steps to a
+ * `transition()` call, the steps run sequentially by default.
+ * Compare this to the  {@link /api/animations/group group()} call, which runs animation steps in
+ *parallel.
+ *
+ * When a sequence is used within a  {@link /api/animations/group group()} or a `transition()` call,
+ * execution continues to the next instruction only after each of the inner animation
+ * steps have completed.
+ *
+ * @publicApi
+ **/
+function sequence(steps, options = null) {
+  return {
+    type: AnimationMetadataType.Sequence,
+    steps,
+    options
+  };
+}
+/**
+ * Declares a key/value object containing CSS properties/styles that
+ * can then be used for an animation [`state`](api/animations/state), within an animation
+ *`sequence`, or as styling data for calls to `animate()` and `keyframes()`.
+ *
+ * @param tokens A set of CSS styles or HTML styles associated with an animation state.
+ * The value can be any of the following:
+ * - A key-value style pair associating a CSS property with a value.
+ * - An array of key-value style pairs.
+ * - An asterisk (*), to use auto-styling, where styles are derived from the element
+ * being animated and applied to the animation when it starts.
+ *
+ * Auto-styling can be used to define a state that depends on layout or other
+ * environmental factors.
+ *
+ * @return An object that encapsulates the style data.
+ *
+ * @usageNotes
+ * The following examples create animation styles that collect a set of
+ * CSS property values:
+ *
+ * ```ts
+ * // string values for CSS properties
+ * style({ background: "red", color: "blue" })
+ *
+ * // numerical pixel values
+ * style({ width: 100, height: 0 })
+ * ```
+ *
+ * The following example uses auto-styling to allow an element to animate from
+ * a height of 0 up to its full height:
+ *
+ * ```ts
+ * style({ height: 0 }),
+ * animate("1s", style({ height: "*" }))
+ * ```
+ *
+ * @publicApi
+ **/
+function style(tokens) {
+  return {
+    type: AnimationMetadataType.Style,
+    styles: tokens,
+    offset: null
+  };
+}
+/**
+ * Declares an animation state within a trigger attached to an element.
+ *
+ * @param name One or more names for the defined state in a comma-separated string.
+ * The following reserved state names can be supplied to define a style for specific use
+ * cases:
+ *
+ * - `void` You can associate styles with this name to be used when
+ * the element is detached from the application. For example, when an `ngIf` evaluates
+ * to false, the state of the associated element is void.
+ *  - `*` (asterisk) Indicates the default state. You can associate styles with this name
+ * to be used as the fallback when the state that is being animated is not declared
+ * within the trigger.
+ *
+ * @param styles A set of CSS styles associated with this state, created using the
+ * `style()` function.
+ * This set of styles persists on the element once the state has been reached.
+ * @param options Parameters that can be passed to the state when it is invoked.
+ * 0 or more key-value pairs.
+ * @return An object that encapsulates the new state data.
+ *
+ * @usageNotes
+ * Use the `trigger()` function to register states to an animation trigger.
+ * Use the `transition()` function to animate between states.
+ * When a state is active within a component, its associated styles persist on the element,
+ * even when the animation ends.
+ *
+ * @publicApi
+ **/
+function state(name, styles, options) {
+  return {
+    type: AnimationMetadataType.State,
+    name,
+    styles,
+    options
+  };
+}
+/**
+ * Defines a set of animation styles, associating each style with an optional `offset` value.
+ *
+ * @param steps A set of animation styles with optional offset data.
+ * The optional `offset` value for a style specifies a percentage of the total animation
+ * time at which that style is applied.
+ * @returns An object that encapsulates the keyframes data.
+ *
+ * @usageNotes
+ * Use with the `animate()` call. Instead of applying animations
+ * from the current state
+ * to the destination state, keyframes describe how each style entry is applied and at what point
+ * within the animation arc.
+ * Compare [CSS Keyframe Animations](https://www.w3schools.com/css/css3_animations.asp).
+ *
+ * ### Usage
+ *
+ * In the following example, the offset values describe
+ * when each `backgroundColor` value is applied. The color is red at the start, and changes to
+ * blue when 20% of the total time has elapsed.
+ *
+ * ```ts
+ * // the provided offset values
+ * animate("5s", keyframes([
+ *   style({ backgroundColor: "red", offset: 0 }),
+ *   style({ backgroundColor: "blue", offset: 0.2 }),
+ *   style({ backgroundColor: "orange", offset: 0.3 }),
+ *   style({ backgroundColor: "black", offset: 1 })
+ * ]))
+ * ```
+ *
+ * If there are no `offset` values specified in the style entries, the offsets
+ * are calculated automatically.
+ *
+ * ```ts
+ * animate("5s", keyframes([
+ *   style({ backgroundColor: "red" }) // offset = 0
+ *   style({ backgroundColor: "blue" }) // offset = 0.33
+ *   style({ backgroundColor: "orange" }) // offset = 0.66
+ *   style({ backgroundColor: "black" }) // offset = 1
+ * ]))
+ *```
 
-// This file is not used to build this module. It is only used during editing
+ * @publicApi
+ */
+function keyframes(steps) {
+  return {
+    type: AnimationMetadataType.Keyframes,
+    steps
+  };
+}
+/**
+ * Declares an animation transition which is played when a certain specified condition is met.
+ *
+ * @param stateChangeExpr A string with a specific format or a function that specifies when the
+ * animation transition should occur (see [State Change Expression](#state-change-expression)).
+ *
+ * @param steps One or more animation objects that represent the animation's instructions.
+ *
+ * @param options An options object that can be used to specify a delay for the animation or provide
+ * custom parameters for it.
+ *
+ * @returns An object that encapsulates the transition data.
+ *
+ * @usageNotes
+ *
+ * ### State Change Expression
+ *
+ * The State Change Expression instructs Angular when to run the transition's animations, it can
+ *either be
+ *  - a string with a specific syntax
+ *  - or a function that compares the previous and current state (value of the expression bound to
+ *    the element's trigger) and returns `true` if the transition should occur or `false` otherwise
+ *
+ * The string format can be:
+ *  - `fromState => toState`, which indicates that the transition's animations should occur then the
+ *    expression bound to the trigger's element goes from `fromState` to `toState`
+ *
+ *    _Example:_
+ *      ```ts
+ *        transition('open => closed', animate('.5s ease-out', style({ height: 0 }) ))
+ *      ```
+ *
+ *  - `fromState <=> toState`, which indicates that the transition's animations should occur then
+ *    the expression bound to the trigger's element goes from `fromState` to `toState` or vice versa
+ *
+ *    _Example:_
+ *      ```ts
+ *        transition('enabled <=> disabled', animate('1s cubic-bezier(0.8,0.3,0,1)'))
+ *      ```
+ *
+ *  - `:enter`/`:leave`, which indicates that the transition's animations should occur when the
+ *    element enters or exists the DOM
+ *
+ *    _Example:_
+ *      ```ts
+ *        transition(':enter', [
+ *          style({ opacity: 0 }),
+ *          animate('500ms', style({ opacity: 1 }))
+ *        ])
+ *      ```
+ *
+ *  - `:increment`/`:decrement`, which indicates that the transition's animations should occur when
+ *    the numerical expression bound to the trigger's element has increased in value or decreased
+ *
+ *    _Example:_
+ *      ```ts
+ *        transition(':increment', query('@counter', animateChild()))
+ *      ```
+ *
+ *  - a sequence of any of the above divided by commas, which indicates that transition's animations
+ *    should occur whenever one of the state change expressions matches
+ *
+ *    _Example:_
+ *      ```ts
+ *        transition(':increment, * => enabled, :enter', animate('1s ease', keyframes([
+ *          style({ transform: 'scale(1)', offset: 0}),
+ *          style({ transform: 'scale(1.1)', offset: 0.7}),
+ *          style({ transform: 'scale(1)', offset: 1})
+ *        ]))),
+ *      ```
+ *
+ * Also note that in such context:
+ *  - `void` can be used to indicate the absence of the element
+ *  - asterisks can be used as wildcards that match any state
+ *  - (as a consequence of the above, `void => *` is equivalent to `:enter` and `* => void` is
+ *    equivalent to `:leave`)
+ *  - `true` and `false` also match expression values of `1` and `0` respectively (but do not match
+ *    _truthy_ and _falsy_ values)
+ *
+ * <div class="docs-alert docs-alert-helpful">
+ *
+ *  Be careful about entering end leaving elements as their transitions present a common
+ *  pitfall for developers.
+ *
+ *  Note that when an element with a trigger enters the DOM its `:enter` transition always
+ *  gets executed, but its `:leave` transition will not be executed if the element is removed
+ *  alongside its parent (as it will be removed "without warning" before its transition has
+ *  a chance to be executed, the only way that such transition can occur is if the element
+ *  is exiting the DOM on its own).
+ *
+ *
+ * </div>
+ *
+ * ### Animating to a Final State
+ *
+ * If the final step in a transition is a call to `animate()` that uses a timing value
+ * with no `style` data, that step is automatically considered the final animation arc,
+ * for the element to reach the final state, in such case Angular automatically adds or removes
+ * CSS styles to ensure that the element is in the correct final state.
+ *
+ *
+ * ### Usage Examples
+ *
+ *  - Transition animations applied based on
+ *    the trigger's expression value
+ *
+ *   ```html
+ *   <div [@myAnimationTrigger]="myStatusExp">
+ *    ...
+ *   </div>
+ *   ```
+ *
+ *   ```ts
+ *   trigger("myAnimationTrigger", [
+ *     ..., // states
+ *     transition("on => off, open => closed", animate(500)),
+ *     transition("* <=> error", query('.indicator', animateChild()))
+ *   ])
+ *   ```
+ *
+ *  - Transition animations applied based on custom logic dependent
+ *    on the trigger's expression value and provided parameters
+ *
+ *    ```html
+ *    <div [@myAnimationTrigger]="{
+ *     value: stepName,
+ *     params: { target: currentTarget }
+ *    }">
+ *     ...
+ *    </div>
+ *    ```
+ *
+ *    ```ts
+ *    trigger("myAnimationTrigger", [
+ *      ..., // states
+ *      transition(
+ *        (fromState, toState, _element, params) =>
+ *          ['firststep', 'laststep'].includes(fromState.toLowerCase())
+ *          && toState === params?.['target'],
+ *        animate('1s')
+ *      )
+ *    ])
+ *    ```
+ *
+ * @publicApi
+ **/
+function transition(stateChangeExpr, steps, options = null) {
+  return {
+    type: AnimationMetadataType.Transition,
+    expr: stateChangeExpr,
+    animation: steps,
+    options
+  };
+}
+/**
+ * Produces a reusable animation that can be invoked in another animation or sequence,
+ * by calling the `useAnimation()` function.
+ *
+ * @param steps One or more animation objects, as returned by the `animate()`
+ * or `sequence()` function, that form a transformation from one state to another.
+ * A sequence is used by default when you pass an array.
+ * @param options An options object that can contain a delay value for the start of the
+ * animation, and additional developer-defined parameters.
+ * Provided values for additional parameters are used as defaults,
+ * and override values can be passed to the caller on invocation.
+ * @returns An object that encapsulates the animation data.
+ *
+ * @usageNotes
+ * The following example defines a reusable animation, providing some default parameter
+ * values.
+ *
+ * ```ts
+ * var fadeAnimation = animation([
+ *   style({ opacity: '{{ start }}' }),
+ *   animate('{{ time }}',
+ *   style({ opacity: '{{ end }}'}))
+ *   ],
+ *   { params: { time: '1000ms', start: 0, end: 1 }});
+ * ```
+ *
+ * The following invokes the defined animation with a call to `useAnimation()`,
+ * passing in override parameter values.
+ *
+ * ```js
+ * useAnimation(fadeAnimation, {
+ *   params: {
+ *     time: '2s',
+ *     start: 1,
+ *     end: 0
+ *   }
+ * })
+ * ```
+ *
+ * If any of the passed-in parameter values are missing from this call,
+ * the default values are used. If one or more parameter values are missing before a step is
+ * animated, `useAnimation()` throws an error.
+ *
+ * @publicApi
+ */
+function animation(steps, options = null) {
+  return {
+    type: AnimationMetadataType.Reference,
+    animation: steps,
+    options
+  };
+}
+/**
+ * Executes a queried inner animation element within an animation sequence.
+ *
+ * @param options An options object that can contain a delay value for the start of the
+ * animation, and additional override values for developer-defined parameters.
+ * @return An object that encapsulates the child animation data.
+ *
+ * @usageNotes
+ * Each time an animation is triggered in Angular, the parent animation
+ * has priority and any child animations are blocked. In order
+ * for a child animation to run, the parent animation must query each of the elements
+ * containing child animations, and run them using this function.
+ *
+ * Note that this feature is designed to be used with `query()` and it will only work
+ * with animations that are assigned using the Angular animation library. CSS keyframes
+ * and transitions are not handled by this API.
+ *
+ * @publicApi
+ */
+function animateChild(options = null) {
+  return {
+    type: AnimationMetadataType.AnimateChild,
+    options
+  };
+}
+/**
+ * Starts a reusable animation that is created using the `animation()` function.
+ *
+ * @param animation The reusable animation to start.
+ * @param options An options object that can contain a delay value for the start of
+ * the animation, and additional override values for developer-defined parameters.
+ * @return An object that contains the animation parameters.
+ *
+ * @publicApi
+ */
+function useAnimation(animation, options = null) {
+  return {
+    type: AnimationMetadataType.AnimateRef,
+    animation,
+    options
+  };
+}
+/**
+ * Finds one or more inner elements within the current element that is
+ * being animated within a sequence. Use with `animate()`.
+ *
+ * @param selector The element to query, or a set of elements that contain Angular-specific
+ * characteristics, specified with one or more of the following tokens.
+ *  - `query(":enter")` or `query(":leave")` : Query for newly inserted/removed elements (not
+ *     all elements can be queried via these tokens, see
+ *     [Entering and Leaving Elements](#entering-and-leaving-elements))
+ *  - `query(":animating")` : Query all currently animating elements.
+ *  - `query("@triggerName")` : Query elements that contain an animation trigger.
+ *  - `query("@*")` : Query all elements that contain an animation triggers.
+ *  - `query(":self")` : Include the current element into the animation sequence.
+ *
+ * @param animation One or more animation steps to apply to the queried element or elements.
+ * An array is treated as an animation sequence.
+ * @param options An options object. Use the 'limit' field to limit the total number of
+ * items to collect.
+ * @return An object that encapsulates the query data.
+ *
+ * @usageNotes
+ *
+ * ### Multiple Tokens
+ *
+ * Tokens can be merged into a combined query selector string. For example:
+ *
+ * ```ts
+ *  query(':self, .record:enter, .record:leave, @subTrigger', [...])
+ * ```
+ *
+ * The `query()` function collects multiple elements and works internally by using
+ * `element.querySelectorAll`. Use the `limit` field of an options object to limit
+ * the total number of items to be collected. For example:
+ *
+ * ```js
+ * query('div', [
+ *   animate(...),
+ *   animate(...)
+ * ], { limit: 1 })
+ * ```
+ *
+ * By default, throws an error when zero items are found. Set the
+ * `optional` flag to ignore this error. For example:
+ *
+ * ```js
+ * query('.some-element-that-may-not-be-there', [
+ *   animate(...),
+ *   animate(...)
+ * ], { optional: true })
+ * ```
+ *
+ * ### Entering and Leaving Elements
+ *
+ * Not all elements can be queried via the `:enter` and `:leave` tokens, the only ones
+ * that can are those that Angular assumes can enter/leave based on their own logic
+ * (if their insertion/removal is simply a consequence of that of their parent they
+ * should be queried via a different token in their parent's `:enter`/`:leave` transitions).
+ *
+ * The only elements Angular assumes can enter/leave based on their own logic (thus the only
+ * ones that can be queried via the `:enter` and `:leave` tokens) are:
+ *  - Those inserted dynamically (via `ViewContainerRef`)
+ *  - Those that have a structural directive (which, under the hood, are a subset of the above ones)
+ *
+ * <div class="docs-alert docs-alert-helpful">
+ *
+ *  Note that elements will be successfully queried via `:enter`/`:leave` even if their
+ *  insertion/removal is not done manually via `ViewContainerRef`or caused by their structural
+ *  directive (e.g. they enter/exit alongside their parent).
+ *
+ * </div>
+ *
+ * <div class="docs-alert docs-alert-important">
+ *
+ *  There is an exception to what previously mentioned, besides elements entering/leaving based on
+ *  their own logic, elements with an animation trigger can always be queried via `:leave` when
+ * their parent is also leaving.
+ *
+ * </div>
+ *
+ * ### Usage Example
+ *
+ * The following example queries for inner elements and animates them
+ * individually using `animate()`.
+ *
+ * ```angular-ts
+ * @Component({
+ *   selector: 'inner',
+ *   template: `
+ *     <div [@queryAnimation]="exp">
+ *       <h1>Title</h1>
+ *       <div class="content">
+ *         Blah blah blah
+ *       </div>
+ *     </div>
+ *   `,
+ *   animations: [
+ *    trigger('queryAnimation', [
+ *      transition('* => goAnimate', [
+ *        // hide the inner elements
+ *        query('h1', style({ opacity: 0 })),
+ *        query('.content', style({ opacity: 0 })),
+ *
+ *        // animate the inner elements in, one by one
+ *        query('h1', animate(1000, style({ opacity: 1 }))),
+ *        query('.content', animate(1000, style({ opacity: 1 }))),
+ *      ])
+ *    ])
+ *  ]
+ * })
+ * class Cmp {
+ *   exp = '';
+ *
+ *   goAnimate() {
+ *     this.exp = 'goAnimate';
+ *   }
+ * }
+ * ```
+ *
+ * @publicApi
+ */
+function query(selector, animation, options = null) {
+  return {
+    type: AnimationMetadataType.Query,
+    selector,
+    animation,
+    options
+  };
+}
+/**
+ * Use within an animation `query()` call to issue a timing gap after
+ * each queried item is animated.
+ *
+ * @param timings A delay value.
+ * @param animation One ore more animation steps.
+ * @returns An object that encapsulates the stagger data.
+ *
+ * @usageNotes
+ * In the following example, a container element wraps a list of items stamped out
+ * by an `@for` block. The container element contains an animation trigger that will later be set
+ * to query for each of the inner items.
+ *
+ * Each time items are added, the opacity fade-in animation runs,
+ * and each removed item is faded out.
+ * When either of these animations occur, the stagger effect is
+ * applied after each item's animation is started.
+ *
+ * ```html
+ * <!-- list.component.html -->
+ * <button (click)="toggle()">Show / Hide Items</button>
+ * <hr />
+ * <div [@listAnimation]="items.length">
+ *   @for(item of items; track $index) {
+ *      <div>{{ item }}</div>
+ *   }
+ * </div>
+ * ```
+ *
+ * Here is the component code:
+ *
+ * ```ts
+ * import {trigger, transition, style, animate, query, stagger} from '@angular/animations';
+ * @Component({
+ *   templateUrl: 'list.component.html',
+ *   animations: [
+ *     trigger('listAnimation', [
+ *     ...
+ *     ])
+ *   ]
+ * })
+ * class ListComponent {
+ *   items = [];
+ *
+ *   showItems() {
+ *     this.items = [0,1,2,3,4];
+ *   }
+ *
+ *   hideItems() {
+ *     this.items = [];
+ *   }
+ *
+ *   toggle() {
+ *     this.items.length ? this.hideItems() : this.showItems();
+ *    }
+ *  }
+ * ```
+ *
+ * Here is the animation trigger code:
+ *
+ * ```ts
+ * trigger('listAnimation', [
+ *   transition('* => *', [ // each time the binding value changes
+ *     query(':leave', [
+ *       stagger(100, [
+ *         animate('0.5s', style({ opacity: 0 }))
+ *       ])
+ *     ]),
+ *     query(':enter', [
+ *       style({ opacity: 0 }),
+ *       stagger(100, [
+ *         animate('0.5s', style({ opacity: 1 }))
+ *       ])
+ *     ])
+ *   ])
+ * ])
+ * ```
+ *
+ * @publicApi
+ */
+function stagger(timings, animation) {
+  return {
+    type: AnimationMetadataType.Stagger,
+    timings,
+    animation
+  };
+}
 
 /**
- * Generated bundle index. Do not edit.
+ * An empty programmatic controller for reusable animations.
+ * Used internally when animations are disabled, to avoid
+ * checking for the null case when an animation player is expected.
+ *
+ * @see {@link animate}
+ * @see {@link AnimationPlayer}
+ *
+ * @publicApi
  */
+class NoopAnimationPlayer {
+  _onDoneFns = [];
+  _onStartFns = [];
+  _onDestroyFns = [];
+  _originalOnDoneFns = [];
+  _originalOnStartFns = [];
+  _started = false;
+  _destroyed = false;
+  _finished = false;
+  _position = 0;
+  parentPlayer = null;
+  totalTime;
+  constructor(duration = 0, delay = 0) {
+    this.totalTime = duration + delay;
+  }
+  _onFinish() {
+    if (!this._finished) {
+      this._finished = true;
+      this._onDoneFns.forEach(fn => fn());
+      this._onDoneFns = [];
+    }
+  }
+  onStart(fn) {
+    this._originalOnStartFns.push(fn);
+    this._onStartFns.push(fn);
+  }
+  onDone(fn) {
+    this._originalOnDoneFns.push(fn);
+    this._onDoneFns.push(fn);
+  }
+  onDestroy(fn) {
+    this._onDestroyFns.push(fn);
+  }
+  hasStarted() {
+    return this._started;
+  }
+  init() {}
+  play() {
+    if (!this.hasStarted()) {
+      this._onStart();
+      this.triggerMicrotask();
+    }
+    this._started = true;
+  }
+  /** @internal */
+  triggerMicrotask() {
+    queueMicrotask(() => this._onFinish());
+  }
+  _onStart() {
+    this._onStartFns.forEach(fn => fn());
+    this._onStartFns = [];
+  }
+  pause() {}
+  restart() {}
+  finish() {
+    this._onFinish();
+  }
+  destroy() {
+    if (!this._destroyed) {
+      this._destroyed = true;
+      if (!this.hasStarted()) {
+        this._onStart();
+      }
+      this.finish();
+      this._onDestroyFns.forEach(fn => fn());
+      this._onDestroyFns = [];
+    }
+  }
+  reset() {
+    this._started = false;
+    this._finished = false;
+    this._onStartFns = this._originalOnStartFns;
+    this._onDoneFns = this._originalOnDoneFns;
+  }
+  setPosition(position) {
+    this._position = this.totalTime ? position * this.totalTime : 1;
+  }
+  getPosition() {
+    return this.totalTime ? this._position / this.totalTime : 1;
+  }
+  /** @internal */
+  triggerCallback(phaseName) {
+    const methods = phaseName == 'start' ? this._onStartFns : this._onDoneFns;
+    methods.forEach(fn => fn());
+    methods.length = 0;
+  }
+}
 
+/**
+ * A programmatic controller for a group of reusable animations.
+ * Used internally to control animations.
+ *
+ * @see {@link AnimationPlayer}
+ * @see {@link animations/group group}
+ *
+ */
+class AnimationGroupPlayer {
+  _onDoneFns = [];
+  _onStartFns = [];
+  _finished = false;
+  _started = false;
+  _destroyed = false;
+  _onDestroyFns = [];
+  parentPlayer = null;
+  totalTime = 0;
+  players;
+  constructor(_players) {
+    this.players = _players;
+    let doneCount = 0;
+    let destroyCount = 0;
+    let startCount = 0;
+    const total = this.players.length;
+    if (total == 0) {
+      queueMicrotask(() => this._onFinish());
+    } else {
+      this.players.forEach(player => {
+        player.onDone(() => {
+          if (++doneCount == total) {
+            this._onFinish();
+          }
+        });
+        player.onDestroy(() => {
+          if (++destroyCount == total) {
+            this._onDestroy();
+          }
+        });
+        player.onStart(() => {
+          if (++startCount == total) {
+            this._onStart();
+          }
+        });
+      });
+    }
+    this.totalTime = this.players.reduce((time, player) => Math.max(time, player.totalTime), 0);
+  }
+  _onFinish() {
+    if (!this._finished) {
+      this._finished = true;
+      this._onDoneFns.forEach(fn => fn());
+      this._onDoneFns = [];
+    }
+  }
+  init() {
+    this.players.forEach(player => player.init());
+  }
+  onStart(fn) {
+    this._onStartFns.push(fn);
+  }
+  _onStart() {
+    if (!this.hasStarted()) {
+      this._started = true;
+      this._onStartFns.forEach(fn => fn());
+      this._onStartFns = [];
+    }
+  }
+  onDone(fn) {
+    this._onDoneFns.push(fn);
+  }
+  onDestroy(fn) {
+    this._onDestroyFns.push(fn);
+  }
+  hasStarted() {
+    return this._started;
+  }
+  play() {
+    if (!this.parentPlayer) {
+      this.init();
+    }
+    this._onStart();
+    this.players.forEach(player => player.play());
+  }
+  pause() {
+    this.players.forEach(player => player.pause());
+  }
+  restart() {
+    this.players.forEach(player => player.restart());
+  }
+  finish() {
+    this._onFinish();
+    this.players.forEach(player => player.finish());
+  }
+  destroy() {
+    this._onDestroy();
+  }
+  _onDestroy() {
+    if (!this._destroyed) {
+      this._destroyed = true;
+      this._onFinish();
+      this.players.forEach(player => player.destroy());
+      this._onDestroyFns.forEach(fn => fn());
+      this._onDestroyFns = [];
+    }
+  }
+  reset() {
+    this.players.forEach(player => player.reset());
+    this._destroyed = false;
+    this._finished = false;
+    this._started = false;
+  }
+  setPosition(p) {
+    const timeAtPosition = p * this.totalTime;
+    this.players.forEach(player => {
+      const position = player.totalTime ? Math.min(1, timeAtPosition / player.totalTime) : 1;
+      player.setPosition(position);
+    });
+  }
+  getPosition() {
+    const longestPlayer = this.players.reduce((longestSoFar, player) => {
+      const newPlayerIsLongest = longestSoFar === null || player.totalTime > longestSoFar.totalTime;
+      return newPlayerIsLongest ? player : longestSoFar;
+    }, null);
+    return longestPlayer != null ? longestPlayer.getPosition() : 0;
+  }
+  beforeDestroy() {
+    this.players.forEach(player => {
+      if (player.beforeDestroy) {
+        player.beforeDestroy();
+      }
+    });
+  }
+  /** @internal */
+  triggerCallback(phaseName) {
+    const methods = phaseName == 'start' ? this._onStartFns : this._onDoneFns;
+    methods.forEach(fn => fn());
+    methods.length = 0;
+  }
+}
+const ɵPRE_STYLE = '!';
 
 
 /***/ })

@@ -1,162 +1,5 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[3905],{
 
-/***/ 75791:
-/*!**************************************************************************!*\
-  !*** ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-D6G4REZN.mjs ***!
-  \**************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   drawBackgroundRect: () => (/* binding */ drawBackgroundRect),
-/* harmony export */   drawEmbeddedImage: () => (/* binding */ drawEmbeddedImage),
-/* harmony export */   drawImage: () => (/* binding */ drawImage),
-/* harmony export */   drawRect: () => (/* binding */ drawRect),
-/* harmony export */   drawText: () => (/* binding */ drawText),
-/* harmony export */   getNoteRect: () => (/* binding */ getNoteRect),
-/* harmony export */   getTextObj: () => (/* binding */ getTextObj)
-/* harmony export */ });
-/* harmony import */ var _chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chunk-YTJNT7DU.mjs */ 10990);
-/* harmony import */ var _braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @braintree/sanitize-url */ 73986);
-
-
-// src/diagrams/common/svgDrawCommon.ts
-
-var drawRect = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)((element, rectData) => {
-  const rectElement = element.append("rect");
-  rectElement.attr("x", rectData.x);
-  rectElement.attr("y", rectData.y);
-  rectElement.attr("fill", rectData.fill);
-  rectElement.attr("stroke", rectData.stroke);
-  rectElement.attr("width", rectData.width);
-  rectElement.attr("height", rectData.height);
-  if (rectData.name) {
-    rectElement.attr("name", rectData.name);
-  }
-  if (rectData.rx) {
-    rectElement.attr("rx", rectData.rx);
-  }
-  if (rectData.ry) {
-    rectElement.attr("ry", rectData.ry);
-  }
-  if (rectData.attrs !== void 0) {
-    for (const attrKey in rectData.attrs) {
-      rectElement.attr(attrKey, rectData.attrs[attrKey]);
-    }
-  }
-  if (rectData.class) {
-    rectElement.attr("class", rectData.class);
-  }
-  return rectElement;
-}, "drawRect");
-var drawBackgroundRect = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)((element, bounds) => {
-  const rectData = {
-    x: bounds.startx,
-    y: bounds.starty,
-    width: bounds.stopx - bounds.startx,
-    height: bounds.stopy - bounds.starty,
-    fill: bounds.fill,
-    stroke: bounds.stroke,
-    class: "rect"
-  };
-  const rectElement = drawRect(element, rectData);
-  rectElement.lower();
-}, "drawBackgroundRect");
-var drawText = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)((element, textData) => {
-  const nText = textData.text.replace(_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.lineBreakRegex, " ");
-  const textElem = element.append("text");
-  textElem.attr("x", textData.x);
-  textElem.attr("y", textData.y);
-  textElem.attr("class", "legend");
-  textElem.style("text-anchor", textData.anchor);
-  if (textData.class) {
-    textElem.attr("class", textData.class);
-  }
-  const tspan = textElem.append("tspan");
-  tspan.attr("x", textData.x + textData.textMargin * 2);
-  tspan.text(nText);
-  return textElem;
-}, "drawText");
-var drawImage = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)((elem, x, y, link) => {
-  const imageElement = elem.append("image");
-  imageElement.attr("x", x);
-  imageElement.attr("y", y);
-  const sanitizedLink = (0,_braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_1__.sanitizeUrl)(link);
-  imageElement.attr("xlink:href", sanitizedLink);
-}, "drawImage");
-var drawEmbeddedImage = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)((element, x, y, link) => {
-  const imageElement = element.append("use");
-  imageElement.attr("x", x);
-  imageElement.attr("y", y);
-  const sanitizedLink = (0,_braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_1__.sanitizeUrl)(link);
-  imageElement.attr("xlink:href", `#${sanitizedLink}`);
-}, "drawEmbeddedImage");
-var getNoteRect = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(() => {
-  const noteRectData = {
-    x: 0,
-    y: 0,
-    width: 100,
-    height: 100,
-    fill: "#EDF2AE",
-    stroke: "#666",
-    anchor: "start",
-    rx: 0,
-    ry: 0
-  };
-  return noteRectData;
-}, "getNoteRect");
-var getTextObj = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(() => {
-  const testObject = {
-    x: 0,
-    y: 0,
-    width: 100,
-    height: 100,
-    "text-anchor": "start",
-    style: "#666",
-    textMargin: 0,
-    rx: 0,
-    ry: 0,
-    tspan: true
-  };
-  return testObject;
-}, "getTextObj");
-
-
-/***/ }),
-
-/***/ 38902:
-/*!**************************************************************************!*\
-  !*** ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-XZIHB7SX.mjs ***!
-  \**************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   ImperativeState: () => (/* binding */ ImperativeState)
-/* harmony export */ });
-/* harmony import */ var _chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chunk-YTJNT7DU.mjs */ 10990);
-
-
-// src/utils/imperativeState.ts
-var ImperativeState = class {
-  /**
-   * @param init - Function that creates the default state.
-   */
-  constructor(init) {
-    this.init = init;
-    this.records = this.init();
-  }
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(this, "ImperativeState");
-  }
-  reset() {
-    this.records = this.init();
-  }
-};
-
-
-/***/ }),
-
 /***/ 33905:
 /*!************************************************************************************!*\
   !*** ./node_modules/mermaid/dist/chunks/mermaid.core/sequenceDiagram-X6HHIX6F.mjs ***!
@@ -2231,9 +2074,7 @@ var SequenceDB = class {
     this.ARROWTYPE = ARROWTYPE;
     this.PLACEMENT = PLACEMENT;
   }
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_4__.__name)(this, "SequenceDB");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_4__.__name)(this, "SequenceDB");
   addBox(data) {
     this.state.records.boxes.push({
       name: data.text,
@@ -3264,7 +3105,7 @@ var drawLoop = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_4_
     loopModel.height = Math.round(loopModel.stopy - loopModel.starty);
     return g;
   });
-  return function (_x7, _x8, _x9, _x10) {
+  return function (_x7, _x8, _x9, _x0) {
     return _ref3.apply(this, arguments);
   };
 }(), "drawLoop");
@@ -3355,7 +3196,7 @@ var _drawTextCandidateFunc = /* @__PURE__ */function () {
     _setTextAttrs(text, textAttrs);
   }
   (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_4__.__name)(byFo, "byFo");
-  function byKatex(_x11, _x12, _x13, _x14, _x15, _x16, _x17, _x18) {
+  function byKatex(_x1, _x10, _x11, _x12, _x13, _x14, _x15, _x16) {
     return _byKatex.apply(this, arguments);
   }
   function _byKatex() {
@@ -3682,7 +3523,7 @@ var drawNote = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_4_
     bounds.insert(noteModel.startx, noteModel.starty, noteModel.stopx, noteModel.stopy);
     bounds.models.addNote(noteModel);
   });
-  return function (_x19, _x20) {
+  return function (_x17, _x18) {
     return _ref4.apply(this, arguments);
   };
 }(), "drawNote");
@@ -3707,7 +3548,7 @@ var actorFont = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_4
     fontWeight: cnf.actorFontWeight
   };
 }, "actorFont");
-function boundMessage(_x21, _x22) {
+function boundMessage(_x19, _x20) {
   return _boundMessage.apply(this, arguments);
 }
 function _boundMessage() {
@@ -3835,7 +3676,7 @@ var drawMessage = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE
       diagram2.append("text").attr("x", startx).attr("y", lineStartY + 4).attr("font-family", "sans-serif").attr("font-size", "12px").attr("text-anchor", "middle").attr("class", "sequenceNumber").text(sequenceIndex);
     }
   });
-  return function (_x23, _x24, _x25, _x26) {
+  return function (_x21, _x22, _x23, _x24) {
     return _ref5.apply(this, arguments);
   };
 }(), "drawMessage");
@@ -3904,7 +3745,7 @@ var drawActors = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_
       bounds.bumpVerticalPos(maxHeight + conf.boxMargin);
     }
   });
-  return function (_x27, _x28, _x29, _x30) {
+  return function (_x25, _x26, _x27, _x28) {
     return _ref6.apply(this, arguments);
   };
 }(), "drawActors");
@@ -4264,11 +4105,11 @@ var draw = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_4__.__
     diagram2.attr("viewBox", box.startx - conf.diagramMarginX + " -" + (conf.diagramMarginY + extraVertForTitle) + " " + width + " " + (height + extraVertForTitle));
     _chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_4__.log.debug(`models:`, bounds.models);
   });
-  return function (_x31, _x32, _x33, _x34) {
+  return function (_x29, _x30, _x31, _x32) {
     return _ref7.apply(this, arguments);
   };
 }(), "draw");
-function getMaxMessageWidthPerActor(_x35, _x36, _x37) {
+function getMaxMessageWidthPerActor(_x33, _x34, _x35) {
   return _getMaxMessageWidthPerActor.apply(this, arguments);
 }
 function _getMaxMessageWidthPerActor() {
@@ -4328,7 +4169,7 @@ var getRequiredPopupWidth = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPOR
   }
   return requiredPopupWidth;
 }, "getRequiredPopupWidth");
-function calculateActorMargins(_x38, _x39, _x40) {
+function calculateActorMargins(_x36, _x37, _x38) {
   return _calculateActorMargins.apply(this, arguments);
 }
 function _calculateActorMargins() {
@@ -4422,7 +4263,7 @@ var buildNoteModel = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MOD
     _chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_4__.log.debug(`NM:[${noteModel.startx},${noteModel.stopx},${noteModel.starty},${noteModel.stopy}:${noteModel.width},${noteModel.height}=${msg.message}]`);
     return noteModel;
   });
-  return function (_x41, _x42, _x43) {
+  return function (_x39, _x40, _x41) {
     return _ref8.apply(this, arguments);
   };
 }(), "buildNoteModel");
@@ -4569,7 +4410,7 @@ var calculateLoopBounds = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTE
     _chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_4__.log.debug("Loop type widths:", loops);
     return loops;
   });
-  return function (_x44, _x45, _x46, _x47) {
+  return function (_x42, _x43, _x44, _x45) {
     return _ref9.apply(this, arguments);
   };
 }(), "calculateLoopBounds");
@@ -4603,6 +4444,161 @@ var diagram = {
     }
   }, "init")
 };
+
+
+/***/ }),
+
+/***/ 38902:
+/*!**************************************************************************!*\
+  !*** ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-XZIHB7SX.mjs ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ImperativeState: () => (/* binding */ ImperativeState)
+/* harmony export */ });
+/* harmony import */ var _chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chunk-YTJNT7DU.mjs */ 10990);
+
+
+// src/utils/imperativeState.ts
+var ImperativeState = class {
+  /**
+   * @param init - Function that creates the default state.
+   */
+  constructor(init) {
+    this.init = init;
+    this.records = this.init();
+  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(this, "ImperativeState");
+  reset() {
+    this.records = this.init();
+  }
+};
+
+
+/***/ }),
+
+/***/ 75791:
+/*!**************************************************************************!*\
+  !*** ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-D6G4REZN.mjs ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   drawBackgroundRect: () => (/* binding */ drawBackgroundRect),
+/* harmony export */   drawEmbeddedImage: () => (/* binding */ drawEmbeddedImage),
+/* harmony export */   drawImage: () => (/* binding */ drawImage),
+/* harmony export */   drawRect: () => (/* binding */ drawRect),
+/* harmony export */   drawText: () => (/* binding */ drawText),
+/* harmony export */   getNoteRect: () => (/* binding */ getNoteRect),
+/* harmony export */   getTextObj: () => (/* binding */ getTextObj)
+/* harmony export */ });
+/* harmony import */ var _chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chunk-YTJNT7DU.mjs */ 10990);
+/* harmony import */ var _braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @braintree/sanitize-url */ 73986);
+
+
+// src/diagrams/common/svgDrawCommon.ts
+
+var drawRect = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)((element, rectData) => {
+  const rectElement = element.append("rect");
+  rectElement.attr("x", rectData.x);
+  rectElement.attr("y", rectData.y);
+  rectElement.attr("fill", rectData.fill);
+  rectElement.attr("stroke", rectData.stroke);
+  rectElement.attr("width", rectData.width);
+  rectElement.attr("height", rectData.height);
+  if (rectData.name) {
+    rectElement.attr("name", rectData.name);
+  }
+  if (rectData.rx) {
+    rectElement.attr("rx", rectData.rx);
+  }
+  if (rectData.ry) {
+    rectElement.attr("ry", rectData.ry);
+  }
+  if (rectData.attrs !== void 0) {
+    for (const attrKey in rectData.attrs) {
+      rectElement.attr(attrKey, rectData.attrs[attrKey]);
+    }
+  }
+  if (rectData.class) {
+    rectElement.attr("class", rectData.class);
+  }
+  return rectElement;
+}, "drawRect");
+var drawBackgroundRect = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)((element, bounds) => {
+  const rectData = {
+    x: bounds.startx,
+    y: bounds.starty,
+    width: bounds.stopx - bounds.startx,
+    height: bounds.stopy - bounds.starty,
+    fill: bounds.fill,
+    stroke: bounds.stroke,
+    class: "rect"
+  };
+  const rectElement = drawRect(element, rectData);
+  rectElement.lower();
+}, "drawBackgroundRect");
+var drawText = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)((element, textData) => {
+  const nText = textData.text.replace(_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.lineBreakRegex, " ");
+  const textElem = element.append("text");
+  textElem.attr("x", textData.x);
+  textElem.attr("y", textData.y);
+  textElem.attr("class", "legend");
+  textElem.style("text-anchor", textData.anchor);
+  if (textData.class) {
+    textElem.attr("class", textData.class);
+  }
+  const tspan = textElem.append("tspan");
+  tspan.attr("x", textData.x + textData.textMargin * 2);
+  tspan.text(nText);
+  return textElem;
+}, "drawText");
+var drawImage = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)((elem, x, y, link) => {
+  const imageElement = elem.append("image");
+  imageElement.attr("x", x);
+  imageElement.attr("y", y);
+  const sanitizedLink = (0,_braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_1__.sanitizeUrl)(link);
+  imageElement.attr("xlink:href", sanitizedLink);
+}, "drawImage");
+var drawEmbeddedImage = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)((element, x, y, link) => {
+  const imageElement = element.append("use");
+  imageElement.attr("x", x);
+  imageElement.attr("y", y);
+  const sanitizedLink = (0,_braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_1__.sanitizeUrl)(link);
+  imageElement.attr("xlink:href", `#${sanitizedLink}`);
+}, "drawEmbeddedImage");
+var getNoteRect = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(() => {
+  const noteRectData = {
+    x: 0,
+    y: 0,
+    width: 100,
+    height: 100,
+    fill: "#EDF2AE",
+    stroke: "#666",
+    anchor: "start",
+    rx: 0,
+    ry: 0
+  };
+  return noteRectData;
+}, "getNoteRect");
+var getTextObj = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(() => {
+  const testObject = {
+    x: 0,
+    y: 0,
+    width: 100,
+    height: 100,
+    "text-anchor": "start",
+    style: "#666",
+    textMargin: 0,
+    rx: 0,
+    ry: 0,
+    tspan: true
+  };
+  return testObject;
+}, "getTextObj");
 
 
 /***/ })

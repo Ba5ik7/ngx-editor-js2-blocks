@@ -1,58 +1,29 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[436],{
 
-/***/ 80436:
+/***/ 49408:
 /*!******************************************************************************!*\
-  !*** ./node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs ***!
+  !*** ./node_modules/@angular/platform-browser/fesm2022/browser-DKgH74dt.mjs ***!
   \******************************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BrowserDomAdapter: () => (/* binding */ BrowserDomAdapter),
+/* harmony export */   BrowserGetTestability: () => (/* binding */ BrowserGetTestability),
 /* harmony export */   BrowserModule: () => (/* binding */ BrowserModule),
-/* harmony export */   By: () => (/* binding */ By),
-/* harmony export */   DomSanitizer: () => (/* binding */ DomSanitizer),
-/* harmony export */   EVENT_MANAGER_PLUGINS: () => (/* binding */ EVENT_MANAGER_PLUGINS),
-/* harmony export */   EventManager: () => (/* binding */ EventManager),
-/* harmony export */   EventManagerPlugin: () => (/* binding */ EventManagerPlugin),
-/* harmony export */   HAMMER_GESTURE_CONFIG: () => (/* binding */ HAMMER_GESTURE_CONFIG),
-/* harmony export */   HAMMER_LOADER: () => (/* binding */ HAMMER_LOADER),
-/* harmony export */   HammerGestureConfig: () => (/* binding */ HammerGestureConfig),
-/* harmony export */   HammerModule: () => (/* binding */ HammerModule),
-/* harmony export */   HydrationFeatureKind: () => (/* binding */ HydrationFeatureKind),
-/* harmony export */   Meta: () => (/* binding */ Meta),
-/* harmony export */   REMOVE_STYLES_ON_COMPONENT_DESTROY: () => (/* binding */ REMOVE_STYLES_ON_COMPONENT_DESTROY),
-/* harmony export */   Title: () => (/* binding */ Title),
-/* harmony export */   VERSION: () => (/* binding */ VERSION),
+/* harmony export */   DomEventsPlugin: () => (/* binding */ DomEventsPlugin),
+/* harmony export */   KeyEventsPlugin: () => (/* binding */ KeyEventsPlugin),
 /* harmony export */   bootstrapApplication: () => (/* binding */ bootstrapApplication),
 /* harmony export */   createApplication: () => (/* binding */ createApplication),
-/* harmony export */   disableDebugTools: () => (/* binding */ disableDebugTools),
-/* harmony export */   enableDebugTools: () => (/* binding */ enableDebugTools),
 /* harmony export */   platformBrowser: () => (/* binding */ platformBrowser),
-/* harmony export */   provideClientHydration: () => (/* binding */ provideClientHydration),
-/* harmony export */   provideProtractorTestingSupport: () => (/* binding */ provideProtractorTestingSupport),
-/* harmony export */   withEventReplay: () => (/* binding */ withEventReplay),
-/* harmony export */   withHttpTransferCacheOptions: () => (/* binding */ withHttpTransferCacheOptions),
-/* harmony export */   withI18nSupport: () => (/* binding */ withI18nSupport),
-/* harmony export */   withIncrementalHydration: () => (/* binding */ withIncrementalHydration),
-/* harmony export */   withNoHttpTransferCache: () => (/* binding */ withNoHttpTransferCache),
-/* harmony export */   "ɵBrowserDomAdapter": () => (/* binding */ BrowserDomAdapter),
-/* harmony export */   "ɵBrowserGetTestability": () => (/* binding */ BrowserGetTestability),
-/* harmony export */   "ɵDomEventsPlugin": () => (/* binding */ DomEventsPlugin),
-/* harmony export */   "ɵDomRendererFactory2": () => (/* binding */ DomRendererFactory2),
-/* harmony export */   "ɵDomSanitizerImpl": () => (/* binding */ DomSanitizerImpl),
-/* harmony export */   "ɵHammerGesturesPlugin": () => (/* binding */ HammerGesturesPlugin),
-/* harmony export */   "ɵINTERNAL_BROWSER_PLATFORM_PROVIDERS": () => (/* binding */ INTERNAL_BROWSER_PLATFORM_PROVIDERS),
-/* harmony export */   "ɵKeyEventsPlugin": () => (/* binding */ KeyEventsPlugin),
-/* harmony export */   "ɵSharedStylesHost": () => (/* binding */ SharedStylesHost),
-/* harmony export */   "ɵgetDOM": () => (/* reexport safe */ _angular_common__WEBPACK_IMPORTED_MODULE_0__["ɵgetDOM"]),
-/* harmony export */   "ɵinitDomAdapter": () => (/* binding */ initDomAdapter)
+/* harmony export */   provideProtractorTestingSupport: () => (/* binding */ provideProtractorTestingSupport)
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ 59694);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 9516);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ 65744);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ 85914);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dom_renderer-Frqw9gM5.mjs */ 83799);
 /**
- * @license Angular v19.1.5
- * (c) 2010-2024 Google LLC. https://angular.io/
+ * @license Angular v20.0.4
+ * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
 
@@ -61,24 +32,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-/**
- * Provides DOM operations in any browser environment.
- *
- * @security Tread carefully! Interacting with the DOM directly is dangerous and
- * can introduce XSS risks.
- */
-class GenericBrowserDomAdapter extends _angular_common__WEBPACK_IMPORTED_MODULE_0__["ɵDomAdapter"] {
-  supportsDOMEvents = true;
-}
-
 /**
  * A `DomAdapter` powered by full browser DOM APIs.
  *
  * @security Tread carefully! Interacting with the DOM directly is dangerous and
  * can introduce XSS risks.
  */
-class BrowserDomAdapter extends GenericBrowserDomAdapter {
+class BrowserDomAdapter extends _angular_common__WEBPACK_IMPORTED_MODULE_0__["ɵDomAdapter"] {
+  supportsDOMEvents = true;
   static makeCurrent() {
     (0,_angular_common__WEBPACK_IMPORTED_MODULE_0__["ɵsetRootDomAdapter"])(new BrowserDomAdapter());
   }
@@ -139,7 +100,7 @@ class BrowserDomAdapter extends GenericBrowserDomAdapter {
 }
 let baseElement = null;
 function getBaseElementHref() {
-  baseElement = baseElement || document.querySelector('base');
+  baseElement = baseElement || document.head.querySelector('base');
   return baseElement ? baseElement.getAttribute('href') : null;
 }
 function relativePath(url) {
@@ -214,6 +175,1490 @@ let BrowserXhr = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+let DomEventsPlugin = /*#__PURE__*/(() => {
+  class DomEventsPlugin extends _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_2__.EventManagerPlugin {
+    constructor(doc) {
+      super(doc);
+    }
+    // This plugin should come last in the list of plugins, because it accepts all
+    // events.
+    supports(eventName) {
+      return true;
+    }
+    addEventListener(element, eventName, handler, options) {
+      element.addEventListener(eventName, handler, options);
+      return () => this.removeEventListener(element, eventName, handler, options);
+    }
+    removeEventListener(target, eventName, callback, options) {
+      return target.removeEventListener(eventName, callback, options);
+    }
+    static ɵfac = function DomEventsPlugin_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || DomEventsPlugin)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT));
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+      token: DomEventsPlugin,
+      factory: DomEventsPlugin.ɵfac
+    });
+  }
+  return DomEventsPlugin;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Defines supported modifiers for key events.
+ */
+const MODIFIER_KEYS = ['alt', 'control', 'meta', 'shift'];
+// The following values are here for cross-browser compatibility and to match the W3C standard
+// cf https://www.w3.org/TR/DOM-Level-3-Events-key/
+const _keyMap = {
+  '\b': 'Backspace',
+  '\t': 'Tab',
+  '\x7F': 'Delete',
+  '\x1B': 'Escape',
+  'Del': 'Delete',
+  'Esc': 'Escape',
+  'Left': 'ArrowLeft',
+  'Right': 'ArrowRight',
+  'Up': 'ArrowUp',
+  'Down': 'ArrowDown',
+  'Menu': 'ContextMenu',
+  'Scroll': 'ScrollLock',
+  'Win': 'OS'
+};
+/**
+ * Retrieves modifiers from key-event objects.
+ */
+const MODIFIER_KEY_GETTERS = {
+  'alt': event => event.altKey,
+  'control': event => event.ctrlKey,
+  'meta': event => event.metaKey,
+  'shift': event => event.shiftKey
+};
+/**
+ * A browser plug-in that provides support for handling of key events in Angular.
+ */
+let KeyEventsPlugin = /*#__PURE__*/(() => {
+  class KeyEventsPlugin extends _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_2__.EventManagerPlugin {
+    /**
+     * Initializes an instance of the browser plug-in.
+     * @param doc The document in which key events will be detected.
+     */
+    constructor(doc) {
+      super(doc);
+    }
+    /**
+     * Reports whether a named key event is supported.
+     * @param eventName The event name to query.
+     * @return True if the named key event is supported.
+     */
+    supports(eventName) {
+      return KeyEventsPlugin.parseEventName(eventName) != null;
+    }
+    /**
+     * Registers a handler for a specific element and key event.
+     * @param element The HTML element to receive event notifications.
+     * @param eventName The name of the key event to listen for.
+     * @param handler A function to call when the notification occurs. Receives the
+     * event object as an argument.
+     * @returns The key event that was registered.
+     */
+    addEventListener(element, eventName, handler, options) {
+      const parsedEvent = KeyEventsPlugin.parseEventName(eventName);
+      const outsideHandler = KeyEventsPlugin.eventCallback(parsedEvent['fullKey'], handler, this.manager.getZone());
+      return this.manager.getZone().runOutsideAngular(() => {
+        return (0,_angular_common__WEBPACK_IMPORTED_MODULE_0__["ɵgetDOM"])().onAndCancel(element, parsedEvent['domEventName'], outsideHandler, options);
+      });
+    }
+    /**
+     * Parses the user provided full keyboard event definition and normalizes it for
+     * later internal use. It ensures the string is all lowercase, converts special
+     * characters to a standard spelling, and orders all the values consistently.
+     *
+     * @param eventName The name of the key event to listen for.
+     * @returns an object with the full, normalized string, and the dom event name
+     * or null in the case when the event doesn't match a keyboard event.
+     */
+    static parseEventName(eventName) {
+      const parts = eventName.toLowerCase().split('.');
+      const domEventName = parts.shift();
+      if (parts.length === 0 || !(domEventName === 'keydown' || domEventName === 'keyup')) {
+        return null;
+      }
+      const key = KeyEventsPlugin._normalizeKey(parts.pop());
+      let fullKey = '';
+      let codeIX = parts.indexOf('code');
+      if (codeIX > -1) {
+        parts.splice(codeIX, 1);
+        fullKey = 'code.';
+      }
+      MODIFIER_KEYS.forEach(modifierName => {
+        const index = parts.indexOf(modifierName);
+        if (index > -1) {
+          parts.splice(index, 1);
+          fullKey += modifierName + '.';
+        }
+      });
+      fullKey += key;
+      if (parts.length != 0 || key.length === 0) {
+        // returning null instead of throwing to let another plugin process the event
+        return null;
+      }
+      // NOTE: Please don't rewrite this as so, as it will break JSCompiler property renaming.
+      //       The code must remain in the `result['domEventName']` form.
+      // return {domEventName, fullKey};
+      const result = {};
+      result['domEventName'] = domEventName;
+      result['fullKey'] = fullKey;
+      return result;
+    }
+    /**
+     * Determines whether the actual keys pressed match the configured key code string.
+     * The `fullKeyCode` event is normalized in the `parseEventName` method when the
+     * event is attached to the DOM during the `addEventListener` call. This is unseen
+     * by the end user and is normalized for internal consistency and parsing.
+     *
+     * @param event The keyboard event.
+     * @param fullKeyCode The normalized user defined expected key event string
+     * @returns boolean.
+     */
+    static matchEventFullKeyCode(event, fullKeyCode) {
+      let keycode = _keyMap[event.key] || event.key;
+      let key = '';
+      if (fullKeyCode.indexOf('code.') > -1) {
+        keycode = event.code;
+        key = 'code.';
+      }
+      // the keycode could be unidentified so we have to check here
+      if (keycode == null || !keycode) return false;
+      keycode = keycode.toLowerCase();
+      if (keycode === ' ') {
+        keycode = 'space'; // for readability
+      } else if (keycode === '.') {
+        keycode = 'dot'; // because '.' is used as a separator in event names
+      }
+      MODIFIER_KEYS.forEach(modifierName => {
+        if (modifierName !== keycode) {
+          const modifierGetter = MODIFIER_KEY_GETTERS[modifierName];
+          if (modifierGetter(event)) {
+            key += modifierName + '.';
+          }
+        }
+      });
+      key += keycode;
+      return key === fullKeyCode;
+    }
+    /**
+     * Configures a handler callback for a key event.
+     * @param fullKey The event name that combines all simultaneous keystrokes.
+     * @param handler The function that responds to the key event.
+     * @param zone The zone in which the event occurred.
+     * @returns A callback function.
+     */
+    static eventCallback(fullKey, handler, zone) {
+      return event => {
+        if (KeyEventsPlugin.matchEventFullKeyCode(event, fullKey)) {
+          zone.runGuarded(() => handler(event));
+        }
+      };
+    }
+    /** @internal */
+    static _normalizeKey(keyName) {
+      return keyName === 'esc' ? 'escape' : keyName;
+    }
+    static ɵfac = function KeyEventsPlugin_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || KeyEventsPlugin)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT));
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+      token: KeyEventsPlugin,
+      factory: KeyEventsPlugin.ɵfac
+    });
+  }
+  return KeyEventsPlugin;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Bootstraps an instance of an Angular application and renders a standalone component as the
+ * application's root component. More information about standalone components can be found in [this
+ * guide](guide/components/importing).
+ *
+ * @usageNotes
+ * The root component passed into this function *must* be a standalone one (should have the
+ * `standalone: true` flag in the `@Component` decorator config).
+ *
+ * ```angular-ts
+ * @Component({
+ *   standalone: true,
+ *   template: 'Hello world!'
+ * })
+ * class RootComponent {}
+ *
+ * const appRef: ApplicationRef = await bootstrapApplication(RootComponent);
+ * ```
+ *
+ * You can add the list of providers that should be available in the application injector by
+ * specifying the `providers` field in an object passed as the second argument:
+ *
+ * ```ts
+ * await bootstrapApplication(RootComponent, {
+ *   providers: [
+ *     {provide: BACKEND_URL, useValue: 'https://yourdomain.com/api'}
+ *   ]
+ * });
+ * ```
+ *
+ * The `importProvidersFrom` helper method can be used to collect all providers from any
+ * existing NgModule (and transitively from all NgModules that it imports):
+ *
+ * ```ts
+ * await bootstrapApplication(RootComponent, {
+ *   providers: [
+ *     importProvidersFrom(SomeNgModule)
+ *   ]
+ * });
+ * ```
+ *
+ * Note: the `bootstrapApplication` method doesn't include [Testability](api/core/Testability) by
+ * default. You can add [Testability](api/core/Testability) by getting the list of necessary
+ * providers using `provideProtractorTestingSupport()` function and adding them into the `providers`
+ * array, for example:
+ *
+ * ```ts
+ * import {provideProtractorTestingSupport} from '@angular/platform-browser';
+ *
+ * await bootstrapApplication(RootComponent, {providers: [provideProtractorTestingSupport()]});
+ * ```
+ *
+ * @param rootComponent A reference to a standalone component that should be rendered.
+ * @param options Extra configuration for the bootstrap operation, see `ApplicationConfig` for
+ *     additional info.
+ * @returns A promise that returns an `ApplicationRef` instance once resolved.
+ *
+ * @publicApi
+ */
+function bootstrapApplication(rootComponent, options) {
+  return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵinternalCreateApplication"])({
+    rootComponent,
+    ...createProvidersConfig(options)
+  });
+}
+/**
+ * Create an instance of an Angular application without bootstrapping any components. This is useful
+ * for the situation where one wants to decouple application environment creation (a platform and
+ * associated injectors) from rendering components on a screen. Components can be subsequently
+ * bootstrapped on the returned `ApplicationRef`.
+ *
+ * @param options Extra configuration for the application environment, see `ApplicationConfig` for
+ *     additional info.
+ * @returns A promise that returns an `ApplicationRef` instance once resolved.
+ *
+ * @publicApi
+ */
+function createApplication(options) {
+  return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵinternalCreateApplication"])(createProvidersConfig(options));
+}
+function createProvidersConfig(options) {
+  return {
+    appProviders: [...BROWSER_MODULE_PROVIDERS, ...(options?.providers ?? [])],
+    platformProviders: INTERNAL_BROWSER_PLATFORM_PROVIDERS
+  };
+}
+/**
+ * Returns a set of providers required to setup [Testability](api/core/Testability) for an
+ * application bootstrapped using the `bootstrapApplication` function. The set of providers is
+ * needed to support testing an application with Protractor (which relies on the Testability APIs
+ * to be present).
+ *
+ * @returns An array of providers required to setup Testability for an application and make it
+ *     available for testing using Protractor.
+ *
+ * @publicApi
+ */
+function provideProtractorTestingSupport() {
+  // Return a copy to prevent changes to the original array in case any in-place
+  // alterations are performed to the `provideProtractorTestingSupport` call results in app
+  // code.
+  return [...TESTABILITY_PROVIDERS];
+}
+function initDomAdapter() {
+  BrowserDomAdapter.makeCurrent();
+}
+function errorHandler() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__.ErrorHandler();
+}
+function _document() {
+  // Tell ivy about the global document
+  (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetDocument"])(document);
+  return document;
+}
+const INTERNAL_BROWSER_PLATFORM_PROVIDERS = [{
+  provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__.PLATFORM_ID,
+  useValue: _angular_common__WEBPACK_IMPORTED_MODULE_0__["ɵPLATFORM_BROWSER_ID"]
+}, {
+  provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__.PLATFORM_INITIALIZER,
+  useValue: initDomAdapter,
+  multi: true
+}, {
+  provide: _angular_common__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT,
+  useFactory: _document
+}];
+/**
+ * A factory function that returns a `PlatformRef` instance associated with browser service
+ * providers.
+ *
+ * @publicApi
+ */
+const platformBrowser = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.createPlatformFactory)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.platformCore, 'browser', INTERNAL_BROWSER_PLATFORM_PROVIDERS);
+/**
+ * Internal marker to signal whether providers from the `BrowserModule` are already present in DI.
+ * This is needed to avoid loading `BrowserModule` providers twice. We can't rely on the
+ * `BrowserModule` presence itself, since the standalone-based bootstrap just imports
+ * `BrowserModule` providers without referencing the module itself.
+ */
+const BROWSER_MODULE_PROVIDERS_MARKER = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(typeof ngDevMode === 'undefined' || ngDevMode ? 'BrowserModule Providers Marker' : '');
+const TESTABILITY_PROVIDERS = [{
+  provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵTESTABILITY_GETTER"],
+  useClass: BrowserGetTestability
+}, {
+  provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵTESTABILITY"],
+  useClass: _angular_core__WEBPACK_IMPORTED_MODULE_1__.Testability,
+  deps: [_angular_core__WEBPACK_IMPORTED_MODULE_1__.NgZone, _angular_core__WEBPACK_IMPORTED_MODULE_1__.TestabilityRegistry, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵTESTABILITY_GETTER"]]
+}, {
+  provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__.Testability,
+  // Also provide as `Testability` for backwards-compatibility.
+  useClass: _angular_core__WEBPACK_IMPORTED_MODULE_1__.Testability,
+  deps: [_angular_core__WEBPACK_IMPORTED_MODULE_1__.NgZone, _angular_core__WEBPACK_IMPORTED_MODULE_1__.TestabilityRegistry, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵTESTABILITY_GETTER"]]
+}];
+const BROWSER_MODULE_PROVIDERS = [{
+  provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵINJECTOR_SCOPE"],
+  useValue: 'root'
+}, {
+  provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__.ErrorHandler,
+  useFactory: errorHandler
+}, {
+  provide: _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_2__.EVENT_MANAGER_PLUGINS,
+  useClass: DomEventsPlugin,
+  multi: true,
+  deps: [_angular_common__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT]
+}, {
+  provide: _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_2__.EVENT_MANAGER_PLUGINS,
+  useClass: KeyEventsPlugin,
+  multi: true,
+  deps: [_angular_common__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT]
+}, _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_2__.DomRendererFactory2, _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_2__.SharedStylesHost, _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_2__.EventManager, {
+  provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__.RendererFactory2,
+  useExisting: _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_2__.DomRendererFactory2
+}, {
+  provide: _angular_common__WEBPACK_IMPORTED_MODULE_0__.XhrFactory,
+  useClass: BrowserXhr
+}, typeof ngDevMode === 'undefined' || ngDevMode ? {
+  provide: BROWSER_MODULE_PROVIDERS_MARKER,
+  useValue: true
+} : []];
+/**
+ * Exports required infrastructure for all Angular apps.
+ * Included by default in all Angular apps created with the CLI
+ * `new` command.
+ * Re-exports `CommonModule` and `ApplicationModule`, making their
+ * exports and providers available to all apps.
+ *
+ * @publicApi
+ */
+let BrowserModule = /*#__PURE__*/(() => {
+  class BrowserModule {
+    constructor() {
+      if (typeof ngDevMode === 'undefined' || ngDevMode) {
+        const providersAlreadyPresent = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(BROWSER_MODULE_PROVIDERS_MARKER, {
+          optional: true,
+          skipSelf: true
+        });
+        if (providersAlreadyPresent) {
+          throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](5100 /* RuntimeErrorCode.BROWSER_MODULE_ALREADY_LOADED */, `Providers from the \`BrowserModule\` have already been loaded. If you need access ` + `to common directives such as NgIf and NgFor, import the \`CommonModule\` instead.`);
+        }
+      }
+    }
+    static ɵfac = function BrowserModule_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || BrowserModule)();
+    };
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
+      type: BrowserModule
+    });
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
+      providers: [...BROWSER_MODULE_PROVIDERS, ...TESTABILITY_PROVIDERS],
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__.CommonModule, _angular_core__WEBPACK_IMPORTED_MODULE_1__.ApplicationModule]
+    });
+  }
+  return BrowserModule;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+
+/***/ }),
+
+/***/ 80436:
+/*!******************************************************************************!*\
+  !*** ./node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BrowserModule: () => (/* reexport safe */ _browser_DKgH74dt_mjs__WEBPACK_IMPORTED_MODULE_0__.BrowserModule),
+/* harmony export */   By: () => (/* binding */ By),
+/* harmony export */   DomSanitizer: () => (/* binding */ DomSanitizer),
+/* harmony export */   EVENT_MANAGER_PLUGINS: () => (/* reexport safe */ _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_3__.EVENT_MANAGER_PLUGINS),
+/* harmony export */   EventManager: () => (/* reexport safe */ _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_3__.EventManager),
+/* harmony export */   EventManagerPlugin: () => (/* reexport safe */ _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_3__.EventManagerPlugin),
+/* harmony export */   HAMMER_GESTURE_CONFIG: () => (/* binding */ HAMMER_GESTURE_CONFIG),
+/* harmony export */   HAMMER_LOADER: () => (/* binding */ HAMMER_LOADER),
+/* harmony export */   HammerGestureConfig: () => (/* binding */ HammerGestureConfig),
+/* harmony export */   HammerModule: () => (/* binding */ HammerModule),
+/* harmony export */   HydrationFeatureKind: () => (/* binding */ HydrationFeatureKind),
+/* harmony export */   Meta: () => (/* binding */ Meta),
+/* harmony export */   REMOVE_STYLES_ON_COMPONENT_DESTROY: () => (/* reexport safe */ _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_3__.REMOVE_STYLES_ON_COMPONENT_DESTROY),
+/* harmony export */   Title: () => (/* binding */ Title),
+/* harmony export */   VERSION: () => (/* binding */ VERSION),
+/* harmony export */   bootstrapApplication: () => (/* reexport safe */ _browser_DKgH74dt_mjs__WEBPACK_IMPORTED_MODULE_0__.bootstrapApplication),
+/* harmony export */   createApplication: () => (/* reexport safe */ _browser_DKgH74dt_mjs__WEBPACK_IMPORTED_MODULE_0__.createApplication),
+/* harmony export */   disableDebugTools: () => (/* binding */ disableDebugTools),
+/* harmony export */   enableDebugTools: () => (/* binding */ enableDebugTools),
+/* harmony export */   platformBrowser: () => (/* reexport safe */ _browser_DKgH74dt_mjs__WEBPACK_IMPORTED_MODULE_0__.platformBrowser),
+/* harmony export */   provideClientHydration: () => (/* binding */ provideClientHydration),
+/* harmony export */   provideProtractorTestingSupport: () => (/* reexport safe */ _browser_DKgH74dt_mjs__WEBPACK_IMPORTED_MODULE_0__.provideProtractorTestingSupport),
+/* harmony export */   withEventReplay: () => (/* binding */ withEventReplay),
+/* harmony export */   withHttpTransferCacheOptions: () => (/* binding */ withHttpTransferCacheOptions),
+/* harmony export */   withI18nSupport: () => (/* binding */ withI18nSupport),
+/* harmony export */   withIncrementalHydration: () => (/* binding */ withIncrementalHydration),
+/* harmony export */   withNoHttpTransferCache: () => (/* binding */ withNoHttpTransferCache),
+/* harmony export */   "ɵBrowserDomAdapter": () => (/* reexport safe */ _browser_DKgH74dt_mjs__WEBPACK_IMPORTED_MODULE_0__.BrowserDomAdapter),
+/* harmony export */   "ɵBrowserGetTestability": () => (/* reexport safe */ _browser_DKgH74dt_mjs__WEBPACK_IMPORTED_MODULE_0__.BrowserGetTestability),
+/* harmony export */   "ɵDomEventsPlugin": () => (/* reexport safe */ _browser_DKgH74dt_mjs__WEBPACK_IMPORTED_MODULE_0__.DomEventsPlugin),
+/* harmony export */   "ɵDomRendererFactory2": () => (/* reexport safe */ _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_3__.DomRendererFactory2),
+/* harmony export */   "ɵDomSanitizerImpl": () => (/* binding */ DomSanitizerImpl),
+/* harmony export */   "ɵHammerGesturesPlugin": () => (/* binding */ HammerGesturesPlugin),
+/* harmony export */   "ɵKeyEventsPlugin": () => (/* reexport safe */ _browser_DKgH74dt_mjs__WEBPACK_IMPORTED_MODULE_0__.KeyEventsPlugin),
+/* harmony export */   "ɵSharedStylesHost": () => (/* reexport safe */ _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_3__.SharedStylesHost),
+/* harmony export */   "ɵgetDOM": () => (/* reexport safe */ _angular_common__WEBPACK_IMPORTED_MODULE_1__["ɵgetDOM"])
+/* harmony export */ });
+/* harmony import */ var _browser_DKgH74dt_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./browser-DKgH74dt.mjs */ 49408);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 85914);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dom_renderer-Frqw9gM5.mjs */ 83799);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ 52580);
+/**
+ * @license Angular v20.0.4
+ * (c) 2010-2025 Google LLC. https://angular.io/
+ * License: MIT
+ */
+
+
+
+
+
+
+
+
+
+
+/**
+ * A service for managing HTML `<meta>` tags.
+ *
+ * Properties of the `MetaDefinition` object match the attributes of the
+ * HTML `<meta>` tag. These tags define document metadata that is important for
+ * things like configuring a Content Security Policy, defining browser compatibility
+ * and security settings, setting HTTP Headers, defining rich content for social sharing,
+ * and Search Engine Optimization (SEO).
+ *
+ * To identify specific `<meta>` tags in a document, use an attribute selection
+ * string in the format `"tag_attribute='value string'"`.
+ * For example, an `attrSelector` value of `"name='description'"` matches a tag
+ * whose `name` attribute has the value `"description"`.
+ * Selectors are used with the `querySelector()` Document method,
+ * in the format `meta[{attrSelector}]`.
+ *
+ * @see [HTML meta tag](https://developer.mozilla.org/docs/Web/HTML/Element/meta)
+ * @see [Document.querySelector()](https://developer.mozilla.org/docs/Web/API/Document/querySelector)
+ *
+ *
+ * @publicApi
+ */
+let Meta = /*#__PURE__*/(() => {
+  class Meta {
+    _doc;
+    _dom;
+    constructor(_doc) {
+      this._doc = _doc;
+      this._dom = (0,_angular_common__WEBPACK_IMPORTED_MODULE_1__["ɵgetDOM"])();
+    }
+    /**
+     * Retrieves or creates a specific `<meta>` tag element in the current HTML document.
+     * In searching for an existing tag, Angular attempts to match the `name` or `property` attribute
+     * values in the provided tag definition, and verifies that all other attribute values are equal.
+     * If an existing element is found, it is returned and is not modified in any way.
+     * @param tag The definition of a `<meta>` element to match or create.
+     * @param forceCreation True to create a new element without checking whether one already exists.
+     * @returns The existing element with the same attributes and values if found,
+     * the new element if no match is found, or `null` if the tag parameter is not defined.
+     */
+    addTag(tag, forceCreation = false) {
+      if (!tag) return null;
+      return this._getOrCreateElement(tag, forceCreation);
+    }
+    /**
+     * Retrieves or creates a set of `<meta>` tag elements in the current HTML document.
+     * In searching for an existing tag, Angular attempts to match the `name` or `property` attribute
+     * values in the provided tag definition, and verifies that all other attribute values are equal.
+     * @param tags An array of tag definitions to match or create.
+     * @param forceCreation True to create new elements without checking whether they already exist.
+     * @returns The matching elements if found, or the new elements.
+     */
+    addTags(tags, forceCreation = false) {
+      if (!tags) return [];
+      return tags.reduce((result, tag) => {
+        if (tag) {
+          result.push(this._getOrCreateElement(tag, forceCreation));
+        }
+        return result;
+      }, []);
+    }
+    /**
+     * Retrieves a `<meta>` tag element in the current HTML document.
+     * @param attrSelector The tag attribute and value to match against, in the format
+     * `"tag_attribute='value string'"`.
+     * @returns The matching element, if any.
+     */
+    getTag(attrSelector) {
+      if (!attrSelector) return null;
+      return this._doc.querySelector(`meta[${attrSelector}]`) || null;
+    }
+    /**
+     * Retrieves a set of `<meta>` tag elements in the current HTML document.
+     * @param attrSelector The tag attribute and value to match against, in the format
+     * `"tag_attribute='value string'"`.
+     * @returns The matching elements, if any.
+     */
+    getTags(attrSelector) {
+      if (!attrSelector) return [];
+      const list /*NodeList*/ = this._doc.querySelectorAll(`meta[${attrSelector}]`);
+      return list ? [].slice.call(list) : [];
+    }
+    /**
+     * Modifies an existing `<meta>` tag element in the current HTML document.
+     * @param tag The tag description with which to replace the existing tag content.
+     * @param selector A tag attribute and value to match against, to identify
+     * an existing tag. A string in the format `"tag_attribute=`value string`"`.
+     * If not supplied, matches a tag with the same `name` or `property` attribute value as the
+     * replacement tag.
+     * @return The modified element.
+     */
+    updateTag(tag, selector) {
+      if (!tag) return null;
+      selector = selector || this._parseSelector(tag);
+      const meta = this.getTag(selector);
+      if (meta) {
+        return this._setMetaElementAttributes(tag, meta);
+      }
+      return this._getOrCreateElement(tag, true);
+    }
+    /**
+     * Removes an existing `<meta>` tag element from the current HTML document.
+     * @param attrSelector A tag attribute and value to match against, to identify
+     * an existing tag. A string in the format `"tag_attribute=`value string`"`.
+     */
+    removeTag(attrSelector) {
+      this.removeTagElement(this.getTag(attrSelector));
+    }
+    /**
+     * Removes an existing `<meta>` tag element from the current HTML document.
+     * @param meta The tag definition to match against to identify an existing tag.
+     */
+    removeTagElement(meta) {
+      if (meta) {
+        this._dom.remove(meta);
+      }
+    }
+    _getOrCreateElement(meta, forceCreation = false) {
+      if (!forceCreation) {
+        const selector = this._parseSelector(meta);
+        // It's allowed to have multiple elements with the same name so it's not enough to
+        // just check that element with the same name already present on the page. We also need to
+        // check if element has tag attributes
+        const elem = this.getTags(selector).filter(elem => this._containsAttributes(meta, elem))[0];
+        if (elem !== undefined) return elem;
+      }
+      const element = this._dom.createElement('meta');
+      this._setMetaElementAttributes(meta, element);
+      const head = this._doc.getElementsByTagName('head')[0];
+      head.appendChild(element);
+      return element;
+    }
+    _setMetaElementAttributes(tag, el) {
+      Object.keys(tag).forEach(prop => el.setAttribute(this._getMetaKeyMap(prop), tag[prop]));
+      return el;
+    }
+    _parseSelector(tag) {
+      const attr = tag.name ? 'name' : 'property';
+      return `${attr}="${tag[attr]}"`;
+    }
+    _containsAttributes(tag, elem) {
+      return Object.keys(tag).every(key => elem.getAttribute(this._getMetaKeyMap(key)) === tag[key]);
+    }
+    _getMetaKeyMap(prop) {
+      return META_KEYS_MAP[prop] || prop;
+    }
+    static ɵfac = function Meta_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || Meta)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
+      token: Meta,
+      factory: Meta.ɵfac,
+      providedIn: 'root'
+    });
+  }
+  return Meta;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+/**
+ * Mapping for MetaDefinition properties with their correct meta attribute names
+ */
+const META_KEYS_MAP = {
+  httpEquiv: 'http-equiv'
+};
+
+/**
+ * A service that can be used to get and set the title of a current HTML document.
+ *
+ * Since an Angular application can't be bootstrapped on the entire HTML document (`<html>` tag)
+ * it is not possible to bind to the `text` property of the `HTMLTitleElement` elements
+ * (representing the `<title>` tag). Instead, this service can be used to set and get the current
+ * title value.
+ *
+ * @publicApi
+ */
+let Title = /*#__PURE__*/(() => {
+  class Title {
+    _doc;
+    constructor(_doc) {
+      this._doc = _doc;
+    }
+    /**
+     * Get the title of the current HTML document.
+     */
+    getTitle() {
+      return this._doc.title;
+    }
+    /**
+     * Set the title of the current HTML document.
+     * @param newTitle
+     */
+    setTitle(newTitle) {
+      this._doc.title = newTitle || '';
+    }
+    static ɵfac = function Title_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || Title)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
+      token: Title,
+      factory: Title.ɵfac,
+      providedIn: 'root'
+    });
+  }
+  return Title;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/// <reference path="../../../goog.d.ts" />
+/**
+ * Exports the value under a given `name` in the global property `ng`. For example `ng.probe` if
+ * `name` is `'probe'`.
+ * @param name Name under which it will be exported. Keep in mind this will be a property of the
+ * global `ng` object.
+ * @param value The value to export.
+ */
+function exportNgVar(name, value) {
+  if (typeof COMPILED === 'undefined' || !COMPILED) {
+    // Note: we can't export `ng` when using closure enhanced optimization as:
+    // - closure declares globals itself for minified names, which sometimes clobber our `ng` global
+    // - we can't declare a closure extern as the namespace `ng` is already used within Google
+    //   for typings for angularJS (via `goog.provide('ng....')`).
+    const ng = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵglobal"]['ng'] = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵglobal"]['ng'] || {};
+    ng[name] = value;
+  }
+}
+class ChangeDetectionPerfRecord {
+  msPerTick;
+  numTicks;
+  constructor(msPerTick, numTicks) {
+    this.msPerTick = msPerTick;
+    this.numTicks = numTicks;
+  }
+}
+/**
+ * Entry point for all Angular profiling-related debug tools. This object
+ * corresponds to the `ng.profiler` in the dev console.
+ */
+class AngularProfiler {
+  appRef;
+  constructor(ref) {
+    this.appRef = ref.injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_2__.ApplicationRef);
+  }
+  // tslint:disable:no-console
+  /**
+   * Exercises change detection in a loop and then prints the average amount of
+   * time in milliseconds how long a single round of change detection takes for
+   * the current state of the UI. It runs a minimum of 5 rounds for a minimum
+   * of 500 milliseconds.
+   *
+   * Optionally, a user may pass a `config` parameter containing a map of
+   * options. Supported options are:
+   *
+   * `record` (boolean) - causes the profiler to record a CPU profile while
+   * it exercises the change detector. Example:
+   *
+   * ```ts
+   * ng.profiler.timeChangeDetection({record: true})
+   * ```
+   */
+  timeChangeDetection(config) {
+    const record = config && config['record'];
+    const profileName = 'Change Detection';
+    // Profiler is not available in Android browsers without dev tools opened
+    if (record && 'profile' in console && typeof console.profile === 'function') {
+      console.profile(profileName);
+    }
+    const start = performance.now();
+    let numTicks = 0;
+    while (numTicks < 5 || performance.now() - start < 500) {
+      this.appRef.tick();
+      numTicks++;
+    }
+    const end = performance.now();
+    if (record && 'profileEnd' in console && typeof console.profileEnd === 'function') {
+      console.profileEnd(profileName);
+    }
+    const msPerTick = (end - start) / numTicks;
+    console.log(`ran ${numTicks} change detection cycles`);
+    console.log(`${msPerTick.toFixed(2)} ms per check`);
+    return new ChangeDetectionPerfRecord(msPerTick, numTicks);
+  }
+}
+const PROFILER_GLOBAL_NAME = 'profiler';
+/**
+ * Enabled Angular debug tools that are accessible via your browser's
+ * developer console.
+ *
+ * Usage:
+ *
+ * 1. Open developer console (e.g. in Chrome Ctrl + Shift + j)
+ * 1. Type `ng.` (usually the console will show auto-complete suggestion)
+ * 1. Try the change detection profiler `ng.profiler.timeChangeDetection()`
+ *    then hit Enter.
+ *
+ * @publicApi
+ */
+function enableDebugTools(ref) {
+  exportNgVar(PROFILER_GLOBAL_NAME, new AngularProfiler(ref));
+  return ref;
+}
+/**
+ * Disables Angular tools.
+ *
+ * @publicApi
+ */
+function disableDebugTools() {
+  exportNgVar(PROFILER_GLOBAL_NAME, null);
+}
+
+/**
+ * Predicates for use with {@link DebugElement}'s query functions.
+ *
+ * @publicApi
+ */
+class By {
+  /**
+   * Match all nodes.
+   *
+   * @usageNotes
+   * ### Example
+   *
+   * {@example platform-browser/dom/debug/ts/by/by.ts region='by_all'}
+   */
+  static all() {
+    return () => true;
+  }
+  /**
+   * Match elements by the given CSS selector.
+   *
+   * @usageNotes
+   * ### Example
+   *
+   * {@example platform-browser/dom/debug/ts/by/by.ts region='by_css'}
+   */
+  static css(selector) {
+    return debugElement => {
+      return debugElement.nativeElement != null ? elementMatches(debugElement.nativeElement, selector) : false;
+    };
+  }
+  /**
+   * Match nodes that have the given directive present.
+   *
+   * @usageNotes
+   * ### Example
+   *
+   * {@example platform-browser/dom/debug/ts/by/by.ts region='by_directive'}
+   */
+  static directive(type) {
+    return debugNode => debugNode.providerTokens.indexOf(type) !== -1;
+  }
+}
+function elementMatches(n, selector) {
+  if ((0,_angular_common__WEBPACK_IMPORTED_MODULE_1__["ɵgetDOM"])().isElementNode(n)) {
+    return n.matches && n.matches(selector) || n.msMatchesSelector && n.msMatchesSelector(selector) || n.webkitMatchesSelector && n.webkitMatchesSelector(selector);
+  }
+  return false;
+}
+
+/// <reference types="hammerjs" />
+/**
+ * Supported HammerJS recognizer event names.
+ */
+const EVENT_NAMES = {
+  // pan
+  'pan': true,
+  'panstart': true,
+  'panmove': true,
+  'panend': true,
+  'pancancel': true,
+  'panleft': true,
+  'panright': true,
+  'panup': true,
+  'pandown': true,
+  // pinch
+  'pinch': true,
+  'pinchstart': true,
+  'pinchmove': true,
+  'pinchend': true,
+  'pinchcancel': true,
+  'pinchin': true,
+  'pinchout': true,
+  // press
+  'press': true,
+  'pressup': true,
+  // rotate
+  'rotate': true,
+  'rotatestart': true,
+  'rotatemove': true,
+  'rotateend': true,
+  'rotatecancel': true,
+  // swipe
+  'swipe': true,
+  'swipeleft': true,
+  'swiperight': true,
+  'swipeup': true,
+  'swipedown': true,
+  // tap
+  'tap': true,
+  'doubletap': true
+};
+/**
+ * DI token for providing [HammerJS](https://hammerjs.github.io/) support to Angular.
+ * @see {@link HammerGestureConfig}
+ *
+ * @ngModule HammerModule
+ * @publicApi
+ *
+ * @deprecated The HammerJS integration is deprecated. Replace it by your own implementation.
+ */
+const HAMMER_GESTURE_CONFIG = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_2__.InjectionToken(typeof ngDevMode === 'undefined' || ngDevMode ? 'HammerGestureConfig' : '');
+/**
+ * Injection token used to provide a HammerLoader to Angular.
+ *
+ * @see {@link HammerLoader}
+ *
+ * @publicApi
+ *
+ * @deprecated The HammerJS integration is deprecated. Replace it by your own implementation.
+ */
+const HAMMER_LOADER = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_2__.InjectionToken(typeof ngDevMode === 'undefined' || ngDevMode ? 'HammerLoader' : '');
+/**
+ * An injectable [HammerJS Manager](https://hammerjs.github.io/api/#hammermanager)
+ * for gesture recognition. Configures specific event recognition.
+ * @publicApi
+ *
+ * @deprecated The HammerJS integration is deprecated. Replace it by your own implementation.
+ */
+let HammerGestureConfig = /*#__PURE__*/(() => {
+  class HammerGestureConfig {
+    /**
+     * A set of supported event names for gestures to be used in Angular.
+     * Angular supports all built-in recognizers, as listed in
+     * [HammerJS documentation](https://hammerjs.github.io/).
+     */
+    events = [];
+    /**
+     * Maps gesture event names to a set of configuration options
+     * that specify overrides to the default values for specific properties.
+     *
+     * The key is a supported event name to be configured,
+     * and the options object contains a set of properties, with override values
+     * to be applied to the named recognizer event.
+     * For example, to disable recognition of the rotate event, specify
+     *  `{"rotate": {"enable": false}}`.
+     *
+     * Properties that are not present take the HammerJS default values.
+     * For information about which properties are supported for which events,
+     * and their allowed and default values, see
+     * [HammerJS documentation](https://hammerjs.github.io/).
+     *
+     */
+    overrides = {};
+    /**
+     * Properties whose default values can be overridden for a given event.
+     * Different sets of properties apply to different events.
+     * For information about which properties are supported for which events,
+     * and their allowed and default values, see
+     * [HammerJS documentation](https://hammerjs.github.io/).
+     */
+    options;
+    /**
+     * Creates a [HammerJS Manager](https://hammerjs.github.io/api/#hammermanager)
+     * and attaches it to a given HTML element.
+     * @param element The element that will recognize gestures.
+     * @returns A HammerJS event-manager object.
+     */
+    buildHammer(element) {
+      const mc = new Hammer(element, this.options);
+      mc.get('pinch').set({
+        enable: true
+      });
+      mc.get('rotate').set({
+        enable: true
+      });
+      for (const eventName in this.overrides) {
+        mc.get(eventName).set(this.overrides[eventName]);
+      }
+      return mc;
+    }
+    static ɵfac = function HammerGestureConfig_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || HammerGestureConfig)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
+      token: HammerGestureConfig,
+      factory: HammerGestureConfig.ɵfac
+    });
+  }
+  return HammerGestureConfig;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+/**
+ * Event plugin that adds Hammer support to an application.
+ *
+ * @ngModule HammerModule
+ */
+let HammerGesturesPlugin = /*#__PURE__*/(() => {
+  class HammerGesturesPlugin extends _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_3__.EventManagerPlugin {
+    _config;
+    _injector;
+    loader;
+    _loaderPromise = null;
+    constructor(doc, _config, _injector, loader) {
+      super(doc);
+      this._config = _config;
+      this._injector = _injector;
+      this.loader = loader;
+    }
+    supports(eventName) {
+      if (!EVENT_NAMES.hasOwnProperty(eventName.toLowerCase()) && !this.isCustomEvent(eventName)) {
+        return false;
+      }
+      if (!window.Hammer && !this.loader) {
+        if (typeof ngDevMode === 'undefined' || ngDevMode) {
+          // Get a `Console` through an injector to tree-shake the
+          // class when it is unused in production.
+          const _console = this._injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵConsole"]);
+          _console.warn(`The "${eventName}" event cannot be bound because Hammer.JS is not ` + `loaded and no custom loader has been specified.`);
+        }
+        return false;
+      }
+      return true;
+    }
+    addEventListener(element, eventName, handler) {
+      const zone = this.manager.getZone();
+      eventName = eventName.toLowerCase();
+      // If Hammer is not present but a loader is specified, we defer adding the event listener
+      // until Hammer is loaded.
+      if (!window.Hammer && this.loader) {
+        this._loaderPromise = this._loaderPromise || zone.runOutsideAngular(() => this.loader());
+        // This `addEventListener` method returns a function to remove the added listener.
+        // Until Hammer is loaded, the returned function needs to *cancel* the registration rather
+        // than remove anything.
+        let cancelRegistration = false;
+        let deregister = () => {
+          cancelRegistration = true;
+        };
+        zone.runOutsideAngular(() => this._loaderPromise.then(() => {
+          // If Hammer isn't actually loaded when the custom loader resolves, give up.
+          if (!window.Hammer) {
+            if (typeof ngDevMode === 'undefined' || ngDevMode) {
+              const _console = this._injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵConsole"]);
+              _console.warn(`The custom HAMMER_LOADER completed, but Hammer.JS is not present.`);
+            }
+            deregister = () => {};
+            return;
+          }
+          if (!cancelRegistration) {
+            // Now that Hammer is loaded and the listener is being loaded for real,
+            // the deregistration function changes from canceling registration to
+            // removal.
+            deregister = this.addEventListener(element, eventName, handler);
+          }
+        }).catch(() => {
+          if (typeof ngDevMode === 'undefined' || ngDevMode) {
+            const _console = this._injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵConsole"]);
+            _console.warn(`The "${eventName}" event cannot be bound because the custom ` + `Hammer.JS loader failed.`);
+          }
+          deregister = () => {};
+        }));
+        // Return a function that *executes* `deregister` (and not `deregister` itself) so that we
+        // can change the behavior of `deregister` once the listener is added. Using a closure in
+        // this way allows us to avoid any additional data structures to track listener removal.
+        return () => {
+          deregister();
+        };
+      }
+      return zone.runOutsideAngular(() => {
+        // Creating the manager bind events, must be done outside of angular
+        const mc = this._config.buildHammer(element);
+        const callback = function (eventObj) {
+          zone.runGuarded(function () {
+            handler(eventObj);
+          });
+        };
+        mc.on(eventName, callback);
+        return () => {
+          mc.off(eventName, callback);
+          // destroy mc to prevent memory leak
+          if (typeof mc.destroy === 'function') {
+            mc.destroy();
+          }
+        };
+      });
+    }
+    isCustomEvent(eventName) {
+      return this._config.events.indexOf(eventName) > -1;
+    }
+    static ɵfac = function HammerGesturesPlugin_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || HammerGesturesPlugin)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](HAMMER_GESTURE_CONFIG), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injector), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](HAMMER_LOADER, 8));
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
+      token: HammerGesturesPlugin,
+      factory: HammerGesturesPlugin.ɵfac
+    });
+  }
+  return HammerGesturesPlugin;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+/**
+ * Adds support for HammerJS.
+ *
+ * Import this module at the root of your application so that Angular can work with
+ * HammerJS to detect gesture events.
+ *
+ * Note that applications still need to include the HammerJS script itself. This module
+ * simply sets up the coordination layer between HammerJS and Angular's `EventManager`.
+ *
+ * @publicApi
+ *
+ * @deprecated The hammer integration is deprecated. Replace it by your own implementation.
+ */
+let HammerModule = /*#__PURE__*/(() => {
+  class HammerModule {
+    static ɵfac = function HammerModule_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || HammerModule)();
+    };
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({
+      type: HammerModule
+    });
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({
+      providers: [{
+        provide: _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_3__.EVENT_MANAGER_PLUGINS,
+        useClass: HammerGesturesPlugin,
+        multi: true,
+        deps: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT, HAMMER_GESTURE_CONFIG, _angular_core__WEBPACK_IMPORTED_MODULE_2__.Injector, [new _angular_core__WEBPACK_IMPORTED_MODULE_2__.Optional(), HAMMER_LOADER]]
+      }, {
+        provide: HAMMER_GESTURE_CONFIG,
+        useClass: HammerGestureConfig
+      }]
+    });
+  }
+  return HammerModule;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * DomSanitizer helps preventing Cross Site Scripting Security bugs (XSS) by sanitizing
+ * values to be safe to use in the different DOM contexts.
+ *
+ * For example, when binding a URL in an `<a [href]="someValue">` hyperlink, `someValue` will be
+ * sanitized so that an attacker cannot inject e.g. a `javascript:` URL that would execute code on
+ * the website.
+ *
+ * In specific situations, it might be necessary to disable sanitization, for example if the
+ * application genuinely needs to produce a `javascript:` style link with a dynamic value in it.
+ * Users can bypass security by constructing a value with one of the `bypassSecurityTrust...`
+ * methods, and then binding to that value from the template.
+ *
+ * These situations should be very rare, and extraordinary care must be taken to avoid creating a
+ * Cross Site Scripting (XSS) security bug!
+ *
+ * When using `bypassSecurityTrust...`, make sure to call the method as early as possible and as
+ * close as possible to the source of the value, to make it easy to verify no security bug is
+ * created by its use.
+ *
+ * It is not required (and not recommended) to bypass security if the value is safe, e.g. a URL that
+ * does not start with a suspicious protocol, or an HTML snippet that does not contain dangerous
+ * code. The sanitizer leaves safe values intact.
+ *
+ * @security Calling any of the `bypassSecurityTrust...` APIs disables Angular's built-in
+ * sanitization for the value passed in. Carefully check and audit all values and code paths going
+ * into this call. Make sure any user data is appropriately escaped for this security context.
+ * For more detail, see the [Security Guide](https://g.co/ng/security).
+ *
+ * @publicApi
+ */
+let DomSanitizer = /*#__PURE__*/(() => {
+  class DomSanitizer {
+    static ɵfac = function DomSanitizer_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || DomSanitizer)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
+      token: DomSanitizer,
+      factory: function DomSanitizer_Factory(__ngFactoryType__) {
+        let __ngConditionalFactory__ = null;
+        if (__ngFactoryType__) {
+          __ngConditionalFactory__ = new (__ngFactoryType__ || DomSanitizer)();
+        } else {
+          __ngConditionalFactory__ = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](DomSanitizerImpl);
+        }
+        return __ngConditionalFactory__;
+      },
+      providedIn: 'root'
+    });
+  }
+  return DomSanitizer;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let DomSanitizerImpl = /*#__PURE__*/(() => {
+  class DomSanitizerImpl extends DomSanitizer {
+    _doc;
+    constructor(_doc) {
+      super();
+      this._doc = _doc;
+    }
+    sanitize(ctx, value) {
+      if (value == null) return null;
+      switch (ctx) {
+        case _angular_core__WEBPACK_IMPORTED_MODULE_2__.SecurityContext.NONE:
+          return value;
+        case _angular_core__WEBPACK_IMPORTED_MODULE_2__.SecurityContext.HTML:
+          if ((0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵallowSanitizationBypassAndThrow"])(value, "HTML" /* BypassType.Html */)) {
+            return (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵunwrapSafeValue"])(value);
+          }
+          return (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵ_sanitizeHtml"])(this._doc, String(value)).toString();
+        case _angular_core__WEBPACK_IMPORTED_MODULE_2__.SecurityContext.STYLE:
+          if ((0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵallowSanitizationBypassAndThrow"])(value, "Style" /* BypassType.Style */)) {
+            return (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵunwrapSafeValue"])(value);
+          }
+          return value;
+        case _angular_core__WEBPACK_IMPORTED_MODULE_2__.SecurityContext.SCRIPT:
+          if ((0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵallowSanitizationBypassAndThrow"])(value, "Script" /* BypassType.Script */)) {
+            return (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵunwrapSafeValue"])(value);
+          }
+          throw new _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵRuntimeError"](5200 /* RuntimeErrorCode.SANITIZATION_UNSAFE_SCRIPT */, (typeof ngDevMode === 'undefined' || ngDevMode) && 'unsafe value used in a script context');
+        case _angular_core__WEBPACK_IMPORTED_MODULE_2__.SecurityContext.URL:
+          if ((0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵallowSanitizationBypassAndThrow"])(value, "URL" /* BypassType.Url */)) {
+            return (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵunwrapSafeValue"])(value);
+          }
+          return (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵ_sanitizeUrl"])(String(value));
+        case _angular_core__WEBPACK_IMPORTED_MODULE_2__.SecurityContext.RESOURCE_URL:
+          if ((0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵallowSanitizationBypassAndThrow"])(value, "ResourceURL" /* BypassType.ResourceUrl */)) {
+            return (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵunwrapSafeValue"])(value);
+          }
+          throw new _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵRuntimeError"](5201 /* RuntimeErrorCode.SANITIZATION_UNSAFE_RESOURCE_URL */, (typeof ngDevMode === 'undefined' || ngDevMode) && `unsafe value used in a resource URL context (see ${_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵXSS_SECURITY_URL"]})`);
+        default:
+          throw new _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵRuntimeError"](5202 /* RuntimeErrorCode.SANITIZATION_UNEXPECTED_CTX */, (typeof ngDevMode === 'undefined' || ngDevMode) && `Unexpected SecurityContext ${ctx} (see ${_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵXSS_SECURITY_URL"]})`);
+      }
+    }
+    bypassSecurityTrustHtml(value) {
+      return (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵbypassSanitizationTrustHtml"])(value);
+    }
+    bypassSecurityTrustStyle(value) {
+      return (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵbypassSanitizationTrustStyle"])(value);
+    }
+    bypassSecurityTrustScript(value) {
+      return (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵbypassSanitizationTrustScript"])(value);
+    }
+    bypassSecurityTrustUrl(value) {
+      return (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵbypassSanitizationTrustUrl"])(value);
+    }
+    bypassSecurityTrustResourceUrl(value) {
+      return (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵbypassSanitizationTrustResourceUrl"])(value);
+    }
+    static ɵfac = function DomSanitizerImpl_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || DomSanitizerImpl)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
+      token: DomSanitizerImpl,
+      factory: DomSanitizerImpl.ɵfac,
+      providedIn: 'root'
+    });
+  }
+  return DomSanitizerImpl;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * The list of features as an enum to uniquely type each `HydrationFeature`.
+ * @see {@link HydrationFeature}
+ *
+ * @publicApi
+ */
+var HydrationFeatureKind = /*#__PURE__*/function (HydrationFeatureKind) {
+  HydrationFeatureKind[HydrationFeatureKind["NoHttpTransferCache"] = 0] = "NoHttpTransferCache";
+  HydrationFeatureKind[HydrationFeatureKind["HttpTransferCacheOptions"] = 1] = "HttpTransferCacheOptions";
+  HydrationFeatureKind[HydrationFeatureKind["I18nSupport"] = 2] = "I18nSupport";
+  HydrationFeatureKind[HydrationFeatureKind["EventReplay"] = 3] = "EventReplay";
+  HydrationFeatureKind[HydrationFeatureKind["IncrementalHydration"] = 4] = "IncrementalHydration";
+  return HydrationFeatureKind;
+}(HydrationFeatureKind || {});
+/**
+ * Helper function to create an object that represents a Hydration feature.
+ */
+function hydrationFeature(ɵkind, ɵproviders = [], ɵoptions = {}) {
+  return {
+    ɵkind,
+    ɵproviders
+  };
+}
+/**
+ * Disables HTTP transfer cache. Effectively causes HTTP requests to be performed twice: once on the
+ * server and other one on the browser.
+ *
+ * @publicApi
+ */
+function withNoHttpTransferCache() {
+  // This feature has no providers and acts as a flag that turns off
+  // HTTP transfer cache (which otherwise is turned on by default).
+  return hydrationFeature(HydrationFeatureKind.NoHttpTransferCache);
+}
+/**
+ * The function accepts an object, which allows to configure cache parameters,
+ * such as which headers should be included (no headers are included by default),
+ * whether POST requests should be cached or a callback function to determine if a
+ * particular request should be cached.
+ *
+ * @publicApi
+ */
+function withHttpTransferCacheOptions(options) {
+  // This feature has no providers and acts as a flag to pass options to the HTTP transfer cache.
+  return hydrationFeature(HydrationFeatureKind.HttpTransferCacheOptions, (0,_angular_common_http__WEBPACK_IMPORTED_MODULE_4__["ɵwithHttpTransferCache"])(options));
+}
+/**
+ * Enables support for hydrating i18n blocks.
+ *
+ * @publicApi 20.0
+ */
+function withI18nSupport() {
+  return hydrationFeature(HydrationFeatureKind.I18nSupport, (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵwithI18nSupport"])());
+}
+/**
+ * Enables support for replaying user events (e.g. `click`s) that happened on a page
+ * before hydration logic has completed. Once an application is hydrated, all captured
+ * events are replayed and relevant event listeners are executed.
+ *
+ * @usageNotes
+ *
+ * Basic example of how you can enable event replay in your application when
+ * `bootstrapApplication` function is used:
+ * ```ts
+ * bootstrapApplication(AppComponent, {
+ *   providers: [provideClientHydration(withEventReplay())]
+ * });
+ * ```
+ * @publicApi
+ * @see {@link provideClientHydration}
+ */
+function withEventReplay() {
+  return hydrationFeature(HydrationFeatureKind.EventReplay, (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵwithEventReplay"])());
+}
+/**
+ * Enables support for incremental hydration using the `hydrate` trigger syntax.
+ *
+ * @usageNotes
+ *
+ * Basic example of how you can enable incremental hydration in your application when
+ * the `bootstrapApplication` function is used:
+ * ```ts
+ * bootstrapApplication(AppComponent, {
+ *   providers: [provideClientHydration(withIncrementalHydration())]
+ * });
+ * ```
+ * @publicApi 20.0
+ * @see {@link provideClientHydration}
+ */
+function withIncrementalHydration() {
+  return hydrationFeature(HydrationFeatureKind.IncrementalHydration, (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵwithIncrementalHydration"])());
+}
+/**
+ * Returns an `ENVIRONMENT_INITIALIZER` token setup with a function
+ * that verifies whether compatible ZoneJS was used in an application
+ * and logs a warning in a console if it's not the case.
+ */
+function provideZoneJsCompatibilityDetector() {
+  return [{
+    provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__.ENVIRONMENT_INITIALIZER,
+    useValue: () => {
+      const ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_2__.NgZone);
+      const isZoneless = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵZONELESS_ENABLED"]);
+      // Checking `ngZone instanceof NgZone` would be insufficient here,
+      // because custom implementations might use NgZone as a base class.
+      if (!isZoneless && ngZone.constructor !== _angular_core__WEBPACK_IMPORTED_MODULE_2__.NgZone) {
+        const console = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵConsole"]);
+        const message = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵformatRuntimeError"])(-5000 /* RuntimeErrorCode.UNSUPPORTED_ZONEJS_INSTANCE */, 'Angular detected that hydration was enabled for an application ' + 'that uses a custom or a noop Zone.js implementation. ' + 'This is not yet a fully supported configuration.');
+        console.warn(message);
+      }
+    },
+    multi: true
+  }];
+}
+/**
+ * Sets up providers necessary to enable hydration functionality for the application.
+ *
+ * By default, the function enables the recommended set of features for the optimal
+ * performance for most of the applications. It includes the following features:
+ *
+ * * Reconciling DOM hydration. Learn more about it [here](guide/hydration).
+ * * [`HttpClient`](api/common/http/HttpClient) response caching while running on the server and
+ * transferring this cache to the client to avoid extra HTTP requests. Learn more about data caching
+ * [here](guide/ssr#caching-data-when-using-httpclient).
+ *
+ * These functions allow you to disable some of the default features or enable new ones:
+ *
+ * * {@link withNoHttpTransferCache} to disable HTTP transfer cache
+ * * {@link withHttpTransferCacheOptions} to configure some HTTP transfer cache options
+ * * {@link withI18nSupport} to enable hydration support for i18n blocks
+ * * {@link withEventReplay} to enable support for replaying user events
+ *
+ * @usageNotes
+ *
+ * Basic example of how you can enable hydration in your application when
+ * `bootstrapApplication` function is used:
+ * ```ts
+ * bootstrapApplication(AppComponent, {
+ *   providers: [provideClientHydration()]
+ * });
+ * ```
+ *
+ * Alternatively if you are using NgModules, you would add `provideClientHydration`
+ * to your root app module's provider list.
+ * ```ts
+ * @NgModule({
+ *   declarations: [RootCmp],
+ *   bootstrap: [RootCmp],
+ *   providers: [provideClientHydration()],
+ * })
+ * export class AppModule {}
+ * ```
+ *
+ * @see {@link withNoHttpTransferCache}
+ * @see {@link withHttpTransferCacheOptions}
+ * @see {@link withI18nSupport}
+ * @see {@link withEventReplay}
+ *
+ * @param features Optional features to configure additional hydration behaviors.
+ * @returns A set of providers to enable hydration.
+ *
+ * @publicApi 17.0
+ */
+function provideClientHydration(...features) {
+  const providers = [];
+  const featuresKind = new Set();
+  for (const {
+    ɵproviders,
+    ɵkind
+  } of features) {
+    featuresKind.add(ɵkind);
+    if (ɵproviders.length) {
+      providers.push(ɵproviders);
+    }
+  }
+  const hasHttpTransferCacheOptions = featuresKind.has(HydrationFeatureKind.HttpTransferCacheOptions);
+  if (typeof ngDevMode !== 'undefined' && ngDevMode && featuresKind.has(HydrationFeatureKind.NoHttpTransferCache) && hasHttpTransferCacheOptions) {
+    // TODO: Make this a runtime error
+    throw new Error('Configuration error: found both withHttpTransferCacheOptions() and withNoHttpTransferCache() in the same call to provideClientHydration(), which is a contradiction.');
+  }
+  return (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.makeEnvironmentProviders)([typeof ngDevMode !== 'undefined' && ngDevMode ? provideZoneJsCompatibilityDetector() : [], (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵwithDomHydration"])(), featuresKind.has(HydrationFeatureKind.NoHttpTransferCache) || hasHttpTransferCacheOptions ? [] : (0,_angular_common_http__WEBPACK_IMPORTED_MODULE_4__["ɵwithHttpTransferCache"])({}), providers]);
+}
+
+/**
+ * @module
+ * @description
+ * Entry point for all public APIs of the platform-browser package.
+ */
+/**
+ * @publicApi
+ */
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_2__.Version('20.0.4');
+
+
+/***/ }),
+
+/***/ 83799:
+/*!***********************************************************************************!*\
+  !*** ./node_modules/@angular/platform-browser/fesm2022/dom_renderer-Frqw9gM5.mjs ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DomRendererFactory2: () => (/* binding */ DomRendererFactory2),
+/* harmony export */   EVENT_MANAGER_PLUGINS: () => (/* binding */ EVENT_MANAGER_PLUGINS),
+/* harmony export */   EventManager: () => (/* binding */ EventManager),
+/* harmony export */   EventManagerPlugin: () => (/* binding */ EventManagerPlugin),
+/* harmony export */   REMOVE_STYLES_ON_COMPONENT_DESTROY: () => (/* binding */ REMOVE_STYLES_ON_COMPONENT_DESTROY),
+/* harmony export */   SharedStylesHost: () => (/* binding */ SharedStylesHost)
+/* harmony export */ });
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ 85914);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+/**
+ * @license Angular v20.0.4
+ * (c) 2010-2025 Google LLC. https://angular.io/
+ * License: MIT
+ */
+
+
+
+
 
 /**
  * The injection token for plugins of the `EventManager` service.
@@ -609,14 +2054,14 @@ let DomRendererFactory2 = /*#__PURE__*/(() => {
       this.ngZone = ngZone;
       this.nonce = nonce;
       this.tracingService = tracingService;
-      this.platformIsServer = (0,_angular_common__WEBPACK_IMPORTED_MODULE_0__.isPlatformServer)(platformId);
+      this.platformIsServer = typeof ngServerMode !== 'undefined' && ngServerMode;
       this.defaultRenderer = new DefaultDomRenderer2(eventManager, doc, ngZone, this.platformIsServer, this.tracingService);
     }
     createRenderer(element, type) {
       if (!element || !type) {
         return this.defaultRenderer;
       }
-      if (this.platformIsServer && type.encapsulation === _angular_core__WEBPACK_IMPORTED_MODULE_1__.ViewEncapsulation.ShadowDom) {
+      if (typeof ngServerMode !== 'undefined' && ngServerMode && type.encapsulation === _angular_core__WEBPACK_IMPORTED_MODULE_1__.ViewEncapsulation.ShadowDom) {
         // Domino does not support shadow DOM.
         type = {
           ...type,
@@ -813,11 +2258,11 @@ class DefaultDomRenderer2 {
     if (typeof target === 'string') {
       target = (0,_angular_common__WEBPACK_IMPORTED_MODULE_0__["ɵgetDOM"])().getGlobalEventTarget(this.doc, target);
       if (!target) {
-        throw new Error(`Unsupported event target ${target} for event ${event}`);
+        throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](5102 /* RuntimeErrorCode.UNSUPPORTED_EVENT_TARGET */, (typeof ngDevMode === 'undefined' || ngDevMode) && `Unsupported event target ${target} for event ${event}`);
       }
     }
     let wrappedCallback = this.decoratePreventDefault(callback);
-    if (this.tracingService !== null && this.tracingService.wrapEventListener) {
+    if (this.tracingService?.wrapEventListener) {
       wrappedCallback = this.tracingService.wrapEventListener(target, event, wrappedCallback);
     }
     return this.eventManager.addEventListener(target, event, wrappedCallback, options);
@@ -838,7 +2283,7 @@ class DefaultDomRenderer2 {
       }
       // Run the event handler inside the ngZone because event handlers are not patched
       // by Zone on the server. This is required only for tests.
-      const allowDefaultBehavior = this.platformIsServer ? this.ngZone.runGuarded(() => eventHandler(event)) : eventHandler(event);
+      const allowDefaultBehavior = typeof ngServerMode !== 'undefined' && ngServerMode ? this.ngZone.runGuarded(() => eventHandler(event)) : eventHandler(event);
       if (allowDefaultBehavior === false) {
         event.preventDefault();
       }
@@ -967,1403 +2412,6 @@ class EmulatedEncapsulationDomRenderer2 extends NoneEncapsulationDomRenderer {
     return el;
   }
 }
-let DomEventsPlugin = /*#__PURE__*/(() => {
-  class DomEventsPlugin extends EventManagerPlugin {
-    constructor(doc) {
-      super(doc);
-    }
-    // This plugin should come last in the list of plugins, because it accepts all
-    // events.
-    supports(eventName) {
-      return true;
-    }
-    addEventListener(element, eventName, handler, options) {
-      element.addEventListener(eventName, handler, options);
-      return () => this.removeEventListener(element, eventName, handler, options);
-    }
-    removeEventListener(target, eventName, callback, options) {
-      return target.removeEventListener(eventName, callback, options);
-    }
-    static ɵfac = function DomEventsPlugin_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || DomEventsPlugin)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT));
-    };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
-      token: DomEventsPlugin,
-      factory: DomEventsPlugin.ɵfac
-    });
-  }
-  return DomEventsPlugin;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Defines supported modifiers for key events.
- */
-const MODIFIER_KEYS = ['alt', 'control', 'meta', 'shift'];
-// The following values are here for cross-browser compatibility and to match the W3C standard
-// cf https://www.w3.org/TR/DOM-Level-3-Events-key/
-const _keyMap = {
-  '\b': 'Backspace',
-  '\t': 'Tab',
-  '\x7F': 'Delete',
-  '\x1B': 'Escape',
-  'Del': 'Delete',
-  'Esc': 'Escape',
-  'Left': 'ArrowLeft',
-  'Right': 'ArrowRight',
-  'Up': 'ArrowUp',
-  'Down': 'ArrowDown',
-  'Menu': 'ContextMenu',
-  'Scroll': 'ScrollLock',
-  'Win': 'OS'
-};
-/**
- * Retrieves modifiers from key-event objects.
- */
-const MODIFIER_KEY_GETTERS = {
-  'alt': event => event.altKey,
-  'control': event => event.ctrlKey,
-  'meta': event => event.metaKey,
-  'shift': event => event.shiftKey
-};
-/**
- * A browser plug-in that provides support for handling of key events in Angular.
- */
-let KeyEventsPlugin = /*#__PURE__*/(() => {
-  class KeyEventsPlugin extends EventManagerPlugin {
-    /**
-     * Initializes an instance of the browser plug-in.
-     * @param doc The document in which key events will be detected.
-     */
-    constructor(doc) {
-      super(doc);
-    }
-    /**
-     * Reports whether a named key event is supported.
-     * @param eventName The event name to query.
-     * @return True if the named key event is supported.
-     */
-    supports(eventName) {
-      return KeyEventsPlugin.parseEventName(eventName) != null;
-    }
-    /**
-     * Registers a handler for a specific element and key event.
-     * @param element The HTML element to receive event notifications.
-     * @param eventName The name of the key event to listen for.
-     * @param handler A function to call when the notification occurs. Receives the
-     * event object as an argument.
-     * @returns The key event that was registered.
-     */
-    addEventListener(element, eventName, handler, options) {
-      const parsedEvent = KeyEventsPlugin.parseEventName(eventName);
-      const outsideHandler = KeyEventsPlugin.eventCallback(parsedEvent['fullKey'], handler, this.manager.getZone());
-      return this.manager.getZone().runOutsideAngular(() => {
-        return (0,_angular_common__WEBPACK_IMPORTED_MODULE_0__["ɵgetDOM"])().onAndCancel(element, parsedEvent['domEventName'], outsideHandler, options);
-      });
-    }
-    /**
-     * Parses the user provided full keyboard event definition and normalizes it for
-     * later internal use. It ensures the string is all lowercase, converts special
-     * characters to a standard spelling, and orders all the values consistently.
-     *
-     * @param eventName The name of the key event to listen for.
-     * @returns an object with the full, normalized string, and the dom event name
-     * or null in the case when the event doesn't match a keyboard event.
-     */
-    static parseEventName(eventName) {
-      const parts = eventName.toLowerCase().split('.');
-      const domEventName = parts.shift();
-      if (parts.length === 0 || !(domEventName === 'keydown' || domEventName === 'keyup')) {
-        return null;
-      }
-      const key = KeyEventsPlugin._normalizeKey(parts.pop());
-      let fullKey = '';
-      let codeIX = parts.indexOf('code');
-      if (codeIX > -1) {
-        parts.splice(codeIX, 1);
-        fullKey = 'code.';
-      }
-      MODIFIER_KEYS.forEach(modifierName => {
-        const index = parts.indexOf(modifierName);
-        if (index > -1) {
-          parts.splice(index, 1);
-          fullKey += modifierName + '.';
-        }
-      });
-      fullKey += key;
-      if (parts.length != 0 || key.length === 0) {
-        // returning null instead of throwing to let another plugin process the event
-        return null;
-      }
-      // NOTE: Please don't rewrite this as so, as it will break JSCompiler property renaming.
-      //       The code must remain in the `result['domEventName']` form.
-      // return {domEventName, fullKey};
-      const result = {};
-      result['domEventName'] = domEventName;
-      result['fullKey'] = fullKey;
-      return result;
-    }
-    /**
-     * Determines whether the actual keys pressed match the configured key code string.
-     * The `fullKeyCode` event is normalized in the `parseEventName` method when the
-     * event is attached to the DOM during the `addEventListener` call. This is unseen
-     * by the end user and is normalized for internal consistency and parsing.
-     *
-     * @param event The keyboard event.
-     * @param fullKeyCode The normalized user defined expected key event string
-     * @returns boolean.
-     */
-    static matchEventFullKeyCode(event, fullKeyCode) {
-      let keycode = _keyMap[event.key] || event.key;
-      let key = '';
-      if (fullKeyCode.indexOf('code.') > -1) {
-        keycode = event.code;
-        key = 'code.';
-      }
-      // the keycode could be unidentified so we have to check here
-      if (keycode == null || !keycode) return false;
-      keycode = keycode.toLowerCase();
-      if (keycode === ' ') {
-        keycode = 'space'; // for readability
-      } else if (keycode === '.') {
-        keycode = 'dot'; // because '.' is used as a separator in event names
-      }
-      MODIFIER_KEYS.forEach(modifierName => {
-        if (modifierName !== keycode) {
-          const modifierGetter = MODIFIER_KEY_GETTERS[modifierName];
-          if (modifierGetter(event)) {
-            key += modifierName + '.';
-          }
-        }
-      });
-      key += keycode;
-      return key === fullKeyCode;
-    }
-    /**
-     * Configures a handler callback for a key event.
-     * @param fullKey The event name that combines all simultaneous keystrokes.
-     * @param handler The function that responds to the key event.
-     * @param zone The zone in which the event occurred.
-     * @returns A callback function.
-     */
-    static eventCallback(fullKey, handler, zone) {
-      return event => {
-        if (KeyEventsPlugin.matchEventFullKeyCode(event, fullKey)) {
-          zone.runGuarded(() => handler(event));
-        }
-      };
-    }
-    /** @internal */
-    static _normalizeKey(keyName) {
-      return keyName === 'esc' ? 'escape' : keyName;
-    }
-    static ɵfac = function KeyEventsPlugin_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || KeyEventsPlugin)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT));
-    };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
-      token: KeyEventsPlugin,
-      factory: KeyEventsPlugin.ɵfac
-    });
-  }
-  return KeyEventsPlugin;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Bootstraps an instance of an Angular application and renders a standalone component as the
- * application's root component. More information about standalone components can be found in [this
- * guide](guide/components/importing).
- *
- * @usageNotes
- * The root component passed into this function *must* be a standalone one (should have the
- * `standalone: true` flag in the `@Component` decorator config).
- *
- * ```angular-ts
- * @Component({
- *   standalone: true,
- *   template: 'Hello world!'
- * })
- * class RootComponent {}
- *
- * const appRef: ApplicationRef = await bootstrapApplication(RootComponent);
- * ```
- *
- * You can add the list of providers that should be available in the application injector by
- * specifying the `providers` field in an object passed as the second argument:
- *
- * ```ts
- * await bootstrapApplication(RootComponent, {
- *   providers: [
- *     {provide: BACKEND_URL, useValue: 'https://yourdomain.com/api'}
- *   ]
- * });
- * ```
- *
- * The `importProvidersFrom` helper method can be used to collect all providers from any
- * existing NgModule (and transitively from all NgModules that it imports):
- *
- * ```ts
- * await bootstrapApplication(RootComponent, {
- *   providers: [
- *     importProvidersFrom(SomeNgModule)
- *   ]
- * });
- * ```
- *
- * Note: the `bootstrapApplication` method doesn't include [Testability](api/core/Testability) by
- * default. You can add [Testability](api/core/Testability) by getting the list of necessary
- * providers using `provideProtractorTestingSupport()` function and adding them into the `providers`
- * array, for example:
- *
- * ```ts
- * import {provideProtractorTestingSupport} from '@angular/platform-browser';
- *
- * await bootstrapApplication(RootComponent, {providers: [provideProtractorTestingSupport()]});
- * ```
- *
- * @param rootComponent A reference to a standalone component that should be rendered.
- * @param options Extra configuration for the bootstrap operation, see `ApplicationConfig` for
- *     additional info.
- * @returns A promise that returns an `ApplicationRef` instance once resolved.
- *
- * @publicApi
- */
-function bootstrapApplication(rootComponent, options) {
-  return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵinternalCreateApplication"])({
-    rootComponent,
-    ...createProvidersConfig(options)
-  });
-}
-/**
- * Create an instance of an Angular application without bootstrapping any components. This is useful
- * for the situation where one wants to decouple application environment creation (a platform and
- * associated injectors) from rendering components on a screen. Components can be subsequently
- * bootstrapped on the returned `ApplicationRef`.
- *
- * @param options Extra configuration for the application environment, see `ApplicationConfig` for
- *     additional info.
- * @returns A promise that returns an `ApplicationRef` instance once resolved.
- *
- * @publicApi
- */
-function createApplication(options) {
-  return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵinternalCreateApplication"])(createProvidersConfig(options));
-}
-function createProvidersConfig(options) {
-  return {
-    appProviders: [...BROWSER_MODULE_PROVIDERS, ...(options?.providers ?? [])],
-    platformProviders: INTERNAL_BROWSER_PLATFORM_PROVIDERS
-  };
-}
-/**
- * Returns a set of providers required to setup [Testability](api/core/Testability) for an
- * application bootstrapped using the `bootstrapApplication` function. The set of providers is
- * needed to support testing an application with Protractor (which relies on the Testability APIs
- * to be present).
- *
- * @returns An array of providers required to setup Testability for an application and make it
- *     available for testing using Protractor.
- *
- * @publicApi
- */
-function provideProtractorTestingSupport() {
-  // Return a copy to prevent changes to the original array in case any in-place
-  // alterations are performed to the `provideProtractorTestingSupport` call results in app
-  // code.
-  return [...TESTABILITY_PROVIDERS];
-}
-function initDomAdapter() {
-  BrowserDomAdapter.makeCurrent();
-}
-function errorHandler() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__.ErrorHandler();
-}
-function _document() {
-  // Tell ivy about the global document
-  (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetDocument"])(document);
-  return document;
-}
-const INTERNAL_BROWSER_PLATFORM_PROVIDERS = [{
-  provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__.PLATFORM_ID,
-  useValue: _angular_common__WEBPACK_IMPORTED_MODULE_0__["ɵPLATFORM_BROWSER_ID"]
-}, {
-  provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__.PLATFORM_INITIALIZER,
-  useValue: initDomAdapter,
-  multi: true
-}, {
-  provide: _angular_common__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT,
-  useFactory: _document,
-  deps: []
-}];
-/**
- * A factory function that returns a `PlatformRef` instance associated with browser service
- * providers.
- *
- * @publicApi
- */
-const platformBrowser = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.createPlatformFactory)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.platformCore, 'browser', INTERNAL_BROWSER_PLATFORM_PROVIDERS);
-/**
- * Internal marker to signal whether providers from the `BrowserModule` are already present in DI.
- * This is needed to avoid loading `BrowserModule` providers twice. We can't rely on the
- * `BrowserModule` presence itself, since the standalone-based bootstrap just imports
- * `BrowserModule` providers without referencing the module itself.
- */
-const BROWSER_MODULE_PROVIDERS_MARKER = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(typeof ngDevMode === 'undefined' || ngDevMode ? 'BrowserModule Providers Marker' : '');
-const TESTABILITY_PROVIDERS = [{
-  provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵTESTABILITY_GETTER"],
-  useClass: BrowserGetTestability,
-  deps: []
-}, {
-  provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵTESTABILITY"],
-  useClass: _angular_core__WEBPACK_IMPORTED_MODULE_1__.Testability,
-  deps: [_angular_core__WEBPACK_IMPORTED_MODULE_1__.NgZone, _angular_core__WEBPACK_IMPORTED_MODULE_1__.TestabilityRegistry, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵTESTABILITY_GETTER"]]
-}, {
-  provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__.Testability,
-  // Also provide as `Testability` for backwards-compatibility.
-  useClass: _angular_core__WEBPACK_IMPORTED_MODULE_1__.Testability,
-  deps: [_angular_core__WEBPACK_IMPORTED_MODULE_1__.NgZone, _angular_core__WEBPACK_IMPORTED_MODULE_1__.TestabilityRegistry, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵTESTABILITY_GETTER"]]
-}];
-const BROWSER_MODULE_PROVIDERS = [{
-  provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵINJECTOR_SCOPE"],
-  useValue: 'root'
-}, {
-  provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__.ErrorHandler,
-  useFactory: errorHandler,
-  deps: []
-}, {
-  provide: EVENT_MANAGER_PLUGINS,
-  useClass: DomEventsPlugin,
-  multi: true,
-  deps: [_angular_common__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT]
-}, {
-  provide: EVENT_MANAGER_PLUGINS,
-  useClass: KeyEventsPlugin,
-  multi: true,
-  deps: [_angular_common__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT]
-}, DomRendererFactory2, SharedStylesHost, EventManager, {
-  provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__.RendererFactory2,
-  useExisting: DomRendererFactory2
-}, {
-  provide: _angular_common__WEBPACK_IMPORTED_MODULE_0__.XhrFactory,
-  useClass: BrowserXhr,
-  deps: []
-}, typeof ngDevMode === 'undefined' || ngDevMode ? {
-  provide: BROWSER_MODULE_PROVIDERS_MARKER,
-  useValue: true
-} : []];
-/**
- * Exports required infrastructure for all Angular apps.
- * Included by default in all Angular apps created with the CLI
- * `new` command.
- * Re-exports `CommonModule` and `ApplicationModule`, making their
- * exports and providers available to all apps.
- *
- * @publicApi
- */
-let BrowserModule = /*#__PURE__*/(() => {
-  class BrowserModule {
-    constructor() {
-      if (typeof ngDevMode === 'undefined' || ngDevMode) {
-        const providersAlreadyPresent = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(BROWSER_MODULE_PROVIDERS_MARKER, {
-          optional: true,
-          skipSelf: true
-        });
-        if (providersAlreadyPresent) {
-          throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](5100 /* RuntimeErrorCode.BROWSER_MODULE_ALREADY_LOADED */, `Providers from the \`BrowserModule\` have already been loaded. If you need access ` + `to common directives such as NgIf and NgFor, import the \`CommonModule\` instead.`);
-        }
-      }
-    }
-    static ɵfac = function BrowserModule_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || BrowserModule)();
-    };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
-      type: BrowserModule
-    });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
-      providers: [...BROWSER_MODULE_PROVIDERS, ...TESTABILITY_PROVIDERS],
-      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_0__.CommonModule, _angular_core__WEBPACK_IMPORTED_MODULE_1__.ApplicationModule]
-    });
-  }
-  return BrowserModule;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * A service for managing HTML `<meta>` tags.
- *
- * Properties of the `MetaDefinition` object match the attributes of the
- * HTML `<meta>` tag. These tags define document metadata that is important for
- * things like configuring a Content Security Policy, defining browser compatibility
- * and security settings, setting HTTP Headers, defining rich content for social sharing,
- * and Search Engine Optimization (SEO).
- *
- * To identify specific `<meta>` tags in a document, use an attribute selection
- * string in the format `"tag_attribute='value string'"`.
- * For example, an `attrSelector` value of `"name='description'"` matches a tag
- * whose `name` attribute has the value `"description"`.
- * Selectors are used with the `querySelector()` Document method,
- * in the format `meta[{attrSelector}]`.
- *
- * @see [HTML meta tag](https://developer.mozilla.org/docs/Web/HTML/Element/meta)
- * @see [Document.querySelector()](https://developer.mozilla.org/docs/Web/API/Document/querySelector)
- *
- *
- * @publicApi
- */
-let Meta = /*#__PURE__*/(() => {
-  class Meta {
-    _doc;
-    _dom;
-    constructor(_doc) {
-      this._doc = _doc;
-      this._dom = (0,_angular_common__WEBPACK_IMPORTED_MODULE_0__["ɵgetDOM"])();
-    }
-    /**
-     * Retrieves or creates a specific `<meta>` tag element in the current HTML document.
-     * In searching for an existing tag, Angular attempts to match the `name` or `property` attribute
-     * values in the provided tag definition, and verifies that all other attribute values are equal.
-     * If an existing element is found, it is returned and is not modified in any way.
-     * @param tag The definition of a `<meta>` element to match or create.
-     * @param forceCreation True to create a new element without checking whether one already exists.
-     * @returns The existing element with the same attributes and values if found,
-     * the new element if no match is found, or `null` if the tag parameter is not defined.
-     */
-    addTag(tag, forceCreation = false) {
-      if (!tag) return null;
-      return this._getOrCreateElement(tag, forceCreation);
-    }
-    /**
-     * Retrieves or creates a set of `<meta>` tag elements in the current HTML document.
-     * In searching for an existing tag, Angular attempts to match the `name` or `property` attribute
-     * values in the provided tag definition, and verifies that all other attribute values are equal.
-     * @param tags An array of tag definitions to match or create.
-     * @param forceCreation True to create new elements without checking whether they already exist.
-     * @returns The matching elements if found, or the new elements.
-     */
-    addTags(tags, forceCreation = false) {
-      if (!tags) return [];
-      return tags.reduce((result, tag) => {
-        if (tag) {
-          result.push(this._getOrCreateElement(tag, forceCreation));
-        }
-        return result;
-      }, []);
-    }
-    /**
-     * Retrieves a `<meta>` tag element in the current HTML document.
-     * @param attrSelector The tag attribute and value to match against, in the format
-     * `"tag_attribute='value string'"`.
-     * @returns The matching element, if any.
-     */
-    getTag(attrSelector) {
-      if (!attrSelector) return null;
-      return this._doc.querySelector(`meta[${attrSelector}]`) || null;
-    }
-    /**
-     * Retrieves a set of `<meta>` tag elements in the current HTML document.
-     * @param attrSelector The tag attribute and value to match against, in the format
-     * `"tag_attribute='value string'"`.
-     * @returns The matching elements, if any.
-     */
-    getTags(attrSelector) {
-      if (!attrSelector) return [];
-      const list /*NodeList*/ = this._doc.querySelectorAll(`meta[${attrSelector}]`);
-      return list ? [].slice.call(list) : [];
-    }
-    /**
-     * Modifies an existing `<meta>` tag element in the current HTML document.
-     * @param tag The tag description with which to replace the existing tag content.
-     * @param selector A tag attribute and value to match against, to identify
-     * an existing tag. A string in the format `"tag_attribute=`value string`"`.
-     * If not supplied, matches a tag with the same `name` or `property` attribute value as the
-     * replacement tag.
-     * @return The modified element.
-     */
-    updateTag(tag, selector) {
-      if (!tag) return null;
-      selector = selector || this._parseSelector(tag);
-      const meta = this.getTag(selector);
-      if (meta) {
-        return this._setMetaElementAttributes(tag, meta);
-      }
-      return this._getOrCreateElement(tag, true);
-    }
-    /**
-     * Removes an existing `<meta>` tag element from the current HTML document.
-     * @param attrSelector A tag attribute and value to match against, to identify
-     * an existing tag. A string in the format `"tag_attribute=`value string`"`.
-     */
-    removeTag(attrSelector) {
-      this.removeTagElement(this.getTag(attrSelector));
-    }
-    /**
-     * Removes an existing `<meta>` tag element from the current HTML document.
-     * @param meta The tag definition to match against to identify an existing tag.
-     */
-    removeTagElement(meta) {
-      if (meta) {
-        this._dom.remove(meta);
-      }
-    }
-    _getOrCreateElement(meta, forceCreation = false) {
-      if (!forceCreation) {
-        const selector = this._parseSelector(meta);
-        // It's allowed to have multiple elements with the same name so it's not enough to
-        // just check that element with the same name already present on the page. We also need to
-        // check if element has tag attributes
-        const elem = this.getTags(selector).filter(elem => this._containsAttributes(meta, elem))[0];
-        if (elem !== undefined) return elem;
-      }
-      const element = this._dom.createElement('meta');
-      this._setMetaElementAttributes(meta, element);
-      const head = this._doc.getElementsByTagName('head')[0];
-      head.appendChild(element);
-      return element;
-    }
-    _setMetaElementAttributes(tag, el) {
-      Object.keys(tag).forEach(prop => el.setAttribute(this._getMetaKeyMap(prop), tag[prop]));
-      return el;
-    }
-    _parseSelector(tag) {
-      const attr = tag.name ? 'name' : 'property';
-      return `${attr}="${tag[attr]}"`;
-    }
-    _containsAttributes(tag, elem) {
-      return Object.keys(tag).every(key => elem.getAttribute(this._getMetaKeyMap(key)) === tag[key]);
-    }
-    _getMetaKeyMap(prop) {
-      return META_KEYS_MAP[prop] || prop;
-    }
-    static ɵfac = function Meta_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || Meta)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT));
-    };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
-      token: Meta,
-      factory: Meta.ɵfac,
-      providedIn: 'root'
-    });
-  }
-  return Meta;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-/**
- * Mapping for MetaDefinition properties with their correct meta attribute names
- */
-const META_KEYS_MAP = {
-  httpEquiv: 'http-equiv'
-};
-
-/**
- * A service that can be used to get and set the title of a current HTML document.
- *
- * Since an Angular application can't be bootstrapped on the entire HTML document (`<html>` tag)
- * it is not possible to bind to the `text` property of the `HTMLTitleElement` elements
- * (representing the `<title>` tag). Instead, this service can be used to set and get the current
- * title value.
- *
- * @publicApi
- */
-let Title = /*#__PURE__*/(() => {
-  class Title {
-    _doc;
-    constructor(_doc) {
-      this._doc = _doc;
-    }
-    /**
-     * Get the title of the current HTML document.
-     */
-    getTitle() {
-      return this._doc.title;
-    }
-    /**
-     * Set the title of the current HTML document.
-     * @param newTitle
-     */
-    setTitle(newTitle) {
-      this._doc.title = newTitle || '';
-    }
-    static ɵfac = function Title_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || Title)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT));
-    };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
-      token: Title,
-      factory: Title.ɵfac,
-      providedIn: 'root'
-    });
-  }
-  return Title;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Exports the value under a given `name` in the global property `ng`. For example `ng.probe` if
- * `name` is `'probe'`.
- * @param name Name under which it will be exported. Keep in mind this will be a property of the
- * global `ng` object.
- * @param value The value to export.
- */
-function exportNgVar(name, value) {
-  if (typeof COMPILED === 'undefined' || !COMPILED) {
-    // Note: we can't export `ng` when using closure enhanced optimization as:
-    // - closure declares globals itself for minified names, which sometimes clobber our `ng` global
-    // - we can't declare a closure extern as the namespace `ng` is already used within Google
-    //   for typings for angularJS (via `goog.provide('ng....')`).
-    const ng = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵglobal"]['ng'] = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵglobal"]['ng'] || {};
-    ng[name] = value;
-  }
-}
-class ChangeDetectionPerfRecord {
-  msPerTick;
-  numTicks;
-  constructor(msPerTick, numTicks) {
-    this.msPerTick = msPerTick;
-    this.numTicks = numTicks;
-  }
-}
-/**
- * Entry point for all Angular profiling-related debug tools. This object
- * corresponds to the `ng.profiler` in the dev console.
- */
-class AngularProfiler {
-  appRef;
-  constructor(ref) {
-    this.appRef = ref.injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ApplicationRef);
-  }
-  // tslint:disable:no-console
-  /**
-   * Exercises change detection in a loop and then prints the average amount of
-   * time in milliseconds how long a single round of change detection takes for
-   * the current state of the UI. It runs a minimum of 5 rounds for a minimum
-   * of 500 milliseconds.
-   *
-   * Optionally, a user may pass a `config` parameter containing a map of
-   * options. Supported options are:
-   *
-   * `record` (boolean) - causes the profiler to record a CPU profile while
-   * it exercises the change detector. Example:
-   *
-   * ```ts
-   * ng.profiler.timeChangeDetection({record: true})
-   * ```
-   */
-  timeChangeDetection(config) {
-    const record = config && config['record'];
-    const profileName = 'Change Detection';
-    // Profiler is not available in Android browsers without dev tools opened
-    if (record && 'profile' in console && typeof console.profile === 'function') {
-      console.profile(profileName);
-    }
-    const start = performance.now();
-    let numTicks = 0;
-    while (numTicks < 5 || performance.now() - start < 500) {
-      this.appRef.tick();
-      numTicks++;
-    }
-    const end = performance.now();
-    if (record && 'profileEnd' in console && typeof console.profileEnd === 'function') {
-      console.profileEnd(profileName);
-    }
-    const msPerTick = (end - start) / numTicks;
-    console.log(`ran ${numTicks} change detection cycles`);
-    console.log(`${msPerTick.toFixed(2)} ms per check`);
-    return new ChangeDetectionPerfRecord(msPerTick, numTicks);
-  }
-}
-const PROFILER_GLOBAL_NAME = 'profiler';
-/**
- * Enabled Angular debug tools that are accessible via your browser's
- * developer console.
- *
- * Usage:
- *
- * 1. Open developer console (e.g. in Chrome Ctrl + Shift + j)
- * 1. Type `ng.` (usually the console will show auto-complete suggestion)
- * 1. Try the change detection profiler `ng.profiler.timeChangeDetection()`
- *    then hit Enter.
- *
- * @publicApi
- */
-function enableDebugTools(ref) {
-  exportNgVar(PROFILER_GLOBAL_NAME, new AngularProfiler(ref));
-  return ref;
-}
-/**
- * Disables Angular tools.
- *
- * @publicApi
- */
-function disableDebugTools() {
-  exportNgVar(PROFILER_GLOBAL_NAME, null);
-}
-
-/**
- * Predicates for use with {@link DebugElement}'s query functions.
- *
- * @publicApi
- */
-class By {
-  /**
-   * Match all nodes.
-   *
-   * @usageNotes
-   * ### Example
-   *
-   * {@example platform-browser/dom/debug/ts/by/by.ts region='by_all'}
-   */
-  static all() {
-    return () => true;
-  }
-  /**
-   * Match elements by the given CSS selector.
-   *
-   * @usageNotes
-   * ### Example
-   *
-   * {@example platform-browser/dom/debug/ts/by/by.ts region='by_css'}
-   */
-  static css(selector) {
-    return debugElement => {
-      return debugElement.nativeElement != null ? elementMatches(debugElement.nativeElement, selector) : false;
-    };
-  }
-  /**
-   * Match nodes that have the given directive present.
-   *
-   * @usageNotes
-   * ### Example
-   *
-   * {@example platform-browser/dom/debug/ts/by/by.ts region='by_directive'}
-   */
-  static directive(type) {
-    return debugNode => debugNode.providerTokens.indexOf(type) !== -1;
-  }
-}
-function elementMatches(n, selector) {
-  if ((0,_angular_common__WEBPACK_IMPORTED_MODULE_0__["ɵgetDOM"])().isElementNode(n)) {
-    return n.matches && n.matches(selector) || n.msMatchesSelector && n.msMatchesSelector(selector) || n.webkitMatchesSelector && n.webkitMatchesSelector(selector);
-  }
-  return false;
-}
-
-/**
- * Supported HammerJS recognizer event names.
- */
-const EVENT_NAMES = {
-  // pan
-  'pan': true,
-  'panstart': true,
-  'panmove': true,
-  'panend': true,
-  'pancancel': true,
-  'panleft': true,
-  'panright': true,
-  'panup': true,
-  'pandown': true,
-  // pinch
-  'pinch': true,
-  'pinchstart': true,
-  'pinchmove': true,
-  'pinchend': true,
-  'pinchcancel': true,
-  'pinchin': true,
-  'pinchout': true,
-  // press
-  'press': true,
-  'pressup': true,
-  // rotate
-  'rotate': true,
-  'rotatestart': true,
-  'rotatemove': true,
-  'rotateend': true,
-  'rotatecancel': true,
-  // swipe
-  'swipe': true,
-  'swipeleft': true,
-  'swiperight': true,
-  'swipeup': true,
-  'swipedown': true,
-  // tap
-  'tap': true,
-  'doubletap': true
-};
-/**
- * DI token for providing [HammerJS](https://hammerjs.github.io/) support to Angular.
- * @see {@link HammerGestureConfig}
- *
- * @ngModule HammerModule
- * @publicApi
- */
-const HAMMER_GESTURE_CONFIG = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(typeof ngDevMode === 'undefined' || ngDevMode ? 'HammerGestureConfig' : '');
-/**
- * Injection token used to provide a HammerLoader to Angular.
- *
- * @see {@link HammerLoader}
- *
- * @publicApi
- */
-const HAMMER_LOADER = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(typeof ngDevMode === 'undefined' || ngDevMode ? 'HammerLoader' : '');
-/**
- * An injectable [HammerJS Manager](https://hammerjs.github.io/api/#hammermanager)
- * for gesture recognition. Configures specific event recognition.
- * @publicApi
- */
-let HammerGestureConfig = /*#__PURE__*/(() => {
-  class HammerGestureConfig {
-    /**
-     * A set of supported event names for gestures to be used in Angular.
-     * Angular supports all built-in recognizers, as listed in
-     * [HammerJS documentation](https://hammerjs.github.io/).
-     */
-    events = [];
-    /**
-     * Maps gesture event names to a set of configuration options
-     * that specify overrides to the default values for specific properties.
-     *
-     * The key is a supported event name to be configured,
-     * and the options object contains a set of properties, with override values
-     * to be applied to the named recognizer event.
-     * For example, to disable recognition of the rotate event, specify
-     *  `{"rotate": {"enable": false}}`.
-     *
-     * Properties that are not present take the HammerJS default values.
-     * For information about which properties are supported for which events,
-     * and their allowed and default values, see
-     * [HammerJS documentation](https://hammerjs.github.io/).
-     *
-     */
-    overrides = {};
-    /**
-     * Properties whose default values can be overridden for a given event.
-     * Different sets of properties apply to different events.
-     * For information about which properties are supported for which events,
-     * and their allowed and default values, see
-     * [HammerJS documentation](https://hammerjs.github.io/).
-     */
-    options;
-    /**
-     * Creates a [HammerJS Manager](https://hammerjs.github.io/api/#hammermanager)
-     * and attaches it to a given HTML element.
-     * @param element The element that will recognize gestures.
-     * @returns A HammerJS event-manager object.
-     */
-    buildHammer(element) {
-      const mc = new Hammer(element, this.options);
-      mc.get('pinch').set({
-        enable: true
-      });
-      mc.get('rotate').set({
-        enable: true
-      });
-      for (const eventName in this.overrides) {
-        mc.get(eventName).set(this.overrides[eventName]);
-      }
-      return mc;
-    }
-    static ɵfac = function HammerGestureConfig_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || HammerGestureConfig)();
-    };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
-      token: HammerGestureConfig,
-      factory: HammerGestureConfig.ɵfac
-    });
-  }
-  return HammerGestureConfig;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-/**
- * Event plugin that adds Hammer support to an application.
- *
- * @ngModule HammerModule
- */
-let HammerGesturesPlugin = /*#__PURE__*/(() => {
-  class HammerGesturesPlugin extends EventManagerPlugin {
-    _config;
-    _injector;
-    loader;
-    _loaderPromise = null;
-    constructor(doc, _config, _injector, loader) {
-      super(doc);
-      this._config = _config;
-      this._injector = _injector;
-      this.loader = loader;
-    }
-    supports(eventName) {
-      if (!EVENT_NAMES.hasOwnProperty(eventName.toLowerCase()) && !this.isCustomEvent(eventName)) {
-        return false;
-      }
-      if (!window.Hammer && !this.loader) {
-        if (typeof ngDevMode === 'undefined' || ngDevMode) {
-          // Get a `Console` through an injector to tree-shake the
-          // class when it is unused in production.
-          const _console = this._injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵConsole"]);
-          _console.warn(`The "${eventName}" event cannot be bound because Hammer.JS is not ` + `loaded and no custom loader has been specified.`);
-        }
-        return false;
-      }
-      return true;
-    }
-    addEventListener(element, eventName, handler) {
-      const zone = this.manager.getZone();
-      eventName = eventName.toLowerCase();
-      // If Hammer is not present but a loader is specified, we defer adding the event listener
-      // until Hammer is loaded.
-      if (!window.Hammer && this.loader) {
-        this._loaderPromise = this._loaderPromise || zone.runOutsideAngular(() => this.loader());
-        // This `addEventListener` method returns a function to remove the added listener.
-        // Until Hammer is loaded, the returned function needs to *cancel* the registration rather
-        // than remove anything.
-        let cancelRegistration = false;
-        let deregister = () => {
-          cancelRegistration = true;
-        };
-        zone.runOutsideAngular(() => this._loaderPromise.then(() => {
-          // If Hammer isn't actually loaded when the custom loader resolves, give up.
-          if (!window.Hammer) {
-            if (typeof ngDevMode === 'undefined' || ngDevMode) {
-              const _console = this._injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵConsole"]);
-              _console.warn(`The custom HAMMER_LOADER completed, but Hammer.JS is not present.`);
-            }
-            deregister = () => {};
-            return;
-          }
-          if (!cancelRegistration) {
-            // Now that Hammer is loaded and the listener is being loaded for real,
-            // the deregistration function changes from canceling registration to
-            // removal.
-            deregister = this.addEventListener(element, eventName, handler);
-          }
-        }).catch(() => {
-          if (typeof ngDevMode === 'undefined' || ngDevMode) {
-            const _console = this._injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵConsole"]);
-            _console.warn(`The "${eventName}" event cannot be bound because the custom ` + `Hammer.JS loader failed.`);
-          }
-          deregister = () => {};
-        }));
-        // Return a function that *executes* `deregister` (and not `deregister` itself) so that we
-        // can change the behavior of `deregister` once the listener is added. Using a closure in
-        // this way allows us to avoid any additional data structures to track listener removal.
-        return () => {
-          deregister();
-        };
-      }
-      return zone.runOutsideAngular(() => {
-        // Creating the manager bind events, must be done outside of angular
-        const mc = this._config.buildHammer(element);
-        const callback = function (eventObj) {
-          zone.runGuarded(function () {
-            handler(eventObj);
-          });
-        };
-        mc.on(eventName, callback);
-        return () => {
-          mc.off(eventName, callback);
-          // destroy mc to prevent memory leak
-          if (typeof mc.destroy === 'function') {
-            mc.destroy();
-          }
-        };
-      });
-    }
-    isCustomEvent(eventName) {
-      return this._config.events.indexOf(eventName) > -1;
-    }
-    static ɵfac = function HammerGesturesPlugin_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || HammerGesturesPlugin)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](HAMMER_GESTURE_CONFIG), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injector), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](HAMMER_LOADER, 8));
-    };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
-      token: HammerGesturesPlugin,
-      factory: HammerGesturesPlugin.ɵfac
-    });
-  }
-  return HammerGesturesPlugin;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-/**
- * Adds support for HammerJS.
- *
- * Import this module at the root of your application so that Angular can work with
- * HammerJS to detect gesture events.
- *
- * Note that applications still need to include the HammerJS script itself. This module
- * simply sets up the coordination layer between HammerJS and Angular's `EventManager`.
- *
- * @publicApi
- */
-let HammerModule = /*#__PURE__*/(() => {
-  class HammerModule {
-    static ɵfac = function HammerModule_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || HammerModule)();
-    };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
-      type: HammerModule
-    });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
-      providers: [{
-        provide: EVENT_MANAGER_PLUGINS,
-        useClass: HammerGesturesPlugin,
-        multi: true,
-        deps: [_angular_common__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT, HAMMER_GESTURE_CONFIG, _angular_core__WEBPACK_IMPORTED_MODULE_1__.Injector, [new _angular_core__WEBPACK_IMPORTED_MODULE_1__.Optional(), HAMMER_LOADER]]
-      }, {
-        provide: HAMMER_GESTURE_CONFIG,
-        useClass: HammerGestureConfig,
-        deps: []
-      }]
-    });
-  }
-  return HammerModule;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * DomSanitizer helps preventing Cross Site Scripting Security bugs (XSS) by sanitizing
- * values to be safe to use in the different DOM contexts.
- *
- * For example, when binding a URL in an `<a [href]="someValue">` hyperlink, `someValue` will be
- * sanitized so that an attacker cannot inject e.g. a `javascript:` URL that would execute code on
- * the website.
- *
- * In specific situations, it might be necessary to disable sanitization, for example if the
- * application genuinely needs to produce a `javascript:` style link with a dynamic value in it.
- * Users can bypass security by constructing a value with one of the `bypassSecurityTrust...`
- * methods, and then binding to that value from the template.
- *
- * These situations should be very rare, and extraordinary care must be taken to avoid creating a
- * Cross Site Scripting (XSS) security bug!
- *
- * When using `bypassSecurityTrust...`, make sure to call the method as early as possible and as
- * close as possible to the source of the value, to make it easy to verify no security bug is
- * created by its use.
- *
- * It is not required (and not recommended) to bypass security if the value is safe, e.g. a URL that
- * does not start with a suspicious protocol, or an HTML snippet that does not contain dangerous
- * code. The sanitizer leaves safe values intact.
- *
- * @security Calling any of the `bypassSecurityTrust...` APIs disables Angular's built-in
- * sanitization for the value passed in. Carefully check and audit all values and code paths going
- * into this call. Make sure any user data is appropriately escaped for this security context.
- * For more detail, see the [Security Guide](https://g.co/ng/security).
- *
- * @publicApi
- */
-let DomSanitizer = /*#__PURE__*/(() => {
-  class DomSanitizer {
-    static ɵfac = function DomSanitizer_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || DomSanitizer)();
-    };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
-      token: DomSanitizer,
-      factory: function DomSanitizer_Factory(__ngFactoryType__) {
-        let __ngConditionalFactory__ = null;
-        if (__ngFactoryType__) {
-          __ngConditionalFactory__ = new (__ngFactoryType__ || DomSanitizer)();
-        } else {
-          __ngConditionalFactory__ = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](DomSanitizerImpl);
-        }
-        return __ngConditionalFactory__;
-      },
-      providedIn: 'root'
-    });
-  }
-  return DomSanitizer;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let DomSanitizerImpl = /*#__PURE__*/(() => {
-  class DomSanitizerImpl extends DomSanitizer {
-    _doc;
-    constructor(_doc) {
-      super();
-      this._doc = _doc;
-    }
-    sanitize(ctx, value) {
-      if (value == null) return null;
-      switch (ctx) {
-        case _angular_core__WEBPACK_IMPORTED_MODULE_1__.SecurityContext.NONE:
-          return value;
-        case _angular_core__WEBPACK_IMPORTED_MODULE_1__.SecurityContext.HTML:
-          if ((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵallowSanitizationBypassAndThrow"])(value, "HTML" /* BypassType.Html */)) {
-            return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵunwrapSafeValue"])(value);
-          }
-          return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵ_sanitizeHtml"])(this._doc, String(value)).toString();
-        case _angular_core__WEBPACK_IMPORTED_MODULE_1__.SecurityContext.STYLE:
-          if ((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵallowSanitizationBypassAndThrow"])(value, "Style" /* BypassType.Style */)) {
-            return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵunwrapSafeValue"])(value);
-          }
-          return value;
-        case _angular_core__WEBPACK_IMPORTED_MODULE_1__.SecurityContext.SCRIPT:
-          if ((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵallowSanitizationBypassAndThrow"])(value, "Script" /* BypassType.Script */)) {
-            return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵunwrapSafeValue"])(value);
-          }
-          throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](5200 /* RuntimeErrorCode.SANITIZATION_UNSAFE_SCRIPT */, (typeof ngDevMode === 'undefined' || ngDevMode) && 'unsafe value used in a script context');
-        case _angular_core__WEBPACK_IMPORTED_MODULE_1__.SecurityContext.URL:
-          if ((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵallowSanitizationBypassAndThrow"])(value, "URL" /* BypassType.Url */)) {
-            return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵunwrapSafeValue"])(value);
-          }
-          return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵ_sanitizeUrl"])(String(value));
-        case _angular_core__WEBPACK_IMPORTED_MODULE_1__.SecurityContext.RESOURCE_URL:
-          if ((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵallowSanitizationBypassAndThrow"])(value, "ResourceURL" /* BypassType.ResourceUrl */)) {
-            return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵunwrapSafeValue"])(value);
-          }
-          throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](5201 /* RuntimeErrorCode.SANITIZATION_UNSAFE_RESOURCE_URL */, (typeof ngDevMode === 'undefined' || ngDevMode) && `unsafe value used in a resource URL context (see ${_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵXSS_SECURITY_URL"]})`);
-        default:
-          throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](5202 /* RuntimeErrorCode.SANITIZATION_UNEXPECTED_CTX */, (typeof ngDevMode === 'undefined' || ngDevMode) && `Unexpected SecurityContext ${ctx} (see ${_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵXSS_SECURITY_URL"]})`);
-      }
-    }
-    bypassSecurityTrustHtml(value) {
-      return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵbypassSanitizationTrustHtml"])(value);
-    }
-    bypassSecurityTrustStyle(value) {
-      return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵbypassSanitizationTrustStyle"])(value);
-    }
-    bypassSecurityTrustScript(value) {
-      return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵbypassSanitizationTrustScript"])(value);
-    }
-    bypassSecurityTrustUrl(value) {
-      return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵbypassSanitizationTrustUrl"])(value);
-    }
-    bypassSecurityTrustResourceUrl(value) {
-      return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵbypassSanitizationTrustResourceUrl"])(value);
-    }
-    static ɵfac = function DomSanitizerImpl_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || DomSanitizerImpl)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT));
-    };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
-      token: DomSanitizerImpl,
-      factory: DomSanitizerImpl.ɵfac,
-      providedIn: 'root'
-    });
-  }
-  return DomSanitizerImpl;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * The list of features as an enum to uniquely type each `HydrationFeature`.
- * @see {@link HydrationFeature}
- *
- * @publicApi
- */
-var HydrationFeatureKind = /*#__PURE__*/function (HydrationFeatureKind) {
-  HydrationFeatureKind[HydrationFeatureKind["NoHttpTransferCache"] = 0] = "NoHttpTransferCache";
-  HydrationFeatureKind[HydrationFeatureKind["HttpTransferCacheOptions"] = 1] = "HttpTransferCacheOptions";
-  HydrationFeatureKind[HydrationFeatureKind["I18nSupport"] = 2] = "I18nSupport";
-  HydrationFeatureKind[HydrationFeatureKind["EventReplay"] = 3] = "EventReplay";
-  HydrationFeatureKind[HydrationFeatureKind["IncrementalHydration"] = 4] = "IncrementalHydration";
-  return HydrationFeatureKind;
-}(HydrationFeatureKind || {});
-/**
- * Helper function to create an object that represents a Hydration feature.
- */
-function hydrationFeature(ɵkind, ɵproviders = [], ɵoptions = {}) {
-  return {
-    ɵkind,
-    ɵproviders
-  };
-}
-/**
- * Disables HTTP transfer cache. Effectively causes HTTP requests to be performed twice: once on the
- * server and other one on the browser.
- *
- * @publicApi
- */
-function withNoHttpTransferCache() {
-  // This feature has no providers and acts as a flag that turns off
-  // HTTP transfer cache (which otherwise is turned on by default).
-  return hydrationFeature(HydrationFeatureKind.NoHttpTransferCache);
-}
-/**
- * The function accepts an object, which allows to configure cache parameters,
- * such as which headers should be included (no headers are included by default),
- * whether POST requests should be cached or a callback function to determine if a
- * particular request should be cached.
- *
- * @publicApi
- */
-function withHttpTransferCacheOptions(options) {
-  // This feature has no providers and acts as a flag to pass options to the HTTP transfer cache.
-  return hydrationFeature(HydrationFeatureKind.HttpTransferCacheOptions, (0,_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["ɵwithHttpTransferCache"])(options));
-}
-/**
- * Enables support for hydrating i18n blocks.
- *
- * @developerPreview
- * @publicApi
- */
-function withI18nSupport() {
-  return hydrationFeature(HydrationFeatureKind.I18nSupport, (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵwithI18nSupport"])());
-}
-/**
- * Enables support for replaying user events (e.g. `click`s) that happened on a page
- * before hydration logic has completed. Once an application is hydrated, all captured
- * events are replayed and relevant event listeners are executed.
- *
- * @usageNotes
- *
- * Basic example of how you can enable event replay in your application when
- * `bootstrapApplication` function is used:
- * ```ts
- * bootstrapApplication(AppComponent, {
- *   providers: [provideClientHydration(withEventReplay())]
- * });
- * ```
- * @publicApi
- * @see {@link provideClientHydration}
- */
-function withEventReplay() {
-  return hydrationFeature(HydrationFeatureKind.EventReplay, (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵwithEventReplay"])());
-}
-/**
- * Enables support for incremental hydration using the `hydrate` trigger syntax.
- *
- * @usageNotes
- *
- * Basic example of how you can enable incremental hydration in your application when
- * the `bootstrapApplication` function is used:
- * ```ts
- * bootstrapApplication(AppComponent, {
- *   providers: [provideClientHydration(withIncrementalHydration())]
- * });
- * ```
- * @experimental
- * @publicApi
- * @see {@link provideClientHydration}
- */
-function withIncrementalHydration() {
-  return hydrationFeature(HydrationFeatureKind.IncrementalHydration, (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵwithIncrementalHydration"])());
-}
-/**
- * Returns an `ENVIRONMENT_INITIALIZER` token setup with a function
- * that verifies whether compatible ZoneJS was used in an application
- * and logs a warning in a console if it's not the case.
- */
-function provideZoneJsCompatibilityDetector() {
-  return [{
-    provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__.ENVIRONMENT_INITIALIZER,
-    useValue: () => {
-      const ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.NgZone);
-      const isZoneless = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵZONELESS_ENABLED"]);
-      // Checking `ngZone instanceof NgZone` would be insufficient here,
-      // because custom implementations might use NgZone as a base class.
-      if (!isZoneless && ngZone.constructor !== _angular_core__WEBPACK_IMPORTED_MODULE_1__.NgZone) {
-        const console = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵConsole"]);
-        const message = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵformatRuntimeError"])(-5000 /* RuntimeErrorCode.UNSUPPORTED_ZONEJS_INSTANCE */, 'Angular detected that hydration was enabled for an application ' + 'that uses a custom or a noop Zone.js implementation. ' + 'This is not yet a fully supported configuration.');
-        console.warn(message);
-      }
-    },
-    multi: true
-  }];
-}
-/**
- * Sets up providers necessary to enable hydration functionality for the application.
- *
- * By default, the function enables the recommended set of features for the optimal
- * performance for most of the applications. It includes the following features:
- *
- * * Reconciling DOM hydration. Learn more about it [here](guide/hydration).
- * * [`HttpClient`](api/common/http/HttpClient) response caching while running on the server and
- * transferring this cache to the client to avoid extra HTTP requests. Learn more about data caching
- * [here](guide/ssr#caching-data-when-using-httpclient).
- *
- * These functions allow you to disable some of the default features or enable new ones:
- *
- * * {@link withNoHttpTransferCache} to disable HTTP transfer cache
- * * {@link withHttpTransferCacheOptions} to configure some HTTP transfer cache options
- * * {@link withI18nSupport} to enable hydration support for i18n blocks
- * * {@link withEventReplay} to enable support for replaying user events
- *
- * @usageNotes
- *
- * Basic example of how you can enable hydration in your application when
- * `bootstrapApplication` function is used:
- * ```ts
- * bootstrapApplication(AppComponent, {
- *   providers: [provideClientHydration()]
- * });
- * ```
- *
- * Alternatively if you are using NgModules, you would add `provideClientHydration`
- * to your root app module's provider list.
- * ```ts
- * @NgModule({
- *   declarations: [RootCmp],
- *   bootstrap: [RootCmp],
- *   providers: [provideClientHydration()],
- * })
- * export class AppModule {}
- * ```
- *
- * @see {@link withNoHttpTransferCache}
- * @see {@link withHttpTransferCacheOptions}
- * @see {@link withI18nSupport}
- * @see {@link withEventReplay}
- *
- * @param features Optional features to configure additional router behaviors.
- * @returns A set of providers to enable hydration.
- *
- * @publicApi
- */
-function provideClientHydration(...features) {
-  const providers = [];
-  const featuresKind = new Set();
-  const hasHttpTransferCacheOptions = featuresKind.has(HydrationFeatureKind.HttpTransferCacheOptions);
-  for (const {
-    ɵproviders,
-    ɵkind
-  } of features) {
-    featuresKind.add(ɵkind);
-    if (ɵproviders.length) {
-      providers.push(ɵproviders);
-    }
-  }
-  if (typeof ngDevMode !== 'undefined' && ngDevMode && featuresKind.has(HydrationFeatureKind.NoHttpTransferCache) && hasHttpTransferCacheOptions) {
-    // TODO: Make this a runtime error
-    throw new Error('Configuration error: found both withHttpTransferCacheOptions() and withNoHttpTransferCache() in the same call to provideClientHydration(), which is a contradiction.');
-  }
-  return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.makeEnvironmentProviders)([typeof ngDevMode !== 'undefined' && ngDevMode ? provideZoneJsCompatibilityDetector() : [], (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵwithDomHydration"])(), featuresKind.has(HydrationFeatureKind.NoHttpTransferCache) || hasHttpTransferCacheOptions ? [] : (0,_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["ɵwithHttpTransferCache"])({}), providers]);
-}
-
-/**
- * @module
- * @description
- * Entry point for all public APIs of the platform-browser package.
- */
-/**
- * @publicApi
- */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.Version('19.1.5');
-
-/**
- * @module
- * @description
- * Entry point for all public APIs of this package.
- */
-// This file only reexports content of the `src` folder. Keep it that way.
-
-// This file is not used to build this module. It is only used during editing
-
-/**
- * Generated bundle index. Do not edit.
- */
-
 
 
 /***/ })

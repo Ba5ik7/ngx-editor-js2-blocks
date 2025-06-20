@@ -1,5 +1,607 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[9975],{
 
+/***/ 1019:
+/*!*********************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/data-source-D34wiQZj.mjs ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   D: () => (/* binding */ DataSource),
+/* harmony export */   i: () => (/* binding */ isDataSource)
+/* harmony export */ });
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 44866);
+
+class DataSource {}
+/** Checks whether an object is a data source. */
+function isDataSource(value) {
+  // Check if the value is a DataSource by observing if it has a connect function. Cannot
+  // be checked as an `instanceof DataSource` since people could create their own sources
+  // that match the interface, but don't extend DataSource. We also can't use `isObservable`
+  // here, because of some internal apps.
+  return value && typeof value.connect === 'function' && !(value instanceof rxjs__WEBPACK_IMPORTED_MODULE_0__.ConnectableObservable);
+}
+
+
+/***/ }),
+
+/***/ 6427:
+/*!******************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/platform-DNDzkVcI.mjs ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   P: () => (/* binding */ Platform)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 85914);
+
+
+
+
+// Whether the current platform supports the V8 Break Iterator. The V8 check
+// is necessary to detect all Blink based browsers.
+let hasV8BreakIterator;
+// We need a try/catch around the reference to `Intl`, because accessing it in some cases can
+// cause IE to throw. These cases are tied to particular versions of Windows and can happen if
+// the consumer is providing a polyfilled `Map`. See:
+// https://github.com/Microsoft/ChakraCore/issues/3189
+// https://github.com/angular/components/issues/15687
+try {
+  hasV8BreakIterator = typeof Intl !== 'undefined' && Intl.v8BreakIterator;
+} catch {
+  hasV8BreakIterator = false;
+}
+/**
+ * Service to detect the current platform by comparing the userAgent strings and
+ * checking browser-specific global properties.
+ */
+let Platform = /*#__PURE__*/(() => {
+  class Platform {
+    _platformId = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.PLATFORM_ID);
+    // We want to use the Angular platform check because if the Document is shimmed
+    // without the navigator, the following checks will fail. This is preferred because
+    // sometimes the Document may be shimmed without the user's knowledge or intention
+    /** Whether the Angular application is being rendered in the browser. */
+    isBrowser = this._platformId ? (0,_angular_common__WEBPACK_IMPORTED_MODULE_1__.isPlatformBrowser)(this._platformId) : typeof document === 'object' && !!document;
+    /** Whether the current browser is Microsoft Edge. */
+    EDGE = this.isBrowser && /(edge)/i.test(navigator.userAgent);
+    /** Whether the current rendering engine is Microsoft Trident. */
+    TRIDENT = this.isBrowser && /(msie|trident)/i.test(navigator.userAgent);
+    // EdgeHTML and Trident mock Blink specific things and need to be excluded from this check.
+    /** Whether the current rendering engine is Blink. */
+    BLINK = this.isBrowser && !!(window.chrome || hasV8BreakIterator) && typeof CSS !== 'undefined' && !this.EDGE && !this.TRIDENT;
+    // Webkit is part of the userAgent in EdgeHTML, Blink and Trident. Therefore we need to
+    // ensure that Webkit runs standalone and is not used as another engine's base.
+    /** Whether the current rendering engine is WebKit. */
+    WEBKIT = this.isBrowser && /AppleWebKit/i.test(navigator.userAgent) && !this.BLINK && !this.EDGE && !this.TRIDENT;
+    /** Whether the current platform is Apple iOS. */
+    IOS = this.isBrowser && /iPad|iPhone|iPod/.test(navigator.userAgent) && !('MSStream' in window);
+    // It's difficult to detect the plain Gecko engine, because most of the browsers identify
+    // them self as Gecko-like browsers and modify the userAgent's according to that.
+    // Since we only cover one explicit Firefox case, we can simply check for Firefox
+    // instead of having an unstable check for Gecko.
+    /** Whether the current browser is Firefox. */
+    FIREFOX = this.isBrowser && /(firefox|minefield)/i.test(navigator.userAgent);
+    /** Whether the current platform is Android. */
+    // Trident on mobile adds the android platform to the userAgent to trick detections.
+    ANDROID = this.isBrowser && /android/i.test(navigator.userAgent) && !this.TRIDENT;
+    // Safari browsers will include the Safari keyword in their userAgent. Some browsers may fake
+    // this and just place the Safari keyword in the userAgent. To be more safe about Safari every
+    // Safari browser should also use Webkit as its layout engine.
+    /** Whether the current browser is Safari. */
+    SAFARI = this.isBrowser && /safari/i.test(navigator.userAgent) && this.WEBKIT;
+    constructor() {}
+    static ɵfac = function Platform_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || Platform)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: Platform,
+      factory: Platform.ɵfac,
+      providedIn: 'root'
+    });
+  }
+  return Platform;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+
+/***/ }),
+
+/***/ 32373:
+/*!************************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/directionality-CChdj3az.mjs ***!
+  \************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   D: () => (/* binding */ Directionality),
+/* harmony export */   _: () => (/* binding */ _resolveDirectionality),
+/* harmony export */   a: () => (/* binding */ DIR_DOCUMENT)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+
+
+
+/**
+ * Injection token used to inject the document into Directionality.
+ * This is used so that the value can be faked in tests.
+ *
+ * We can't use the real document in tests because changing the real `dir` causes geometry-based
+ * tests in Safari to fail.
+ *
+ * We also can't re-provide the DOCUMENT token from platform-browser because the unit tests
+ * themselves use things like `querySelector` in test code.
+ *
+ * This token is defined in a separate file from Directionality as a workaround for
+ * https://github.com/angular/angular/issues/22559
+ *
+ * @docs-private
+ */
+const DIR_DOCUMENT = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('cdk-dir-doc', {
+  providedIn: 'root',
+  factory: DIR_DOCUMENT_FACTORY
+});
+/**
+ * @docs-private
+ * @deprecated No longer used, will be removed.
+ * @breaking-change 21.0.0
+ */
+function DIR_DOCUMENT_FACTORY() {
+  return (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT);
+}
+
+/** Regex that matches locales with an RTL script. Taken from `goog.i18n.bidi.isRtlLanguage`. */
+const RTL_LOCALE_PATTERN = /^(ar|ckb|dv|he|iw|fa|nqo|ps|sd|ug|ur|yi|.*[-_](Adlm|Arab|Hebr|Nkoo|Rohg|Thaa))(?!.*[-_](Latn|Cyrl)($|-|_))($|-|_)/i;
+/** Resolves a string value to a specific direction. */
+function _resolveDirectionality(rawValue) {
+  const value = rawValue?.toLowerCase() || '';
+  if (value === 'auto' && typeof navigator !== 'undefined' && navigator?.language) {
+    return RTL_LOCALE_PATTERN.test(navigator.language) ? 'rtl' : 'ltr';
+  }
+  return value === 'rtl' ? 'rtl' : 'ltr';
+}
+/**
+ * The directionality (LTR / RTL) context for the application (or a subtree of it).
+ * Exposes the current direction and a stream of direction changes.
+ */
+let Directionality = /*#__PURE__*/(() => {
+  class Directionality {
+    /** The current 'ltr' or 'rtl' value. */
+    get value() {
+      return this.valueSignal();
+    }
+    /**
+     * The current 'ltr' or 'rtl' value.
+     */
+    valueSignal = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('ltr');
+    /** Stream that emits whenever the 'ltr' / 'rtl' state changes. */
+    change = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
+    constructor() {
+      const _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(DIR_DOCUMENT, {
+        optional: true
+      });
+      if (_document) {
+        const bodyDir = _document.body ? _document.body.dir : null;
+        const htmlDir = _document.documentElement ? _document.documentElement.dir : null;
+        this.valueSignal.set(_resolveDirectionality(bodyDir || htmlDir || 'ltr'));
+      }
+    }
+    ngOnDestroy() {
+      this.change.complete();
+    }
+    static ɵfac = function Directionality_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || Directionality)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: Directionality,
+      factory: Directionality.ɵfac,
+      providedIn: 'root'
+    });
+  }
+  return Directionality;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+
+/***/ }),
+
+/***/ 59566:
+/*!*******************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/scrolling-BkvA05C8.mjs ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   R: () => (/* binding */ RtlScrollAxisType),
+/* harmony export */   g: () => (/* binding */ getRtlScrollAxisType),
+/* harmony export */   s: () => (/* binding */ supportsScrollBehavior)
+/* harmony export */ });
+/** The possible ways the browser may handle the horizontal scroll axis in RTL languages. */
+var RtlScrollAxisType = /*#__PURE__*/function (RtlScrollAxisType) {
+  /**
+   * scrollLeft is 0 when scrolled all the way left and (scrollWidth - clientWidth) when scrolled
+   * all the way right.
+   */
+  RtlScrollAxisType[RtlScrollAxisType["NORMAL"] = 0] = "NORMAL";
+  /**
+   * scrollLeft is -(scrollWidth - clientWidth) when scrolled all the way left and 0 when scrolled
+   * all the way right.
+   */
+  RtlScrollAxisType[RtlScrollAxisType["NEGATED"] = 1] = "NEGATED";
+  /**
+   * scrollLeft is (scrollWidth - clientWidth) when scrolled all the way left and 0 when scrolled
+   * all the way right.
+   */
+  RtlScrollAxisType[RtlScrollAxisType["INVERTED"] = 2] = "INVERTED";
+  return RtlScrollAxisType;
+}(RtlScrollAxisType || {});
+/** Cached result of the way the browser handles the horizontal scroll axis in RTL mode. */
+let rtlScrollAxisType;
+/** Cached result of the check that indicates whether the browser supports scroll behaviors. */
+let scrollBehaviorSupported;
+/** Check whether the browser supports scroll behaviors. */
+function supportsScrollBehavior() {
+  if (scrollBehaviorSupported == null) {
+    // If we're not in the browser, it can't be supported. Also check for `Element`, because
+    // some projects stub out the global `document` during SSR which can throw us off.
+    if (typeof document !== 'object' || !document || typeof Element !== 'function' || !Element) {
+      scrollBehaviorSupported = false;
+      return scrollBehaviorSupported;
+    }
+    // If the element can have a `scrollBehavior` style, we can be sure that it's supported.
+    if ('scrollBehavior' in document.documentElement.style) {
+      scrollBehaviorSupported = true;
+    } else {
+      // At this point we have 3 possibilities: `scrollTo` isn't supported at all, it's
+      // supported but it doesn't handle scroll behavior, or it has been polyfilled.
+      const scrollToFunction = Element.prototype.scrollTo;
+      if (scrollToFunction) {
+        // We can detect if the function has been polyfilled by calling `toString` on it. Native
+        // functions are obfuscated using `[native code]`, whereas if it was overwritten we'd get
+        // the actual function source. Via https://davidwalsh.name/detect-native-function. Consider
+        // polyfilled functions as supporting scroll behavior.
+        scrollBehaviorSupported = !/\{\s*\[native code\]\s*\}/.test(scrollToFunction.toString());
+      } else {
+        scrollBehaviorSupported = false;
+      }
+    }
+  }
+  return scrollBehaviorSupported;
+}
+/**
+ * Checks the type of RTL scroll axis used by this browser. As of time of writing, Chrome is NORMAL,
+ * Firefox & Safari are NEGATED, and IE & Edge are INVERTED.
+ */
+function getRtlScrollAxisType() {
+  // We can't check unless we're on the browser. Just assume 'normal' if we're not.
+  if (typeof document !== 'object' || !document) {
+    return RtlScrollAxisType.NORMAL;
+  }
+  if (rtlScrollAxisType == null) {
+    // Create a 1px wide scrolling container and a 2px wide content element.
+    const scrollContainer = document.createElement('div');
+    const containerStyle = scrollContainer.style;
+    scrollContainer.dir = 'rtl';
+    containerStyle.width = '1px';
+    containerStyle.overflow = 'auto';
+    containerStyle.visibility = 'hidden';
+    containerStyle.pointerEvents = 'none';
+    containerStyle.position = 'absolute';
+    const content = document.createElement('div');
+    const contentStyle = content.style;
+    contentStyle.width = '2px';
+    contentStyle.height = '1px';
+    scrollContainer.appendChild(content);
+    document.body.appendChild(scrollContainer);
+    rtlScrollAxisType = RtlScrollAxisType.NORMAL;
+    // The viewport starts scrolled all the way to the right in RTL mode. If we are in a NORMAL
+    // browser this would mean that the scrollLeft should be 1. If it's zero instead we know we're
+    // dealing with one of the other two types of browsers.
+    if (scrollContainer.scrollLeft === 0) {
+      // In a NEGATED browser the scrollLeft is always somewhere in [-maxScrollAmount, 0]. For an
+      // INVERTED browser it is always somewhere in [0, maxScrollAmount]. We can determine which by
+      // setting to the scrollLeft to 1. This is past the max for a NEGATED browser, so it will
+      // return 0 when we read it again.
+      scrollContainer.scrollLeft = 1;
+      rtlScrollAxisType = scrollContainer.scrollLeft === 0 ? RtlScrollAxisType.NEGATED : RtlScrollAxisType.INVERTED;
+    }
+    scrollContainer.remove();
+  }
+  return rtlScrollAxisType;
+}
+
+
+/***/ }),
+
+/***/ 63680:
+/*!*****************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/bidi.mjs ***!
+  \*****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BidiModule: () => (/* binding */ BidiModule),
+/* harmony export */   DIR_DOCUMENT: () => (/* reexport safe */ _directionality_CChdj3az_mjs__WEBPACK_IMPORTED_MODULE_0__.a),
+/* harmony export */   Dir: () => (/* binding */ Dir),
+/* harmony export */   Directionality: () => (/* reexport safe */ _directionality_CChdj3az_mjs__WEBPACK_IMPORTED_MODULE_0__.D)
+/* harmony export */ });
+/* harmony import */ var _directionality_CChdj3az_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./directionality-CChdj3az.mjs */ 32373);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+
+
+
+
+
+/**
+ * Directive to listen for changes of direction of part of the DOM.
+ *
+ * Provides itself as Directionality such that descendant directives only need to ever inject
+ * Directionality to get the closest direction.
+ */
+let Dir = /*#__PURE__*/(() => {
+  class Dir {
+    /** Whether the `value` has been set to its initial value. */
+    _isInitialized = false;
+    /** Direction as passed in by the consumer. */
+    _rawDir;
+    /** Event emitted when the direction changes. */
+    change = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
+    /** @docs-private */
+    get dir() {
+      return this.valueSignal();
+    }
+    set dir(value) {
+      const previousValue = this.valueSignal();
+      // Note: `_resolveDirectionality` resolves the language based on the browser's language,
+      // whereas the browser does it based on the content of the element. Since doing so based
+      // on the content can be expensive, for now we're doing the simpler matching.
+      this.valueSignal.set((0,_directionality_CChdj3az_mjs__WEBPACK_IMPORTED_MODULE_0__._)(value));
+      this._rawDir = value;
+      if (previousValue !== this.valueSignal() && this._isInitialized) {
+        this.change.emit(this.valueSignal());
+      }
+    }
+    /** Current layout direction of the element. */
+    get value() {
+      return this.dir;
+    }
+    valueSignal = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.signal)('ltr');
+    /** Initialize once default value has been set. */
+    ngAfterContentInit() {
+      this._isInitialized = true;
+    }
+    ngOnDestroy() {
+      this.change.complete();
+    }
+    static ɵfac = function Dir_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || Dir)();
+    };
+    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
+      type: Dir,
+      selectors: [["", "dir", ""]],
+      hostVars: 1,
+      hostBindings: function Dir_HostBindings(rf, ctx) {
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("dir", ctx._rawDir);
+        }
+      },
+      inputs: {
+        dir: "dir"
+      },
+      outputs: {
+        change: "dirChange"
+      },
+      exportAs: ["dir"],
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([{
+        provide: _directionality_CChdj3az_mjs__WEBPACK_IMPORTED_MODULE_0__.D,
+        useExisting: Dir
+      }])]
+    });
+  }
+  return Dir;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let BidiModule = /*#__PURE__*/(() => {
+  class BidiModule {
+    static ɵfac = function BidiModule_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || BidiModule)();
+    };
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
+      type: BidiModule
+    });
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({});
+  }
+  return BidiModule;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+
+/***/ }),
+
+/***/ 76194:
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/recycle-view-repeater-strategy-SfuyU210.mjs ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ ArrayDataSource),
+/* harmony export */   _: () => (/* binding */ _RecycleViewRepeaterStrategy),
+/* harmony export */   a: () => (/* binding */ _ViewRepeaterOperation),
+/* harmony export */   b: () => (/* binding */ _VIEW_REPEATER_STRATEGY)
+/* harmony export */ });
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 44866);
+/* harmony import */ var _data_source_D34wiQZj_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data-source-D34wiQZj.mjs */ 1019);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+
+
+
+
+/** DataSource wrapper for a native array. */
+class ArrayDataSource extends _data_source_D34wiQZj_mjs__WEBPACK_IMPORTED_MODULE_2__.D {
+  _data;
+  constructor(_data) {
+    super();
+    this._data = _data;
+  }
+  connect() {
+    return (0,rxjs__WEBPACK_IMPORTED_MODULE_0__.isObservable)(this._data) ? this._data : (0,rxjs__WEBPACK_IMPORTED_MODULE_0__.of)(this._data);
+  }
+  disconnect() {}
+}
+
+/** Indicates how a view was changed by a `_ViewRepeater`. */
+var _ViewRepeaterOperation = /*#__PURE__*/function (_ViewRepeaterOperation) {
+  /** The content of an existing view was replaced with another item. */
+  _ViewRepeaterOperation[_ViewRepeaterOperation["REPLACED"] = 0] = "REPLACED";
+  /** A new view was created with `createEmbeddedView`. */
+  _ViewRepeaterOperation[_ViewRepeaterOperation["INSERTED"] = 1] = "INSERTED";
+  /** The position of a view changed, but the content remains the same. */
+  _ViewRepeaterOperation[_ViewRepeaterOperation["MOVED"] = 2] = "MOVED";
+  /** A view was detached from the view container. */
+  _ViewRepeaterOperation[_ViewRepeaterOperation["REMOVED"] = 3] = "REMOVED";
+  return _ViewRepeaterOperation;
+}(_ViewRepeaterOperation || {});
+/**
+ * Injection token for `_ViewRepeater`. This token is for use by Angular Material only.
+ * @docs-private
+ */
+const _VIEW_REPEATER_STRATEGY = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('_ViewRepeater');
+
+/**
+ * A repeater that caches views when they are removed from a
+ * `ViewContainerRef`. When new items are inserted into the container,
+ * the repeater will reuse one of the cached views instead of creating a new
+ * embedded view. Recycling cached views reduces the quantity of expensive DOM
+ * inserts.
+ *
+ * @template T The type for the embedded view's $implicit property.
+ * @template R The type for the item in each IterableDiffer change record.
+ * @template C The type for the context passed to each embedded view.
+ */
+class _RecycleViewRepeaterStrategy {
+  /**
+   * The size of the cache used to store unused views.
+   * Setting the cache size to `0` will disable caching. Defaults to 20 views.
+   */
+  viewCacheSize = 20;
+  /**
+   * View cache that stores embedded view instances that have been previously stamped out,
+   * but don't are not currently rendered. The view repeater will reuse these views rather than
+   * creating brand new ones.
+   *
+   * TODO(michaeljamesparsons) Investigate whether using a linked list would improve performance.
+   */
+  _viewCache = [];
+  /** Apply changes to the DOM. */
+  applyChanges(changes, viewContainerRef, itemContextFactory, itemValueResolver, itemViewChanged) {
+    // Rearrange the views to put them in the right location.
+    changes.forEachOperation((record, adjustedPreviousIndex, currentIndex) => {
+      let view;
+      let operation;
+      if (record.previousIndex == null) {
+        // Item added.
+        const viewArgsFactory = () => itemContextFactory(record, adjustedPreviousIndex, currentIndex);
+        view = this._insertView(viewArgsFactory, currentIndex, viewContainerRef, itemValueResolver(record));
+        operation = view ? _ViewRepeaterOperation.INSERTED : _ViewRepeaterOperation.REPLACED;
+      } else if (currentIndex == null) {
+        // Item removed.
+        this._detachAndCacheView(adjustedPreviousIndex, viewContainerRef);
+        operation = _ViewRepeaterOperation.REMOVED;
+      } else {
+        // Item moved.
+        view = this._moveView(adjustedPreviousIndex, currentIndex, viewContainerRef, itemValueResolver(record));
+        operation = _ViewRepeaterOperation.MOVED;
+      }
+      if (itemViewChanged) {
+        itemViewChanged({
+          context: view?.context,
+          operation,
+          record
+        });
+      }
+    });
+  }
+  detach() {
+    for (const view of this._viewCache) {
+      view.destroy();
+    }
+    this._viewCache = [];
+  }
+  /**
+   * Inserts a view for a new item, either from the cache or by creating a new
+   * one. Returns `undefined` if the item was inserted into a cached view.
+   */
+  _insertView(viewArgsFactory, currentIndex, viewContainerRef, value) {
+    const cachedView = this._insertViewFromCache(currentIndex, viewContainerRef);
+    if (cachedView) {
+      cachedView.context.$implicit = value;
+      return undefined;
+    }
+    const viewArgs = viewArgsFactory();
+    return viewContainerRef.createEmbeddedView(viewArgs.templateRef, viewArgs.context, viewArgs.index);
+  }
+  /** Detaches the view at the given index and inserts into the view cache. */
+  _detachAndCacheView(index, viewContainerRef) {
+    const detachedView = viewContainerRef.detach(index);
+    this._maybeCacheView(detachedView, viewContainerRef);
+  }
+  /** Moves view at the previous index to the current index. */
+  _moveView(adjustedPreviousIndex, currentIndex, viewContainerRef, value) {
+    const view = viewContainerRef.get(adjustedPreviousIndex);
+    viewContainerRef.move(view, currentIndex);
+    view.context.$implicit = value;
+    return view;
+  }
+  /**
+   * Cache the given detached view. If the cache is full, the view will be
+   * destroyed.
+   */
+  _maybeCacheView(view, viewContainerRef) {
+    if (this._viewCache.length < this.viewCacheSize) {
+      this._viewCache.push(view);
+    } else {
+      const index = viewContainerRef.indexOf(view);
+      // The host component could remove views from the container outside of
+      // the view repeater. It's unlikely this will occur, but just in case,
+      // destroy the view on its own, otherwise destroy it through the
+      // container to ensure that all the references are removed.
+      if (index === -1) {
+        view.destroy();
+      } else {
+        viewContainerRef.remove(index);
+      }
+    }
+  }
+  /** Inserts a recycled view from the cache at the given index. */
+  _insertViewFromCache(index, viewContainerRef) {
+    const cachedView = this._viewCache.pop();
+    if (cachedView) {
+      viewContainerRef.insert(cachedView, index);
+    }
+    return cachedView || null;
+  }
+}
+
+
+/***/ }),
+
 /***/ 79975:
 /*!**********************************************************!*\
   !*** ./node_modules/@angular/cdk/fesm2022/scrolling.mjs ***!
@@ -24,36 +626,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   VIRTUAL_SCROLLABLE: () => (/* binding */ VIRTUAL_SCROLLABLE),
 /* harmony export */   VIRTUAL_SCROLL_STRATEGY: () => (/* binding */ VIRTUAL_SCROLL_STRATEGY),
 /* harmony export */   ViewportRuler: () => (/* binding */ ViewportRuler),
-/* harmony export */   _fixedSizeVirtualScrollStrategyFactory: () => (/* binding */ _fixedSizeVirtualScrollStrategyFactory)
+/* harmony export */   _fixedSizeVirtualScrollStrategyFactory: () => (/* binding */ _fixedSizeVirtualScrollStrategyFactory),
+/* harmony export */   "ɵɵDir": () => (/* reexport safe */ _bidi_mjs__WEBPACK_IMPORTED_MODULE_3__.Dir)
 /* harmony export */ });
-/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/coercion */ 31620);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 9516);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 44866);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 32778);
-/* harmony import */ var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/platform */ 1830);
-/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/cdk/bidi */ 71320);
-/* harmony import */ var _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/collections */ 35748);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 59694);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 44866);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 32778);
+/* harmony import */ var _element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./element-x4z00URv.mjs */ 94724);
+/* harmony import */ var _platform_DNDzkVcI_mjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./platform-DNDzkVcI.mjs */ 6427);
+/* harmony import */ var _directionality_CChdj3az_mjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./directionality-CChdj3az.mjs */ 32373);
+/* harmony import */ var _scrolling_BkvA05C8_mjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./scrolling-BkvA05C8.mjs */ 59566);
+/* harmony import */ var _bidi_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./bidi.mjs */ 63680);
+/* harmony import */ var _recycle_view_repeater_strategy_SfuyU210_mjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./recycle-view-repeater-strategy-SfuyU210.mjs */ 76194);
+/* harmony import */ var _data_source_D34wiQZj_mjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./data-source-D34wiQZj.mjs */ 1019);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 85914);
 
 
 
 
 
+
+
+
+
+const _c0 = ["contentWrapper"];
+const _c1 = ["*"];
 
 
 
 
 
 /** The injection token used to specify the virtual scrolling strategy. */
-const _c0 = ["contentWrapper"];
-const _c1 = ["*"];
-const VIRTUAL_SCROLL_STRATEGY = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('VIRTUAL_SCROLL_STRATEGY');
+const VIRTUAL_SCROLL_STRATEGY = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('VIRTUAL_SCROLL_STRATEGY');
 
 /** Virtual scrolling strategy for lists with items of known fixed size. */
 class FixedSizeVirtualScrollStrategy {
-  _scrolledIndexChange = /*#__PURE__*/new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
+  _scrolledIndexChange = /*#__PURE__*/new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
   /** @docs-private Implemented as part of VirtualScrollStrategy. */
-  scrolledIndexChange = /*#__PURE__*/this._scrolledIndexChange.pipe(/*#__PURE__*/(0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.distinctUntilChanged)());
+  scrolledIndexChange = /*#__PURE__*/this._scrolledIndexChange.pipe(/*#__PURE__*/(0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.distinctUntilChanged)());
   /** The attached viewport. */
   _viewport = null;
   /** The size of the items in the virtually scrolling list. */
@@ -202,7 +812,7 @@ let CdkFixedSizeVirtualScroll = /*#__PURE__*/(() => {
       return this._itemSize;
     }
     set itemSize(value) {
-      this._itemSize = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_0__.coerceNumberProperty)(value);
+      this._itemSize = (0,_element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_5__.c)(value);
     }
     _itemSize = 20;
     /**
@@ -213,7 +823,7 @@ let CdkFixedSizeVirtualScroll = /*#__PURE__*/(() => {
       return this._minBufferPx;
     }
     set minBufferPx(value) {
-      this._minBufferPx = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_0__.coerceNumberProperty)(value);
+      this._minBufferPx = (0,_element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_5__.c)(value);
     }
     _minBufferPx = 100;
     /**
@@ -223,7 +833,7 @@ let CdkFixedSizeVirtualScroll = /*#__PURE__*/(() => {
       return this._maxBufferPx;
     }
     set maxBufferPx(value) {
-      this._maxBufferPx = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_0__.coerceNumberProperty)(value);
+      this._maxBufferPx = (0,_element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_5__.c)(value);
     }
     _maxBufferPx = 200;
     /** The scroll strategy used by this directive. */
@@ -234,7 +844,7 @@ let CdkFixedSizeVirtualScroll = /*#__PURE__*/(() => {
     static ɵfac = function CdkFixedSizeVirtualScroll_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || CdkFixedSizeVirtualScroll)();
     };
-    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
+    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
       type: CdkFixedSizeVirtualScroll,
       selectors: [["cdk-virtual-scroll-viewport", "itemSize", ""]],
       inputs: {
@@ -242,11 +852,11 @@ let CdkFixedSizeVirtualScroll = /*#__PURE__*/(() => {
         minBufferPx: "minBufferPx",
         maxBufferPx: "maxBufferPx"
       },
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([{
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([{
         provide: VIRTUAL_SCROLL_STRATEGY,
         useFactory: _fixedSizeVirtualScrollStrategyFactory,
-        deps: [(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.forwardRef)(() => CdkFixedSizeVirtualScroll)]
-      }]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]]
+        deps: [(0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(() => CdkFixedSizeVirtualScroll)]
+      }]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵNgOnChangesFeature"]]
     });
   }
   return CdkFixedSizeVirtualScroll;
@@ -263,13 +873,13 @@ const DEFAULT_SCROLL_TIME = 20;
  */
 let ScrollDispatcher = /*#__PURE__*/(() => {
   class ScrollDispatcher {
-    _ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.NgZone);
-    _platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_4__.Platform);
-    _renderer = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.RendererFactory2).createRenderer(null, null);
+    _ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone);
+    _platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_platform_DNDzkVcI_mjs__WEBPACK_IMPORTED_MODULE_6__.P);
+    _renderer = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.RendererFactory2).createRenderer(null, null);
     _cleanupGlobalListener;
     constructor() {}
     /** Subject for notifying that a registered scrollable reference element has been scrolled. */
-    _scrolled = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
+    _scrolled = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
     /** Keeps track of the amount of subscriptions to `scrolled`. Used for cleaning up afterwards. */
     _scrolledCount = 0;
     /**
@@ -310,15 +920,15 @@ let ScrollDispatcher = /*#__PURE__*/(() => {
      */
     scrolled(auditTimeInMs = DEFAULT_SCROLL_TIME) {
       if (!this._platform.isBrowser) {
-        return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)();
+        return (0,rxjs__WEBPACK_IMPORTED_MODULE_1__.of)();
       }
-      return new rxjs__WEBPACK_IMPORTED_MODULE_2__.Observable(observer => {
+      return new rxjs__WEBPACK_IMPORTED_MODULE_1__.Observable(observer => {
         if (!this._cleanupGlobalListener) {
           this._cleanupGlobalListener = this._ngZone.runOutsideAngular(() => this._renderer.listen('document', 'scroll', () => this._scrolled.next()));
         }
         // In the case of a 0ms delay, use an observable without auditTime
         // since it does add a perceptible delay in processing overhead.
-        const subscription = auditTimeInMs > 0 ? this._scrolled.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.auditTime)(auditTimeInMs)).subscribe(observer) : this._scrolled.subscribe(observer);
+        const subscription = auditTimeInMs > 0 ? this._scrolled.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.auditTime)(auditTimeInMs)).subscribe(observer) : this._scrolled.subscribe(observer);
         this._scrolledCount++;
         return () => {
           subscription.unsubscribe();
@@ -344,7 +954,7 @@ let ScrollDispatcher = /*#__PURE__*/(() => {
      */
     ancestorScrolled(elementOrElementRef, auditTimeInMs) {
       const ancestors = this.getAncestorScrollContainers(elementOrElementRef);
-      return this.scrolled(auditTimeInMs).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.filter)(target => !target || ancestors.indexOf(target) > -1));
+      return this.scrolled(auditTimeInMs).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.filter)(target => !target || ancestors.indexOf(target) > -1));
     }
     /** Returns all registered Scrollables that contain the provided element. */
     getAncestorScrollContainers(elementOrElementRef) {
@@ -358,7 +968,7 @@ let ScrollDispatcher = /*#__PURE__*/(() => {
     }
     /** Returns true if the element is contained within the provided Scrollable. */
     _scrollableContainsElement(scrollable, elementOrElementRef) {
-      let element = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_0__.coerceElement)(elementOrElementRef);
+      let element = (0,_element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_5__.a)(elementOrElementRef);
       let scrollableElement = scrollable.getElementRef().nativeElement;
       // Traverse through the element parents until we reach null, checking if any of the elements
       // are the scrollable's element.
@@ -372,7 +982,7 @@ let ScrollDispatcher = /*#__PURE__*/(() => {
     static ɵfac = function ScrollDispatcher_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || ScrollDispatcher)();
     };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: ScrollDispatcher,
       factory: ScrollDispatcher.ɵfac,
       providedIn: 'root'
@@ -391,17 +1001,17 @@ let ScrollDispatcher = /*#__PURE__*/(() => {
  */
 let CdkScrollable = /*#__PURE__*/(() => {
   class CdkScrollable {
-    elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ElementRef);
-    scrollDispatcher = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(ScrollDispatcher);
-    ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.NgZone);
-    dir = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_5__.Directionality, {
+    elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
+    scrollDispatcher = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(ScrollDispatcher);
+    ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone);
+    dir = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_directionality_CChdj3az_mjs__WEBPACK_IMPORTED_MODULE_7__.D, {
       optional: true
     });
     _scrollElement = this.elementRef.nativeElement;
-    _destroyed = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
-    _renderer = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.Renderer2);
+    _destroyed = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
+    _renderer = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2);
     _cleanupScroll;
-    _elementScrolled = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
+    _elementScrolled = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
     constructor() {}
     ngOnInit() {
       this._cleanupScroll = this.ngZone.runOutsideAngular(() => this._renderer.listen(this._scrollElement, 'scroll', event => this._elementScrolled.next(event)));
@@ -445,13 +1055,13 @@ let CdkScrollable = /*#__PURE__*/(() => {
         options.top = el.scrollHeight - el.clientHeight - options.bottom;
       }
       // Rewrite the right offset as a left offset.
-      if (isRtl && (0,_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_4__.getRtlScrollAxisType)() != _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_4__.RtlScrollAxisType.NORMAL) {
+      if (isRtl && (0,_scrolling_BkvA05C8_mjs__WEBPACK_IMPORTED_MODULE_8__.g)() != _scrolling_BkvA05C8_mjs__WEBPACK_IMPORTED_MODULE_8__.R.NORMAL) {
         if (options.left != null) {
           options.right = el.scrollWidth - el.clientWidth - options.left;
         }
-        if ((0,_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_4__.getRtlScrollAxisType)() == _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_4__.RtlScrollAxisType.INVERTED) {
+        if ((0,_scrolling_BkvA05C8_mjs__WEBPACK_IMPORTED_MODULE_8__.g)() == _scrolling_BkvA05C8_mjs__WEBPACK_IMPORTED_MODULE_8__.R.INVERTED) {
           options.left = options.right;
-        } else if ((0,_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_4__.getRtlScrollAxisType)() == _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_4__.RtlScrollAxisType.NEGATED) {
+        } else if ((0,_scrolling_BkvA05C8_mjs__WEBPACK_IMPORTED_MODULE_8__.g)() == _scrolling_BkvA05C8_mjs__WEBPACK_IMPORTED_MODULE_8__.R.NEGATED) {
           options.left = options.right ? -options.right : options.right;
         }
       } else {
@@ -463,7 +1073,7 @@ let CdkScrollable = /*#__PURE__*/(() => {
     }
     _applyScrollToOptions(options) {
       const el = this.elementRef.nativeElement;
-      if ((0,_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_4__.supportsScrollBehavior)()) {
+      if ((0,_scrolling_BkvA05C8_mjs__WEBPACK_IMPORTED_MODULE_8__.s)()) {
         el.scrollTo(options);
       } else {
         if (options.top != null) {
@@ -500,7 +1110,7 @@ let CdkScrollable = /*#__PURE__*/(() => {
       } else if (from == 'end') {
         from = isRtl ? LEFT : RIGHT;
       }
-      if (isRtl && (0,_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_4__.getRtlScrollAxisType)() == _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_4__.RtlScrollAxisType.INVERTED) {
+      if (isRtl && (0,_scrolling_BkvA05C8_mjs__WEBPACK_IMPORTED_MODULE_8__.g)() == _scrolling_BkvA05C8_mjs__WEBPACK_IMPORTED_MODULE_8__.R.INVERTED) {
         // For INVERTED, scrollLeft is (scrollWidth - clientWidth) when scrolled all the way left and
         // 0 when scrolled all the way right.
         if (from == LEFT) {
@@ -508,7 +1118,7 @@ let CdkScrollable = /*#__PURE__*/(() => {
         } else {
           return el.scrollLeft;
         }
-      } else if (isRtl && (0,_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_4__.getRtlScrollAxisType)() == _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_4__.RtlScrollAxisType.NEGATED) {
+      } else if (isRtl && (0,_scrolling_BkvA05C8_mjs__WEBPACK_IMPORTED_MODULE_8__.g)() == _scrolling_BkvA05C8_mjs__WEBPACK_IMPORTED_MODULE_8__.R.NEGATED) {
         // For NEGATED, scrollLeft is -(scrollWidth - clientWidth) when scrolled all the way left and
         // 0 when scrolled all the way right.
         if (from == LEFT) {
@@ -529,7 +1139,7 @@ let CdkScrollable = /*#__PURE__*/(() => {
     static ɵfac = function CdkScrollable_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || CdkScrollable)();
     };
-    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
+    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
       type: CdkScrollable,
       selectors: [["", "cdk-scrollable", ""], ["", "cdkScrollable", ""]]
     });
@@ -548,19 +1158,19 @@ const DEFAULT_RESIZE_TIME = 20;
  */
 let ViewportRuler = /*#__PURE__*/(() => {
   class ViewportRuler {
-    _platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_4__.Platform);
+    _platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_platform_DNDzkVcI_mjs__WEBPACK_IMPORTED_MODULE_6__.P);
     _listeners;
     /** Cached viewport dimensions. */
     _viewportSize;
     /** Stream of viewport change events. */
-    _change = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
+    _change = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
     /** Used to reference correct document/window */
-    _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_common__WEBPACK_IMPORTED_MODULE_7__.DOCUMENT, {
+    _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT, {
       optional: true
     });
     constructor() {
-      const ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.NgZone);
-      const renderer = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.RendererFactory2).createRenderer(null, null);
+      const ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone);
+      const renderer = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.RendererFactory2).createRenderer(null, null);
       ngZone.runOutsideAngular(() => {
         if (this._platform.isBrowser) {
           const changeListener = event => this._change.next(event);
@@ -648,7 +1258,7 @@ let ViewportRuler = /*#__PURE__*/(() => {
      * @param throttleTime Time in milliseconds to throttle the stream.
      */
     change(throttleTime = DEFAULT_RESIZE_TIME) {
-      return throttleTime > 0 ? this._change.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.auditTime)(throttleTime)) : this._change;
+      return throttleTime > 0 ? this._change.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.auditTime)(throttleTime)) : this._change;
     }
     /** Use defaultView of injected document if available or fallback to global window reference */
     _getWindow() {
@@ -668,7 +1278,7 @@ let ViewportRuler = /*#__PURE__*/(() => {
     static ɵfac = function ViewportRuler_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || ViewportRuler)();
     };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: ViewportRuler,
       factory: ViewportRuler.ɵfac,
       providedIn: 'root'
@@ -679,9 +1289,9 @@ let ViewportRuler = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-const VIRTUAL_SCROLLABLE = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('VIRTUAL_SCROLLABLE');
+const VIRTUAL_SCROLLABLE = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('VIRTUAL_SCROLLABLE');
 /**
- * Extending the {@link CdkScrollable} to be used as scrolling container for virtual scrolling.
+ * Extending the `CdkScrollable` to be used as scrolling container for virtual scrolling.
  */
 let CdkVirtualScrollable = /*#__PURE__*/(() => {
   class CdkVirtualScrollable extends CdkScrollable {
@@ -700,9 +1310,9 @@ let CdkVirtualScrollable = /*#__PURE__*/(() => {
     static ɵfac = function CdkVirtualScrollable_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || CdkVirtualScrollable)();
     };
-    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
+    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
       type: CdkVirtualScrollable,
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]]
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]]
     });
   }
   return CdkVirtualScrollable;
@@ -720,23 +1330,23 @@ function rangesEqual(r1, r2) {
  * something that doesn't rely on requestAnimationFrame on environments
  * that don't support it (e.g. server-side rendering).
  */
-const SCROLL_SCHEDULER = typeof requestAnimationFrame !== 'undefined' ? rxjs__WEBPACK_IMPORTED_MODULE_2__.animationFrameScheduler : rxjs__WEBPACK_IMPORTED_MODULE_2__.asapScheduler;
+const SCROLL_SCHEDULER = typeof requestAnimationFrame !== 'undefined' ? rxjs__WEBPACK_IMPORTED_MODULE_1__.animationFrameScheduler : rxjs__WEBPACK_IMPORTED_MODULE_1__.asapScheduler;
 /** A viewport that virtualizes its scrolling with the help of `CdkVirtualForOf`. */
 let CdkVirtualScrollViewport = /*#__PURE__*/(() => {
   class CdkVirtualScrollViewport extends CdkVirtualScrollable {
-    elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ElementRef);
-    _changeDetectorRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ChangeDetectorRef);
-    _scrollStrategy = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(VIRTUAL_SCROLL_STRATEGY, {
+    elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
+    _changeDetectorRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ChangeDetectorRef);
+    _scrollStrategy = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(VIRTUAL_SCROLL_STRATEGY, {
       optional: true
     });
-    scrollable = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(VIRTUAL_SCROLLABLE, {
+    scrollable = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(VIRTUAL_SCROLLABLE, {
       optional: true
     });
-    _platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_4__.Platform);
+    _platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_platform_DNDzkVcI_mjs__WEBPACK_IMPORTED_MODULE_6__.P);
     /** Emits when the viewport is detached from a CdkVirtualForOf. */
-    _detachedSubject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
+    _detachedSubject = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
     /** Emits when the rendered range changes. */
-    _renderedRangeSubject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
+    _renderedRangeSubject = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
     /** The direction the viewport scrolls. */
     get orientation() {
       return this._orientation;
@@ -758,7 +1368,7 @@ let CdkVirtualScrollViewport = /*#__PURE__*/(() => {
     // depending on how the strategy calculates the scrolled index, it may come at a cost to
     // performance.
     /** Emits when the index of the first element visible in the viewport changes. */
-    scrolledIndexChange = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Observable(observer => this._scrollStrategy.scrolledIndexChange.subscribe(index => Promise.resolve().then(() => this.ngZone.run(() => observer.next(index)))));
+    scrolledIndexChange = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Observable(observer => this._scrollStrategy.scrolledIndexChange.subscribe(index => Promise.resolve().then(() => this.ngZone.run(() => observer.next(index)))));
     /** The element that wraps the rendered content. */
     _contentWrapper;
     /** A stream that emits whenever the rendered range changes. */
@@ -768,9 +1378,9 @@ let CdkVirtualScrollViewport = /*#__PURE__*/(() => {
      */
     _totalContentSize = 0;
     /** A string representing the `style.width` property value to be used for the spacer element. */
-    _totalContentWidth = '';
+    _totalContentWidth = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('');
     /** A string representing the `style.height` property value to be used for the spacer element. */
-    _totalContentHeight = '';
+    _totalContentHeight = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('');
     /**
      * The CSS transform applied to the rendered subset of items so that they appear within the bounds
      * of the visible viewport.
@@ -799,12 +1409,12 @@ let CdkVirtualScrollViewport = /*#__PURE__*/(() => {
     /** A list of functions to run after the next change detection cycle. */
     _runAfterChangeDetection = [];
     /** Subscription to changes in the viewport size. */
-    _viewportChanges = rxjs__WEBPACK_IMPORTED_MODULE_2__.Subscription.EMPTY;
-    _injector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injector);
+    _viewportChanges = rxjs__WEBPACK_IMPORTED_MODULE_1__.Subscription.EMPTY;
+    _injector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Injector);
     _isDestroyed = false;
     constructor() {
       super();
-      const viewportRuler = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(ViewportRuler);
+      const viewportRuler = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(ViewportRuler);
       if (!this._scrollStrategy && (typeof ngDevMode === 'undefined' || ngDevMode)) {
         throw Error('Error: cdk-virtual-scroll-viewport requires the "itemSize" property to be set.');
       }
@@ -834,15 +1444,15 @@ let CdkVirtualScrollViewport = /*#__PURE__*/(() => {
         this._scrollStrategy.attach(this);
         this.scrollable.elementScrolled().pipe(
         // Start off with a fake scroll event so we properly detect our initial position.
-        (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.startWith)(null),
+        (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.startWith)(null),
         // Collect multiple events into one until the next animation frame. This way if
         // there are multiple scroll events in the same frame we only need to recheck
         // our layout once.
-        (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.auditTime)(0, SCROLL_SCHEDULER),
+        (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.auditTime)(0, SCROLL_SCHEDULER),
         // Usually `elementScrolled` is completed when the scrollable is destroyed, but
         // that may not be the case if a `CdkVirtualScrollableElement` is used so we have
         // to unsubscribe here just in case.
-        (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.takeUntil)(this._destroyed)).subscribe(() => this._scrollStrategy.onContentScrolled());
+        (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.takeUntil)(this._destroyed)).subscribe(() => this._scrollStrategy.onContentScrolled());
         this._markChangeDetectionNeeded();
       }));
     }
@@ -866,7 +1476,7 @@ let CdkVirtualScrollViewport = /*#__PURE__*/(() => {
       // change detection loop ourselves.
       this.ngZone.runOutsideAngular(() => {
         this._forOf = forOf;
-        this._forOf.dataStream.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.takeUntil)(this._detachedSubject)).subscribe(data => {
+        this._forOf.dataStream.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.takeUntil)(this._detachedSubject)).subscribe(data => {
           const newLength = data.length;
           if (newLength !== this._dataLength) {
             this._dataLength = newLength;
@@ -1084,7 +1694,7 @@ let CdkVirtualScrollViewport = /*#__PURE__*/(() => {
         // string literals, a variable that can only be 'X' or 'Y', and user input that is run through
         // the `Number` function first to coerce it to a numeric value.
         this._contentWrapper.nativeElement.style.transform = this._renderedContentTransform;
-        (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.afterNextRender)(() => {
+        (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.afterNextRender)(() => {
           this._isChangeDetectionPending = false;
           const runAfterChangeDetection = this._runAfterChangeDetection;
           this._runAfterChangeDetection = [];
@@ -1098,61 +1708,61 @@ let CdkVirtualScrollViewport = /*#__PURE__*/(() => {
     }
     /** Calculates the `style.width` and `style.height` for the spacer element. */
     _calculateSpacerSize() {
-      this._totalContentHeight = this.orientation === 'horizontal' ? '' : `${this._totalContentSize}px`;
-      this._totalContentWidth = this.orientation === 'horizontal' ? `${this._totalContentSize}px` : '';
+      this._totalContentHeight.set(this.orientation === 'horizontal' ? '' : `${this._totalContentSize}px`);
+      this._totalContentWidth.set(this.orientation === 'horizontal' ? `${this._totalContentSize}px` : '');
     }
     static ɵfac = function CdkVirtualScrollViewport_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || CdkVirtualScrollViewport)();
     };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: CdkVirtualScrollViewport,
       selectors: [["cdk-virtual-scroll-viewport"]],
       viewQuery: function CdkVirtualScrollViewport_Query(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵviewQuery"](_c0, 7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, 7);
         }
         if (rf & 2) {
           let _t;
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx._contentWrapper = _t.first);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx._contentWrapper = _t.first);
         }
       },
       hostAttrs: [1, "cdk-virtual-scroll-viewport"],
       hostVars: 4,
       hostBindings: function CdkVirtualScrollViewport_HostBindings(rf, ctx) {
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassProp"]("cdk-virtual-scroll-orientation-horizontal", ctx.orientation === "horizontal")("cdk-virtual-scroll-orientation-vertical", ctx.orientation !== "horizontal");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("cdk-virtual-scroll-orientation-horizontal", ctx.orientation === "horizontal")("cdk-virtual-scroll-orientation-vertical", ctx.orientation !== "horizontal");
         }
       },
       inputs: {
         orientation: "orientation",
-        appendOnly: [2, "appendOnly", "appendOnly", _angular_core__WEBPACK_IMPORTED_MODULE_1__.booleanAttribute]
+        appendOnly: [2, "appendOnly", "appendOnly", _angular_core__WEBPACK_IMPORTED_MODULE_0__.booleanAttribute]
       },
       outputs: {
         scrolledIndexChange: "scrolledIndexChange"
       },
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([{
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([{
         provide: CdkScrollable,
         useFactory: (virtualScrollable, viewport) => virtualScrollable || viewport,
-        deps: [[new _angular_core__WEBPACK_IMPORTED_MODULE_1__.Optional(), new _angular_core__WEBPACK_IMPORTED_MODULE_1__.Inject(VIRTUAL_SCROLLABLE)], CdkVirtualScrollViewport]
-      }]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInputTransformsFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]],
+        deps: [[new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Optional(), new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Inject(VIRTUAL_SCROLLABLE)], CdkVirtualScrollViewport]
+      }]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
       ngContentSelectors: _c1,
       decls: 4,
       vars: 4,
       consts: [["contentWrapper", ""], [1, "cdk-virtual-scroll-content-wrapper"], [1, "cdk-virtual-scroll-spacer"]],
       template: function CdkVirtualScrollViewport_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 1, 0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](2);
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "div", 2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 1, 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "div", 2);
         }
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstyleProp"]("width", ctx._totalContentWidth)("height", ctx._totalContentHeight);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstyleProp"]("width", ctx._totalContentWidth())("height", ctx._totalContentHeight());
         }
       },
-      styles: ["cdk-virtual-scroll-viewport{display:block;position:relative;transform:translateZ(0)}.cdk-virtual-scrollable{overflow:auto;will-change:scroll-position;contain:strict}.cdk-virtual-scroll-content-wrapper{position:absolute;top:0;left:0;contain:content}[dir=rtl] .cdk-virtual-scroll-content-wrapper{right:0;left:auto}.cdk-virtual-scroll-orientation-horizontal .cdk-virtual-scroll-content-wrapper{min-height:100%}.cdk-virtual-scroll-orientation-horizontal .cdk-virtual-scroll-content-wrapper>dl:not([cdkVirtualFor]),.cdk-virtual-scroll-orientation-horizontal .cdk-virtual-scroll-content-wrapper>ol:not([cdkVirtualFor]),.cdk-virtual-scroll-orientation-horizontal .cdk-virtual-scroll-content-wrapper>table:not([cdkVirtualFor]),.cdk-virtual-scroll-orientation-horizontal .cdk-virtual-scroll-content-wrapper>ul:not([cdkVirtualFor]){padding-left:0;padding-right:0;margin-left:0;margin-right:0;border-left-width:0;border-right-width:0;outline:none}.cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper{min-width:100%}.cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper>dl:not([cdkVirtualFor]),.cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper>ol:not([cdkVirtualFor]),.cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper>table:not([cdkVirtualFor]),.cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper>ul:not([cdkVirtualFor]){padding-top:0;padding-bottom:0;margin-top:0;margin-bottom:0;border-top-width:0;border-bottom-width:0;outline:none}.cdk-virtual-scroll-spacer{height:1px;transform-origin:0 0;flex:0 0 auto}[dir=rtl] .cdk-virtual-scroll-spacer{transform-origin:100% 0}"],
+      styles: ["cdk-virtual-scroll-viewport{display:block;position:relative;transform:translateZ(0)}.cdk-virtual-scrollable{overflow:auto;will-change:scroll-position;contain:strict}.cdk-virtual-scroll-content-wrapper{position:absolute;top:0;left:0;contain:content}[dir=rtl] .cdk-virtual-scroll-content-wrapper{right:0;left:auto}.cdk-virtual-scroll-orientation-horizontal .cdk-virtual-scroll-content-wrapper{min-height:100%}.cdk-virtual-scroll-orientation-horizontal .cdk-virtual-scroll-content-wrapper>dl:not([cdkVirtualFor]),.cdk-virtual-scroll-orientation-horizontal .cdk-virtual-scroll-content-wrapper>ol:not([cdkVirtualFor]),.cdk-virtual-scroll-orientation-horizontal .cdk-virtual-scroll-content-wrapper>table:not([cdkVirtualFor]),.cdk-virtual-scroll-orientation-horizontal .cdk-virtual-scroll-content-wrapper>ul:not([cdkVirtualFor]){padding-left:0;padding-right:0;margin-left:0;margin-right:0;border-left-width:0;border-right-width:0;outline:none}.cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper{min-width:100%}.cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper>dl:not([cdkVirtualFor]),.cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper>ol:not([cdkVirtualFor]),.cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper>table:not([cdkVirtualFor]),.cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper>ul:not([cdkVirtualFor]){padding-top:0;padding-bottom:0;margin-top:0;margin-bottom:0;border-top-width:0;border-bottom-width:0;outline:none}.cdk-virtual-scroll-spacer{height:1px;transform-origin:0 0;flex:0 0 auto}[dir=rtl] .cdk-virtual-scroll-spacer{transform-origin:100% 0}\n"],
       encapsulation: 2,
       changeDetection: 0
     });
@@ -1181,28 +1791,28 @@ function getOffset(orientation, direction, node) {
  */
 let CdkVirtualForOf = /*#__PURE__*/(() => {
   class CdkVirtualForOf {
-    _viewContainerRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ViewContainerRef);
-    _template = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.TemplateRef);
-    _differs = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.IterableDiffers);
-    _viewRepeater = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_collections__WEBPACK_IMPORTED_MODULE_6__._VIEW_REPEATER_STRATEGY);
-    _viewport = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(CdkVirtualScrollViewport, {
+    _viewContainerRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewContainerRef);
+    _template = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.TemplateRef);
+    _differs = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.IterableDiffers);
+    _viewRepeater = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_recycle_view_repeater_strategy_SfuyU210_mjs__WEBPACK_IMPORTED_MODULE_9__.b);
+    _viewport = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(CdkVirtualScrollViewport, {
       skipSelf: true
     });
     /** Emits when the rendered view of the data changes. */
-    viewChange = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
+    viewChange = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
     /** Subject that emits when a new DataSource instance is given. */
-    _dataSourceChanges = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
+    _dataSourceChanges = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
     /** The DataSource to display. */
     get cdkVirtualForOf() {
       return this._cdkVirtualForOf;
     }
     set cdkVirtualForOf(value) {
       this._cdkVirtualForOf = value;
-      if ((0,_angular_cdk_collections__WEBPACK_IMPORTED_MODULE_6__.isDataSource)(value)) {
+      if ((0,_data_source_D34wiQZj_mjs__WEBPACK_IMPORTED_MODULE_10__.i)(value)) {
         this._dataSourceChanges.next(value);
       } else {
         // If value is an an NgIterable, convert it to an array.
-        this._dataSourceChanges.next(new _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_6__.ArrayDataSource((0,rxjs__WEBPACK_IMPORTED_MODULE_2__.isObservable)(value) ? value : Array.from(value || [])));
+        this._dataSourceChanges.next(new _recycle_view_repeater_strategy_SfuyU210_mjs__WEBPACK_IMPORTED_MODULE_9__.A((0,rxjs__WEBPACK_IMPORTED_MODULE_1__.isObservable)(value) ? value : Array.from(value || [])));
       }
     }
     _cdkVirtualForOf;
@@ -1233,20 +1843,20 @@ let CdkVirtualForOf = /*#__PURE__*/(() => {
       return this._viewRepeater.viewCacheSize;
     }
     set cdkVirtualForTemplateCacheSize(size) {
-      this._viewRepeater.viewCacheSize = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_0__.coerceNumberProperty)(size);
+      this._viewRepeater.viewCacheSize = (0,_element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_5__.c)(size);
     }
     /** Emits whenever the data in the current DataSource changes. */
     dataStream = this._dataSourceChanges.pipe(
     // Start off with null `DataSource`.
-    (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.startWith)(null),
+    (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.startWith)(null),
     // Bundle up the previous and current data sources so we can work with both.
-    (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.pairwise)(),
+    (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.pairwise)(),
     // Use `_changeDataSource` to disconnect from the previous data source and connect to the
     // new one, passing back a stream of data changes which we run through `switchMap` to give
     // us a data stream that emits the latest data from whatever the current `DataSource` is.
-    (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.switchMap)(([prev, cur]) => this._changeDataSource(prev, cur)),
+    (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.switchMap)(([prev, cur]) => this._changeDataSource(prev, cur)),
     // Replay the last emitted data when someone subscribes.
-    (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.shareReplay)(1));
+    (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.shareReplay)(1));
     /** The differ used to calculate changes to the data. */
     _differ = null;
     /** The most recent data emitted from the DataSource. */
@@ -1257,14 +1867,14 @@ let CdkVirtualForOf = /*#__PURE__*/(() => {
     _renderedRange;
     /** Whether the rendered data should be updated during the next ngDoCheck cycle. */
     _needsUpdate = false;
-    _destroyed = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Subject();
+    _destroyed = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
     constructor() {
-      const ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.NgZone);
+      const ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone);
       this.dataStream.subscribe(data => {
         this._data = data;
         this._onRenderedDataChange();
       });
-      this._viewport.renderedRangeStream.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.takeUntil)(this._destroyed)).subscribe(range => {
+      this._viewport.renderedRangeStream.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.takeUntil)(this._destroyed)).subscribe(range => {
         this._renderedRange = range;
         if (this.viewChange.observers.length) {
           ngZone.run(() => this.viewChange.next(this._renderedRange));
@@ -1355,7 +1965,7 @@ let CdkVirtualForOf = /*#__PURE__*/(() => {
         oldDs.disconnect(this);
       }
       this._needsUpdate = true;
-      return newDs ? newDs.connect(this) : (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)();
+      return newDs ? newDs.connect(this) : (0,rxjs__WEBPACK_IMPORTED_MODULE_1__.of)();
     }
     /** Update the `CdkVirtualForOfContext` for all views. */
     _updateContext() {
@@ -1422,7 +2032,7 @@ let CdkVirtualForOf = /*#__PURE__*/(() => {
     static ɵfac = function CdkVirtualForOf_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || CdkVirtualForOf)();
     };
-    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
+    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
       type: CdkVirtualForOf,
       selectors: [["", "cdkVirtualFor", "", "cdkVirtualForOf", ""]],
       inputs: {
@@ -1431,9 +2041,9 @@ let CdkVirtualForOf = /*#__PURE__*/(() => {
         cdkVirtualForTemplate: "cdkVirtualForTemplate",
         cdkVirtualForTemplateCacheSize: "cdkVirtualForTemplateCacheSize"
       },
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([{
-        provide: _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_6__._VIEW_REPEATER_STRATEGY,
-        useClass: _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_6__._RecycleViewRepeaterStrategy
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([{
+        provide: _recycle_view_repeater_strategy_SfuyU210_mjs__WEBPACK_IMPORTED_MODULE_9__.b,
+        useClass: _recycle_view_repeater_strategy_SfuyU210_mjs__WEBPACK_IMPORTED_MODULE_9__._
       }])]
     });
   }
@@ -1457,14 +2067,14 @@ let CdkVirtualScrollableElement = /*#__PURE__*/(() => {
     static ɵfac = function CdkVirtualScrollableElement_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || CdkVirtualScrollableElement)();
     };
-    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
+    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
       type: CdkVirtualScrollableElement,
       selectors: [["", "cdkVirtualScrollingElement", ""]],
       hostAttrs: [1, "cdk-virtual-scrollable"],
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([{
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([{
         provide: VIRTUAL_SCROLLABLE,
         useExisting: CdkVirtualScrollableElement
-      }]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]]
+      }]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]]
     });
   }
   return CdkVirtualScrollableElement;
@@ -1480,8 +2090,8 @@ let CdkVirtualScrollableWindow = /*#__PURE__*/(() => {
   class CdkVirtualScrollableWindow extends CdkVirtualScrollable {
     constructor() {
       super();
-      const document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_common__WEBPACK_IMPORTED_MODULE_7__.DOCUMENT);
-      this.elementRef = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.ElementRef(document.documentElement);
+      const document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT);
+      this.elementRef = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef(document.documentElement);
       this._scrollElement = document;
     }
     measureBoundingClientRectWithScrollOffset(from) {
@@ -1490,13 +2100,13 @@ let CdkVirtualScrollableWindow = /*#__PURE__*/(() => {
     static ɵfac = function CdkVirtualScrollableWindow_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || CdkVirtualScrollableWindow)();
     };
-    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
+    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
       type: CdkVirtualScrollableWindow,
       selectors: [["cdk-virtual-scroll-viewport", "scrollWindow", ""]],
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([{
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([{
         provide: VIRTUAL_SCROLLABLE,
         useExisting: CdkVirtualScrollableWindow
-      }]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]]
+      }]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]]
     });
   }
   return CdkVirtualScrollableWindow;
@@ -1509,10 +2119,10 @@ let CdkScrollableModule = /*#__PURE__*/(() => {
     static ɵfac = function CdkScrollableModule_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || CdkScrollableModule)();
     };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
       type: CdkScrollableModule
     });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({});
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({});
   }
   return CdkScrollableModule;
 })();
@@ -1527,11 +2137,11 @@ let ScrollingModule = /*#__PURE__*/(() => {
     static ɵfac = function ScrollingModule_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || ScrollingModule)();
     };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
       type: ScrollingModule
     });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
-      imports: [_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_5__.BidiModule, CdkScrollableModule, _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_5__.BidiModule, CdkScrollableModule]
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+      imports: [_bidi_mjs__WEBPACK_IMPORTED_MODULE_3__.BidiModule, CdkScrollableModule, _bidi_mjs__WEBPACK_IMPORTED_MODULE_3__.BidiModule, CdkScrollableModule]
     });
   }
   return ScrollingModule;
@@ -1540,10 +2150,47 @@ let ScrollingModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
-/**
- * Generated bundle index. Do not edit.
- */
 
+/***/ }),
+
+/***/ 94724:
+/*!*****************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/element-x4z00URv.mjs ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   _: () => (/* binding */ _isNumberValue),
+/* harmony export */   a: () => (/* binding */ coerceElement),
+/* harmony export */   c: () => (/* binding */ coerceNumberProperty)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+
+function coerceNumberProperty(value, fallbackValue = 0) {
+  if (_isNumberValue(value)) {
+    return Number(value);
+  }
+  return arguments.length === 2 ? fallbackValue : 0;
+}
+/**
+ * Whether the provided value is considered a number.
+ * @docs-private
+ */
+function _isNumberValue(value) {
+  // parseFloat(value) handles most of the cases we're interested in (it treats null, empty string,
+  // and other non-number values as NaN, where Number just uses 0) but it considers the string
+  // '123hello' to be a valid number. Therefore we also check if Number(value) is NaN.
+  return !isNaN(parseFloat(value)) && !isNaN(Number(value));
+}
+
+/**
+ * Coerces an ElementRef or an Element into an element.
+ * Useful for APIs that can accept either a ref or the native element itself.
+ */
+function coerceElement(elementOrRef) {
+  return elementOrRef instanceof _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef ? elementOrRef.nativeElement : elementOrRef;
+}
 
 
 /***/ })

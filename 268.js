@@ -10,16 +10,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   NgxEditorJs2ImageComponent: () => (/* binding */ NgxEditorJs2ImageComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ 59694);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 9516);
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/button */ 28326);
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/icon */ 70018);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 56748);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ 85914);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/button */ 33977);
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/icon */ 37409);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 7140);
 /* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
-/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 53576);
-/* harmony import */ var _angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core/rxjs-interop */ 56968);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/form-field */ 43250);
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/input */ 62392);
+/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 77947);
+/* harmony import */ var _angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core/rxjs-interop */ 33316);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/form-field */ 76833);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/input */ 29757);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs */ 44866);
 
 
@@ -70,13 +70,13 @@ function ImageConfigComponent_Conditional_1_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](5, "Title");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](6, "input", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](7, ImageConfigComponent_Conditional_1_Conditional_7_Template, 2, 1, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditionalCreate"](7, ImageConfigComponent_Conditional_1_Conditional_7_Template, 2, 1, "mat-error");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "mat-form-field")(9, "mat-label");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](10, "URL");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](11, "input", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](12, ImageConfigComponent_Conditional_1_Conditional_12_Template, 2, 1, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditionalCreate"](12, ImageConfigComponent_Conditional_1_Conditional_12_Template, 2, 1, "mat-error");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "div", 5)(14, "button", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ImageConfigComponent_Conditional_1_Template_button_click_14_listener() {
@@ -84,7 +84,7 @@ function ImageConfigComponent_Conditional_1_Template(rf, ctx) {
       const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵresetView"](ctx_r2.updateImage(vm_r2.imageConfigForm));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](15, " Save ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](15, " Update ");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](16, "button", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ImageConfigComponent_Conditional_1_Template_button_click_16_listener() {
@@ -209,11 +209,11 @@ let ImageConfigComponent = /*#__PURE__*/(() => {
       },
       decls: 3,
       vars: 3,
-      consts: [[1, "image-block-modal"], [3, "formGroup"], ["mat-dialog-title", ""], ["matInput", "", "type", "text", "formControlName", "title"], ["matInput", "", "type", "text", "formControlName", "url"], [1, "action-group"], ["type", "button", "mat-raised-button", "", 3, "click", "disabled"], ["type", "button", "mat-raised-button", "", 3, "click"]],
+      consts: [[1, "image-block-modal"], [3, "formGroup"], ["mat-dialog-title", ""], ["matInput", "", "type", "text", "formControlName", "title"], ["matInput", "", "type", "text", "formControlName", "url"], [1, "action-group"], ["type", "button", "mat-flat-button", "", 3, "click", "disabled"], ["type", "button", "mat-button", "", 3, "click"]],
       template: function ImageConfigComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, ImageConfigComponent_Conditional_1_Template, 18, 4, "form", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditionalCreate"](1, ImageConfigComponent_Conditional_1_Template, 18, 4, "form", 1);
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](2, "async");
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         }
@@ -224,7 +224,7 @@ let ImageConfigComponent = /*#__PURE__*/(() => {
         }
       },
       dependencies: [_angular_material_input__WEBPACK_IMPORTED_MODULE_8__.MatInput, _angular_material_button__WEBPACK_IMPORTED_MODULE_2__.MatButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormFieldModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatError, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControlName, _angular_common__WEBPACK_IMPORTED_MODULE_0__.AsyncPipe],
-      styles: ["[_nghost-%COMP%]{border:.5px solid #ccc;border-radius:4px;padding:20px}[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:10px}"]
+      styles: ["[_nghost-%COMP%]{border:1px solid #ccc;border-radius:var( --mat-card-outlined-container-shape, var(--mat-sys-corner-medium) );padding:20px}[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:10px}"]
     });
   }
   return ImageConfigComponent;
@@ -301,7 +301,7 @@ let NgxEditorJs2ImageComponent = /*#__PURE__*/(() => {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerStart"](0, 0);
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, NgxEditorJs2ImageComponent_Conditional_2_Template, 5, 3, "div", 2)(3, NgxEditorJs2ImageComponent_Conditional_3_Template, 1, 1, "image-config", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditionalCreate"](2, NgxEditorJs2ImageComponent_Conditional_2_Template, 5, 3, "div", 2)(3, NgxEditorJs2ImageComponent_Conditional_3_Template, 1, 1, "image-config", 3);
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerEnd"]();
         }
         if (rf & 2) {
@@ -313,7 +313,7 @@ let NgxEditorJs2ImageComponent = /*#__PURE__*/(() => {
         }
       },
       dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControlName, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_10__.ControlAccessorDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_10__.AutofocusDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_10__.ToolbarFabDirective, ImageConfigComponent, _angular_material_button__WEBPACK_IMPORTED_MODULE_2__.MatFabButton, _angular_material_icon__WEBPACK_IMPORTED_MODULE_3__.MatIcon, _angular_common__WEBPACK_IMPORTED_MODULE_0__.NgClass],
-      styles: ["[_nghost-%COMP%]{position:relative;display:flex;flex-direction:column;margin:1.5rem 0}[_nghost-%COMP%]   .flex-start[_ngcontent-%COMP%]{justify-content:flex-start}[_nghost-%COMP%]   .flex-end[_ngcontent-%COMP%]{justify-content:flex-end}[_nghost-%COMP%]   .center[_ngcontent-%COMP%]{justify-content:center}[_nghost-%COMP%]   .stretch[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{width:100%}[_nghost-%COMP%]   .image-container-overlay[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;position:absolute}[_nghost-%COMP%]   :is(.image-container-overlay[_ngcontent-%COMP%]:hover ~ .image-container[_ngcontent-%COMP%]   .image-block-button[_ngcontent-%COMP%], .image-block-button[_ngcontent-%COMP%]:hover){display:block}[_nghost-%COMP%]   .image-container[_ngcontent-%COMP%]{display:flex}[_nghost-%COMP%]   .image-container[_ngcontent-%COMP%]   .image-block[_ngcontent-%COMP%]{min-width:0}[_nghost-%COMP%]   .image-container[_ngcontent-%COMP%]   .image-block-button[_ngcontent-%COMP%]{position:absolute;top:6px;left:6px;display:none}"]
+      styles: ["[_nghost-%COMP%]{position:relative;display:flex;flex-direction:column;margin:1.5rem 0}[_nghost-%COMP%]   .flex-start[_ngcontent-%COMP%]{justify-content:flex-start}[_nghost-%COMP%]   .flex-end[_ngcontent-%COMP%]{justify-content:flex-end}[_nghost-%COMP%]   .center[_ngcontent-%COMP%]{justify-content:center}[_nghost-%COMP%]   .stretch[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{width:100%}[_nghost-%COMP%]   .image-container-overlay[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;position:absolute}[_nghost-%COMP%]   .image-container-overlay[_ngcontent-%COMP%]:hover ~ .image-container[_ngcontent-%COMP%]   .image-block-button[_ngcontent-%COMP%], [_nghost-%COMP%]   .image-block-button[_ngcontent-%COMP%]:hover{display:block}[_nghost-%COMP%]   .image-container[_ngcontent-%COMP%]{display:flex}[_nghost-%COMP%]   .image-container[_ngcontent-%COMP%]   .image-block[_ngcontent-%COMP%]{min-width:0}[_nghost-%COMP%]   .image-container[_ngcontent-%COMP%]   .image-block-button[_ngcontent-%COMP%]{position:absolute;top:6px;left:6px;display:none}"]
     });
   }
   return NgxEditorJs2ImageComponent;

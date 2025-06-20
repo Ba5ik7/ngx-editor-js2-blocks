@@ -1187,9 +1187,7 @@ var TextDimensionCalculatorWithFont = class {
   constructor(parentGroup) {
     this.parentGroup = parentGroup;
   }
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "TextDimensionCalculatorWithFont");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "TextDimensionCalculatorWithFont");
   getMaxDimension(texts, fontSize) {
     if (!this.parentGroup) {
       return {
@@ -1249,9 +1247,7 @@ var BaseAxis = class {
     };
     this.axisPosition = "left";
   }
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "BaseAxis");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "BaseAxis");
   setRange(range) {
     this.range = range;
     if (this.axisPosition === "left" || this.axisPosition === "right") {
@@ -1564,9 +1560,7 @@ var BaseAxis = class {
 
 // src/diagrams/xychart/chartBuilder/components/axis/bandAxis.ts
 var BandAxis = class extends BaseAxis {
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "BandAxis");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "BandAxis");
   constructor(axisConfig, axisThemeConfig, categories, title, textDimensionCalculator) {
     super(axisConfig, title, textDimensionCalculator, axisThemeConfig);
     this.categories = categories;
@@ -1590,9 +1584,7 @@ var BandAxis = class extends BaseAxis {
 // src/diagrams/xychart/chartBuilder/components/axis/linearAxis.ts
 
 var LinearAxis = class extends BaseAxis {
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "LinearAxis");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "LinearAxis");
   constructor(axisConfig, axisThemeConfig, domain, title, textDimensionCalculator) {
     super(axisConfig, title, textDimensionCalculator, axisThemeConfig);
     this.domain = domain;
@@ -1638,9 +1630,7 @@ var ChartTitle = class {
     };
     this.showChartTitle = false;
   }
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "ChartTitle");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "ChartTitle");
   setBoundingBoxXY(point) {
     this.boundingRect.x = point.x;
     this.boundingRect.y = point.y;
@@ -1696,9 +1686,7 @@ var LinePlot = class {
     this.orientation = orientation;
     this.plotIndex = plotIndex2;
   }
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "LinePlot");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "LinePlot");
   getDrawableElement() {
     const finalData = this.plotData.data.map(d => [this.xAxis.getScaleValue(d[0]), this.yAxis.getScaleValue(d[1])]);
     let path;
@@ -1732,9 +1720,7 @@ var BarPlot = class {
     this.orientation = orientation;
     this.plotIndex = plotIndex2;
   }
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "BarPlot");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "BarPlot");
   getDrawableElement() {
     const finalData = this.barData.data.map(d => [this.xAxis.getScaleValue(d[0]), this.yAxis.getScaleValue(d[1])]);
     const barPaddingPercent = 0.05;
@@ -1784,9 +1770,7 @@ var BasePlot = class {
       height: 0
     };
   }
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "BasePlot");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "BasePlot");
   setAxes(xAxis, yAxis) {
     this.xAxis = xAxis;
     this.yAxis = yAxis;
@@ -1854,9 +1838,7 @@ var Orchestrator = class {
       }, tmpSVGGroup2)
     };
   }
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "Orchestrator");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "Orchestrator");
   calculateVerticalSpace() {
     let availableWidth = this.chartConfig.width;
     let availableHeight = this.chartConfig.height;
@@ -2003,9 +1985,7 @@ var Orchestrator = class {
 
 // src/diagrams/xychart/chartBuilder/index.ts
 var XYChartBuilder = class {
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "XYChartBuilder");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_3__.__name)(this, "XYChartBuilder");
   static build(config, chartData, chartThemeConfig, tmpSVGGroup2) {
     const orchestrator = new Orchestrator(config, chartData, chartThemeConfig, tmpSVGGroup2);
     return orchestrator.getDrawableElement();

@@ -1,35 +1,88 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[3840],{
 
-/***/ 93840:
-/*!**********************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2022/icon.mjs ***!
-  \**********************************************************/
+/***/ 8126:
+/*!****************************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/common-module-cKSwHniA.mjs ***!
+  \****************************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   ICON_REGISTRY_PROVIDER: () => (/* binding */ ICON_REGISTRY_PROVIDER),
-/* harmony export */   ICON_REGISTRY_PROVIDER_FACTORY: () => (/* binding */ ICON_REGISTRY_PROVIDER_FACTORY),
-/* harmony export */   MAT_ICON_DEFAULT_OPTIONS: () => (/* binding */ MAT_ICON_DEFAULT_OPTIONS),
-/* harmony export */   MAT_ICON_LOCATION: () => (/* binding */ MAT_ICON_LOCATION),
-/* harmony export */   MAT_ICON_LOCATION_FACTORY: () => (/* binding */ MAT_ICON_LOCATION_FACTORY),
-/* harmony export */   MatIcon: () => (/* binding */ MatIcon),
-/* harmony export */   MatIconModule: () => (/* binding */ MatIconModule),
-/* harmony export */   MatIconRegistry: () => (/* binding */ MatIconRegistry),
-/* harmony export */   getMatIconFailedToSanitizeLiteralError: () => (/* binding */ getMatIconFailedToSanitizeLiteralError),
-/* harmony export */   getMatIconFailedToSanitizeUrlError: () => (/* binding */ getMatIconFailedToSanitizeUrlError),
-/* harmony export */   getMatIconNameNotFoundError: () => (/* binding */ getMatIconNameNotFoundError),
-/* harmony export */   getMatIconNoHttpProviderError: () => (/* binding */ getMatIconNoHttpProviderError)
+/* harmony export */   M: () => (/* binding */ MatCommonModule),
+/* harmony export */   a: () => (/* binding */ MATERIAL_SANITY_CHECKS)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 9516);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/core */ 84718);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 59694);
+/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/a11y */ 56593);
+/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/bidi */ 48073);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 27940);
+
+
+
+
+
+/**
+ * Injection token that configures whether the Material sanity checks are enabled.
+ * @deprecated No longer used and will be removed.
+ * @breaking-change 21.0.0
+ */
+const MATERIAL_SANITY_CHECKS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_2__.InjectionToken('mat-sanity-checks', {
+  providedIn: 'root',
+  factory: () => true
+});
+/**
+ * Module that captures anything that should be loaded and/or run for *all* Angular Material
+ * components. This includes Bidi, etc.
+ *
+ * This module should be imported to each top-level component module (e.g., MatTabsModule).
+ * @deprecated No longer used and will be removed.
+ * @breaking-change 21.0.0
+ */
+let MatCommonModule = /*#__PURE__*/(() => {
+  class MatCommonModule {
+    constructor() {
+      // While A11yModule also does this, we repeat it here to avoid importing A11yModule
+      // in MatCommonModule.
+      (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__.HighContrastModeDetector)._applyBodyHighContrastModeCssClasses();
+    }
+    static ɵfac = function MatCommonModule_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || MatCommonModule)();
+    };
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({
+      type: MatCommonModule
+    });
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({
+      imports: [_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__.BidiModule, _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__.BidiModule]
+    });
+  }
+  return MatCommonModule;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+
+/***/ }),
+
+/***/ 50069:
+/*!****************************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/icon-registry-CwOTJ7YM.mjs ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   I: () => (/* binding */ ICON_REGISTRY_PROVIDER_FACTORY),
+/* harmony export */   M: () => (/* binding */ MatIconRegistry),
+/* harmony export */   a: () => (/* binding */ getMatIconNoHttpProviderError),
+/* harmony export */   b: () => (/* binding */ getMatIconFailedToSanitizeUrlError),
+/* harmony export */   c: () => (/* binding */ getMatIconFailedToSanitizeLiteralError),
+/* harmony export */   d: () => (/* binding */ ICON_REGISTRY_PROVIDER),
+/* harmony export */   g: () => (/* binding */ getMatIconNameNotFoundError)
+/* harmony export */ });
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ 52580);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ 53105);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 44866);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 32778);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ 65744);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser */ 23893);
-
-
 
 
 
@@ -43,7 +96,6 @@ __webpack_require__.r(__webpack_exports__);
  * The Trusted Types policy, or null if Trusted Types are not
  * enabled/supported, or undefined if the policy has not been created yet.
  */
-const _c0 = ["*"];
 let policy;
 /**
  * Returns the Trusted Types policy, or null if Trusted Types are not
@@ -209,7 +261,7 @@ let MatIconRegistry = /*#__PURE__*/(() => {
      * @param literal SVG source of the icon.
      */
     addSvgIconLiteralInNamespace(namespace, iconName, literal, options) {
-      const cleanLiteral = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_0__.SecurityContext.HTML, literal);
+      const cleanLiteral = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_1__.SecurityContext.HTML, literal);
       // TODO: add an ngDevMode check
       if (!cleanLiteral) {
         throw getMatIconFailedToSanitizeLiteralError(literal);
@@ -246,7 +298,7 @@ let MatIconRegistry = /*#__PURE__*/(() => {
      * @param literal SVG source of the icon set.
      */
     addSvgIconSetLiteralInNamespace(namespace, literal, options) {
-      const cleanLiteral = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_0__.SecurityContext.HTML, literal);
+      const cleanLiteral = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_1__.SecurityContext.HTML, literal);
       if (!cleanLiteral) {
         throw getMatIconFailedToSanitizeLiteralError(literal);
       }
@@ -310,7 +362,7 @@ let MatIconRegistry = /*#__PURE__*/(() => {
      * @param safeUrl URL from which to fetch the SVG icon.
      */
     getSvgIconFromUrl(safeUrl) {
-      const url = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_0__.SecurityContext.RESOURCE_URL, safeUrl);
+      const url = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_1__.SecurityContext.RESOURCE_URL, safeUrl);
       if (!url) {
         throw getMatIconFailedToSanitizeUrlError(safeUrl);
       }
@@ -388,7 +440,7 @@ let MatIconRegistry = /*#__PURE__*/(() => {
       // fetched, fetch them now and look for iconName in the results.
       const iconSetFetchRequests = iconSetConfigs.filter(iconSetConfig => !iconSetConfig.svgText).map(iconSetConfig => {
         return this._loadSvgIconSetFromConfig(iconSetConfig).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(err => {
-          const url = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_0__.SecurityContext.RESOURCE_URL, iconSetConfig.url);
+          const url = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_1__.SecurityContext.RESOURCE_URL, iconSetConfig.url);
           // Swallow errors fetching individual URLs so the
           // combined Observable won't necessarily fail.
           const errorMessage = `Loading icon set URL: ${url} failed: ${err.message}`;
@@ -551,7 +603,7 @@ let MatIconRegistry = /*#__PURE__*/(() => {
       if (safeUrl == null) {
         throw Error(`Cannot fetch icon from URL "${safeUrl}".`);
       }
-      const url = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_0__.SecurityContext.RESOURCE_URL, safeUrl);
+      const url = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_1__.SecurityContext.RESOURCE_URL, safeUrl);
       // TODO: add an ngDevMode check
       if (!url) {
         throw getMatIconFailedToSanitizeUrlError(safeUrl);
@@ -618,9 +670,9 @@ let MatIconRegistry = /*#__PURE__*/(() => {
       return undefined;
     }
     static ɵfac = function MatIconRegistry_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || MatIconRegistry)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpClient, 8), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__.DomSanitizer), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_2__.DOCUMENT, 8), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ErrorHandler));
+      return new (__ngFactoryType__ || MatIconRegistry)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpClient, 8), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__.DomSanitizer), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT, 8), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__.ErrorHandler));
     };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
       token: MatIconRegistry,
       factory: MatIconRegistry.ɵfac,
       providedIn: 'root'
@@ -631,15 +683,23 @@ let MatIconRegistry = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-/** @docs-private */
+/**
+ * @docs-private
+ * @deprecated No longer used, will be removed.
+ * @breaking-change 21.0.0
+ */
 function ICON_REGISTRY_PROVIDER_FACTORY(parentRegistry, httpClient, sanitizer, errorHandler, document) {
   return parentRegistry || new MatIconRegistry(httpClient, sanitizer, document, errorHandler);
 }
-/** @docs-private */
+/**
+ * @docs-private
+ * @deprecated No longer used, will be removed.
+ * @breaking-change 21.0.0
+ */
 const ICON_REGISTRY_PROVIDER = {
   // If there is already an MatIconRegistry available, use that. Otherwise, provide a new one.
   provide: MatIconRegistry,
-  deps: [[/*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Optional(), /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.SkipSelf(), MatIconRegistry], [/*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Optional(), _angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpClient], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__.DomSanitizer, _angular_core__WEBPACK_IMPORTED_MODULE_0__.ErrorHandler, [/*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Optional(), _angular_common__WEBPACK_IMPORTED_MODULE_2__.DOCUMENT]],
+  deps: [[/*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.Optional(), /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.SkipSelf(), MatIconRegistry], [/*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.Optional(), _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpClient], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__.DomSanitizer, _angular_core__WEBPACK_IMPORTED_MODULE_1__.ErrorHandler, [/*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.Optional(), _angular_core__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT]],
   useFactory: ICON_REGISTRY_PROVIDER_FACTORY
 };
 /** Clones an SVGElement while preserving type information. */
@@ -654,6 +714,52 @@ function isSafeUrlWithOptions(value) {
   return !!(value.url && value.options);
 }
 
+
+/***/ }),
+
+/***/ 93840:
+/*!**********************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/icon.mjs ***!
+  \**********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ICON_REGISTRY_PROVIDER: () => (/* reexport safe */ _icon_registry_CwOTJ7YM_mjs__WEBPACK_IMPORTED_MODULE_3__.d),
+/* harmony export */   ICON_REGISTRY_PROVIDER_FACTORY: () => (/* reexport safe */ _icon_registry_CwOTJ7YM_mjs__WEBPACK_IMPORTED_MODULE_3__.I),
+/* harmony export */   MAT_ICON_DEFAULT_OPTIONS: () => (/* binding */ MAT_ICON_DEFAULT_OPTIONS),
+/* harmony export */   MAT_ICON_LOCATION: () => (/* binding */ MAT_ICON_LOCATION),
+/* harmony export */   MAT_ICON_LOCATION_FACTORY: () => (/* binding */ MAT_ICON_LOCATION_FACTORY),
+/* harmony export */   MatIcon: () => (/* binding */ MatIcon),
+/* harmony export */   MatIconModule: () => (/* binding */ MatIconModule),
+/* harmony export */   MatIconRegistry: () => (/* reexport safe */ _icon_registry_CwOTJ7YM_mjs__WEBPACK_IMPORTED_MODULE_3__.M),
+/* harmony export */   getMatIconFailedToSanitizeLiteralError: () => (/* reexport safe */ _icon_registry_CwOTJ7YM_mjs__WEBPACK_IMPORTED_MODULE_3__.c),
+/* harmony export */   getMatIconFailedToSanitizeUrlError: () => (/* reexport safe */ _icon_registry_CwOTJ7YM_mjs__WEBPACK_IMPORTED_MODULE_3__.b),
+/* harmony export */   getMatIconNameNotFoundError: () => (/* reexport safe */ _icon_registry_CwOTJ7YM_mjs__WEBPACK_IMPORTED_MODULE_3__.g),
+/* harmony export */   getMatIconNoHttpProviderError: () => (/* reexport safe */ _icon_registry_CwOTJ7YM_mjs__WEBPACK_IMPORTED_MODULE_3__.a)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 44866);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 32778);
+/* harmony import */ var _icon_registry_CwOTJ7YM_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./icon-registry-CwOTJ7YM.mjs */ 50069);
+/* harmony import */ var _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./common-module-cKSwHniA.mjs */ 8126);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ 52580);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser */ 53105);
+/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/a11y */ 56593);
+/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/cdk/bidi */ 48073);
+
+
+
+
+
+const _c0 = ["*"];
+
+
+
+
+
+
+
 /** Injection token to be used to override the default options for `mat-icon`. */
 const MAT_ICON_DEFAULT_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('MAT_ICON_DEFAULT_OPTIONS');
 /**
@@ -665,9 +771,13 @@ const MAT_ICON_LOCATION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODUL
   providedIn: 'root',
   factory: MAT_ICON_LOCATION_FACTORY
 });
-/** @docs-private */
+/**
+ * @docs-private
+ * @deprecated No longer used, will be removed.
+ * @breaking-change 21.0.0
+ */
 function MAT_ICON_LOCATION_FACTORY() {
-  const _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_common__WEBPACK_IMPORTED_MODULE_2__.DOCUMENT);
+  const _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT);
   const _location = _document ? _document.location : null;
   return {
     // Note that this needs to be a function, rather than a property, because Angular
@@ -716,16 +826,16 @@ const funcIriPattern = /^url\(['"]?#(.*?)['"]?\)$/;
 let MatIcon = /*#__PURE__*/(() => {
   class MatIcon {
     _elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
-    _iconRegistry = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(MatIconRegistry);
+    _iconRegistry = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_icon_registry_CwOTJ7YM_mjs__WEBPACK_IMPORTED_MODULE_3__.M);
     _location = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(MAT_ICON_LOCATION);
     _errorHandler = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ErrorHandler);
     _defaultColor;
     /**
      * Theme color of the icon. This API is supported in M2 themes only, it
-     * has no effect in M3 themes. For color customization in M3, see https://material.angular.io/components/icon/styling.
+     * has no effect in M3 themes. For color customization in M3, see https://material.angular.dev/components/icon/styling.
      *
      * For information on applying color variants in M3, see
-     * https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants
+     * https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants
      */
     get color() {
       return this._color || this._defaultColor;
@@ -787,7 +897,7 @@ let MatIcon = /*#__PURE__*/(() => {
     /** Keeps track of the elements and attributes that we've prefixed with the current path. */
     _elementsWithExternalReferences;
     /** Subscription to the current in-progress SVG icon request. */
-    _currentIconFetch = rxjs__WEBPACK_IMPORTED_MODULE_3__.Subscription.EMPTY;
+    _currentIconFetch = rxjs__WEBPACK_IMPORTED_MODULE_1__.Subscription.EMPTY;
     constructor() {
       const ariaHidden = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(new _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostAttributeToken('aria-hidden'), {
         optional: true
@@ -976,7 +1086,7 @@ let MatIcon = /*#__PURE__*/(() => {
         if (iconName) {
           this._svgName = iconName;
         }
-        this._currentIconFetch = this._iconRegistry.getNamedSvgIcon(iconName, namespace).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.take)(1)).subscribe(svg => this._setSvgElement(svg), err => {
+        this._currentIconFetch = this._iconRegistry.getNamedSvgIcon(iconName, namespace).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.take)(1)).subscribe(svg => this._setSvgElement(svg), err => {
           const errorMessage = `Error retrieving icon ${namespace}:${iconName}! ${err.message}`;
           this._errorHandler.handleError(new Error(errorMessage));
         });
@@ -1005,7 +1115,6 @@ let MatIcon = /*#__PURE__*/(() => {
         fontIcon: "fontIcon"
       },
       exportAs: ["matIcon"],
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInputTransformsFeature"]],
       ngContentSelectors: _c0,
       decls: 1,
       vars: 0,
@@ -1015,7 +1124,7 @@ let MatIcon = /*#__PURE__*/(() => {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](0);
         }
       },
-      styles: ["mat-icon,mat-icon.mat-primary,mat-icon.mat-accent,mat-icon.mat-warn{color:var(--mat-icon-color, inherit)}.mat-icon{-webkit-user-select:none;user-select:none;background-repeat:no-repeat;display:inline-block;fill:currentColor;height:24px;width:24px;overflow:hidden}.mat-icon.mat-icon-inline{font-size:inherit;height:inherit;line-height:inherit;width:inherit}.mat-icon.mat-ligature-font[fontIcon]::before{content:attr(fontIcon)}[dir=rtl] .mat-icon-rtl-mirror{transform:scale(-1, 1)}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{display:block}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button .mat-icon,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button .mat-icon{margin:auto}"],
+      styles: ["mat-icon,mat-icon.mat-primary,mat-icon.mat-accent,mat-icon.mat-warn{color:var(--mat-icon-color, inherit)}.mat-icon{-webkit-user-select:none;user-select:none;background-repeat:no-repeat;display:inline-block;fill:currentColor;height:24px;width:24px;overflow:hidden}.mat-icon.mat-icon-inline{font-size:inherit;height:inherit;line-height:inherit;width:inherit}.mat-icon.mat-ligature-font[fontIcon]::before{content:attr(fontIcon)}[dir=rtl] .mat-icon-rtl-mirror{transform:scale(-1, 1)}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{display:block}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button .mat-icon,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button .mat-icon{margin:auto}\n"],
       encapsulation: 2,
       changeDetection: 0
     });
@@ -1034,7 +1143,7 @@ let MatIconModule = /*#__PURE__*/(() => {
       type: MatIconModule
     });
     static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-      imports: [_angular_material_core__WEBPACK_IMPORTED_MODULE_1__.MatCommonModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_1__.MatCommonModule]
+      imports: [_common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_8__.M, _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_8__.M]
     });
   }
   return MatIconModule;
@@ -1042,11 +1151,6 @@ let MatIconModule = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
 
 
 /***/ })

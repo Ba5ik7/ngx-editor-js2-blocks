@@ -1,28 +1,17 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[370],{
 
-/***/ 37989:
-/*!************************************************************!*\
-  !*** ./node_modules/@angular/cdk/fesm2022/collections.mjs ***!
-  \************************************************************/
+/***/ 1019:
+/*!*********************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/data-source-D34wiQZj.mjs ***!
+  \*********************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   ArrayDataSource: () => (/* binding */ ArrayDataSource),
-/* harmony export */   DataSource: () => (/* binding */ DataSource),
-/* harmony export */   SelectionModel: () => (/* binding */ SelectionModel),
-/* harmony export */   UniqueSelectionDispatcher: () => (/* binding */ UniqueSelectionDispatcher),
-/* harmony export */   _DisposeViewRepeaterStrategy: () => (/* binding */ _DisposeViewRepeaterStrategy),
-/* harmony export */   _RecycleViewRepeaterStrategy: () => (/* binding */ _RecycleViewRepeaterStrategy),
-/* harmony export */   _VIEW_REPEATER_STRATEGY: () => (/* binding */ _VIEW_REPEATER_STRATEGY),
-/* harmony export */   _ViewRepeaterOperation: () => (/* binding */ _ViewRepeaterOperation),
-/* harmony export */   getMultipleValuesInSingleSelectionError: () => (/* binding */ getMultipleValuesInSingleSelectionError),
-/* harmony export */   isDataSource: () => (/* binding */ isDataSource)
+/* harmony export */   D: () => (/* binding */ DataSource),
+/* harmony export */   i: () => (/* binding */ isDataSource)
 /* harmony export */ });
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 44866);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 9516);
-
-
 
 class DataSource {}
 /** Checks whether an object is a data source. */
@@ -34,189 +23,22 @@ function isDataSource(value) {
   return value && typeof value.connect === 'function' && !(value instanceof rxjs__WEBPACK_IMPORTED_MODULE_0__.ConnectableObservable);
 }
 
-/** DataSource wrapper for a native array. */
-class ArrayDataSource extends DataSource {
-  _data;
-  constructor(_data) {
-    super();
-    this._data = _data;
-  }
-  connect() {
-    return (0,rxjs__WEBPACK_IMPORTED_MODULE_0__.isObservable)(this._data) ? this._data : (0,rxjs__WEBPACK_IMPORTED_MODULE_0__.of)(this._data);
-  }
-  disconnect() {}
-}
 
-/** Indicates how a view was changed by a {@link _ViewRepeater}. */
-var _ViewRepeaterOperation = /*#__PURE__*/function (_ViewRepeaterOperation) {
-  /** The content of an existing view was replaced with another item. */
-  _ViewRepeaterOperation[_ViewRepeaterOperation["REPLACED"] = 0] = "REPLACED";
-  /** A new view was created with `createEmbeddedView`. */
-  _ViewRepeaterOperation[_ViewRepeaterOperation["INSERTED"] = 1] = "INSERTED";
-  /** The position of a view changed, but the content remains the same. */
-  _ViewRepeaterOperation[_ViewRepeaterOperation["MOVED"] = 2] = "MOVED";
-  /** A view was detached from the view container. */
-  _ViewRepeaterOperation[_ViewRepeaterOperation["REMOVED"] = 3] = "REMOVED";
-  return _ViewRepeaterOperation;
-}(_ViewRepeaterOperation || {});
-/**
- * Injection token for {@link _ViewRepeater}. This token is for use by Angular Material only.
- * @docs-private
- */
-const _VIEW_REPEATER_STRATEGY = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('_ViewRepeater');
+/***/ }),
 
-/**
- * A repeater that destroys views when they are removed from a
- * {@link ViewContainerRef}. When new items are inserted into the container,
- * the repeater will always construct a new embedded view for each item.
- *
- * @template T The type for the embedded view's $implicit property.
- * @template R The type for the item in each IterableDiffer change record.
- * @template C The type for the context passed to each embedded view.
- */
-class _DisposeViewRepeaterStrategy {
-  applyChanges(changes, viewContainerRef, itemContextFactory, itemValueResolver, itemViewChanged) {
-    changes.forEachOperation((record, adjustedPreviousIndex, currentIndex) => {
-      let view;
-      let operation;
-      if (record.previousIndex == null) {
-        const insertContext = itemContextFactory(record, adjustedPreviousIndex, currentIndex);
-        view = viewContainerRef.createEmbeddedView(insertContext.templateRef, insertContext.context, insertContext.index);
-        operation = _ViewRepeaterOperation.INSERTED;
-      } else if (currentIndex == null) {
-        viewContainerRef.remove(adjustedPreviousIndex);
-        operation = _ViewRepeaterOperation.REMOVED;
-      } else {
-        view = viewContainerRef.get(adjustedPreviousIndex);
-        viewContainerRef.move(view, currentIndex);
-        operation = _ViewRepeaterOperation.MOVED;
-      }
-      if (itemViewChanged) {
-        itemViewChanged({
-          context: view?.context,
-          operation,
-          record
-        });
-      }
-    });
-  }
-  detach() {}
-}
+/***/ 17738:
+/*!*************************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/selection-model-BCgC8uEN.mjs ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-/**
- * A repeater that caches views when they are removed from a
- * {@link ViewContainerRef}. When new items are inserted into the container,
- * the repeater will reuse one of the cached views instead of creating a new
- * embedded view. Recycling cached views reduces the quantity of expensive DOM
- * inserts.
- *
- * @template T The type for the embedded view's $implicit property.
- * @template R The type for the item in each IterableDiffer change record.
- * @template C The type for the context passed to each embedded view.
- */
-class _RecycleViewRepeaterStrategy {
-  /**
-   * The size of the cache used to store unused views.
-   * Setting the cache size to `0` will disable caching. Defaults to 20 views.
-   */
-  viewCacheSize = 20;
-  /**
-   * View cache that stores embedded view instances that have been previously stamped out,
-   * but don't are not currently rendered. The view repeater will reuse these views rather than
-   * creating brand new ones.
-   *
-   * TODO(michaeljamesparsons) Investigate whether using a linked list would improve performance.
-   */
-  _viewCache = [];
-  /** Apply changes to the DOM. */
-  applyChanges(changes, viewContainerRef, itemContextFactory, itemValueResolver, itemViewChanged) {
-    // Rearrange the views to put them in the right location.
-    changes.forEachOperation((record, adjustedPreviousIndex, currentIndex) => {
-      let view;
-      let operation;
-      if (record.previousIndex == null) {
-        // Item added.
-        const viewArgsFactory = () => itemContextFactory(record, adjustedPreviousIndex, currentIndex);
-        view = this._insertView(viewArgsFactory, currentIndex, viewContainerRef, itemValueResolver(record));
-        operation = view ? _ViewRepeaterOperation.INSERTED : _ViewRepeaterOperation.REPLACED;
-      } else if (currentIndex == null) {
-        // Item removed.
-        this._detachAndCacheView(adjustedPreviousIndex, viewContainerRef);
-        operation = _ViewRepeaterOperation.REMOVED;
-      } else {
-        // Item moved.
-        view = this._moveView(adjustedPreviousIndex, currentIndex, viewContainerRef, itemValueResolver(record));
-        operation = _ViewRepeaterOperation.MOVED;
-      }
-      if (itemViewChanged) {
-        itemViewChanged({
-          context: view?.context,
-          operation,
-          record
-        });
-      }
-    });
-  }
-  detach() {
-    for (const view of this._viewCache) {
-      view.destroy();
-    }
-    this._viewCache = [];
-  }
-  /**
-   * Inserts a view for a new item, either from the cache or by creating a new
-   * one. Returns `undefined` if the item was inserted into a cached view.
-   */
-  _insertView(viewArgsFactory, currentIndex, viewContainerRef, value) {
-    const cachedView = this._insertViewFromCache(currentIndex, viewContainerRef);
-    if (cachedView) {
-      cachedView.context.$implicit = value;
-      return undefined;
-    }
-    const viewArgs = viewArgsFactory();
-    return viewContainerRef.createEmbeddedView(viewArgs.templateRef, viewArgs.context, viewArgs.index);
-  }
-  /** Detaches the view at the given index and inserts into the view cache. */
-  _detachAndCacheView(index, viewContainerRef) {
-    const detachedView = viewContainerRef.detach(index);
-    this._maybeCacheView(detachedView, viewContainerRef);
-  }
-  /** Moves view at the previous index to the current index. */
-  _moveView(adjustedPreviousIndex, currentIndex, viewContainerRef, value) {
-    const view = viewContainerRef.get(adjustedPreviousIndex);
-    viewContainerRef.move(view, currentIndex);
-    view.context.$implicit = value;
-    return view;
-  }
-  /**
-   * Cache the given detached view. If the cache is full, the view will be
-   * destroyed.
-   */
-  _maybeCacheView(view, viewContainerRef) {
-    if (this._viewCache.length < this.viewCacheSize) {
-      this._viewCache.push(view);
-    } else {
-      const index = viewContainerRef.indexOf(view);
-      // The host component could remove views from the container outside of
-      // the view repeater. It's unlikely this will occur, but just in case,
-      // destroy the view on its own, otherwise destroy it through the
-      // container to ensure that all the references are removed.
-      if (index === -1) {
-        view.destroy();
-      } else {
-        viewContainerRef.remove(index);
-      }
-    }
-  }
-  /** Inserts a recycled view from the cache at the given index. */
-  _insertViewFromCache(index, viewContainerRef) {
-    const cachedView = this._viewCache.pop();
-    if (cachedView) {
-      viewContainerRef.insert(cachedView, index);
-    }
-    return cachedView || null;
-  }
-}
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   S: () => (/* binding */ SelectionModel),
+/* harmony export */   g: () => (/* binding */ getMultipleValuesInSingleSelectionError)
+/* harmony export */ });
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 44866);
+
 
 /**
  * Class to be used to power selecting one or more options from a list.
@@ -260,7 +82,6 @@ class SelectionModel {
    * Selects a value or an array of values.
    * @param values The values to select
    * @return Whether the selection changed as a result of this call
-   * @breaking-change 16.0.0 make return type boolean
    */
   select(...values) {
     this._verifyValueAssignment(values);
@@ -273,7 +94,6 @@ class SelectionModel {
    * Deselects a value or an array of values.
    * @param values The values to deselect
    * @return Whether the selection changed as a result of this call
-   * @breaking-change 16.0.0 make return type boolean
    */
   deselect(...values) {
     this._verifyValueAssignment(values);
@@ -286,12 +106,11 @@ class SelectionModel {
    * Sets the selected values
    * @param values The new selected values
    * @return Whether the selection changed as a result of this call
-   * @breaking-change 16.0.0 make return type boolean
    */
   setSelection(...values) {
     this._verifyValueAssignment(values);
     const oldValues = this.selected;
-    const newSelectedSet = new Set(values);
+    const newSelectedSet = new Set(values.map(value => this._getConcreteValue(value)));
     values.forEach(value => this._markSelected(value));
     oldValues.filter(value => !newSelectedSet.has(this._getConcreteValue(value, newSelectedSet))).forEach(value => this._unmarkSelected(value));
     const changed = this._hasQueuedChanges();
@@ -302,7 +121,6 @@ class SelectionModel {
    * Toggles a value between selected and deselected.
    * @param value The value to toggle
    * @return Whether the selection changed as a result of this call
-   * @breaking-change 16.0.0 make return type boolean
    */
   toggle(value) {
     return this.isSelected(value) ? this.deselect(value) : this.select(value);
@@ -312,7 +130,6 @@ class SelectionModel {
    * @param flushEvent Whether to flush the changes in an event.
    *   If false, the changes to the selection will be flushed along with the next event.
    * @return Whether the selection changed as a result of this call
-   * @breaking-change 16.0.0 make return type boolean
    */
   clear(flushEvent = true) {
     this._unmarkAll();
@@ -436,6 +253,282 @@ function getMultipleValuesInSingleSelectionError() {
   return Error('Cannot pass multiple values into SelectionModel with single-value mode.');
 }
 
+
+/***/ }),
+
+/***/ 37989:
+/*!************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/collections.mjs ***!
+  \************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ArrayDataSource: () => (/* reexport safe */ _recycle_view_repeater_strategy_SfuyU210_mjs__WEBPACK_IMPORTED_MODULE_1__.A),
+/* harmony export */   DataSource: () => (/* reexport safe */ _data_source_D34wiQZj_mjs__WEBPACK_IMPORTED_MODULE_2__.D),
+/* harmony export */   SelectionModel: () => (/* reexport safe */ _selection_model_BCgC8uEN_mjs__WEBPACK_IMPORTED_MODULE_4__.S),
+/* harmony export */   UniqueSelectionDispatcher: () => (/* reexport safe */ _unique_selection_dispatcher_Cewa_Eg3_mjs__WEBPACK_IMPORTED_MODULE_0__.U),
+/* harmony export */   _DisposeViewRepeaterStrategy: () => (/* reexport safe */ _dispose_view_repeater_strategy_Cvpav0PR_mjs__WEBPACK_IMPORTED_MODULE_3__._),
+/* harmony export */   _RecycleViewRepeaterStrategy: () => (/* reexport safe */ _recycle_view_repeater_strategy_SfuyU210_mjs__WEBPACK_IMPORTED_MODULE_1__._),
+/* harmony export */   _VIEW_REPEATER_STRATEGY: () => (/* reexport safe */ _recycle_view_repeater_strategy_SfuyU210_mjs__WEBPACK_IMPORTED_MODULE_1__.b),
+/* harmony export */   _ViewRepeaterOperation: () => (/* reexport safe */ _recycle_view_repeater_strategy_SfuyU210_mjs__WEBPACK_IMPORTED_MODULE_1__.a),
+/* harmony export */   getMultipleValuesInSingleSelectionError: () => (/* reexport safe */ _selection_model_BCgC8uEN_mjs__WEBPACK_IMPORTED_MODULE_4__.g),
+/* harmony export */   isDataSource: () => (/* reexport safe */ _data_source_D34wiQZj_mjs__WEBPACK_IMPORTED_MODULE_2__.i)
+/* harmony export */ });
+/* harmony import */ var _unique_selection_dispatcher_Cewa_Eg3_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./unique-selection-dispatcher-Cewa_Eg3.mjs */ 95463);
+/* harmony import */ var _recycle_view_repeater_strategy_SfuyU210_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./recycle-view-repeater-strategy-SfuyU210.mjs */ 76194);
+/* harmony import */ var _data_source_D34wiQZj_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data-source-D34wiQZj.mjs */ 1019);
+/* harmony import */ var _dispose_view_repeater_strategy_Cvpav0PR_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dispose-view-repeater-strategy-Cvpav0PR.mjs */ 73271);
+/* harmony import */ var _selection_model_BCgC8uEN_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./selection-model-BCgC8uEN.mjs */ 17738);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ 44866);
+
+
+
+
+
+
+
+
+/***/ }),
+
+/***/ 73271:
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/dispose-view-repeater-strategy-Cvpav0PR.mjs ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   _: () => (/* binding */ _DisposeViewRepeaterStrategy)
+/* harmony export */ });
+/* harmony import */ var _recycle_view_repeater_strategy_SfuyU210_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./recycle-view-repeater-strategy-SfuyU210.mjs */ 76194);
+
+
+/**
+ * A repeater that destroys views when they are removed from a
+ * `ViewContainerRef`. When new items are inserted into the container,
+ * the repeater will always construct a new embedded view for each item.
+ *
+ * @template T The type for the embedded view's $implicit property.
+ * @template R The type for the item in each IterableDiffer change record.
+ * @template C The type for the context passed to each embedded view.
+ */
+class _DisposeViewRepeaterStrategy {
+  applyChanges(changes, viewContainerRef, itemContextFactory, itemValueResolver, itemViewChanged) {
+    changes.forEachOperation((record, adjustedPreviousIndex, currentIndex) => {
+      let view;
+      let operation;
+      if (record.previousIndex == null) {
+        const insertContext = itemContextFactory(record, adjustedPreviousIndex, currentIndex);
+        view = viewContainerRef.createEmbeddedView(insertContext.templateRef, insertContext.context, insertContext.index);
+        operation = _recycle_view_repeater_strategy_SfuyU210_mjs__WEBPACK_IMPORTED_MODULE_0__.a.INSERTED;
+      } else if (currentIndex == null) {
+        viewContainerRef.remove(adjustedPreviousIndex);
+        operation = _recycle_view_repeater_strategy_SfuyU210_mjs__WEBPACK_IMPORTED_MODULE_0__.a.REMOVED;
+      } else {
+        view = viewContainerRef.get(adjustedPreviousIndex);
+        viewContainerRef.move(view, currentIndex);
+        operation = _recycle_view_repeater_strategy_SfuyU210_mjs__WEBPACK_IMPORTED_MODULE_0__.a.MOVED;
+      }
+      if (itemViewChanged) {
+        itemViewChanged({
+          context: view?.context,
+          operation,
+          record
+        });
+      }
+    });
+  }
+  detach() {}
+}
+
+
+/***/ }),
+
+/***/ 76194:
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/recycle-view-repeater-strategy-SfuyU210.mjs ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ ArrayDataSource),
+/* harmony export */   _: () => (/* binding */ _RecycleViewRepeaterStrategy),
+/* harmony export */   a: () => (/* binding */ _ViewRepeaterOperation),
+/* harmony export */   b: () => (/* binding */ _VIEW_REPEATER_STRATEGY)
+/* harmony export */ });
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 44866);
+/* harmony import */ var _data_source_D34wiQZj_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./data-source-D34wiQZj.mjs */ 1019);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+
+
+
+
+/** DataSource wrapper for a native array. */
+class ArrayDataSource extends _data_source_D34wiQZj_mjs__WEBPACK_IMPORTED_MODULE_2__.D {
+  _data;
+  constructor(_data) {
+    super();
+    this._data = _data;
+  }
+  connect() {
+    return (0,rxjs__WEBPACK_IMPORTED_MODULE_0__.isObservable)(this._data) ? this._data : (0,rxjs__WEBPACK_IMPORTED_MODULE_0__.of)(this._data);
+  }
+  disconnect() {}
+}
+
+/** Indicates how a view was changed by a `_ViewRepeater`. */
+var _ViewRepeaterOperation = /*#__PURE__*/function (_ViewRepeaterOperation) {
+  /** The content of an existing view was replaced with another item. */
+  _ViewRepeaterOperation[_ViewRepeaterOperation["REPLACED"] = 0] = "REPLACED";
+  /** A new view was created with `createEmbeddedView`. */
+  _ViewRepeaterOperation[_ViewRepeaterOperation["INSERTED"] = 1] = "INSERTED";
+  /** The position of a view changed, but the content remains the same. */
+  _ViewRepeaterOperation[_ViewRepeaterOperation["MOVED"] = 2] = "MOVED";
+  /** A view was detached from the view container. */
+  _ViewRepeaterOperation[_ViewRepeaterOperation["REMOVED"] = 3] = "REMOVED";
+  return _ViewRepeaterOperation;
+}(_ViewRepeaterOperation || {});
+/**
+ * Injection token for `_ViewRepeater`. This token is for use by Angular Material only.
+ * @docs-private
+ */
+const _VIEW_REPEATER_STRATEGY = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('_ViewRepeater');
+
+/**
+ * A repeater that caches views when they are removed from a
+ * `ViewContainerRef`. When new items are inserted into the container,
+ * the repeater will reuse one of the cached views instead of creating a new
+ * embedded view. Recycling cached views reduces the quantity of expensive DOM
+ * inserts.
+ *
+ * @template T The type for the embedded view's $implicit property.
+ * @template R The type for the item in each IterableDiffer change record.
+ * @template C The type for the context passed to each embedded view.
+ */
+class _RecycleViewRepeaterStrategy {
+  /**
+   * The size of the cache used to store unused views.
+   * Setting the cache size to `0` will disable caching. Defaults to 20 views.
+   */
+  viewCacheSize = 20;
+  /**
+   * View cache that stores embedded view instances that have been previously stamped out,
+   * but don't are not currently rendered. The view repeater will reuse these views rather than
+   * creating brand new ones.
+   *
+   * TODO(michaeljamesparsons) Investigate whether using a linked list would improve performance.
+   */
+  _viewCache = [];
+  /** Apply changes to the DOM. */
+  applyChanges(changes, viewContainerRef, itemContextFactory, itemValueResolver, itemViewChanged) {
+    // Rearrange the views to put them in the right location.
+    changes.forEachOperation((record, adjustedPreviousIndex, currentIndex) => {
+      let view;
+      let operation;
+      if (record.previousIndex == null) {
+        // Item added.
+        const viewArgsFactory = () => itemContextFactory(record, adjustedPreviousIndex, currentIndex);
+        view = this._insertView(viewArgsFactory, currentIndex, viewContainerRef, itemValueResolver(record));
+        operation = view ? _ViewRepeaterOperation.INSERTED : _ViewRepeaterOperation.REPLACED;
+      } else if (currentIndex == null) {
+        // Item removed.
+        this._detachAndCacheView(adjustedPreviousIndex, viewContainerRef);
+        operation = _ViewRepeaterOperation.REMOVED;
+      } else {
+        // Item moved.
+        view = this._moveView(adjustedPreviousIndex, currentIndex, viewContainerRef, itemValueResolver(record));
+        operation = _ViewRepeaterOperation.MOVED;
+      }
+      if (itemViewChanged) {
+        itemViewChanged({
+          context: view?.context,
+          operation,
+          record
+        });
+      }
+    });
+  }
+  detach() {
+    for (const view of this._viewCache) {
+      view.destroy();
+    }
+    this._viewCache = [];
+  }
+  /**
+   * Inserts a view for a new item, either from the cache or by creating a new
+   * one. Returns `undefined` if the item was inserted into a cached view.
+   */
+  _insertView(viewArgsFactory, currentIndex, viewContainerRef, value) {
+    const cachedView = this._insertViewFromCache(currentIndex, viewContainerRef);
+    if (cachedView) {
+      cachedView.context.$implicit = value;
+      return undefined;
+    }
+    const viewArgs = viewArgsFactory();
+    return viewContainerRef.createEmbeddedView(viewArgs.templateRef, viewArgs.context, viewArgs.index);
+  }
+  /** Detaches the view at the given index and inserts into the view cache. */
+  _detachAndCacheView(index, viewContainerRef) {
+    const detachedView = viewContainerRef.detach(index);
+    this._maybeCacheView(detachedView, viewContainerRef);
+  }
+  /** Moves view at the previous index to the current index. */
+  _moveView(adjustedPreviousIndex, currentIndex, viewContainerRef, value) {
+    const view = viewContainerRef.get(adjustedPreviousIndex);
+    viewContainerRef.move(view, currentIndex);
+    view.context.$implicit = value;
+    return view;
+  }
+  /**
+   * Cache the given detached view. If the cache is full, the view will be
+   * destroyed.
+   */
+  _maybeCacheView(view, viewContainerRef) {
+    if (this._viewCache.length < this.viewCacheSize) {
+      this._viewCache.push(view);
+    } else {
+      const index = viewContainerRef.indexOf(view);
+      // The host component could remove views from the container outside of
+      // the view repeater. It's unlikely this will occur, but just in case,
+      // destroy the view on its own, otherwise destroy it through the
+      // container to ensure that all the references are removed.
+      if (index === -1) {
+        view.destroy();
+      } else {
+        viewContainerRef.remove(index);
+      }
+    }
+  }
+  /** Inserts a recycled view from the cache at the given index. */
+  _insertViewFromCache(index, viewContainerRef) {
+    const cachedView = this._viewCache.pop();
+    if (cachedView) {
+      viewContainerRef.insert(cachedView, index);
+    }
+    return cachedView || null;
+  }
+}
+
+
+/***/ }),
+
+/***/ 95463:
+/*!*************************************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/unique-selection-dispatcher-Cewa_Eg3.mjs ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   U: () => (/* binding */ UniqueSelectionDispatcher)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+
+
+
 /**
  * Class to coordinate unique selection based on name.
  * Intended to be consumed as an Angular service.
@@ -476,7 +569,7 @@ let UniqueSelectionDispatcher = /*#__PURE__*/(() => {
     static ɵfac = function UniqueSelectionDispatcher_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || UniqueSelectionDispatcher)();
     };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: UniqueSelectionDispatcher,
       factory: UniqueSelectionDispatcher.ɵfac,
       providedIn: 'root'
@@ -487,11 +580,6 @@ let UniqueSelectionDispatcher = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
 
 
 /***/ })

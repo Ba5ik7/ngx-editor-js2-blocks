@@ -3300,9 +3300,7 @@ var c4BoundaryInRow2 = 2;
 parser.yy = c4Db_default;
 var conf = {};
 var Bounds = class {
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_2__.__name)(this, "Bounds");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_2__.__name)(this, "Bounds");
   constructor(diagObj) {
     this.name = "";
     this.data = {};
@@ -3521,9 +3519,7 @@ var drawC4ShapeArray = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_M
   currentBounds.bumpLastMargin(conf.c4ShapeMargin);
 }, "drawC4ShapeArray");
 var Point = class {
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_2__.__name)(this, "Point");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_2__.__name)(this, "Point");
   constructor(x, y) {
     this.x = x;
     this.y = y;

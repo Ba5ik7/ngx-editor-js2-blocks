@@ -1,40 +1,101 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[8259],{
 
-/***/ 80640:
-/*!*************************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2022/tooltip.mjs ***!
-  \*************************************************************/
+/***/ 8126:
+/*!****************************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/common-module-cKSwHniA.mjs ***!
+  \****************************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   MAT_TOOLTIP_DEFAULT_OPTIONS: () => (/* binding */ MAT_TOOLTIP_DEFAULT_OPTIONS),
-/* harmony export */   MAT_TOOLTIP_DEFAULT_OPTIONS_FACTORY: () => (/* binding */ MAT_TOOLTIP_DEFAULT_OPTIONS_FACTORY),
-/* harmony export */   MAT_TOOLTIP_SCROLL_STRATEGY: () => (/* binding */ MAT_TOOLTIP_SCROLL_STRATEGY),
-/* harmony export */   MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY: () => (/* binding */ MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY),
-/* harmony export */   MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY_PROVIDER: () => (/* binding */ MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY_PROVIDER),
-/* harmony export */   MatTooltip: () => (/* binding */ MatTooltip),
-/* harmony export */   MatTooltipModule: () => (/* binding */ MatTooltipModule),
-/* harmony export */   SCROLL_THROTTLE_MS: () => (/* binding */ SCROLL_THROTTLE_MS),
-/* harmony export */   TOOLTIP_PANEL_CLASS: () => (/* binding */ TOOLTIP_PANEL_CLASS),
-/* harmony export */   TooltipComponent: () => (/* binding */ TooltipComponent),
-/* harmony export */   getMatTooltipInvalidPositionError: () => (/* binding */ getMatTooltipInvalidPositionError),
-/* harmony export */   matTooltipAnimations: () => (/* binding */ matTooltipAnimations)
+/* harmony export */   M: () => (/* binding */ MatCommonModule),
+/* harmony export */   a: () => (/* binding */ MATERIAL_SANITY_CHECKS)
 /* harmony export */ });
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs/operators */ 32778);
-/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/coercion */ 31620);
-/* harmony import */ var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/keycodes */ 73038);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 9516);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 59694);
-/* harmony import */ var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/cdk/platform */ 1830);
-/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/a11y */ 6020);
-/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/cdk/bidi */ 71320);
-/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/cdk/overlay */ 87916);
-/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/cdk/portal */ 80836);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs */ 44866);
-/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/animations */ 73840);
-/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/cdk/scrolling */ 72396);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/core */ 84718);
+/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/a11y */ 56593);
+/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/bidi */ 48073);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 27940);
+
+
+
+
+
+/**
+ * Injection token that configures whether the Material sanity checks are enabled.
+ * @deprecated No longer used and will be removed.
+ * @breaking-change 21.0.0
+ */
+const MATERIAL_SANITY_CHECKS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_2__.InjectionToken('mat-sanity-checks', {
+  providedIn: 'root',
+  factory: () => true
+});
+/**
+ * Module that captures anything that should be loaded and/or run for *all* Angular Material
+ * components. This includes Bidi, etc.
+ *
+ * This module should be imported to each top-level component module (e.g., MatTabsModule).
+ * @deprecated No longer used and will be removed.
+ * @breaking-change 21.0.0
+ */
+let MatCommonModule = /*#__PURE__*/(() => {
+  class MatCommonModule {
+    constructor() {
+      // While A11yModule also does this, we repeat it here to avoid importing A11yModule
+      // in MatCommonModule.
+      (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__.HighContrastModeDetector)._applyBodyHighContrastModeCssClasses();
+    }
+    static ɵfac = function MatCommonModule_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || MatCommonModule)();
+    };
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({
+      type: MatCommonModule
+    });
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({
+      imports: [_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__.BidiModule, _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__.BidiModule]
+    });
+  }
+  return MatCommonModule;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+
+/***/ }),
+
+/***/ 41380:
+/*!*********************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/module-CWxMD37a.mjs ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   M: () => (/* binding */ MAT_TOOLTIP_SCROLL_STRATEGY),
+/* harmony export */   S: () => (/* binding */ SCROLL_THROTTLE_MS),
+/* harmony export */   T: () => (/* binding */ TOOLTIP_PANEL_CLASS),
+/* harmony export */   a: () => (/* binding */ MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY),
+/* harmony export */   b: () => (/* binding */ MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY_PROVIDER),
+/* harmony export */   c: () => (/* binding */ MAT_TOOLTIP_DEFAULT_OPTIONS_FACTORY),
+/* harmony export */   d: () => (/* binding */ MAT_TOOLTIP_DEFAULT_OPTIONS),
+/* harmony export */   e: () => (/* binding */ MatTooltip),
+/* harmony export */   f: () => (/* binding */ TooltipComponent),
+/* harmony export */   g: () => (/* binding */ getMatTooltipInvalidPositionError),
+/* harmony export */   h: () => (/* binding */ MatTooltipModule)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/a11y */ 56593);
+/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/overlay */ 87351);
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/cdk/scrolling */ 25287);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 32778);
+/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/cdk/coercion */ 33981);
+/* harmony import */ var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/keycodes */ 48215);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 85914);
+/* harmony import */ var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/cdk/platform */ 49583);
+/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/cdk/bidi */ 48073);
+/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/cdk/portal */ 35253);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs */ 44866);
+/* harmony import */ var _animation_DfMFjxHu_mjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./animation-DfMFjxHu.mjs */ 73388);
+/* harmony import */ var _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./common-module-cKSwHniA.mjs */ 8126);
 
 
 
@@ -62,28 +123,41 @@ function getMatTooltipInvalidPositionError(position) {
   return Error(`Tooltip position "${position}" is invalid.`);
 }
 /** Injection token that determines the scroll handling while a tooltip is visible. */
-const MAT_TOOLTIP_SCROLL_STRATEGY = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_3__.InjectionToken('mat-tooltip-scroll-strategy', {
+const MAT_TOOLTIP_SCROLL_STRATEGY = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('mat-tooltip-scroll-strategy', {
   providedIn: 'root',
   factory: () => {
-    const overlay = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.Overlay);
-    return () => overlay.scrollStrategies.reposition({
+    const injector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Injector);
+    return () => (0,_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_2__.createRepositionScrollStrategy)(injector, {
       scrollThrottle: SCROLL_THROTTLE_MS
     });
   }
 });
-/** @docs-private */
-function MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY(overlay) {
-  return () => overlay.scrollStrategies.reposition({
+/**
+ * @docs-private
+ * @deprecated No longer used, will be removed.
+ * @breaking-change 21.0.0
+ */
+function MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY(_overlay) {
+  const injector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Injector);
+  return () => (0,_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_2__.createRepositionScrollStrategy)(injector, {
     scrollThrottle: SCROLL_THROTTLE_MS
   });
 }
-/** @docs-private */
+/**
+ * @docs-private
+ * @deprecated No longer used, will be removed.
+ * @breaking-change 21.0.0
+ */
 const MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY_PROVIDER = {
   provide: MAT_TOOLTIP_SCROLL_STRATEGY,
-  deps: [_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.Overlay],
+  deps: [],
   useFactory: MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY
 };
-/** @docs-private */
+/**
+ * @docs-private
+ * @deprecated No longer used, will be removed.
+ * @breaking-change 21.0.0
+ */
 function MAT_TOOLTIP_DEFAULT_OPTIONS_FACTORY() {
   return {
     showDelay: 0,
@@ -92,7 +166,7 @@ function MAT_TOOLTIP_DEFAULT_OPTIONS_FACTORY() {
   };
 }
 /** Injection token to be used to override the default options for `matTooltip`. */
-const MAT_TOOLTIP_DEFAULT_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_3__.InjectionToken('mat-tooltip-default-options', {
+const MAT_TOOLTIP_DEFAULT_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('mat-tooltip-default-options', {
   providedIn: 'root',
   factory: MAT_TOOLTIP_DEFAULT_OPTIONS_FACTORY
 });
@@ -104,7 +178,7 @@ const MAT_TOOLTIP_DEFAULT_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPO
 const TOOLTIP_PANEL_CLASS = 'mat-mdc-tooltip-panel';
 const PANEL_CLASS = 'tooltip-panel';
 /** Options used to bind passive event listeners. */
-const passiveListenerOptions = /*#__PURE__*/(0,_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_5__.normalizePassiveListenerOptions)({
+const passiveListenerOptions = /*#__PURE__*/(0,_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_8__.normalizePassiveListenerOptions)({
   passive: true
 });
 // These constants were taken from MDC's `numbers` object. We can't import them from MDC,
@@ -121,27 +195,26 @@ const MAX_WIDTH = 200;
  */
 let MatTooltip = /*#__PURE__*/(() => {
   class MatTooltip {
-    _overlay = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.Overlay);
-    _elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_3__.ElementRef);
-    _scrollDispatcher = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.ScrollDispatcher);
-    _viewContainerRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_3__.ViewContainerRef);
-    _ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgZone);
-    _platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_5__.Platform);
-    _ariaDescriber = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_6__.AriaDescriber);
-    _focusMonitor = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_6__.FocusMonitor);
-    _dir = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_7__.Directionality);
-    _injector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_3__.Injector);
-    _defaultOptions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(MAT_TOOLTIP_DEFAULT_OPTIONS, {
+    _elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
+    _ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone);
+    _platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_8__.Platform);
+    _ariaDescriber = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_1__.AriaDescriber);
+    _focusMonitor = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_1__.FocusMonitor);
+    _dir = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_9__.Directionality);
+    _injector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Injector);
+    _viewContainerRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewContainerRef);
+    _animationsDisabled = (0,_animation_DfMFjxHu_mjs__WEBPACK_IMPORTED_MODULE_12__._)();
+    _defaultOptions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(MAT_TOOLTIP_DEFAULT_OPTIONS, {
       optional: true
     });
     _overlayRef;
     _tooltipInstance;
+    _overlayPanelClass; // Used for styling internally.
     _portal;
     _position = 'below';
     _positionAtOrigin = false;
     _disabled = false;
     _tooltipClass;
-    _scrollStrategy = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(MAT_TOOLTIP_SCROLL_STRATEGY);
     _viewInitialized = false;
     _pointerExitEventsInitialized = false;
     _tooltipComponent = TooltipComponent;
@@ -172,7 +245,7 @@ let MatTooltip = /*#__PURE__*/(() => {
       return this._positionAtOrigin;
     }
     set positionAtOrigin(value) {
-      this._positionAtOrigin = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__.coerceBooleanProperty)(value);
+      this._positionAtOrigin = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_5__.coerceBooleanProperty)(value);
       this._detach();
       this._overlayRef = null;
     }
@@ -181,7 +254,7 @@ let MatTooltip = /*#__PURE__*/(() => {
       return this._disabled;
     }
     set disabled(value) {
-      const isDisabled = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__.coerceBooleanProperty)(value);
+      const isDisabled = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_5__.coerceBooleanProperty)(value);
       if (this._disabled !== isDisabled) {
         this._disabled = isDisabled;
         // If tooltip is disabled, hide immediately.
@@ -198,7 +271,7 @@ let MatTooltip = /*#__PURE__*/(() => {
       return this._showDelay;
     }
     set showDelay(value) {
-      this._showDelay = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__.coerceNumberProperty)(value);
+      this._showDelay = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_5__.coerceNumberProperty)(value);
     }
     _showDelay;
     /** The default delay in ms before hiding the tooltip after hide is called */
@@ -206,7 +279,7 @@ let MatTooltip = /*#__PURE__*/(() => {
       return this._hideDelay;
     }
     set hideDelay(value) {
-      this._hideDelay = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__.coerceNumberProperty)(value);
+      this._hideDelay = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_5__.coerceNumberProperty)(value);
       if (this._tooltipInstance) {
         this._tooltipInstance._mouseLeaveHideDelay = this._hideDelay;
       }
@@ -258,12 +331,10 @@ let MatTooltip = /*#__PURE__*/(() => {
     }
     /** Manually-bound passive event listeners. */
     _passiveListeners = [];
-    /** Reference to the current document. */
-    _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_common__WEBPACK_IMPORTED_MODULE_4__.DOCUMENT);
     /** Timer started at the last `touchstart` event. */
     _touchstartTimeout = null;
     /** Emits when the component is destroyed. */
-    _destroyed = new rxjs__WEBPACK_IMPORTED_MODULE_10__.Subject();
+    _destroyed = new rxjs__WEBPACK_IMPORTED_MODULE_11__.Subject();
     /** Whether ngOnDestroyed has been called. */
     _isDestroyed = false;
     constructor() {
@@ -290,7 +361,7 @@ let MatTooltip = /*#__PURE__*/(() => {
       // This needs to happen after view init so the initial values for all inputs have been set.
       this._viewInitialized = true;
       this._setupPointerEnterEventsIfNeeded();
-      this._focusMonitor.monitor(this._elementRef).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.takeUntil)(this._destroyed)).subscribe(origin => {
+      this._focusMonitor.monitor(this._elementRef).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.takeUntil)(this._destroyed)).subscribe(origin => {
         // Note that the focus monitor runs outside the Angular zone.
         if (!origin) {
           this._ngZone.run(() => this.hide(0));
@@ -331,11 +402,11 @@ let MatTooltip = /*#__PURE__*/(() => {
       }
       const overlayRef = this._createOverlay(origin);
       this._detach();
-      this._portal = this._portal || new _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_9__.ComponentPortal(this._tooltipComponent, this._viewContainerRef);
+      this._portal = this._portal || new _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_10__.ComponentPortal(this._tooltipComponent, this._viewContainerRef);
       const instance = this._tooltipInstance = overlayRef.attach(this._portal).instance;
       instance._triggerElement = this._elementRef.nativeElement;
       instance._mouseLeaveHideDelay = this._hideDelay;
-      instance.afterHidden().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.takeUntil)(this._destroyed)).subscribe(() => this._detach());
+      instance.afterHidden().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.takeUntil)(this._destroyed)).subscribe(() => this._detach());
       this._setTooltipClass(this._tooltipClass);
       this._updateTooltipMessage();
       instance.show(delay);
@@ -364,15 +435,16 @@ let MatTooltip = /*#__PURE__*/(() => {
     _createOverlay(origin) {
       if (this._overlayRef) {
         const existingStrategy = this._overlayRef.getConfig().positionStrategy;
-        if ((!this.positionAtOrigin || !origin) && existingStrategy._origin instanceof _angular_core__WEBPACK_IMPORTED_MODULE_3__.ElementRef) {
+        if ((!this.positionAtOrigin || !origin) && existingStrategy._origin instanceof _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef) {
           return this._overlayRef;
         }
         this._detach();
       }
-      const scrollableAncestors = this._scrollDispatcher.getAncestorScrollContainers(this._elementRef);
+      const scrollableAncestors = this._injector.get(_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_2__.ScrollDispatcher).getAncestorScrollContainers(this._elementRef);
+      const panelClass = `${this._cssClassPrefix}-${PANEL_CLASS}`;
       // Create connected position strategy that listens for scroll events to reposition.
-      const strategy = this._overlay.position().flexibleConnectedTo(this.positionAtOrigin ? origin || this._elementRef : this._elementRef).withTransformOriginOn(`.${this._cssClassPrefix}-tooltip`).withFlexibleDimensions(false).withViewportMargin(this._viewportMargin).withScrollableContainers(scrollableAncestors);
-      strategy.positionChanges.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.takeUntil)(this._destroyed)).subscribe(change => {
+      const strategy = (0,_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_2__.createFlexibleConnectedPositionStrategy)(this._injector, this.positionAtOrigin ? origin || this._elementRef : this._elementRef).withTransformOriginOn(`.${this._cssClassPrefix}-tooltip`).withFlexibleDimensions(false).withViewportMargin(this._viewportMargin).withScrollableContainers(scrollableAncestors);
+      strategy.positionChanges.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.takeUntil)(this._destroyed)).subscribe(change => {
         this._updateCurrentPositionClass(change.connectionPair);
         if (this._tooltipInstance) {
           if (change.scrollableViewProperties.isOverlayClipped && this._tooltipInstance.isVisible()) {
@@ -382,17 +454,18 @@ let MatTooltip = /*#__PURE__*/(() => {
           }
         }
       });
-      this._overlayRef = this._overlay.create({
+      this._overlayRef = (0,_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_2__.createOverlayRef)(this._injector, {
         direction: this._dir,
         positionStrategy: strategy,
-        panelClass: `${this._cssClassPrefix}-${PANEL_CLASS}`,
-        scrollStrategy: this._scrollStrategy()
+        panelClass: this._overlayPanelClass ? [...this._overlayPanelClass, panelClass] : panelClass,
+        scrollStrategy: this._injector.get(MAT_TOOLTIP_SCROLL_STRATEGY)(),
+        disableAnimations: this._animationsDisabled
       });
       this._updatePosition(this._overlayRef);
-      this._overlayRef.detachments().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.takeUntil)(this._destroyed)).subscribe(() => this._detach());
-      this._overlayRef.outsidePointerEvents().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.takeUntil)(this._destroyed)).subscribe(() => this._tooltipInstance?._handleBodyInteraction());
-      this._overlayRef.keydownEvents().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.takeUntil)(this._destroyed)).subscribe(event => {
-        if (this._isTooltipVisible() && event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_2__.ESCAPE && !(0,_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_2__.hasModifierKey)(event)) {
+      this._overlayRef.detachments().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.takeUntil)(this._destroyed)).subscribe(() => this._detach());
+      this._overlayRef.outsidePointerEvents().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.takeUntil)(this._destroyed)).subscribe(() => this._tooltipInstance?._handleBodyInteraction());
+      this._overlayRef.keydownEvents().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.takeUntil)(this._destroyed)).subscribe(event => {
+        if (this._isTooltipVisible() && event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__.ESCAPE && !(0,_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__.hasModifierKey)(event)) {
           event.preventDefault();
           event.stopPropagation();
           this._ngZone.run(() => this.hide(0));
@@ -403,7 +476,7 @@ let MatTooltip = /*#__PURE__*/(() => {
       }
       if (!this._dirSubscribed) {
         this._dirSubscribed = true;
-        this._dir.change.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.takeUntil)(this._destroyed)).subscribe(() => {
+        this._dir.change.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.takeUntil)(this._destroyed)).subscribe(() => {
           if (this._overlayRef) {
             this._updatePosition(this._overlayRef);
           }
@@ -531,7 +604,7 @@ let MatTooltip = /*#__PURE__*/(() => {
       if (this._tooltipInstance) {
         this._tooltipInstance.message = this.message;
         this._tooltipInstance._markForCheck();
-        (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.afterNextRender)(() => {
+        (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.afterNextRender)(() => {
           if (this._tooltipInstance) {
             this._overlayRef.updatePosition();
           }
@@ -676,7 +749,7 @@ let MatTooltip = /*#__PURE__*/(() => {
     /** Listener for the `wheel` event on the element. */
     _wheelListener(event) {
       if (this._isTooltipVisible()) {
-        const elementUnderPointer = this._document.elementFromPoint(event.clientX, event.clientY);
+        const elementUnderPointer = this._injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT).elementFromPoint(event.clientX, event.clientY);
         const element = this._elementRef.nativeElement;
         // On non-touch devices we depend on the `mouseleave` event to close the tooltip, but it
         // won't fire if the user scrolls away using the wheel without moving their cursor. We
@@ -719,7 +792,7 @@ let MatTooltip = /*#__PURE__*/(() => {
       // has a data-bound `aria-label` or when it'll be set for the first time. We can avoid the
       // issue by deferring the description by a tick so Angular has time to set the `aria-label`.
       if (!this._isDestroyed) {
-        (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.afterNextRender)({
+        (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.afterNextRender)({
           write: () => {
             this._ariaDescriptionPending = false;
             if (this.message && !this.disabled) {
@@ -734,14 +807,14 @@ let MatTooltip = /*#__PURE__*/(() => {
     static ɵfac = function MatTooltip_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || MatTooltip)();
     };
-    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineDirective"]({
+    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
       type: MatTooltip,
       selectors: [["", "matTooltip", ""]],
       hostAttrs: [1, "mat-mdc-tooltip-trigger"],
       hostVars: 2,
       hostBindings: function MatTooltip_HostBindings(rf, ctx) {
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵclassProp"]("mat-mdc-tooltip-disabled", ctx.disabled);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-mdc-tooltip-disabled", ctx.disabled);
         }
       },
       inputs: {
@@ -768,8 +841,8 @@ let MatTooltip = /*#__PURE__*/(() => {
  */
 let TooltipComponent = /*#__PURE__*/(() => {
   class TooltipComponent {
-    _changeDetectorRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_3__.ChangeDetectorRef);
-    _elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_3__.ElementRef);
+    _changeDetectorRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ChangeDetectorRef);
+    _elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
     /* Whether the tooltip text overflows to multiple lines */
     _isMultiline = false;
     /** Message to display in the tooltip */
@@ -785,7 +858,7 @@ let TooltipComponent = /*#__PURE__*/(() => {
     /** Amount of milliseconds to delay the closing sequence. */
     _mouseLeaveHideDelay;
     /** Whether animations are currently disabled. */
-    _animationsDisabled;
+    _animationsDisabled = (0,_animation_DfMFjxHu_mjs__WEBPACK_IMPORTED_MODULE_12__._)();
     /** Reference to the internal tooltip element. */
     _tooltip;
     /** Whether interactions on the page should close the tooltip */
@@ -793,17 +866,12 @@ let TooltipComponent = /*#__PURE__*/(() => {
     /** Whether the tooltip is currently visible. */
     _isVisible = false;
     /** Subject for notifying that the tooltip has been hidden from the view */
-    _onHide = new rxjs__WEBPACK_IMPORTED_MODULE_10__.Subject();
+    _onHide = new rxjs__WEBPACK_IMPORTED_MODULE_11__.Subject();
     /** Name of the show animation and the class that toggles it. */
     _showAnimation = 'mat-mdc-tooltip-show';
     /** Name of the hide animation and the class that toggles it. */
     _hideAnimation = 'mat-mdc-tooltip-hide';
-    constructor() {
-      const animationMode = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_3__.ANIMATION_MODULE_TYPE, {
-        optional: true
-      });
-      this._animationsDisabled = animationMode === 'NoopAnimations';
-    }
+    constructor() {}
     /**
      * Shows the tooltip with an animation originating from the provided origin
      * @param delay Amount of milliseconds to the delay showing the tooltip.
@@ -948,22 +1016,22 @@ let TooltipComponent = /*#__PURE__*/(() => {
     static ɵfac = function TooltipComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || TooltipComponent)();
     };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: TooltipComponent,
       selectors: [["mat-tooltip-component"]],
       viewQuery: function TooltipComponent_Query(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵviewQuery"](_c0, 7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, 7);
         }
         if (rf & 2) {
           let _t;
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵloadQuery"]()) && (ctx._tooltip = _t.first);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx._tooltip = _t.first);
         }
       },
       hostAttrs: ["aria-hidden", "true"],
       hostBindings: function TooltipComponent_HostBindings(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("mouseleave", function TooltipComponent_mouseleave_HostBindingHandler($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("mouseleave", function TooltipComponent_mouseleave_HostBindingHandler($event) {
             return ctx._handleMouseLeave($event);
           });
         }
@@ -973,25 +1041,25 @@ let TooltipComponent = /*#__PURE__*/(() => {
       consts: [["tooltip", ""], [1, "mdc-tooltip", "mat-mdc-tooltip", 3, "animationend", "ngClass"], [1, "mat-mdc-tooltip-surface", "mdc-tooltip__surface"]],
       template: function TooltipComponent_Template(rf, ctx) {
         if (rf & 1) {
-          const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 1, 0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("animationend", function TooltipComponent_Template_div_animationend_0_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r1);
-            return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx._handleAnimationEnd($event));
+          const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 1, 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("animationend", function TooltipComponent_Template_div_animationend_0_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r1);
+            return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx._handleAnimationEnd($event));
           });
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "div", 2);
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3);
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
         }
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵclassProp"]("mdc-tooltip--multiline", ctx._isMultiline);
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngClass", ctx.tooltipClass);
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
-          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx.message);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mdc-tooltip--multiline", ctx._isMultiline);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.tooltipClass);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.message);
         }
       },
-      dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.NgClass],
-      styles: [".mat-mdc-tooltip{position:relative;transform:scale(0);display:inline-flex}.mat-mdc-tooltip::before{content:\"\";top:0;right:0;bottom:0;left:0;z-index:-1;position:absolute}.mat-mdc-tooltip-panel-below .mat-mdc-tooltip::before{top:-8px}.mat-mdc-tooltip-panel-above .mat-mdc-tooltip::before{bottom:-8px}.mat-mdc-tooltip-panel-right .mat-mdc-tooltip::before{left:-8px}.mat-mdc-tooltip-panel-left .mat-mdc-tooltip::before{right:-8px}.mat-mdc-tooltip._mat-animation-noopable{animation:none;transform:scale(1)}.mat-mdc-tooltip-surface{word-break:normal;overflow-wrap:anywhere;padding:4px 8px;min-width:40px;max-width:200px;min-height:24px;max-height:40vh;box-sizing:border-box;overflow:hidden;text-align:center;will-change:transform,opacity;background-color:var(--mdc-plain-tooltip-container-color, var(--mat-sys-inverse-surface));color:var(--mdc-plain-tooltip-supporting-text-color, var(--mat-sys-inverse-on-surface));border-radius:var(--mdc-plain-tooltip-container-shape, var(--mat-sys-corner-extra-small));font-family:var(--mdc-plain-tooltip-supporting-text-font, var(--mat-sys-body-small-font));font-size:var(--mdc-plain-tooltip-supporting-text-size, var(--mat-sys-body-small-size));font-weight:var(--mdc-plain-tooltip-supporting-text-weight, var(--mat-sys-body-small-weight));line-height:var(--mdc-plain-tooltip-supporting-text-line-height, var(--mat-sys-body-small-line-height));letter-spacing:var(--mdc-plain-tooltip-supporting-text-tracking, var(--mat-sys-body-small-tracking))}.mat-mdc-tooltip-surface::before{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;border:1px solid rgba(0,0,0,0);border-radius:inherit;content:\"\";pointer-events:none}.mdc-tooltip--multiline .mat-mdc-tooltip-surface{text-align:left}[dir=rtl] .mdc-tooltip--multiline .mat-mdc-tooltip-surface{text-align:right}.mat-mdc-tooltip-panel{line-height:normal}.mat-mdc-tooltip-panel.mat-mdc-tooltip-panel-non-interactive{pointer-events:none}@keyframes mat-mdc-tooltip-show{0%{opacity:0;transform:scale(0.8)}100%{opacity:1;transform:scale(1)}}@keyframes mat-mdc-tooltip-hide{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(0.8)}}.mat-mdc-tooltip-show{animation:mat-mdc-tooltip-show 150ms cubic-bezier(0, 0, 0.2, 1) forwards}.mat-mdc-tooltip-hide{animation:mat-mdc-tooltip-hide 75ms cubic-bezier(0.4, 0, 1, 1) forwards}"],
+      dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.NgClass],
+      styles: [".mat-mdc-tooltip{position:relative;transform:scale(0);display:inline-flex}.mat-mdc-tooltip::before{content:\"\";top:0;right:0;bottom:0;left:0;z-index:-1;position:absolute}.mat-mdc-tooltip-panel-below .mat-mdc-tooltip::before{top:-8px}.mat-mdc-tooltip-panel-above .mat-mdc-tooltip::before{bottom:-8px}.mat-mdc-tooltip-panel-right .mat-mdc-tooltip::before{left:-8px}.mat-mdc-tooltip-panel-left .mat-mdc-tooltip::before{right:-8px}.mat-mdc-tooltip._mat-animation-noopable{animation:none;transform:scale(1)}.mat-mdc-tooltip-surface{word-break:normal;overflow-wrap:anywhere;padding:4px 8px;min-width:40px;max-width:200px;min-height:24px;max-height:40vh;box-sizing:border-box;overflow:hidden;text-align:center;will-change:transform,opacity;background-color:var(--mat-tooltip-container-color, var(--mat-sys-inverse-surface));color:var(--mat-tooltip-supporting-text-color, var(--mat-sys-inverse-on-surface));border-radius:var(--mat-tooltip-container-shape, var(--mat-sys-corner-extra-small));font-family:var(--mat-tooltip-supporting-text-font, var(--mat-sys-body-small-font));font-size:var(--mat-tooltip-supporting-text-size, var(--mat-sys-body-small-size));font-weight:var(--mat-tooltip-supporting-text-weight, var(--mat-sys-body-small-weight));line-height:var(--mat-tooltip-supporting-text-line-height, var(--mat-sys-body-small-line-height));letter-spacing:var(--mat-tooltip-supporting-text-tracking, var(--mat-sys-body-small-tracking))}.mat-mdc-tooltip-surface::before{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;border:1px solid rgba(0,0,0,0);border-radius:inherit;content:\"\";pointer-events:none}.mdc-tooltip--multiline .mat-mdc-tooltip-surface{text-align:left}[dir=rtl] .mdc-tooltip--multiline .mat-mdc-tooltip-surface{text-align:right}.mat-mdc-tooltip-panel{line-height:normal}.mat-mdc-tooltip-panel.mat-mdc-tooltip-panel-non-interactive{pointer-events:none}@keyframes mat-mdc-tooltip-show{0%{opacity:0;transform:scale(0.8)}100%{opacity:1;transform:scale(1)}}@keyframes mat-mdc-tooltip-hide{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(0.8)}}.mat-mdc-tooltip-show{animation:mat-mdc-tooltip-show 150ms cubic-bezier(0, 0, 0.2, 1) forwards}.mat-mdc-tooltip-hide{animation:mat-mdc-tooltip-hide 75ms cubic-bezier(0.4, 0, 1, 1) forwards}\n"],
       encapsulation: 2,
       changeDetection: 0
     });
@@ -1001,37 +1069,17 @@ let TooltipComponent = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-
-/**
- * Animations used by MatTooltip.
- * @docs-private
- * @deprecated No longer being used, to be removed.
- * @breaking-change 21.0.0
- */
-const matTooltipAnimations = {
-  /** Animation that transitions a tooltip in and out. */
-  tooltipState: /*#__PURE__*/(0,_angular_animations__WEBPACK_IMPORTED_MODULE_11__.trigger)('state', [
-  /*#__PURE__*/
-  // TODO(crisbeto): these values are based on MDC's CSS.
-  // We should be able to use their styles directly once we land #19432.
-  (0,_angular_animations__WEBPACK_IMPORTED_MODULE_11__.state)('initial, void, hidden', /*#__PURE__*/(0,_angular_animations__WEBPACK_IMPORTED_MODULE_11__.style)({
-    opacity: 0,
-    transform: 'scale(0.8)'
-  })), /*#__PURE__*/(0,_angular_animations__WEBPACK_IMPORTED_MODULE_11__.state)('visible', /*#__PURE__*/(0,_angular_animations__WEBPACK_IMPORTED_MODULE_11__.style)({
-    transform: 'scale(1)'
-  })), /*#__PURE__*/(0,_angular_animations__WEBPACK_IMPORTED_MODULE_11__.transition)('* => visible', /*#__PURE__*/(0,_angular_animations__WEBPACK_IMPORTED_MODULE_11__.animate)('150ms cubic-bezier(0, 0, 0.2, 1)')), /*#__PURE__*/(0,_angular_animations__WEBPACK_IMPORTED_MODULE_11__.transition)('* => hidden', /*#__PURE__*/(0,_angular_animations__WEBPACK_IMPORTED_MODULE_11__.animate)('75ms cubic-bezier(0.4, 0, 1, 1)'))])
-};
 let MatTooltipModule = /*#__PURE__*/(() => {
   class MatTooltipModule {
     static ɵfac = function MatTooltipModule_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || MatTooltipModule)();
     };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
       type: MatTooltipModule
     });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
       providers: [MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY_PROVIDER],
-      imports: [_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_6__.A11yModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.OverlayModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_13__.MatCommonModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_13__.MatCommonModule, _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_12__.CdkScrollableModule]
+      imports: [_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_1__.A11yModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_2__.OverlayModule, _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_13__.M, _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_13__.M, _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_3__.CdkScrollableModule]
     });
   }
   return MatTooltipModule;
@@ -1040,10 +1088,188 @@ let MatTooltipModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
-/**
- * Generated bundle index. Do not edit.
- */
 
+/***/ }),
+
+/***/ 73388:
+/*!************************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/animation-DfMFjxHu.mjs ***!
+  \************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ AnimationCurves),
+/* harmony export */   M: () => (/* binding */ MATERIAL_ANIMATIONS),
+/* harmony export */   _: () => (/* binding */ _animationsDisabled),
+/* harmony export */   a: () => (/* binding */ AnimationDurations)
+/* harmony export */ });
+/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/layout */ 285);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+
+
+
+/** Injection token used to configure the animations in Angular Material. */
+const MATERIAL_ANIMATIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('MATERIAL_ANIMATIONS');
+/**
+ * @deprecated No longer used, will be removed.
+ * @breaking-change 21.0.0
+ * @docs-private
+ */
+let AnimationCurves = /*#__PURE__*/(() => {
+  class AnimationCurves {
+    static STANDARD_CURVE = 'cubic-bezier(0.4,0.0,0.2,1)';
+    static DECELERATION_CURVE = 'cubic-bezier(0.0,0.0,0.2,1)';
+    static ACCELERATION_CURVE = 'cubic-bezier(0.4,0.0,1,1)';
+    static SHARP_CURVE = 'cubic-bezier(0.4,0.0,0.6,1)';
+  }
+  return AnimationCurves;
+})();
+/**
+ * @deprecated No longer used, will be removed.
+ * @breaking-change 21.0.0
+ * @docs-private
+ */
+let AnimationDurations = /*#__PURE__*/(() => {
+  class AnimationDurations {
+    static COMPLEX = '375ms';
+    static ENTERING = '225ms';
+    static EXITING = '195ms';
+  }
+  return AnimationDurations;
+})();
+/**
+ * Returns whether animations have been disabled by DI. Must be called in a DI context.
+ * @docs-private
+ */
+function _animationsDisabled() {
+  if ((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(MATERIAL_ANIMATIONS, {
+    optional: true
+  })?.animationsDisabled || (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ANIMATION_MODULE_TYPE, {
+    optional: true
+  }) === 'NoopAnimations') {
+    return true;
+  }
+  const mediaMatcher = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__.MediaMatcher);
+  return mediaMatcher.matchMedia('(prefers-reduced-motion)').matches;
+}
+
+
+/***/ }),
+
+/***/ 80640:
+/*!*************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/tooltip.mjs ***!
+  \*************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MAT_TOOLTIP_DEFAULT_OPTIONS: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.d),
+/* harmony export */   MAT_TOOLTIP_DEFAULT_OPTIONS_FACTORY: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.c),
+/* harmony export */   MAT_TOOLTIP_SCROLL_STRATEGY: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.M),
+/* harmony export */   MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.a),
+/* harmony export */   MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY_PROVIDER: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.b),
+/* harmony export */   MatTooltip: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.e),
+/* harmony export */   MatTooltipModule: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.h),
+/* harmony export */   SCROLL_THROTTLE_MS: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.S),
+/* harmony export */   TOOLTIP_PANEL_CLASS: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.T),
+/* harmony export */   TooltipComponent: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.f),
+/* harmony export */   getMatTooltipInvalidPositionError: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.g),
+/* harmony export */   matTooltipAnimations: () => (/* binding */ matTooltipAnimations)
+/* harmony export */ });
+/* harmony import */ var _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./module-CWxMD37a.mjs */ 41380);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/a11y */ 56593);
+/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/cdk/overlay */ 87351);
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/scrolling */ 25287);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ 32778);
+/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/coercion */ 33981);
+/* harmony import */ var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/cdk/keycodes */ 48215);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 85914);
+/* harmony import */ var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/cdk/platform */ 49583);
+/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/cdk/bidi */ 48073);
+/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/cdk/portal */ 35253);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ 44866);
+/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/cdk/layout */ 285);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Animations used by MatTooltip.
+ * @docs-private
+ * @deprecated No longer being used, to be removed.
+ * @breaking-change 21.0.0
+ */
+const matTooltipAnimations = {
+  // Represents:
+  // trigger('state', [
+  //   state('initial, void, hidden', style({opacity: 0, transform: 'scale(0.8)'})),
+  //   state('visible', style({transform: 'scale(1)'})),
+  //   transition('* => visible', animate('150ms cubic-bezier(0, 0, 0.2, 1)')),
+  //   transition('* => hidden', animate('75ms cubic-bezier(0.4, 0, 1, 1)')),
+  // ])
+  /** Animation that transitions a tooltip in and out. */
+  tooltipState: {
+    type: 7,
+    name: 'state',
+    definitions: [{
+      type: 0,
+      name: 'initial, void, hidden',
+      styles: {
+        type: 6,
+        styles: {
+          opacity: 0,
+          transform: 'scale(0.8)'
+        },
+        offset: null
+      }
+    }, {
+      type: 0,
+      name: 'visible',
+      styles: {
+        type: 6,
+        styles: {
+          transform: 'scale(1)'
+        },
+        offset: null
+      }
+    }, {
+      type: 1,
+      expr: '* => visible',
+      animation: {
+        type: 4,
+        styles: null,
+        timings: '150ms cubic-bezier(0, 0, 0.2, 1)'
+      },
+      options: null
+    }, {
+      type: 1,
+      expr: '* => hidden',
+      animation: {
+        type: 4,
+        styles: null,
+        timings: '75ms cubic-bezier(0.4, 0, 1, 1)'
+      },
+      options: null
+    }],
+    options: {}
+  }
+};
 
 
 /***/ })

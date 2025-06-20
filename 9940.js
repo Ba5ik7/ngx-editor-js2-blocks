@@ -1,5 +1,92 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[9940],{
 
+/***/ 6427:
+/*!******************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/platform-DNDzkVcI.mjs ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   P: () => (/* binding */ Platform)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 85914);
+
+
+
+
+// Whether the current platform supports the V8 Break Iterator. The V8 check
+// is necessary to detect all Blink based browsers.
+let hasV8BreakIterator;
+// We need a try/catch around the reference to `Intl`, because accessing it in some cases can
+// cause IE to throw. These cases are tied to particular versions of Windows and can happen if
+// the consumer is providing a polyfilled `Map`. See:
+// https://github.com/Microsoft/ChakraCore/issues/3189
+// https://github.com/angular/components/issues/15687
+try {
+  hasV8BreakIterator = typeof Intl !== 'undefined' && Intl.v8BreakIterator;
+} catch {
+  hasV8BreakIterator = false;
+}
+/**
+ * Service to detect the current platform by comparing the userAgent strings and
+ * checking browser-specific global properties.
+ */
+let Platform = /*#__PURE__*/(() => {
+  class Platform {
+    _platformId = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.PLATFORM_ID);
+    // We want to use the Angular platform check because if the Document is shimmed
+    // without the navigator, the following checks will fail. This is preferred because
+    // sometimes the Document may be shimmed without the user's knowledge or intention
+    /** Whether the Angular application is being rendered in the browser. */
+    isBrowser = this._platformId ? (0,_angular_common__WEBPACK_IMPORTED_MODULE_1__.isPlatformBrowser)(this._platformId) : typeof document === 'object' && !!document;
+    /** Whether the current browser is Microsoft Edge. */
+    EDGE = this.isBrowser && /(edge)/i.test(navigator.userAgent);
+    /** Whether the current rendering engine is Microsoft Trident. */
+    TRIDENT = this.isBrowser && /(msie|trident)/i.test(navigator.userAgent);
+    // EdgeHTML and Trident mock Blink specific things and need to be excluded from this check.
+    /** Whether the current rendering engine is Blink. */
+    BLINK = this.isBrowser && !!(window.chrome || hasV8BreakIterator) && typeof CSS !== 'undefined' && !this.EDGE && !this.TRIDENT;
+    // Webkit is part of the userAgent in EdgeHTML, Blink and Trident. Therefore we need to
+    // ensure that Webkit runs standalone and is not used as another engine's base.
+    /** Whether the current rendering engine is WebKit. */
+    WEBKIT = this.isBrowser && /AppleWebKit/i.test(navigator.userAgent) && !this.BLINK && !this.EDGE && !this.TRIDENT;
+    /** Whether the current platform is Apple iOS. */
+    IOS = this.isBrowser && /iPad|iPhone|iPod/.test(navigator.userAgent) && !('MSStream' in window);
+    // It's difficult to detect the plain Gecko engine, because most of the browsers identify
+    // them self as Gecko-like browsers and modify the userAgent's according to that.
+    // Since we only cover one explicit Firefox case, we can simply check for Firefox
+    // instead of having an unstable check for Gecko.
+    /** Whether the current browser is Firefox. */
+    FIREFOX = this.isBrowser && /(firefox|minefield)/i.test(navigator.userAgent);
+    /** Whether the current platform is Android. */
+    // Trident on mobile adds the android platform to the userAgent to trick detections.
+    ANDROID = this.isBrowser && /android/i.test(navigator.userAgent) && !this.TRIDENT;
+    // Safari browsers will include the Safari keyword in their userAgent. Some browsers may fake
+    // this and just place the Safari keyword in the userAgent. To be more safe about Safari every
+    // Safari browser should also use Webkit as its layout engine.
+    /** Whether the current browser is Safari. */
+    SAFARI = this.isBrowser && /safari/i.test(navigator.userAgent) && this.WEBKIT;
+    constructor() {}
+    static ɵfac = function Platform_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || Platform)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: Platform,
+      factory: Platform.ɵfac,
+      providedIn: 'root'
+    });
+  }
+  return Platform;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+
+/***/ }),
+
 /***/ 69940:
 /*!***********************************************************!*\
   !*** ./node_modules/@angular/cdk/fesm2022/text-field.mjs ***!
@@ -13,13 +100,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   CdkTextareaAutosize: () => (/* binding */ CdkTextareaAutosize),
 /* harmony export */   TextFieldModule: () => (/* binding */ TextFieldModule)
 /* harmony export */ });
-/* harmony import */ var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/platform */ 1830);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 9516);
-/* harmony import */ var _angular_cdk_private__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/private */ 77824);
-/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/cdk/coercion */ 31620);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 44866);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 59694);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 32778);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 44866);
+/* harmony import */ var _platform_DNDzkVcI_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./platform-DNDzkVcI.mjs */ 6427);
+/* harmony import */ var _style_loader_B2sGQXxD_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style-loader-B2sGQXxD.mjs */ 82981);
+/* harmony import */ var _element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./element-x4z00URv.mjs */ 94724);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 32778);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 85914);
 
 
 
@@ -35,14 +122,14 @@ let _CdkTextFieldStyleLoader = /*#__PURE__*/(() => {
     static ɵfac = function _CdkTextFieldStyleLoader_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || _CdkTextFieldStyleLoader)();
     };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: _CdkTextFieldStyleLoader,
       selectors: [["ng-component"]],
       hostAttrs: ["cdk-text-field-style-loader", ""],
       decls: 0,
       vars: 0,
       template: function _CdkTextFieldStyleLoader_Template(rf, ctx) {},
-      styles: ["textarea.cdk-textarea-autosize{resize:none}textarea.cdk-textarea-autosize-measuring{padding:2px 0 !important;box-sizing:content-box !important;height:auto !important;overflow:hidden !important}textarea.cdk-textarea-autosize-measuring-firefox{padding:2px 0 !important;box-sizing:content-box !important;height:0 !important}@keyframes cdk-text-field-autofill-start{/*!*/}@keyframes cdk-text-field-autofill-end{/*!*/}.cdk-text-field-autofill-monitored:-webkit-autofill{animation:cdk-text-field-autofill-start 0s 1ms}.cdk-text-field-autofill-monitored:not(:-webkit-autofill){animation:cdk-text-field-autofill-end 0s 1ms}"],
+      styles: ["textarea.cdk-textarea-autosize{resize:none}textarea.cdk-textarea-autosize-measuring{padding:2px 0 !important;box-sizing:content-box !important;height:auto !important;overflow:hidden !important}textarea.cdk-textarea-autosize-measuring-firefox{padding:2px 0 !important;box-sizing:content-box !important;height:0 !important}@keyframes cdk-text-field-autofill-start{/*!*/}@keyframes cdk-text-field-autofill-end{/*!*/}.cdk-text-field-autofill-monitored:-webkit-autofill{animation:cdk-text-field-autofill-start 0s 1ms}.cdk-text-field-autofill-monitored:not(:-webkit-autofill){animation:cdk-text-field-autofill-end 0s 1ms}\n"],
       encapsulation: 2,
       changeDetection: 0
     });
@@ -54,9 +141,9 @@ let _CdkTextFieldStyleLoader = /*#__PURE__*/(() => {
 })();
 
 /** Options to pass to the animationstart listener. */
-const listenerOptions = /*#__PURE__*/(0,_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_0__.normalizePassiveListenerOptions)({
+const listenerOptions = {
   passive: true
-});
+};
 /**
  * An injectable service that can be used to monitor the autofill state of an input.
  * Based on the following blog post:
@@ -64,22 +151,23 @@ const listenerOptions = /*#__PURE__*/(0,_angular_cdk_platform__WEBPACK_IMPORTED_
  */
 let AutofillMonitor = /*#__PURE__*/(() => {
   class AutofillMonitor {
-    _platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_0__.Platform);
-    _ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.NgZone);
-    _styleLoader = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_private__WEBPACK_IMPORTED_MODULE_2__._CdkPrivateStyleLoader);
+    _platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_platform_DNDzkVcI_mjs__WEBPACK_IMPORTED_MODULE_4__.P);
+    _ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone);
+    _renderer = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.RendererFactory2).createRenderer(null, null);
+    _styleLoader = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_style_loader_B2sGQXxD_mjs__WEBPACK_IMPORTED_MODULE_5__._);
     _monitoredElements = new Map();
     constructor() {}
     monitor(elementOrRef) {
       if (!this._platform.isBrowser) {
-        return rxjs__WEBPACK_IMPORTED_MODULE_4__.EMPTY;
+        return rxjs__WEBPACK_IMPORTED_MODULE_1__.EMPTY;
       }
       this._styleLoader.load(_CdkTextFieldStyleLoader);
-      const element = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_3__.coerceElement)(elementOrRef);
+      const element = (0,_element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_6__.a)(elementOrRef);
       const info = this._monitoredElements.get(element);
       if (info) {
         return info.subject;
       }
-      const result = new rxjs__WEBPACK_IMPORTED_MODULE_4__.Subject();
+      const subject = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
       const cssClass = 'cdk-text-field-autofilled';
       const listener = event => {
         // Animation events fire on initial element render, we check for the presence of the autofill
@@ -87,32 +175,30 @@ let AutofillMonitor = /*#__PURE__*/(() => {
         // we fire off events.
         if (event.animationName === 'cdk-text-field-autofill-start' && !element.classList.contains(cssClass)) {
           element.classList.add(cssClass);
-          this._ngZone.run(() => result.next({
+          this._ngZone.run(() => subject.next({
             target: event.target,
             isAutofilled: true
           }));
         } else if (event.animationName === 'cdk-text-field-autofill-end' && element.classList.contains(cssClass)) {
           element.classList.remove(cssClass);
-          this._ngZone.run(() => result.next({
+          this._ngZone.run(() => subject.next({
             target: event.target,
             isAutofilled: false
           }));
         }
       };
-      this._ngZone.runOutsideAngular(() => {
-        element.addEventListener('animationstart', listener, listenerOptions);
+      const unlisten = this._ngZone.runOutsideAngular(() => {
         element.classList.add('cdk-text-field-autofill-monitored');
+        return this._renderer.listen(element, 'animationstart', listener, listenerOptions);
       });
       this._monitoredElements.set(element, {
-        subject: result,
-        unlisten: () => {
-          element.removeEventListener('animationstart', listener, listenerOptions);
-        }
+        subject,
+        unlisten
       });
-      return result;
+      return subject;
     }
     stopMonitoring(elementOrRef) {
-      const element = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_3__.coerceElement)(elementOrRef);
+      const element = (0,_element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_6__.a)(elementOrRef);
       const info = this._monitoredElements.get(element);
       if (info) {
         info.unlisten();
@@ -128,7 +214,7 @@ let AutofillMonitor = /*#__PURE__*/(() => {
     static ɵfac = function AutofillMonitor_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || AutofillMonitor)();
     };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: AutofillMonitor,
       factory: AutofillMonitor.ɵfac,
       providedIn: 'root'
@@ -142,10 +228,10 @@ let AutofillMonitor = /*#__PURE__*/(() => {
 /** A directive that can be used to monitor the autofill state of an input. */
 let CdkAutofill = /*#__PURE__*/(() => {
   class CdkAutofill {
-    _elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ElementRef);
-    _autofillMonitor = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(AutofillMonitor);
+    _elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
+    _autofillMonitor = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(AutofillMonitor);
     /** Emits when the autofill state of the element changes. */
-    cdkAutofill = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
+    cdkAutofill = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
     constructor() {}
     ngOnInit() {
       this._autofillMonitor.monitor(this._elementRef).subscribe(event => this.cdkAutofill.emit(event));
@@ -156,7 +242,7 @@ let CdkAutofill = /*#__PURE__*/(() => {
     static ɵfac = function CdkAutofill_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || CdkAutofill)();
     };
-    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
+    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
       type: CdkAutofill,
       selectors: [["", "cdkAutofill", ""]],
       outputs: {
@@ -173,15 +259,15 @@ let CdkAutofill = /*#__PURE__*/(() => {
 /** Directive to automatically resize a textarea to fit its content. */
 let CdkTextareaAutosize = /*#__PURE__*/(() => {
   class CdkTextareaAutosize {
-    _elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ElementRef);
-    _platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_0__.Platform);
-    _ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.NgZone);
-    _renderer = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.Renderer2);
-    _resizeEvents = new rxjs__WEBPACK_IMPORTED_MODULE_4__.Subject();
+    _elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
+    _platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_platform_DNDzkVcI_mjs__WEBPACK_IMPORTED_MODULE_4__.P);
+    _ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone);
+    _renderer = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2);
+    _resizeEvents = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
     /** Keep track of the previous textarea value to avoid resizing when the value hasn't changed. */
     _previousValue;
     _initialHeight;
-    _destroyed = new rxjs__WEBPACK_IMPORTED_MODULE_4__.Subject();
+    _destroyed = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
     _listenerCleanups;
     _minRows;
     _maxRows;
@@ -198,7 +284,7 @@ let CdkTextareaAutosize = /*#__PURE__*/(() => {
       return this._minRows;
     }
     set minRows(value) {
-      this._minRows = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_3__.coerceNumberProperty)(value);
+      this._minRows = (0,_element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_6__.c)(value);
       this._setMinHeight();
     }
     /** Maximum amount of rows in the textarea. */
@@ -206,7 +292,7 @@ let CdkTextareaAutosize = /*#__PURE__*/(() => {
       return this._maxRows;
     }
     set maxRows(value) {
-      this._maxRows = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_3__.coerceNumberProperty)(value);
+      this._maxRows = (0,_element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_6__.c)(value);
       this._setMaxHeight();
     }
     /** Whether autosizing is enabled or not */
@@ -236,14 +322,16 @@ let CdkTextareaAutosize = /*#__PURE__*/(() => {
     _cachedLineHeight;
     /** Cached height of a textarea with only the placeholder. */
     _cachedPlaceholderHeight;
+    /** Cached scroll top of a textarea */
+    _cachedScrollTop;
     /** Used to reference correct document/window */
-    _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_common__WEBPACK_IMPORTED_MODULE_5__.DOCUMENT, {
+    _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT, {
       optional: true
     });
     _hasFocus;
     _isViewInited = false;
     constructor() {
-      const styleLoader = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_private__WEBPACK_IMPORTED_MODULE_2__._CdkPrivateStyleLoader);
+      const styleLoader = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_style_loader_B2sGQXxD_mjs__WEBPACK_IMPORTED_MODULE_5__._);
       styleLoader.load(_CdkTextFieldStyleLoader);
       this._textareaElement = this._elementRef.nativeElement;
     }
@@ -268,7 +356,7 @@ let CdkTextareaAutosize = /*#__PURE__*/(() => {
         this.resizeToFitContent();
         this._ngZone.runOutsideAngular(() => {
           this._listenerCleanups = [this._renderer.listen('window', 'resize', () => this._resizeEvents.next()), this._renderer.listen(this._textareaElement, 'focus', this._handleFocusEvent), this._renderer.listen(this._textareaElement, 'blur', this._handleFocusEvent)];
-          this._resizeEvents.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.auditTime)(16)).subscribe(() => {
+          this._resizeEvents.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.auditTime)(16)).subscribe(() => {
             // Clear the cached heights since the styles can change
             // when the window is resized (e.g. by media queries).
             this._cachedLineHeight = this._cachedPlaceholderHeight = undefined;
@@ -383,6 +471,7 @@ let CdkTextareaAutosize = /*#__PURE__*/(() => {
       }
       this._cacheTextareaLineHeight();
       this._cacheTextareaPlaceholderHeight();
+      this._cachedScrollTop = this._textareaElement.scrollTop;
       // If we haven't determined the line-height yet, we know we're still hidden and there's no point
       // in checking the height of the textarea.
       if (!this._cachedLineHeight) {
@@ -439,18 +528,19 @@ let CdkTextareaAutosize = /*#__PURE__*/(() => {
       // it to receive focus on IE and Edge.
       if (!this._destroyed.isStopped && this._hasFocus) {
         textarea.setSelectionRange(selectionStart, selectionEnd);
+        textarea.scrollTop = this._cachedScrollTop;
       }
     }
     static ɵfac = function CdkTextareaAutosize_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || CdkTextareaAutosize)();
     };
-    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
+    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
       type: CdkTextareaAutosize,
       selectors: [["textarea", "cdkTextareaAutosize", ""]],
       hostAttrs: ["rows", "1", 1, "cdk-textarea-autosize"],
       hostBindings: function CdkTextareaAutosize_HostBindings(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("input", function CdkTextareaAutosize_input_HostBindingHandler() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("input", function CdkTextareaAutosize_input_HostBindingHandler() {
             return ctx._noopInputHandler();
           });
         }
@@ -458,11 +548,10 @@ let CdkTextareaAutosize = /*#__PURE__*/(() => {
       inputs: {
         minRows: [0, "cdkAutosizeMinRows", "minRows"],
         maxRows: [0, "cdkAutosizeMaxRows", "maxRows"],
-        enabled: [2, "cdkTextareaAutosize", "enabled", _angular_core__WEBPACK_IMPORTED_MODULE_1__.booleanAttribute],
+        enabled: [2, "cdkTextareaAutosize", "enabled", _angular_core__WEBPACK_IMPORTED_MODULE_0__.booleanAttribute],
         placeholder: "placeholder"
       },
-      exportAs: ["cdkTextareaAutosize"],
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInputTransformsFeature"]]
+      exportAs: ["cdkTextareaAutosize"]
     });
   }
   return CdkTextareaAutosize;
@@ -475,10 +564,10 @@ let TextFieldModule = /*#__PURE__*/(() => {
     static ɵfac = function TextFieldModule_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || TextFieldModule)();
     };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
       type: TextFieldModule
     });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({});
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({});
   }
   return TextFieldModule;
 })();
@@ -486,10 +575,119 @@ let TextFieldModule = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
-/**
- * Generated bundle index. Do not edit.
- */
 
+/***/ }),
+
+/***/ 82981:
+/*!**********************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/style-loader-B2sGQXxD.mjs ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   _: () => (/* binding */ _CdkPrivateStyleLoader)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+
+
+
+/** Apps in which we've loaded styles. */
+const appsWithLoaders = /*#__PURE__*/new WeakMap();
+/**
+ * Service that loads structural styles dynamically
+ * and ensures that they're only loaded once per app.
+ */
+let _CdkPrivateStyleLoader = /*#__PURE__*/(() => {
+  class _CdkPrivateStyleLoader {
+    _appRef;
+    _injector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Injector);
+    _environmentInjector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.EnvironmentInjector);
+    /**
+     * Loads a set of styles.
+     * @param loader Component which will be instantiated to load the styles.
+     */
+    load(loader) {
+      // Resolve the app ref lazily to avoid circular dependency errors if this is called too early.
+      const appRef = this._appRef = this._appRef || this._injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ApplicationRef);
+      let data = appsWithLoaders.get(appRef);
+      // If we haven't loaded for this app before, we have to initialize it.
+      if (!data) {
+        data = {
+          loaders: new Set(),
+          refs: []
+        };
+        appsWithLoaders.set(appRef, data);
+        // When the app is destroyed, we need to clean up all the related loaders.
+        appRef.onDestroy(() => {
+          appsWithLoaders.get(appRef)?.refs.forEach(ref => ref.destroy());
+          appsWithLoaders.delete(appRef);
+        });
+      }
+      // If the loader hasn't been loaded before, we need to instatiate it.
+      if (!data.loaders.has(loader)) {
+        data.loaders.add(loader);
+        data.refs.push((0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.createComponent)(loader, {
+          environmentInjector: this._environmentInjector
+        }));
+      }
+    }
+    static ɵfac = function _CdkPrivateStyleLoader_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _CdkPrivateStyleLoader)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: _CdkPrivateStyleLoader,
+      factory: _CdkPrivateStyleLoader.ɵfac,
+      providedIn: 'root'
+    });
+  }
+  return _CdkPrivateStyleLoader;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+
+/***/ }),
+
+/***/ 94724:
+/*!*****************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/element-x4z00URv.mjs ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   _: () => (/* binding */ _isNumberValue),
+/* harmony export */   a: () => (/* binding */ coerceElement),
+/* harmony export */   c: () => (/* binding */ coerceNumberProperty)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+
+function coerceNumberProperty(value, fallbackValue = 0) {
+  if (_isNumberValue(value)) {
+    return Number(value);
+  }
+  return arguments.length === 2 ? fallbackValue : 0;
+}
+/**
+ * Whether the provided value is considered a number.
+ * @docs-private
+ */
+function _isNumberValue(value) {
+  // parseFloat(value) handles most of the cases we're interested in (it treats null, empty string,
+  // and other non-number values as NaN, where Number just uses 0) but it considers the string
+  // '123hello' to be a valid number. Therefore we also check if Number(value) is NaN.
+  return !isNaN(parseFloat(value)) && !isNaN(Number(value));
+}
+
+/**
+ * Coerces an ElementRef or an Element into an element.
+ * Useful for APIs that can accept either a ref or the native element itself.
+ */
+function coerceElement(elementOrRef) {
+  return elementOrRef instanceof _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef ? elementOrRef.nativeElement : elementOrRef;
+}
 
 
 /***/ })

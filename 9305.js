@@ -1,410 +1,5 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[9305],{
 
-/***/ 59305:
-/*!*************************************************************************************!*\
-  !*** ./dist/ngx-editor-js2-codemirror/fesm2022/tmdjr-ngx-editor-js2-codemirror.mjs ***!
-  \*************************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   NgxEditorJs2CodemirrorComponent: () => (/* binding */ NgxEditorJs2CodemirrorComponent)
-/* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 9516);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ 56748);
-/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 53576);
-/* harmony import */ var _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ctrl/ngx-codemirror */ 42642);
-/* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 59694);
-
-
-
-
-
-
-
-
-
-
-function NgxEditorJs2CodemirrorComponent_Conditional_0_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0, 0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "span", 1)(2, "ngx-codemirror", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx_r0.formGroup());
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autofocus", ctx_r0.autofocus());
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("actionCallback", ctx_r0.actionCallbackBind)("blockOptionActions", ctx_r0.blockOptionActions())("formControlName", ctx_r0.formControlName())("componentContextPositionIndex", ctx_r0.sortIndex())("options", ctx_r0.codeMirrorOptions());
-  }
-}
-let NgxEditorJs2CodemirrorComponent = /*#__PURE__*/(() => {
-  class NgxEditorJs2CodemirrorComponent {
-    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(0);
-    componentInstanceName = 'NgxEditorJs2CodemirrorComponent';
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true);
-    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
-    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
-    blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)([{
-      action: 'text/typescript',
-      icon: 'javascript'
-    }, {
-      action: 'css',
-      icon: 'css'
-    }, {
-      action: 'xml',
-      icon: 'html'
-    }]);
-    codeMirrorOptions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)({
-      lineNumbers: true,
-      theme: 'material-palenight',
-      mode: 'text/typescript',
-      extraKeys: {
-        'Ctrl-Space': 'autocomplete'
-      },
-      styleActiveLine: true,
-      // Highlight active line
-      matchBrackets: true,
-      indentUnit: 2,
-      tabSize: 2,
-      cursorScrollMargin: 5
-    });
-    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('display-large');
-    actionCallbackBind = this.actionCallback.bind(this);
-    actionCallback(action) {
-      this.codeMirrorOptions.update(prev => ({
-        ...prev,
-        mode: action
-      }));
-      this.savedAction.update(() => action);
-    }
-    // ! Hotfix for perspective: 2500px;
-    // Need create a delay to wait for the animation to finish before showing the component
-    waitForAnimation = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false);
-    constructor() {
-      setTimeout(() => {
-        this.waitForAnimation.update(() => true);
-      }, 500);
-    }
-    static ɵfac = function NgxEditorJs2CodemirrorComponent_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || NgxEditorJs2CodemirrorComponent)();
-    };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: NgxEditorJs2CodemirrorComponent,
-      selectors: [["ngx-editor-js2-codemirror"]],
-      hostAttrs: [1, "cdk-drag-animating", "no-toolbar-inline"],
-      inputs: {
-        sortIndex: [1, "sortIndex"],
-        autofocus: [1, "autofocus"],
-        formGroup: [1, "formGroup"],
-        formControlName: [1, "formControlName"],
-        blockOptionActions: [1, "blockOptionActions"]
-      },
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵHostDirectivesFeature"]([_angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_2__.CdkDrag])],
-      decls: 1,
-      vars: 1,
-      consts: [[3, "formGroup"], ["controlAccessor", "", 3, "autofocus"], ["toolbarFab", "", 1, "fade-in", 3, "actionCallback", "blockOptionActions", "formControlName", "componentContextPositionIndex", "options"]],
-      template: function NgxEditorJs2CodemirrorComponent_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, NgxEditorJs2CodemirrorComponent_Conditional_0_Template, 3, 7, "ng-container", 0);
-        }
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"](ctx.waitForAnimation() ? 0 : -1);
-        }
-      },
-      dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControlName, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.ControlAccessorDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.AutofocusDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.ToolbarFabDirective, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_5__.CodemirrorModule, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_5__.CodemirrorComponent],
-      styles: ["[_nghost-%COMP%]{display:block;position:relative;margin:1.5rem 0}[_nghost-%COMP%]   .codemirror-container-overlay[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;position:absolute}[_nghost-%COMP%]   .fade-in[_ngcontent-%COMP%]{animation:_ngcontent-%COMP%_fadeIn .25s ease-in-out}@keyframes _ngcontent-%COMP%_fadeIn{0%{opacity:0}to{opacity:1}}[_nghost-%COMP%]     .CodeMirror{font-family:Cascadia Code,Fira Code,Menlo,Monaco,Courier New,monospace;font-size:16px;font-weight:400;line-height:32px;letter-spacing:.5px;height:100%}"]
-    });
-  }
-  return NgxEditorJs2CodemirrorComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/*
- * Public API Surface of ngx-editor-js2-codemirror
- */
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-
-/***/ }),
-
-/***/ 42642:
-/*!****************************************************************************!*\
-  !*** ./node_modules/@ctrl/ngx-codemirror/fesm2022/ctrl-ngx-codemirror.mjs ***!
-  \****************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   CodemirrorComponent: () => (/* binding */ CodemirrorComponent),
-/* harmony export */   CodemirrorModule: () => (/* binding */ CodemirrorModule)
-/* harmony export */ });
-/* harmony import */ var _Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 9516);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ 56748);
-
-
-
-
-const _c0 = ["ref"];
-function normalizeLineEndings(str) {
-  if (!str) {
-    return str;
-  }
-  return str.replace(/\r\n|\r/g, '\n');
-}
-let CodemirrorComponent = /*#__PURE__*/(() => {
-  class CodemirrorComponent {
-    _differs;
-    _ngZone;
-    /* class applied to the created textarea */
-    className = '';
-    /* name applied to the created textarea */
-    name = 'codemirror';
-    /* autofocus setting applied to the created textarea */
-    autoFocus = false;
-    /**
-     * set options for codemirror
-     * @link http://codemirror.net/doc/manual.html#config
-     */
-    set options(value) {
-      this._options = value;
-      if (!this._differ && value) {
-        this._differ = this._differs.find(value).create();
-      }
-    }
-    /* preserve previous scroll position after updating value */
-    preserveScrollPosition = false;
-    /* called when the text cursor is moved */
-    cursorActivity = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
-    /* called when the editor is focused or loses focus */
-    focusChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
-    /* called when the editor is scrolled */
-    // eslint-disable-next-line @angular-eslint/no-output-native
-    scroll = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
-    /* called when file(s) are dropped */
-    // eslint-disable-next-line @angular-eslint/no-output-native
-    drop = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
-    /* called when codeMirror instance is initiated on the component */
-    codeMirrorLoaded = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
-    ref;
-    value = '';
-    disabled = false;
-    isFocused = false;
-    codeMirror;
-    /**
-     * either global variable or required library
-     */
-    _codeMirror;
-    _differ;
-    _options;
-    constructor(_differs, _ngZone) {
-      this._differs = _differs;
-      this._ngZone = _ngZone;
-    }
-    get codeMirrorGlobal() {
-      if (this._codeMirror) {
-        return this._codeMirror;
-      }
-      // in order to allow for universal rendering, we import Codemirror runtime with `require` to prevent node errors
-      this._codeMirror = typeof CodeMirror !== 'undefined' ? CodeMirror : __webpack_require__.e(/*! import() */ 1273).then(__webpack_require__.t.bind(__webpack_require__, /*! codemirror */ 81273, 19));
-      return this._codeMirror;
-    }
-    ngAfterViewInit() {
-      var _this = this;
-      this._ngZone.runOutsideAngular(/*#__PURE__*/(0,_Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-        const codeMirrorObj = yield _this.codeMirrorGlobal;
-        const codeMirror = codeMirrorObj?.default ? codeMirrorObj.default : codeMirrorObj;
-        _this.codeMirror = codeMirror.fromTextArea(_this.ref.nativeElement, _this._options);
-        _this.codeMirror.on('cursorActivity', cm => _this._ngZone.run(() => _this.cursorActive(cm)));
-        _this.codeMirror.on('scroll', _this.scrollChanged.bind(_this));
-        _this.codeMirror.on('blur', () => _this._ngZone.run(() => _this.focusChanged(false)));
-        _this.codeMirror.on('focus', () => _this._ngZone.run(() => _this.focusChanged(true)));
-        _this.codeMirror.on('change', (cm, change) => _this._ngZone.run(() => _this.codemirrorValueChanged(cm, change)));
-        _this.codeMirror.on('drop', (cm, e) => {
-          _this._ngZone.run(() => _this.dropFiles(cm, e));
-        });
-        _this.codeMirror.setValue(_this.value);
-        _this.codeMirrorLoaded.emit(_this);
-      }));
-    }
-    ngDoCheck() {
-      if (!this._differ) {
-        return;
-      }
-      // check options have not changed
-      const changes = this._differ.diff(this._options);
-      if (changes) {
-        changes.forEachChangedItem(option => this.setOptionIfChanged(option.key, option.currentValue));
-        changes.forEachAddedItem(option => this.setOptionIfChanged(option.key, option.currentValue));
-        changes.forEachRemovedItem(option => this.setOptionIfChanged(option.key, option.currentValue));
-      }
-    }
-    ngOnDestroy() {
-      // is there a lighter-weight way to remove the cm instance?
-      if (this.codeMirror) {
-        this.codeMirror.toTextArea();
-      }
-    }
-    codemirrorValueChanged(cm, change) {
-      const cmVal = cm.getValue();
-      if (this.value !== cmVal) {
-        this.value = cmVal;
-        this.onChange(this.value);
-      }
-    }
-    setOptionIfChanged(optionName, newValue) {
-      if (!this.codeMirror) {
-        return;
-      }
-      // cast to any to handle strictly typed option names
-      // could possibly import settings strings available in the future
-      this.codeMirror.setOption(optionName, newValue);
-    }
-    focusChanged(focused) {
-      this.onTouched();
-      this.isFocused = focused;
-      this.focusChange.emit(focused);
-    }
-    scrollChanged(cm) {
-      this.scroll.emit(cm.getScrollInfo());
-    }
-    cursorActive(cm) {
-      this.cursorActivity.emit(cm);
-    }
-    dropFiles(cm, e) {
-      this.drop.emit([cm, e]);
-    }
-    /** Implemented as part of ControlValueAccessor. */
-    writeValue(value) {
-      if (value === null || value === undefined) {
-        return;
-      }
-      if (!this.codeMirror) {
-        this.value = value;
-        return;
-      }
-      const cur = this.codeMirror.getValue();
-      if (value !== cur && normalizeLineEndings(cur) !== normalizeLineEndings(value)) {
-        this.value = value;
-        if (this.preserveScrollPosition) {
-          const prevScrollPosition = this.codeMirror.getScrollInfo();
-          this.codeMirror.setValue(this.value);
-          this.codeMirror.scrollTo(prevScrollPosition.left, prevScrollPosition.top);
-        } else {
-          this.codeMirror.setValue(this.value);
-        }
-      }
-    }
-    /** Implemented as part of ControlValueAccessor. */
-    registerOnChange(fn) {
-      this.onChange = fn;
-    }
-    /** Implemented as part of ControlValueAccessor. */
-    registerOnTouched(fn) {
-      this.onTouched = fn;
-    }
-    /** Implemented as part of ControlValueAccessor. */
-    setDisabledState(isDisabled) {
-      this.disabled = isDisabled;
-      this.setOptionIfChanged('readOnly', this.disabled);
-    }
-    /** Implemented as part of ControlValueAccessor. */
-    onChange = _ => {};
-    /** Implemented as part of ControlValueAccessor. */
-    onTouched = () => {};
-    static ɵfac = function CodemirrorComponent_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || CodemirrorComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__.KeyValueDiffers), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__.NgZone));
-    };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
-      type: CodemirrorComponent,
-      selectors: [["ngx-codemirror"]],
-      viewQuery: function CodemirrorComponent_Query(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵviewQuery"](_c0, 5);
-        }
-        if (rf & 2) {
-          let _t;
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.ref = _t.first);
-        }
-      },
-      inputs: {
-        className: "className",
-        name: "name",
-        autoFocus: "autoFocus",
-        options: "options",
-        preserveScrollPosition: "preserveScrollPosition"
-      },
-      outputs: {
-        cursorActivity: "cursorActivity",
-        focusChange: "focusChange",
-        scroll: "scroll",
-        drop: "drop",
-        codeMirrorLoaded: "codeMirrorLoaded"
-      },
-      standalone: false,
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([{
-        provide: _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NG_VALUE_ACCESSOR,
-        useExisting: (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.forwardRef)(() => CodemirrorComponent),
-        multi: true
-      }])],
-      decls: 3,
-      vars: 7,
-      consts: [["ref", ""], ["autocomplete", "off", 3, "name", "autofocus"]],
-      template: function CodemirrorComponent_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "textarea", 1, 0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "    ");
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        }
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMapInterpolate1"]("ngx-codemirror ", ctx.className, "");
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassProp"]("ngx-codemirror--focused", ctx.isFocused);
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("name", ctx.name)("autofocus", ctx.autoFocus);
-        }
-      },
-      encapsulation: 2,
-      changeDetection: 0
-    });
-  }
-  return CodemirrorComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let CodemirrorModule = /*#__PURE__*/(() => {
-  class CodemirrorModule {
-    static ɵfac = function CodemirrorModule_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || CodemirrorModule)();
-    };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
-      type: CodemirrorModule
-    });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({});
-  }
-  return CodemirrorModule;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-
-/***/ }),
-
 /***/ 40623:
 /*!******************************************************************************!*\
   !*** ./node_modules/@tmdjr/ngx-editor-js2/fesm2022/tmdjr-ngx-editor-js2.mjs ***!
@@ -421,19 +16,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   NgxEditorJs2Service: () => (/* binding */ NgxEditorJs2Service),
 /* harmony export */   ToolbarFabDirective: () => (/* binding */ ToolbarFabDirective)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 9516);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ 56748);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ 7140);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 44866);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/core */ 84718);
-/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 53576);
-/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/cdk/overlay */ 87916);
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/icon */ 70018);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 59694);
-/* harmony import */ var _angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core/rxjs-interop */ 56968);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/form-field */ 43250);
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/input */ 62392);
-/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/list */ 17858);
-/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/cdk/portal */ 80836);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/core */ 49217);
+/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 77947);
+/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/cdk/overlay */ 87351);
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/icon */ 37409);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 85914);
+/* harmony import */ var _angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core/rxjs-interop */ 33316);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/form-field */ 76833);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/input */ 29757);
+/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/list */ 39633);
+/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/cdk/portal */ 35253);
 
 
 
@@ -482,7 +77,7 @@ function ToolbarBlockOptionsComponent_For_11_Template(rf, ctx) {
       const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r2.handleAction(blockOptionAction_r2.action));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ToolbarBlockOptionsComponent_For_11_Conditional_1_Template, 1, 1)(2, ToolbarBlockOptionsComponent_For_11_Conditional_2_Template, 2, 1, "mat-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](1, ToolbarBlockOptionsComponent_For_11_Conditional_1_Template, 1, 1)(2, ToolbarBlockOptionsComponent_For_11_Conditional_2_Template, 2, 1, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -528,7 +123,7 @@ function ToolbarBlocksComponent_Conditional_5_Conditional_2_Template(rf, ctx) {
 function ToolbarBlocksComponent_Conditional_5_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-list", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ToolbarBlocksComponent_Conditional_5_Conditional_1_Template, 2, 0, "mat-list-item", 4)(2, ToolbarBlocksComponent_Conditional_5_Conditional_2_Template, 2, 0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](1, ToolbarBlocksComponent_Conditional_5_Conditional_1_Template, 2, 0, "mat-list-item", 4)(2, ToolbarBlocksComponent_Conditional_5_Conditional_2_Template, 2, 0);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -572,117 +167,117 @@ function ToolbarComponent_ng_template_10_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("blockOptionActions", ctx_r2.blockOptionActions());
   }
 }
-function HeaderBlockComponent_h1_1_ng_container_1_Template(rf, ctx) {
+function HeaderBlockComponent_Case_0_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
   }
 }
-function HeaderBlockComponent_h1_1_Template(rf, ctx) {
+function HeaderBlockComponent_Case_0_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h1");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, HeaderBlockComponent_h1_1_ng_container_1_Template, 1, 0, "ng-container", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, HeaderBlockComponent_Case_0_ng_container_1_Template, 1, 0, "ng-container", 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    const sharedHeaderTemplate_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](8);
+    const sharedHeaderTemplate_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", sharedHeaderTemplate_r1);
   }
 }
-function HeaderBlockComponent_h2_2_ng_container_1_Template(rf, ctx) {
+function HeaderBlockComponent_Case_1_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
   }
 }
-function HeaderBlockComponent_h2_2_Template(rf, ctx) {
+function HeaderBlockComponent_Case_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h2");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, HeaderBlockComponent_h2_2_ng_container_1_Template, 1, 0, "ng-container", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, HeaderBlockComponent_Case_1_ng_container_1_Template, 1, 0, "ng-container", 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    const sharedHeaderTemplate_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](8);
+    const sharedHeaderTemplate_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", sharedHeaderTemplate_r1);
   }
 }
-function HeaderBlockComponent_h3_3_ng_container_1_Template(rf, ctx) {
+function HeaderBlockComponent_Case_2_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
   }
 }
-function HeaderBlockComponent_h3_3_Template(rf, ctx) {
+function HeaderBlockComponent_Case_2_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h3");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, HeaderBlockComponent_h3_3_ng_container_1_Template, 1, 0, "ng-container", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, HeaderBlockComponent_Case_2_ng_container_1_Template, 1, 0, "ng-container", 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    const sharedHeaderTemplate_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](8);
+    const sharedHeaderTemplate_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", sharedHeaderTemplate_r1);
   }
 }
-function HeaderBlockComponent_h4_4_ng_container_1_Template(rf, ctx) {
+function HeaderBlockComponent_Case_3_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
   }
 }
-function HeaderBlockComponent_h4_4_Template(rf, ctx) {
+function HeaderBlockComponent_Case_3_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h4");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, HeaderBlockComponent_h4_4_ng_container_1_Template, 1, 0, "ng-container", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, HeaderBlockComponent_Case_3_ng_container_1_Template, 1, 0, "ng-container", 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    const sharedHeaderTemplate_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](8);
+    const sharedHeaderTemplate_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", sharedHeaderTemplate_r1);
   }
 }
-function HeaderBlockComponent_h5_5_ng_container_1_Template(rf, ctx) {
+function HeaderBlockComponent_Case_4_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
   }
 }
-function HeaderBlockComponent_h5_5_Template(rf, ctx) {
+function HeaderBlockComponent_Case_4_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h5");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, HeaderBlockComponent_h5_5_ng_container_1_Template, 1, 0, "ng-container", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, HeaderBlockComponent_Case_4_ng_container_1_Template, 1, 0, "ng-container", 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    const sharedHeaderTemplate_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](8);
+    const sharedHeaderTemplate_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", sharedHeaderTemplate_r1);
   }
 }
-function HeaderBlockComponent_h6_6_ng_container_1_Template(rf, ctx) {
+function HeaderBlockComponent_Case_5_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainer"](0);
   }
 }
-function HeaderBlockComponent_h6_6_Template(rf, ctx) {
+function HeaderBlockComponent_Case_5_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h6");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, HeaderBlockComponent_h6_6_ng_container_1_Template, 1, 0, "ng-container", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, HeaderBlockComponent_Case_5_ng_container_1_Template, 1, 0, "ng-container", 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    const sharedHeaderTemplate_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](8);
+    const sharedHeaderTemplate_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngTemplateOutlet", sharedHeaderTemplate_r1);
   }
 }
-function HeaderBlockComponent_ng_template_7_Template(rf, ctx) {
+function HeaderBlockComponent_ng_template_6_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "span", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "span", 3);
   }
   if (rf & 2) {
     let tmp_2_0;
@@ -881,7 +476,7 @@ let ToolbarBlockOptionsComponent = /*#__PURE__*/(() => {
         }
       },
       dependencies: [_angular_material_icon__WEBPACK_IMPORTED_MODULE_6__.MatIcon, _angular_material_core__WEBPACK_IMPORTED_MODULE_3__.MatRipple],
-      styles: ["[_nghost-%COMP%]   .actions-panel[_ngcontent-%COMP%]{display:flex;flex-direction:row;flex-wrap:wrap;gap:1px;width:128px;max-height:128px;border-radius:4px;overflow:auto;background:var(--mat-sys-secondary)}[_nghost-%COMP%]   .actions-panel[_ngcontent-%COMP%]   .action-btn[_ngcontent-%COMP%]{cursor:pointer;width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:4px;color:var(--mat-sys-on-secondary);background:var(--mat-sys-secondary)}[_nghost-%COMP%]   .actions-panel[_ngcontent-%COMP%]   .action-btn[_ngcontent-%COMP%]:is(:hover,:focus){color:var(--mat-sys-secondary);background:var(--mat-sys-on-secondary)}"]
+      styles: ["[_nghost-%COMP%]   .actions-panel[_ngcontent-%COMP%]{display:flex;flex-direction:row;flex-wrap:wrap;gap:1px;width:128px;max-height:128px;border-radius:4px;overflow:auto;background:var(--mat-sys-secondary)}[_nghost-%COMP%]   .actions-panel[_ngcontent-%COMP%]   .action-btn[_ngcontent-%COMP%]{cursor:pointer;width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:4px;color:var(--mat-sys-on-secondary);background:var(--mat-sys-secondary)}[_nghost-%COMP%]   .actions-panel[_ngcontent-%COMP%]   .action-btn[_ngcontent-%COMP%]:hover, [_nghost-%COMP%]   .actions-panel[_ngcontent-%COMP%]   .action-btn[_ngcontent-%COMP%]:focus{color:var(--mat-sys-secondary);background:var(--mat-sys-on-secondary)}"]
     });
   }
   return ToolbarBlockOptionsComponent;
@@ -931,7 +526,7 @@ let ToolbarBlocksComponent = /*#__PURE__*/(() => {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "input", 2);
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, ToolbarBlocksComponent_Conditional_5_Template, 3, 1, "mat-list", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](5, ToolbarBlocksComponent_Conditional_5_Template, 3, 1, "mat-list", 3);
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](6, "async");
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
@@ -944,7 +539,7 @@ let ToolbarBlocksComponent = /*#__PURE__*/(() => {
         }
       },
       dependencies: [_angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__.MatFormField, _angular_material_input__WEBPACK_IMPORTED_MODULE_10__.MatInput, _angular_material_list__WEBPACK_IMPORTED_MODULE_11__.MatList, _angular_material_list__WEBPACK_IMPORTED_MODULE_11__.MatListItem, _angular_material_core__WEBPACK_IMPORTED_MODULE_3__.MatRipple, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__.MatLabel, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControlDirective, _angular_common__WEBPACK_IMPORTED_MODULE_7__.AsyncPipe],
-      styles: ["[_nghost-%COMP%]   .mat-mdc-list-base[_ngcontent-%COMP%]{padding-top:0;margin-top:-14px}[_nghost-%COMP%]   .block-list-container[_ngcontent-%COMP%]{background:var(--mat-sys-secondary-container);border-radius:4px}[_nghost-%COMP%]   .block-list-panel[_ngcontent-%COMP%]{max-width:280px;max-height:240px;border-bottom-left-radius:4px;border-bottom-right-radius:4px;overflow:auto;color:var(--mat-sys-on-secondary-container)}[_nghost-%COMP%]   mat-list-item[_ngcontent-%COMP%]{cursor:pointer;-webkit-user-select:none;user-select:none}[_nghost-%COMP%]   mat-list-item[_ngcontent-%COMP%]:is(:hover,:focus){background:var(--mat-sys-surface-bright)}"]
+      styles: ["[_nghost-%COMP%]   .mat-mdc-list-base[_ngcontent-%COMP%]{padding-top:0;margin-top:-14px}[_nghost-%COMP%]   .block-list-container[_ngcontent-%COMP%]{background:var(--mat-sys-secondary-container);border-radius:4px}[_nghost-%COMP%]   .block-list-panel[_ngcontent-%COMP%]{max-width:280px;max-height:240px;border-bottom-left-radius:4px;border-bottom-right-radius:4px;overflow:auto;color:var(--mat-sys-on-secondary-container)}[_nghost-%COMP%]   mat-list-item[_ngcontent-%COMP%]{cursor:pointer;-webkit-user-select:none;user-select:none}[_nghost-%COMP%]   mat-list-item[_ngcontent-%COMP%]:hover, [_nghost-%COMP%]   mat-list-item[_ngcontent-%COMP%]:focus{background:var(--mat-sys-surface-bright)}"]
     });
   }
   return ToolbarBlocksComponent;
@@ -1043,7 +638,7 @@ let ToolbarComponent = /*#__PURE__*/(() => {
         }
       },
       dependencies: [_angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_4__.CdkDragHandle, _angular_material_core__WEBPACK_IMPORTED_MODULE_3__.MatRipple, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_5__.OverlayModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_5__.CdkConnectedOverlay, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_5__.CdkOverlayOrigin, ToolbarBlockOptionsComponent, ToolbarBlocksComponent],
-      styles: ["[_nghost-%COMP%]   .toolbar-buttons-container[_ngcontent-%COMP%]{position:relative;display:flex;gap:10px}[_nghost-%COMP%]   .toolbar-buttons[_ngcontent-%COMP%]{cursor:pointer;width:30px;height:30px;display:flex;justify-content:center;align-items:center;border-radius:4px;margin-bottom:14px;-webkit-user-select:none;user-select:none;color:var(--mat-sys-on-tertiary-container);background:var(--mat-sys-tertiary-container)}[_nghost-%COMP%]   .toolbar-buttons[_ngcontent-%COMP%]:is(:hover,:focus){background:var(--mat-sys-surface-bright)}@media (min-width: 768px){[_nghost-%COMP%]{position:absolute;margin-left:-80px;top:0}}"]
+      styles: ["[_nghost-%COMP%]   .toolbar-buttons-container[_ngcontent-%COMP%]{position:relative;display:flex;gap:10px}[_nghost-%COMP%]   .toolbar-buttons[_ngcontent-%COMP%]{cursor:pointer;width:30px;height:30px;display:flex;justify-content:center;align-items:center;border-radius:4px;margin-bottom:14px;-webkit-user-select:none;user-select:none;color:var(--mat-sys-on-tertiary-container);background:var(--mat-sys-tertiary-container)}[_nghost-%COMP%]   .toolbar-buttons[_ngcontent-%COMP%]:hover, [_nghost-%COMP%]   .toolbar-buttons[_ngcontent-%COMP%]:focus{background:var(--mat-sys-surface-bright)}@media (min-width: 768px){[_nghost-%COMP%]{position:absolute;margin-left:-80px;top:0}}"]
     });
   }
   return ToolbarComponent;
@@ -1390,35 +985,22 @@ let HeaderBlockComponent = /*#__PURE__*/(() => {
         blockOptionActions: [1, "blockOptionActions"]
       },
       features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵHostDirectivesFeature"]([_angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_4__.CdkDrag])],
-      decls: 9,
-      vars: 8,
-      consts: [["sharedHeaderTemplate", ""], [3, "ngSwitch"], [4, "ngSwitchCase"], [3, "formGroup"], [4, "ngTemplateOutlet"], ["controlAccessor", "", "cleanPasteData", "", "contentEditable", "", "toolbarFab", "", 3, "defaultValue", "actionCallback", "blockOptionActions", "autofocus", "formControlName", "componentContextPositionIndex"]],
+      decls: 8,
+      vars: 2,
+      consts: [["sharedHeaderTemplate", ""], [3, "formGroup"], [4, "ngTemplateOutlet"], ["controlAccessor", "", "cleanPasteData", "", "contentEditable", "", "toolbarFab", "", 3, "defaultValue", "actionCallback", "blockOptionActions", "autofocus", "formControlName", "componentContextPositionIndex"]],
       template: function HeaderBlockComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0, 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, HeaderBlockComponent_h1_1_Template, 2, 1, "h1", 2)(2, HeaderBlockComponent_h2_2_Template, 2, 1, "h2", 2)(3, HeaderBlockComponent_h3_3_Template, 2, 1, "h3", 2)(4, HeaderBlockComponent_h4_4_Template, 2, 1, "h4", 2)(5, HeaderBlockComponent_h5_5_Template, 2, 1, "h5", 2)(6, HeaderBlockComponent_h6_6_Template, 2, 1, "h6", 2);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, HeaderBlockComponent_ng_template_7_Template, 1, 6, "ng-template", 3, 0, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](0, HeaderBlockComponent_Case_0_Template, 2, 1, "h1")(1, HeaderBlockComponent_Case_1_Template, 2, 1, "h2")(2, HeaderBlockComponent_Case_2_Template, 2, 1, "h3")(3, HeaderBlockComponent_Case_3_Template, 2, 1, "h4")(4, HeaderBlockComponent_Case_4_Template, 2, 1, "h5")(5, HeaderBlockComponent_Case_5_Template, 2, 1, "h6");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, HeaderBlockComponent_ng_template_6_Template, 1, 6, "ng-template", 1, 0, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
         }
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngSwitch", ctx.savedAction());
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngSwitchCase", "h1");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngSwitchCase", "h2");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngSwitchCase", "h3");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngSwitchCase", "h4");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngSwitchCase", "h5");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngSwitchCase", "h6");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
+          let tmp_1_0;
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"]((tmp_1_0 = ctx.savedAction()) === "h1" ? 0 : tmp_1_0 === "h2" ? 1 : tmp_1_0 === "h3" ? 2 : tmp_1_0 === "h4" ? 3 : tmp_1_0 === "h5" ? 4 : tmp_1_0 === "h6" ? 5 : -1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.formGroup());
         }
       },
-      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControlName, ControlAccessorDirective, AutofocusDirective, ToolbarFabDirective, CleanPasteDataDirective, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgSwitch, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgSwitchCase, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgTemplateOutlet],
+      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControlName, ControlAccessorDirective, AutofocusDirective, ToolbarFabDirective, CleanPasteDataDirective, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgTemplateOutlet],
       styles: ["[_nghost-%COMP%]{display:block;position:relative}[_nghost-%COMP%]   :is(h1[_ngcontent-%COMP%], h2[_ngcontent-%COMP%], h3[_ngcontent-%COMP%], h4[_ngcontent-%COMP%], h5[_ngcontent-%COMP%], h6[_ngcontent-%COMP%]){margin:0}[_nghost-%COMP%]   :is(h1[_ngcontent-%COMP%], h2[_ngcontent-%COMP%], h3[_ngcontent-%COMP%], h4[_ngcontent-%COMP%], h5[_ngcontent-%COMP%], h6[_ngcontent-%COMP%])   span[_ngcontent-%COMP%]{display:block;line-height:inherit}[_nghost-%COMP%]   h1[_ngcontent-%COMP%] > *[_ngcontent-%COMP%]{font:var(--mat-sys-display-large)}[_nghost-%COMP%]   h2[_ngcontent-%COMP%] > *[_ngcontent-%COMP%]{font:var(--mat-sys-display-medium)}[_nghost-%COMP%]   h3[_ngcontent-%COMP%] > *[_ngcontent-%COMP%]{font:var(--mat-sys-display-small)}[_nghost-%COMP%]   h4[_ngcontent-%COMP%] > *[_ngcontent-%COMP%]{font:var(--mat-sys-headline-large)}[_nghost-%COMP%]   h5[_ngcontent-%COMP%] > *[_ngcontent-%COMP%]{font:var(--mat-sys-headline-medium)}[_nghost-%COMP%]   h6[_ngcontent-%COMP%] > *[_ngcontent-%COMP%]{font:var(--mat-sys-headline-small)}"]
     });
   }
@@ -1767,7 +1349,7 @@ let ToolbarInlineComponent = /*#__PURE__*/(() => {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-icon");
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "format_clear");
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, ToolbarInlineComponent_Conditional_12_Template, 5, 1, "div", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](12, ToolbarInlineComponent_Conditional_12_Template, 5, 1, "div", 0);
         }
         if (rf & 2) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
@@ -1858,7 +1440,7 @@ let NgxEditorJs2Component = /*#__PURE__*/(() => {
     blocks = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)([]);
     blocksRequested = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.output)();
     requestBlocks = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required({
-      transform: _v => this.blocksRequested.emit(this.editorJsService.getBlocks$())
+      transform: value => value && this.blocksRequested.emit(this.editorJsService.getBlocks$())
     });
     bootstrapEditorJs$ = (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.combineLatest)([(0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(ToolFabService).toolbarComponentRef$, this.ngxEditorJs2Service.loadBlocks$, (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.fromEvent)(document, 'selectionchange').pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_2__.debounceTime)(200), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.switchMap)(event => this.inlineToolbarSerivce.determineToDisplayInlineToolbarBlock(event)))]);
     static ɵfac = function NgxEditorJs2Component_Factory(__ngFactoryType__) {
@@ -1898,6 +1480,411 @@ let NgxEditorJs2Component = /*#__PURE__*/(() => {
 
 /*
  * Public API Surface of ngx-editor-js2
+ */
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+
+/***/ }),
+
+/***/ 42642:
+/*!****************************************************************************!*\
+  !*** ./node_modules/@ctrl/ngx-codemirror/fesm2022/ctrl-ngx-codemirror.mjs ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CodemirrorComponent: () => (/* binding */ CodemirrorComponent),
+/* harmony export */   CodemirrorModule: () => (/* binding */ CodemirrorModule)
+/* harmony export */ });
+/* harmony import */ var _Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ 7140);
+
+
+
+
+const _c0 = ["ref"];
+function normalizeLineEndings(str) {
+  if (!str) {
+    return str;
+  }
+  return str.replace(/\r\n|\r/g, '\n');
+}
+let CodemirrorComponent = /*#__PURE__*/(() => {
+  class CodemirrorComponent {
+    _differs;
+    _ngZone;
+    /* class applied to the created textarea */
+    className = '';
+    /* name applied to the created textarea */
+    name = 'codemirror';
+    /* autofocus setting applied to the created textarea */
+    autoFocus = false;
+    /**
+     * set options for codemirror
+     * @link http://codemirror.net/doc/manual.html#config
+     */
+    set options(value) {
+      this._options = value;
+      if (!this._differ && value) {
+        this._differ = this._differs.find(value).create();
+      }
+    }
+    /* preserve previous scroll position after updating value */
+    preserveScrollPosition = false;
+    /* called when the text cursor is moved */
+    cursorActivity = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
+    /* called when the editor is focused or loses focus */
+    focusChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
+    /* called when the editor is scrolled */
+    // eslint-disable-next-line @angular-eslint/no-output-native
+    scroll = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
+    /* called when file(s) are dropped */
+    // eslint-disable-next-line @angular-eslint/no-output-native
+    drop = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
+    /* called when codeMirror instance is initiated on the component */
+    codeMirrorLoaded = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
+    ref;
+    value = '';
+    disabled = false;
+    isFocused = false;
+    codeMirror;
+    /**
+     * either global variable or required library
+     */
+    _codeMirror;
+    _differ;
+    _options;
+    constructor(_differs, _ngZone) {
+      this._differs = _differs;
+      this._ngZone = _ngZone;
+    }
+    get codeMirrorGlobal() {
+      if (this._codeMirror) {
+        return this._codeMirror;
+      }
+      // in order to allow for universal rendering, we import Codemirror runtime with `require` to prevent node errors
+      this._codeMirror = typeof CodeMirror !== 'undefined' ? CodeMirror : __webpack_require__.e(/*! import() */ 1273).then(__webpack_require__.t.bind(__webpack_require__, /*! codemirror */ 81273, 19));
+      return this._codeMirror;
+    }
+    ngAfterViewInit() {
+      var _this = this;
+      this._ngZone.runOutsideAngular(/*#__PURE__*/(0,_Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+        const codeMirrorObj = yield _this.codeMirrorGlobal;
+        const codeMirror = codeMirrorObj?.default ? codeMirrorObj.default : codeMirrorObj;
+        _this.codeMirror = codeMirror.fromTextArea(_this.ref.nativeElement, _this._options);
+        _this.codeMirror.on('cursorActivity', cm => _this._ngZone.run(() => _this.cursorActive(cm)));
+        _this.codeMirror.on('scroll', _this.scrollChanged.bind(_this));
+        _this.codeMirror.on('blur', () => _this._ngZone.run(() => _this.focusChanged(false)));
+        _this.codeMirror.on('focus', () => _this._ngZone.run(() => _this.focusChanged(true)));
+        _this.codeMirror.on('change', (cm, change) => _this._ngZone.run(() => _this.codemirrorValueChanged(cm, change)));
+        _this.codeMirror.on('drop', (cm, e) => {
+          _this._ngZone.run(() => _this.dropFiles(cm, e));
+        });
+        _this.codeMirror.setValue(_this.value);
+        _this.codeMirrorLoaded.emit(_this);
+      }));
+    }
+    ngDoCheck() {
+      if (!this._differ) {
+        return;
+      }
+      // check options have not changed
+      const changes = this._differ.diff(this._options);
+      if (changes) {
+        changes.forEachChangedItem(option => this.setOptionIfChanged(option.key, option.currentValue));
+        changes.forEachAddedItem(option => this.setOptionIfChanged(option.key, option.currentValue));
+        changes.forEachRemovedItem(option => this.setOptionIfChanged(option.key, option.currentValue));
+      }
+    }
+    ngOnDestroy() {
+      // is there a lighter-weight way to remove the cm instance?
+      if (this.codeMirror) {
+        this.codeMirror.toTextArea();
+      }
+    }
+    codemirrorValueChanged(cm, change) {
+      const cmVal = cm.getValue();
+      if (this.value !== cmVal) {
+        this.value = cmVal;
+        this.onChange(this.value);
+      }
+    }
+    setOptionIfChanged(optionName, newValue) {
+      if (!this.codeMirror) {
+        return;
+      }
+      // cast to any to handle strictly typed option names
+      // could possibly import settings strings available in the future
+      this.codeMirror.setOption(optionName, newValue);
+    }
+    focusChanged(focused) {
+      this.onTouched();
+      this.isFocused = focused;
+      this.focusChange.emit(focused);
+    }
+    scrollChanged(cm) {
+      this.scroll.emit(cm.getScrollInfo());
+    }
+    cursorActive(cm) {
+      this.cursorActivity.emit(cm);
+    }
+    dropFiles(cm, e) {
+      this.drop.emit([cm, e]);
+    }
+    /** Implemented as part of ControlValueAccessor. */
+    writeValue(value) {
+      if (value === null || value === undefined) {
+        return;
+      }
+      if (!this.codeMirror) {
+        this.value = value;
+        return;
+      }
+      const cur = this.codeMirror.getValue();
+      if (value !== cur && normalizeLineEndings(cur) !== normalizeLineEndings(value)) {
+        this.value = value;
+        if (this.preserveScrollPosition) {
+          const prevScrollPosition = this.codeMirror.getScrollInfo();
+          this.codeMirror.setValue(this.value);
+          this.codeMirror.scrollTo(prevScrollPosition.left, prevScrollPosition.top);
+        } else {
+          this.codeMirror.setValue(this.value);
+        }
+      }
+    }
+    /** Implemented as part of ControlValueAccessor. */
+    registerOnChange(fn) {
+      this.onChange = fn;
+    }
+    /** Implemented as part of ControlValueAccessor. */
+    registerOnTouched(fn) {
+      this.onTouched = fn;
+    }
+    /** Implemented as part of ControlValueAccessor. */
+    setDisabledState(isDisabled) {
+      this.disabled = isDisabled;
+      this.setOptionIfChanged('readOnly', this.disabled);
+    }
+    /** Implemented as part of ControlValueAccessor. */
+    onChange = _ => {};
+    /** Implemented as part of ControlValueAccessor. */
+    onTouched = () => {};
+    static ɵfac = function CodemirrorComponent_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || CodemirrorComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__.KeyValueDiffers), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__.NgZone));
+    };
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+      type: CodemirrorComponent,
+      selectors: [["ngx-codemirror"]],
+      viewQuery: function CodemirrorComponent_Query(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵviewQuery"](_c0, 5);
+        }
+        if (rf & 2) {
+          let _t;
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.ref = _t.first);
+        }
+      },
+      inputs: {
+        className: "className",
+        name: "name",
+        autoFocus: "autoFocus",
+        options: "options",
+        preserveScrollPosition: "preserveScrollPosition"
+      },
+      outputs: {
+        cursorActivity: "cursorActivity",
+        focusChange: "focusChange",
+        scroll: "scroll",
+        drop: "drop",
+        codeMirrorLoaded: "codeMirrorLoaded"
+      },
+      standalone: false,
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([{
+        provide: _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NG_VALUE_ACCESSOR,
+        useExisting: (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.forwardRef)(() => CodemirrorComponent),
+        multi: true
+      }])],
+      decls: 3,
+      vars: 7,
+      consts: [["ref", ""], ["autocomplete", "off", 3, "name", "autofocus"]],
+      template: function CodemirrorComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "textarea", 1, 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "    ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        }
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMap"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinterpolate1"]("ngx-codemirror ", ctx.className));
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassProp"]("ngx-codemirror--focused", ctx.isFocused);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("name", ctx.name)("autofocus", ctx.autoFocus);
+        }
+      },
+      encapsulation: 2,
+      changeDetection: 0
+    });
+  }
+  return CodemirrorComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let CodemirrorModule = /*#__PURE__*/(() => {
+  class CodemirrorModule {
+    static ɵfac = function CodemirrorModule_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || CodemirrorModule)();
+    };
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
+      type: CodemirrorModule
+    });
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({});
+  }
+  return CodemirrorModule;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+
+/***/ }),
+
+/***/ 59305:
+/*!*************************************************************************************!*\
+  !*** ./dist/ngx-editor-js2-codemirror/fesm2022/tmdjr-ngx-editor-js2-codemirror.mjs ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   NgxEditorJs2CodemirrorComponent: () => (/* binding */ NgxEditorJs2CodemirrorComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ 7140);
+/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 77947);
+/* harmony import */ var _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ctrl/ngx-codemirror */ 42642);
+/* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 85914);
+
+
+
+
+
+
+
+
+
+
+function NgxEditorJs2CodemirrorComponent_Conditional_0_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0, 0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "span", 1)(2, "ngx-codemirror", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx_r0.formGroup());
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autofocus", ctx_r0.autofocus());
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("actionCallback", ctx_r0.actionCallbackBind)("blockOptionActions", ctx_r0.blockOptionActions())("formControlName", ctx_r0.formControlName())("componentContextPositionIndex", ctx_r0.sortIndex())("options", ctx_r0.codeMirrorOptions());
+  }
+}
+let NgxEditorJs2CodemirrorComponent = /*#__PURE__*/(() => {
+  class NgxEditorJs2CodemirrorComponent {
+    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(0);
+    componentInstanceName = 'NgxEditorJs2CodemirrorComponent';
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true);
+    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
+    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
+    blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)([{
+      action: 'text/typescript',
+      icon: 'javascript'
+    }, {
+      action: 'css',
+      icon: 'css'
+    }, {
+      action: 'xml',
+      icon: 'html'
+    }]);
+    codeMirrorOptions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)({
+      lineNumbers: true,
+      theme: 'material-palenight',
+      mode: 'text/typescript',
+      extraKeys: {
+        'Ctrl-Space': 'autocomplete'
+      },
+      styleActiveLine: true,
+      // Highlight active line
+      matchBrackets: true,
+      indentUnit: 2,
+      tabSize: 2,
+      cursorScrollMargin: 5
+    });
+    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('display-large');
+    actionCallbackBind = this.actionCallback.bind(this);
+    actionCallback(action) {
+      this.codeMirrorOptions.update(prev => ({
+        ...prev,
+        mode: action
+      }));
+      this.savedAction.update(() => action);
+    }
+    // ! Hotfix for perspective: 2500px;
+    // Need create a delay to wait for the animation to finish before showing the component
+    waitForAnimation = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false);
+    constructor() {
+      setTimeout(() => {
+        this.waitForAnimation.update(() => true);
+      }, 500);
+    }
+    static ɵfac = function NgxEditorJs2CodemirrorComponent_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || NgxEditorJs2CodemirrorComponent)();
+    };
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: NgxEditorJs2CodemirrorComponent,
+      selectors: [["ngx-editor-js2-codemirror"]],
+      hostAttrs: [1, "cdk-drag-animating", "no-toolbar-inline"],
+      inputs: {
+        sortIndex: [1, "sortIndex"],
+        autofocus: [1, "autofocus"],
+        formGroup: [1, "formGroup"],
+        formControlName: [1, "formControlName"],
+        blockOptionActions: [1, "blockOptionActions"]
+      },
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵHostDirectivesFeature"]([_angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_2__.CdkDrag])],
+      decls: 1,
+      vars: 1,
+      consts: [[3, "formGroup"], ["controlAccessor", "", 3, "autofocus"], ["toolbarFab", "", 1, "fade-in", 3, "actionCallback", "blockOptionActions", "formControlName", "componentContextPositionIndex", "options"]],
+      template: function NgxEditorJs2CodemirrorComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](0, NgxEditorJs2CodemirrorComponent_Conditional_0_Template, 3, 7, "ng-container", 0);
+        }
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"](ctx.waitForAnimation() ? 0 : -1);
+        }
+      },
+      dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControlName, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.ControlAccessorDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.AutofocusDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.ToolbarFabDirective, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_5__.CodemirrorModule, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_5__.CodemirrorComponent],
+      styles: ["[_nghost-%COMP%]{display:block;position:relative;margin:1.5rem 0}[_nghost-%COMP%]   .codemirror-container-overlay[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;position:absolute}[_nghost-%COMP%]   .fade-in[_ngcontent-%COMP%]{animation:_ngcontent-%COMP%_fadeIn .25s ease-in-out}@keyframes _ngcontent-%COMP%_fadeIn{0%{opacity:0}to{opacity:1}}[_nghost-%COMP%]     .CodeMirror{font-family:Cascadia Code,Fira Code,Menlo,Monaco,Courier New,monospace;font-size:16px;font-weight:400;line-height:32px;letter-spacing:.5px;height:100%}"]
+    });
+  }
+  return NgxEditorJs2CodemirrorComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/*
+ * Public API Surface of ngx-editor-js2-codemirror
  */
 
 /**

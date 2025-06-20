@@ -1915,9 +1915,7 @@ var classDiagram_default = parser;
 // src/diagrams/class/classTypes.ts
 var visibilityValues = ["#", "+", "~", "-", ""];
 var ClassMember = class {
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_4__.__name)(this, "ClassMember");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_4__.__name)(this, "ClassMember");
   constructor(input, memberType) {
     this.memberType = memberType;
     this.visibility = "";
@@ -2075,9 +2073,7 @@ var ClassDB = class {
     this.setClickEvent = this.setClickEvent.bind(this);
     this.setCssStyle = this.setCssStyle.bind(this);
   }
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_4__.__name)(this, "ClassDB");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_4__.__name)(this, "ClassDB");
   splitClassNameAndType(_id) {
     const id = _chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_4__.common_default.sanitizeText(_id, (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_4__.getConfig2)());
     let genericType = "";

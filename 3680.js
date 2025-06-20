@@ -1,21 +1,18 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[3680],{
 
-/***/ 63680:
-/*!*****************************************************!*\
-  !*** ./node_modules/@angular/cdk/fesm2022/bidi.mjs ***!
-  \*****************************************************/
+/***/ 32373:
+/*!************************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/directionality-CChdj3az.mjs ***!
+  \************************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   BidiModule: () => (/* binding */ BidiModule),
-/* harmony export */   DIR_DOCUMENT: () => (/* binding */ DIR_DOCUMENT),
-/* harmony export */   Dir: () => (/* binding */ Dir),
-/* harmony export */   Directionality: () => (/* binding */ Directionality)
+/* harmony export */   D: () => (/* binding */ Directionality),
+/* harmony export */   _: () => (/* binding */ _resolveDirectionality),
+/* harmony export */   a: () => (/* binding */ DIR_DOCUMENT)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 9516);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 59694);
-
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
 
 
 
@@ -38,9 +35,13 @@ const DIR_DOCUMENT = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__
   providedIn: 'root',
   factory: DIR_DOCUMENT_FACTORY
 });
-/** @docs-private */
+/**
+ * @docs-private
+ * @deprecated No longer used, will be removed.
+ * @breaking-change 21.0.0
+ */
 function DIR_DOCUMENT_FACTORY() {
-  return (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT);
+  return (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT);
 }
 
 /** Regex that matches locales with an RTL script. Taken from `goog.i18n.bidi.isRtlLanguage`. */
@@ -60,7 +61,13 @@ function _resolveDirectionality(rawValue) {
 let Directionality = /*#__PURE__*/(() => {
   class Directionality {
     /** The current 'ltr' or 'rtl' value. */
-    value = 'ltr';
+    get value() {
+      return this.valueSignal();
+    }
+    /**
+     * The current 'ltr' or 'rtl' value.
+     */
+    valueSignal = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('ltr');
     /** Stream that emits whenever the 'ltr' / 'rtl' state changes. */
     change = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
     constructor() {
@@ -70,7 +77,7 @@ let Directionality = /*#__PURE__*/(() => {
       if (_document) {
         const bodyDir = _document.body ? _document.body.dir : null;
         const htmlDir = _document.documentElement ? _document.documentElement.dir : null;
-        this.value = _resolveDirectionality(bodyDir || htmlDir || 'ltr');
+        this.valueSignal.set(_resolveDirectionality(bodyDir || htmlDir || 'ltr'));
       }
     }
     ngOnDestroy() {
@@ -91,6 +98,29 @@ let Directionality = /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
 
+
+/***/ }),
+
+/***/ 63680:
+/*!*****************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/bidi.mjs ***!
+  \*****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BidiModule: () => (/* binding */ BidiModule),
+/* harmony export */   DIR_DOCUMENT: () => (/* reexport safe */ _directionality_CChdj3az_mjs__WEBPACK_IMPORTED_MODULE_0__.a),
+/* harmony export */   Dir: () => (/* binding */ Dir),
+/* harmony export */   Directionality: () => (/* reexport safe */ _directionality_CChdj3az_mjs__WEBPACK_IMPORTED_MODULE_0__.D)
+/* harmony export */ });
+/* harmony import */ var _directionality_CChdj3az_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./directionality-CChdj3az.mjs */ 32373);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+
+
+
+
+
 /**
  * Directive to listen for changes of direction of part of the DOM.
  *
@@ -99,33 +129,32 @@ let Directionality = /*#__PURE__*/(() => {
  */
 let Dir = /*#__PURE__*/(() => {
   class Dir {
-    /** Normalized direction that accounts for invalid/unsupported values. */
-    _dir = 'ltr';
     /** Whether the `value` has been set to its initial value. */
     _isInitialized = false;
     /** Direction as passed in by the consumer. */
     _rawDir;
     /** Event emitted when the direction changes. */
-    change = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
+    change = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
     /** @docs-private */
     get dir() {
-      return this._dir;
+      return this.valueSignal();
     }
     set dir(value) {
-      const previousValue = this._dir;
+      const previousValue = this.valueSignal();
       // Note: `_resolveDirectionality` resolves the language based on the browser's language,
       // whereas the browser does it based on the content of the element. Since doing so based
       // on the content can be expensive, for now we're doing the simpler matching.
-      this._dir = _resolveDirectionality(value);
+      this.valueSignal.set((0,_directionality_CChdj3az_mjs__WEBPACK_IMPORTED_MODULE_0__._)(value));
       this._rawDir = value;
-      if (previousValue !== this._dir && this._isInitialized) {
-        this.change.emit(this._dir);
+      if (previousValue !== this.valueSignal() && this._isInitialized) {
+        this.change.emit(this.valueSignal());
       }
     }
     /** Current layout direction of the element. */
     get value() {
       return this.dir;
     }
+    valueSignal = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.signal)('ltr');
     /** Initialize once default value has been set. */
     ngAfterContentInit() {
       this._isInitialized = true;
@@ -136,13 +165,13 @@ let Dir = /*#__PURE__*/(() => {
     static ɵfac = function Dir_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || Dir)();
     };
-    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineDirective"]({
       type: Dir,
       selectors: [["", "dir", ""]],
       hostVars: 1,
       hostBindings: function Dir_HostBindings(rf, ctx) {
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("dir", ctx._rawDir);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("dir", ctx._rawDir);
         }
       },
       inputs: {
@@ -152,8 +181,8 @@ let Dir = /*#__PURE__*/(() => {
         change: "dirChange"
       },
       exportAs: ["dir"],
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([{
-        provide: Directionality,
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([{
+        provide: _directionality_CChdj3az_mjs__WEBPACK_IMPORTED_MODULE_0__.D,
         useExisting: Dir
       }])]
     });
@@ -168,21 +197,16 @@ let BidiModule = /*#__PURE__*/(() => {
     static ɵfac = function BidiModule_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || BidiModule)();
     };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
       type: BidiModule
     });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({});
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({});
   }
   return BidiModule;
 })();
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-
-/**
- * Generated bundle index. Do not edit.
- */
-
 
 
 /***/ })

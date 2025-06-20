@@ -1537,9 +1537,7 @@ var QuadrantBuilder = class {
     this.themeConfig = this.getDefaultThemeConfig();
     this.data = this.getDefaultData();
   }
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(this, "QuadrantBuilder");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(this, "QuadrantBuilder");
   getDefaultData() {
     return {
       titleText: "",
@@ -1965,9 +1963,7 @@ var QuadrantBuilder = class {
 
 // src/diagrams/quadrant-chart/utils.ts
 var InvalidStyleError = class extends Error {
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(this, "InvalidStyleError");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(this, "InvalidStyleError");
   constructor(style, value, type) {
     super(`value for ${style} ${value} is invalid, please use a valid ${type}`);
     this.name = "InvalidStyleError";

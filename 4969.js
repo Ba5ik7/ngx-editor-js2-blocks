@@ -1,471 +1,5 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[4969],{
 
-/***/ 89440:
-/*!*****************************************************************!*\
-  !*** ./node_modules/d3-sankey/node_modules/d3-array/src/max.js ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ max)
-/* harmony export */ });
-function max(values, valueof) {
-  let max;
-  if (valueof === undefined) {
-    for (const value of values) {
-      if (value != null && (max < value || max === undefined && value >= value)) {
-        max = value;
-      }
-    }
-  } else {
-    let index = -1;
-    for (let value of values) {
-      if ((value = valueof(value, ++index, values)) != null && (max < value || max === undefined && value >= value)) {
-        max = value;
-      }
-    }
-  }
-  return max;
-}
-
-/***/ }),
-
-/***/ 31614:
-/*!*****************************************************************!*\
-  !*** ./node_modules/d3-sankey/node_modules/d3-array/src/min.js ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ min)
-/* harmony export */ });
-function min(values, valueof) {
-  let min;
-  if (valueof === undefined) {
-    for (const value of values) {
-      if (value != null && (min > value || min === undefined && value >= value)) {
-        min = value;
-      }
-    }
-  } else {
-    let index = -1;
-    for (let value of values) {
-      if ((value = valueof(value, ++index, values)) != null && (min > value || min === undefined && value >= value)) {
-        min = value;
-      }
-    }
-  }
-  return min;
-}
-
-/***/ }),
-
-/***/ 19929:
-/*!*****************************************************************!*\
-  !*** ./node_modules/d3-sankey/node_modules/d3-array/src/sum.js ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ sum)
-/* harmony export */ });
-function sum(values, valueof) {
-  let sum = 0;
-  if (valueof === undefined) {
-    for (let value of values) {
-      if (value = +value) {
-        sum += value;
-      }
-    }
-  } else {
-    let index = -1;
-    for (let value of values) {
-      if (value = +valueof(value, ++index, values)) {
-        sum += value;
-      }
-    }
-  }
-  return sum;
-}
-
-/***/ }),
-
-/***/ 18133:
-/*!*****************************************************************!*\
-  !*** ./node_modules/d3-sankey/node_modules/d3-path/src/path.js ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-var pi = Math.PI,
-  tau = 2 * pi,
-  epsilon = 1e-6,
-  tauEpsilon = tau - epsilon;
-function Path() {
-  this._x0 = this._y0 =
-  // start of current subpath
-  this._x1 = this._y1 = null; // end of current subpath
-  this._ = "";
-}
-function path() {
-  return new Path();
-}
-Path.prototype = path.prototype = {
-  constructor: Path,
-  moveTo: function (x, y) {
-    this._ += "M" + (this._x0 = this._x1 = +x) + "," + (this._y0 = this._y1 = +y);
-  },
-  closePath: function () {
-    if (this._x1 !== null) {
-      this._x1 = this._x0, this._y1 = this._y0;
-      this._ += "Z";
-    }
-  },
-  lineTo: function (x, y) {
-    this._ += "L" + (this._x1 = +x) + "," + (this._y1 = +y);
-  },
-  quadraticCurveTo: function (x1, y1, x, y) {
-    this._ += "Q" + +x1 + "," + +y1 + "," + (this._x1 = +x) + "," + (this._y1 = +y);
-  },
-  bezierCurveTo: function (x1, y1, x2, y2, x, y) {
-    this._ += "C" + +x1 + "," + +y1 + "," + +x2 + "," + +y2 + "," + (this._x1 = +x) + "," + (this._y1 = +y);
-  },
-  arcTo: function (x1, y1, x2, y2, r) {
-    x1 = +x1, y1 = +y1, x2 = +x2, y2 = +y2, r = +r;
-    var x0 = this._x1,
-      y0 = this._y1,
-      x21 = x2 - x1,
-      y21 = y2 - y1,
-      x01 = x0 - x1,
-      y01 = y0 - y1,
-      l01_2 = x01 * x01 + y01 * y01;
-
-    // Is the radius negative? Error.
-    if (r < 0) throw new Error("negative radius: " + r);
-
-    // Is this path empty? Move to (x1,y1).
-    if (this._x1 === null) {
-      this._ += "M" + (this._x1 = x1) + "," + (this._y1 = y1);
-    }
-
-    // Or, is (x1,y1) coincident with (x0,y0)? Do nothing.
-    else if (!(l01_2 > epsilon)) ;
-
-    // Or, are (x0,y0), (x1,y1) and (x2,y2) collinear?
-    // Equivalently, is (x1,y1) coincident with (x2,y2)?
-    // Or, is the radius zero? Line to (x1,y1).
-    else if (!(Math.abs(y01 * x21 - y21 * x01) > epsilon) || !r) {
-      this._ += "L" + (this._x1 = x1) + "," + (this._y1 = y1);
-    }
-
-    // Otherwise, draw an arc!
-    else {
-      var x20 = x2 - x0,
-        y20 = y2 - y0,
-        l21_2 = x21 * x21 + y21 * y21,
-        l20_2 = x20 * x20 + y20 * y20,
-        l21 = Math.sqrt(l21_2),
-        l01 = Math.sqrt(l01_2),
-        l = r * Math.tan((pi - Math.acos((l21_2 + l01_2 - l20_2) / (2 * l21 * l01))) / 2),
-        t01 = l / l01,
-        t21 = l / l21;
-
-      // If the start tangent is not coincident with (x0,y0), line to.
-      if (Math.abs(t01 - 1) > epsilon) {
-        this._ += "L" + (x1 + t01 * x01) + "," + (y1 + t01 * y01);
-      }
-      this._ += "A" + r + "," + r + ",0,0," + +(y01 * x20 > x01 * y20) + "," + (this._x1 = x1 + t21 * x21) + "," + (this._y1 = y1 + t21 * y21);
-    }
-  },
-  arc: function (x, y, r, a0, a1, ccw) {
-    x = +x, y = +y, r = +r, ccw = !!ccw;
-    var dx = r * Math.cos(a0),
-      dy = r * Math.sin(a0),
-      x0 = x + dx,
-      y0 = y + dy,
-      cw = 1 ^ ccw,
-      da = ccw ? a0 - a1 : a1 - a0;
-
-    // Is the radius negative? Error.
-    if (r < 0) throw new Error("negative radius: " + r);
-
-    // Is this path empty? Move to (x0,y0).
-    if (this._x1 === null) {
-      this._ += "M" + x0 + "," + y0;
-    }
-
-    // Or, is (x0,y0) not coincident with the previous point? Line to (x0,y0).
-    else if (Math.abs(this._x1 - x0) > epsilon || Math.abs(this._y1 - y0) > epsilon) {
-      this._ += "L" + x0 + "," + y0;
-    }
-
-    // Is this arc empty? We’re done.
-    if (!r) return;
-
-    // Does the angle go the wrong way? Flip the direction.
-    if (da < 0) da = da % tau + tau;
-
-    // Is this a complete circle? Draw two arcs to complete the circle.
-    if (da > tauEpsilon) {
-      this._ += "A" + r + "," + r + ",0,1," + cw + "," + (x - dx) + "," + (y - dy) + "A" + r + "," + r + ",0,1," + cw + "," + (this._x1 = x0) + "," + (this._y1 = y0);
-    }
-
-    // Is this arc non-empty? Draw an arc!
-    else if (da > epsilon) {
-      this._ += "A" + r + "," + r + ",0," + +(da >= pi) + "," + cw + "," + (this._x1 = x + r * Math.cos(a1)) + "," + (this._y1 = y + r * Math.sin(a1));
-    }
-  },
-  rect: function (x, y, w, h) {
-    this._ += "M" + (this._x0 = this._x1 = +x) + "," + (this._y0 = this._y1 = +y) + "h" + +w + "v" + +h + "h" + -w + "Z";
-  },
-  toString: function () {
-    return this._;
-  }
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (path);
-
-/***/ }),
-
-/***/ 44323:
-/*!*******************************************************************!*\
-  !*** ./node_modules/d3-sankey/node_modules/d3-shape/src/array.js ***!
-  \*******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   slice: () => (/* binding */ slice)
-/* harmony export */ });
-var slice = Array.prototype.slice;
-
-/***/ }),
-
-/***/ 33664:
-/*!**********************************************************************!*\
-  !*** ./node_modules/d3-sankey/node_modules/d3-shape/src/constant.js ***!
-  \**********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(x) {
-  return function constant() {
-    return x;
-  };
-}
-
-/***/ }),
-
-/***/ 70455:
-/*!************************************************************************!*\
-  !*** ./node_modules/d3-sankey/node_modules/d3-shape/src/link/index.js ***!
-  \************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   linkHorizontal: () => (/* binding */ linkHorizontal),
-/* harmony export */   linkRadial: () => (/* binding */ linkRadial),
-/* harmony export */   linkVertical: () => (/* binding */ linkVertical)
-/* harmony export */ });
-/* harmony import */ var d3_path__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! d3-path */ 18133);
-/* harmony import */ var _array_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../array.js */ 44323);
-/* harmony import */ var _constant_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../constant.js */ 33664);
-/* harmony import */ var _point_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../point.js */ 43356);
-/* harmony import */ var _pointRadial_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pointRadial.js */ 98587);
-
-
-
-
-
-function linkSource(d) {
-  return d.source;
-}
-function linkTarget(d) {
-  return d.target;
-}
-function link(curve) {
-  var source = linkSource,
-    target = linkTarget,
-    x = _point_js__WEBPACK_IMPORTED_MODULE_0__.x,
-    y = _point_js__WEBPACK_IMPORTED_MODULE_0__.y,
-    context = null;
-  function link() {
-    var buffer,
-      argv = _array_js__WEBPACK_IMPORTED_MODULE_1__.slice.call(arguments),
-      s = source.apply(this, argv),
-      t = target.apply(this, argv);
-    if (!context) context = buffer = (0,d3_path__WEBPACK_IMPORTED_MODULE_2__["default"])();
-    curve(context, +x.apply(this, (argv[0] = s, argv)), +y.apply(this, argv), +x.apply(this, (argv[0] = t, argv)), +y.apply(this, argv));
-    if (buffer) return context = null, buffer + "" || null;
-  }
-  link.source = function (_) {
-    return arguments.length ? (source = _, link) : source;
-  };
-  link.target = function (_) {
-    return arguments.length ? (target = _, link) : target;
-  };
-  link.x = function (_) {
-    return arguments.length ? (x = typeof _ === "function" ? _ : (0,_constant_js__WEBPACK_IMPORTED_MODULE_3__["default"])(+_), link) : x;
-  };
-  link.y = function (_) {
-    return arguments.length ? (y = typeof _ === "function" ? _ : (0,_constant_js__WEBPACK_IMPORTED_MODULE_3__["default"])(+_), link) : y;
-  };
-  link.context = function (_) {
-    return arguments.length ? (context = _ == null ? null : _, link) : context;
-  };
-  return link;
-}
-function curveHorizontal(context, x0, y0, x1, y1) {
-  context.moveTo(x0, y0);
-  context.bezierCurveTo(x0 = (x0 + x1) / 2, y0, x0, y1, x1, y1);
-}
-function curveVertical(context, x0, y0, x1, y1) {
-  context.moveTo(x0, y0);
-  context.bezierCurveTo(x0, y0 = (y0 + y1) / 2, x1, y0, x1, y1);
-}
-function curveRadial(context, x0, y0, x1, y1) {
-  var p0 = (0,_pointRadial_js__WEBPACK_IMPORTED_MODULE_4__["default"])(x0, y0),
-    p1 = (0,_pointRadial_js__WEBPACK_IMPORTED_MODULE_4__["default"])(x0, y0 = (y0 + y1) / 2),
-    p2 = (0,_pointRadial_js__WEBPACK_IMPORTED_MODULE_4__["default"])(x1, y0),
-    p3 = (0,_pointRadial_js__WEBPACK_IMPORTED_MODULE_4__["default"])(x1, y1);
-  context.moveTo(p0[0], p0[1]);
-  context.bezierCurveTo(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
-}
-function linkHorizontal() {
-  return link(curveHorizontal);
-}
-function linkVertical() {
-  return link(curveVertical);
-}
-function linkRadial() {
-  var l = link(curveRadial);
-  l.angle = l.x, delete l.x;
-  l.radius = l.y, delete l.y;
-  return l;
-}
-
-/***/ }),
-
-/***/ 43356:
-/*!*******************************************************************!*\
-  !*** ./node_modules/d3-sankey/node_modules/d3-shape/src/point.js ***!
-  \*******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   x: () => (/* binding */ x),
-/* harmony export */   y: () => (/* binding */ y)
-/* harmony export */ });
-function x(p) {
-  return p[0];
-}
-function y(p) {
-  return p[1];
-}
-
-/***/ }),
-
-/***/ 98587:
-/*!*************************************************************************!*\
-  !*** ./node_modules/d3-sankey/node_modules/d3-shape/src/pointRadial.js ***!
-  \*************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(x, y) {
-  return [(y = +y) * Math.cos(x -= Math.PI / 2), y * Math.sin(x)];
-}
-
-/***/ }),
-
-/***/ 74046:
-/*!*********************************************!*\
-  !*** ./node_modules/d3-sankey/src/align.js ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   center: () => (/* binding */ center),
-/* harmony export */   justify: () => (/* binding */ justify),
-/* harmony export */   left: () => (/* binding */ left),
-/* harmony export */   right: () => (/* binding */ right)
-/* harmony export */ });
-/* harmony import */ var d3_array__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-array */ 31614);
-
-function targetDepth(d) {
-  return d.target.depth;
-}
-function left(node) {
-  return node.depth;
-}
-function right(node, n) {
-  return n - 1 - node.height;
-}
-function justify(node, n) {
-  return node.sourceLinks.length ? node.depth : n - 1;
-}
-function center(node) {
-  return node.targetLinks.length ? node.depth : node.sourceLinks.length ? (0,d3_array__WEBPACK_IMPORTED_MODULE_0__["default"])(node.sourceLinks, targetDepth) - 1 : 0;
-}
-
-/***/ }),
-
-/***/ 13827:
-/*!************************************************!*\
-  !*** ./node_modules/d3-sankey/src/constant.js ***!
-  \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ constant)
-/* harmony export */ });
-function constant(x) {
-  return function () {
-    return x;
-  };
-}
-
-/***/ }),
-
-/***/ 56099:
-/*!*********************************************!*\
-  !*** ./node_modules/d3-sankey/src/index.js ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   sankey: () => (/* reexport safe */ _sankey_js__WEBPACK_IMPORTED_MODULE_0__["default"]),
-/* harmony export */   sankeyCenter: () => (/* reexport safe */ _align_js__WEBPACK_IMPORTED_MODULE_1__.center),
-/* harmony export */   sankeyJustify: () => (/* reexport safe */ _align_js__WEBPACK_IMPORTED_MODULE_1__.justify),
-/* harmony export */   sankeyLeft: () => (/* reexport safe */ _align_js__WEBPACK_IMPORTED_MODULE_1__.left),
-/* harmony export */   sankeyLinkHorizontal: () => (/* reexport safe */ _sankeyLinkHorizontal_js__WEBPACK_IMPORTED_MODULE_2__["default"]),
-/* harmony export */   sankeyRight: () => (/* reexport safe */ _align_js__WEBPACK_IMPORTED_MODULE_1__.right)
-/* harmony export */ });
-/* harmony import */ var _sankey_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sankey.js */ 1458);
-/* harmony import */ var _align_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./align.js */ 74046);
-/* harmony import */ var _sankeyLinkHorizontal_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sankeyLinkHorizontal.js */ 43538);
-
-
-
-
-/***/ }),
-
 /***/ 1458:
 /*!**********************************************!*\
   !*** ./node_modules/d3-sankey/src/sankey.js ***!
@@ -878,6 +412,263 @@ function Sankey() {
 
 /***/ }),
 
+/***/ 13827:
+/*!************************************************!*\
+  !*** ./node_modules/d3-sankey/src/constant.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ constant)
+/* harmony export */ });
+function constant(x) {
+  return function () {
+    return x;
+  };
+}
+
+/***/ }),
+
+/***/ 18133:
+/*!*****************************************************************!*\
+  !*** ./node_modules/d3-sankey/node_modules/d3-path/src/path.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var pi = Math.PI,
+  tau = 2 * pi,
+  epsilon = 1e-6,
+  tauEpsilon = tau - epsilon;
+function Path() {
+  this._x0 = this._y0 =
+  // start of current subpath
+  this._x1 = this._y1 = null; // end of current subpath
+  this._ = "";
+}
+function path() {
+  return new Path();
+}
+Path.prototype = path.prototype = {
+  constructor: Path,
+  moveTo: function (x, y) {
+    this._ += "M" + (this._x0 = this._x1 = +x) + "," + (this._y0 = this._y1 = +y);
+  },
+  closePath: function () {
+    if (this._x1 !== null) {
+      this._x1 = this._x0, this._y1 = this._y0;
+      this._ += "Z";
+    }
+  },
+  lineTo: function (x, y) {
+    this._ += "L" + (this._x1 = +x) + "," + (this._y1 = +y);
+  },
+  quadraticCurveTo: function (x1, y1, x, y) {
+    this._ += "Q" + +x1 + "," + +y1 + "," + (this._x1 = +x) + "," + (this._y1 = +y);
+  },
+  bezierCurveTo: function (x1, y1, x2, y2, x, y) {
+    this._ += "C" + +x1 + "," + +y1 + "," + +x2 + "," + +y2 + "," + (this._x1 = +x) + "," + (this._y1 = +y);
+  },
+  arcTo: function (x1, y1, x2, y2, r) {
+    x1 = +x1, y1 = +y1, x2 = +x2, y2 = +y2, r = +r;
+    var x0 = this._x1,
+      y0 = this._y1,
+      x21 = x2 - x1,
+      y21 = y2 - y1,
+      x01 = x0 - x1,
+      y01 = y0 - y1,
+      l01_2 = x01 * x01 + y01 * y01;
+
+    // Is the radius negative? Error.
+    if (r < 0) throw new Error("negative radius: " + r);
+
+    // Is this path empty? Move to (x1,y1).
+    if (this._x1 === null) {
+      this._ += "M" + (this._x1 = x1) + "," + (this._y1 = y1);
+    }
+
+    // Or, is (x1,y1) coincident with (x0,y0)? Do nothing.
+    else if (!(l01_2 > epsilon)) ;
+
+    // Or, are (x0,y0), (x1,y1) and (x2,y2) collinear?
+    // Equivalently, is (x1,y1) coincident with (x2,y2)?
+    // Or, is the radius zero? Line to (x1,y1).
+    else if (!(Math.abs(y01 * x21 - y21 * x01) > epsilon) || !r) {
+      this._ += "L" + (this._x1 = x1) + "," + (this._y1 = y1);
+    }
+
+    // Otherwise, draw an arc!
+    else {
+      var x20 = x2 - x0,
+        y20 = y2 - y0,
+        l21_2 = x21 * x21 + y21 * y21,
+        l20_2 = x20 * x20 + y20 * y20,
+        l21 = Math.sqrt(l21_2),
+        l01 = Math.sqrt(l01_2),
+        l = r * Math.tan((pi - Math.acos((l21_2 + l01_2 - l20_2) / (2 * l21 * l01))) / 2),
+        t01 = l / l01,
+        t21 = l / l21;
+
+      // If the start tangent is not coincident with (x0,y0), line to.
+      if (Math.abs(t01 - 1) > epsilon) {
+        this._ += "L" + (x1 + t01 * x01) + "," + (y1 + t01 * y01);
+      }
+      this._ += "A" + r + "," + r + ",0,0," + +(y01 * x20 > x01 * y20) + "," + (this._x1 = x1 + t21 * x21) + "," + (this._y1 = y1 + t21 * y21);
+    }
+  },
+  arc: function (x, y, r, a0, a1, ccw) {
+    x = +x, y = +y, r = +r, ccw = !!ccw;
+    var dx = r * Math.cos(a0),
+      dy = r * Math.sin(a0),
+      x0 = x + dx,
+      y0 = y + dy,
+      cw = 1 ^ ccw,
+      da = ccw ? a0 - a1 : a1 - a0;
+
+    // Is the radius negative? Error.
+    if (r < 0) throw new Error("negative radius: " + r);
+
+    // Is this path empty? Move to (x0,y0).
+    if (this._x1 === null) {
+      this._ += "M" + x0 + "," + y0;
+    }
+
+    // Or, is (x0,y0) not coincident with the previous point? Line to (x0,y0).
+    else if (Math.abs(this._x1 - x0) > epsilon || Math.abs(this._y1 - y0) > epsilon) {
+      this._ += "L" + x0 + "," + y0;
+    }
+
+    // Is this arc empty? We’re done.
+    if (!r) return;
+
+    // Does the angle go the wrong way? Flip the direction.
+    if (da < 0) da = da % tau + tau;
+
+    // Is this a complete circle? Draw two arcs to complete the circle.
+    if (da > tauEpsilon) {
+      this._ += "A" + r + "," + r + ",0,1," + cw + "," + (x - dx) + "," + (y - dy) + "A" + r + "," + r + ",0,1," + cw + "," + (this._x1 = x0) + "," + (this._y1 = y0);
+    }
+
+    // Is this arc non-empty? Draw an arc!
+    else if (da > epsilon) {
+      this._ += "A" + r + "," + r + ",0," + +(da >= pi) + "," + cw + "," + (this._x1 = x + r * Math.cos(a1)) + "," + (this._y1 = y + r * Math.sin(a1));
+    }
+  },
+  rect: function (x, y, w, h) {
+    this._ += "M" + (this._x0 = this._x1 = +x) + "," + (this._y0 = this._y1 = +y) + "h" + +w + "v" + +h + "h" + -w + "Z";
+  },
+  toString: function () {
+    return this._;
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (path);
+
+/***/ }),
+
+/***/ 19929:
+/*!*****************************************************************!*\
+  !*** ./node_modules/d3-sankey/node_modules/d3-array/src/sum.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ sum)
+/* harmony export */ });
+function sum(values, valueof) {
+  let sum = 0;
+  if (valueof === undefined) {
+    for (let value of values) {
+      if (value = +value) {
+        sum += value;
+      }
+    }
+  } else {
+    let index = -1;
+    for (let value of values) {
+      if (value = +valueof(value, ++index, values)) {
+        sum += value;
+      }
+    }
+  }
+  return sum;
+}
+
+/***/ }),
+
+/***/ 31614:
+/*!*****************************************************************!*\
+  !*** ./node_modules/d3-sankey/node_modules/d3-array/src/min.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ min)
+/* harmony export */ });
+function min(values, valueof) {
+  let min;
+  if (valueof === undefined) {
+    for (const value of values) {
+      if (value != null && (min > value || min === undefined && value >= value)) {
+        min = value;
+      }
+    }
+  } else {
+    let index = -1;
+    for (let value of values) {
+      if ((value = valueof(value, ++index, values)) != null && (min > value || min === undefined && value >= value)) {
+        min = value;
+      }
+    }
+  }
+  return min;
+}
+
+/***/ }),
+
+/***/ 33664:
+/*!**********************************************************************!*\
+  !*** ./node_modules/d3-sankey/node_modules/d3-shape/src/constant.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(x) {
+  return function constant() {
+    return x;
+  };
+}
+
+/***/ }),
+
+/***/ 43356:
+/*!*******************************************************************!*\
+  !*** ./node_modules/d3-sankey/node_modules/d3-shape/src/point.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   x: () => (/* binding */ x),
+/* harmony export */   y: () => (/* binding */ y)
+/* harmony export */ });
+function x(p) {
+  return p[0];
+}
+function y(p) {
+  return p[1];
+}
+
+/***/ }),
+
 /***/ 43538:
 /*!************************************************************!*\
   !*** ./node_modules/d3-sankey/src/sankeyLinkHorizontal.js ***!
@@ -899,6 +690,44 @@ function horizontalTarget(d) {
 /* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {
   return (0,d3_shape__WEBPACK_IMPORTED_MODULE_0__.linkHorizontal)().source(horizontalSource).target(horizontalTarget);
 }
+
+/***/ }),
+
+/***/ 44323:
+/*!*******************************************************************!*\
+  !*** ./node_modules/d3-sankey/node_modules/d3-shape/src/array.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   slice: () => (/* binding */ slice)
+/* harmony export */ });
+var slice = Array.prototype.slice;
+
+/***/ }),
+
+/***/ 56099:
+/*!*********************************************!*\
+  !*** ./node_modules/d3-sankey/src/index.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   sankey: () => (/* reexport safe */ _sankey_js__WEBPACK_IMPORTED_MODULE_0__["default"]),
+/* harmony export */   sankeyCenter: () => (/* reexport safe */ _align_js__WEBPACK_IMPORTED_MODULE_1__.center),
+/* harmony export */   sankeyJustify: () => (/* reexport safe */ _align_js__WEBPACK_IMPORTED_MODULE_1__.justify),
+/* harmony export */   sankeyLeft: () => (/* reexport safe */ _align_js__WEBPACK_IMPORTED_MODULE_1__.left),
+/* harmony export */   sankeyLinkHorizontal: () => (/* reexport safe */ _sankeyLinkHorizontal_js__WEBPACK_IMPORTED_MODULE_2__["default"]),
+/* harmony export */   sankeyRight: () => (/* reexport safe */ _align_js__WEBPACK_IMPORTED_MODULE_1__.right)
+/* harmony export */ });
+/* harmony import */ var _sankey_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sankey.js */ 1458);
+/* harmony import */ var _align_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./align.js */ 74046);
+/* harmony import */ var _sankeyLinkHorizontal_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sankeyLinkHorizontal.js */ 43538);
+
+
+
 
 /***/ }),
 
@@ -1568,9 +1397,7 @@ var SankeyLink = class {
     this.target = target;
     this.value = value;
   }
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(this, "SankeyLink");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(this, "SankeyLink");
 };
 var addLink = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)((source, target, value) => {
   links.push(new SankeyLink(source, target, value));
@@ -1579,9 +1406,7 @@ var SankeyNode = class {
   constructor(ID) {
     this.ID = ID;
   }
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(this, "SankeyNode");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(this, "SankeyNode");
 };
 var findOrCreateNode = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(ID => {
   ID = _chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.common_default.sanitizeText(ID, (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.getConfig2)());
@@ -1629,12 +1454,8 @@ var sankeyDB_default = {
 // src/rendering-util/uid.ts
 var Uid = /*#__PURE__*/(() => {
   let Uid = class _Uid {
-    static {
-      (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(this, "Uid");
-    }
-    static {
-      this.count = 0;
-    }
+    static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(this, "Uid");
+    static #_2 = this.count = 0;
     static next(name) {
       return new _Uid(name + ++_Uid.count);
     }
@@ -1747,6 +1568,177 @@ var diagram = {
   renderer: sankeyRenderer_default
 };
 
+
+/***/ }),
+
+/***/ 70455:
+/*!************************************************************************!*\
+  !*** ./node_modules/d3-sankey/node_modules/d3-shape/src/link/index.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   linkHorizontal: () => (/* binding */ linkHorizontal),
+/* harmony export */   linkRadial: () => (/* binding */ linkRadial),
+/* harmony export */   linkVertical: () => (/* binding */ linkVertical)
+/* harmony export */ });
+/* harmony import */ var d3_path__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! d3-path */ 18133);
+/* harmony import */ var _array_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../array.js */ 44323);
+/* harmony import */ var _constant_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../constant.js */ 33664);
+/* harmony import */ var _point_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../point.js */ 43356);
+/* harmony import */ var _pointRadial_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pointRadial.js */ 98587);
+
+
+
+
+
+function linkSource(d) {
+  return d.source;
+}
+function linkTarget(d) {
+  return d.target;
+}
+function link(curve) {
+  var source = linkSource,
+    target = linkTarget,
+    x = _point_js__WEBPACK_IMPORTED_MODULE_0__.x,
+    y = _point_js__WEBPACK_IMPORTED_MODULE_0__.y,
+    context = null;
+  function link() {
+    var buffer,
+      argv = _array_js__WEBPACK_IMPORTED_MODULE_1__.slice.call(arguments),
+      s = source.apply(this, argv),
+      t = target.apply(this, argv);
+    if (!context) context = buffer = (0,d3_path__WEBPACK_IMPORTED_MODULE_2__["default"])();
+    curve(context, +x.apply(this, (argv[0] = s, argv)), +y.apply(this, argv), +x.apply(this, (argv[0] = t, argv)), +y.apply(this, argv));
+    if (buffer) return context = null, buffer + "" || null;
+  }
+  link.source = function (_) {
+    return arguments.length ? (source = _, link) : source;
+  };
+  link.target = function (_) {
+    return arguments.length ? (target = _, link) : target;
+  };
+  link.x = function (_) {
+    return arguments.length ? (x = typeof _ === "function" ? _ : (0,_constant_js__WEBPACK_IMPORTED_MODULE_3__["default"])(+_), link) : x;
+  };
+  link.y = function (_) {
+    return arguments.length ? (y = typeof _ === "function" ? _ : (0,_constant_js__WEBPACK_IMPORTED_MODULE_3__["default"])(+_), link) : y;
+  };
+  link.context = function (_) {
+    return arguments.length ? (context = _ == null ? null : _, link) : context;
+  };
+  return link;
+}
+function curveHorizontal(context, x0, y0, x1, y1) {
+  context.moveTo(x0, y0);
+  context.bezierCurveTo(x0 = (x0 + x1) / 2, y0, x0, y1, x1, y1);
+}
+function curveVertical(context, x0, y0, x1, y1) {
+  context.moveTo(x0, y0);
+  context.bezierCurveTo(x0, y0 = (y0 + y1) / 2, x1, y0, x1, y1);
+}
+function curveRadial(context, x0, y0, x1, y1) {
+  var p0 = (0,_pointRadial_js__WEBPACK_IMPORTED_MODULE_4__["default"])(x0, y0),
+    p1 = (0,_pointRadial_js__WEBPACK_IMPORTED_MODULE_4__["default"])(x0, y0 = (y0 + y1) / 2),
+    p2 = (0,_pointRadial_js__WEBPACK_IMPORTED_MODULE_4__["default"])(x1, y0),
+    p3 = (0,_pointRadial_js__WEBPACK_IMPORTED_MODULE_4__["default"])(x1, y1);
+  context.moveTo(p0[0], p0[1]);
+  context.bezierCurveTo(p1[0], p1[1], p2[0], p2[1], p3[0], p3[1]);
+}
+function linkHorizontal() {
+  return link(curveHorizontal);
+}
+function linkVertical() {
+  return link(curveVertical);
+}
+function linkRadial() {
+  var l = link(curveRadial);
+  l.angle = l.x, delete l.x;
+  l.radius = l.y, delete l.y;
+  return l;
+}
+
+/***/ }),
+
+/***/ 74046:
+/*!*********************************************!*\
+  !*** ./node_modules/d3-sankey/src/align.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   center: () => (/* binding */ center),
+/* harmony export */   justify: () => (/* binding */ justify),
+/* harmony export */   left: () => (/* binding */ left),
+/* harmony export */   right: () => (/* binding */ right)
+/* harmony export */ });
+/* harmony import */ var d3_array__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3-array */ 31614);
+
+function targetDepth(d) {
+  return d.target.depth;
+}
+function left(node) {
+  return node.depth;
+}
+function right(node, n) {
+  return n - 1 - node.height;
+}
+function justify(node, n) {
+  return node.sourceLinks.length ? node.depth : n - 1;
+}
+function center(node) {
+  return node.targetLinks.length ? node.depth : node.sourceLinks.length ? (0,d3_array__WEBPACK_IMPORTED_MODULE_0__["default"])(node.sourceLinks, targetDepth) - 1 : 0;
+}
+
+/***/ }),
+
+/***/ 89440:
+/*!*****************************************************************!*\
+  !*** ./node_modules/d3-sankey/node_modules/d3-array/src/max.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ max)
+/* harmony export */ });
+function max(values, valueof) {
+  let max;
+  if (valueof === undefined) {
+    for (const value of values) {
+      if (value != null && (max < value || max === undefined && value >= value)) {
+        max = value;
+      }
+    }
+  } else {
+    let index = -1;
+    for (let value of values) {
+      if ((value = valueof(value, ++index, values)) != null && (max < value || max === undefined && value >= value)) {
+        max = value;
+      }
+    }
+  }
+  return max;
+}
+
+/***/ }),
+
+/***/ 98587:
+/*!*************************************************************************!*\
+  !*** ./node_modules/d3-sankey/node_modules/d3-shape/src/pointRadial.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(x, y) {
+  return [(y = +y) * Math.cos(x -= Math.PI / 2), y * Math.sin(x)];
+}
 
 /***/ })
 

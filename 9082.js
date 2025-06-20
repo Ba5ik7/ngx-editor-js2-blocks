@@ -1,29 +1,5 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[9082],{
 
-/***/ 61187:
-/*!*****************************************************!*\
-  !*** ./node_modules/khroma/dist/methods/channel.js ***!
-  \*****************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/index.js */ 16191);
-/* harmony import */ var _color_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../color/index.js */ 79537);
-/* IMPORT */
-
-
-/* MAIN */
-const channel = (color, channel) => {
-  return _utils_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].lang.round(_color_index_js__WEBPACK_IMPORTED_MODULE_1__["default"].parse(color)[channel]);
-};
-/* EXPORT */
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (channel);
-
-/***/ }),
-
 /***/ 24932:
 /*!**************************************************************************!*\
   !*** ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-RZ5BOZE2.mjs ***!
@@ -83,6 +59,30 @@ var createViewBox = /* @__PURE__ */(0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODU
   return `${x - padding} ${y - padding} ${width} ${height}`;
 }, "createViewBox");
 
+
+/***/ }),
+
+/***/ 61187:
+/*!*****************************************************!*\
+  !*** ./node_modules/khroma/dist/methods/channel.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/index.js */ 16191);
+/* harmony import */ var _color_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../color/index.js */ 79537);
+/* IMPORT */
+
+
+/* MAIN */
+const channel = (color, channel) => {
+  return _utils_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].lang.round(_color_index_js__WEBPACK_IMPORTED_MODULE_1__["default"].parse(color)[channel]);
+};
+/* EXPORT */
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (channel);
 
 /***/ }),
 
@@ -1575,9 +1575,7 @@ var ErDB = class {
     this.setAccTitle = this.setAccTitle.bind(this);
     this.setAccDescription = this.setAccDescription.bind(this);
   }
-  static {
-    (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_10__.__name)(this, "ErDB");
-  }
+  static #_ = (0,_chunk_YTJNT7DU_mjs__WEBPACK_IMPORTED_MODULE_10__.__name)(this, "ErDB");
   /**
    * Add entity
    * @param name - The name of the entity

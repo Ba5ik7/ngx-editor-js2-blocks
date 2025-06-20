@@ -10,21 +10,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   NgxEditorJs2PopQuizComponent: () => (/* binding */ NgxEditorJs2PopQuizComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 9516);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ 56748);
-/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 53576);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ 7140);
+/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 77947);
 /* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
-/* harmony import */ var _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/stepper */ 40578);
+/* harmony import */ var _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/stepper */ 54519);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 44866);
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/button */ 28326);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/form-field */ 43250);
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/input */ 62392);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 59694);
-/* harmony import */ var _angular_material_divider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/divider */ 83402);
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/icon */ 70018);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/core */ 84718);
-/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/select */ 86638);
-/* harmony import */ var _angular_material_radio__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/radio */ 2166);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/button */ 33977);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/form-field */ 76833);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/input */ 29757);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 85914);
+/* harmony import */ var _angular_material_divider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/divider */ 70791);
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/icon */ 37409);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/core */ 49217);
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/select */ 30173);
+/* harmony import */ var _angular_material_radio__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/radio */ 34915);
 
 
 
@@ -86,7 +86,7 @@ function ChoicesComponent_For_7_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "textarea", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, ChoicesComponent_For_7_Conditional_6_Template, 2, 0, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](6, ChoicesComponent_For_7_Conditional_6_Template, 2, 0, "mat-error");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "button", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ChoicesComponent_For_7_Template_button_click_7_listener() {
@@ -105,7 +105,7 @@ function ChoicesComponent_For_7_Template(rf, ctx) {
     const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroupName", $index_r2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Option ", $index_r2 + 1, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Option ", $index_r2 + 1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"](((tmp_12_0 = ctx_r2.choicesFormGroup().get("choices")) == null ? null : tmp_12_0.get($index_r2.toString())) ? 6 : -1);
   }
@@ -143,7 +143,7 @@ function AnswerComponent_Conditional_0_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-select", 1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeaterCreate"](7, AnswerComponent_Conditional_0_For_8_Template, 2, 2, "mat-option", 2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeaterTrackByIndex"]);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](9, AnswerComponent_Conditional_0_Conditional_9_Template, 2, 0, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](9, AnswerComponent_Conditional_0_Conditional_9_Template, 2, 0, "mat-error");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 3)(11, "button", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Previous");
@@ -399,7 +399,7 @@ let QuestionComponent = /*#__PURE__*/(() => {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Create a Question to ask.");
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "textarea", 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, QuestionComponent_Conditional_7_Template, 2, 0, "mat-error");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](7, QuestionComponent_Conditional_7_Template, 2, 0, "mat-error");
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 2)(9, "button", 3);
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Next");
@@ -447,7 +447,7 @@ let ResponsesComponent = /*#__PURE__*/(() => {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Create a Response when the User is Correct");
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "textarea", 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, ResponsesComponent_Conditional_7_Template, 2, 0, "mat-error");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](7, ResponsesComponent_Conditional_7_Template, 2, 0, "mat-error");
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "h3");
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Create a Response when the User is Incorrect");
@@ -456,7 +456,7 @@ let ResponsesComponent = /*#__PURE__*/(() => {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Create a Response when the User is Incorrect");
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "textarea", 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, ResponsesComponent_Conditional_14_Template, 2, 0, "mat-error");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](14, ResponsesComponent_Conditional_14_Template, 2, 0, "mat-error");
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 2)(16, "button", 3);
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "Previous");
@@ -594,7 +594,7 @@ let AnswerComponent = /*#__PURE__*/(() => {
       consts: [[3, "formGroup"], ["formControlName", "answer", "required", ""], [3, "value"], [1, "action-group"], ["mat-flat-button", "", "matStepperPrevious", ""], ["mat-flat-button", "", "matStepperNext", ""]],
       template: function AnswerComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, AnswerComponent_Conditional_0_Template, 15, 2, "form", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](0, AnswerComponent_Conditional_0_Template, 15, 2, "form", 0);
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](1, "async");
         }
         if (rf & 2) {
@@ -637,7 +637,7 @@ let ResultsComponent = /*#__PURE__*/(() => {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Preview of the Pop-Quiz");
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "mat-divider");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, ResultsComponent_Conditional_4_Template, 12, 2, "div", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](4, ResultsComponent_Conditional_4_Template, 12, 2, "div", 1);
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](5, "async");
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "mat-divider");
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 2)(8, "button", 3);
@@ -700,7 +700,7 @@ let PopQuizConfigComponent = /*#__PURE__*/(() => {
       consts: [["linear", "", 1, "mat-stepper", 3, "selectedIndex"], [3, "stepControl", "completed"], ["matStepLabel", ""], [3, "questionFormGroup"], [3, "choicesFormGroup"], [3, "answerFormGroup"], [3, "responsesFormGroup"], [3, "resultsFormGroup"]],
       template: function PopQuizConfigComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, PopQuizConfigComponent_Conditional_0_Template, 16, 16, "mat-stepper", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](0, PopQuizConfigComponent_Conditional_0_Template, 16, 16, "mat-stepper", 0);
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](1, "async");
         }
         if (rf & 2) {
@@ -709,7 +709,7 @@ let PopQuizConfigComponent = /*#__PURE__*/(() => {
         }
       },
       dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.AsyncPipe, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStepperModule, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStep, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStepLabel, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStepper, QuestionComponent, ResponsesComponent, ChoicesComponent, AnswerComponent, ResultsComponent],
-      styles: ["[_nghost-%COMP%]{border:1px solid #ccc;border-radius:var( --mdc-outlined-card-container-shape, var(--mat-sys-corner-medium) )}[_nghost-%COMP%]   pop-quiz-question[_ngcontent-%COMP%]{padding-top:1rem}[_nghost-%COMP%]   :is(mat-stepper.mat-stepper-vertical[_ngcontent-%COMP%], mat-stepper.mat-stepper-horizontal[_ngcontent-%COMP%]){background:none}"]
+      styles: ["[_nghost-%COMP%]{border:1px solid #ccc;border-radius:var( --mat-card-outlined-container-shape, var(--mat-sys-corner-medium) )}[_nghost-%COMP%]   pop-quiz-question[_ngcontent-%COMP%]{padding-top:1rem}[_nghost-%COMP%]   mat-stepper.mat-stepper-vertical[_ngcontent-%COMP%], [_nghost-%COMP%]   mat-stepper.mat-stepper-horizontal[_ngcontent-%COMP%]{background:none}"]
     });
   }
   return PopQuizConfigComponent;

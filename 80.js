@@ -1,30 +1,17 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[80],{
 
-/***/ 17699:
-/*!*********************************************************!*\
-  !*** ./node_modules/@angular/cdk/fesm2022/platform.mjs ***!
-  \*********************************************************/
+/***/ 6427:
+/*!******************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/platform-DNDzkVcI.mjs ***!
+  \******************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Platform: () => (/* binding */ Platform),
-/* harmony export */   PlatformModule: () => (/* binding */ PlatformModule),
-/* harmony export */   RtlScrollAxisType: () => (/* binding */ RtlScrollAxisType),
-/* harmony export */   _bindEventWithOptions: () => (/* binding */ _bindEventWithOptions),
-/* harmony export */   _getEventTarget: () => (/* binding */ _getEventTarget),
-/* harmony export */   _getFocusedElementPierceShadowDom: () => (/* binding */ _getFocusedElementPierceShadowDom),
-/* harmony export */   _getShadowRoot: () => (/* binding */ _getShadowRoot),
-/* harmony export */   _isTestEnvironment: () => (/* binding */ _isTestEnvironment),
-/* harmony export */   _supportsShadowDom: () => (/* binding */ _supportsShadowDom),
-/* harmony export */   getRtlScrollAxisType: () => (/* binding */ getRtlScrollAxisType),
-/* harmony export */   getSupportedInputTypes: () => (/* binding */ getSupportedInputTypes),
-/* harmony export */   normalizePassiveListenerOptions: () => (/* binding */ normalizePassiveListenerOptions),
-/* harmony export */   supportsPassiveEventListeners: () => (/* binding */ supportsPassiveEventListeners),
-/* harmony export */   supportsScrollBehavior: () => (/* binding */ supportsScrollBehavior)
+/* harmony export */   P: () => (/* binding */ Platform)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 9516);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 59694);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 85914);
 
 
 
@@ -96,15 +83,56 @@ let Platform = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+
+/***/ }),
+
+/***/ 17699:
+/*!*********************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/platform.mjs ***!
+  \*********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Platform: () => (/* reexport safe */ _platform_DNDzkVcI_mjs__WEBPACK_IMPORTED_MODULE_0__.P),
+/* harmony export */   PlatformModule: () => (/* binding */ PlatformModule),
+/* harmony export */   RtlScrollAxisType: () => (/* reexport safe */ _scrolling_BkvA05C8_mjs__WEBPACK_IMPORTED_MODULE_3__.R),
+/* harmony export */   _getEventTarget: () => (/* reexport safe */ _shadow_dom_B0oHn41l_mjs__WEBPACK_IMPORTED_MODULE_4__._),
+/* harmony export */   _getFocusedElementPierceShadowDom: () => (/* reexport safe */ _shadow_dom_B0oHn41l_mjs__WEBPACK_IMPORTED_MODULE_4__.c),
+/* harmony export */   _getShadowRoot: () => (/* reexport safe */ _shadow_dom_B0oHn41l_mjs__WEBPACK_IMPORTED_MODULE_4__.a),
+/* harmony export */   _isTestEnvironment: () => (/* reexport safe */ _test_environment_CT0XxPyp_mjs__WEBPACK_IMPORTED_MODULE_5__._),
+/* harmony export */   _supportsShadowDom: () => (/* reexport safe */ _shadow_dom_B0oHn41l_mjs__WEBPACK_IMPORTED_MODULE_4__.b),
+/* harmony export */   getRtlScrollAxisType: () => (/* reexport safe */ _scrolling_BkvA05C8_mjs__WEBPACK_IMPORTED_MODULE_3__.g),
+/* harmony export */   getSupportedInputTypes: () => (/* binding */ getSupportedInputTypes),
+/* harmony export */   normalizePassiveListenerOptions: () => (/* reexport safe */ _passive_listeners_esHZRgIN_mjs__WEBPACK_IMPORTED_MODULE_2__.n),
+/* harmony export */   supportsPassiveEventListeners: () => (/* reexport safe */ _passive_listeners_esHZRgIN_mjs__WEBPACK_IMPORTED_MODULE_2__.s),
+/* harmony export */   supportsScrollBehavior: () => (/* reexport safe */ _scrolling_BkvA05C8_mjs__WEBPACK_IMPORTED_MODULE_3__.s)
+/* harmony export */ });
+/* harmony import */ var _platform_DNDzkVcI_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./platform-DNDzkVcI.mjs */ 6427);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _passive_listeners_esHZRgIN_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./passive-listeners-esHZRgIN.mjs */ 92516);
+/* harmony import */ var _scrolling_BkvA05C8_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scrolling-BkvA05C8.mjs */ 59566);
+/* harmony import */ var _shadow_dom_B0oHn41l_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./shadow-dom-B0oHn41l.mjs */ 66488);
+/* harmony import */ var _test_environment_CT0XxPyp_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./test-environment-CT0XxPyp.mjs */ 65757);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 85914);
+
+
+
+
+
+
+
+
 let PlatformModule = /*#__PURE__*/(() => {
   class PlatformModule {
     static ɵfac = function PlatformModule_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || PlatformModule)();
     };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
       type: PlatformModule
     });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({});
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({});
   }
   return PlatformModule;
 })();
@@ -142,34 +170,21 @@ function getSupportedInputTypes() {
   return supportedInputTypes;
 }
 
-/** Cached result of whether the user's browser supports passive event listeners. */
-let supportsPassiveEvents;
-/**
- * Checks whether the user's browser supports passive event listeners.
- * See: https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md
- */
-function supportsPassiveEventListeners() {
-  if (supportsPassiveEvents == null && typeof window !== 'undefined') {
-    try {
-      window.addEventListener('test', null, Object.defineProperty({}, 'passive', {
-        get: () => supportsPassiveEvents = true
-      }));
-    } finally {
-      supportsPassiveEvents = supportsPassiveEvents || false;
-    }
-  }
-  return supportsPassiveEvents;
-}
-/**
- * Normalizes an `AddEventListener` object to something that can be passed
- * to `addEventListener` on any browser, no matter whether it supports the
- * `options` parameter.
- * @param options Object to be normalized.
- */
-function normalizePassiveListenerOptions(options) {
-  return supportsPassiveEventListeners() ? options : !!options.capture;
-}
 
+/***/ }),
+
+/***/ 59566:
+/*!*******************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/scrolling-BkvA05C8.mjs ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   R: () => (/* binding */ RtlScrollAxisType),
+/* harmony export */   g: () => (/* binding */ getRtlScrollAxisType),
+/* harmony export */   s: () => (/* binding */ supportsScrollBehavior)
+/* harmony export */ });
 /** The possible ways the browser may handle the horizontal scroll axis in RTL languages. */
 var RtlScrollAxisType = /*#__PURE__*/function (RtlScrollAxisType) {
   /**
@@ -263,6 +278,54 @@ function getRtlScrollAxisType() {
   }
   return rtlScrollAxisType;
 }
+
+
+/***/ }),
+
+/***/ 65757:
+/*!**************************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/test-environment-CT0XxPyp.mjs ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   _: () => (/* binding */ _isTestEnvironment)
+/* harmony export */ });
+/** Gets whether the code is currently running in a test environment. */
+function _isTestEnvironment() {
+  // We can't use `declare const` because it causes conflicts inside Google with the real typings
+  // for these symbols and we can't read them off the global object, because they don't appear to
+  // be attached there for some runners like Jest.
+  // (see: https://github.com/angular/components/issues/23365#issuecomment-938146643)
+  return (
+    // @ts-ignore
+    typeof __karma__ !== 'undefined' && !!__karma__ ||
+    // @ts-ignore
+    typeof jasmine !== 'undefined' && !!jasmine ||
+    // @ts-ignore
+    typeof jest !== 'undefined' && !!jest ||
+    // @ts-ignore
+    typeof Mocha !== 'undefined' && !!Mocha
+  );
+}
+
+
+/***/ }),
+
+/***/ 66488:
+/*!********************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/shadow-dom-B0oHn41l.mjs ***!
+  \********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   _: () => (/* binding */ _getEventTarget),
+/* harmony export */   a: () => (/* binding */ _getShadowRoot),
+/* harmony export */   b: () => (/* binding */ _supportsShadowDom),
+/* harmony export */   c: () => (/* binding */ _getFocusedElementPierceShadowDom)
+/* harmony export */ });
 let shadowDomIsSupported;
 /** Checks whether the user's browser support Shadow DOM. */
 function _supportsShadowDom() {
@@ -307,49 +370,47 @@ function _getEventTarget(event) {
   return event.composedPath ? event.composedPath()[0] : event.target;
 }
 
-/** Gets whether the code is currently running in a test environment. */
-function _isTestEnvironment() {
-  // We can't use `declare const` because it causes conflicts inside Google with the real typings
-  // for these symbols and we can't read them off the global object, because they don't appear to
-  // be attached there for some runners like Jest.
-  // (see: https://github.com/angular/components/issues/23365#issuecomment-938146643)
-  return (
-    // @ts-ignore
-    typeof __karma__ !== 'undefined' && !!__karma__ ||
-    // @ts-ignore
-    typeof jasmine !== 'undefined' && !!jasmine ||
-    // @ts-ignore
-    typeof jest !== 'undefined' && !!jest ||
-    // @ts-ignore
-    typeof Mocha !== 'undefined' && !!Mocha
-  );
-}
 
-// TODO(crisbeto): remove this function when making breaking changes for v20.
+/***/ }),
+
+/***/ 92516:
+/*!***************************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/passive-listeners-esHZRgIN.mjs ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   n: () => (/* binding */ normalizePassiveListenerOptions),
+/* harmony export */   s: () => (/* binding */ supportsPassiveEventListeners)
+/* harmony export */ });
+/** Cached result of whether the user's browser supports passive event listeners. */
+let supportsPassiveEvents;
 /**
- * Binds an event listener with specific options in a backwards-compatible way.
- * This function is necessary, because `Renderer2.listen` only supports listener options
- * after 19.1 and during the v19 period we support any 19.x version.
- * @docs-private
+ * Checks whether the user's browser supports passive event listeners.
+ * See: https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md
  */
-function _bindEventWithOptions(renderer, target, eventName, callback, options) {
-  const major = parseInt(_angular_core__WEBPACK_IMPORTED_MODULE_0__.VERSION.major);
-  const minor = parseInt(_angular_core__WEBPACK_IMPORTED_MODULE_0__.VERSION.minor);
-  // Event options in `listen` are only supported in 19.1 and beyond.
-  // We also allow 0.0.x, because that indicates a build at HEAD.
-  if (major > 19 || major === 19 && minor > 0 || major === 0 && minor === 0) {
-    return renderer.listen(target, eventName, callback, options);
+function supportsPassiveEventListeners() {
+  if (supportsPassiveEvents == null && typeof window !== 'undefined') {
+    try {
+      window.addEventListener('test', null, Object.defineProperty({}, 'passive', {
+        get: () => supportsPassiveEvents = true
+      }));
+    } finally {
+      supportsPassiveEvents = supportsPassiveEvents || false;
+    }
   }
-  target.addEventListener(eventName, callback, options);
-  return () => {
-    target.removeEventListener(eventName, callback, options);
-  };
+  return supportsPassiveEvents;
 }
-
 /**
- * Generated bundle index. Do not edit.
+ * Normalizes an `AddEventListener` object to something that can be passed
+ * to `addEventListener` on any browser, no matter whether it supports the
+ * `options` parameter.
+ * @param options Object to be normalized.
  */
-
+function normalizePassiveListenerOptions(options) {
+  return supportsPassiveEventListeners() ? options : !!options.capture;
+}
 
 
 /***/ })
