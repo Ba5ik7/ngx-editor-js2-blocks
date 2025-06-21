@@ -18,9 +18,12 @@ import {
   ToolbarFabDirective,
   BlockOptionAction,
 } from '@tmdjr/ngx-editor-js2';
-import mermaid, { Mermaid } from 'mermaid';
+import MermaidImport from 'mermaid';
+import type { Mermaid } from 'mermaid';
 import { MermaidjsConfigComponent } from './mermaidjs-config/mermaidjs-config.component';
 import { DomSanitizer } from '@angular/platform-browser';
+
+const mermaid: Mermaid = (MermaidImport as any).default ? (MermaidImport as any).default : MermaidImport;
 
 @Pipe({ name: 'safeHtml', standalone: true })
 export class SafeHtmlPipe implements PipeTransform {
@@ -137,7 +140,7 @@ mermaid.parseError = function (err: any, hash: any) {
 })
 export class NgxEditorJs2MermaidjsComponent {
   ngZone = inject(NgZone);
-  mermaid = (mermaid as unknown as any).default as Mermaid;
+  mermaid = mermaid;
 
   sortIndex = input<number>(0);
   componentInstanceName = 'NgxEditorJs2MermaidjsComponent';
