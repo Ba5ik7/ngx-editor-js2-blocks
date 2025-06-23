@@ -30,7 +30,6 @@ import { CodemirrorModule } from '@ctrl/ngx-codemirror';
       :host {
         display: block;
         position: relative;
-        margin: 1.5rem 0;
         padding: 20px;
         border: 1px solid #ccc;
         border-radius: var(

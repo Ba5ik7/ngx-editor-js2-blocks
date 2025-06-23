@@ -1,1 +1,99 @@
-// ngx-editor-js2-pop-quiz.cdk-drag-preview { }
+ngx-editor-js2-pop-quiz.cdk-drag-preview {
+  pop-quiz-config {
+    border: none !important;
+
+    .answer-select {
+      margin-bottom: 8px !important;
+    }
+
+    .mat-horizontal-stepper-header {
+      padding: 0 24px !important;
+    }
+
+    .mat-stepper-horizontal-line {
+      margin: 0 -16px !important;
+    }
+
+    .mat-horizontal-content-container {
+      padding: 0 24px 24px 24px !important;
+    }
+
+    .action-group {
+      margin-top: 1rem !important;
+    }
+
+    .choices-radio-option-container mat-icon {
+      margin-top: 4px !important;
+    }
+
+    .choices-action-group {
+      margin-bottom: 1.7rem !important;
+      mat-icon {
+        margin-right: var(--mat-button-text-icon-spacing, 8px) !important;
+      }
+    }
+
+    /* Typography for headers and labels */
+    h3 {
+      margin-block-start: 1em !important;
+      margin-block-end: 1em !important;
+    }
+
+    h1 {
+      margin-block-start: 0.67em !important;
+      margin-block-end: 0.67em !important;
+    }
+
+    p {
+      margin-block-start: 1em !important;
+      margin-block-end: 1em !important;
+    }
+
+    .mdc-radio {
+      padding: 10px !important;
+    }
+
+    .mdc-label {
+      padding-left: 4px !important;
+    }
+
+    .preview-container {
+      margin-bottom: 24px !important;
+    }
+
+    .answers-action-group {
+      margin-bottom: 1.7rem !important;
+    }
+
+    .mat-step-icon {
+      margin-right: 8px !important;
+    }
+
+    /* Style buttons */
+    [mat-button] {
+      padding: 0 var(--mat-button-text-horizontal-padding, 12px) !important;
+    }
+    [mat-flat-button] {
+      padding: 0 var(--mat-button-filled-horizontal-padding, 24px) !important;
+    }
+
+    /* Style input fields */
+    .mdc-text-field {
+      padding: 0 16px !important;
+    }
+    .mat-mdc-form-field-infix {
+      padding-top: var(
+        --mat-form-field-filled-with-label-container-padding-top,
+        24px
+      ) !important;
+      padding-bottom: var(
+        --mat-form-field-filled-with-label-container-padding-bottom,
+        8px
+      ) !important;
+    }
+    .mdc-floating-label {
+      position: absolute !important;
+      top: calc(var(--mat-form-field-container-height, 56px) / 2) !important;
+    }
+  }
+}

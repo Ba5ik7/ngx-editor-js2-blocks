@@ -54,19 +54,6 @@ import { CommonModule } from '@angular/common';
         }
       }
 
-      :host .fade-in {
-        animation: fadeIn 0.25s ease-in-out;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
       :host ::ng-deep .CodeMirror {
         font-family: Cascadia Code, Fira Code, Menlo, Monaco, 'Courier New',
           monospace;

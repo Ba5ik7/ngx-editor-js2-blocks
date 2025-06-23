@@ -26,7 +26,7 @@ import { MatSelect } from '@angular/material/select';
     @if (choices$ | async; as choices) {
     <form [formGroup]="answerFormGroup()">
       <h3>Select the Correct Answer</h3>
-      <mat-form-field>
+      <mat-form-field class="answer-select">
         <mat-label>Answer</mat-label>
         <mat-select formControlName="answer" required>
           @for (choice of choices.controls; track $index) {

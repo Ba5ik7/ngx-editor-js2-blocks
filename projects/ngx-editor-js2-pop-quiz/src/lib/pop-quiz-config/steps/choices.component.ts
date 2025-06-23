@@ -47,7 +47,7 @@ import { NgxEditorJs2PopQuizService } from '../../ngx-editor-js2-pop-quiz.servic
       <ng-container formArrayName="choices">
         @for (option of (viewModel$ | async)!.controls; track option) {
         <ng-container [formGroupName]="$index">
-          <div class="radio-option-container">
+          <div class="choices-radio-option-container">
             <mat-form-field>
               <mat-label>Option {{ $index + 1 }}</mat-label>
               <textarea matInput formControlName="value"></textarea>
@@ -62,7 +62,7 @@ import { NgxEditorJs2PopQuizService } from '../../ngx-editor-js2-pop-quiz.servic
           </div>
         </ng-container>
         }
-        <div class="answers-action-group">
+        <div class="choices-action-group">
           <button mat-button type="button" (click)="addRatioOption()">
             <mat-icon>add</mat-icon>Add a Choice
           </button>
@@ -84,7 +84,7 @@ import { NgxEditorJs2PopQuizService } from '../../ngx-editor-js2-pop-quiz.servic
           .error {
             color: var(--mat-sys-error);
           }
-          .radio-option-container {
+          .choices-radio-option-container {
             display: flex;
             align-items: center;
             gap: 1rem;
@@ -95,7 +95,7 @@ import { NgxEditorJs2PopQuizService } from '../../ngx-editor-js2-pop-quiz.servic
               color: var(--mat-sys-error);
             }
           }
-          .answers-action-group {
+          .choices-action-group {
             margin-bottom: 1.7rem;
           }
           .action-group {

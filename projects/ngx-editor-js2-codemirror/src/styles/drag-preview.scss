@@ -1,1 +1,12 @@
-// ngx-editor-js2-codemirror.cdk-drag-preview { }
+ngx-editor-js2-codemirror.cdk-drag-preview {
+  .CodeMirror-sizer {
+    margin-left: 29px !important;
+  }
+
+  .CodeMirror-lines {
+    padding-bottom: 0px !important;
+    padding-left: 5px !important;
+    padding-right: 3px !important;
+    padding-top: 4px !important;
+  }
+}

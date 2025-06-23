@@ -1,6 +1,6 @@
-import { Component, inject, ViewChild } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatStepper, MatStepperModule } from '@angular/material/stepper';
+import { MatStepperModule } from '@angular/material/stepper';
 
 import {
   AnswerGroup,
@@ -30,7 +30,7 @@ import { AsyncPipe } from '@angular/common';
     ResultsComponent,
   ],
   template: `
-      @if (viewModel$ | async; as vm) {
+    @if (viewModel$ | async; as vm) {
     <mat-stepper class="mat-stepper" linear [selectedIndex]="vm.selectedIndex">
       <mat-step [stepControl]="vm.questionGroup" [completed]="vm.completed">
         <ng-template matStepLabel>Question?</ng-template>
@@ -38,7 +38,10 @@ import { AsyncPipe } from '@angular/common';
           [questionFormGroup]="vm.questionGroup"
         ></pop-quiz-question>
       </mat-step>
-      <mat-step [stepControl]="vm.choicesOptionsGroup" [completed]="vm.completed">
+      <mat-step
+        [stepControl]="vm.choicesOptionsGroup"
+        [completed]="vm.completed"
+      >
         <ng-template matStepLabel>Choices</ng-template>
         <pop-quiz-choices
           [choicesFormGroup]="vm.choicesOptionsGroup"
@@ -61,7 +64,7 @@ import { AsyncPipe } from '@angular/common';
         ></pop-quiz-results>
       </mat-step>
     </mat-stepper>
-  }
+    }
   `,
   styles: [
     `

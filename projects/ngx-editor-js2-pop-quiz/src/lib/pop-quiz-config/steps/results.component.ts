@@ -66,12 +66,20 @@ import { map, switchMap } from 'rxjs';
             font-weight: 100;
           }
 
+
+          mat-radio-button {
+            display: block;
+          }
+
           .preview-container {
             display: flex;
             gap: 1.5rem;
             flex-direction: column;
             align-items: flex-end;
             margin-bottom: 1.5rem;
+            .preview {
+              width: 100%;
+            }
             .preview-action-group {
               display: flex;
               flex-direction: row-reverse;
