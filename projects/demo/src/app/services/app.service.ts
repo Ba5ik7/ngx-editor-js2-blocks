@@ -4,78 +4,188 @@ import { BehaviorSubject, lastValueFrom, Observable, tap } from 'rxjs';
 
 export const TEST_DATA: NgxEditorJsBlock[] = [
   {
-    blockId: 'n177d7',
-    sortIndex: 0,
-    componentInstanceName: 'NgxEditorJs2BlockquotesComponent',
-    savedAction: 'display-large',
-    dataClean:
-      '`Design is not just what it looks like and feels like. Design is how it works.',
-  },
-  {
-    blockId: 'n177dsd',
-    sortIndex: 1,
-    componentInstanceName: 'NgxEditorJs2ImageComponent',
-    savedAction: 'stretch',
-    dataClean:
-      '{"url":"https://res.cloudinary.com/dowdpiikk/image/upload/w_650,q_auto:best,f_auto/v1709445782/lnyst5aqppuin8wt73ci.webp","title":"test"}',
-  },
-  {
     blockId: 'iovlbzgosf',
-    sortIndex: 2,
+    sortIndex: 0,
     componentInstanceName: 'HeaderBlockComponent',
     savedAction: 'h1',
-    dataClean: 'Prerequisites',
+    dataClean: '🚀 Ready to Explore?',
+  },
+  {
+    blockId: '6ldk3i',
+    sortIndex: 1,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'large',
+    dataClean:
+      'This demo showcases the core concept of Ngx-EditorJs2 — a flexible, block-based content editor built with Angular. Each section of content is a self-contained block that can be rearranged via drag and drop, making it easy to structure and reorganize complex content visually.<div><br></div><div>Blocks aren’t just static — they can be configured through block-specific settings. For example, the Header block allows you to choose between multiple heading levels (H1–H6), and the Image block supports captions and alignment settings.</div><div><br></div><div>In addition, when selecting text within blocks that support inline formatting, a contextual inline toolbar appears. This toolbar enables quick formatting actions such as <b>bold</b>, <i>italic</i>, and text alignment (left, center, right) — allowing for a more expressive and intuitive editing experience.</div><div><br></div><div>Use this page to explore how each block behaves, how they can be customized, and how the editor adapts to your content needs in a modular and scalable way.</div>',
+  },
+  {
+    blockId: 'pkm1k',
+    sortIndex: 2,
+    componentInstanceName: 'HeaderBlockComponent',
+    savedAction: 'h3',
+    dataClean: '✍️ Paragraph + Header',
+  },
+  {
+    blockId: 'wpg67v',
+    sortIndex: 3,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'large',
+    dataClean:
+      'The bread and butter of any editor. Use paragraphs for flowing content, and headers to create structure and hierarchy. <b>Clear</b>. <i>Clean</i>. <u>Essential</u>.',
   },
   {
     blockId: '8u3uiij5vyj',
-    sortIndex: 3,
+    sortIndex: 4,
     componentInstanceName: 'ParagraphBlockComponent',
     savedAction: 'large',
     dataClean:
       '<ul><li><a href="https://www.typescriptlang.org/">TypeScript</a> and HTML5 programming</li><li>Angular app-design fundamentals, as described in <a href="https://angular.io/guide/architecture">Angular Concepts</a><br></li><li>The basics of <a href="https://angular.io/guide/architecture-components#template-syntax">Angular template syntax</a><br></li></ul>',
   },
   {
-    blockId: 'bu23hwyltss',
-    sortIndex: 4,
+    blockId: '2rdtwb',
+    sortIndex: 5,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'medium',
+    dataClean: '',
+  },
+  {
+    blockId: '8w37us',
+    sortIndex: 6,
+    componentInstanceName: 'HeaderBlockComponent',
+    savedAction: 'h3',
+    dataClean: '💡 Quote',
+  },
+  {
+    blockId: '31tbry',
+    sortIndex: 7,
     componentInstanceName: 'ParagraphBlockComponent',
     savedAction: 'large',
     dataClean:
-      'Evaluation of a template expression should have no visible side effects. Use the syntax for template expressions to help avoid side effects. In general, the correct syntax prevents you from assigning a value to anything in a property binding expression. The syntax also prevents you from using increment and decrement operators.',
+      'Craft your favorite inspiration, callouts, or even markdown-style blockquotes using the Quote block.',
   },
   {
-    blockId: 'uapf2',
-    sortIndex: 5,
-    componentInstanceName: 'NgxEditorJs2MermaidjsComponent',
-    savedAction: 'center',
+    blockId: 'n177d7',
+    sortIndex: 8,
+    componentInstanceName: 'NgxEditorJs2BlockquotesComponent',
+    savedAction: 'display-large',
     dataClean:
-      'flowchart TD\n    A[Christmas] -->|Get money| B(Go shopping)\n    B --> C{Let me think}\n    C -->|One| D[Laptop]\n    C -->|Two| E[Hello World iPhone]\n    C -->|Three| F[fa:fa-car Car]',
+      '“A quote block is like a spotlight — simple, elegant, and perfect for making a point.”',
   },
   {
-    blockId: 'bu23hwyltsww',
-    sortIndex: 6,
+    blockId: 'dq5uat',
+    sortIndex: 9,
     componentInstanceName: 'ParagraphBlockComponent',
-    savedAction: 'small',
+    savedAction: 'medium',
+    dataClean: '',
+  },
+  {
+    blockId: 'mq9i9m',
+    sortIndex: 10,
+    componentInstanceName: 'HeaderBlockComponent',
+    savedAction: 'h3',
+    dataClean: '📷 Image Block',
+  },
+  {
+    blockId: '4xkw3s',
+    sortIndex: 11,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'large',
     dataClean:
-      'Material Design uses color to create accessible, personal color schemes that communicate your products hierarchy, state, and brand. See Material Designs Color System page to learn more about its use and purpose.',
+      'A picture says a thousand words. The Image block supports captions and even alignment options to make your visuals shine.',
+  },
+  {
+    blockId: 'n177dsd',
+    sortIndex: 12,
+    componentInstanceName: 'NgxEditorJs2ImageComponent',
+    savedAction: 'stretch',
+    dataClean:
+      '{"url":"https://res.cloudinary.com/dowdpiikk/image/upload/w_650,q_auto:best,f_auto/v1709445782/lnyst5aqppuin8wt73ci.webp","title":"test"}',
+  },
+  {
+    blockId: 'gt9e9s',
+    sortIndex: 13,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'medium',
+    dataClean: '',
+  },
+  {
+    blockId: 'b3t74',
+    sortIndex: 14,
+    componentInstanceName: 'HeaderBlockComponent',
+    savedAction: 'h3',
+    dataClean: '🎨 CodeMirror Block',
+  },
+  {
+    blockId: '9qls1d',
+    sortIndex: 15,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'large',
+    dataClean:
+      'Embed rich, theme-able code editors right inside your documents. Great for live code samples or collaborative coding.',
   },
   {
     blockId: 'asdfasdf',
-    sortIndex: 7,
+    sortIndex: 16,
     componentInstanceName: 'NgxEditorJs2CodemirrorComponent',
     savedAction: 'text/typescript',
     dataClean:
       "export class SimpleFormGroup {\n  form = new FormGroup({\n    first: new FormControl('Nancy', Validators.minLength(2)),\n    last: new FormControl('Drew'),\n  });\n\n  get first(): any {\n    return this.form.get('first');\n  }\n\n  onSubmit(): void {\n    console.log(this.form.value); // {first: 'Nancy', last: 'Drew'}\n  }\n\n  setValue() {\n    this.form.setValue({first: 'Carson', last: 'Drew'});\n  }\n}",
   },
   {
-    blockId: 'l13u3k',
-    sortIndex: 8,
+    blockId: 'hduds',
+    sortIndex: 17,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'medium',
+    dataClean: '',
+  },
+  {
+    blockId: '8npajb',
+    sortIndex: 18,
     componentInstanceName: 'HeaderBlockComponent',
-    savedAction: 'h1',
-    dataClean: 'New way of learning...',
+    savedAction: 'h3',
+    dataClean: '🔥 Mermaid.js Block',
+  },
+  {
+    blockId: 'su45ai',
+    sortIndex: 19,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'large',
+    dataClean:
+      'Need to include a flowchart, sequence diagram, or Gantt chart? The Mermaid.js block brings technical diagrams to life using simple syntax.',
+  },
+  {
+    blockId: 'uapf2',
+    sortIndex: 20,
+    componentInstanceName: 'NgxEditorJs2MermaidjsComponent',
+    savedAction: 'center',
+    dataClean:
+      'flowchart TD\n    A[Christmas] -->|Get money| B(Go shopping)\n    B --> C{Let me think}\n    C -->|One| D[Laptop]\n    C -->|Two| E[Hello World iPhone]\n    C -->|Three| F[fa:fa-car Car]',
+  },
+  {
+    blockId: 'y3r4xs',
+    sortIndex: 21,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'medium',
+    dataClean: '<div><br></div>',
+  },
+  {
+    blockId: 'q5m0u',
+    sortIndex: 22,
+    componentInstanceName: 'HeaderBlockComponent',
+    savedAction: 'h3',
+    dataClean: '🧠 Pop Quiz Block',
+  },
+  {
+    blockId: 'ubo23s',
+    sortIndex: 23,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'large',
+    dataClean:
+      'Test your knowledge or embed interactive quiz questions inline with your content. Great for workshops, tutorials, or even just friendly challenges.',
   },
   {
     blockId: '9bqhk',
-    sortIndex: 9,
+    sortIndex: 24,
     componentInstanceName: 'NgxEditorJs2PopQuizComponent',
     savedAction: 'display-large',
     dataClean:
