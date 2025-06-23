@@ -18,7 +18,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/button */ 33977);
 /* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/icon */ 37409);
 /* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
-/* harmony import */ var mermaid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! mermaid */ 68616);
+/* harmony import */ var mermaid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! mermaid */ 95575);
 /* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/form-field */ 76833);
 /* harmony import */ var _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ctrl/ngx-codemirror */ 42642);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/platform-browser */ 53105);
@@ -143,7 +143,7 @@ let MermaidjsConfigComponent = /*#__PURE__*/(() => {
         }
       },
       dependencies: [_angular_material_button__WEBPACK_IMPORTED_MODULE_4__.MatButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormFieldModule, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgModel, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_9__.CodemirrorModule, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_9__.CodemirrorComponent],
-      styles: ["[_nghost-%COMP%]{display:block;position:relative;margin:1.5rem 0;padding:20px;border:1px solid #ccc;border-radius:var( --mat-card-outlined-container-shape, var(--mat-sys-corner-medium) )}[_nghost-%COMP%]   .action-group[_ngcontent-%COMP%]{margin-top:20px;display:flex;justify-content:flex-end}[_nghost-%COMP%]     .CodeMirror{font-family:Cascadia Code,Fira Code,Menlo,Monaco,Courier New,monospace;font-size:16px;font-weight:400;line-height:32px;letter-spacing:.5px;height:100%}"]
+      styles: ["[_nghost-%COMP%]{display:block;position:relative;padding:20px;border:1px solid #ccc;border-radius:var( --mat-card-outlined-container-shape, var(--mat-sys-corner-medium) )}[_nghost-%COMP%]   .action-group[_ngcontent-%COMP%]{margin-top:20px;display:flex;justify-content:flex-end}[_nghost-%COMP%]     .CodeMirror{font-family:Cascadia Code,Fira Code,Menlo,Monaco,Courier New,monospace;font-size:16px;font-weight:400;line-height:32px;letter-spacing:.5px;height:100%}"]
     });
   }
   return MermaidjsConfigComponent;
@@ -151,6 +151,7 @@ let MermaidjsConfigComponent = /*#__PURE__*/(() => {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+const mermaid = mermaid__WEBPACK_IMPORTED_MODULE_6__["default"] ? mermaid__WEBPACK_IMPORTED_MODULE_6__["default"] : mermaid__WEBPACK_IMPORTED_MODULE_6__;
 let SafeHtmlPipe = /*#__PURE__*/(() => {
   class SafeHtmlPipe {
     sanitized;
@@ -174,13 +175,13 @@ let SafeHtmlPipe = /*#__PURE__*/(() => {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-mermaid__WEBPACK_IMPORTED_MODULE_6__.parseError = function (err, hash) {
+mermaid.parseError = function (err, hash) {
   console.warn(`Error parsing mermaid diagram: ${err} ${hash}`);
 };
 let NgxEditorJs2MermaidjsComponent = /*#__PURE__*/(() => {
   class NgxEditorJs2MermaidjsComponent {
     ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_2__.NgZone);
-    mermaid = mermaid__WEBPACK_IMPORTED_MODULE_6__["default"];
+    mermaid = mermaid;
     sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(0);
     componentInstanceName = 'NgxEditorJs2MermaidjsComponent';
     autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(true);
@@ -272,7 +273,7 @@ let NgxEditorJs2MermaidjsComponent = /*#__PURE__*/(() => {
         }
       },
       dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControlName, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_10__.ControlAccessorDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_10__.AutofocusDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_10__.ToolbarFabDirective, _angular_material_button__WEBPACK_IMPORTED_MODULE_4__.MatFabButton, _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__.MatIcon, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgClass, MermaidjsConfigComponent, SafeHtmlPipe],
-      styles: ["[_nghost-%COMP%]{position:relative;display:flex;flex-direction:column;margin:1.5rem 0}[_nghost-%COMP%]   .flex-start[_ngcontent-%COMP%]{justify-content:flex-start}[_nghost-%COMP%]   .flex-end[_ngcontent-%COMP%]{justify-content:flex-end}[_nghost-%COMP%]   .center[_ngcontent-%COMP%]{justify-content:center}[_nghost-%COMP%]   .stretch[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{width:100%}[_nghost-%COMP%]   .mermaid[_ngcontent-%COMP%]{width:100%;display:flex}[_nghost-%COMP%]   .mermaidjs-container-overlay[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;position:absolute}[_nghost-%COMP%]   .mermaid[_ngcontent-%COMP%]:hover ~ .mermaid-block-button[_ngcontent-%COMP%], [_nghost-%COMP%]   .mermaid-block-button[_ngcontent-%COMP%]:hover, [_nghost-%COMP%]   .mermaidjs-container-overlay[_ngcontent-%COMP%]:hover ~ .mermaidjs-container[_ngcontent-%COMP%]   .mermaidjs-block-button[_ngcontent-%COMP%], [_nghost-%COMP%]   .mermaidjs-block-button[_ngcontent-%COMP%]:hover{display:block}[_nghost-%COMP%]   .mermaidjs-container[_ngcontent-%COMP%]{display:flex}[_nghost-%COMP%]   .mermaidjs-container[_ngcontent-%COMP%]   .mermaidjs-block[_ngcontent-%COMP%]{min-width:0}[_nghost-%COMP%]   .mermaidjs-container[_ngcontent-%COMP%]   .mermaidjs-block-button[_ngcontent-%COMP%]{position:absolute;top:6px;left:6px;display:none}"]
+      styles: ["[_nghost-%COMP%]{position:relative;display:flex;flex-direction:column;margin:1.5rem 0}[_nghost-%COMP%]   .flex-start[_ngcontent-%COMP%]{justify-content:flex-start}[_nghost-%COMP%]   .flex-end[_ngcontent-%COMP%]{justify-content:flex-end}[_nghost-%COMP%]   .center[_ngcontent-%COMP%]{justify-content:center}[_nghost-%COMP%]   .stretch[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{width:100%}[_nghost-%COMP%]   .mermaid[_ngcontent-%COMP%]{width:100%;display:flex}[_nghost-%COMP%]   .mermaidjs-container-overlay[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;position:absolute}[_nghost-%COMP%]   .mermaid[_ngcontent-%COMP%]:hover ~ .mermaid-block-button[_ngcontent-%COMP%], [_nghost-%COMP%]   .mermaid-block-button[_ngcontent-%COMP%]:hover, [_nghost-%COMP%]   .mermaidjs-container-overlay[_ngcontent-%COMP%]:hover ~ .mermaidjs-container[_ngcontent-%COMP%]   .mermaidjs-block-button[_ngcontent-%COMP%], [_nghost-%COMP%]   .mermaidjs-block-button[_ngcontent-%COMP%]:hover{display:block}[_nghost-%COMP%]   .mermaidjs-container[_ngcontent-%COMP%]{display:flex}[_nghost-%COMP%]   .mermaidjs-container[_ngcontent-%COMP%]   .mermaidjs-block[_ngcontent-%COMP%]{min-width:0}[_nghost-%COMP%]   .mermaidjs-block-button[_ngcontent-%COMP%]{position:absolute;top:6px;left:6px;display:none}"]
     });
   }
   return NgxEditorJs2MermaidjsComponent;

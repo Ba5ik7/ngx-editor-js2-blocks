@@ -39,6 +39,168 @@ ngx-editor-js2-blockquotes.cdk-drag-preview blockquote {
   padding: 5px 0px 5px 20px !important;
 }
 
+ngx-editor-js2-codemirror.cdk-drag-preview .CodeMirror-sizer {
+  margin-left: 29px !important;
+}
+ngx-editor-js2-codemirror.cdk-drag-preview .CodeMirror-lines {
+  padding-bottom: 0px !important;
+  padding-left: 5px !important;
+  padding-right: 3px !important;
+  padding-top: 4px !important;
+}
+
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config {
+  border: none !important;
+  /* Typography for headers and labels */
+  /* Style buttons */
+  /* Style input fields */
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .answer-select {
+  margin-bottom: 8px !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .mat-horizontal-stepper-header {
+  padding: 0 24px !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .mat-stepper-horizontal-line {
+  margin: 0 -16px !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .mat-horizontal-content-container {
+  padding: 0 24px 24px 24px !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .action-group {
+  margin-top: 1rem !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .choices-radio-option-container mat-icon {
+  margin-top: 4px !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .choices-action-group {
+  margin-bottom: 1.7rem !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .choices-action-group mat-icon {
+  margin-right: var(--mat-button-text-icon-spacing, 8px) !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config h3 {
+  margin-block-start: 1em !important;
+  margin-block-end: 1em !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config h1 {
+  margin-block-start: 0.67em !important;
+  margin-block-end: 0.67em !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config p {
+  margin-block-start: 1em !important;
+  margin-block-end: 1em !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .mdc-radio {
+  padding: 10px !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .mdc-label {
+  padding-left: 4px !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .preview-container {
+  margin-bottom: 24px !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .answers-action-group {
+  margin-bottom: 1.7rem !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .mat-step-icon {
+  margin-right: 8px !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config [mat-button] {
+  padding: 0 var(--mat-button-text-horizontal-padding, 12px) !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config [mat-flat-button] {
+  padding: 0 var(--mat-button-filled-horizontal-padding, 24px) !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .mdc-text-field {
+  padding: 0 16px !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .mat-mdc-form-field-infix {
+  padding-top: var(--mat-form-field-filled-with-label-container-padding-top, 24px) !important;
+  padding-bottom: var(--mat-form-field-filled-with-label-container-padding-bottom, 8px) !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .mdc-floating-label {
+  position: absolute !important;
+  top: calc(var(--mat-form-field-container-height, 56px) / 2) !important;
+}
+
+/* styles.scss or a shared global SCSS file */
+ngx-editor-js2-image.cdk-drag-preview image-config {
+  /* General container padding/border */
+  padding: 20px !important;
+  border: none !important;
+  /* Typography for headers and labels */
+  /* Style buttons */
+  /* Style input fields */
+}
+ngx-editor-js2-image.cdk-drag-preview image-config h2 {
+  margin-block-start: 0.83em !important;
+  margin-block-end: 0.83em !important;
+}
+ngx-editor-js2-image.cdk-drag-preview image-config [mat-flat-button] {
+  padding: 0 var(--mat-button-filled-horizontal-padding, 24px) !important;
+}
+ngx-editor-js2-image.cdk-drag-preview image-config .mdc-text-field {
+  padding: 0 16px !important;
+}
+ngx-editor-js2-image.cdk-drag-preview image-config .mat-mdc-form-field-infix {
+  padding-top: var(--mat-form-field-filled-with-label-container-padding-top, 24px) !important;
+  padding-bottom: var(--mat-form-field-filled-with-label-container-padding-bottom, 8px) !important;
+}
+ngx-editor-js2-image.cdk-drag-preview image-config .mdc-floating-label {
+  position: absolute !important;
+  top: calc(var(--mat-form-field-container-height, 56px) / 2) !important;
+}
+
+ngx-editor-js2-mermaidjs.cdk-drag-preview .CodeMirror-sizer {
+  margin-left: 29px !important;
+}
+ngx-editor-js2-mermaidjs.cdk-drag-preview .CodeMirror-lines {
+  padding-bottom: 0px !important;
+  padding-left: 5px !important;
+  padding-right: 3px !important;
+  padding-top: 4px !important;
+}
+ngx-editor-js2-mermaidjs.cdk-drag-preview mermaidjs-config {
+  /* General container padding/border */
+  padding: 20px !important;
+  border: none !important;
+  /* Typography for headers and labels */
+  /* Style buttons */
+}
+ngx-editor-js2-mermaidjs.cdk-drag-preview mermaidjs-config h2 {
+  margin-block-start: 0.83em !important;
+  margin-block-end: 0.83em !important;
+}
+ngx-editor-js2-mermaidjs.cdk-drag-preview mermaidjs-config [mat-flat-button] {
+  padding: 0 var(--mat-button-filled-horizontal-padding, 24px) !important;
+}
+ngx-editor-js2-mermaidjs.cdk-drag-preview mermaidjs-config .action-group {
+  margin-top: 20px !important;
+}
+ngx-editor-js2-mermaidjs.cdk-drag-preview .node rect,
+ngx-editor-js2-mermaidjs.cdk-drag-preview .node circle,
+ngx-editor-js2-mermaidjs.cdk-drag-preview .node ellipse,
+ngx-editor-js2-mermaidjs.cdk-drag-preview .node polygon,
+ngx-editor-js2-mermaidjs.cdk-drag-preview .node path {
+  fill: #ececff;
+  stroke: #9370db;
+  stroke-width: 1px;
+}
+ngx-editor-js2-mermaidjs.cdk-drag-preview .label {
+  color: #000;
+  font-family: "trebuchet ms", verdana, arial, sans-serif;
+}
+ngx-editor-js2-mermaidjs.cdk-drag-preview .edgeLabel {
+  display: block;
+  background-color: rgba(232, 232, 232, 0.8) !important;
+}
+ngx-editor-js2-mermaidjs.cdk-drag-preview .edgePaths path {
+  stroke: #9370db;
+  stroke-width: 1px;
+  fill: none;
+}
+
 /* BASICS */
 .CodeMirror {
   /* Set height, width, borders, and global font properties here */

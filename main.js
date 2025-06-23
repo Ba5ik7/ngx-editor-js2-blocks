@@ -273,13 +273,13 @@ __webpack_require__.e(/*! import() */ 43).then(__webpack_require__.bind(__webpac
 /******/ 				register("@angular/material/tooltip", "20.0.3", () => (__webpack_require__.e(8259).then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/material/fesm2022/tooltip.mjs */ 80640))))));
 /******/ 				register("@angular/platform-browser/animations/async", "20.0.4", () => (__webpack_require__.e(6970).then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/platform-browser/fesm2022/animations/async.mjs */ 6970))))));
 /******/ 				register("@angular/platform-browser", "20.0.4", () => (__webpack_require__.e(436).then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs */ 80436))))));
-/******/ 				register("mermaid", "11.6.0", () => (__webpack_require__.e(3939).then(() => (() => (__webpack_require__(/*! ./node_modules/mermaid/dist/mermaid.core.mjs */ 3939))))));
-/******/ 				register("ngx-editor-js2-blockquotes", "20.0.0", () => (__webpack_require__.e(2239).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-blockquotes/fesm2022/tmdjr-ngx-editor-js2-blockquotes.mjs */ 52239))))));
-/******/ 				register("ngx-editor-js2-codemirror", "20.0.0", () => (__webpack_require__.e(9305).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-codemirror/fesm2022/tmdjr-ngx-editor-js2-codemirror.mjs */ 59305))))));
-/******/ 				register("ngx-editor-js2-image", "20.0.0", () => (__webpack_require__.e(7887).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-image/fesm2022/tmdjr-ngx-editor-js2-image.mjs */ 57887))))));
-/******/ 				register("ngx-editor-js2-mermaidjs", "20.0.0", () => (__webpack_require__.e(59).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-mermaidjs/fesm2022/tmdjr-ngx-editor-js2-mermaidjs.mjs */ 10059))))));
-/******/ 				register("ngx-editor-js2-mfe-loader", "20.0.0", () => (__webpack_require__.e(7677).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-mfe-loader/fesm2022/tmdjr-ngx-editor-js2-mfe-loader.mjs */ 87677))))));
-/******/ 				register("ngx-editor-js2-pop-quiz", "20.0.0", () => (__webpack_require__.e(2015).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-pop-quiz/fesm2022/tmdjr-ngx-editor-js2-pop-quiz.mjs */ 2015))))));
+/******/ 				register("mermaid", "11.7.0", () => (__webpack_require__.e(3939).then(() => (() => (__webpack_require__(/*! ./node_modules/mermaid/dist/mermaid.core.mjs */ 3939))))));
+/******/ 				register("ngx-editor-js2-blockquotes", "20.1.0", () => (__webpack_require__.e(2239).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-blockquotes/fesm2022/tmdjr-ngx-editor-js2-blockquotes.mjs */ 52239))))));
+/******/ 				register("ngx-editor-js2-codemirror", "20.1.0", () => (__webpack_require__.e(9305).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-codemirror/fesm2022/tmdjr-ngx-editor-js2-codemirror.mjs */ 59305))))));
+/******/ 				register("ngx-editor-js2-image", "20.1.0", () => (__webpack_require__.e(7887).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-image/fesm2022/tmdjr-ngx-editor-js2-image.mjs */ 57887))))));
+/******/ 				register("ngx-editor-js2-mermaidjs", "20.1.0", () => (__webpack_require__.e(59).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-mermaidjs/fesm2022/tmdjr-ngx-editor-js2-mermaidjs.mjs */ 10059))))));
+/******/ 				register("ngx-editor-js2-mfe-loader", "20.1.0", () => (__webpack_require__.e(7677).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-mfe-loader/fesm2022/tmdjr-ngx-editor-js2-mfe-loader.mjs */ 87677))))));
+/******/ 				register("ngx-editor-js2-pop-quiz", "20.1.0", () => (__webpack_require__.e(2015).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-pop-quiz/fesm2022/tmdjr-ngx-editor-js2-pop-quiz.mjs */ 2015))))));
 /******/ 				register("rxjs/operators", "7.8.0", () => (__webpack_require__.e(8219).then(() => (() => (__webpack_require__(/*! ./node_modules/rxjs/dist/esm/operators/index.js */ 98219))))));
 /******/ 				register("rxjs", "7.8.0", () => (__webpack_require__.e(845).then(() => (() => (__webpack_require__(/*! ./node_modules/rxjs/dist/esm/index.js */ 80845))))));
 /******/ 			}
@@ -480,7 +480,7 @@ __webpack_require__.e(/*! import() */ 43).then(__webpack_require__.bind(__webpac
 /******/ 		76833: () => (loadStrictSingletonVersion("default", "@angular/material/form-field", false, [1,20,0,3], () => (__webpack_require__.e(2569).then(() => (() => (__webpack_require__(/*! @angular/material/form-field */ 24950))))))),
 /******/ 		77947: () => (loadStrictSingletonVersion("default", "@angular/cdk/drag-drop", false, [1,20,0,3], () => (__webpack_require__.e(8473).then(() => (() => (__webpack_require__(/*! @angular/cdk/drag-drop */ 50854))))))),
 /******/ 		33977: () => (loadStrictSingletonVersion("default", "@angular/material/button", false, [1,20,0,3], () => (__webpack_require__.e(6556).then(() => (() => (__webpack_require__(/*! @angular/material/button */ 84175))))))),
-/******/ 		68616: () => (loadStrictSingletonVersion("default", "mermaid", false, [1,11,6,0], () => (__webpack_require__.e(6320).then(() => (() => (__webpack_require__(/*! mermaid */ 3939))))))),
+/******/ 		95575: () => (loadStrictSingletonVersion("default", "mermaid", false, [1,11,7,0], () => (__webpack_require__.e(6320).then(() => (() => (__webpack_require__(/*! mermaid */ 3939))))))),
 /******/ 		30173: () => (loadStrictSingletonVersion("default", "@angular/material/select", false, [1,20,0,3], () => (__webpack_require__.e(7556).then(() => (() => (__webpack_require__(/*! @angular/material/select */ 25175))))))),
 /******/ 		34915: () => (loadStrictSingletonVersion("default", "@angular/material/radio", false, [1,20,0,3], () => (__webpack_require__.e(1423).then(() => (() => (__webpack_require__(/*! @angular/material/radio */ 53804))))))),
 /******/ 		54519: () => (loadStrictSingletonVersion("default", "@angular/material/stepper", false, [1,20,0,3], () => (__webpack_require__.e(4241).then(() => (() => (__webpack_require__(/*! @angular/material/stepper */ 56622))))))),
@@ -540,11 +540,11 @@ __webpack_require__.e(/*! import() */ 43).then(__webpack_require__.bind(__webpac
 /******/ 			44866,
 /******/ 			49217,
 /******/ 			53105,
-/******/ 			68616,
 /******/ 			76833,
 /******/ 			77947,
 /******/ 			85914,
-/******/ 			87351
+/******/ 			87351,
+/******/ 			95575
 /******/ 		],
 /******/ 		"80": [
 /******/ 			85914
@@ -701,7 +701,7 @@ __webpack_require__.e(/*! import() */ 43).then(__webpack_require__.bind(__webpac
 /******/ 			85914
 /******/ 		],
 /******/ 		"2440": [
-/******/ 			68616
+/******/ 			95575
 /******/ 		],
 /******/ 		"2569": [
 /******/ 			285,
