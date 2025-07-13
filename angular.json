@@ -71,6 +71,7 @@
                 "dist/ngx-editor-js2-image",
                 "dist/ngx-editor-js2-mfe-loader",
                 "dist/ngx-editor-js2-mermaidjs",
+                "dist/ngx-editor-js2-panel",
                 "node_modules/@tmdjr/ngx-editor-js2/styles"
               ]
             },
@@ -291,6 +292,36 @@
           "builder": "@angular/build:karma",
           "options": {
             "tsConfig": "projects/ngx-editor-js2-mermaidjs/tsconfig.spec.json",
+            "polyfills": ["zone.js", "zone.js/testing"]
+          }
+        }
+      }
+    },
+    "ngx-editor-js2-panel": {
+      "projectType": "library",
+      "root": "projects/ngx-editor-js2-panel",
+      "sourceRoot": "projects/ngx-editor-js2-panel/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "projects/ngx-editor-js2-panel/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-editor-js2-panel/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-editor-js2-panel/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/ngx-editor-js2-panel/tsconfig.spec.json",
             "polyfills": ["zone.js", "zone.js/testing"]
           }
         }

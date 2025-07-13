@@ -33,6 +33,8 @@ npm run watch-demo
 
 To create a new block, implement the `BlockComponent` interface as shown below.
 
+For a step‑by‑step example, see [docs/create-panel-block.md](docs/create-panel-block.md) to build a panel block similar to Atlassian Confluence panels.
+
 ### BlockComponent Interface
 
 Each block must implement the following interface:

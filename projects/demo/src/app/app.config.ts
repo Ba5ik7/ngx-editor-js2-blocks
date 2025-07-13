@@ -12,6 +12,7 @@ import { NgxEditorJs2ImageComponent } from 'ngx-editor-js2-image';
 import { NgxEditorJs2MfeLoaderComponent } from 'ngx-editor-js2-mfe-loader';
 import { NgxEditorJs2PopQuizComponent } from 'ngx-editor-js2-pop-quiz';
 import { NgxEditorJs2MermaidjsComponent } from 'ngx-editor-js2-mermaidjs';
+import { NgxEditorJs2PanelComponent } from 'ngx-editor-js2-panel';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -24,6 +25,11 @@ export const appConfig: ApplicationConfig = {
             name: 'MermaidJs',
             component: NgxEditorJs2MermaidjsComponent,
             componentInstanceName: 'NgxEditorJs2MermaidjsComponent',
+          },
+          {
+            name: 'Panel',
+            component: NgxEditorJs2PanelComponent,
+            componentInstanceName: 'NgxEditorJs2PanelComponent',
           },
           {
             name: 'Image',
