@@ -20,6 +20,9 @@
       "ngx-editor-js2-mermaidjs": [
         "./dist/ngx-editor-js2-mermaidjs"
       ],
+      "ngx-editor-js2-panel": [
+        "./dist/ngx-editor-js2-panel"
+      ],
       "ngx-editor-js2-mfe-loader": [
         "./dist/ngx-editor-js2-mfe-loader"
       ],
