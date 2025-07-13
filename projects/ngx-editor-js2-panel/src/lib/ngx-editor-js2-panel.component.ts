@@ -7,6 +7,7 @@ import {
   AutofocusDirective,
   BlockComponent,
   BlockOptionAction,
+  CleanPasteDataDirective,
   ControlAccessorDirective,
   ToolbarFabDirective,
 } from '@tmdjr/ngx-editor-js2';
@@ -20,29 +21,29 @@ import {
     ControlAccessorDirective,
     AutofocusDirective,
     ToolbarFabDirective,
+    CleanPasteDataDirective,
     MatIcon,
     NgClass,
   ],
   template: `
     <ng-container [formGroup]="formGroup()">
-      <div
+      <mat-icon class="panel-icon" [ngClass]="savedAction()">
+        {{ panelIcons[savedAction()] }}
+      </mat-icon>
+      <p
         class="panel"
+        [ngClass]="savedAction()"
+        toolbarFab
         controlAccessor
         contentEditable
-        toolbarFab
-        [ngClass]="savedAction()"
+        cleanPasteData
         [defaultValue]="formGroup().get(formControlName())?.value"
         [actionCallback]="actionCallbackBind"
         [autofocus]="autofocus()"
         [blockOptionActions]="blockOptionActions()"
         [formControlName]="formControlName()"
         [componentContextPositionIndex]="sortIndex()"
-      >
-        <mat-icon class="panel-icon">{{ panelIcons[savedAction()] }}</mat-icon>
-        <div class="panel-content">
-          <ng-content></ng-content>
-        </div>
-      </div>
+      ></p>
     </ng-container>
   `,
   styles: [
@@ -50,15 +51,21 @@ import {
       :host {
         display: block;
         position: relative;
+        p {
+          line-height: 1.6em;
+        }
         .panel {
-          display: flex;
           padding: 10px;
           margin: 1rem 0;
           border-left: 5px solid currentColor;
           border-radius: 4px;
+          margin: 1rem 0;
+          padding: 8px 0 8px 40px;
         }
         .panel-icon {
-          margin-right: 8px;
+          position: absolute;
+          left: 16px;
+          top: 8px;
         }
         .info {
           background: #e8f0fe;

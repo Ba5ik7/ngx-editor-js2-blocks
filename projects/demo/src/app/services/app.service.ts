@@ -72,22 +72,44 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
       '“A quote block is like a spotlight — simple, elegant, and perfect for making a point.”',
   },
   {
-    blockId: 'dq5uat',
+    blockId: '7idv',
     sortIndex: 9,
     componentInstanceName: 'ParagraphBlockComponent',
     savedAction: 'medium',
     dataClean: '',
   },
   {
-    blockId: 'mq9i9m',
+    blockId: '9f1gqx',
     sortIndex: 10,
+    componentInstanceName: 'HeaderBlockComponent',
+    savedAction: 'h3',
+    dataClean: '⚠️ Panels',
+  },
+  {
+    blockId: '7g0me4',
+    sortIndex: 11,
+    componentInstanceName: 'NgxEditorJs2PanelComponent',
+    savedAction: 'info',
+    dataClean:
+      'Panels are content blocks that help you organize and emphasize sections of your page.<div><ul><li><b>Improved Readability</b> – Panels break up long content, making it easier for readers to follow.</li><li><b>Enhanced Organization</b> – Panels provide logical structure, helping users find information faster.</li><li><b>Visual Appeal</b> – With color and layout options, panels draw attention to key areas on the page.</li></ul></div><div><br></div><div>Few panel types out of the box:</div><div><ul><li><b>Info Panel</b> – Ideal for general information.</li><li><b>Note Panel</b> – Perfect for emphasizing notes or key points.</li><li><b>Tip Panel</b> – Great for highlighting helpful tips or insights.</li><li><b>Warning Panel </b>– Used to draw attention to warnings or essential notices.</li></ul></div>',
+  },
+  {
+    blockId: 'dq5uat',
+    sortIndex: 12,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'medium',
+    dataClean: '',
+  },
+  {
+    blockId: 'mq9i9m',
+    sortIndex: 13,
     componentInstanceName: 'HeaderBlockComponent',
     savedAction: 'h3',
     dataClean: '📷 Image Block',
   },
   {
     blockId: '4xkw3s',
-    sortIndex: 11,
+    sortIndex: 14,
     componentInstanceName: 'ParagraphBlockComponent',
     savedAction: 'large',
     dataClean:
@@ -95,7 +117,7 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
   },
   {
     blockId: 'n177dsd',
-    sortIndex: 12,
+    sortIndex: 15,
     componentInstanceName: 'NgxEditorJs2ImageComponent',
     savedAction: 'stretch',
     dataClean:
@@ -103,21 +125,21 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
   },
   {
     blockId: 'gt9e9s',
-    sortIndex: 13,
+    sortIndex: 16,
     componentInstanceName: 'ParagraphBlockComponent',
     savedAction: 'medium',
     dataClean: '',
   },
   {
     blockId: 'b3t74',
-    sortIndex: 14,
+    sortIndex: 17,
     componentInstanceName: 'HeaderBlockComponent',
     savedAction: 'h3',
     dataClean: '🎨 CodeMirror Block',
   },
   {
     blockId: '9qls1d',
-    sortIndex: 15,
+    sortIndex: 18,
     componentInstanceName: 'ParagraphBlockComponent',
     savedAction: 'large',
     dataClean:
@@ -125,7 +147,7 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
   },
   {
     blockId: 'asdfasdf',
-    sortIndex: 16,
+    sortIndex: 19,
     componentInstanceName: 'NgxEditorJs2CodemirrorComponent',
     savedAction: 'text/typescript',
     dataClean:
@@ -133,21 +155,21 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
   },
   {
     blockId: 'hduds',
-    sortIndex: 17,
+    sortIndex: 20,
     componentInstanceName: 'ParagraphBlockComponent',
     savedAction: 'medium',
     dataClean: '',
   },
   {
     blockId: '8npajb',
-    sortIndex: 18,
+    sortIndex: 21,
     componentInstanceName: 'HeaderBlockComponent',
     savedAction: 'h3',
     dataClean: '🔥 Mermaid.js Block',
   },
   {
     blockId: 'su45ai',
-    sortIndex: 19,
+    sortIndex: 22,
     componentInstanceName: 'ParagraphBlockComponent',
     savedAction: 'large',
     dataClean:
@@ -155,7 +177,7 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
   },
   {
     blockId: 'uapf2',
-    sortIndex: 20,
+    sortIndex: 23,
     componentInstanceName: 'NgxEditorJs2MermaidjsComponent',
     savedAction: 'center',
     dataClean:
@@ -163,21 +185,21 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
   },
   {
     blockId: 'y3r4xs',
-    sortIndex: 21,
+    sortIndex: 24,
     componentInstanceName: 'ParagraphBlockComponent',
     savedAction: 'medium',
     dataClean: '<div><br></div>',
   },
   {
     blockId: 'q5m0u',
-    sortIndex: 22,
+    sortIndex: 25,
     componentInstanceName: 'HeaderBlockComponent',
     savedAction: 'h3',
     dataClean: '🧠 Pop Quiz Block',
   },
   {
     blockId: 'ubo23s',
-    sortIndex: 23,
+    sortIndex: 26,
     componentInstanceName: 'ParagraphBlockComponent',
     savedAction: 'large',
     dataClean:
@@ -185,7 +207,7 @@ export const TEST_DATA: NgxEditorJsBlock[] = [
   },
   {
     blockId: '9bqhk',
-    sortIndex: 24,
+    sortIndex: 27,
     componentInstanceName: 'NgxEditorJs2PopQuizComponent',
     savedAction: 'display-large',
     dataClean:
