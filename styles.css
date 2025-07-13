@@ -201,6 +201,10 @@ ngx-editor-js2-mermaidjs.cdk-drag-preview .edgePaths path {
   fill: none;
 }
 
+ngx-editor-js2-panel.cdk-drag-preview .panel {
+  padding: 20px !important;
+}
+
 /* BASICS */
 .CodeMirror {
   /* Set height, width, borders, and global font properties here */

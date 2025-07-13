@@ -213,98 +213,116 @@ const TEST_DATA = [{
   savedAction: 'display-large',
   dataClean: '“A quote block is like a spotlight — simple, elegant, and perfect for making a point.”'
 }, {
-  blockId: 'dq5uat',
+  blockId: '7idv',
   sortIndex: 9,
   componentInstanceName: 'ParagraphBlockComponent',
   savedAction: 'medium',
   dataClean: ''
 }, {
-  blockId: 'mq9i9m',
+  blockId: '9f1gqx',
   sortIndex: 10,
+  componentInstanceName: 'HeaderBlockComponent',
+  savedAction: 'h3',
+  dataClean: '⚠️ Panels'
+}, {
+  blockId: '7g0me4',
+  sortIndex: 11,
+  componentInstanceName: 'NgxEditorJs2PanelComponent',
+  savedAction: 'info',
+  dataClean: 'Panels are content blocks that help you organize and emphasize sections of your page.<div><ul><li><b>Improved Readability</b> – Panels break up long content, making it easier for readers to follow.</li><li><b>Enhanced Organization</b> – Panels provide logical structure, helping users find information faster.</li><li><b>Visual Appeal</b> – With color and layout options, panels draw attention to key areas on the page.</li></ul></div><div><br></div><div>Few panel types out of the box:</div><div><ul><li><b>Info Panel</b> – Ideal for general information.</li><li><b>Note Panel</b> – Perfect for emphasizing notes or key points.</li><li><b>Tip Panel</b> – Great for highlighting helpful tips or insights.</li><li><b>Warning Panel </b>– Used to draw attention to warnings or essential notices.</li></ul></div>'
+}, {
+  blockId: 'dq5uat',
+  sortIndex: 12,
+  componentInstanceName: 'ParagraphBlockComponent',
+  savedAction: 'medium',
+  dataClean: ''
+}, {
+  blockId: 'mq9i9m',
+  sortIndex: 13,
   componentInstanceName: 'HeaderBlockComponent',
   savedAction: 'h3',
   dataClean: '📷 Image Block'
 }, {
   blockId: '4xkw3s',
-  sortIndex: 11,
+  sortIndex: 14,
   componentInstanceName: 'ParagraphBlockComponent',
   savedAction: 'large',
   dataClean: 'A picture says a thousand words. The Image block supports captions and even alignment options to make your visuals shine.'
 }, {
   blockId: 'n177dsd',
-  sortIndex: 12,
+  sortIndex: 15,
   componentInstanceName: 'NgxEditorJs2ImageComponent',
   savedAction: 'stretch',
   dataClean: '{"url":"https://res.cloudinary.com/dowdpiikk/image/upload/w_650,q_auto:best,f_auto/v1709445782/lnyst5aqppuin8wt73ci.webp","title":"test"}'
 }, {
   blockId: 'gt9e9s',
-  sortIndex: 13,
+  sortIndex: 16,
   componentInstanceName: 'ParagraphBlockComponent',
   savedAction: 'medium',
   dataClean: ''
 }, {
   blockId: 'b3t74',
-  sortIndex: 14,
+  sortIndex: 17,
   componentInstanceName: 'HeaderBlockComponent',
   savedAction: 'h3',
   dataClean: '🎨 CodeMirror Block'
 }, {
   blockId: '9qls1d',
-  sortIndex: 15,
+  sortIndex: 18,
   componentInstanceName: 'ParagraphBlockComponent',
   savedAction: 'large',
   dataClean: 'Embed rich, theme-able code editors right inside your documents. Great for live code samples or collaborative coding.'
 }, {
   blockId: 'asdfasdf',
-  sortIndex: 16,
+  sortIndex: 19,
   componentInstanceName: 'NgxEditorJs2CodemirrorComponent',
   savedAction: 'text/typescript',
   dataClean: "export class SimpleFormGroup {\n  form = new FormGroup({\n    first: new FormControl('Nancy', Validators.minLength(2)),\n    last: new FormControl('Drew'),\n  });\n\n  get first(): any {\n    return this.form.get('first');\n  }\n\n  onSubmit(): void {\n    console.log(this.form.value); // {first: 'Nancy', last: 'Drew'}\n  }\n\n  setValue() {\n    this.form.setValue({first: 'Carson', last: 'Drew'});\n  }\n}"
 }, {
   blockId: 'hduds',
-  sortIndex: 17,
+  sortIndex: 20,
   componentInstanceName: 'ParagraphBlockComponent',
   savedAction: 'medium',
   dataClean: ''
 }, {
   blockId: '8npajb',
-  sortIndex: 18,
+  sortIndex: 21,
   componentInstanceName: 'HeaderBlockComponent',
   savedAction: 'h3',
   dataClean: '🔥 Mermaid.js Block'
 }, {
   blockId: 'su45ai',
-  sortIndex: 19,
+  sortIndex: 22,
   componentInstanceName: 'ParagraphBlockComponent',
   savedAction: 'large',
   dataClean: 'Need to include a flowchart, sequence diagram, or Gantt chart? The Mermaid.js block brings technical diagrams to life using simple syntax.'
 }, {
   blockId: 'uapf2',
-  sortIndex: 20,
+  sortIndex: 23,
   componentInstanceName: 'NgxEditorJs2MermaidjsComponent',
   savedAction: 'center',
   dataClean: 'flowchart TD\n    A[Christmas] -->|Get money| B(Go shopping)\n    B --> C{Let me think}\n    C -->|One| D[Laptop]\n    C -->|Two| E[Hello World iPhone]\n    C -->|Three| F[fa:fa-car Car]'
 }, {
   blockId: 'y3r4xs',
-  sortIndex: 21,
+  sortIndex: 24,
   componentInstanceName: 'ParagraphBlockComponent',
   savedAction: 'medium',
   dataClean: '<div><br></div>'
 }, {
   blockId: 'q5m0u',
-  sortIndex: 22,
+  sortIndex: 25,
   componentInstanceName: 'HeaderBlockComponent',
   savedAction: 'h3',
   dataClean: '🧠 Pop Quiz Block'
 }, {
   blockId: 'ubo23s',
-  sortIndex: 23,
+  sortIndex: 26,
   componentInstanceName: 'ParagraphBlockComponent',
   savedAction: 'large',
   dataClean: 'Test your knowledge or embed interactive quiz questions inline with your content. Great for workshops, tutorials, or even just friendly challenges.'
 }, {
   blockId: '9bqhk',
-  sortIndex: 24,
+  sortIndex: 27,
   componentInstanceName: 'NgxEditorJs2PopQuizComponent',
   savedAction: 'display-large',
   dataClean: '{"question":"Which of the following statements is true about Angular\'s default RouteReuseStrategy?","answer":"It reuses components when the route configuration remains the same.","correctResponse":"That\'s correct! Angular\'s default RouteReuseStrategy reuses components when the route configuration remains the same. This prevents components from being destroyed and recreated when only the fragment or query parameters change.","incorrectResponse":"That\'s incorrect. The correct answer is C. Angular\'s default RouteReuseStrategy reuses components when the route configuration remains the same. This prevents components from being destroyed and recreated when only the fragment or query parameters change.","choices":[{"value":"It only reuses components when the route configuration changes."},{"value":"It only reuses components when the route parameters change."},{"value":"It reuses components when the route configuration remains the same."},{"value":"It never reuses components."}]}'
@@ -3862,7 +3880,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _angular_platform_browser_animations_async__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser/animations/async */ 27966);
 /* harmony import */ var _angular_platform_browser_animations_async__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_platform_browser_animations_async__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
+/* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
 /* harmony import */ var ngx_editor_js2_blockquotes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-editor-js2-blockquotes */ 34485);
 /* harmony import */ var ngx_editor_js2_blockquotes__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ngx_editor_js2_blockquotes__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var ngx_editor_js2_codemirror__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-editor-js2-codemirror */ 68691);
@@ -3875,6 +3893,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_editor_js2_pop_quiz__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(ngx_editor_js2_pop_quiz__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var ngx_editor_js2_mermaidjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ngx-editor-js2-mermaidjs */ 3381);
 /* harmony import */ var ngx_editor_js2_mermaidjs__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(ngx_editor_js2_mermaidjs__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var ngx_editor_js2_panel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ngx-editor-js2-panel */ 29607);
+/* harmony import */ var ngx_editor_js2_panel__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(ngx_editor_js2_panel__WEBPACK_IMPORTED_MODULE_7__);
 
 
 // Imports are for debugging purposes only
@@ -3885,14 +3905,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const appConfig = {
   providers: [(0,_angular_platform_browser_animations_async__WEBPACK_IMPORTED_MODULE_0__.provideAnimationsAsync)(), {
-    provide: _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_7__.NGX_EDITORJS_OPTIONS,
+    provide: _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_8__.NGX_EDITORJS_OPTIONS,
     useValue: {
       consumerSupportedBlocks: [{
         name: 'MermaidJs',
         component: ngx_editor_js2_mermaidjs__WEBPACK_IMPORTED_MODULE_6__.NgxEditorJs2MermaidjsComponent,
         componentInstanceName: 'NgxEditorJs2MermaidjsComponent'
+      }, {
+        name: 'Panel',
+        component: ngx_editor_js2_panel__WEBPACK_IMPORTED_MODULE_7__.NgxEditorJs2PanelComponent,
+        componentInstanceName: 'NgxEditorJs2PanelComponent'
       }, {
         name: 'Image',
         component: ngx_editor_js2_image__WEBPACK_IMPORTED_MODULE_3__.NgxEditorJs2ImageComponent,

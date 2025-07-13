@@ -307,6 +307,7 @@ __webpack_require__.d(exports, {
 /******/ 				register("ngx-editor-js2-image", "20.1.0", () => (__webpack_require__.e(7887).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-image/fesm2022/tmdjr-ngx-editor-js2-image.mjs */ 57887))))));
 /******/ 				register("ngx-editor-js2-mermaidjs", "20.1.0", () => (__webpack_require__.e(59).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-mermaidjs/fesm2022/tmdjr-ngx-editor-js2-mermaidjs.mjs */ 10059))))));
 /******/ 				register("ngx-editor-js2-mfe-loader", "20.1.0", () => (__webpack_require__.e(7677).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-mfe-loader/fesm2022/tmdjr-ngx-editor-js2-mfe-loader.mjs */ 87677))))));
+/******/ 				register("ngx-editor-js2-panel", "20.1.0", () => (__webpack_require__.e(4747).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-panel/fesm2022/tmdjr-ngx-editor-js2-panel.mjs */ 44747))))));
 /******/ 				register("ngx-editor-js2-pop-quiz", "20.1.0", () => (__webpack_require__.e(2015).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-pop-quiz/fesm2022/tmdjr-ngx-editor-js2-pop-quiz.mjs */ 2015))))));
 /******/ 				register("rxjs/operators", "7.8.0", () => (__webpack_require__.e(8219).then(() => (() => (__webpack_require__(/*! ./node_modules/rxjs/dist/esm/operators/index.js */ 98219))))));
 /******/ 				register("rxjs", "7.8.0", () => (__webpack_require__.e(845).then(() => (() => (__webpack_require__(/*! ./node_modules/rxjs/dist/esm/index.js */ 80845))))));
@@ -818,6 +819,21 @@ __webpack_require__.d(exports, {
 /******/ 			29757,
 /******/ 			39633,
 /******/ 			35253
+/******/ 		],
+/******/ 		"4747": [
+/******/ 			7140,
+/******/ 			27940,
+/******/ 			29757,
+/******/ 			33316,
+/******/ 			35253,
+/******/ 			37409,
+/******/ 			39633,
+/******/ 			44866,
+/******/ 			49217,
+/******/ 			76833,
+/******/ 			77947,
+/******/ 			85914,
+/******/ 			87351
 /******/ 		],
 /******/ 		"4950": [
 /******/ 			285,

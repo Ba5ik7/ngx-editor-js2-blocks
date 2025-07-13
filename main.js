@@ -279,6 +279,7 @@ __webpack_require__.e(/*! import() */ 43).then(__webpack_require__.bind(__webpac
 /******/ 				register("ngx-editor-js2-image", "20.1.0", () => (__webpack_require__.e(7887).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-image/fesm2022/tmdjr-ngx-editor-js2-image.mjs */ 57887))))));
 /******/ 				register("ngx-editor-js2-mermaidjs", "20.1.0", () => (__webpack_require__.e(59).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-mermaidjs/fesm2022/tmdjr-ngx-editor-js2-mermaidjs.mjs */ 10059))))));
 /******/ 				register("ngx-editor-js2-mfe-loader", "20.1.0", () => (__webpack_require__.e(7677).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-mfe-loader/fesm2022/tmdjr-ngx-editor-js2-mfe-loader.mjs */ 87677))))));
+/******/ 				register("ngx-editor-js2-panel", "20.1.0", () => (__webpack_require__.e(4747).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-panel/fesm2022/tmdjr-ngx-editor-js2-panel.mjs */ 44747))))));
 /******/ 				register("ngx-editor-js2-pop-quiz", "20.1.0", () => (__webpack_require__.e(2015).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-pop-quiz/fesm2022/tmdjr-ngx-editor-js2-pop-quiz.mjs */ 2015))))));
 /******/ 				register("rxjs/operators", "7.8.0", () => (__webpack_require__.e(8219).then(() => (() => (__webpack_require__(/*! ./node_modules/rxjs/dist/esm/operators/index.js */ 98219))))));
 /******/ 				register("rxjs", "7.8.0", () => (__webpack_require__.e(845).then(() => (() => (__webpack_require__(/*! ./node_modules/rxjs/dist/esm/index.js */ 80845))))));
@@ -491,6 +492,7 @@ __webpack_require__.e(/*! import() */ 43).then(__webpack_require__.bind(__webpac
 /******/ 		24925: () => (loadStrictSingletonVersion("default", "@angular/material/slide-toggle", false, [1,20,0,3], () => (__webpack_require__.e(8827).then(() => (() => (__webpack_require__(/*! @angular/material/slide-toggle */ 8827))))))),
 /******/ 		27966: () => (loadStrictSingletonVersion("default", "@angular/platform-browser/animations/async", false, [1,20,0,4], () => (__webpack_require__.e(4589).then(() => (() => (__webpack_require__(/*! @angular/platform-browser/animations/async */ 6970))))))),
 /******/ 		28559: () => (loadStrictSingletonVersion("default", "@angular/material/tooltip", false, [1,20,0,3], () => (__webpack_require__.e(640).then(() => (() => (__webpack_require__(/*! @angular/material/tooltip */ 80640))))))),
+/******/ 		29607: () => (load("default", "ngx-editor-js2-panel", false, () => (__webpack_require__.e(7128).then(() => (() => (__webpack_require__(/*! ngx-editor-js2-panel */ 44747))))))),
 /******/ 		34485: () => (load("default", "ngx-editor-js2-blockquotes", false, () => (__webpack_require__.e(4620).then(() => (() => (__webpack_require__(/*! ngx-editor-js2-blockquotes */ 52239))))))),
 /******/ 		45829: () => (loadStrictSingletonVersion("default", "@angular/material/menu", false, [1,20,0,3], () => (__webpack_require__.e(1034).then(() => (() => (__webpack_require__(/*! @angular/material/menu */ 31034))))))),
 /******/ 		52025: () => (loadStrictSingletonVersion("default", "@angular/material/card", false, [1,20,0,3], () => (__webpack_require__.e(3777).then(() => (() => (__webpack_require__(/*! @angular/material/card */ 53777))))))),
@@ -509,6 +511,7 @@ __webpack_require__.e(/*! import() */ 43).then(__webpack_require__.bind(__webpac
 /******/ 			27940,
 /******/ 			27966,
 /******/ 			28559,
+/******/ 			29607,
 /******/ 			29757,
 /******/ 			33316,
 /******/ 			33977,
@@ -814,6 +817,21 @@ __webpack_require__.e(/*! import() */ 43).then(__webpack_require__.bind(__webpac
 /******/ 			49583,
 /******/ 			56593,
 /******/ 			98959
+/******/ 		],
+/******/ 		"4747": [
+/******/ 			7140,
+/******/ 			27940,
+/******/ 			29757,
+/******/ 			33316,
+/******/ 			35253,
+/******/ 			37409,
+/******/ 			39633,
+/******/ 			44866,
+/******/ 			49217,
+/******/ 			76833,
+/******/ 			77947,
+/******/ 			85914,
+/******/ 			87351
 /******/ 		],
 /******/ 		"4950": [
 /******/ 			285,
