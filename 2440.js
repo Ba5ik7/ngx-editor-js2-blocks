@@ -84,7 +84,9 @@ function NgxEditorJs2MermaidjsComponent_Conditional_3_Template(rf, ctx) {
 let MermaidjsConfigComponent = /*#__PURE__*/(() => {
   class MermaidjsConfigComponent {
     updateConfig = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.output)();
-    value = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.model)();
+    value = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.model)(...(ngDevMode ? [undefined, {
+      debugName: "value"
+    }] : []));
     codeMirrorOptions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.signal)({
       lineNumbers: true,
       theme: 'material-palenight',
@@ -98,7 +100,9 @@ let MermaidjsConfigComponent = /*#__PURE__*/(() => {
       indentUnit: 2,
       tabSize: 2,
       cursorScrollMargin: 5
-    });
+    }, ...(ngDevMode ? [{
+      debugName: "codeMirrorOptions"
+    }] : []));
     closeConfig() {
       this.updateConfig.emit();
     }
@@ -182,11 +186,19 @@ let NgxEditorJs2MermaidjsComponent = /*#__PURE__*/(() => {
   class NgxEditorJs2MermaidjsComponent {
     ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_2__.NgZone);
     mermaid = mermaid;
-    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(0);
+    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(0, ...(ngDevMode ? [{
+      debugName: "sortIndex"
+    }] : []));
     componentInstanceName = 'NgxEditorJs2MermaidjsComponent';
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(true);
-    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required();
-    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required();
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(true, ...(ngDevMode ? [{
+      debugName: "autofocus"
+    }] : []));
+    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required(...(ngDevMode ? [{
+      debugName: "formGroup"
+    }] : []));
+    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required(...(ngDevMode ? [{
+      debugName: "formControlName"
+    }] : []));
     blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)([{
       action: 'flex-start',
       icon: 'format_align_left'
@@ -199,8 +211,12 @@ let NgxEditorJs2MermaidjsComponent = /*#__PURE__*/(() => {
     }, {
       action: 'stretch',
       icon: 'format_align_justify'
-    }]);
-    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.signal)('flex-start');
+    }], ...(ngDevMode ? [{
+      debugName: "blockOptionActions"
+    }] : []));
+    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.signal)('flex-start', ...(ngDevMode ? [{
+      debugName: "savedAction"
+    }] : []));
     actionCallbackBind = this.actionCallback.bind(this);
     mermaidDiagramSVG = '';
     value = `flowchart TD
@@ -209,7 +225,9 @@ let NgxEditorJs2MermaidjsComponent = /*#__PURE__*/(() => {
     C -->|One| D[Laptop]
     C -->|Two| E[iPhone]
     C -->|Three| F[fa:fa-car Car]`;
-    openOverlay = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.signal)(false);
+    openOverlay = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.signal)(false, ...(ngDevMode ? [{
+      debugName: "openOverlay"
+    }] : []));
     ngOnInit() {
       this.ngZone.runOutsideAngular(() => {
         this.mermaid.initialize({

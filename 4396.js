@@ -377,7 +377,9 @@ let NgxEditorJs2PopQuizService = /*#__PURE__*/(() => {
 })();
 let QuestionComponent = /*#__PURE__*/(() => {
   class QuestionComponent {
-    questionFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
+    questionFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "questionFormGroup"
+    }] : []));
     static ɵfac = function QuestionComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || QuestionComponent)();
     };
@@ -425,7 +427,9 @@ let QuestionComponent = /*#__PURE__*/(() => {
 })();
 let ResponsesComponent = /*#__PURE__*/(() => {
   class ResponsesComponent {
-    responsesFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
+    responsesFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "responsesFormGroup"
+    }] : []));
     static ɵfac = function ResponsesComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || ResponsesComponent)();
     };
@@ -492,12 +496,18 @@ let ChoicesComponent = /*#__PURE__*/(() => {
   class ChoicesComponent {
     formBuilder = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormBuilder);
     popQuizService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NgxEditorJs2PopQuizService);
-    choicesFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required({
+    choicesFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "choicesFormGroup",
       transform: value => {
         this.choicesFormGroupSub.next(value);
         return value;
       }
-    });
+    }] : [{
+      transform: value => {
+        this.choicesFormGroupSub.next(value);
+        return value;
+      }
+    }]));
     choicesFormGroupSub = new rxjs__WEBPACK_IMPORTED_MODULE_4__.BehaviorSubject(this.formBuilder.group({
       choices: this.formBuilder.array([])
     }));
@@ -567,7 +577,7 @@ let ChoicesComponent = /*#__PURE__*/(() => {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeater"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](8, 2, ctx.viewModel$).controls);
         }
       },
-      dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.AsyncPipe, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupName, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormArrayName, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__.MatFormFieldModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__.MatError, _angular_material_input__WEBPACK_IMPORTED_MODULE_7__.MatInput, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStepperNext, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStepperPrevious, _angular_material_button__WEBPACK_IMPORTED_MODULE_5__.MatButtonModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_5__.MatButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_5__.MatIconButton, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIcon, _angular_material_divider__WEBPACK_IMPORTED_MODULE_9__.MatDivider, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgClass],
+      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupName, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormArrayName, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__.MatFormFieldModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__.MatError, _angular_material_input__WEBPACK_IMPORTED_MODULE_7__.MatInput, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStepperNext, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStepperPrevious, _angular_material_button__WEBPACK_IMPORTED_MODULE_5__.MatButtonModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_5__.MatButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_5__.MatIconButton, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIcon, _angular_material_divider__WEBPACK_IMPORTED_MODULE_9__.MatDivider, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_8__.AsyncPipe],
       styles: ["[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .error[_ngcontent-%COMP%]{color:var(--mat-sys-error)}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .choices-radio-option-container[_ngcontent-%COMP%]{display:flex;align-items:center;gap:1rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .choices-radio-option-container[_ngcontent-%COMP%]   mat-form-field[_ngcontent-%COMP%]{width:100%}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .choices-radio-option-container[_ngcontent-%COMP%]   .delete[_ngcontent-%COMP%]{color:var(--mat-sys-error)}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .choices-action-group[_ngcontent-%COMP%]{margin-bottom:1.7rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:space-between;margin-top:1rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font:var(--mat-sys-headline-small);font-weight:100}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]{font:var(--mat-sys-body-small)}"]
     });
   }
@@ -578,7 +588,9 @@ let ChoicesComponent = /*#__PURE__*/(() => {
 })();
 let AnswerComponent = /*#__PURE__*/(() => {
   class AnswerComponent {
-    answerFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
+    answerFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "answerFormGroup"
+    }] : []));
     choices$ = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NgxEditorJs2PopQuizService).quizConfigForm$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_4__.map)(form => form.controls.choicesOptionsGroup.controls.choices));
     static ɵfac = function AnswerComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || AnswerComponent)();
@@ -602,7 +614,7 @@ let AnswerComponent = /*#__PURE__*/(() => {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"]((tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](1, 1, ctx.choices$)) ? 0 : -1, tmp_0_0);
         }
       },
-      dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.AsyncPipe, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControlName, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStepperNext, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStepperPrevious, _angular_material_button__WEBPACK_IMPORTED_MODULE_5__.MatButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__.MatFormFieldModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__.MatError, _angular_material_core__WEBPACK_IMPORTED_MODULE_11__.MatOption, _angular_material_select__WEBPACK_IMPORTED_MODULE_12__.MatSelect],
+      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControlName, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStepperNext, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStepperPrevious, _angular_material_button__WEBPACK_IMPORTED_MODULE_5__.MatButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__.MatFormFieldModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__.MatError, _angular_material_core__WEBPACK_IMPORTED_MODULE_11__.MatOption, _angular_material_select__WEBPACK_IMPORTED_MODULE_12__.MatSelect, _angular_common__WEBPACK_IMPORTED_MODULE_8__.AsyncPipe],
       styles: ["[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   mat-form-field[_ngcontent-%COMP%]{margin-bottom:1.5rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:space-between}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font:var(--mat-sys-headline-small);font-weight:100}"]
     });
   }
@@ -614,7 +626,9 @@ let AnswerComponent = /*#__PURE__*/(() => {
 let ResultsComponent = /*#__PURE__*/(() => {
   class ResultsComponent {
     popQuizService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NgxEditorJs2PopQuizService);
-    resultsFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
+    resultsFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "resultsFormGroup"
+    }] : []));
     viewModel$ = this.popQuizService.quizConfigForm$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_4__.switchMap)(formGroup => formGroup.valueChanges), (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.map)(formValue => this.popQuizService.marshalFormGroupIntoFormValue(formValue)));
     emitNewFormValue() {
       this.popQuizService.updateParentFormGroupValue(this.resultsFormGroup().getRawValue());
@@ -657,7 +671,7 @@ let ResultsComponent = /*#__PURE__*/(() => {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"]((tmp_1_0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](5, 2, ctx.viewModel$)) ? 4 : -1, tmp_1_0);
         }
       },
-      dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.AsyncPipe, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStepperPrevious, _angular_material_button__WEBPACK_IMPORTED_MODULE_5__.MatButton, _angular_material_radio__WEBPACK_IMPORTED_MODULE_13__.MatRadioModule, _angular_material_radio__WEBPACK_IMPORTED_MODULE_13__.MatRadioGroup, _angular_material_radio__WEBPACK_IMPORTED_MODULE_13__.MatRadioButton, _angular_material_divider__WEBPACK_IMPORTED_MODULE_9__.MatDivider],
+      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStepperPrevious, _angular_material_button__WEBPACK_IMPORTED_MODULE_5__.MatButton, _angular_material_radio__WEBPACK_IMPORTED_MODULE_13__.MatRadioModule, _angular_material_radio__WEBPACK_IMPORTED_MODULE_13__.MatRadioGroup, _angular_material_radio__WEBPACK_IMPORTED_MODULE_13__.MatRadioButton, _angular_material_divider__WEBPACK_IMPORTED_MODULE_9__.MatDivider, _angular_common__WEBPACK_IMPORTED_MODULE_8__.AsyncPipe],
       styles: ["[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:space-between;margin-top:1rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font:var(--mat-sys-headline-small);font-weight:100}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   mat-radio-button[_ngcontent-%COMP%]{display:block}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .preview-container[_ngcontent-%COMP%]{display:flex;gap:1.5rem;flex-direction:column;align-items:flex-end;margin-bottom:1.5rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .preview-container[_ngcontent-%COMP%]   .preview[_ngcontent-%COMP%]{width:100%}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .preview-container[_ngcontent-%COMP%]   .preview-action-group[_ngcontent-%COMP%]{display:flex;flex-direction:row-reverse}"]
     });
   }
@@ -708,7 +722,7 @@ let PopQuizConfigComponent = /*#__PURE__*/(() => {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"]((tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](1, 1, ctx.viewModel$)) ? 0 : -1, tmp_0_0);
         }
       },
-      dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.AsyncPipe, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStepperModule, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStep, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStepLabel, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStepper, QuestionComponent, ResponsesComponent, ChoicesComponent, AnswerComponent, ResultsComponent],
+      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStepperModule, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStep, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStepLabel, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_3__.MatStepper, QuestionComponent, ResponsesComponent, ChoicesComponent, AnswerComponent, ResultsComponent, _angular_common__WEBPACK_IMPORTED_MODULE_8__.AsyncPipe],
       styles: ["[_nghost-%COMP%]{border:1px solid #ccc;border-radius:var( --mat-card-outlined-container-shape, var(--mat-sys-corner-medium) )}[_nghost-%COMP%]   pop-quiz-question[_ngcontent-%COMP%]{padding-top:1rem}[_nghost-%COMP%]   mat-stepper.mat-stepper-vertical[_ngcontent-%COMP%], [_nghost-%COMP%]   mat-stepper.mat-stepper-horizontal[_ngcontent-%COMP%]{background:none}"]
     });
   }
@@ -720,21 +734,37 @@ let PopQuizConfigComponent = /*#__PURE__*/(() => {
 let NgxEditorJs2PopQuizComponent = /*#__PURE__*/(() => {
   class NgxEditorJs2PopQuizComponent {
     popQuizService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NgxEditorJs2PopQuizService);
-    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(0);
+    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(0, ...(ngDevMode ? [{
+      debugName: "sortIndex"
+    }] : []));
     componentInstanceName = 'NgxEditorJs2PopQuizComponent';
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true);
-    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required({
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true, ...(ngDevMode ? [{
+      debugName: "autofocus"
+    }] : []));
+    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "formGroup",
       transform: value => {
         this.popQuizService.parentFormGroup = value;
         return value;
       }
-    });
-    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required({
+    }] : [{
+      transform: value => {
+        this.popQuizService.parentFormGroup = value;
+        return value;
+      }
+    }]));
+    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "formControlName",
       transform: value => {
         this.popQuizService.parentFormControlName = value;
         return value;
       }
-    });
+    }] : [{
+      transform: value => {
+        this.popQuizService.parentFormControlName = value;
+        return value;
+      }
+    }]));
     blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)([{
       action: 'medium',
       icon: 'density_small'
@@ -744,9 +774,13 @@ let NgxEditorJs2PopQuizComponent = /*#__PURE__*/(() => {
     }, {
       action: 'display-large',
       icon: 'density_large'
-    }]);
+    }], ...(ngDevMode ? [{
+      debugName: "blockOptionActions"
+    }] : []));
     value = this.popQuizService.quizConfigValue$;
-    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('display-large');
+    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('display-large', ...(ngDevMode ? [{
+      debugName: "savedAction"
+    }] : []));
     actionCallbackBind = this.actionCallback.bind(this);
     ngOnInit() {
       try {

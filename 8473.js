@@ -785,6 +785,8 @@ const activeCapturingEventOptions$1 = {
  * addition to touch events.
  */
 const MOUSE_EVENT_IGNORE_TIME = 800;
+/** Class applied to the drag placeholder. */
+const PLACEHOLDER_CLASS = 'cdk-drag-placeholder';
 /** Inline styles to be set as `!important` while dragging. */
 const dragImportantProperties = /*#__PURE__*/new Set([
 // Needs to be important, because some `mat-table` sets `position: sticky !important`. See #22781.
@@ -814,10 +816,14 @@ class DragRef {
   /** Coordinates on the page at which the user picked up the element. */
   _pickupPositionOnPage;
   /**
-   * Anchor node used to save the place in the DOM where the element was
+   * Marker node used to save the place in the DOM where the element was
    * picked up so that it can be restored at the end of the drag sequence.
    */
-  _anchor;
+  _marker;
+  /**
+   * Element indicating the position from which the item was picked up initially.
+   */
+  _anchor = null;
   /**
    * CSS `transform` applied to the element when it isn't being dragged. We need a
    * passive transform in order for the dragged element to retain its new position
@@ -1078,7 +1084,7 @@ class DragRef {
       // dragged, we have to make sure that it's removed if it gets destroyed.
       this._rootElement?.remove();
     }
-    this._anchor?.remove();
+    this._marker?.remove();
     this._destroyPreview();
     this._destroyPlaceholder();
     this._dragDropRegistry.removeDragItem(this);
@@ -1096,7 +1102,7 @@ class DragRef {
     this._dropContainer = undefined;
     this._resizeSubscription.unsubscribe();
     this._parentPositions.clear();
-    this._boundaryElement = this._rootElement = this._ownerSVGElement = this._placeholderTemplate = this._previewTemplate = this._anchor = this._parentDragRef = null;
+    this._boundaryElement = this._rootElement = this._ownerSVGElement = this._placeholderTemplate = this._previewTemplate = this._marker = this._parentDragRef = null;
   }
   /** Checks whether the element is currently being dragged. */
   isDragging() {
@@ -1237,9 +1243,10 @@ class DragRef {
   }
   /** Destroys the placeholder element and its ViewRef. */
   _destroyPlaceholder() {
+    this._anchor?.remove();
     this._placeholder?.remove();
     this._placeholderRef?.destroy();
-    this._placeholder = this._placeholderRef = null;
+    this._placeholder = this._anchor = this._placeholderRef = null;
   }
   /** Handler for the `mousedown`/`touchstart` events. */
   _pointerDown = event => {
@@ -1399,9 +1406,9 @@ class DragRef {
       const element = this._rootElement;
       const parent = element.parentNode;
       const placeholder = this._placeholder = this._createPlaceholderElement();
-      const anchor = this._anchor = this._anchor || this._document.createComment(typeof ngDevMode === 'undefined' || ngDevMode ? 'cdk-drag-anchor' : '');
-      // Insert an anchor node so that we can restore the element's position in the DOM.
-      parent.insertBefore(anchor, element);
+      const marker = this._marker = this._marker || this._document.createComment(typeof ngDevMode === 'undefined' || ngDevMode ? 'cdk-drag-marker' : '');
+      // Insert a marker node so that we can restore the element's position in the DOM.
+      parent.insertBefore(marker, element);
       // There's no risk of transforms stacking when inside a drop container so
       // we can keep the initial transform up to date any time dragging starts.
       this._initialTransform = element.style.transform || '';
@@ -1511,7 +1518,7 @@ class DragRef {
     // can throw off `NgFor` which does smart diffing and re-creates elements only when necessary,
     // while moving the existing elements in all other cases.
     toggleVisibility(this._rootElement, true, dragImportantProperties);
-    this._anchor.parentNode.replaceChild(this._rootElement, this._anchor);
+    this._marker.parentNode.replaceChild(this._rootElement, this._marker);
     this._destroyPreview();
     this._destroyPlaceholder();
     this._initialDomRect = this._boundaryRect = this._previewRect = this._initialTransform = undefined;
@@ -1565,18 +1572,21 @@ class DragRef {
     }
     if (newContainer && newContainer !== this._dropContainer) {
       this._ngZone.run(() => {
+        const exitIndex = this._dropContainer.getItemIndex(this);
+        const nextItemElement = this._dropContainer.getItemAtIndex(exitIndex + 1)?.getVisibleElement() || null;
         // Notify the old container that the item has left.
         this.exited.next({
           item: this,
           container: this._dropContainer
         });
         this._dropContainer.exit(this);
+        this._conditionallyInsertAnchor(newContainer, this._dropContainer, nextItemElement);
         // Notify the new container that the item has entered.
         this._dropContainer = newContainer;
-        this._dropContainer.enter(this, x, y, newContainer === this._initialContainer &&
+        this._dropContainer.enter(this, x, y,
         // If we're re-entering the initial container and sorting is disabled,
         // put item the into its starting index to begin with.
-        newContainer.sortingDisabled ? this._initialIndex : undefined);
+        newContainer === this._initialContainer && newContainer.sortingDisabled ? this._initialIndex : undefined);
         this.entered.next({
           item: this,
           container: newContainer,
@@ -1649,7 +1659,7 @@ class DragRef {
     // Stop pointer events on the preview so the user can't
     // interact with it while the preview is animating.
     placeholder.style.pointerEvents = 'none';
-    placeholder.classList.add('cdk-drag-placeholder');
+    placeholder.classList.add(PLACEHOLDER_CLASS);
     return placeholder;
   }
   /**
@@ -1981,6 +1991,29 @@ class DragRef {
       return event.target && (event.target === handle || handle.contains(event.target));
     });
   }
+  /** Inserts the anchor element, if it's valid. */
+  _conditionallyInsertAnchor(newContainer, exitContainer, nextItemElement) {
+    // Remove the anchor when returning to the initial container.
+    if (newContainer === this._initialContainer) {
+      this._anchor?.remove();
+      this._anchor = null;
+    } else if (exitContainer === this._initialContainer && exitContainer.hasAnchor) {
+      // Insert the anchor when leaving the initial container.
+      const anchor = this._anchor ??= deepCloneNode(this._placeholder);
+      anchor.classList.remove(PLACEHOLDER_CLASS);
+      anchor.classList.add('cdk-drag-anchor');
+      // Clear the transform since the single-axis strategy uses transforms to sort the items.
+      anchor.style.transform = '';
+      // When the item leaves the initial container, the container's DOM will be restored to
+      // its original state, except for the dragged item which is removed. Insert the anchor in
+      // the position from which the item left so that the list looks consistent.
+      if (nextItemElement) {
+        nextItemElement.before(anchor);
+      } else {
+        (0,_element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_6__.a)(exitContainer.element).appendChild(anchor);
+      }
+    }
+  }
 }
 /** Clamps a value between a minimum and a maximum. */
 function clamp$1(value, min, max) {
@@ -2240,11 +2273,11 @@ class SingleAxisSortStrategy {
   }
   /** Gets the index of a specific item. */
   getItemIndex(item) {
-    // Items are sorted always by top/left in the cache, however they flow differently in RTL.
-    // The rest of the logic still stands no matter what orientation we're in, however
-    // we need to invert the array when determining the index.
-    const items = this.orientation === 'horizontal' && this.direction === 'rtl' ? this._itemPositions.slice().reverse() : this._itemPositions;
-    return items.findIndex(currentItem => currentItem.drag === item);
+    return this._getVisualItemPositions().findIndex(currentItem => currentItem.drag === item);
+  }
+  /** Gets the item at a specific index. */
+  getItemAtIndex(index) {
+    return this._getVisualItemPositions()[index]?.drag || null;
   }
   /** Used to notify the strategy that the scroll position has changed. */
   updateOnScroll(topDifference, leftDifference) {
@@ -2286,6 +2319,12 @@ class SingleAxisSortStrategy {
     }).sort((a, b) => {
       return isHorizontal ? a.clientRect.left - b.clientRect.left : a.clientRect.top - b.clientRect.top;
     });
+  }
+  _getVisualItemPositions() {
+    // Items are sorted always by top/left in the cache, however they flow differently in RTL.
+    // The rest of the logic still stands no matter what orientation we're in, however
+    // we need to invert the array when determining the index.
+    return this.orientation === 'horizontal' && this.direction === 'rtl' ? this._itemPositions.slice().reverse() : this._itemPositions;
   }
   /**
    * Gets the offset in pixels by which the item that is being dragged should be moved.
@@ -2552,6 +2591,10 @@ class MixedSortStrategy {
   getItemIndex(item) {
     return this._activeItems.indexOf(item);
   }
+  /** Gets the item at a specific index. */
+  getItemAtIndex(index) {
+    return this._activeItems[index] || null;
+  }
   /** Used to notify the strategy that the scroll position has changed. */
   updateOnScroll() {
     this._activeItems.forEach(item => {
@@ -2674,6 +2717,10 @@ class DropListRef {
   autoScrollDisabled = false;
   /** Number of pixels to scroll for each frame when auto-scrolling an element. */
   autoScrollStep = 2;
+  /**
+   * Whether the items in the list should leave an anchor node when leaving the initial container.
+   */
+  hasAnchor = false;
   /**
    * Function that is used to determine whether an item
    * is allowed to be moved into a drop container.
@@ -2945,6 +2992,13 @@ class DropListRef {
    */
   getItemIndex(item) {
     return this._isDragging ? this._sortStrategy.getItemIndex(item) : this._draggables.indexOf(item);
+  }
+  /**
+   * Gets the item at a specific index.
+   * @param index Index at which to retrieve the item.
+   */
+  getItemAtIndex(index) {
+    return this._isDragging ? this._sortStrategy.getItemAtIndex(index) : this._draggables[index] || null;
   }
   /**
    * Whether the list is able to receive the item that
@@ -4338,6 +4392,18 @@ let CdkDropList = /*#__PURE__*/(() => {
      * ```
      */
     elementContainerSelector;
+    /**
+     * By default when an item leaves its initial container, its placeholder will be transferred
+     * to the new container. If that's not desirable for your use case, you can enable this option
+     * which will clone the placeholder and leave it inside the original container. If the item is
+     * returned to the initial container, the anchor element will be removed automatically.
+     *
+     * The cloned placeholder can be styled by targeting the `cdk-drag-anchor` class.
+     *
+     * This option is useful in combination with `cdkDropListSortingDisabled` to implement copying
+     * behavior in a drop list.
+     */
+    hasAnchor;
     /** Emits when the user drops an item inside the container. */
     dropped = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
     /**
@@ -4476,6 +4542,7 @@ let CdkDropList = /*#__PURE__*/(() => {
         ref.sortingDisabled = this.sortingDisabled;
         ref.autoScrollDisabled = this.autoScrollDisabled;
         ref.autoScrollStep = (0,_element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_6__.c)(this.autoScrollStep, 2);
+        ref.hasAnchor = this.hasAnchor;
         ref.connectedTo(siblings.filter(drop => drop && drop !== this).map(list => list._dropListRef)).withOrientation(this.orientation);
       });
     }
@@ -4573,7 +4640,8 @@ let CdkDropList = /*#__PURE__*/(() => {
         sortPredicate: [0, "cdkDropListSortPredicate", "sortPredicate"],
         autoScrollDisabled: [2, "cdkDropListAutoScrollDisabled", "autoScrollDisabled", _angular_core__WEBPACK_IMPORTED_MODULE_0__.booleanAttribute],
         autoScrollStep: [0, "cdkDropListAutoScrollStep", "autoScrollStep"],
-        elementContainerSelector: [0, "cdkDropListElementContainer", "elementContainerSelector"]
+        elementContainerSelector: [0, "cdkDropListElementContainer", "elementContainerSelector"],
+        hasAnchor: [2, "cdkDropListHasAnchor", "hasAnchor", _angular_core__WEBPACK_IMPORTED_MODULE_0__.booleanAttribute]
       },
       outputs: {
         dropped: "cdkDropListDropped",
@@ -5782,9 +5850,7 @@ let ViewportRuler = /*#__PURE__*/(() => {
     /** Stream of viewport change events. */
     _change = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
     /** Used to reference correct document/window */
-    _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT, {
-      optional: true
-    });
+    _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT);
     constructor() {
       const ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone);
       const renderer = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.RendererFactory2).createRenderer(null, null);
@@ -6369,10 +6435,10 @@ let CdkVirtualScrollViewport = /*#__PURE__*/(() => {
       template: function CdkVirtualScrollViewport_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 1, 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomElementStart"](0, "div", 1, 0);
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](2);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "div", 2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomElementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomElement"](3, "div", 2);
         }
         if (rf & 2) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);

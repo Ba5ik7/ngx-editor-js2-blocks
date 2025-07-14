@@ -3060,7 +3060,7 @@ patchBrowser(Zone$1);
 /******/ 		var promises = [];
 /******/ 		switch(name) {
 /******/ 			case "default": {
-/******/ 				register("@angular/animations/browser", "20.0.4", () => (__webpack_require__.e(3036).then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/animations/fesm2022/browser.mjs */ 10655))))));
+/******/ 				register("@angular/animations/browser", "20.0.4", () => (__webpack_require__.e(655).then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/animations/fesm2022/browser.mjs */ 10655))))));
 /******/ 				register("@angular/cdk/a11y", "20.0.3", () => (__webpack_require__.e(2102).then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/cdk/fesm2022/a11y.mjs */ 72102))))));
 /******/ 				register("@angular/cdk/bidi", "20.0.3", () => (__webpack_require__.e(3680).then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/cdk/fesm2022/bidi.mjs */ 63680))))));
 /******/ 				register("@angular/cdk/coercion", "20.0.3", () => (__webpack_require__.e(2814).then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/cdk/fesm2022/coercion.mjs */ 2814))))));
@@ -3079,7 +3079,7 @@ patchBrowser(Zone$1);
 /******/ 				register("@angular/cdk/text-field", "20.0.3", () => (__webpack_require__.e(9940).then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/cdk/fesm2022/text-field.mjs */ 69940))))));
 /******/ 				register("@angular/common/http", "20.0.4", () => (__webpack_require__.e(6443).then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/common/fesm2022/http.mjs */ 46443))))));
 /******/ 				register("@angular/common", "20.0.4", () => (__webpack_require__.e(316).then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/common/fesm2022/common.mjs */ 60316))))));
-/******/ 				register("@angular/core/primitives/di", "20.0.4", () => (__webpack_require__.e(2867).then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/core/fesm2022/primitives/di.mjs */ 52867))))));
+/******/ 				register("@angular/core/primitives/di", "20.0.4", () => (__webpack_require__.e(5248).then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/core/fesm2022/primitives/di.mjs */ 52867))))));
 /******/ 				register("@angular/core/primitives/signals", "20.0.4", () => (__webpack_require__.e(5689).then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/core/fesm2022/primitives/signals.mjs */ 85689))))));
 /******/ 				register("@angular/core/rxjs-interop", "20.0.4", () => (__webpack_require__.e(9074).then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/core/fesm2022/rxjs-interop.mjs */ 49074))))));
 /******/ 				register("@angular/core", "20.0.4", () => (__webpack_require__.e(7580).then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/core/fesm2022/core.mjs */ 37580))))));
@@ -3282,7 +3282,7 @@ patchBrowser(Zone$1);
 /******/ 		85914: () => (loadStrictSingletonVersion("default", "@angular/common", false, [1,20,0,4], () => (__webpack_require__.e(7935).then(() => (() => (__webpack_require__(/*! @angular/common */ 60316))))))),
 /******/ 		7140: () => (loadStrictSingletonVersion("default", "@angular/forms", false, [1,20,0,4], () => (__webpack_require__.e(2075).then(() => (() => (__webpack_require__(/*! @angular/forms */ 34456))))))),
 /******/ 		21712: () => (loadStrictSingletonVersion("default", "@angular/core/primitives/signals", false, [1,20,0,4], () => (__webpack_require__.e(8070).then(() => (() => (__webpack_require__(/*! @angular/core/primitives/signals */ 85689))))))),
-/******/ 		64278: () => (loadStrictSingletonVersion("default", "@angular/core/primitives/di", false, [1,20,0,4], () => (() => (__webpack_require__(/*! @angular/core/primitives/di */ 52867))))),
+/******/ 		64278: () => (loadStrictSingletonVersion("default", "@angular/core/primitives/di", false, [1,20,0,4], () => (__webpack_require__.e(2867).then(() => (() => (__webpack_require__(/*! @angular/core/primitives/di */ 52867))))))),
 /******/ 		285: () => (loadStrictSingletonVersion("default", "@angular/cdk/layout", false, [1,20,0,3], () => (__webpack_require__.e(5531).then(() => (() => (__webpack_require__(/*! @angular/cdk/layout */ 87912))))))),
 /******/ 		33981: () => (loadStrictSingletonVersion("default", "@angular/cdk/coercion", false, [1,20,0,3], () => (__webpack_require__.e(433).then(() => (() => (__webpack_require__(/*! @angular/cdk/coercion */ 2814))))))),
 /******/ 		48073: () => (loadStrictSingletonVersion("default", "@angular/cdk/bidi", false, [1,20,0,3], () => (__webpack_require__.e(1299).then(() => (() => (__webpack_require__(/*! @angular/cdk/bidi */ 63680))))))),
@@ -3313,7 +3313,7 @@ patchBrowser(Zone$1);
 /******/ 		34915: () => (loadStrictSingletonVersion("default", "@angular/material/radio", false, [1,20,0,3], () => (__webpack_require__.e(1423).then(() => (() => (__webpack_require__(/*! @angular/material/radio */ 53804))))))),
 /******/ 		54519: () => (loadStrictSingletonVersion("default", "@angular/material/stepper", false, [1,20,0,3], () => (__webpack_require__.e(4241).then(() => (() => (__webpack_require__(/*! @angular/material/stepper */ 56622))))))),
 /******/ 		70791: () => (loadStrictSingletonVersion("default", "@angular/material/divider", false, [1,20,0,3], () => (__webpack_require__.e(1721).then(() => (() => (__webpack_require__(/*! @angular/material/divider */ 14102))))))),
-/******/ 		65646: () => (loadStrictSingletonVersion("default", "@angular/animations/browser", false, [1,20,0,4], () => (__webpack_require__.e(655).then(() => (() => (__webpack_require__(/*! @angular/animations/browser */ 10655)))))))
+/******/ 		65646: () => (loadStrictSingletonVersion("default", "@angular/animations/browser", false, [1,20,0,4], () => (__webpack_require__.e(3036).then(() => (() => (__webpack_require__(/*! @angular/animations/browser */ 10655)))))))
 /******/ 	};
 /******/ 	// no consumes in initial chunks
 /******/ 	var chunkMapping = {
@@ -3349,6 +3349,9 @@ patchBrowser(Zone$1);
 /******/ 			27940,
 /******/ 			52580,
 /******/ 			85914
+/******/ 		],
+/******/ 		"655": [
+/******/ 			27940
 /******/ 		],
 /******/ 		"854": [
 /******/ 			27940,
@@ -3479,9 +3482,6 @@ patchBrowser(Zone$1);
 /******/ 			56593
 /******/ 		],
 /******/ 		"2814": [
-/******/ 			27940
-/******/ 		],
-/******/ 		"3036": [
 /******/ 			27940
 /******/ 		],
 /******/ 		"3324": [

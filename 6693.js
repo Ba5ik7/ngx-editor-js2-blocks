@@ -1,9 +1,9 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[6693],{
 
-/***/ 15877:
-/*!********************************************************************************!*\
-  !*** ./node_modules/@angular/core/fesm2022/root_effect_scheduler-CWV89N3_.mjs ***!
-  \********************************************************************************/
+/***/ 34205:
+/*!***********************************************************************!*\
+  !*** ./node_modules/@angular/core/fesm2022/root_effect_scheduler.mjs ***!
+  \***********************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -119,6 +119,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   assertString: () => (/* binding */ assertString),
 /* harmony export */   assertTIcu: () => (/* binding */ assertTIcu),
 /* harmony export */   assertTNode: () => (/* binding */ assertTNode),
+/* harmony export */   assertTNodeCreationIndex: () => (/* binding */ assertTNodeCreationIndex),
 /* harmony export */   assertTNodeForLView: () => (/* binding */ assertTNodeForLView),
 /* harmony export */   assertTNodeForTView: () => (/* binding */ assertTNodeForTView),
 /* harmony export */   attachInjectFlag: () => (/* binding */ attachInjectFlag),
@@ -284,13 +285,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵɵresetView": () => (/* binding */ ɵɵresetView),
 /* harmony export */   "ɵɵrestoreView": () => (/* binding */ ɵɵrestoreView)
 /* harmony export */ });
-/* harmony import */ var _primitives_di_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./primitives/di.mjs */ 52867);
-/* harmony import */ var _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./signal-nCiHhWf6.mjs */ 89595);
+/* harmony import */ var _not_found_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./not_found.mjs */ 57773);
+/* harmony import */ var _signal_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./signal.mjs */ 38677);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 44866);
 /* harmony import */ var _angular_core_primitives_di__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core/primitives/di */ 64278);
 /* harmony import */ var _angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core/primitives/signals */ 21712);
 /**
- * @license Angular v20.0.4
+ * @license Angular v20.1.0
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -651,7 +652,7 @@ function assertOneOf(value, ...validValues) {
   throwError(`Expected value to be one of ${JSON.stringify(validValues)} but was ${JSON.stringify(value)}.`);
 }
 function assertNotReactive(fn) {
-  if ((0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_3__.getActiveConsumer)() !== null) {
+  if ((0,_signal_mjs__WEBPACK_IMPORTED_MODULE_3__.getActiveConsumer)() !== null) {
     throwError(`${fn}() should never be called in a reactive context.`);
   }
 }
@@ -1200,7 +1201,7 @@ class RetrievingInjector {
       // When a dependency is requested with an optional flag, DI returns null as the default value.
       flags & 8 /* InternalInjectFlags.Optional */ ? null : THROW_IF_NOT_FOUND, flags);
     } catch (e) {
-      if ((0,_primitives_di_mjs__WEBPACK_IMPORTED_MODULE_4__.isNotFound)(e)) {
+      if ((0,_not_found_mjs__WEBPACK_IMPORTED_MODULE_4__.isNotFound)(e)) {
         return e;
       }
       throw e;
@@ -1213,7 +1214,7 @@ const NEW_LINE = /\n/gm;
 const NO_NEW_LINE = 'ɵ';
 const SOURCE = '__source';
 function injectInjectorOnly(token, flags = 0 /* InternalInjectFlags.Default */) {
-  const currentInjector = (0,_primitives_di_mjs__WEBPACK_IMPORTED_MODULE_4__.getCurrentInjector)();
+  const currentInjector = (0,_not_found_mjs__WEBPACK_IMPORTED_MODULE_4__.getCurrentInjector)();
   if (currentInjector === undefined) {
     throw new RuntimeError(-203 /* RuntimeErrorCode.MISSING_INJECTION_CONTEXT */, ngDevMode && `The \`${stringify(token)}\` token injection failed. \`inject()\` function must be called from an injection context such as a constructor, a factory function, a field initializer, or a function used with \`runInInjectionContext\`.`);
   } else if (currentInjector === null) {
@@ -1222,7 +1223,7 @@ function injectInjectorOnly(token, flags = 0 /* InternalInjectFlags.Default */) 
     const options = convertToInjectOptions(flags);
     const value = currentInjector.retrieve(token, options);
     ngDevMode && emitInjectEvent(token, value, flags);
-    if ((0,_primitives_di_mjs__WEBPACK_IMPORTED_MODULE_4__.isNotFound)(value)) {
+    if ((0,_not_found_mjs__WEBPACK_IMPORTED_MODULE_4__.isNotFound)(value)) {
       if (options.optional) {
         return null;
       }
@@ -2157,7 +2158,7 @@ class R3Injector extends EnvironmentInjector {
   }
   runInContext(fn) {
     assertNotDestroyed(this);
-    const previousInjector = (0,_primitives_di_mjs__WEBPACK_IMPORTED_MODULE_4__.setCurrentInjector)(this);
+    const previousInjector = (0,_not_found_mjs__WEBPACK_IMPORTED_MODULE_4__.setCurrentInjector)(this);
     const previousInjectImplementation = setInjectImplementation(undefined);
     let prevInjectContext;
     if (ngDevMode) {
@@ -2169,7 +2170,7 @@ class R3Injector extends EnvironmentInjector {
     try {
       return fn();
     } finally {
-      (0,_primitives_di_mjs__WEBPACK_IMPORTED_MODULE_4__.setCurrentInjector)(previousInjector);
+      (0,_not_found_mjs__WEBPACK_IMPORTED_MODULE_4__.setCurrentInjector)(previousInjector);
       setInjectImplementation(previousInjectImplementation);
       ngDevMode && setInjectorProfilerContext(prevInjectContext);
     }
@@ -2188,7 +2189,7 @@ class R3Injector extends EnvironmentInjector {
         token: token
       });
     }
-    const previousInjector = (0,_primitives_di_mjs__WEBPACK_IMPORTED_MODULE_4__.setCurrentInjector)(this);
+    const previousInjector = (0,_not_found_mjs__WEBPACK_IMPORTED_MODULE_4__.setCurrentInjector)(this);
     const previousInjectImplementation = setInjectImplementation(undefined);
     try {
       // Check for the SkipSelf flag.
@@ -2215,7 +2216,7 @@ class R3Injector extends EnvironmentInjector {
         }
         // If a record was found, get the instance for it and return it.
         if (record != null /* NOT null || undefined */) {
-          return this.hydrate(token, record);
+          return this.hydrate(token, record, flags);
         }
       }
       // Select the next injector based on the Self flag - if self is set, the next injector is
@@ -2243,14 +2244,14 @@ class R3Injector extends EnvironmentInjector {
     } finally {
       // Lastly, restore the previous injection context.
       setInjectImplementation(previousInjectImplementation);
-      (0,_primitives_di_mjs__WEBPACK_IMPORTED_MODULE_4__.setCurrentInjector)(previousInjector);
+      (0,_not_found_mjs__WEBPACK_IMPORTED_MODULE_4__.setCurrentInjector)(previousInjector);
       ngDevMode && setInjectorProfilerContext(prevInjectContext);
     }
   }
   /** @internal */
   resolveInjectorInitializers() {
     const prevConsumer = (0,_angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_2__.setActiveConsumer)(null);
-    const previousInjector = (0,_primitives_di_mjs__WEBPACK_IMPORTED_MODULE_4__.setCurrentInjector)(this);
+    const previousInjector = (0,_not_found_mjs__WEBPACK_IMPORTED_MODULE_4__.setCurrentInjector)(this);
     const previousInjectImplementation = setInjectImplementation(undefined);
     let prevInjectContext;
     if (ngDevMode) {
@@ -2270,7 +2271,7 @@ class R3Injector extends EnvironmentInjector {
         initializer();
       }
     } finally {
-      (0,_primitives_di_mjs__WEBPACK_IMPORTED_MODULE_4__.setCurrentInjector)(previousInjector);
+      (0,_not_found_mjs__WEBPACK_IMPORTED_MODULE_4__.setCurrentInjector)(previousInjector);
       setInjectImplementation(previousInjectImplementation);
       ngDevMode && setInjectorProfilerContext(prevInjectContext);
       (0,_angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_2__.setActiveConsumer)(prevConsumer);
@@ -2332,7 +2333,7 @@ class R3Injector extends EnvironmentInjector {
     }
     this.records.set(token, record);
   }
-  hydrate(token, record) {
+  hydrate(token, record, flags) {
     const prevConsumer = (0,_angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_2__.setActiveConsumer)(null);
     try {
       if (record.value === CIRCULAR) {
@@ -2342,11 +2343,11 @@ class R3Injector extends EnvironmentInjector {
         if (ngDevMode) {
           runInInjectorProfilerContext(this, token, () => {
             emitInjectorToCreateInstanceEvent(token);
-            record.value = record.factory();
+            record.value = record.factory(undefined, flags);
             emitInstanceCreatedByInjectorEvent(record.value);
           });
         } else {
-          record.value = record.factory();
+          record.value = record.factory(undefined, flags);
         }
       }
       if (typeof record.value === 'object' && record.value && hasOnDestroy(record.value)) {
@@ -2439,7 +2440,7 @@ function providerToFactory(provider, ngModuleType, providers) {
     } else if (isFactoryProvider(provider)) {
       factory = () => provider.useFactory(...injectArgs(provider.deps || []));
     } else if (isExistingProvider(provider)) {
-      factory = () => ɵɵinject(resolveForwardRef(provider.useExisting));
+      factory = (_, flags) => ɵɵinject(resolveForwardRef(provider.useExisting), flags !== undefined && flags & 8 /* InternalInjectFlags.Optional */ ? 8 /* InternalInjectFlags.Optional */ : undefined);
     } else {
       const classRef = resolveForwardRef(provider && (provider.useClass || provider.provide));
       if (ngDevMode && !classRef) {
@@ -2516,12 +2517,12 @@ function runInInjectionContext(injector, fn) {
       token: null
     });
   }
-  const prevInjector = (0,_primitives_di_mjs__WEBPACK_IMPORTED_MODULE_4__.setCurrentInjector)(internalInjector);
+  const prevInjector = (0,_not_found_mjs__WEBPACK_IMPORTED_MODULE_4__.setCurrentInjector)(internalInjector);
   const previousInjectImplementation = setInjectImplementation(undefined);
   try {
     return fn();
   } finally {
-    (0,_primitives_di_mjs__WEBPACK_IMPORTED_MODULE_4__.setCurrentInjector)(prevInjector);
+    (0,_not_found_mjs__WEBPACK_IMPORTED_MODULE_4__.setCurrentInjector)(prevInjector);
     ngDevMode && setInjectorProfilerContext(prevInjectorProfilerContext);
     setInjectImplementation(previousInjectImplementation);
   }
@@ -2530,7 +2531,7 @@ function runInInjectionContext(injector, fn) {
  * Whether the current stack frame is inside an injection context.
  */
 function isInInjectionContext() {
-  return getInjectImplementation() !== undefined || (0,_primitives_di_mjs__WEBPACK_IMPORTED_MODULE_4__.getCurrentInjector)() != null;
+  return getInjectImplementation() !== undefined || (0,_not_found_mjs__WEBPACK_IMPORTED_MODULE_4__.getCurrentInjector)() != null;
 }
 /**
  * Asserts that the current stack frame is within an [injection
@@ -2659,6 +2660,11 @@ function isDestroyed(lView) {
 // expression.](https://github.com/microsoft/TypeScript/issues/37295)
 function assertTNodeForLView(tNode, lView) {
   assertTNodeForTView(tNode, lView[TVIEW]);
+}
+function assertTNodeCreationIndex(lView, index) {
+  const adjustedIndex = index + HEADER_OFFSET;
+  assertIndexInRange(lView, adjustedIndex);
+  assertLessThan(adjustedIndex, lView[TVIEW].bindingStartIndex, 'TNodes should be created before any bindings');
 }
 function assertTNodeForTView(tNode, tView) {
   assertTNode(tNode);
@@ -3751,8 +3757,14 @@ const INTERNAL_APPLICATION_ERROR_HANDLER = /*#__PURE__*/new InjectionToken(typeo
     const injector = inject(EnvironmentInjector);
     let userErrorHandler;
     return e => {
-      userErrorHandler ??= injector.get(ErrorHandler);
-      userErrorHandler.handleError(e);
+      if (injector.destroyed && !userErrorHandler) {
+        setTimeout(() => {
+          throw e;
+        });
+      } else {
+        userErrorHandler ??= injector.get(ErrorHandler);
+        userErrorHandler.handleError(e);
+      }
     };
   }
 });
@@ -3820,7 +3832,7 @@ function provideBrowserGlobalErrorListeners() {
  * @publicApi 17.0
  */
 function isSignal(value) {
-  return typeof value === 'function' && value[_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_3__.SIGNAL] !== undefined;
+  return typeof value === 'function' && value[_signal_mjs__WEBPACK_IMPORTED_MODULE_3__.SIGNAL] !== undefined;
 }
 
 /**
@@ -3836,9 +3848,9 @@ function ɵunwrapWritableSignal(value) {
  * Create a `Signal` that can be set or updated directly.
  */
 function signal(initialValue, options) {
-  const [get, set, update] = (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_3__.createSignal)(initialValue, options?.equal);
+  const [get, set, update] = (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_3__.createSignal)(initialValue, options?.equal);
   const signalFn = get;
-  const node = signalFn[_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_3__.SIGNAL];
+  const node = signalFn[_signal_mjs__WEBPACK_IMPORTED_MODULE_3__.SIGNAL];
   signalFn.set = set;
   signalFn.update = update;
   signalFn.asReadonly = signalAsReadonlyFn.bind(signalFn);
@@ -3849,10 +3861,10 @@ function signal(initialValue, options) {
   return signalFn;
 }
 function signalAsReadonlyFn() {
-  const node = this[_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_3__.SIGNAL];
+  const node = this[_signal_mjs__WEBPACK_IMPORTED_MODULE_3__.SIGNAL];
   if (node.readonlyFn === undefined) {
     const readonlyFn = () => this();
-    readonlyFn[_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_3__.SIGNAL] = node;
+    readonlyFn[_signal_mjs__WEBPACK_IMPORTED_MODULE_3__.SIGNAL] = node;
     node.readonlyFn = readonlyFn;
   }
   return node.readonlyFn;
@@ -3884,7 +3896,7 @@ const SCHEDULE_IN_ROOT_ZONE = /*#__PURE__*/new InjectionToken(typeof ngDevMode =
 
 /**
  * Asserts that the current stack frame is not within a reactive context. Useful
- * to disallow certain code from running inside a reactive context (see {@link /api/core/rxjs/toSignal toSignal})
+ * to disallow certain code from running inside a reactive context (see {@link /api/core/rxjs-interop/toSignal toSignal})
  *
  * @param debugFn a reference to the function making the assertion (used for the error message).
  *
@@ -3893,7 +3905,7 @@ const SCHEDULE_IN_ROOT_ZONE = /*#__PURE__*/new InjectionToken(typeof ngDevMode =
 function assertNotInReactiveContext(debugFn, extraContext) {
   // Taking a `Function` instead of a string name here prevents the un-minified name of the function
   // from being retained in the bundle regardless of minification.
-  if ((0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_3__.getActiveConsumer)() !== null) {
+  if ((0,_signal_mjs__WEBPACK_IMPORTED_MODULE_3__.getActiveConsumer)() !== null) {
     throw new RuntimeError(-602 /* RuntimeErrorCode.ASSERTION_NOT_INSIDE_REACTIVE_CONTEXT */, ngDevMode && `${debugFn.name}() cannot be called from within a reactive context.${extraContext ? ` ${extraContext}` : ''}`);
   }
 }
@@ -4151,623 +4163,10 @@ class ZoneAwareEffectScheduler {
 
 /***/ }),
 
-/***/ 20913:
-/*!********************************************************************!*\
-  !*** ./node_modules/@angular/core/fesm2022/untracked-DmD_2MlC.mjs ***!
-  \********************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   createLinkedSignal: () => (/* binding */ createLinkedSignal),
-/* harmony export */   linkedSignalSetFn: () => (/* binding */ linkedSignalSetFn),
-/* harmony export */   linkedSignalUpdateFn: () => (/* binding */ linkedSignalUpdateFn),
-/* harmony export */   untracked: () => (/* binding */ untracked)
-/* harmony export */ });
-/* harmony import */ var _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./signal-nCiHhWf6.mjs */ 89595);
-/**
- * @license Angular v20.0.4
- * (c) 2010-2025 Google LLC. https://angular.io/
- * License: MIT
- */
-
-
-function createLinkedSignal(sourceFn, computationFn, equalityFn) {
-  const node = Object.create(LINKED_SIGNAL_NODE);
-  node.source = sourceFn;
-  node.computation = computationFn;
-  if (equalityFn != undefined) {
-    node.equal = equalityFn;
-  }
-  const linkedSignalGetter = () => {
-    // Check if the value needs updating before returning it.
-    (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
-    // Record that someone looked at this signal.
-    (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.producerAccessed)(node);
-    if (node.value === _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED) {
-      throw node.error;
-    }
-    return node.value;
-  };
-  const getter = linkedSignalGetter;
-  getter[_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.SIGNAL] = node;
-  if (typeof ngDevMode !== 'undefined' && ngDevMode) {
-    const debugName = node.debugName ? ' (' + node.debugName + ')' : '';
-    getter.toString = () => `[LinkedSignal${debugName}: ${node.value}]`;
-  }
-  (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.runPostProducerCreatedFn)(node);
-  return getter;
-}
-function linkedSignalSetFn(node, newValue) {
-  (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
-  (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.signalSetFn)(node, newValue);
-  (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.producerMarkClean)(node);
-}
-function linkedSignalUpdateFn(node, updater) {
-  (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
-  (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.signalUpdateFn)(node, updater);
-  (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.producerMarkClean)(node);
-}
-// Note: Using an IIFE here to ensure that the spread assignment is not considered
-// a side-effect, ending up preserving `LINKED_SIGNAL_NODE` and `REACTIVE_NODE`.
-// TODO: remove when https://github.com/evanw/esbuild/issues/3392 is resolved.
-const LINKED_SIGNAL_NODE = /* @__PURE__ */(() => {
-  return {
-    ..._signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.REACTIVE_NODE,
-    value: _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET,
-    dirty: true,
-    error: null,
-    equal: _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.defaultEquals,
-    kind: 'linkedSignal',
-    producerMustRecompute(node) {
-      // Force a recomputation if there's no current value, or if the current value is in the
-      // process of being calculated (which should throw an error).
-      return node.value === _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET || node.value === _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING;
-    },
-    producerRecomputeValue(node) {
-      if (node.value === _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING) {
-        // Our computation somehow led to a cyclic read of itself.
-        throw new Error(typeof ngDevMode !== 'undefined' && ngDevMode ? 'Detected cycle in computations.' : '');
-      }
-      const oldValue = node.value;
-      node.value = _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING;
-      const prevConsumer = (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerBeforeComputation)(node);
-      let newValue;
-      try {
-        const newSourceValue = node.source();
-        const prev = oldValue === _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET || oldValue === _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED ? undefined : {
-          source: node.sourceValue,
-          value: oldValue
-        };
-        newValue = node.computation(newSourceValue, prev);
-        node.sourceValue = newSourceValue;
-      } catch (err) {
-        newValue = _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED;
-        node.error = err;
-      } finally {
-        (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerAfterComputation)(node, prevConsumer);
-      }
-      if (oldValue !== _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET && newValue !== _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED && node.equal(oldValue, newValue)) {
-        // No change to `valueVersion` - old and new values are
-        // semantically equivalent.
-        node.value = oldValue;
-        return;
-      }
-      node.value = newValue;
-      node.version++;
-    }
-  };
-})();
-
-/**
- * Execute an arbitrary function in a non-reactive (non-tracking) context. The executed function
- * can, optionally, return a value.
- */
-function untracked(nonReactiveReadsFn) {
-  const prevConsumer = (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.setActiveConsumer)(null);
-  // We are not trying to catch any particular errors here, just making sure that the consumers
-  // stack is restored in case of errors.
-  try {
-    return nonReactiveReadsFn();
-  } finally {
-    (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.setActiveConsumer)(prevConsumer);
-  }
-}
-
-
-/***/ }),
-
-/***/ 49074:
-/*!**************************************************************!*\
-  !*** ./node_modules/@angular/core/fesm2022/rxjs-interop.mjs ***!
-  \**************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   outputFromObservable: () => (/* binding */ outputFromObservable),
-/* harmony export */   outputToObservable: () => (/* binding */ outputToObservable),
-/* harmony export */   pendingUntilEvent: () => (/* binding */ pendingUntilEvent),
-/* harmony export */   rxResource: () => (/* binding */ rxResource),
-/* harmony export */   takeUntilDestroyed: () => (/* binding */ takeUntilDestroyed),
-/* harmony export */   toObservable: () => (/* binding */ toObservable),
-/* harmony export */   toSignal: () => (/* binding */ toSignal)
-/* harmony export */ });
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 44866);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ 32778);
-/* harmony import */ var _root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./root_effect_scheduler-CWV89N3_.mjs */ 15877);
-/* harmony import */ var _resource_DalzMB4W_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./resource-DalzMB4W.mjs */ 95483);
-/* harmony import */ var _angular_core_primitives_di__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core/primitives/di */ 64278);
-/* harmony import */ var _angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core/primitives/signals */ 21712);
-/**
- * @license Angular v20.0.4
- * (c) 2010-2025 Google LLC. https://angular.io/
- * License: MIT
- */
-
-
-
-
-
-
-
-
-
-
-
-/**
- * Operator which completes the Observable when the calling context (component, directive, service,
- * etc) is destroyed.
- *
- * @param destroyRef optionally, the `DestroyRef` representing the current context. This can be
- *     passed explicitly to use `takeUntilDestroyed` outside of an [injection
- * context](guide/di/dependency-injection-context). Otherwise, the current `DestroyRef` is injected.
- *
- * @publicApi 19.0
- */
-function takeUntilDestroyed(destroyRef) {
-  if (!destroyRef) {
-    ngDevMode && (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.assertInInjectionContext)(takeUntilDestroyed);
-    destroyRef = (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.inject)(_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.DestroyRef);
-  }
-  const destroyed$ = new rxjs__WEBPACK_IMPORTED_MODULE_0__.Observable(subscriber => {
-    if (destroyRef.destroyed) {
-      subscriber.next();
-      return;
-    }
-    const unregisterFn = destroyRef.onDestroy(subscriber.next.bind(subscriber));
-    return unregisterFn;
-  });
-  return source => {
-    return source.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.takeUntil)(destroyed$));
-  };
-}
-
-/**
- * Implementation of `OutputRef` that emits values from
- * an RxJS observable source.
- *
- * @internal
- */
-class OutputFromObservableRef {
-  source;
-  destroyed = false;
-  destroyRef = /*#__PURE__*/(0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.inject)(_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.DestroyRef);
-  constructor(source) {
-    this.source = source;
-    this.destroyRef.onDestroy(() => {
-      this.destroyed = true;
-    });
-  }
-  subscribe(callbackFn) {
-    if (this.destroyed) {
-      throw new _root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.RuntimeError(953 /* ɵRuntimeErrorCode.OUTPUT_REF_DESTROYED */, ngDevMode && 'Unexpected subscription to destroyed `OutputRef`. ' + 'The owning directive/component is destroyed.');
-    }
-    // Stop yielding more values when the directive/component is already destroyed.
-    const subscription = this.source.pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
-      next: value => callbackFn(value)
-    });
-    return {
-      unsubscribe: () => subscription.unsubscribe()
-    };
-  }
-}
-/**
- * Declares an Angular output that is using an RxJS observable as a source
- * for events dispatched to parent subscribers.
- *
- * The behavior for an observable as source is defined as followed:
- *    1. New values are forwarded to the Angular output (next notifications).
- *    2. Errors notifications are not handled by Angular. You need to handle these manually.
- *       For example by using `catchError`.
- *    3. Completion notifications stop the output from emitting new values.
- *
- * @usageNotes
- * Initialize an output in your directive by declaring a
- * class field and initializing it with the `outputFromObservable()` function.
- *
- * ```ts
- * @Directive({..})
- * export class MyDir {
- *   nameChange$ = <some-observable>;
- *   nameChange = outputFromObservable(this.nameChange$);
- * }
- * ```
- *
- * @publicApi 19.0
- */
-function outputFromObservable(observable, opts) {
-  ngDevMode && (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.assertInInjectionContext)(outputFromObservable);
-  return new OutputFromObservableRef(observable);
-}
-
-/**
- * Converts an Angular output declared via `output()` or `outputFromObservable()`
- * to an observable.
- *
- * You can subscribe to the output via `Observable.subscribe` then.
- *
- * @publicApi 19.0
- */
-function outputToObservable(ref) {
-  const destroyRef = (0,_resource_DalzMB4W_mjs__WEBPACK_IMPORTED_MODULE_5__.getOutputDestroyRef)(ref);
-  return new rxjs__WEBPACK_IMPORTED_MODULE_0__.Observable(observer => {
-    // Complete the observable upon directive/component destroy.
-    // Note: May be `undefined` if an `EventEmitter` is declared outside
-    // of an injection context.
-    const unregisterOnDestroy = destroyRef?.onDestroy(() => observer.complete());
-    const subscription = ref.subscribe(v => observer.next(v));
-    return () => {
-      subscription.unsubscribe();
-      unregisterOnDestroy?.();
-    };
-  });
-}
-
-/**
- * Exposes the value of an Angular `Signal` as an RxJS `Observable`.
- *
- * The signal's value will be propagated into the `Observable`'s subscribers using an `effect`.
- *
- * `toObservable` must be called in an injection context unless an injector is provided via options.
- *
- * @publicApi 20.0
- */
-function toObservable(source, options) {
-  if (ngDevMode && !options?.injector) {
-    (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.assertInInjectionContext)(toObservable);
-  }
-  const injector = options?.injector ?? (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.inject)(_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.Injector);
-  const subject = new rxjs__WEBPACK_IMPORTED_MODULE_0__.ReplaySubject(1);
-  const watcher = (0,_resource_DalzMB4W_mjs__WEBPACK_IMPORTED_MODULE_5__.effect)(() => {
-    let value;
-    try {
-      value = source();
-    } catch (err) {
-      (0,_resource_DalzMB4W_mjs__WEBPACK_IMPORTED_MODULE_5__.untracked)(() => subject.error(err));
-      return;
-    }
-    (0,_resource_DalzMB4W_mjs__WEBPACK_IMPORTED_MODULE_5__.untracked)(() => subject.next(value));
-  }, {
-    injector,
-    manualCleanup: true
-  });
-  injector.get(_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.DestroyRef).onDestroy(() => {
-    watcher.destroy();
-    subject.complete();
-  });
-  return subject.asObservable();
-}
-
-/**
- * Get the current value of an `Observable` as a reactive `Signal`.
- *
- * `toSignal` returns a `Signal` which provides synchronous reactive access to values produced
- * by the given `Observable`, by subscribing to that `Observable`. The returned `Signal` will always
- * have the most recent value emitted by the subscription, and will throw an error if the
- * `Observable` errors.
- *
- * With `requireSync` set to `true`, `toSignal` will assert that the `Observable` produces a value
- * immediately upon subscription. No `initialValue` is needed in this case, and the returned signal
- * does not include an `undefined` type.
- *
- * By default, the subscription will be automatically cleaned up when the current [injection
- * context](guide/di/dependency-injection-context) is destroyed. For example, when `toSignal` is
- * called during the construction of a component, the subscription will be cleaned up when the
- * component is destroyed. If an injection context is not available, an explicit `Injector` can be
- * passed instead.
- *
- * If the subscription should persist until the `Observable` itself completes, the `manualCleanup`
- * option can be specified instead, which disables the automatic subscription teardown. No injection
- * context is needed in this configuration as well.
- */
-function toSignal(source, options) {
-  typeof ngDevMode !== 'undefined' && ngDevMode && (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.assertNotInReactiveContext)(toSignal, 'Invoking `toSignal` causes new subscriptions every time. ' + 'Consider moving `toSignal` outside of the reactive context and read the signal value where needed.');
-  const requiresCleanup = !options?.manualCleanup;
-  if (ngDevMode && requiresCleanup && !options?.injector) {
-    (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.assertInInjectionContext)(toSignal);
-  }
-  const cleanupRef = requiresCleanup ? options?.injector?.get(_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.DestroyRef) ?? (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.inject)(_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.DestroyRef) : null;
-  const equal = makeToSignalEqual(options?.equal);
-  // Note: T is the Observable value type, and U is the initial value type. They don't have to be
-  // the same - the returned signal gives values of type `T`.
-  let state;
-  if (options?.requireSync) {
-    // Initially the signal is in a `NoValue` state.
-    state = (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.signal)({
-      kind: 0 /* StateKind.NoValue */
-    }, {
-      equal
-    });
-  } else {
-    // If an initial value was passed, use it. Otherwise, use `undefined` as the initial value.
-    state = (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.signal)({
-      kind: 1 /* StateKind.Value */,
-      value: options?.initialValue
-    }, {
-      equal
-    });
-  }
-  let destroyUnregisterFn;
-  // Note: This code cannot run inside a reactive context (see assertion above). If we'd support
-  // this, we would subscribe to the observable outside of the current reactive context, avoiding
-  // that side-effect signal reads/writes are attribute to the current consumer. The current
-  // consumer only needs to be notified when the `state` signal changes through the observable
-  // subscription. Additional context (related to async pipe):
-  // https://github.com/angular/angular/pull/50522.
-  const sub = source.subscribe({
-    next: value => state.set({
-      kind: 1 /* StateKind.Value */,
-      value
-    }),
-    error: error => {
-      state.set({
-        kind: 2 /* StateKind.Error */,
-        error
-      });
-      destroyUnregisterFn?.();
-    },
-    complete: () => {
-      destroyUnregisterFn?.();
-    }
-    // Completion of the Observable is meaningless to the signal. Signals don't have a concept of
-    // "complete".
-  });
-  if (options?.requireSync && state().kind === 0 /* StateKind.NoValue */) {
-    throw new _root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.RuntimeError(601 /* ɵRuntimeErrorCode.REQUIRE_SYNC_WITHOUT_SYNC_EMIT */, (typeof ngDevMode === 'undefined' || ngDevMode) && '`toSignal()` called with `requireSync` but `Observable` did not emit synchronously.');
-  }
-  // Unsubscribe when the current context is destroyed, if requested.
-  destroyUnregisterFn = cleanupRef?.onDestroy(sub.unsubscribe.bind(sub));
-  // The actual returned signal is a `computed` of the `State` signal, which maps the various states
-  // to either values or errors.
-  return (0,_resource_DalzMB4W_mjs__WEBPACK_IMPORTED_MODULE_5__.computed)(() => {
-    const current = state();
-    switch (current.kind) {
-      case 1 /* StateKind.Value */:
-        return current.value;
-      case 2 /* StateKind.Error */:
-        throw current.error;
-      case 0 /* StateKind.NoValue */:
-        // This shouldn't really happen because the error is thrown on creation.
-        throw new _root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.RuntimeError(601 /* ɵRuntimeErrorCode.REQUIRE_SYNC_WITHOUT_SYNC_EMIT */, (typeof ngDevMode === 'undefined' || ngDevMode) && '`toSignal()` called with `requireSync` but `Observable` did not emit synchronously.');
-    }
-  }, {
-    equal: options?.equal
-  });
-}
-function makeToSignalEqual(userEquality = Object.is) {
-  return (a, b) => a.kind === 1 /* StateKind.Value */ && b.kind === 1 /* StateKind.Value */ && userEquality(a.value, b.value);
-}
-
-/**
- * Operator which makes the application unstable until the observable emits, completes, errors, or is unsubscribed.
- *
- * Use this operator in observables whose subscriptions are important for rendering and should be included in SSR serialization.
- *
- * @param injector The `Injector` to use during creation. If this is not provided, the current injection context will be used instead (via `inject`).
- *
- * @developerPreview 20.0
- */
-function pendingUntilEvent(injector) {
-  if (injector === undefined) {
-    ngDevMode && (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.assertInInjectionContext)(pendingUntilEvent);
-    injector = (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.inject)(_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.Injector);
-  }
-  const taskService = injector.get(_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.PendingTasks);
-  return sourceObservable => {
-    return new rxjs__WEBPACK_IMPORTED_MODULE_0__.Observable(originalSubscriber => {
-      // create a new task on subscription
-      const removeTask = taskService.add();
-      let cleanedUp = false;
-      function cleanupTask() {
-        if (cleanedUp) {
-          return;
-        }
-        removeTask();
-        cleanedUp = true;
-      }
-      const innerSubscription = sourceObservable.subscribe({
-        next: v => {
-          originalSubscriber.next(v);
-          cleanupTask();
-        },
-        complete: () => {
-          originalSubscriber.complete();
-          cleanupTask();
-        },
-        error: e => {
-          originalSubscriber.error(e);
-          cleanupTask();
-        }
-      });
-      innerSubscription.add(() => {
-        originalSubscriber.unsubscribe();
-        cleanupTask();
-      });
-      return innerSubscription;
-    });
-  };
-}
-function rxResource(opts) {
-  if (ngDevMode && !opts?.injector) {
-    (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.assertInInjectionContext)(rxResource);
-  }
-  return (0,_resource_DalzMB4W_mjs__WEBPACK_IMPORTED_MODULE_5__.resource)({
-    ...opts,
-    loader: undefined,
-    stream: params => {
-      let sub;
-      // Track the abort listener so it can be removed if the Observable completes (as a memory
-      // optimization).
-      const onAbort = () => sub.unsubscribe();
-      params.abortSignal.addEventListener('abort', onAbort);
-      // Start off stream as undefined.
-      const stream = (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.signal)({
-        value: undefined
-      });
-      let resolve;
-      const promise = new Promise(r => resolve = r);
-      function send(value) {
-        stream.set(value);
-        resolve?.(stream);
-        resolve = undefined;
-      }
-      // TODO(alxhub): remove after g3 updated to rename loader -> stream
-      const streamFn = opts.stream ?? opts.loader;
-      if (streamFn === undefined) {
-        throw new _root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.RuntimeError(990 /* ɵRuntimeErrorCode.MUST_PROVIDE_STREAM_OPTION */, ngDevMode && `Must provide \`stream\` option.`);
-      }
-      sub = streamFn(params).subscribe({
-        next: value => send({
-          value
-        }),
-        error: error => {
-          send({
-            error: (0,_resource_DalzMB4W_mjs__WEBPACK_IMPORTED_MODULE_5__.encapsulateResourceError)(error)
-          });
-          params.abortSignal.removeEventListener('abort', onAbort);
-        },
-        complete: () => {
-          if (resolve) {
-            send({
-              error: new _root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_4__.RuntimeError(991 /* ɵRuntimeErrorCode.RESOURCE_COMPLETED_BEFORE_PRODUCING_VALUE */, ngDevMode && 'Resource completed before producing a value')
-            });
-          }
-          params.abortSignal.removeEventListener('abort', onAbort);
-        }
-      });
-      return promise;
-    }
-  });
-}
-
-
-/***/ }),
-
-/***/ 52867:
-/*!***************************************************************!*\
-  !*** ./node_modules/@angular/core/fesm2022/primitives/di.mjs ***!
-  \***************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   NOT_FOUND: () => (/* binding */ NOT_FOUND),
-/* harmony export */   NotFoundError: () => (/* binding */ NotFoundError),
-/* harmony export */   getCurrentInjector: () => (/* binding */ getCurrentInjector),
-/* harmony export */   isNotFound: () => (/* binding */ isNotFound),
-/* harmony export */   setCurrentInjector: () => (/* binding */ setCurrentInjector)
-/* harmony export */ });
-/**
- * @license Angular v20.0.4
- * (c) 2010-2025 Google LLC. https://angular.io/
- * License: MIT
- */
-
-/**
- * Current injector value used by `inject`.
- * - `undefined`: it is an error to call `inject`
- * - `null`: `inject` can be called but there is no injector (limp-mode).
- * - Injector instance: Use the injector for resolution.
- */
-let _currentInjector = undefined;
-function getCurrentInjector() {
-  return _currentInjector;
-}
-function setCurrentInjector(injector) {
-  const former = _currentInjector;
-  _currentInjector = injector;
-  return former;
-}
-
-/**
- * Value returned if the key-value pair couldn't be found in the context
- * hierarchy.
- */
-const NOT_FOUND = /*#__PURE__*/Symbol('NotFound');
-/**
- * Error thrown when the key-value pair couldn't be found in the context
- * hierarchy. Context can be attached below.
- */
-class NotFoundError extends Error {
-  name = 'ɵNotFound';
-  constructor(message) {
-    super(message);
-  }
-}
-/**
- * Type guard for checking if an unknown value is a NotFound.
- */
-function isNotFound(e) {
-  return e === NOT_FOUND || e?.name === 'ɵNotFound';
-}
-
-
-/***/ }),
-
-/***/ 89204:
-/*!*********************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js ***!
-  \*********************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ _asyncToGenerator)
-/* harmony export */ });
-function asyncGeneratorStep(n, t, e, r, o, a, c) {
-  try {
-    var i = n[a](c),
-      u = i.value;
-  } catch (n) {
-    return void e(n);
-  }
-  i.done ? t(u) : Promise.resolve(u).then(r, o);
-}
-function _asyncToGenerator(n) {
-  return function () {
-    var t = this,
-      e = arguments;
-    return new Promise(function (r, o) {
-      var a = n.apply(t, e);
-      function _next(n) {
-        asyncGeneratorStep(a, r, o, _next, _throw, "next", n);
-      }
-      function _throw(n) {
-        asyncGeneratorStep(a, r, o, _next, _throw, "throw", n);
-      }
-      _next(void 0);
-    });
-  };
-}
-
-
-/***/ }),
-
-/***/ 89595:
-/*!*****************************************************************!*\
-  !*** ./node_modules/@angular/core/fesm2022/signal-nCiHhWf6.mjs ***!
-  \*****************************************************************/
+/***/ 38677:
+/*!********************************************************!*\
+  !*** ./node_modules/@angular/core/fesm2022/signal.mjs ***!
+  \********************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -4806,7 +4205,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   signalUpdateFn: () => (/* binding */ signalUpdateFn)
 /* harmony export */ });
 /**
- * @license Angular v20.0.4
+ * @license Angular v20.1.0
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -5312,10 +4711,397 @@ function signalValueChanged(node) {
 
 /***/ }),
 
-/***/ 95483:
-/*!*******************************************************************!*\
-  !*** ./node_modules/@angular/core/fesm2022/resource-DalzMB4W.mjs ***!
-  \*******************************************************************/
+/***/ 49074:
+/*!**************************************************************!*\
+  !*** ./node_modules/@angular/core/fesm2022/rxjs-interop.mjs ***!
+  \**************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   outputFromObservable: () => (/* binding */ outputFromObservable),
+/* harmony export */   outputToObservable: () => (/* binding */ outputToObservable),
+/* harmony export */   pendingUntilEvent: () => (/* binding */ pendingUntilEvent),
+/* harmony export */   rxResource: () => (/* binding */ rxResource),
+/* harmony export */   takeUntilDestroyed: () => (/* binding */ takeUntilDestroyed),
+/* harmony export */   toObservable: () => (/* binding */ toObservable),
+/* harmony export */   toSignal: () => (/* binding */ toSignal)
+/* harmony export */ });
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 44866);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ 32778);
+/* harmony import */ var _root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./root_effect_scheduler.mjs */ 34205);
+/* harmony import */ var _resource_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./resource.mjs */ 53705);
+/* harmony import */ var _angular_core_primitives_di__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core/primitives/di */ 64278);
+/* harmony import */ var _angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core/primitives/signals */ 21712);
+/**
+ * @license Angular v20.1.0
+ * (c) 2010-2025 Google LLC. https://angular.io/
+ * License: MIT
+ */
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Operator which completes the Observable when the calling context (component, directive, service,
+ * etc) is destroyed.
+ *
+ * @param destroyRef optionally, the `DestroyRef` representing the current context. This can be
+ *     passed explicitly to use `takeUntilDestroyed` outside of an [injection
+ * context](guide/di/dependency-injection-context). Otherwise, the current `DestroyRef` is injected.
+ *
+ * @publicApi 19.0
+ */
+function takeUntilDestroyed(destroyRef) {
+  if (!destroyRef) {
+    ngDevMode && (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.assertInInjectionContext)(takeUntilDestroyed);
+    destroyRef = (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.inject)(_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.DestroyRef);
+  }
+  const destroyed$ = new rxjs__WEBPACK_IMPORTED_MODULE_0__.Observable(subscriber => {
+    if (destroyRef.destroyed) {
+      subscriber.next();
+      return;
+    }
+    const unregisterFn = destroyRef.onDestroy(subscriber.next.bind(subscriber));
+    return unregisterFn;
+  });
+  return source => {
+    return source.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.takeUntil)(destroyed$));
+  };
+}
+
+/**
+ * Implementation of `OutputRef` that emits values from
+ * an RxJS observable source.
+ *
+ * @internal
+ */
+class OutputFromObservableRef {
+  source;
+  destroyed = false;
+  destroyRef = /*#__PURE__*/(0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.inject)(_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.DestroyRef);
+  constructor(source) {
+    this.source = source;
+    this.destroyRef.onDestroy(() => {
+      this.destroyed = true;
+    });
+  }
+  subscribe(callbackFn) {
+    if (this.destroyed) {
+      throw new _root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.RuntimeError(953 /* ɵRuntimeErrorCode.OUTPUT_REF_DESTROYED */, ngDevMode && 'Unexpected subscription to destroyed `OutputRef`. ' + 'The owning directive/component is destroyed.');
+    }
+    // Stop yielding more values when the directive/component is already destroyed.
+    const subscription = this.source.pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
+      next: value => callbackFn(value)
+    });
+    return {
+      unsubscribe: () => subscription.unsubscribe()
+    };
+  }
+}
+/**
+ * Declares an Angular output that is using an RxJS observable as a source
+ * for events dispatched to parent subscribers.
+ *
+ * The behavior for an observable as source is defined as followed:
+ *    1. New values are forwarded to the Angular output (next notifications).
+ *    2. Errors notifications are not handled by Angular. You need to handle these manually.
+ *       For example by using `catchError`.
+ *    3. Completion notifications stop the output from emitting new values.
+ *
+ * @usageNotes
+ * Initialize an output in your directive by declaring a
+ * class field and initializing it with the `outputFromObservable()` function.
+ *
+ * ```ts
+ * @Directive({..})
+ * export class MyDir {
+ *   nameChange$ = <some-observable>;
+ *   nameChange = outputFromObservable(this.nameChange$);
+ * }
+ * ```
+ *
+ * @publicApi 19.0
+ */
+function outputFromObservable(observable, opts) {
+  ngDevMode && (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.assertInInjectionContext)(outputFromObservable);
+  return new OutputFromObservableRef(observable);
+}
+
+/**
+ * Converts an Angular output declared via `output()` or `outputFromObservable()`
+ * to an observable.
+ *
+ * You can subscribe to the output via `Observable.subscribe` then.
+ *
+ * @publicApi 19.0
+ */
+function outputToObservable(ref) {
+  const destroyRef = (0,_resource_mjs__WEBPACK_IMPORTED_MODULE_5__.getOutputDestroyRef)(ref);
+  return new rxjs__WEBPACK_IMPORTED_MODULE_0__.Observable(observer => {
+    // Complete the observable upon directive/component destroy.
+    // Note: May be `undefined` if an `EventEmitter` is declared outside
+    // of an injection context.
+    const unregisterOnDestroy = destroyRef?.onDestroy(() => observer.complete());
+    const subscription = ref.subscribe(v => observer.next(v));
+    return () => {
+      subscription.unsubscribe();
+      unregisterOnDestroy?.();
+    };
+  });
+}
+
+/**
+ * Exposes the value of an Angular `Signal` as an RxJS `Observable`.
+ *
+ * The signal's value will be propagated into the `Observable`'s subscribers using an `effect`.
+ *
+ * `toObservable` must be called in an injection context unless an injector is provided via options.
+ *
+ * @publicApi 20.0
+ */
+function toObservable(source, options) {
+  if (ngDevMode && !options?.injector) {
+    (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.assertInInjectionContext)(toObservable);
+  }
+  const injector = options?.injector ?? (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.inject)(_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.Injector);
+  const subject = new rxjs__WEBPACK_IMPORTED_MODULE_0__.ReplaySubject(1);
+  const watcher = (0,_resource_mjs__WEBPACK_IMPORTED_MODULE_5__.effect)(() => {
+    let value;
+    try {
+      value = source();
+    } catch (err) {
+      (0,_resource_mjs__WEBPACK_IMPORTED_MODULE_5__.untracked)(() => subject.error(err));
+      return;
+    }
+    (0,_resource_mjs__WEBPACK_IMPORTED_MODULE_5__.untracked)(() => subject.next(value));
+  }, {
+    injector,
+    manualCleanup: true
+  });
+  injector.get(_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.DestroyRef).onDestroy(() => {
+    watcher.destroy();
+    subject.complete();
+  });
+  return subject.asObservable();
+}
+
+/**
+ * Get the current value of an `Observable` as a reactive `Signal`.
+ *
+ * `toSignal` returns a `Signal` which provides synchronous reactive access to values produced
+ * by the given `Observable`, by subscribing to that `Observable`. The returned `Signal` will always
+ * have the most recent value emitted by the subscription, and will throw an error if the
+ * `Observable` errors.
+ *
+ * With `requireSync` set to `true`, `toSignal` will assert that the `Observable` produces a value
+ * immediately upon subscription. No `initialValue` is needed in this case, and the returned signal
+ * does not include an `undefined` type.
+ *
+ * By default, the subscription will be automatically cleaned up when the current [injection
+ * context](guide/di/dependency-injection-context) is destroyed. For example, when `toSignal` is
+ * called during the construction of a component, the subscription will be cleaned up when the
+ * component is destroyed. If an injection context is not available, an explicit `Injector` can be
+ * passed instead.
+ *
+ * If the subscription should persist until the `Observable` itself completes, the `manualCleanup`
+ * option can be specified instead, which disables the automatic subscription teardown. No injection
+ * context is needed in this configuration as well.
+ */
+function toSignal(source, options) {
+  typeof ngDevMode !== 'undefined' && ngDevMode && (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.assertNotInReactiveContext)(toSignal, 'Invoking `toSignal` causes new subscriptions every time. ' + 'Consider moving `toSignal` outside of the reactive context and read the signal value where needed.');
+  const requiresCleanup = !options?.manualCleanup;
+  if (ngDevMode && requiresCleanup && !options?.injector) {
+    (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.assertInInjectionContext)(toSignal);
+  }
+  const cleanupRef = requiresCleanup ? options?.injector?.get(_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.DestroyRef) ?? (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.inject)(_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.DestroyRef) : null;
+  const equal = makeToSignalEqual(options?.equal);
+  // Note: T is the Observable value type, and U is the initial value type. They don't have to be
+  // the same - the returned signal gives values of type `T`.
+  let state;
+  if (options?.requireSync) {
+    // Initially the signal is in a `NoValue` state.
+    state = (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.signal)({
+      kind: 0 /* StateKind.NoValue */
+    }, {
+      equal
+    });
+  } else {
+    // If an initial value was passed, use it. Otherwise, use `undefined` as the initial value.
+    state = (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.signal)({
+      kind: 1 /* StateKind.Value */,
+      value: options?.initialValue
+    }, {
+      equal
+    });
+  }
+  let destroyUnregisterFn;
+  // Note: This code cannot run inside a reactive context (see assertion above). If we'd support
+  // this, we would subscribe to the observable outside of the current reactive context, avoiding
+  // that side-effect signal reads/writes are attribute to the current consumer. The current
+  // consumer only needs to be notified when the `state` signal changes through the observable
+  // subscription. Additional context (related to async pipe):
+  // https://github.com/angular/angular/pull/50522.
+  const sub = source.subscribe({
+    next: value => state.set({
+      kind: 1 /* StateKind.Value */,
+      value
+    }),
+    error: error => {
+      state.set({
+        kind: 2 /* StateKind.Error */,
+        error
+      });
+      destroyUnregisterFn?.();
+    },
+    complete: () => {
+      destroyUnregisterFn?.();
+    }
+    // Completion of the Observable is meaningless to the signal. Signals don't have a concept of
+    // "complete".
+  });
+  if (options?.requireSync && state().kind === 0 /* StateKind.NoValue */) {
+    throw new _root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.RuntimeError(601 /* ɵRuntimeErrorCode.REQUIRE_SYNC_WITHOUT_SYNC_EMIT */, (typeof ngDevMode === 'undefined' || ngDevMode) && '`toSignal()` called with `requireSync` but `Observable` did not emit synchronously.');
+  }
+  // Unsubscribe when the current context is destroyed, if requested.
+  destroyUnregisterFn = cleanupRef?.onDestroy(sub.unsubscribe.bind(sub));
+  // The actual returned signal is a `computed` of the `State` signal, which maps the various states
+  // to either values or errors.
+  return (0,_resource_mjs__WEBPACK_IMPORTED_MODULE_5__.computed)(() => {
+    const current = state();
+    switch (current.kind) {
+      case 1 /* StateKind.Value */:
+        return current.value;
+      case 2 /* StateKind.Error */:
+        throw current.error;
+      case 0 /* StateKind.NoValue */:
+        // This shouldn't really happen because the error is thrown on creation.
+        throw new _root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.RuntimeError(601 /* ɵRuntimeErrorCode.REQUIRE_SYNC_WITHOUT_SYNC_EMIT */, (typeof ngDevMode === 'undefined' || ngDevMode) && '`toSignal()` called with `requireSync` but `Observable` did not emit synchronously.');
+    }
+  }, {
+    equal: options?.equal
+  });
+}
+function makeToSignalEqual(userEquality = Object.is) {
+  return (a, b) => a.kind === 1 /* StateKind.Value */ && b.kind === 1 /* StateKind.Value */ && userEquality(a.value, b.value);
+}
+
+/**
+ * Operator which makes the application unstable until the observable emits, completes, errors, or is unsubscribed.
+ *
+ * Use this operator in observables whose subscriptions are important for rendering and should be included in SSR serialization.
+ *
+ * @param injector The `Injector` to use during creation. If this is not provided, the current injection context will be used instead (via `inject`).
+ *
+ * @developerPreview 20.0
+ */
+function pendingUntilEvent(injector) {
+  if (injector === undefined) {
+    ngDevMode && (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.assertInInjectionContext)(pendingUntilEvent);
+    injector = (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.inject)(_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.Injector);
+  }
+  const taskService = injector.get(_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.PendingTasks);
+  return sourceObservable => {
+    return new rxjs__WEBPACK_IMPORTED_MODULE_0__.Observable(originalSubscriber => {
+      // create a new task on subscription
+      const removeTask = taskService.add();
+      let cleanedUp = false;
+      function cleanupTask() {
+        if (cleanedUp) {
+          return;
+        }
+        removeTask();
+        cleanedUp = true;
+      }
+      const innerSubscription = sourceObservable.subscribe({
+        next: v => {
+          originalSubscriber.next(v);
+          cleanupTask();
+        },
+        complete: () => {
+          originalSubscriber.complete();
+          cleanupTask();
+        },
+        error: e => {
+          originalSubscriber.error(e);
+          cleanupTask();
+        }
+      });
+      innerSubscription.add(() => {
+        originalSubscriber.unsubscribe();
+        cleanupTask();
+      });
+      return innerSubscription;
+    });
+  };
+}
+function rxResource(opts) {
+  if (ngDevMode && !opts?.injector) {
+    (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.assertInInjectionContext)(rxResource);
+  }
+  return (0,_resource_mjs__WEBPACK_IMPORTED_MODULE_5__.resource)({
+    ...opts,
+    loader: undefined,
+    stream: params => {
+      let sub;
+      // Track the abort listener so it can be removed if the Observable completes (as a memory
+      // optimization).
+      const onAbort = () => sub.unsubscribe();
+      params.abortSignal.addEventListener('abort', onAbort);
+      // Start off stream as undefined.
+      const stream = (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.signal)({
+        value: undefined
+      });
+      let resolve;
+      const promise = new Promise(r => resolve = r);
+      function send(value) {
+        stream.set(value);
+        resolve?.(stream);
+        resolve = undefined;
+      }
+      // TODO(alxhub): remove after g3 updated to rename loader -> stream
+      const streamFn = opts.stream ?? opts.loader;
+      if (streamFn === undefined) {
+        throw new _root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.RuntimeError(990 /* ɵRuntimeErrorCode.MUST_PROVIDE_STREAM_OPTION */, ngDevMode && `Must provide \`stream\` option.`);
+      }
+      sub = streamFn(params).subscribe({
+        next: value => send({
+          value
+        }),
+        error: error => {
+          send({
+            error: (0,_resource_mjs__WEBPACK_IMPORTED_MODULE_5__.encapsulateResourceError)(error)
+          });
+          params.abortSignal.removeEventListener('abort', onAbort);
+        },
+        complete: () => {
+          if (resolve) {
+            send({
+              error: new _root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_4__.RuntimeError(991 /* ɵRuntimeErrorCode.RESOURCE_COMPLETED_BEFORE_PRODUCING_VALUE */, ngDevMode && 'Resource completed before producing a value')
+            });
+          }
+          params.abortSignal.removeEventListener('abort', onAbort);
+        }
+      });
+      return promise;
+    }
+  });
+}
+
+
+/***/ }),
+
+/***/ 53705:
+/*!**********************************************************!*\
+  !*** ./node_modules/@angular/core/fesm2022/resource.mjs ***!
+  \**********************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -5331,12 +5117,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   untracked: () => (/* binding */ untracked)
 /* harmony export */ });
 /* harmony import */ var _Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
-/* harmony import */ var _root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./root_effect_scheduler-CWV89N3_.mjs */ 15877);
-/* harmony import */ var _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./signal-nCiHhWf6.mjs */ 89595);
-/* harmony import */ var _untracked_DmD_2MlC_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./untracked-DmD_2MlC.mjs */ 20913);
+/* harmony import */ var _root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./root_effect_scheduler.mjs */ 34205);
+/* harmony import */ var _signal_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./signal.mjs */ 38677);
+/* harmony import */ var _untracked_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./untracked.mjs */ 77542);
 
 /**
- * @license Angular v20.0.4
+ * @license Angular v20.1.0
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -5361,11 +5147,11 @@ __webpack_require__.r(__webpack_exports__);
 class OutputEmitterRef {
   destroyed = false;
   listeners = null;
-  errorHandler = /*#__PURE__*/(0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.inject)(_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.ErrorHandler, {
+  errorHandler = /*#__PURE__*/(0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.inject)(_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.ErrorHandler, {
     optional: true
   });
   /** @internal */
-  destroyRef = /*#__PURE__*/(0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.inject)(_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.DestroyRef);
+  destroyRef = /*#__PURE__*/(0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.inject)(_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.DestroyRef);
   constructor() {
     // Clean-up all listeners and mark as destroyed upon destroy.
     this.destroyRef.onDestroy(() => {
@@ -5375,7 +5161,7 @@ class OutputEmitterRef {
   }
   subscribe(callback) {
     if (this.destroyed) {
-      throw new _root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.RuntimeError(953 /* RuntimeErrorCode.OUTPUT_REF_DESTROYED */, ngDevMode && 'Unexpected subscription to destroyed `OutputRef`. ' + 'The owning directive/component is destroyed.');
+      throw new _root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.RuntimeError(953 /* RuntimeErrorCode.OUTPUT_REF_DESTROYED */, ngDevMode && 'Unexpected subscription to destroyed `OutputRef`. ' + 'The owning directive/component is destroyed.');
     }
     (this.listeners ??= []).push(callback);
     return {
@@ -5390,13 +5176,13 @@ class OutputEmitterRef {
   /** Emits a new value to the output. */
   emit(value) {
     if (this.destroyed) {
-      console.warn((0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.formatRuntimeError)(953 /* RuntimeErrorCode.OUTPUT_REF_DESTROYED */, ngDevMode && 'Unexpected emit for destroyed `OutputRef`. ' + 'The owning directive/component is destroyed.'));
+      console.warn((0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.formatRuntimeError)(953 /* RuntimeErrorCode.OUTPUT_REF_DESTROYED */, ngDevMode && 'Unexpected emit for destroyed `OutputRef`. ' + 'The owning directive/component is destroyed.'));
       return;
     }
     if (this.listeners === null) {
       return;
     }
-    const previousConsumer = (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_2__.setActiveConsumer)(null);
+    const previousConsumer = (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_2__.setActiveConsumer)(null);
     try {
       for (const listenerFn of this.listeners) {
         try {
@@ -5406,7 +5192,7 @@ class OutputEmitterRef {
         }
       }
     } finally {
-      (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_2__.setActiveConsumer)(previousConsumer);
+      (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_2__.setActiveConsumer)(previousConsumer);
     }
   }
 }
@@ -5420,27 +5206,27 @@ function getOutputDestroyRef(ref) {
  * can, optionally, return a value.
  */
 function untracked(nonReactiveReadsFn) {
-  return (0,_untracked_DmD_2MlC_mjs__WEBPACK_IMPORTED_MODULE_3__.untracked)(nonReactiveReadsFn);
+  return (0,_untracked_mjs__WEBPACK_IMPORTED_MODULE_3__.untracked)(nonReactiveReadsFn);
 }
 
 /**
  * Create a computed `Signal` which derives a reactive value from an expression.
  */
 function computed(computation, options) {
-  const getter = (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_2__.createComputed)(computation, options?.equal);
+  const getter = (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_2__.createComputed)(computation, options?.equal);
   if (ngDevMode) {
     getter.toString = () => `[Computed: ${getter()}]`;
-    getter[_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_2__.SIGNAL].debugName = options?.debugName;
+    getter[_signal_mjs__WEBPACK_IMPORTED_MODULE_2__.SIGNAL].debugName = options?.debugName;
   }
   return getter;
 }
 class EffectRefImpl {
-  [_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_2__.SIGNAL];
+  [_signal_mjs__WEBPACK_IMPORTED_MODULE_2__.SIGNAL];
   constructor(node) {
-    this[_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_2__.SIGNAL] = node;
+    this[_signal_mjs__WEBPACK_IMPORTED_MODULE_2__.SIGNAL] = node;
   }
   destroy() {
-    this[_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_2__.SIGNAL].destroy();
+    this[_signal_mjs__WEBPACK_IMPORTED_MODULE_2__.SIGNAL].destroy();
   }
 }
 /**
@@ -5462,31 +5248,31 @@ class EffectRefImpl {
  * @publicApi 20.0
  */
 function effect(effectFn, options) {
-  ngDevMode && (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.assertNotInReactiveContext)(effect, 'Call `effect` outside of a reactive context. For example, schedule the ' + 'effect inside the component constructor.');
+  ngDevMode && (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.assertNotInReactiveContext)(effect, 'Call `effect` outside of a reactive context. For example, schedule the ' + 'effect inside the component constructor.');
   if (ngDevMode && !options?.injector) {
-    (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.assertInInjectionContext)(effect);
+    (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.assertInInjectionContext)(effect);
   }
   if (ngDevMode && options?.allowSignalWrites !== undefined) {
     console.warn(`The 'allowSignalWrites' flag is deprecated and no longer impacts effect() (writes are always allowed)`);
   }
-  const injector = options?.injector ?? (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.inject)(_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.Injector);
-  let destroyRef = options?.manualCleanup !== true ? injector.get(_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.DestroyRef) : null;
+  const injector = options?.injector ?? (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.inject)(_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.Injector);
+  let destroyRef = options?.manualCleanup !== true ? injector.get(_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.DestroyRef) : null;
   let node;
-  const viewContext = injector.get(_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.ViewContext, null, {
+  const viewContext = injector.get(_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.ViewContext, null, {
     optional: true
   });
-  const notifier = injector.get(_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.ChangeDetectionScheduler);
+  const notifier = injector.get(_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.ChangeDetectionScheduler);
   if (viewContext !== null) {
     // This effect was created in the context of a view, and will be associated with the view.
     node = createViewEffect(viewContext.view, notifier, effectFn);
-    if (destroyRef instanceof _root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.NodeInjectorDestroyRef && destroyRef._lView === viewContext.view) {
+    if (destroyRef instanceof _root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.NodeInjectorDestroyRef && destroyRef._lView === viewContext.view) {
       // The effect is being created in the same view as the `DestroyRef` references, so it will be
       // automatically destroyed without the need for an explicit `DestroyRef` registration.
       destroyRef = null;
     }
   } else {
     // This effect was created outside the context of a view, and will be scheduled independently.
-    node = createRootEffect(effectFn, injector.get(_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.EffectScheduler), notifier);
+    node = createRootEffect(effectFn, injector.get(_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.EffectScheduler), notifier);
   }
   node.injector = injector;
   if (destroyRef !== null) {
@@ -5496,20 +5282,20 @@ function effect(effectFn, options) {
   const effectRef = new EffectRefImpl(node);
   if (ngDevMode) {
     node.debugName = options?.debugName ?? '';
-    const prevInjectorProfilerContext = (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.setInjectorProfilerContext)({
+    const prevInjectorProfilerContext = (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.setInjectorProfilerContext)({
       injector,
       token: null
     });
     try {
-      (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.emitEffectCreatedEvent)(effectRef);
+      (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.emitEffectCreatedEvent)(effectRef);
     } finally {
-      (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.setInjectorProfilerContext)(prevInjectorProfilerContext);
+      (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.setInjectorProfilerContext)(prevInjectorProfilerContext);
     }
   }
   return effectRef;
 }
 const BASE_EFFECT_NODE = /* @__PURE__ */(() => ({
-  ..._signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_2__.REACTIVE_NODE,
+  ..._signal_mjs__WEBPACK_IMPORTED_MODULE_2__.REACTIVE_NODE,
   consumerIsAlwaysLive: true,
   consumerAllowSignalWrites: true,
   dirty: true,
@@ -5517,34 +5303,34 @@ const BASE_EFFECT_NODE = /* @__PURE__ */(() => ({
   cleanupFns: undefined,
   zone: null,
   kind: 'effect',
-  onDestroyFn: _root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.noop,
+  onDestroyFn: _root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.noop,
   run() {
     this.dirty = false;
-    if (ngDevMode && (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_2__.isInNotificationPhase)()) {
+    if (ngDevMode && (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_2__.isInNotificationPhase)()) {
       throw new Error(`Schedulers cannot synchronously execute watches while scheduling.`);
     }
-    if (this.hasRun && !(0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_2__.consumerPollProducersForChange)(this)) {
+    if (this.hasRun && !(0,_signal_mjs__WEBPACK_IMPORTED_MODULE_2__.consumerPollProducersForChange)(this)) {
       return;
     }
     this.hasRun = true;
     const registerCleanupFn = cleanupFn => (this.cleanupFns ??= []).push(cleanupFn);
-    const prevNode = (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_2__.consumerBeforeComputation)(this);
+    const prevNode = (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_2__.consumerBeforeComputation)(this);
     // We clear `setIsRefreshingViews` so that `markForCheck()` within the body of an effect will
     // cause CD to reach the component in question.
-    const prevRefreshingViews = (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.setIsRefreshingViews)(false);
+    const prevRefreshingViews = (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.setIsRefreshingViews)(false);
     try {
       this.maybeCleanup();
       this.fn(registerCleanupFn);
     } finally {
-      (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.setIsRefreshingViews)(prevRefreshingViews);
-      (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_2__.consumerAfterComputation)(this, prevNode);
+      (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.setIsRefreshingViews)(prevRefreshingViews);
+      (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_2__.consumerAfterComputation)(this, prevNode);
     }
   },
   maybeCleanup() {
     if (!this.cleanupFns?.length) {
       return;
     }
-    const prevConsumer = (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_2__.setActiveConsumer)(null);
+    const prevConsumer = (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_2__.setActiveConsumer)(null);
     try {
       // Attempt to run the cleanup functions. Regardless of failure or success, we consider
       // cleanup "completed" and clear the list for the next run of the effect. Note that an error
@@ -5554,7 +5340,7 @@ const BASE_EFFECT_NODE = /* @__PURE__ */(() => ({
       }
     } finally {
       this.cleanupFns = [];
-      (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_2__.setActiveConsumer)(prevConsumer);
+      (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_2__.setActiveConsumer)(prevConsumer);
     }
   }
 }))();
@@ -5565,7 +5351,7 @@ const ROOT_EFFECT_NODE = /* @__PURE__ */(() => ({
     this.notifier.notify(12 /* NotificationSource.RootEffect */);
   },
   destroy() {
-    (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_2__.consumerDestroy)(this);
+    (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_2__.consumerDestroy)(this);
     this.onDestroyFn();
     this.maybeCleanup();
     this.scheduler.remove(this);
@@ -5574,15 +5360,15 @@ const ROOT_EFFECT_NODE = /* @__PURE__ */(() => ({
 const VIEW_EFFECT_NODE = /* @__PURE__ */(() => ({
   ...BASE_EFFECT_NODE,
   consumerMarkedDirty() {
-    this.view[_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.FLAGS] |= 8192 /* LViewFlags.HasChildViewsToRefresh */;
-    (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.markAncestorsForTraversal)(this.view);
+    this.view[_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.FLAGS] |= 8192 /* LViewFlags.HasChildViewsToRefresh */;
+    (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.markAncestorsForTraversal)(this.view);
     this.notifier.notify(13 /* NotificationSource.ViewEffect */);
   },
   destroy() {
-    (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_2__.consumerDestroy)(this);
+    (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_2__.consumerDestroy)(this);
     this.onDestroyFn();
     this.maybeCleanup();
-    this.view[_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.EFFECTS]?.delete(this);
+    this.view[_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.EFFECTS]?.delete(this);
   }
 }))();
 function createViewEffect(view, notifier, fn) {
@@ -5591,8 +5377,8 @@ function createViewEffect(view, notifier, fn) {
   node.zone = typeof Zone !== 'undefined' ? Zone.current : null;
   node.notifier = notifier;
   node.fn = fn;
-  view[_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.EFFECTS] ??= new Set();
-  view[_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.EFFECTS].add(node);
+  view[_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.EFFECTS] ??= new Set();
+  view[_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.EFFECTS].add(node);
   node.consumerMarkedDirty(node);
   return node;
 }
@@ -5609,10 +5395,10 @@ function createRootEffect(fn, scheduler, notifier) {
 const identityFn = v => v;
 function linkedSignal(optionsOrComputation, options) {
   if (typeof optionsOrComputation === 'function') {
-    const getter = (0,_untracked_DmD_2MlC_mjs__WEBPACK_IMPORTED_MODULE_3__.createLinkedSignal)(optionsOrComputation, identityFn, options?.equal);
+    const getter = (0,_untracked_mjs__WEBPACK_IMPORTED_MODULE_3__.createLinkedSignal)(optionsOrComputation, identityFn, options?.equal);
     return upgradeLinkedSignalGetter(getter);
   } else {
-    const getter = (0,_untracked_DmD_2MlC_mjs__WEBPACK_IMPORTED_MODULE_3__.createLinkedSignal)(optionsOrComputation.source, optionsOrComputation.computation, optionsOrComputation.equal);
+    const getter = (0,_untracked_mjs__WEBPACK_IMPORTED_MODULE_3__.createLinkedSignal)(optionsOrComputation.source, optionsOrComputation.computation, optionsOrComputation.equal);
     return upgradeLinkedSignalGetter(getter);
   }
 }
@@ -5620,11 +5406,11 @@ function upgradeLinkedSignalGetter(getter) {
   if (ngDevMode) {
     getter.toString = () => `[LinkedSignal: ${getter()}]`;
   }
-  const node = getter[_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_2__.SIGNAL];
+  const node = getter[_signal_mjs__WEBPACK_IMPORTED_MODULE_2__.SIGNAL];
   const upgradedGetter = getter;
-  upgradedGetter.set = newValue => (0,_untracked_DmD_2MlC_mjs__WEBPACK_IMPORTED_MODULE_3__.linkedSignalSetFn)(node, newValue);
-  upgradedGetter.update = updateFn => (0,_untracked_DmD_2MlC_mjs__WEBPACK_IMPORTED_MODULE_3__.linkedSignalUpdateFn)(node, updateFn);
-  upgradedGetter.asReadonly = _root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.signalAsReadonlyFn.bind(getter);
+  upgradedGetter.set = newValue => (0,_untracked_mjs__WEBPACK_IMPORTED_MODULE_3__.linkedSignalSetFn)(node, newValue);
+  upgradedGetter.update = updateFn => (0,_untracked_mjs__WEBPACK_IMPORTED_MODULE_3__.linkedSignalUpdateFn)(node, updateFn);
+  upgradedGetter.asReadonly = _root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.signalAsReadonlyFn.bind(getter);
   return upgradedGetter;
 }
 
@@ -5636,11 +5422,11 @@ function upgradeLinkedSignalGetter(getter) {
 const RESOURCE_VALUE_THROWS_ERRORS_DEFAULT = true;
 function resource(options) {
   if (ngDevMode && !options?.injector) {
-    (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.assertInInjectionContext)(resource);
+    (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.assertInInjectionContext)(resource);
   }
   const oldNameForParams = options.request;
   const params = options.params ?? oldNameForParams ?? (() => null);
-  return new ResourceImpl(params, getLoader(options), options.defaultValue, options.equal ? wrapEqualityFn(options.equal) : undefined, options.injector ?? (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.inject)(_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.Injector), RESOURCE_VALUE_THROWS_ERRORS_DEFAULT);
+  return new ResourceImpl(params, getLoader(options), options.defaultValue, options.equal ? wrapEqualityFn(options.equal) : undefined, options.injector ?? (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.inject)(_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.Injector), RESOURCE_VALUE_THROWS_ERRORS_DEFAULT);
 }
 /**
  * Base class which implements `.value` as a `WritableSignal` by delegating `.set` and `.update`.
@@ -5651,7 +5437,7 @@ class BaseWritableResource {
     this.value = value;
     this.value.set = this.set.bind(this);
     this.value.update = this.update.bind(this);
-    this.value.asReadonly = _root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.signalAsReadonlyFn;
+    this.value.asReadonly = _root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.signalAsReadonlyFn;
   }
   isError = /*#__PURE__*/computed(() => this.status() === 'error');
   update(updateFn) {
@@ -5756,9 +5542,9 @@ class ResourceImpl extends BaseWritableResource {
       injector,
       manualCleanup: true
     });
-    this.pendingTasks = injector.get(_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.PendingTasks);
+    this.pendingTasks = injector.get(_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.PendingTasks);
     // Cancel any pending request when the resource itself is destroyed.
-    this.unregisterOnDestroy = injector.get(_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.DestroyRef).onDestroy(() => this.destroy());
+    this.unregisterOnDestroy = injector.get(_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.DestroyRef).onDestroy(() => this.destroy());
   }
   status = /*#__PURE__*/computed(() => projectStatusOfState(this.state()));
   error = /*#__PURE__*/computed(() => {
@@ -5772,17 +5558,20 @@ class ResourceImpl extends BaseWritableResource {
     if (this.destroyed) {
       return;
     }
-    const current = untracked(this.value);
+    const error = untracked(this.error);
     const state = untracked(this.state);
-    if (state.status === 'local' && (this.equal ? this.equal(current, value) : current === value)) {
-      return;
+    if (!error) {
+      const current = untracked(this.value);
+      if (state.status === 'local' && (this.equal ? this.equal(current, value) : current === value)) {
+        return;
+      }
     }
     // Enter Local state with the user-defined value.
     this.state.set({
       extRequest: state.extRequest,
       status: 'local',
       previousStatus: 'local',
-      stream: (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.signal)({
+      stream: (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.signal)({
         value
       })
     });
@@ -5890,7 +5679,7 @@ class ResourceImpl extends BaseWritableResource {
           extRequest,
           status: 'resolved',
           previousStatus: 'error',
-          stream: (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.signal)({
+          stream: (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.signal)({
             error: encapsulateResourceError(err)
           })
         });
@@ -5922,11 +5711,11 @@ function getLoader(options) {
   return /*#__PURE__*/function () {
     var _ref = (0,_Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (params) {
       try {
-        return (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.signal)({
+        return (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.signal)({
           value: yield options.loader(params)
         });
       } catch (err) {
-        return (0,_root_effect_scheduler_CWV89N3_mjs__WEBPACK_IMPORTED_MODULE_1__.signal)({
+        return (0,_root_effect_scheduler_mjs__WEBPACK_IMPORTED_MODULE_1__.signal)({
           error: encapsulateResourceError(err)
         });
       }
@@ -5974,6 +5763,243 @@ class ResourceWrappedError extends Error {
       cause: error
     });
   }
+}
+
+
+/***/ }),
+
+/***/ 57773:
+/*!***********************************************************!*\
+  !*** ./node_modules/@angular/core/fesm2022/not_found.mjs ***!
+  \***********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   NOT_FOUND: () => (/* binding */ NOT_FOUND),
+/* harmony export */   NotFoundError: () => (/* binding */ NotFoundError),
+/* harmony export */   getCurrentInjector: () => (/* binding */ getCurrentInjector),
+/* harmony export */   inject: () => (/* binding */ inject),
+/* harmony export */   isNotFound: () => (/* binding */ isNotFound),
+/* harmony export */   setCurrentInjector: () => (/* binding */ setCurrentInjector)
+/* harmony export */ });
+/**
+ * @license Angular v20.1.0
+ * (c) 2010-2025 Google LLC. https://angular.io/
+ * License: MIT
+ */
+
+/**
+ * Current injector value used by `inject`.
+ * - `undefined`: it is an error to call `inject`
+ * - `null`: `inject` can be called but there is no injector (limp-mode).
+ * - Injector instance: Use the injector for resolution.
+ */
+let _currentInjector = undefined;
+function getCurrentInjector() {
+  return _currentInjector;
+}
+function setCurrentInjector(injector) {
+  const former = _currentInjector;
+  _currentInjector = injector;
+  return former;
+}
+function inject(token, options) {
+  const currentInjector = getCurrentInjector();
+  if (!currentInjector) {
+    throw new Error('Current injector is not set.');
+  }
+  if (!token.ɵprov) {
+    throw new Error('Token is not an injectable');
+  }
+  return currentInjector.retrieve(token, options);
+}
+
+/**
+ * Value returned if the key-value pair couldn't be found in the context
+ * hierarchy.
+ */
+const NOT_FOUND = /*#__PURE__*/Symbol('NotFound');
+/**
+ * Error thrown when the key-value pair couldn't be found in the context
+ * hierarchy. Context can be attached below.
+ */
+class NotFoundError extends Error {
+  name = 'ɵNotFound';
+  constructor(message) {
+    super(message);
+  }
+}
+/**
+ * Type guard for checking if an unknown value is a NotFound.
+ */
+function isNotFound(e) {
+  return e === NOT_FOUND || e?.name === 'ɵNotFound';
+}
+
+
+/***/ }),
+
+/***/ 77542:
+/*!***********************************************************!*\
+  !*** ./node_modules/@angular/core/fesm2022/untracked.mjs ***!
+  \***********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createLinkedSignal: () => (/* binding */ createLinkedSignal),
+/* harmony export */   linkedSignalSetFn: () => (/* binding */ linkedSignalSetFn),
+/* harmony export */   linkedSignalUpdateFn: () => (/* binding */ linkedSignalUpdateFn),
+/* harmony export */   untracked: () => (/* binding */ untracked)
+/* harmony export */ });
+/* harmony import */ var _signal_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./signal.mjs */ 38677);
+/**
+ * @license Angular v20.1.0
+ * (c) 2010-2025 Google LLC. https://angular.io/
+ * License: MIT
+ */
+
+
+function createLinkedSignal(sourceFn, computationFn, equalityFn) {
+  const node = Object.create(LINKED_SIGNAL_NODE);
+  node.source = sourceFn;
+  node.computation = computationFn;
+  if (equalityFn != undefined) {
+    node.equal = equalityFn;
+  }
+  const linkedSignalGetter = () => {
+    // Check if the value needs updating before returning it.
+    (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
+    // Record that someone looked at this signal.
+    (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.producerAccessed)(node);
+    if (node.value === _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED) {
+      throw node.error;
+    }
+    return node.value;
+  };
+  const getter = linkedSignalGetter;
+  getter[_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.SIGNAL] = node;
+  if (typeof ngDevMode !== 'undefined' && ngDevMode) {
+    const debugName = node.debugName ? ' (' + node.debugName + ')' : '';
+    getter.toString = () => `[LinkedSignal${debugName}: ${node.value}]`;
+  }
+  (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.runPostProducerCreatedFn)(node);
+  return getter;
+}
+function linkedSignalSetFn(node, newValue) {
+  (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
+  (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.signalSetFn)(node, newValue);
+  (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.producerMarkClean)(node);
+}
+function linkedSignalUpdateFn(node, updater) {
+  (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
+  (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.signalUpdateFn)(node, updater);
+  (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.producerMarkClean)(node);
+}
+// Note: Using an IIFE here to ensure that the spread assignment is not considered
+// a side-effect, ending up preserving `LINKED_SIGNAL_NODE` and `REACTIVE_NODE`.
+// TODO: remove when https://github.com/evanw/esbuild/issues/3392 is resolved.
+const LINKED_SIGNAL_NODE = /* @__PURE__ */(() => {
+  return {
+    ..._signal_mjs__WEBPACK_IMPORTED_MODULE_0__.REACTIVE_NODE,
+    value: _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET,
+    dirty: true,
+    error: null,
+    equal: _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.defaultEquals,
+    kind: 'linkedSignal',
+    producerMustRecompute(node) {
+      // Force a recomputation if there's no current value, or if the current value is in the
+      // process of being calculated (which should throw an error).
+      return node.value === _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET || node.value === _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING;
+    },
+    producerRecomputeValue(node) {
+      if (node.value === _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING) {
+        // Our computation somehow led to a cyclic read of itself.
+        throw new Error(typeof ngDevMode !== 'undefined' && ngDevMode ? 'Detected cycle in computations.' : '');
+      }
+      const oldValue = node.value;
+      node.value = _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING;
+      const prevConsumer = (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerBeforeComputation)(node);
+      let newValue;
+      try {
+        const newSourceValue = node.source();
+        const prev = oldValue === _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET || oldValue === _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED ? undefined : {
+          source: node.sourceValue,
+          value: oldValue
+        };
+        newValue = node.computation(newSourceValue, prev);
+        node.sourceValue = newSourceValue;
+      } catch (err) {
+        newValue = _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED;
+        node.error = err;
+      } finally {
+        (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerAfterComputation)(node, prevConsumer);
+      }
+      if (oldValue !== _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET && newValue !== _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED && node.equal(oldValue, newValue)) {
+        // No change to `valueVersion` - old and new values are
+        // semantically equivalent.
+        node.value = oldValue;
+        return;
+      }
+      node.value = newValue;
+      node.version++;
+    }
+  };
+})();
+
+/**
+ * Execute an arbitrary function in a non-reactive (non-tracking) context. The executed function
+ * can, optionally, return a value.
+ */
+function untracked(nonReactiveReadsFn) {
+  const prevConsumer = (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.setActiveConsumer)(null);
+  // We are not trying to catch any particular errors here, just making sure that the consumers
+  // stack is restored in case of errors.
+  try {
+    return nonReactiveReadsFn();
+  } finally {
+    (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.setActiveConsumer)(prevConsumer);
+  }
+}
+
+
+/***/ }),
+
+/***/ 89204:
+/*!*********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _asyncToGenerator)
+/* harmony export */ });
+function asyncGeneratorStep(n, t, e, r, o, a, c) {
+  try {
+    var i = n[a](c),
+      u = i.value;
+  } catch (n) {
+    return void e(n);
+  }
+  i.done ? t(u) : Promise.resolve(u).then(r, o);
+}
+function _asyncToGenerator(n) {
+  return function () {
+    var t = this,
+      e = arguments;
+    return new Promise(function (r, o) {
+      var a = n.apply(t, e);
+      function _next(n) {
+        asyncGeneratorStep(a, r, o, _next, _throw, "next", n);
+      }
+      function _throw(n) {
+        asyncGeneratorStep(a, r, o, _next, _throw, "throw", n);
+      }
+      _next(void 0);
+    });
+  };
 }
 
 

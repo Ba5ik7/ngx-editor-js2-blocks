@@ -1,560 +1,5 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[655],{
 
-/***/ 1871:
-/*!*********************************************************************!*\
-  !*** ./node_modules/@angular/animations/fesm2022/util-CPU6TNml.mjs ***!
-  \*********************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   ENTER_CLASSNAME: () => (/* binding */ ENTER_CLASSNAME),
-/* harmony export */   LEAVE_CLASSNAME: () => (/* binding */ LEAVE_CLASSNAME),
-/* harmony export */   NG_ANIMATING_CLASSNAME: () => (/* binding */ NG_ANIMATING_CLASSNAME),
-/* harmony export */   NG_ANIMATING_SELECTOR: () => (/* binding */ NG_ANIMATING_SELECTOR),
-/* harmony export */   NG_TRIGGER_CLASSNAME: () => (/* binding */ NG_TRIGGER_CLASSNAME),
-/* harmony export */   NG_TRIGGER_SELECTOR: () => (/* binding */ NG_TRIGGER_SELECTOR),
-/* harmony export */   SUBSTITUTION_EXPR_START: () => (/* binding */ SUBSTITUTION_EXPR_START),
-/* harmony export */   allowPreviousPlayerStylesMerge: () => (/* binding */ allowPreviousPlayerStylesMerge),
-/* harmony export */   balancePreviousStylesIntoKeyframes: () => (/* binding */ balancePreviousStylesIntoKeyframes),
-/* harmony export */   buildingFailed: () => (/* binding */ buildingFailed),
-/* harmony export */   camelCaseToDashCase: () => (/* binding */ camelCaseToDashCase),
-/* harmony export */   computeStyle: () => (/* binding */ computeStyle),
-/* harmony export */   containsElement: () => (/* binding */ containsElement),
-/* harmony export */   createAnimationFailed: () => (/* binding */ createAnimationFailed),
-/* harmony export */   dashCaseToCamelCase: () => (/* binding */ dashCaseToCamelCase),
-/* harmony export */   eraseStyles: () => (/* binding */ eraseStyles),
-/* harmony export */   extractStyleParams: () => (/* binding */ extractStyleParams),
-/* harmony export */   getOrSetDefaultValue: () => (/* binding */ getOrSetDefaultValue),
-/* harmony export */   getParentElement: () => (/* binding */ getParentElement),
-/* harmony export */   interpolateParams: () => (/* binding */ interpolateParams),
-/* harmony export */   invalidCssUnitValue: () => (/* binding */ invalidCssUnitValue),
-/* harmony export */   invalidDefinition: () => (/* binding */ invalidDefinition),
-/* harmony export */   invalidExpression: () => (/* binding */ invalidExpression),
-/* harmony export */   invalidKeyframes: () => (/* binding */ invalidKeyframes),
-/* harmony export */   invalidOffset: () => (/* binding */ invalidOffset),
-/* harmony export */   invalidParallelAnimation: () => (/* binding */ invalidParallelAnimation),
-/* harmony export */   invalidQuery: () => (/* binding */ invalidQuery),
-/* harmony export */   invalidStagger: () => (/* binding */ invalidStagger),
-/* harmony export */   invalidState: () => (/* binding */ invalidState),
-/* harmony export */   invalidStyleValue: () => (/* binding */ invalidStyleValue),
-/* harmony export */   invalidTransitionAlias: () => (/* binding */ invalidTransitionAlias),
-/* harmony export */   invalidTrigger: () => (/* binding */ invalidTrigger),
-/* harmony export */   invokeQuery: () => (/* binding */ invokeQuery),
-/* harmony export */   keyframeOffsetsOutOfOrder: () => (/* binding */ keyframeOffsetsOutOfOrder),
-/* harmony export */   keyframesMissingOffsets: () => (/* binding */ keyframesMissingOffsets),
-/* harmony export */   listenOnPlayer: () => (/* binding */ listenOnPlayer),
-/* harmony export */   makeAnimationEvent: () => (/* binding */ makeAnimationEvent),
-/* harmony export */   missingEvent: () => (/* binding */ missingEvent),
-/* harmony export */   missingOrDestroyedAnimation: () => (/* binding */ missingOrDestroyedAnimation),
-/* harmony export */   missingPlayer: () => (/* binding */ missingPlayer),
-/* harmony export */   missingTrigger: () => (/* binding */ missingTrigger),
-/* harmony export */   normalizeAnimationEntry: () => (/* binding */ normalizeAnimationEntry),
-/* harmony export */   normalizeKeyframes: () => (/* binding */ normalizeKeyframes$1),
-/* harmony export */   normalizeKeyframes$1: () => (/* binding */ normalizeKeyframes),
-/* harmony export */   normalizeStyles: () => (/* binding */ normalizeStyles),
-/* harmony export */   optimizeGroupPlayer: () => (/* binding */ optimizeGroupPlayer),
-/* harmony export */   parseTimelineCommand: () => (/* binding */ parseTimelineCommand),
-/* harmony export */   registerFailed: () => (/* binding */ registerFailed),
-/* harmony export */   resolveTiming: () => (/* binding */ resolveTiming),
-/* harmony export */   resolveTimingValue: () => (/* binding */ resolveTimingValue),
-/* harmony export */   setStyles: () => (/* binding */ setStyles),
-/* harmony export */   transitionFailed: () => (/* binding */ transitionFailed),
-/* harmony export */   triggerBuildFailed: () => (/* binding */ triggerBuildFailed),
-/* harmony export */   triggerTransitionsFailed: () => (/* binding */ triggerTransitionsFailed),
-/* harmony export */   unregisteredTrigger: () => (/* binding */ unregisteredTrigger),
-/* harmony export */   unsupportedTriggerEvent: () => (/* binding */ unsupportedTriggerEvent),
-/* harmony export */   validateStyleParams: () => (/* binding */ validateStyleParams),
-/* harmony export */   validateStyleProperty: () => (/* binding */ validateStyleProperty),
-/* harmony export */   validateWebAnimatableStyleProperty: () => (/* binding */ validateWebAnimatableStyleProperty),
-/* harmony export */   validationFailed: () => (/* binding */ validationFailed),
-/* harmony export */   visitDslNode: () => (/* binding */ visitDslNode)
-/* harmony export */ });
-/* harmony import */ var _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./private_export-B_vy_9K7.mjs */ 20748);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
-/**
- * @license Angular v20.0.4
- * (c) 2010-2025 Google LLC. https://angular.io/
- * License: MIT
- */
-
-
-
-const LINE_START = '\n - ';
-function invalidTimingValue(exp) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3000 /* RuntimeErrorCode.INVALID_TIMING_VALUE */, ngDevMode && `The provided timing value "${exp}" is invalid.`);
-}
-function negativeStepValue() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3100 /* RuntimeErrorCode.NEGATIVE_STEP_VALUE */, ngDevMode && 'Duration values below 0 are not allowed for this animation step.');
-}
-function negativeDelayValue() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3101 /* RuntimeErrorCode.NEGATIVE_DELAY_VALUE */, ngDevMode && 'Delay values below 0 are not allowed for this animation step.');
-}
-function invalidStyleParams(varName) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3001 /* RuntimeErrorCode.INVALID_STYLE_PARAMS */, ngDevMode && `Unable to resolve the local animation param ${varName} in the given list of values`);
-}
-function invalidParamValue(varName) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3003 /* RuntimeErrorCode.INVALID_PARAM_VALUE */, ngDevMode && `Please provide a value for the animation param ${varName}`);
-}
-function invalidNodeType(nodeType) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3004 /* RuntimeErrorCode.INVALID_NODE_TYPE */, ngDevMode && `Unable to resolve animation metadata node #${nodeType}`);
-}
-function invalidCssUnitValue(userProvidedProperty, value) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3005 /* RuntimeErrorCode.INVALID_CSS_UNIT_VALUE */, ngDevMode && `Please provide a CSS unit value for ${userProvidedProperty}:${value}`);
-}
-function invalidTrigger() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3006 /* RuntimeErrorCode.INVALID_TRIGGER */, ngDevMode && "animation triggers cannot be prefixed with an `@` sign (e.g. trigger('@foo', [...]))");
-}
-function invalidDefinition() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3007 /* RuntimeErrorCode.INVALID_DEFINITION */, ngDevMode && 'only state() and transition() definitions can sit inside of a trigger()');
-}
-function invalidState(metadataName, missingSubs) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3008 /* RuntimeErrorCode.INVALID_STATE */, ngDevMode && `state("${metadataName}", ...) must define default values for all the following style substitutions: ${missingSubs.join(', ')}`);
-}
-function invalidStyleValue(value) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3002 /* RuntimeErrorCode.INVALID_STYLE_VALUE */, ngDevMode && `The provided style string value ${value} is not allowed.`);
-}
-function invalidParallelAnimation(prop, firstStart, firstEnd, secondStart, secondEnd) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3010 /* RuntimeErrorCode.INVALID_PARALLEL_ANIMATION */, ngDevMode && `The CSS property "${prop}" that exists between the times of "${firstStart}ms" and "${firstEnd}ms" is also being animated in a parallel animation between the times of "${secondStart}ms" and "${secondEnd}ms"`);
-}
-function invalidKeyframes() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3011 /* RuntimeErrorCode.INVALID_KEYFRAMES */, ngDevMode && `keyframes() must be placed inside of a call to animate()`);
-}
-function invalidOffset() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3012 /* RuntimeErrorCode.INVALID_OFFSET */, ngDevMode && `Please ensure that all keyframe offsets are between 0 and 1`);
-}
-function keyframeOffsetsOutOfOrder() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3200 /* RuntimeErrorCode.KEYFRAME_OFFSETS_OUT_OF_ORDER */, ngDevMode && `Please ensure that all keyframe offsets are in order`);
-}
-function keyframesMissingOffsets() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3202 /* RuntimeErrorCode.KEYFRAMES_MISSING_OFFSETS */, ngDevMode && `Not all style() steps within the declared keyframes() contain offsets`);
-}
-function invalidStagger() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3013 /* RuntimeErrorCode.INVALID_STAGGER */, ngDevMode && `stagger() can only be used inside of query()`);
-}
-function invalidQuery(selector) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3014 /* RuntimeErrorCode.INVALID_QUERY */, ngDevMode && `\`query("${selector}")\` returned zero elements. (Use \`query("${selector}", { optional: true })\` if you wish to allow this.)`);
-}
-function invalidExpression(expr) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3015 /* RuntimeErrorCode.INVALID_EXPRESSION */, ngDevMode && `The provided transition expression "${expr}" is not supported`);
-}
-function invalidTransitionAlias(alias) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3016 /* RuntimeErrorCode.INVALID_TRANSITION_ALIAS */, ngDevMode && `The transition alias value "${alias}" is not supported`);
-}
-function validationFailed(errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3500 /* RuntimeErrorCode.VALIDATION_FAILED */, ngDevMode && `animation validation failed:\n${errors.map(err => err.message).join('\n')}`);
-}
-function buildingFailed(errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3501 /* RuntimeErrorCode.BUILDING_FAILED */, ngDevMode && `animation building failed:\n${errors.map(err => err.message).join('\n')}`);
-}
-function triggerBuildFailed(name, errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3404 /* RuntimeErrorCode.TRIGGER_BUILD_FAILED */, ngDevMode && `The animation trigger "${name}" has failed to build due to the following errors:\n - ${errors.map(err => err.message).join('\n - ')}`);
-}
-function animationFailed(errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3502 /* RuntimeErrorCode.ANIMATION_FAILED */, ngDevMode && `Unable to animate due to the following errors:${LINE_START}${errors.map(err => err.message).join(LINE_START)}`);
-}
-function registerFailed(errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3503 /* RuntimeErrorCode.REGISTRATION_FAILED */, ngDevMode && `Unable to build the animation due to the following errors: ${errors.map(err => err.message).join('\n')}`);
-}
-function missingOrDestroyedAnimation() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3300 /* RuntimeErrorCode.MISSING_OR_DESTROYED_ANIMATION */, ngDevMode && "The requested animation doesn't exist or has already been destroyed");
-}
-function createAnimationFailed(errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3504 /* RuntimeErrorCode.CREATE_ANIMATION_FAILED */, ngDevMode && `Unable to create the animation due to the following errors:${errors.map(err => err.message).join('\n')}`);
-}
-function missingPlayer(id) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3301 /* RuntimeErrorCode.MISSING_PLAYER */, ngDevMode && `Unable to find the timeline player referenced by ${id}`);
-}
-function missingTrigger(phase, name) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3302 /* RuntimeErrorCode.MISSING_TRIGGER */, ngDevMode && `Unable to listen on the animation trigger event "${phase}" because the animation trigger "${name}" doesn\'t exist!`);
-}
-function missingEvent(name) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3303 /* RuntimeErrorCode.MISSING_EVENT */, ngDevMode && `Unable to listen on the animation trigger "${name}" because the provided event is undefined!`);
-}
-function unsupportedTriggerEvent(phase, name) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3400 /* RuntimeErrorCode.UNSUPPORTED_TRIGGER_EVENT */, ngDevMode && `The provided animation trigger event "${phase}" for the animation trigger "${name}" is not supported!`);
-}
-function unregisteredTrigger(name) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3401 /* RuntimeErrorCode.UNREGISTERED_TRIGGER */, ngDevMode && `The provided animation trigger "${name}" has not been registered!`);
-}
-function triggerTransitionsFailed(errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3402 /* RuntimeErrorCode.TRIGGER_TRANSITIONS_FAILED */, ngDevMode && `Unable to process animations due to the following failed trigger transitions\n ${errors.map(err => err.message).join('\n')}`);
-}
-function transitionFailed(name, errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3505 /* RuntimeErrorCode.TRANSITION_FAILED */, ngDevMode && `@${name} has failed due to:\n ${errors.map(err => err.message).join('\n- ')}`);
-}
-
-/**
- * Set of all animatable CSS properties
- *
- * @see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties
- */
-const ANIMATABLE_PROP_SET = /*#__PURE__*/new Set(['-moz-outline-radius', '-moz-outline-radius-bottomleft', '-moz-outline-radius-bottomright', '-moz-outline-radius-topleft', '-moz-outline-radius-topright', '-ms-grid-columns', '-ms-grid-rows', '-webkit-line-clamp', '-webkit-text-fill-color', '-webkit-text-stroke', '-webkit-text-stroke-color', 'accent-color', 'all', 'backdrop-filter', 'background', 'background-color', 'background-position', 'background-size', 'block-size', 'border', 'border-block-end', 'border-block-end-color', 'border-block-end-width', 'border-block-start', 'border-block-start-color', 'border-block-start-width', 'border-bottom', 'border-bottom-color', 'border-bottom-left-radius', 'border-bottom-right-radius', 'border-bottom-width', 'border-color', 'border-end-end-radius', 'border-end-start-radius', 'border-image-outset', 'border-image-slice', 'border-image-width', 'border-inline-end', 'border-inline-end-color', 'border-inline-end-width', 'border-inline-start', 'border-inline-start-color', 'border-inline-start-width', 'border-left', 'border-left-color', 'border-left-width', 'border-radius', 'border-right', 'border-right-color', 'border-right-width', 'border-start-end-radius', 'border-start-start-radius', 'border-top', 'border-top-color', 'border-top-left-radius', 'border-top-right-radius', 'border-top-width', 'border-width', 'bottom', 'box-shadow', 'caret-color', 'clip', 'clip-path', 'color', 'column-count', 'column-gap', 'column-rule', 'column-rule-color', 'column-rule-width', 'column-width', 'columns', 'filter', 'flex', 'flex-basis', 'flex-grow', 'flex-shrink', 'font', 'font-size', 'font-size-adjust', 'font-stretch', 'font-variation-settings', 'font-weight', 'gap', 'grid-column-gap', 'grid-gap', 'grid-row-gap', 'grid-template-columns', 'grid-template-rows', 'height', 'inline-size', 'input-security', 'inset', 'inset-block', 'inset-block-end', 'inset-block-start', 'inset-inline', 'inset-inline-end', 'inset-inline-start', 'left', 'letter-spacing', 'line-clamp', 'line-height', 'margin', 'margin-block-end', 'margin-block-start', 'margin-bottom', 'margin-inline-end', 'margin-inline-start', 'margin-left', 'margin-right', 'margin-top', 'mask', 'mask-border', 'mask-position', 'mask-size', 'max-block-size', 'max-height', 'max-inline-size', 'max-lines', 'max-width', 'min-block-size', 'min-height', 'min-inline-size', 'min-width', 'object-position', 'offset', 'offset-anchor', 'offset-distance', 'offset-path', 'offset-position', 'offset-rotate', 'opacity', 'order', 'outline', 'outline-color', 'outline-offset', 'outline-width', 'padding', 'padding-block-end', 'padding-block-start', 'padding-bottom', 'padding-inline-end', 'padding-inline-start', 'padding-left', 'padding-right', 'padding-top', 'perspective', 'perspective-origin', 'right', 'rotate', 'row-gap', 'scale', 'scroll-margin', 'scroll-margin-block', 'scroll-margin-block-end', 'scroll-margin-block-start', 'scroll-margin-bottom', 'scroll-margin-inline', 'scroll-margin-inline-end', 'scroll-margin-inline-start', 'scroll-margin-left', 'scroll-margin-right', 'scroll-margin-top', 'scroll-padding', 'scroll-padding-block', 'scroll-padding-block-end', 'scroll-padding-block-start', 'scroll-padding-bottom', 'scroll-padding-inline', 'scroll-padding-inline-end', 'scroll-padding-inline-start', 'scroll-padding-left', 'scroll-padding-right', 'scroll-padding-top', 'scroll-snap-coordinate', 'scroll-snap-destination', 'scrollbar-color', 'shape-image-threshold', 'shape-margin', 'shape-outside', 'tab-size', 'text-decoration', 'text-decoration-color', 'text-decoration-thickness', 'text-emphasis', 'text-emphasis-color', 'text-indent', 'text-shadow', 'text-underline-offset', 'top', 'transform', 'transform-origin', 'translate', 'vertical-align', 'visibility', 'width', 'word-spacing', 'z-index', 'zoom']);
-function optimizeGroupPlayer(players) {
-  switch (players.length) {
-    case 0:
-      return new _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.NoopAnimationPlayer();
-    case 1:
-      return players[0];
-    default:
-      return new _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationGroupPlayer(players);
-  }
-}
-function normalizeKeyframes$1(normalizer, keyframes, preStyles = new Map(), postStyles = new Map()) {
-  const errors = [];
-  const normalizedKeyframes = [];
-  let previousOffset = -1;
-  let previousKeyframe = null;
-  keyframes.forEach(kf => {
-    const offset = kf.get('offset');
-    const isSameOffset = offset == previousOffset;
-    const normalizedKeyframe = isSameOffset && previousKeyframe || new Map();
-    kf.forEach((val, prop) => {
-      let normalizedProp = prop;
-      let normalizedValue = val;
-      if (prop !== 'offset') {
-        normalizedProp = normalizer.normalizePropertyName(normalizedProp, errors);
-        switch (normalizedValue) {
-          case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__["ɵPRE_STYLE"]:
-            normalizedValue = preStyles.get(prop);
-            break;
-          case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AUTO_STYLE:
-            normalizedValue = postStyles.get(prop);
-            break;
-          default:
-            normalizedValue = normalizer.normalizeStyleValue(prop, normalizedProp, normalizedValue, errors);
-            break;
-        }
-      }
-      normalizedKeyframe.set(normalizedProp, normalizedValue);
-    });
-    if (!isSameOffset) {
-      normalizedKeyframes.push(normalizedKeyframe);
-    }
-    previousKeyframe = normalizedKeyframe;
-    previousOffset = offset;
-  });
-  if (errors.length) {
-    throw animationFailed(errors);
-  }
-  return normalizedKeyframes;
-}
-function listenOnPlayer(player, eventName, event, callback) {
-  switch (eventName) {
-    case 'start':
-      player.onStart(() => callback(event && copyAnimationEvent(event, 'start', player)));
-      break;
-    case 'done':
-      player.onDone(() => callback(event && copyAnimationEvent(event, 'done', player)));
-      break;
-    case 'destroy':
-      player.onDestroy(() => callback(event && copyAnimationEvent(event, 'destroy', player)));
-      break;
-  }
-}
-function copyAnimationEvent(e, phaseName, player) {
-  const totalTime = player.totalTime;
-  const disabled = player.disabled ? true : false;
-  const event = makeAnimationEvent(e.element, e.triggerName, e.fromState, e.toState, phaseName || e.phaseName, totalTime == undefined ? e.totalTime : totalTime, disabled);
-  const data = e['_data'];
-  if (data != null) {
-    event['_data'] = data;
-  }
-  return event;
-}
-function makeAnimationEvent(element, triggerName, fromState, toState, phaseName = '', totalTime = 0, disabled) {
-  return {
-    element,
-    triggerName,
-    fromState,
-    toState,
-    phaseName,
-    totalTime,
-    disabled: !!disabled
-  };
-}
-function getOrSetDefaultValue(map, key, defaultValue) {
-  let value = map.get(key);
-  if (!value) {
-    map.set(key, value = defaultValue);
-  }
-  return value;
-}
-function parseTimelineCommand(command) {
-  const separatorPos = command.indexOf(':');
-  const id = command.substring(1, separatorPos);
-  const action = command.slice(separatorPos + 1);
-  return [id, action];
-}
-const documentElement = /* @__PURE__ */(() => typeof document === 'undefined' ? null : document.documentElement)();
-function getParentElement(element) {
-  const parent = element.parentNode || element.host || null; // consider host to support shadow DOM
-  if (parent === documentElement) {
-    return null;
-  }
-  return parent;
-}
-function containsVendorPrefix(prop) {
-  // Webkit is the only real popular vendor prefix nowadays
-  // cc: http://shouldiprefix.com/
-  return prop.substring(1, 6) == 'ebkit'; // webkit or Webkit
-}
-let _CACHED_BODY = null;
-let _IS_WEBKIT = false;
-function validateStyleProperty(prop) {
-  if (!_CACHED_BODY) {
-    _CACHED_BODY = getBodyNode() || {};
-    _IS_WEBKIT = _CACHED_BODY.style ? 'WebkitAppearance' in _CACHED_BODY.style : false;
-  }
-  let result = true;
-  if (_CACHED_BODY.style && !containsVendorPrefix(prop)) {
-    result = prop in _CACHED_BODY.style;
-    if (!result && _IS_WEBKIT) {
-      const camelProp = 'Webkit' + prop.charAt(0).toUpperCase() + prop.slice(1);
-      result = camelProp in _CACHED_BODY.style;
-    }
-  }
-  return result;
-}
-function validateWebAnimatableStyleProperty(prop) {
-  return ANIMATABLE_PROP_SET.has(prop);
-}
-function getBodyNode() {
-  if (typeof document != 'undefined') {
-    return document.body;
-  }
-  return null;
-}
-function containsElement(elm1, elm2) {
-  while (elm2) {
-    if (elm2 === elm1) {
-      return true;
-    }
-    elm2 = getParentElement(elm2);
-  }
-  return false;
-}
-function invokeQuery(element, selector, multi) {
-  if (multi) {
-    return Array.from(element.querySelectorAll(selector));
-  }
-  const elem = element.querySelector(selector);
-  return elem ? [elem] : [];
-}
-const ONE_SECOND = 1000;
-const SUBSTITUTION_EXPR_START = '{{';
-const SUBSTITUTION_EXPR_END = '}}';
-const ENTER_CLASSNAME = 'ng-enter';
-const LEAVE_CLASSNAME = 'ng-leave';
-const NG_TRIGGER_CLASSNAME = 'ng-trigger';
-const NG_TRIGGER_SELECTOR = '.ng-trigger';
-const NG_ANIMATING_CLASSNAME = 'ng-animating';
-const NG_ANIMATING_SELECTOR = '.ng-animating';
-function resolveTimingValue(value) {
-  if (typeof value == 'number') return value;
-  const matches = value.match(/^(-?[\.\d]+)(m?s)/);
-  if (!matches || matches.length < 2) return 0;
-  return _convertTimeValueToMS(parseFloat(matches[1]), matches[2]);
-}
-function _convertTimeValueToMS(value, unit) {
-  switch (unit) {
-    case 's':
-      return value * ONE_SECOND;
-    default:
-      // ms or something else
-      return value;
-  }
-}
-function resolveTiming(timings, errors, allowNegativeValues) {
-  return timings.hasOwnProperty('duration') ? timings : parseTimeExpression(timings, errors, allowNegativeValues);
-}
-function parseTimeExpression(exp, errors, allowNegativeValues) {
-  const regex = /^(-?[\.\d]+)(m?s)(?:\s+(-?[\.\d]+)(m?s))?(?:\s+([-a-z]+(?:\(.+?\))?))?$/i;
-  let duration;
-  let delay = 0;
-  let easing = '';
-  if (typeof exp === 'string') {
-    const matches = exp.match(regex);
-    if (matches === null) {
-      errors.push(invalidTimingValue(exp));
-      return {
-        duration: 0,
-        delay: 0,
-        easing: ''
-      };
-    }
-    duration = _convertTimeValueToMS(parseFloat(matches[1]), matches[2]);
-    const delayMatch = matches[3];
-    if (delayMatch != null) {
-      delay = _convertTimeValueToMS(parseFloat(delayMatch), matches[4]);
-    }
-    const easingVal = matches[5];
-    if (easingVal) {
-      easing = easingVal;
-    }
-  } else {
-    duration = exp;
-  }
-  if (!allowNegativeValues) {
-    let containsErrors = false;
-    let startIndex = errors.length;
-    if (duration < 0) {
-      errors.push(negativeStepValue());
-      containsErrors = true;
-    }
-    if (delay < 0) {
-      errors.push(negativeDelayValue());
-      containsErrors = true;
-    }
-    if (containsErrors) {
-      errors.splice(startIndex, 0, invalidTimingValue(exp));
-    }
-  }
-  return {
-    duration,
-    delay,
-    easing
-  };
-}
-function normalizeKeyframes(keyframes) {
-  if (!keyframes.length) {
-    return [];
-  }
-  if (keyframes[0] instanceof Map) {
-    return keyframes;
-  }
-  return keyframes.map(kf => new Map(Object.entries(kf)));
-}
-function normalizeStyles(styles) {
-  return Array.isArray(styles) ? new Map(...styles) : new Map(styles);
-}
-function setStyles(element, styles, formerStyles) {
-  styles.forEach((val, prop) => {
-    const camelProp = dashCaseToCamelCase(prop);
-    if (formerStyles && !formerStyles.has(prop)) {
-      formerStyles.set(prop, element.style[camelProp]);
-    }
-    element.style[camelProp] = val;
-  });
-}
-function eraseStyles(element, styles) {
-  styles.forEach((_, prop) => {
-    const camelProp = dashCaseToCamelCase(prop);
-    element.style[camelProp] = '';
-  });
-}
-function normalizeAnimationEntry(steps) {
-  if (Array.isArray(steps)) {
-    if (steps.length == 1) return steps[0];
-    return (0,_private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.sequence)(steps);
-  }
-  return steps;
-}
-function validateStyleParams(value, options, errors) {
-  const params = options.params || {};
-  const matches = extractStyleParams(value);
-  if (matches.length) {
-    matches.forEach(varName => {
-      if (!params.hasOwnProperty(varName)) {
-        errors.push(invalidStyleParams(varName));
-      }
-    });
-  }
-}
-const PARAM_REGEX = /* @__PURE__ */new RegExp(`${SUBSTITUTION_EXPR_START}\\s*(.+?)\\s*${SUBSTITUTION_EXPR_END}`, 'g');
-function extractStyleParams(value) {
-  let params = [];
-  if (typeof value === 'string') {
-    let match;
-    while (match = PARAM_REGEX.exec(value)) {
-      params.push(match[1]);
-    }
-    PARAM_REGEX.lastIndex = 0;
-  }
-  return params;
-}
-function interpolateParams(value, params, errors) {
-  const original = `${value}`;
-  const str = original.replace(PARAM_REGEX, (_, varName) => {
-    let localVal = params[varName];
-    // this means that the value was never overridden by the data passed in by the user
-    if (localVal == null) {
-      errors.push(invalidParamValue(varName));
-      localVal = '';
-    }
-    return localVal.toString();
-  });
-  // we do this to assert that numeric values stay as they are
-  return str == original ? value : str;
-}
-const DASH_CASE_REGEXP = /-+([a-z0-9])/g;
-function dashCaseToCamelCase(input) {
-  return input.replace(DASH_CASE_REGEXP, (...m) => m[1].toUpperCase());
-}
-function camelCaseToDashCase(input) {
-  return input.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
-}
-function allowPreviousPlayerStylesMerge(duration, delay) {
-  return duration === 0 || delay === 0;
-}
-function balancePreviousStylesIntoKeyframes(element, keyframes, previousStyles) {
-  if (previousStyles.size && keyframes.length) {
-    let startingKeyframe = keyframes[0];
-    let missingStyleProps = [];
-    previousStyles.forEach((val, prop) => {
-      if (!startingKeyframe.has(prop)) {
-        missingStyleProps.push(prop);
-      }
-      startingKeyframe.set(prop, val);
-    });
-    if (missingStyleProps.length) {
-      for (let i = 1; i < keyframes.length; i++) {
-        let kf = keyframes[i];
-        missingStyleProps.forEach(prop => kf.set(prop, computeStyle(element, prop)));
-      }
-    }
-  }
-  return keyframes;
-}
-function visitDslNode(visitor, node, context) {
-  switch (node.type) {
-    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Trigger:
-      return visitor.visitTrigger(node, context);
-    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.State:
-      return visitor.visitState(node, context);
-    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Transition:
-      return visitor.visitTransition(node, context);
-    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Sequence:
-      return visitor.visitSequence(node, context);
-    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Group:
-      return visitor.visitGroup(node, context);
-    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Animate:
-      return visitor.visitAnimate(node, context);
-    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Keyframes:
-      return visitor.visitKeyframes(node, context);
-    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Style:
-      return visitor.visitStyle(node, context);
-    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Reference:
-      return visitor.visitReference(node, context);
-    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.AnimateChild:
-      return visitor.visitAnimateChild(node, context);
-    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.AnimateRef:
-      return visitor.visitAnimateRef(node, context);
-    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Query:
-      return visitor.visitQuery(node, context);
-    case _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Stagger:
-      return visitor.visitStagger(node, context);
-    default:
-      throw invalidNodeType(node.type);
-  }
-}
-function computeStyle(element, prop) {
-  return window.getComputedStyle(element)[prop];
-}
-
-
-/***/ }),
-
 /***/ 10655:
 /*!***************************************************************!*\
   !*** ./node_modules/@angular/animations/fesm2022/browser.mjs ***!
@@ -571,28 +16,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵAnimationRendererFactory": () => (/* binding */ AnimationRendererFactory),
 /* harmony export */   "ɵAnimationStyleNormalizer": () => (/* binding */ AnimationStyleNormalizer),
 /* harmony export */   "ɵBaseAnimationRenderer": () => (/* binding */ BaseAnimationRenderer),
-/* harmony export */   "ɵENTER_CLASSNAME": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.ENTER_CLASSNAME),
-/* harmony export */   "ɵLEAVE_CLASSNAME": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.LEAVE_CLASSNAME),
+/* harmony export */   "ɵENTER_CLASSNAME": () => (/* reexport safe */ _util_mjs__WEBPACK_IMPORTED_MODULE_1__.ENTER_CLASSNAME),
+/* harmony export */   "ɵLEAVE_CLASSNAME": () => (/* reexport safe */ _util_mjs__WEBPACK_IMPORTED_MODULE_1__.LEAVE_CLASSNAME),
 /* harmony export */   "ɵNoopAnimationStyleNormalizer": () => (/* binding */ NoopAnimationStyleNormalizer),
 /* harmony export */   "ɵTransitionAnimationPlayer": () => (/* binding */ TransitionAnimationPlayer),
 /* harmony export */   "ɵWebAnimationsDriver": () => (/* binding */ WebAnimationsDriver),
 /* harmony export */   "ɵWebAnimationsPlayer": () => (/* binding */ WebAnimationsPlayer),
 /* harmony export */   "ɵWebAnimationsStyleNormalizer": () => (/* binding */ WebAnimationsStyleNormalizer),
-/* harmony export */   "ɵallowPreviousPlayerStylesMerge": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.allowPreviousPlayerStylesMerge),
-/* harmony export */   "ɵcamelCaseToDashCase": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.camelCaseToDashCase),
-/* harmony export */   "ɵcontainsElement": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.containsElement),
+/* harmony export */   "ɵallowPreviousPlayerStylesMerge": () => (/* reexport safe */ _util_mjs__WEBPACK_IMPORTED_MODULE_1__.allowPreviousPlayerStylesMerge),
+/* harmony export */   "ɵcamelCaseToDashCase": () => (/* reexport safe */ _util_mjs__WEBPACK_IMPORTED_MODULE_1__.camelCaseToDashCase),
+/* harmony export */   "ɵcontainsElement": () => (/* reexport safe */ _util_mjs__WEBPACK_IMPORTED_MODULE_1__.containsElement),
 /* harmony export */   "ɵcreateEngine": () => (/* binding */ createEngine),
-/* harmony export */   "ɵgetParentElement": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getParentElement),
-/* harmony export */   "ɵinvokeQuery": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invokeQuery),
-/* harmony export */   "ɵnormalizeKeyframes": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeKeyframes$1),
-/* harmony export */   "ɵvalidateStyleProperty": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.validateStyleProperty),
-/* harmony export */   "ɵvalidateWebAnimatableStyleProperty": () => (/* reexport safe */ _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.validateWebAnimatableStyleProperty)
+/* harmony export */   "ɵgetParentElement": () => (/* reexport safe */ _util_mjs__WEBPACK_IMPORTED_MODULE_1__.getParentElement),
+/* harmony export */   "ɵinvokeQuery": () => (/* reexport safe */ _util_mjs__WEBPACK_IMPORTED_MODULE_1__.invokeQuery),
+/* harmony export */   "ɵnormalizeKeyframes": () => (/* reexport safe */ _util_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeKeyframes$1),
+/* harmony export */   "ɵvalidateStyleProperty": () => (/* reexport safe */ _util_mjs__WEBPACK_IMPORTED_MODULE_1__.validateStyleProperty),
+/* harmony export */   "ɵvalidateWebAnimatableStyleProperty": () => (/* reexport safe */ _util_mjs__WEBPACK_IMPORTED_MODULE_1__.validateWebAnimatableStyleProperty)
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
-/* harmony import */ var _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util-CPU6TNml.mjs */ 1871);
-/* harmony import */ var _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./private_export-B_vy_9K7.mjs */ 20748);
+/* harmony import */ var _util_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util.mjs */ 93369);
+/* harmony import */ var _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./private_export.mjs */ 81351);
 /**
- * @license Angular v20.0.4
+ * @license Angular v20.1.0
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -613,27 +58,27 @@ let NoopAnimationDriver = /*#__PURE__*/(() => {
      * @returns Whether `prop` is a valid CSS property
      */
     validateStyleProperty(prop) {
-      return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.validateStyleProperty)(prop);
+      return (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.validateStyleProperty)(prop);
     }
     /**
      *
      * @returns Whether elm1 contains elm2.
      */
     containsElement(elm1, elm2) {
-      return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.containsElement)(elm1, elm2);
+      return (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.containsElement)(elm1, elm2);
     }
     /**
      * @returns Rhe parent of the given element or `null` if the element is the `document`
      */
     getParentElement(element) {
-      return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getParentElement)(element);
+      return (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.getParentElement)(element);
     }
     /**
      * @returns The result of the query selector on the element. The array will contain up to 1 item
      *     if `multi` is  `false`.
      */
     query(element, selector, multi) {
-      return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invokeQuery)(element, selector, multi);
+      return (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.invokeQuery)(element, selector, multi);
     }
     /**
      * @returns The `defaultValue` or empty string
@@ -645,7 +90,7 @@ let NoopAnimationDriver = /*#__PURE__*/(() => {
      * @returns An `NoopAnimationPlayer`
      */
     animate(element, keyframes, duration, delay, easing, previousPlayers = [], scrubberAccessRequested) {
-      return new _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.NoopAnimationPlayer(duration, delay);
+      return new _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.NoopAnimationPlayer(duration, delay);
     }
     static ɵfac = function NoopAnimationDriver_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || NoopAnimationDriver)();
@@ -681,7 +126,7 @@ class NoopAnimationStyleNormalizer {
 const DIMENSIONAL_PROP_SET = /*#__PURE__*/new Set(['width', 'height', 'minWidth', 'minHeight', 'maxWidth', 'maxHeight', 'left', 'top', 'bottom', 'right', 'fontSize', 'outlineWidth', 'outlineOffset', 'paddingTop', 'paddingLeft', 'paddingBottom', 'paddingRight', 'marginTop', 'marginLeft', 'marginBottom', 'marginRight', 'borderRadius', 'borderWidth', 'borderTopWidth', 'borderLeftWidth', 'borderRightWidth', 'borderBottomWidth', 'textIndent', 'perspective']);
 class WebAnimationsStyleNormalizer extends AnimationStyleNormalizer {
   normalizePropertyName(propertyName, errors) {
-    return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.dashCaseToCamelCase)(propertyName);
+    return (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.dashCaseToCamelCase)(propertyName);
   }
   normalizeStyleValue(userProvidedProperty, normalizedProperty, value, errors) {
     let unit = '';
@@ -692,7 +137,7 @@ class WebAnimationsStyleNormalizer extends AnimationStyleNormalizer {
       } else {
         const valAndSuffixMatch = value.match(/^[+-]?[\d\.]+([a-z]*)$/);
         if (valAndSuffixMatch && valAndSuffixMatch[1].length == 0) {
-          errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidCssUnitValue)(userProvidedProperty, value));
+          errors.push((0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidCssUnitValue)(userProvidedProperty, value));
         }
       }
     }
@@ -738,7 +183,7 @@ function parseInnerTransitionStr(eventStr, expressions, errors) {
   }
   const match = eventStr.match(/^(\*|[-\w]+)\s*(<?[=-]>)\s*(\*|[-\w]+)$/);
   if (match == null || match.length < 4) {
-    errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidExpression)(eventStr));
+    errors.push((0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidExpression)(eventStr));
     return expressions;
   }
   const fromState = match[1];
@@ -762,7 +207,7 @@ function parseAnimationAlias(alias, errors) {
     case ':decrement':
       return (fromState, toState) => parseFloat(toState) < parseFloat(fromState);
     default:
-      errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidTransitionAlias)(alias));
+      errors.push((0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidTransitionAlias)(alias));
       return '* => *';
   }
 }
@@ -837,7 +282,7 @@ class AnimationAstBuilderVisitor {
   build(metadata, errors, warnings) {
     const context = new AnimationAstBuilderContext(errors);
     this._resetContextStyleTimingState(context);
-    const ast = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeAnimationEntry)(metadata), context);
+    const ast = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeAnimationEntry)(metadata), context);
     if (typeof ngDevMode === 'undefined' || ngDevMode) {
       if (context.unsupportedCSSPropertiesFound.size) {
         pushUnrecognizedPropertiesWarning(warnings, [...context.unsupportedCSSPropertiesFound.keys()]);
@@ -857,11 +302,11 @@ class AnimationAstBuilderVisitor {
     const states = [];
     const transitions = [];
     if (metadata.name.charAt(0) == '@') {
-      context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidTrigger)());
+      context.errors.push((0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidTrigger)());
     }
     metadata.definitions.forEach(def => {
       this._resetContextStyleTimingState(context);
-      if (def.type == _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.State) {
+      if (def.type == _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.State) {
         const stateDef = def;
         const name = stateDef.name;
         name.toString().split(/\s*,\s*/).forEach(n => {
@@ -869,17 +314,17 @@ class AnimationAstBuilderVisitor {
           states.push(this.visitState(stateDef, context));
         });
         stateDef.name = name;
-      } else if (def.type == _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Transition) {
+      } else if (def.type == _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Transition) {
         const transition = this.visitTransition(def, context);
         queryCount += transition.queryCount;
         depCount += transition.depCount;
         transitions.push(transition);
       } else {
-        context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidDefinition)());
+        context.errors.push((0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidDefinition)());
       }
     });
     return {
-      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Trigger,
+      type: _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Trigger,
       name: metadata.name,
       states,
       transitions,
@@ -897,7 +342,7 @@ class AnimationAstBuilderVisitor {
       styleAst.styles.forEach(style => {
         if (style instanceof Map) {
           style.forEach(value => {
-            (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.extractStyleParams)(value).forEach(sub => {
+            (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.extractStyleParams)(value).forEach(sub => {
               if (!params.hasOwnProperty(sub)) {
                 missingSubs.add(sub);
               }
@@ -906,11 +351,11 @@ class AnimationAstBuilderVisitor {
         }
       });
       if (missingSubs.size) {
-        context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidState)(metadata.name, [...missingSubs.values()]));
+        context.errors.push((0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidState)(metadata.name, [...missingSubs.values()]));
       }
     }
     return {
-      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.State,
+      type: _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.State,
       name: metadata.name,
       style: styleAst,
       options: astParams ? {
@@ -921,10 +366,10 @@ class AnimationAstBuilderVisitor {
   visitTransition(metadata, context) {
     context.queryCount = 0;
     context.depCount = 0;
-    const animation = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeAnimationEntry)(metadata.animation), context);
+    const animation = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeAnimationEntry)(metadata.animation), context);
     const matchers = parseTransitionExpr(metadata.expr, context.errors);
     return {
-      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Transition,
+      type: _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Transition,
       matchers,
       animation,
       queryCount: context.queryCount,
@@ -934,8 +379,8 @@ class AnimationAstBuilderVisitor {
   }
   visitSequence(metadata, context) {
     return {
-      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Sequence,
-      steps: metadata.steps.map(s => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, s, context)),
+      type: _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Sequence,
+      steps: metadata.steps.map(s => (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, s, context)),
       options: normalizeAnimationOptions(metadata.options)
     };
   }
@@ -944,13 +389,13 @@ class AnimationAstBuilderVisitor {
     let furthestTime = 0;
     const steps = metadata.steps.map(step => {
       context.currentTime = currentTime;
-      const innerAst = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, step, context);
+      const innerAst = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, step, context);
       furthestTime = Math.max(furthestTime, context.currentTime);
       return innerAst;
     });
     context.currentTime = furthestTime;
     return {
-      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Group,
+      type: _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Group,
       steps,
       options: normalizeAnimationOptions(metadata.options)
     };
@@ -959,8 +404,8 @@ class AnimationAstBuilderVisitor {
     const timingAst = constructTimingAst(metadata.timings, context.errors);
     context.currentAnimateTimings = timingAst;
     let styleAst;
-    let styleMetadata = metadata.styles ? metadata.styles : (0,_private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.style)({});
-    if (styleMetadata.type == _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Keyframes) {
+    let styleMetadata = metadata.styles ? metadata.styles : (0,_private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.style)({});
+    if (styleMetadata.type == _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Keyframes) {
       styleAst = this.visitKeyframes(styleMetadata, context);
     } else {
       let styleMetadata = metadata.styles;
@@ -971,7 +416,7 @@ class AnimationAstBuilderVisitor {
         if (timingAst.easing) {
           newStyleData['easing'] = timingAst.easing;
         }
-        styleMetadata = (0,_private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.style)(newStyleData);
+        styleMetadata = (0,_private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.style)(newStyleData);
       }
       context.currentTime += timingAst.duration + timingAst.delay;
       const _styleAst = this.visitStyle(styleMetadata, context);
@@ -980,7 +425,7 @@ class AnimationAstBuilderVisitor {
     }
     context.currentAnimateTimings = null;
     return {
-      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Animate,
+      type: _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Animate,
       timings: timingAst,
       style: styleAst,
       options: null
@@ -996,10 +441,10 @@ class AnimationAstBuilderVisitor {
     const metadataStyles = Array.isArray(metadata.styles) ? metadata.styles : [metadata.styles];
     for (let styleTuple of metadataStyles) {
       if (typeof styleTuple === 'string') {
-        if (styleTuple === _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE) {
+        if (styleTuple === _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE) {
           styles.push(styleTuple);
         } else {
-          context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidStyleValue)(styleTuple));
+          context.errors.push((0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidStyleValue)(styleTuple));
         }
       } else {
         styles.push(new Map(Object.entries(styleTuple)));
@@ -1015,7 +460,7 @@ class AnimationAstBuilderVisitor {
         }
         if (!containsDynamicStyles) {
           for (let value of styleData.values()) {
-            if (value.toString().indexOf(_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.SUBSTITUTION_EXPR_START) >= 0) {
+            if (value.toString().indexOf(_util_mjs__WEBPACK_IMPORTED_MODULE_1__.SUBSTITUTION_EXPR_START) >= 0) {
               containsDynamicStyles = true;
               break;
             }
@@ -1024,7 +469,7 @@ class AnimationAstBuilderVisitor {
       }
     });
     return {
-      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Style,
+      type: _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Style,
       styles,
       easing: collectedEasing,
       offset: metadata.offset,
@@ -1056,7 +501,7 @@ class AnimationAstBuilderVisitor {
         let updateCollectedStyle = true;
         if (collectedEntry) {
           if (startTime != endTime && startTime >= collectedEntry.startTime && endTime <= collectedEntry.endTime) {
-            context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidParallelAnimation)(prop, collectedEntry.startTime, collectedEntry.endTime, startTime, endTime));
+            context.errors.push((0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidParallelAnimation)(prop, collectedEntry.startTime, collectedEntry.endTime, startTime, endTime));
             updateCollectedStyle = false;
           }
           // we always choose the smaller start time value since we
@@ -1071,19 +516,19 @@ class AnimationAstBuilderVisitor {
           });
         }
         if (context.options) {
-          (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.validateStyleParams)(value, context.options, context.errors);
+          (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.validateStyleParams)(value, context.options, context.errors);
         }
       });
     });
   }
   visitKeyframes(metadata, context) {
     const ast = {
-      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Keyframes,
+      type: _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Keyframes,
       styles: [],
       options: null
     };
     if (!context.currentAnimateTimings) {
-      context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidKeyframes)());
+      context.errors.push((0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidKeyframes)());
       return ast;
     }
     const MAX_KEYFRAME_OFFSET = 1;
@@ -1107,15 +552,15 @@ class AnimationAstBuilderVisitor {
       return style;
     });
     if (keyframesOutOfRange) {
-      context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidOffset)());
+      context.errors.push((0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidOffset)());
     }
     if (offsetsOutOfOrder) {
-      context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.keyframeOffsetsOutOfOrder)());
+      context.errors.push((0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.keyframeOffsetsOutOfOrder)());
     }
     const length = metadata.steps.length;
     let generatedOffset = 0;
     if (totalKeyframesWithOffsets > 0 && totalKeyframesWithOffsets < length) {
-      context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.keyframesMissingOffsets)());
+      context.errors.push((0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.keyframesMissingOffsets)());
     } else if (totalKeyframesWithOffsets == 0) {
       generatedOffset = MAX_KEYFRAME_OFFSET / (length - 1);
     }
@@ -1136,21 +581,21 @@ class AnimationAstBuilderVisitor {
   }
   visitReference(metadata, context) {
     return {
-      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Reference,
-      animation: (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeAnimationEntry)(metadata.animation), context),
+      type: _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Reference,
+      animation: (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeAnimationEntry)(metadata.animation), context),
       options: normalizeAnimationOptions(metadata.options)
     };
   }
   visitAnimateChild(metadata, context) {
     context.depCount++;
     return {
-      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.AnimateChild,
+      type: _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.AnimateChild,
       options: normalizeAnimationOptions(metadata.options)
     };
   }
   visitAnimateRef(metadata, context) {
     return {
-      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.AnimateRef,
+      type: _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.AnimateRef,
       animation: this.visitReference(metadata.animation, context),
       options: normalizeAnimationOptions(metadata.options)
     };
@@ -1162,12 +607,12 @@ class AnimationAstBuilderVisitor {
     context.currentQuery = metadata;
     const [selector, includeSelf] = normalizeSelector(metadata.selector);
     context.currentQuerySelector = parentSelector.length ? parentSelector + ' ' + selector : selector;
-    (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(context.collectedStyles, context.currentQuerySelector, new Map());
-    const animation = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeAnimationEntry)(metadata.animation), context);
+    (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(context.collectedStyles, context.currentQuerySelector, new Map());
+    const animation = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeAnimationEntry)(metadata.animation), context);
     context.currentQuery = null;
     context.currentQuerySelector = parentSelector;
     return {
-      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Query,
+      type: _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Query,
       selector,
       limit: options.limit || 0,
       optional: !!options.optional,
@@ -1179,16 +624,16 @@ class AnimationAstBuilderVisitor {
   }
   visitStagger(metadata, context) {
     if (!context.currentQuery) {
-      context.errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidStagger)());
+      context.errors.push((0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidStagger)());
     }
     const timings = metadata.timings === 'full' ? {
       duration: 0,
       delay: 0,
       easing: 'full'
-    } : (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTiming)(metadata.timings, context.errors, true);
+    } : (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTiming)(metadata.timings, context.errors, true);
     return {
-      type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Stagger,
-      animation: (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeAnimationEntry)(metadata.animation), context),
+      type: _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Stagger,
+      animation: (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeAnimationEntry)(metadata.animation), context),
       timings,
       options: null
     };
@@ -1201,7 +646,7 @@ function normalizeSelector(selector) {
   }
   // Note: the :enter and :leave aren't normalized here since those
   // selectors are filled in at runtime during timeline building
-  selector = selector.replace(/@\*/g, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_SELECTOR).replace(/@\w+/g, match => _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_SELECTOR + '-' + match.slice(1)).replace(/:animating/g, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_ANIMATING_SELECTOR);
+  selector = selector.replace(/@\*/g, _util_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_SELECTOR).replace(/@\w+/g, match => _util_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_SELECTOR + '-' + match.slice(1)).replace(/:animating/g, _util_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_ANIMATING_SELECTOR);
   return [selector, hasAmpersand];
 }
 function normalizeParams(obj) {
@@ -1248,7 +693,7 @@ function constructTimingAst(value, errors) {
     return value;
   }
   if (typeof value == 'number') {
-    const duration = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTiming)(value, errors).duration;
+    const duration = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTiming)(value, errors).duration;
     return makeTimingAst(duration, 0, '');
   }
   const strValue = value;
@@ -1259,7 +704,7 @@ function constructTimingAst(value, errors) {
     ast.strValue = strValue;
     return ast;
   }
-  const timings = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTiming)(strValue, errors);
+  const timings = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTiming)(strValue, errors);
   return makeTimingAst(timings.duration, timings.delay, timings.easing);
 }
 function normalizeAnimationOptions(options) {
@@ -1406,10 +851,10 @@ class AnimationTimelineBuilderVisitor {
     subInstructions = subInstructions || new ElementInstructionMap();
     const context = new AnimationTimelineContext(driver, rootElement, subInstructions, enterClassName, leaveClassName, errors, []);
     context.options = options;
-    const delay = options.delay ? (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(options.delay) : 0;
+    const delay = options.delay ? (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(options.delay) : 0;
     context.currentTimeline.delayNextStep(delay);
     context.currentTimeline.setStyles([startingStyles], null, context.errors, options);
-    (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, ast, context);
+    (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, ast, context);
     // this checks to see if an actual animation happened
     const timelines = context.timelines.filter(timeline => timeline.containsAnimation());
     // note: we just want to apply the final styles for the rootElement, so we do not
@@ -1466,7 +911,7 @@ class AnimationTimelineBuilderVisitor {
     for (const animationRefOptions of animationsRefsOptions) {
       const animationDelay = animationRefOptions?.delay;
       if (animationDelay) {
-        const animationDelayValue = typeof animationDelay === 'number' ? animationDelay : (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.interpolateParams)(animationDelay, animationRefOptions?.params ?? {}, context.errors));
+        const animationDelayValue = typeof animationDelay === 'number' ? animationDelay : (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)((0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.interpolateParams)(animationDelay, animationRefOptions?.params ?? {}, context.errors));
         innerContext.delayNextStep(animationDelayValue);
       }
     }
@@ -1476,8 +921,8 @@ class AnimationTimelineBuilderVisitor {
     let furthestTime = startTime;
     // this is a special-case for when a user wants to skip a sub
     // animation from being fired entirely.
-    const duration = options.duration != null ? (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(options.duration) : null;
-    const delay = options.delay != null ? (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(options.delay) : null;
+    const duration = options.duration != null ? (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(options.duration) : null;
+    const delay = options.delay != null ? (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(options.delay) : null;
     if (duration !== 0) {
       instructions.forEach(instruction => {
         const instructionTimings = context.appendInstructionToTimeline(instruction, duration, delay);
@@ -1488,7 +933,7 @@ class AnimationTimelineBuilderVisitor {
   }
   visitReference(ast, context) {
     context.updateOptions(ast.options, true);
-    (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, ast.animation, context);
+    (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, ast.animation, context);
     context.previousNode = ast;
   }
   visitSequence(ast, context) {
@@ -1499,16 +944,16 @@ class AnimationTimelineBuilderVisitor {
       ctx = context.createSubContext(options);
       ctx.transformIntoNewTimeline();
       if (options.delay != null) {
-        if (ctx.previousNode.type == _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Style) {
+        if (ctx.previousNode.type == _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Style) {
           ctx.currentTimeline.snapshotCurrentStyles();
           ctx.previousNode = DEFAULT_NOOP_PREVIOUS_NODE;
         }
-        const delay = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(options.delay);
+        const delay = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(options.delay);
         ctx.delayNextStep(delay);
       }
     }
     if (ast.steps.length) {
-      ast.steps.forEach(s => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, s, ctx));
+      ast.steps.forEach(s => (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, s, ctx));
       // this is here just in case the inner steps only contain or end with a style() call
       ctx.currentTimeline.applyStylesToKeyframe();
       // this means that some animation function within the sequence
@@ -1523,13 +968,13 @@ class AnimationTimelineBuilderVisitor {
   visitGroup(ast, context) {
     const innerTimelines = [];
     let furthestTime = context.currentTimeline.currentTime;
-    const delay = ast.options && ast.options.delay ? (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(ast.options.delay) : 0;
+    const delay = ast.options && ast.options.delay ? (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(ast.options.delay) : 0;
     ast.steps.forEach(s => {
       const innerContext = context.createSubContext(ast.options);
       if (delay) {
         innerContext.delayNextStep(delay);
       }
-      (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, s, innerContext);
+      (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, s, innerContext);
       furthestTime = Math.max(furthestTime, innerContext.currentTimeline.currentTime);
       innerTimelines.push(innerContext.currentTimeline);
     });
@@ -1543,8 +988,8 @@ class AnimationTimelineBuilderVisitor {
   _visitTiming(ast, context) {
     if (ast.dynamic) {
       const strValue = ast.strValue;
-      const timingValue = context.params ? (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.interpolateParams)(strValue, context.params, context.errors) : strValue;
-      return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTiming)(timingValue, context.errors);
+      const timingValue = context.params ? (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.interpolateParams)(strValue, context.params, context.errors) : strValue;
+      return (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTiming)(timingValue, context.errors);
     } else {
       return {
         duration: ast.duration,
@@ -1561,7 +1006,7 @@ class AnimationTimelineBuilderVisitor {
       timeline.snapshotCurrentStyles();
     }
     const style = ast.style;
-    if (style.type == _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Keyframes) {
+    if (style.type == _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Keyframes) {
       this.visitKeyframes(style, context);
     } else {
       context.incrementTime(timings.duration);
@@ -1613,8 +1058,8 @@ class AnimationTimelineBuilderVisitor {
     // to ensure the styles are applied before the children are animated
     const startTime = context.currentTimeline.currentTime;
     const options = ast.options || {};
-    const delay = options.delay ? (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(options.delay) : 0;
-    if (delay && (context.previousNode.type === _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Style || startTime == 0 && context.currentTimeline.hasCurrentStyleProperties())) {
+    const delay = options.delay ? (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(options.delay) : 0;
+    if (delay && (context.previousNode.type === _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Style || startTime == 0 && context.currentTimeline.hasCurrentStyleProperties())) {
       context.currentTimeline.snapshotCurrentStyles();
       context.previousNode = DEFAULT_NOOP_PREVIOUS_NODE;
     }
@@ -1631,7 +1076,7 @@ class AnimationTimelineBuilderVisitor {
       if (element === context.element) {
         sameElementTimeline = innerContext.currentTimeline;
       }
-      (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, ast.animation, innerContext);
+      (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, ast.animation, innerContext);
       // this is here just incase the inner steps only contain or end
       // with a style() call (which is here to signal that this is a preparatory
       // call to style an element before it is animated again)
@@ -1669,7 +1114,7 @@ class AnimationTimelineBuilderVisitor {
       timeline.delayNextStep(delay);
     }
     const startingTime = timeline.currentTime;
-    (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, ast.animation, context);
+    (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.visitDslNode)(this, ast.animation, context);
     context.previousNode = ast;
     // time = duration + delay
     // the reason why this computation is so complex is because
@@ -1716,10 +1161,10 @@ class AnimationTimelineContext {
     let optionsToUpdate = this.options;
     // NOTE: this will get patched up when other animation methods support duration overrides
     if (newOptions.duration != null) {
-      optionsToUpdate.duration = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(newOptions.duration);
+      optionsToUpdate.duration = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(newOptions.duration);
     }
     if (newOptions.delay != null) {
-      optionsToUpdate.delay = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(newOptions.delay);
+      optionsToUpdate.delay = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.resolveTimingValue)(newOptions.delay);
     }
     const newParams = newOptions.params;
     if (newParams) {
@@ -1729,7 +1174,7 @@ class AnimationTimelineContext {
       }
       Object.keys(newParams).forEach(name => {
         if (!skipIfExists || !paramsToUpdate.hasOwnProperty(name)) {
-          paramsToUpdate[name] = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.interpolateParams)(newParams[name], paramsToUpdate, this.errors);
+          paramsToUpdate[name] = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.interpolateParams)(newParams[name], paramsToUpdate, this.errors);
         }
       });
     }
@@ -1802,7 +1247,7 @@ class AnimationTimelineContext {
       results.push(...elements);
     }
     if (!optional && results.length == 0) {
-      errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidQuery)(originalSelector));
+      errors.push((0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.invalidQuery)(originalSelector));
     }
     return results;
   }
@@ -1914,8 +1359,8 @@ class TimelineBuilder {
     // We use `_globalTimelineStyles` here because there may be
     // styles in previous keyframes that are not present in this timeline
     for (let [prop, value] of this._globalTimelineStyles) {
-      this._backFill.set(prop, value || _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE);
-      this._currentKeyframe.set(prop, _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE);
+      this._backFill.set(prop, value || _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE);
+      this._currentKeyframe.set(prop, _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE);
     }
     this._currentEmptyStepKeyframe = this._currentKeyframe;
   }
@@ -1926,10 +1371,10 @@ class TimelineBuilder {
     const params = options && options.params || {};
     const styles = flattenStyles(input, this._globalTimelineStyles);
     for (let [prop, value] of styles) {
-      const val = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.interpolateParams)(value, params, errors);
+      const val = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.interpolateParams)(value, params, errors);
       this._pendingStyles.set(prop, val);
       if (!this._localTimelineStyles.has(prop)) {
-        this._backFill.set(prop, this._globalTimelineStyles.get(prop) ?? _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE);
+        this._backFill.set(prop, this._globalTimelineStyles.get(prop) ?? _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE);
       }
       this._updateStyle(prop, val);
     }
@@ -1979,9 +1424,9 @@ class TimelineBuilder {
     this._keyframes.forEach((keyframe, time) => {
       const finalKeyframe = new Map([...this._backFill, ...keyframe]);
       finalKeyframe.forEach((value, prop) => {
-        if (value === _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__["ɵPRE_STYLE"]) {
+        if (value === _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__["ɵPRE_STYLE"]) {
           preStyleProps.add(prop);
-        } else if (value === _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE) {
+        } else if (value === _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE) {
           postStyleProps.add(prop);
         }
       });
@@ -2082,7 +1527,7 @@ function flattenStyles(input, allStyles) {
     if (token === '*') {
       allProperties ??= allStyles.keys();
       for (let prop of allProperties) {
-        styles.set(prop, _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE);
+        styles.set(prop, _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE);
       }
     } else {
       for (let [prop, val] of token) {
@@ -2155,9 +1600,9 @@ class AnimationTransitionFactory {
     }
     timelines.forEach(tl => {
       const elm = tl.element;
-      const preProps = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(preStyleMap, elm, new Set());
+      const preProps = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(preStyleMap, elm, new Set());
       tl.preStyleProps.forEach(prop => preProps.add(prop));
-      const postProps = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(postStyleMap, elm, new Set());
+      const postProps = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(postStyleMap, elm, new Set());
       tl.postStyleProps.forEach(prop => postProps.add(prop));
       if (elm !== element) {
         queriedElements.add(elm);
@@ -2248,7 +1693,7 @@ class AnimationStateStyles {
       if (typeof value !== 'string') {
         value.forEach((val, prop) => {
           if (val) {
-            val = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.interpolateParams)(val, combinedParams, errors);
+            val = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.interpolateParams)(val, combinedParams, errors);
           }
           const normalizedProp = this.normalizer.normalizePropertyName(prop, errors);
           val = this.normalizer.normalizeStyleValue(prop, normalizedProp, val, errors);
@@ -2298,12 +1743,12 @@ class AnimationTrigger {
 function createFallbackTransition(triggerName, states, normalizer) {
   const matchers = [(fromState, toState) => true];
   const animation = {
-    type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Sequence,
+    type: _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Sequence,
     steps: [],
     options: null
   };
   const transition = {
-    type: _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Transition,
+    type: _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationMetadataType.Transition,
     animation,
     matchers,
     options: null,
@@ -2339,7 +1784,7 @@ class TimelineAnimationEngine {
     const warnings = [];
     const ast = buildAnimationAst(this._driver, metadata, errors, warnings);
     if (errors.length) {
-      throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.registerFailed)(errors);
+      throw (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.registerFailed)(errors);
     } else {
       if (typeof ngDevMode === 'undefined' || ngDevMode) {
         if (warnings.length) {
@@ -2351,7 +1796,7 @@ class TimelineAnimationEngine {
   }
   _buildPlayer(i, preStyles, postStyles) {
     const element = i.element;
-    const keyframes = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeKeyframes)(this._normalizer, i.keyframes, preStyles, postStyles);
+    const keyframes = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeKeyframes)(this._normalizer, i.keyframes, preStyles, postStyles);
     return this._driver.animate(element, keyframes, i.duration, i.delay, i.easing, [], true);
   }
   create(id, element, options = {}) {
@@ -2360,28 +1805,28 @@ class TimelineAnimationEngine {
     let instructions;
     const autoStylesMap = new Map();
     if (ast) {
-      instructions = buildAnimationTimelines(this._driver, element, ast, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.ENTER_CLASSNAME, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.LEAVE_CLASSNAME, new Map(), new Map(), options, EMPTY_INSTRUCTION_MAP, errors);
+      instructions = buildAnimationTimelines(this._driver, element, ast, _util_mjs__WEBPACK_IMPORTED_MODULE_1__.ENTER_CLASSNAME, _util_mjs__WEBPACK_IMPORTED_MODULE_1__.LEAVE_CLASSNAME, new Map(), new Map(), options, EMPTY_INSTRUCTION_MAP, errors);
       instructions.forEach(inst => {
-        const styles = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(autoStylesMap, inst.element, new Map());
+        const styles = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(autoStylesMap, inst.element, new Map());
         inst.postStyleProps.forEach(prop => styles.set(prop, null));
       });
     } else {
-      errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.missingOrDestroyedAnimation)());
+      errors.push((0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.missingOrDestroyedAnimation)());
       instructions = [];
     }
     if (errors.length) {
-      throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.createAnimationFailed)(errors);
+      throw (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.createAnimationFailed)(errors);
     }
     autoStylesMap.forEach((styles, element) => {
       styles.forEach((_, prop) => {
-        styles.set(prop, this._driver.computeStyle(element, prop, _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE));
+        styles.set(prop, this._driver.computeStyle(element, prop, _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE));
       });
     });
     const players = instructions.map(i => {
       const styles = autoStylesMap.get(i.element);
       return this._buildPlayer(i, new Map(), styles);
     });
-    const player = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(players);
+    const player = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(players);
     this._playersById.set(id, player);
     player.onDestroy(() => this.destroy(id));
     this.players.push(player);
@@ -2399,14 +1844,14 @@ class TimelineAnimationEngine {
   _getPlayer(id) {
     const player = this._playersById.get(id);
     if (!player) {
-      throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.missingPlayer)(id);
+      throw (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.missingPlayer)(id);
     }
     return player;
   }
   listen(id, element, eventName, callback) {
     // triggerName, fromState, toState are all ignored for timeline animations
-    const baseEvent = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.makeAnimationEvent)(element, '', '', '');
-    (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.listenOnPlayer)(this._getPlayer(id), eventName, baseEvent, callback);
+    const baseEvent = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.makeAnimationEvent)(element, '', '', '');
+    (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.listenOnPlayer)(this._getPlayer(id), eventName, baseEvent, callback);
     return () => {};
   }
   command(id, element, command, args) {
@@ -2528,25 +1973,25 @@ class AnimationTransitionNamespace {
   }
   listen(element, name, phase, callback) {
     if (!this._triggers.has(name)) {
-      throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.missingTrigger)(phase, name);
+      throw (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.missingTrigger)(phase, name);
     }
     if (phase == null || phase.length == 0) {
-      throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.missingEvent)(name);
+      throw (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.missingEvent)(name);
     }
     if (!isTriggerEventValid(phase)) {
-      throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.unsupportedTriggerEvent)(phase, name);
+      throw (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.unsupportedTriggerEvent)(phase, name);
     }
-    const listeners = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(this._elementListeners, element, []);
+    const listeners = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(this._elementListeners, element, []);
     const data = {
       name,
       phase,
       callback
     };
     listeners.push(data);
-    const triggersWithStates = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(this._engine.statesByElement, element, new Map());
+    const triggersWithStates = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(this._engine.statesByElement, element, new Map());
     if (!triggersWithStates.has(name)) {
-      addClass(element, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_CLASSNAME);
-      addClass(element, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_CLASSNAME + '-' + name);
+      addClass(element, _util_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_CLASSNAME);
+      addClass(element, _util_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_CLASSNAME + '-' + name);
       triggersWithStates.set(name, DEFAULT_STATE_VALUE);
     }
     return () => {
@@ -2576,7 +2021,7 @@ class AnimationTransitionNamespace {
   _getTrigger(name) {
     const trigger = this._triggers.get(name);
     if (!trigger) {
-      throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.unregisteredTrigger)(name);
+      throw (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.unregisteredTrigger)(name);
     }
     return trigger;
   }
@@ -2585,8 +2030,8 @@ class AnimationTransitionNamespace {
     const player = new TransitionAnimationPlayer(this.id, triggerName, element);
     let triggersWithStates = this._engine.statesByElement.get(element);
     if (!triggersWithStates) {
-      addClass(element, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_CLASSNAME);
-      addClass(element, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_CLASSNAME + '-' + triggerName);
+      addClass(element, _util_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_CLASSNAME);
+      addClass(element, _util_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_CLASSNAME + '-' + triggerName);
       this._engine.statesByElement.set(element, triggersWithStates = new Map());
     }
     let fromState = triggersWithStates.get(triggerName);
@@ -2617,14 +2062,14 @@ class AnimationTransitionNamespace {
           this._engine.reportError(errors);
         } else {
           this._engine.afterFlush(() => {
-            (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(element, fromStyles);
-            (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(element, toStyles);
+            (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(element, fromStyles);
+            (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(element, toStyles);
           });
         }
       }
       return;
     }
-    const playersOnElement = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(this._engine.playersByElement, element, []);
+    const playersOnElement = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(this._engine.playersByElement, element, []);
     playersOnElement.forEach(player => {
       // only remove the player if it is queued on the EXACT same trigger/namespace
       // we only also deal with queued players here because if the animation has
@@ -2693,7 +2138,7 @@ class AnimationTransitionNamespace {
     }
   }
   _signalRemovalForInnerTriggers(rootElement, context) {
-    const elements = this._engine.driver.query(rootElement, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_SELECTOR, true);
+    const elements = this._engine.driver.query(rootElement, _util_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_SELECTOR, true);
     // emulate a leave animation for all inner nodes within this node.
     // If there are no animations found for any of the nodes then clear the cache
     // for the element.
@@ -2731,7 +2176,7 @@ class AnimationTransitionNamespace {
       if (players.length) {
         this._engine.markElementAsRemoved(this.id, element, true, context, previousTriggersValues);
         if (destroyAfterComplete) {
-          (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(players).onDone(() => this._engine.processLeaveNode(element));
+          (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(players).onDone(() => this._engine.processLeaveNode(element));
         }
         return true;
       }
@@ -2829,9 +2274,9 @@ class AnimationTransitionNamespace {
       if (listeners) {
         listeners.forEach(listener => {
           if (listener.name == entry.triggerName) {
-            const baseEvent = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.makeAnimationEvent)(element, entry.triggerName, entry.fromState.value, entry.toState.value);
+            const baseEvent = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.makeAnimationEvent)(element, entry.triggerName, entry.fromState.value, entry.toState.value);
             baseEvent['_data'] = microtaskId;
-            (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.listenOnPlayer)(entry.player, listener.phase, baseEvent, listener.callback);
+            (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.listenOnPlayer)(entry.player, listener.phase, baseEvent, listener.callback);
           }
         });
       }
@@ -3097,10 +2542,10 @@ class TransitionAnimationEngine {
     return entry.transition.build(this.driver, entry.element, entry.fromState.value, entry.toState.value, enterClassName, leaveClassName, entry.fromState.options, entry.toState.options, subTimelines, skipBuildAst);
   }
   destroyInnerAnimations(containerElement) {
-    let elements = this.driver.query(containerElement, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_SELECTOR, true);
+    let elements = this.driver.query(containerElement, _util_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_TRIGGER_SELECTOR, true);
     elements.forEach(element => this.destroyActiveAnimationsForElement(element));
     if (this.playersByQueriedElement.size == 0) return;
-    elements = this.driver.query(containerElement, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_ANIMATING_SELECTOR, true);
+    elements = this.driver.query(containerElement, _util_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_ANIMATING_SELECTOR, true);
     elements.forEach(element => this.finishActiveQueriedAnimationOnElement(element));
   }
   destroyActiveAnimationsForElement(element) {
@@ -3127,7 +2572,7 @@ class TransitionAnimationEngine {
   whenRenderingDone() {
     return new Promise(resolve => {
       if (this.players.length) {
-        return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(this.players).onDone(() => resolve());
+        return (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(this.players).onDone(() => resolve());
       } else {
         resolve();
       }
@@ -3193,7 +2638,7 @@ class TransitionAnimationEngine {
       const quietFns = this._whenQuietFns;
       this._whenQuietFns = [];
       if (players.length) {
-        (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(players).onDone(() => {
+        (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(players).onDone(() => {
           quietFns.forEach(fn => fn());
         });
       } else {
@@ -3202,7 +2647,7 @@ class TransitionAnimationEngine {
     }
   }
   reportError(errors) {
-    throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.triggerTransitionsFailed)(errors);
+    throw (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.triggerTransitionsFailed)(errors);
   }
   _flushAnimations(cleanupFns, microtaskId) {
     const subTimelines = new ElementInstructionMap();
@@ -3229,7 +2674,7 @@ class TransitionAnimationEngine {
     const enterNodeMapIds = new Map();
     let i = 0;
     enterNodeMap.forEach((nodes, root) => {
-      const className = _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.ENTER_CLASSNAME + i++;
+      const className = _util_mjs__WEBPACK_IMPORTED_MODULE_1__.ENTER_CLASSNAME + i++;
       enterNodeMapIds.set(root, className);
       nodes.forEach(node => addClass(node, className));
     });
@@ -3252,7 +2697,7 @@ class TransitionAnimationEngine {
     const leaveNodeMapIds = new Map();
     const leaveNodeMap = buildRootMap(allTriggerElements, Array.from(mergedLeaveNodes));
     leaveNodeMap.forEach((nodes, root) => {
-      const className = _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.LEAVE_CLASSNAME + i++;
+      const className = _util_mjs__WEBPACK_IMPORTED_MODULE_1__.LEAVE_CLASSNAME + i++;
       leaveNodeMapIds.set(root, className);
       nodes.forEach(node => addClass(node, className));
     });
@@ -3310,8 +2755,8 @@ class TransitionAnimationEngine {
         // projection and/or dynamic component insertion) therefore it's
         // important to still style the element.
         if (nodeIsOrphaned) {
-          player.onStart(() => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(element, instruction.fromStyles));
-          player.onDestroy(() => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(element, instruction.toStyles));
+          player.onStart(() => (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(element, instruction.fromStyles));
+          player.onDestroy(() => (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(element, instruction.toStyles));
           skippedPlayers.push(player);
           return;
         }
@@ -3319,8 +2764,8 @@ class TransitionAnimationEngine {
         // then it SHOULD NOT render an animation and cancel the
         // previously running animations.
         if (entry.isFallbackTransition) {
-          player.onStart(() => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(element, instruction.fromStyles));
-          player.onDestroy(() => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(element, instruction.toStyles));
+          player.onStart(() => (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(element, instruction.fromStyles));
+          player.onDestroy(() => (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(element, instruction.toStyles));
           skippedPlayers.push(player);
           return;
         }
@@ -3344,7 +2789,7 @@ class TransitionAnimationEngine {
           element
         };
         queuedInstructions.push(tuple);
-        instruction.queriedElements.forEach(element => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(queriedElements, element, []).push(player));
+        instruction.queriedElements.forEach(element => (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(queriedElements, element, []).push(player));
         instruction.preStyleProps.forEach((stringMap, element) => {
           if (stringMap.size) {
             let setVal = allPreStyleElements.get(element);
@@ -3366,7 +2811,7 @@ class TransitionAnimationEngine {
     if (erroneousTransitions.length) {
       const errors = [];
       erroneousTransitions.forEach(instruction => {
-        errors.push((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.transitionFailed)(instruction.triggerName, instruction.errors));
+        errors.push((0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.transitionFailed)(instruction.triggerName, instruction.errors));
       });
       allPlayers.forEach(player => player.destroy());
       this.reportError(errors);
@@ -3388,7 +2833,7 @@ class TransitionAnimationEngine {
       const element = player.element;
       const previousPlayers = this._getPreviousPlayers(element, false, player.namespaceId, player.triggerName, null);
       previousPlayers.forEach(prevPlayer => {
-        (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(allPreviousPlayersMap, element, []).push(prevPlayer);
+        (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(allPreviousPlayersMap, element, []).push(prevPlayer);
         prevPlayer.destroy();
       });
     });
@@ -3404,7 +2849,7 @@ class TransitionAnimationEngine {
     });
     // POST STAGE: fill the * styles
     const postStylesMap = new Map();
-    const allLeaveQueriedNodes = cloakAndComputeStyles(postStylesMap, this.driver, leaveNodesWithoutAnimations, allPostStyleElements, _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE);
+    const allLeaveQueriedNodes = cloakAndComputeStyles(postStylesMap, this.driver, leaveNodesWithoutAnimations, allPostStyleElements, _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AUTO_STYLE);
     allLeaveQueriedNodes.forEach(node => {
       if (replacePostStylesAsPre(node, allPreStyleElements, allPostStyleElements)) {
         replaceNodes.push(node);
@@ -3413,7 +2858,7 @@ class TransitionAnimationEngine {
     // PRE STAGE: fill the ! styles
     const preStylesMap = new Map();
     enterNodeMap.forEach((nodes, root) => {
-      cloakAndComputeStyles(preStylesMap, this.driver, new Set(nodes), allPreStyleElements, _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__["ɵPRE_STYLE"]);
+      cloakAndComputeStyles(preStylesMap, this.driver, new Set(nodes), allPreStyleElements, _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__["ɵPRE_STYLE"]);
     });
     replaceNodes.forEach(node => {
       const post = postStylesMap.get(node);
@@ -3433,7 +2878,7 @@ class TransitionAnimationEngine {
       // means that it is independent and therefore should be set for animation
       if (subTimelines.has(element)) {
         if (disabledElementsSet.has(element)) {
-          player.onDestroy(() => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(element, instruction.toStyles));
+          player.onDestroy(() => (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(element, instruction.toStyles));
           player.disabled = true;
           player.overrideTotalTime(instruction.totalTime);
           skippedPlayers.push(player);
@@ -3466,13 +2911,13 @@ class TransitionAnimationEngine {
         } else {
           const parentPlayers = this.playersByElement.get(parentWithAnimation);
           if (parentPlayers && parentPlayers.length) {
-            player.parentPlayer = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(parentPlayers);
+            player.parentPlayer = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(parentPlayers);
           }
           skippedPlayers.push(player);
         }
       } else {
-        (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(element, instruction.fromStyles);
-        player.onDestroy(() => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(element, instruction.toStyles));
+        (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(element, instruction.fromStyles);
+        player.onDestroy(() => (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(element, instruction.toStyles));
         // there still might be a ancestor player animating this
         // element therefore we will still add it as a sub player
         // even if its animation may be disabled
@@ -3488,7 +2933,7 @@ class TransitionAnimationEngine {
       // will still complete itself after the next tick since it's Noop
       const playersForElement = skippedPlayersMap.get(player.element);
       if (playersForElement && playersForElement.length) {
-        const innerPlayer = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(playersForElement);
+        const innerPlayer = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(playersForElement);
         player.setRealPlayer(innerPlayer);
       }
     });
@@ -3508,7 +2953,7 @@ class TransitionAnimationEngine {
     for (let i = 0; i < allLeaveNodes.length; i++) {
       const element = allLeaveNodes[i];
       const details = element[REMOVAL_FLAG];
-      removeClass(element, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.LEAVE_CLASSNAME);
+      removeClass(element, _util_mjs__WEBPACK_IMPORTED_MODULE_1__.LEAVE_CLASSNAME);
       // this means the element has a removal animation that is being
       // taken care of and therefore the inner elements will hang around
       // until that animation is over (or the parent queried animation)
@@ -3522,7 +2967,7 @@ class TransitionAnimationEngine {
         if (queriedPlayerResults && queriedPlayerResults.length) {
           players.push(...queriedPlayerResults);
         }
-        let queriedInnerElements = this.driver.query(element, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_ANIMATING_SELECTOR, true);
+        let queriedInnerElements = this.driver.query(element, _util_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_ANIMATING_SELECTOR, true);
         for (let j = 0; j < queriedInnerElements.length; j++) {
           let queriedPlayers = queriedElements.get(queriedInnerElements[j]);
           if (queriedPlayers && queriedPlayers.length) {
@@ -3593,7 +3038,7 @@ class TransitionAnimationEngine {
     for (const timelineInstruction of instruction.timelines) {
       const element = timelineInstruction.element;
       const isQueriedElement = element !== rootElement;
-      const players = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(allPreviousPlayersMap, element, []);
+      const players = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(allPreviousPlayersMap, element, []);
       const previousPlayers = this._getPreviousPlayers(element, isQueriedElement, targetNameSpaceId, targetTriggerName, instruction.toState);
       previousPlayers.forEach(player => {
         const realPlayer = player.getRealPlayer();
@@ -3606,7 +3051,7 @@ class TransitionAnimationEngine {
     }
     // this needs to be done so that the PRE/POST styles can be
     // computed properly without interfering with the previous animation
-    (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(rootElement, instruction.fromStyles);
+    (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(rootElement, instruction.fromStyles);
   }
   _buildAnimation(namespaceId, instruction, allPreviousPlayersMap, skippedPlayersMap, preStylesMap, postStylesMap) {
     const triggerName = instruction.triggerName;
@@ -3621,7 +3066,7 @@ class TransitionAnimationEngine {
       allConsumedElements.add(element);
       // FIXME (matsko): make sure to-be-removed animations are removed properly
       const details = element[REMOVAL_FLAG];
-      if (details && details.removedBeforeQueried) return new _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.NoopAnimationPlayer(timelineInstruction.duration, timelineInstruction.delay);
+      if (details && details.removedBeforeQueried) return new _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.NoopAnimationPlayer(timelineInstruction.duration, timelineInstruction.delay);
       const isQueriedElement = element !== rootElement;
       const previousPlayers = flattenGroupPlayers((allPreviousPlayersMap.get(element) || EMPTY_PLAYER_ARRAY).map(p => p.getRealPlayer())).filter(p => {
         // the `element` is not apart of the AnimationPlayer definition, but
@@ -3633,7 +3078,7 @@ class TransitionAnimationEngine {
       });
       const preStyles = preStylesMap.get(element);
       const postStyles = postStylesMap.get(element);
-      const keyframes = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeKeyframes)(this._normalizer, timelineInstruction.keyframes, preStyles, postStyles);
+      const keyframes = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeKeyframes)(this._normalizer, timelineInstruction.keyframes, preStyles, postStyles);
       const player = this._buildPlayer(timelineInstruction, keyframes, previousPlayers);
       // this means that this particular player belongs to a sub trigger. It is
       // important that we match this player up with the corresponding (@trigger.listener)
@@ -3648,19 +3093,19 @@ class TransitionAnimationEngine {
       return player;
     });
     allQueriedPlayers.forEach(player => {
-      (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(this.playersByQueriedElement, player.element, []).push(player);
+      (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(this.playersByQueriedElement, player.element, []).push(player);
       player.onDone(() => deleteOrUnsetInMap(this.playersByQueriedElement, player.element, player));
     });
-    allConsumedElements.forEach(element => addClass(element, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_ANIMATING_CLASSNAME));
-    const player = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(allNewPlayers);
+    allConsumedElements.forEach(element => addClass(element, _util_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_ANIMATING_CLASSNAME));
+    const player = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(allNewPlayers);
     player.onDestroy(() => {
-      allConsumedElements.forEach(element => removeClass(element, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_ANIMATING_CLASSNAME));
-      (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(rootElement, instruction.toStyles);
+      allConsumedElements.forEach(element => removeClass(element, _util_mjs__WEBPACK_IMPORTED_MODULE_1__.NG_ANIMATING_CLASSNAME));
+      (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(rootElement, instruction.toStyles);
     });
     // this basically makes all of the callbacks for sub element animations
     // be dependent on the upper players for when they finish
     allSubElements.forEach(element => {
-      (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(skippedPlayersMap, element, []).push(player);
+      (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(skippedPlayersMap, element, []).push(player);
     });
     return player;
   }
@@ -3670,14 +3115,14 @@ class TransitionAnimationEngine {
     }
     // special case for when an empty transition|definition is provided
     // ... there is no point in rendering an empty animation
-    return new _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.NoopAnimationPlayer(instruction.duration, instruction.delay);
+    return new _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.NoopAnimationPlayer(instruction.duration, instruction.delay);
   }
 }
 class TransitionAnimationPlayer {
   namespaceId;
   triggerName;
   element;
-  _player = /*#__PURE__*/new _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.NoopAnimationPlayer();
+  _player = /*#__PURE__*/new _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.NoopAnimationPlayer();
   _containsRealPlayer = false;
   _queuedCallbacks = /*#__PURE__*/new Map();
   destroyed = false;
@@ -3695,7 +3140,7 @@ class TransitionAnimationPlayer {
     if (this._containsRealPlayer) return;
     this._player = player;
     this._queuedCallbacks.forEach((callbacks, phase) => {
-      callbacks.forEach(callback => (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.listenOnPlayer)(player, phase, undefined, callback));
+      callbacks.forEach(callback => (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.listenOnPlayer)(player, phase, undefined, callback));
     });
     this._queuedCallbacks.clear();
     this._containsRealPlayer = true;
@@ -3717,7 +3162,7 @@ class TransitionAnimationPlayer {
     player.onDestroy(() => this.destroy());
   }
   _queueEvent(name, callback) {
-    (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(this._queuedCallbacks, name, []).push(callback);
+    (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.getOrSetDefaultValue)(this._queuedCallbacks, name, []).push(callback);
   }
   onDone(fn) {
     if (this.queued) {
@@ -3882,7 +3327,7 @@ function removeClass(element, className) {
   element.classList?.remove(className);
 }
 function removeNodesAfterAnimationDone(engine, element, players) {
-  (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(players).onDone(() => engine.processLeaveNode(element));
+  (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.optimizeGroupPlayer)(players).onDone(() => engine.processLeaveNode(element));
 }
 function flattenGroupPlayers(players) {
   const finalPlayers = [];
@@ -3892,7 +3337,7 @@ function flattenGroupPlayers(players) {
 function _flattenGroupPlayersRecur(players, finalPlayers) {
   for (let i = 0; i < players.length; i++) {
     const player = players[i];
-    if (player instanceof _private_export_B_vy_9K7_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationGroupPlayer) {
+    if (player instanceof _private_export_mjs__WEBPACK_IMPORTED_MODULE_2__.AnimationGroupPlayer) {
       _flattenGroupPlayersRecur(player.players, finalPlayers);
     } else {
       finalPlayers.push(player);
@@ -3944,7 +3389,7 @@ class AnimationEngine {
       const warnings = [];
       const ast = buildAnimationAst(this._driver, metadata, errors, warnings);
       if (errors.length) {
-        throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.triggerBuildFailed)(name, errors);
+        throw (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.triggerBuildFailed)(name, errors);
       }
       if (typeof ngDevMode === 'undefined' || ngDevMode) {
         if (warnings.length) {
@@ -3973,7 +3418,7 @@ class AnimationEngine {
   }
   process(namespaceId, element, property, value) {
     if (property.charAt(0) == '@') {
-      const [id, action] = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.parseTimelineCommand)(property);
+      const [id, action] = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.parseTimelineCommand)(property);
       const args = value;
       this._timelineEngine.command(id, element, action, args);
     } else {
@@ -3983,7 +3428,7 @@ class AnimationEngine {
   listen(namespaceId, element, eventName, eventPhase, callback) {
     // @@listen
     if (eventName.charAt(0) == '@') {
-      const [id, action] = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.parseTimelineCommand)(eventName);
+      const [id, action] = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.parseTimelineCommand)(eventName);
       return this._timelineEngine.listen(id, element, action, callback);
     }
     return this._transitionEngine.listen(namespaceId, element, eventName, eventPhase, callback);
@@ -4055,7 +3500,7 @@ let SpecialCasedStyles = /*#__PURE__*/(() => {
     start() {
       if (this._state < 1 /* SpecialCasedStylesState.Started */) {
         if (this._startStyles) {
-          (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(this._element, this._startStyles, this._initialStyles);
+          (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(this._element, this._startStyles, this._initialStyles);
         }
         this._state = 1 /* SpecialCasedStylesState.Started */;
       }
@@ -4063,9 +3508,9 @@ let SpecialCasedStyles = /*#__PURE__*/(() => {
     finish() {
       this.start();
       if (this._state < 2 /* SpecialCasedStylesState.Finished */) {
-        (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(this._element, this._initialStyles);
+        (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(this._element, this._initialStyles);
         if (this._endStyles) {
-          (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(this._element, this._endStyles);
+          (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(this._element, this._endStyles);
           this._endStyles = null;
         }
         this._state = 1 /* SpecialCasedStylesState.Started */;
@@ -4076,14 +3521,14 @@ let SpecialCasedStyles = /*#__PURE__*/(() => {
       if (this._state < 3 /* SpecialCasedStylesState.Destroyed */) {
         SpecialCasedStyles.initialStylesByElement.delete(this._element);
         if (this._startStyles) {
-          (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(this._element, this._startStyles);
+          (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(this._element, this._startStyles);
           this._endStyles = null;
         }
         if (this._endStyles) {
-          (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(this._element, this._endStyles);
+          (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.eraseStyles)(this._element, this._endStyles);
           this._endStyles = null;
         }
-        (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(this._element, this._initialStyles);
+        (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.setStyles)(this._element, this._initialStyles);
         this._state = 3 /* SpecialCasedStylesState.Destroyed */;
       }
     }
@@ -4272,7 +3717,7 @@ class WebAnimationsPlayer {
       const finalKeyframe = this._finalKeyframe;
       finalKeyframe.forEach((val, prop) => {
         if (prop !== 'offset') {
-          styles.set(prop, this._finished ? val : (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.computeStyle)(this.element, prop));
+          styles.set(prop, this._finished ? val : (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.computeStyle)(this.element, prop));
         }
       });
     }
@@ -4289,29 +3734,29 @@ class WebAnimationsDriver {
   validateStyleProperty(prop) {
     // Perform actual validation in dev mode only, in prod mode this check is a noop.
     if (typeof ngDevMode === 'undefined' || ngDevMode) {
-      return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.validateStyleProperty)(prop);
+      return (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.validateStyleProperty)(prop);
     }
     return true;
   }
   validateAnimatableStyleProperty(prop) {
     // Perform actual validation in dev mode only, in prod mode this check is a noop.
     if (typeof ngDevMode === 'undefined' || ngDevMode) {
-      const cssProp = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.camelCaseToDashCase)(prop);
-      return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.validateWebAnimatableStyleProperty)(cssProp);
+      const cssProp = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.camelCaseToDashCase)(prop);
+      return (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.validateWebAnimatableStyleProperty)(cssProp);
     }
     return true;
   }
   containsElement(elm1, elm2) {
-    return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.containsElement)(elm1, elm2);
+    return (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.containsElement)(elm1, elm2);
   }
   getParentElement(element) {
-    return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.getParentElement)(element);
+    return (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.getParentElement)(element);
   }
   query(element, selector, multi) {
-    return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.invokeQuery)(element, selector, multi);
+    return (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.invokeQuery)(element, selector, multi);
   }
   computeStyle(element, prop, defaultValue) {
-    return (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.computeStyle)(element, prop);
+    return (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.computeStyle)(element, prop);
   }
   animate(element, keyframes, duration, delay, easing, previousPlayers = []) {
     const fill = delay == 0 ? 'both' : 'forwards';
@@ -4327,13 +3772,13 @@ class WebAnimationsDriver {
     }
     const previousStyles = new Map();
     const previousWebAnimationPlayers = previousPlayers.filter(player => player instanceof WebAnimationsPlayer);
-    if ((0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.allowPreviousPlayerStylesMerge)(duration, delay)) {
+    if ((0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.allowPreviousPlayerStylesMerge)(duration, delay)) {
       previousWebAnimationPlayers.forEach(player => {
         player.currentSnapshot.forEach((val, prop) => previousStyles.set(prop, val));
       });
     }
-    let _keyframes = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeKeyframes$1)(keyframes).map(styles => new Map(styles));
-    _keyframes = (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.balancePreviousStylesIntoKeyframes)(element, _keyframes, previousStyles);
+    let _keyframes = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeKeyframes$1)(keyframes).map(styles => new Map(styles));
+    _keyframes = (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.balancePreviousStylesIntoKeyframes)(element, _keyframes, previousStyles);
     const specialStyles = packageNonAnimatableStyles(element, _keyframes);
     return new WebAnimationsPlayer(element, _keyframes, playerOptions, specialStyles);
   }
@@ -4354,7 +3799,7 @@ class Animation {
     const warnings = [];
     const ast = buildAnimationAst(_driver, input, errors, warnings);
     if (errors.length) {
-      throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.validationFailed)(errors);
+      throw (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.validationFailed)(errors);
     }
     if (typeof ngDevMode === 'undefined' || ngDevMode) {
       if (warnings.length) {
@@ -4364,13 +3809,13 @@ class Animation {
     this._animationAst = ast;
   }
   buildTimelines(element, startingStyles, destinationStyles, options, subInstructions) {
-    const start = Array.isArray(startingStyles) ? (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeStyles)(startingStyles) : startingStyles;
-    const dest = Array.isArray(destinationStyles) ? (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeStyles)(destinationStyles) : destinationStyles;
+    const start = Array.isArray(startingStyles) ? (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeStyles)(startingStyles) : startingStyles;
+    const dest = Array.isArray(destinationStyles) ? (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeStyles)(destinationStyles) : destinationStyles;
     const errors = [];
     subInstructions = subInstructions || new ElementInstructionMap();
-    const result = buildAnimationTimelines(this._driver, element, this._animationAst, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.ENTER_CLASSNAME, _util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.LEAVE_CLASSNAME, start, dest, options, subInstructions, errors);
+    const result = buildAnimationTimelines(this._driver, element, this._animationAst, _util_mjs__WEBPACK_IMPORTED_MODULE_1__.ENTER_CLASSNAME, _util_mjs__WEBPACK_IMPORTED_MODULE_1__.LEAVE_CLASSNAME, start, dest, options, subInstructions, errors);
     if (errors.length) {
-      throw (0,_util_CPU6TNml_mjs__WEBPACK_IMPORTED_MODULE_1__.buildingFailed)(errors);
+      throw (0,_util_mjs__WEBPACK_IMPORTED_MODULE_1__.buildingFailed)(errors);
     }
     return result;
   }
@@ -4646,10 +4091,10 @@ class AnimationRendererFactory {
 
 /***/ }),
 
-/***/ 20748:
-/*!*******************************************************************************!*\
-  !*** ./node_modules/@angular/animations/fesm2022/private_export-B_vy_9K7.mjs ***!
-  \*******************************************************************************/
+/***/ 81351:
+/*!**********************************************************************!*\
+  !*** ./node_modules/@angular/animations/fesm2022/private_export.mjs ***!
+  \**********************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -4674,7 +4119,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵPRE_STYLE": () => (/* binding */ ɵPRE_STYLE)
 /* harmony export */ });
 /**
- * @license Angular v20.0.4
+ * @license Angular v20.1.0
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -5898,6 +5343,561 @@ class AnimationGroupPlayer {
   }
 }
 const ɵPRE_STYLE = '!';
+
+
+/***/ }),
+
+/***/ 93369:
+/*!************************************************************!*\
+  !*** ./node_modules/@angular/animations/fesm2022/util.mjs ***!
+  \************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ENTER_CLASSNAME: () => (/* binding */ ENTER_CLASSNAME),
+/* harmony export */   LEAVE_CLASSNAME: () => (/* binding */ LEAVE_CLASSNAME),
+/* harmony export */   NG_ANIMATING_CLASSNAME: () => (/* binding */ NG_ANIMATING_CLASSNAME),
+/* harmony export */   NG_ANIMATING_SELECTOR: () => (/* binding */ NG_ANIMATING_SELECTOR),
+/* harmony export */   NG_TRIGGER_CLASSNAME: () => (/* binding */ NG_TRIGGER_CLASSNAME),
+/* harmony export */   NG_TRIGGER_SELECTOR: () => (/* binding */ NG_TRIGGER_SELECTOR),
+/* harmony export */   SUBSTITUTION_EXPR_START: () => (/* binding */ SUBSTITUTION_EXPR_START),
+/* harmony export */   allowPreviousPlayerStylesMerge: () => (/* binding */ allowPreviousPlayerStylesMerge),
+/* harmony export */   balancePreviousStylesIntoKeyframes: () => (/* binding */ balancePreviousStylesIntoKeyframes),
+/* harmony export */   buildingFailed: () => (/* binding */ buildingFailed),
+/* harmony export */   camelCaseToDashCase: () => (/* binding */ camelCaseToDashCase),
+/* harmony export */   computeStyle: () => (/* binding */ computeStyle),
+/* harmony export */   containsElement: () => (/* binding */ containsElement),
+/* harmony export */   createAnimationFailed: () => (/* binding */ createAnimationFailed),
+/* harmony export */   dashCaseToCamelCase: () => (/* binding */ dashCaseToCamelCase),
+/* harmony export */   eraseStyles: () => (/* binding */ eraseStyles),
+/* harmony export */   extractStyleParams: () => (/* binding */ extractStyleParams),
+/* harmony export */   getOrSetDefaultValue: () => (/* binding */ getOrSetDefaultValue),
+/* harmony export */   getParentElement: () => (/* binding */ getParentElement),
+/* harmony export */   interpolateParams: () => (/* binding */ interpolateParams),
+/* harmony export */   invalidCssUnitValue: () => (/* binding */ invalidCssUnitValue),
+/* harmony export */   invalidDefinition: () => (/* binding */ invalidDefinition),
+/* harmony export */   invalidExpression: () => (/* binding */ invalidExpression),
+/* harmony export */   invalidKeyframes: () => (/* binding */ invalidKeyframes),
+/* harmony export */   invalidOffset: () => (/* binding */ invalidOffset),
+/* harmony export */   invalidParallelAnimation: () => (/* binding */ invalidParallelAnimation),
+/* harmony export */   invalidQuery: () => (/* binding */ invalidQuery),
+/* harmony export */   invalidStagger: () => (/* binding */ invalidStagger),
+/* harmony export */   invalidState: () => (/* binding */ invalidState),
+/* harmony export */   invalidStyleValue: () => (/* binding */ invalidStyleValue),
+/* harmony export */   invalidTransitionAlias: () => (/* binding */ invalidTransitionAlias),
+/* harmony export */   invalidTrigger: () => (/* binding */ invalidTrigger),
+/* harmony export */   invokeQuery: () => (/* binding */ invokeQuery),
+/* harmony export */   keyframeOffsetsOutOfOrder: () => (/* binding */ keyframeOffsetsOutOfOrder),
+/* harmony export */   keyframesMissingOffsets: () => (/* binding */ keyframesMissingOffsets),
+/* harmony export */   listenOnPlayer: () => (/* binding */ listenOnPlayer),
+/* harmony export */   makeAnimationEvent: () => (/* binding */ makeAnimationEvent),
+/* harmony export */   missingEvent: () => (/* binding */ missingEvent),
+/* harmony export */   missingOrDestroyedAnimation: () => (/* binding */ missingOrDestroyedAnimation),
+/* harmony export */   missingPlayer: () => (/* binding */ missingPlayer),
+/* harmony export */   missingTrigger: () => (/* binding */ missingTrigger),
+/* harmony export */   normalizeAnimationEntry: () => (/* binding */ normalizeAnimationEntry),
+/* harmony export */   normalizeKeyframes: () => (/* binding */ normalizeKeyframes$1),
+/* harmony export */   normalizeKeyframes$1: () => (/* binding */ normalizeKeyframes),
+/* harmony export */   normalizeStyles: () => (/* binding */ normalizeStyles),
+/* harmony export */   optimizeGroupPlayer: () => (/* binding */ optimizeGroupPlayer),
+/* harmony export */   parseTimelineCommand: () => (/* binding */ parseTimelineCommand),
+/* harmony export */   registerFailed: () => (/* binding */ registerFailed),
+/* harmony export */   resolveTiming: () => (/* binding */ resolveTiming),
+/* harmony export */   resolveTimingValue: () => (/* binding */ resolveTimingValue),
+/* harmony export */   setStyles: () => (/* binding */ setStyles),
+/* harmony export */   transitionFailed: () => (/* binding */ transitionFailed),
+/* harmony export */   triggerBuildFailed: () => (/* binding */ triggerBuildFailed),
+/* harmony export */   triggerTransitionsFailed: () => (/* binding */ triggerTransitionsFailed),
+/* harmony export */   unregisteredTrigger: () => (/* binding */ unregisteredTrigger),
+/* harmony export */   unsupportedTriggerEvent: () => (/* binding */ unsupportedTriggerEvent),
+/* harmony export */   validateStyleParams: () => (/* binding */ validateStyleParams),
+/* harmony export */   validateStyleProperty: () => (/* binding */ validateStyleProperty),
+/* harmony export */   validateWebAnimatableStyleProperty: () => (/* binding */ validateWebAnimatableStyleProperty),
+/* harmony export */   validationFailed: () => (/* binding */ validationFailed),
+/* harmony export */   visitDslNode: () => (/* binding */ visitDslNode)
+/* harmony export */ });
+/* harmony import */ var _private_export_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./private_export.mjs */ 81351);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+/**
+ * @license Angular v20.1.0
+ * (c) 2010-2025 Google LLC. https://angular.io/
+ * License: MIT
+ */
+
+
+
+const LINE_START = '\n - ';
+function invalidTimingValue(exp) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3000 /* RuntimeErrorCode.INVALID_TIMING_VALUE */, ngDevMode && `The provided timing value "${exp}" is invalid.`);
+}
+function negativeStepValue() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3100 /* RuntimeErrorCode.NEGATIVE_STEP_VALUE */, ngDevMode && 'Duration values below 0 are not allowed for this animation step.');
+}
+function negativeDelayValue() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3101 /* RuntimeErrorCode.NEGATIVE_DELAY_VALUE */, ngDevMode && 'Delay values below 0 are not allowed for this animation step.');
+}
+function invalidStyleParams(varName) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3001 /* RuntimeErrorCode.INVALID_STYLE_PARAMS */, ngDevMode && `Unable to resolve the local animation param ${varName} in the given list of values`);
+}
+function invalidParamValue(varName) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3003 /* RuntimeErrorCode.INVALID_PARAM_VALUE */, ngDevMode && `Please provide a value for the animation param ${varName}`);
+}
+function invalidNodeType(nodeType) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3004 /* RuntimeErrorCode.INVALID_NODE_TYPE */, ngDevMode && `Unable to resolve animation metadata node #${nodeType}`);
+}
+function invalidCssUnitValue(userProvidedProperty, value) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3005 /* RuntimeErrorCode.INVALID_CSS_UNIT_VALUE */, ngDevMode && `Please provide a CSS unit value for ${userProvidedProperty}:${value}`);
+}
+function invalidTrigger() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3006 /* RuntimeErrorCode.INVALID_TRIGGER */, ngDevMode && "animation triggers cannot be prefixed with an `@` sign (e.g. trigger('@foo', [...]))");
+}
+function invalidDefinition() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3007 /* RuntimeErrorCode.INVALID_DEFINITION */, ngDevMode && 'only state() and transition() definitions can sit inside of a trigger()');
+}
+function invalidState(metadataName, missingSubs) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3008 /* RuntimeErrorCode.INVALID_STATE */, ngDevMode && `state("${metadataName}", ...) must define default values for all the following style substitutions: ${missingSubs.join(', ')}`);
+}
+function invalidStyleValue(value) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3002 /* RuntimeErrorCode.INVALID_STYLE_VALUE */, ngDevMode && `The provided style string value ${value} is not allowed.`);
+}
+function invalidParallelAnimation(prop, firstStart, firstEnd, secondStart, secondEnd) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3010 /* RuntimeErrorCode.INVALID_PARALLEL_ANIMATION */, ngDevMode && `The CSS property "${prop}" that exists between the times of "${firstStart}ms" and "${firstEnd}ms" is also being animated in a parallel animation between the times of "${secondStart}ms" and "${secondEnd}ms"`);
+}
+function invalidKeyframes() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3011 /* RuntimeErrorCode.INVALID_KEYFRAMES */, ngDevMode && `keyframes() must be placed inside of a call to animate()`);
+}
+function invalidOffset() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3012 /* RuntimeErrorCode.INVALID_OFFSET */, ngDevMode && `Please ensure that all keyframe offsets are between 0 and 1`);
+}
+function keyframeOffsetsOutOfOrder() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3200 /* RuntimeErrorCode.KEYFRAME_OFFSETS_OUT_OF_ORDER */, ngDevMode && `Please ensure that all keyframe offsets are in order`);
+}
+function keyframesMissingOffsets() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3202 /* RuntimeErrorCode.KEYFRAMES_MISSING_OFFSETS */, ngDevMode && `Not all style() steps within the declared keyframes() contain offsets`);
+}
+function invalidStagger() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3013 /* RuntimeErrorCode.INVALID_STAGGER */, ngDevMode && `stagger() can only be used inside of query()`);
+}
+function invalidQuery(selector) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3014 /* RuntimeErrorCode.INVALID_QUERY */, ngDevMode && `\`query("${selector}")\` returned zero elements. (Use \`query("${selector}", { optional: true })\` if you wish to allow this.)`);
+}
+function invalidExpression(expr) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3015 /* RuntimeErrorCode.INVALID_EXPRESSION */, ngDevMode && `The provided transition expression "${expr}" is not supported`);
+}
+function invalidTransitionAlias(alias) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3016 /* RuntimeErrorCode.INVALID_TRANSITION_ALIAS */, ngDevMode && `The transition alias value "${alias}" is not supported`);
+}
+function validationFailed(errors) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3500 /* RuntimeErrorCode.VALIDATION_FAILED */, ngDevMode && `animation validation failed:\n${errors.map(err => err.message).join('\n')}`);
+}
+function buildingFailed(errors) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3501 /* RuntimeErrorCode.BUILDING_FAILED */, ngDevMode && `animation building failed:\n${errors.map(err => err.message).join('\n')}`);
+}
+function triggerBuildFailed(name, errors) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3404 /* RuntimeErrorCode.TRIGGER_BUILD_FAILED */, ngDevMode && `The animation trigger "${name}" has failed to build due to the following errors:\n - ${errors.map(err => err.message).join('\n - ')}`);
+}
+function animationFailed(errors) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3502 /* RuntimeErrorCode.ANIMATION_FAILED */, ngDevMode && `Unable to animate due to the following errors:${LINE_START}${errors.map(err => err.message).join(LINE_START)}`);
+}
+function registerFailed(errors) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3503 /* RuntimeErrorCode.REGISTRATION_FAILED */, ngDevMode && `Unable to build the animation due to the following errors: ${errors.map(err => err.message).join('\n')}`);
+}
+function missingOrDestroyedAnimation() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3300 /* RuntimeErrorCode.MISSING_OR_DESTROYED_ANIMATION */, ngDevMode && "The requested animation doesn't exist or has already been destroyed");
+}
+function createAnimationFailed(errors) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3504 /* RuntimeErrorCode.CREATE_ANIMATION_FAILED */, ngDevMode && `Unable to create the animation due to the following errors:${errors.map(err => err.message).join('\n')}`);
+}
+function missingPlayer(id) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3301 /* RuntimeErrorCode.MISSING_PLAYER */, ngDevMode && `Unable to find the timeline player referenced by ${id}`);
+}
+function missingTrigger(phase, name) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3302 /* RuntimeErrorCode.MISSING_TRIGGER */, ngDevMode && `Unable to listen on the animation trigger event "${phase}" because the animation trigger "${name}" doesn\'t exist!`);
+}
+function missingEvent(name) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3303 /* RuntimeErrorCode.MISSING_EVENT */, ngDevMode && `Unable to listen on the animation trigger "${name}" because the provided event is undefined!`);
+}
+function unsupportedTriggerEvent(phase, name) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3400 /* RuntimeErrorCode.UNSUPPORTED_TRIGGER_EVENT */, ngDevMode && `The provided animation trigger event "${phase}" for the animation trigger "${name}" is not supported!`);
+}
+function unregisteredTrigger(name) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3401 /* RuntimeErrorCode.UNREGISTERED_TRIGGER */, ngDevMode && `The provided animation trigger "${name}" has not been registered!`);
+}
+function triggerTransitionsFailed(errors) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3402 /* RuntimeErrorCode.TRIGGER_TRANSITIONS_FAILED */, ngDevMode && `Unable to process animations due to the following failed trigger transitions\n ${errors.map(err => err.message).join('\n')}`);
+}
+function transitionFailed(name, errors) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](3505 /* RuntimeErrorCode.TRANSITION_FAILED */, ngDevMode && `@${name} has failed due to:\n ${errors.map(err => err.message).join('\n- ')}`);
+}
+
+/**
+ * Set of all animatable CSS properties
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties
+ */
+const ANIMATABLE_PROP_SET = /*#__PURE__*/new Set(['-moz-outline-radius', '-moz-outline-radius-bottomleft', '-moz-outline-radius-bottomright', '-moz-outline-radius-topleft', '-moz-outline-radius-topright', '-ms-grid-columns', '-ms-grid-rows', '-webkit-line-clamp', '-webkit-text-fill-color', '-webkit-text-stroke', '-webkit-text-stroke-color', 'accent-color', 'all', 'backdrop-filter', 'background', 'background-color', 'background-position', 'background-size', 'block-size', 'border', 'border-block-end', 'border-block-end-color', 'border-block-end-width', 'border-block-start', 'border-block-start-color', 'border-block-start-width', 'border-bottom', 'border-bottom-color', 'border-bottom-left-radius', 'border-bottom-right-radius', 'border-bottom-width', 'border-color', 'border-end-end-radius', 'border-end-start-radius', 'border-image-outset', 'border-image-slice', 'border-image-width', 'border-inline-end', 'border-inline-end-color', 'border-inline-end-width', 'border-inline-start', 'border-inline-start-color', 'border-inline-start-width', 'border-left', 'border-left-color', 'border-left-width', 'border-radius', 'border-right', 'border-right-color', 'border-right-width', 'border-start-end-radius', 'border-start-start-radius', 'border-top', 'border-top-color', 'border-top-left-radius', 'border-top-right-radius', 'border-top-width', 'border-width', 'bottom', 'box-shadow', 'caret-color', 'clip', 'clip-path', 'color', 'column-count', 'column-gap', 'column-rule', 'column-rule-color', 'column-rule-width', 'column-width', 'columns', 'filter', 'flex', 'flex-basis', 'flex-grow', 'flex-shrink', 'font', 'font-size', 'font-size-adjust', 'font-stretch', 'font-variation-settings', 'font-weight', 'gap', 'grid-column-gap', 'grid-gap', 'grid-row-gap', 'grid-template-columns', 'grid-template-rows', 'height', 'inline-size', 'input-security', 'inset', 'inset-block', 'inset-block-end', 'inset-block-start', 'inset-inline', 'inset-inline-end', 'inset-inline-start', 'left', 'letter-spacing', 'line-clamp', 'line-height', 'margin', 'margin-block-end', 'margin-block-start', 'margin-bottom', 'margin-inline-end', 'margin-inline-start', 'margin-left', 'margin-right', 'margin-top', 'mask', 'mask-border', 'mask-position', 'mask-size', 'max-block-size', 'max-height', 'max-inline-size', 'max-lines', 'max-width', 'min-block-size', 'min-height', 'min-inline-size', 'min-width', 'object-position', 'offset', 'offset-anchor', 'offset-distance', 'offset-path', 'offset-position', 'offset-rotate', 'opacity', 'order', 'outline', 'outline-color', 'outline-offset', 'outline-width', 'padding', 'padding-block-end', 'padding-block-start', 'padding-bottom', 'padding-inline-end', 'padding-inline-start', 'padding-left', 'padding-right', 'padding-top', 'perspective', 'perspective-origin', 'right', 'rotate', 'row-gap', 'scale', 'scroll-margin', 'scroll-margin-block', 'scroll-margin-block-end', 'scroll-margin-block-start', 'scroll-margin-bottom', 'scroll-margin-inline', 'scroll-margin-inline-end', 'scroll-margin-inline-start', 'scroll-margin-left', 'scroll-margin-right', 'scroll-margin-top', 'scroll-padding', 'scroll-padding-block', 'scroll-padding-block-end', 'scroll-padding-block-start', 'scroll-padding-bottom', 'scroll-padding-inline', 'scroll-padding-inline-end', 'scroll-padding-inline-start', 'scroll-padding-left', 'scroll-padding-right', 'scroll-padding-top', 'scroll-snap-coordinate', 'scroll-snap-destination', 'scrollbar-color', 'shape-image-threshold', 'shape-margin', 'shape-outside', 'tab-size', 'text-decoration', 'text-decoration-color', 'text-decoration-thickness', 'text-emphasis', 'text-emphasis-color', 'text-indent', 'text-shadow', 'text-underline-offset', 'top', 'transform', 'transform-origin', 'translate', 'vertical-align', 'visibility', 'width', 'word-spacing', 'z-index', 'zoom']);
+function optimizeGroupPlayer(players) {
+  switch (players.length) {
+    case 0:
+      return new _private_export_mjs__WEBPACK_IMPORTED_MODULE_1__.NoopAnimationPlayer();
+    case 1:
+      return players[0];
+    default:
+      return new _private_export_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationGroupPlayer(players);
+  }
+}
+function normalizeKeyframes$1(normalizer, keyframes, preStyles = new Map(), postStyles = new Map()) {
+  const errors = [];
+  const normalizedKeyframes = [];
+  let previousOffset = -1;
+  let previousKeyframe = null;
+  keyframes.forEach(kf => {
+    const offset = kf.get('offset');
+    const isSameOffset = offset == previousOffset;
+    const normalizedKeyframe = isSameOffset && previousKeyframe || new Map();
+    kf.forEach((val, prop) => {
+      let normalizedProp = prop;
+      let normalizedValue = val;
+      if (prop !== 'offset') {
+        normalizedProp = normalizer.normalizePropertyName(normalizedProp, errors);
+        switch (normalizedValue) {
+          case _private_export_mjs__WEBPACK_IMPORTED_MODULE_1__["ɵPRE_STYLE"]:
+            normalizedValue = preStyles.get(prop);
+            break;
+          case _private_export_mjs__WEBPACK_IMPORTED_MODULE_1__.AUTO_STYLE:
+            normalizedValue = postStyles.get(prop);
+            break;
+          default:
+            normalizedValue = normalizer.normalizeStyleValue(prop, normalizedProp, normalizedValue, errors);
+            break;
+        }
+      }
+      normalizedKeyframe.set(normalizedProp, normalizedValue);
+    });
+    if (!isSameOffset) {
+      normalizedKeyframes.push(normalizedKeyframe);
+    }
+    previousKeyframe = normalizedKeyframe;
+    previousOffset = offset;
+  });
+  if (errors.length) {
+    throw animationFailed(errors);
+  }
+  return normalizedKeyframes;
+}
+function listenOnPlayer(player, eventName, event, callback) {
+  switch (eventName) {
+    case 'start':
+      player.onStart(() => callback(event && copyAnimationEvent(event, 'start', player)));
+      break;
+    case 'done':
+      player.onDone(() => callback(event && copyAnimationEvent(event, 'done', player)));
+      break;
+    case 'destroy':
+      player.onDestroy(() => callback(event && copyAnimationEvent(event, 'destroy', player)));
+      break;
+  }
+}
+function copyAnimationEvent(e, phaseName, player) {
+  const totalTime = player.totalTime;
+  const disabled = player.disabled ? true : false;
+  const event = makeAnimationEvent(e.element, e.triggerName, e.fromState, e.toState, phaseName || e.phaseName, totalTime == undefined ? e.totalTime : totalTime, disabled);
+  const data = e['_data'];
+  if (data != null) {
+    event['_data'] = data;
+  }
+  return event;
+}
+function makeAnimationEvent(element, triggerName, fromState, toState, phaseName = '', totalTime = 0, disabled) {
+  return {
+    element,
+    triggerName,
+    fromState,
+    toState,
+    phaseName,
+    totalTime,
+    disabled: !!disabled
+  };
+}
+function getOrSetDefaultValue(map, key, defaultValue) {
+  let value = map.get(key);
+  if (!value) {
+    map.set(key, value = defaultValue);
+  }
+  return value;
+}
+function parseTimelineCommand(command) {
+  const separatorPos = command.indexOf(':');
+  const id = command.substring(1, separatorPos);
+  const action = command.slice(separatorPos + 1);
+  return [id, action];
+}
+const documentElement = /* @__PURE__ */(() => typeof document === 'undefined' ? null : document.documentElement)();
+function getParentElement(element) {
+  const parent = element.parentNode || element.host || null; // consider host to support shadow DOM
+  if (parent === documentElement) {
+    return null;
+  }
+  return parent;
+}
+function containsVendorPrefix(prop) {
+  // Webkit is the only real popular vendor prefix nowadays
+  // cc: http://shouldiprefix.com/
+  return prop.substring(1, 6) == 'ebkit'; // webkit or Webkit
+}
+let _CACHED_BODY = null;
+let _IS_WEBKIT = false;
+function validateStyleProperty(prop) {
+  if (!_CACHED_BODY) {
+    _CACHED_BODY = getBodyNode() || {};
+    _IS_WEBKIT = _CACHED_BODY.style ? 'WebkitAppearance' in _CACHED_BODY.style : false;
+  }
+  let result = true;
+  if (_CACHED_BODY.style && !containsVendorPrefix(prop)) {
+    result = prop in _CACHED_BODY.style;
+    if (!result && _IS_WEBKIT) {
+      const camelProp = 'Webkit' + prop.charAt(0).toUpperCase() + prop.slice(1);
+      result = camelProp in _CACHED_BODY.style;
+    }
+  }
+  return result;
+}
+function validateWebAnimatableStyleProperty(prop) {
+  return ANIMATABLE_PROP_SET.has(prop);
+}
+function getBodyNode() {
+  if (typeof document != 'undefined') {
+    return document.body;
+  }
+  return null;
+}
+function containsElement(elm1, elm2) {
+  while (elm2) {
+    if (elm2 === elm1) {
+      return true;
+    }
+    elm2 = getParentElement(elm2);
+  }
+  return false;
+}
+function invokeQuery(element, selector, multi) {
+  if (multi) {
+    return Array.from(element.querySelectorAll(selector));
+  }
+  const elem = element.querySelector(selector);
+  return elem ? [elem] : [];
+}
+const ONE_SECOND = 1000;
+const SUBSTITUTION_EXPR_START = '{{';
+const SUBSTITUTION_EXPR_END = '}}';
+const ENTER_CLASSNAME = 'ng-enter';
+const LEAVE_CLASSNAME = 'ng-leave';
+const NG_TRIGGER_CLASSNAME = 'ng-trigger';
+const NG_TRIGGER_SELECTOR = '.ng-trigger';
+const NG_ANIMATING_CLASSNAME = 'ng-animating';
+const NG_ANIMATING_SELECTOR = '.ng-animating';
+function resolveTimingValue(value) {
+  if (typeof value == 'number') return value;
+  const matches = value.match(/^(-?[\.\d]+)(m?s)/);
+  if (!matches || matches.length < 2) return 0;
+  return _convertTimeValueToMS(parseFloat(matches[1]), matches[2]);
+}
+function _convertTimeValueToMS(value, unit) {
+  switch (unit) {
+    case 's':
+      return value * ONE_SECOND;
+    default:
+      // ms or something else
+      return value;
+  }
+}
+function resolveTiming(timings, errors, allowNegativeValues) {
+  return timings.hasOwnProperty('duration') ? timings : parseTimeExpression(timings, errors, allowNegativeValues);
+}
+function parseTimeExpression(exp, errors, allowNegativeValues) {
+  const regex = /^(-?[\.\d]+)(m?s)(?:\s+(-?[\.\d]+)(m?s))?(?:\s+([-a-z]+(?:\(.+?\))?))?$/i;
+  let duration;
+  let delay = 0;
+  let easing = '';
+  if (typeof exp === 'string') {
+    const matches = exp.match(regex);
+    if (matches === null) {
+      errors.push(invalidTimingValue(exp));
+      return {
+        duration: 0,
+        delay: 0,
+        easing: ''
+      };
+    }
+    duration = _convertTimeValueToMS(parseFloat(matches[1]), matches[2]);
+    const delayMatch = matches[3];
+    if (delayMatch != null) {
+      delay = _convertTimeValueToMS(parseFloat(delayMatch), matches[4]);
+    }
+    const easingVal = matches[5];
+    if (easingVal) {
+      easing = easingVal;
+    }
+  } else {
+    duration = exp;
+  }
+  if (!allowNegativeValues) {
+    let containsErrors = false;
+    let startIndex = errors.length;
+    if (duration < 0) {
+      errors.push(negativeStepValue());
+      containsErrors = true;
+    }
+    if (delay < 0) {
+      errors.push(negativeDelayValue());
+      containsErrors = true;
+    }
+    if (containsErrors) {
+      errors.splice(startIndex, 0, invalidTimingValue(exp));
+    }
+  }
+  return {
+    duration,
+    delay,
+    easing
+  };
+}
+function normalizeKeyframes(keyframes) {
+  if (!keyframes.length) {
+    return [];
+  }
+  if (keyframes[0] instanceof Map) {
+    return keyframes;
+  }
+  return keyframes.map(kf => new Map(Object.entries(kf)));
+}
+function normalizeStyles(styles) {
+  return Array.isArray(styles) ? new Map(...styles) : new Map(styles);
+}
+function setStyles(element, styles, formerStyles) {
+  styles.forEach((val, prop) => {
+    const camelProp = dashCaseToCamelCase(prop);
+    if (formerStyles && !formerStyles.has(prop)) {
+      formerStyles.set(prop, element.style[camelProp]);
+    }
+    element.style[camelProp] = val;
+  });
+}
+function eraseStyles(element, styles) {
+  styles.forEach((_, prop) => {
+    const camelProp = dashCaseToCamelCase(prop);
+    element.style[camelProp] = '';
+  });
+}
+function normalizeAnimationEntry(steps) {
+  if (Array.isArray(steps)) {
+    if (steps.length == 1) return steps[0];
+    return (0,_private_export_mjs__WEBPACK_IMPORTED_MODULE_1__.sequence)(steps);
+  }
+  return steps;
+}
+function validateStyleParams(value, options, errors) {
+  const params = options.params || {};
+  const matches = extractStyleParams(value);
+  if (matches.length) {
+    matches.forEach(varName => {
+      if (!params.hasOwnProperty(varName)) {
+        errors.push(invalidStyleParams(varName));
+      }
+    });
+  }
+}
+const PARAM_REGEX = /* @__PURE__ */new RegExp(`${SUBSTITUTION_EXPR_START}\\s*(.+?)\\s*${SUBSTITUTION_EXPR_END}`, 'g');
+function extractStyleParams(value) {
+  let params = [];
+  if (typeof value === 'string') {
+    let match;
+    while (match = PARAM_REGEX.exec(value)) {
+      params.push(match[1]);
+    }
+    PARAM_REGEX.lastIndex = 0;
+  }
+  return params;
+}
+function interpolateParams(value, params, errors) {
+  const original = `${value}`;
+  const str = original.replace(PARAM_REGEX, (_, varName) => {
+    let localVal = params[varName];
+    // this means that the value was never overridden by the data passed in by the user
+    if (localVal == null) {
+      errors.push(invalidParamValue(varName));
+      localVal = '';
+    }
+    return localVal.toString();
+  });
+  // we do this to assert that numeric values stay as they are
+  return str == original ? value : str;
+}
+const DASH_CASE_REGEXP = /-+([a-z0-9])/g;
+function dashCaseToCamelCase(input) {
+  return input.replace(DASH_CASE_REGEXP, (...m) => m[1].toUpperCase());
+}
+function camelCaseToDashCase(input) {
+  return input.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+}
+function allowPreviousPlayerStylesMerge(duration, delay) {
+  return duration === 0 || delay === 0;
+}
+function balancePreviousStylesIntoKeyframes(element, keyframes, previousStyles) {
+  if (previousStyles.size && keyframes.length) {
+    let startingKeyframe = keyframes[0];
+    let missingStyleProps = [];
+    previousStyles.forEach((val, prop) => {
+      if (!startingKeyframe.has(prop)) {
+        missingStyleProps.push(prop);
+      }
+      startingKeyframe.set(prop, val);
+    });
+    if (missingStyleProps.length) {
+      for (let i = 1; i < keyframes.length; i++) {
+        let kf = keyframes[i];
+        missingStyleProps.forEach(prop => kf.set(prop, computeStyle(element, prop)));
+      }
+    }
+  }
+  return keyframes;
+}
+function visitDslNode(visitor, node, context) {
+  switch (node.type) {
+    case _private_export_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Trigger:
+      return visitor.visitTrigger(node, context);
+    case _private_export_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.State:
+      return visitor.visitState(node, context);
+    case _private_export_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Transition:
+      return visitor.visitTransition(node, context);
+    case _private_export_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Sequence:
+      return visitor.visitSequence(node, context);
+    case _private_export_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Group:
+      return visitor.visitGroup(node, context);
+    case _private_export_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Animate:
+      return visitor.visitAnimate(node, context);
+    case _private_export_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Keyframes:
+      return visitor.visitKeyframes(node, context);
+    case _private_export_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Style:
+      return visitor.visitStyle(node, context);
+    case _private_export_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Reference:
+      return visitor.visitReference(node, context);
+    case _private_export_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.AnimateChild:
+      return visitor.visitAnimateChild(node, context);
+    case _private_export_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.AnimateRef:
+      return visitor.visitAnimateRef(node, context);
+    case _private_export_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Query:
+      return visitor.visitQuery(node, context);
+    case _private_export_mjs__WEBPACK_IMPORTED_MODULE_1__.AnimationMetadataType.Stagger:
+      return visitor.visitStagger(node, context);
+    default:
+      throw invalidNodeType(node.type);
+  }
+}
+function computeStyle(element, prop) {
+  return window.getComputedStyle(element)[prop];
+}
 
 
 /***/ })

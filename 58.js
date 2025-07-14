@@ -905,7 +905,9 @@ let MfeLoaderConfigComponent = /*#__PURE__*/(() => {
       url: '',
       remoteName: '',
       exposedModule: ''
-    });
+    }, ...(ngDevMode ? [{
+      debugName: "value"
+    }] : []));
     value$ = (0,_angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_5__.toObservable)(this.value);
     mfeValue = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.output)();
     viewModel$ = this.value$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_9__.map)(value => ({
@@ -988,11 +990,19 @@ let MfeLoaderConfigComponent = /*#__PURE__*/(() => {
 let NgxEditorJs2MfeLoaderComponent = /*#__PURE__*/(() => {
   class NgxEditorJs2MfeLoaderComponent {
     mfeHost;
-    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.input)(0);
+    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.input)(0, ...(ngDevMode ? [{
+      debugName: "sortIndex"
+    }] : []));
     componentInstanceName = 'NgxEditorJs2MfeLoaderComponent';
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.input)(true);
-    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_3__.input.required();
-    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_3__.input.required();
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.input)(true, ...(ngDevMode ? [{
+      debugName: "autofocus"
+    }] : []));
+    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_3__.input.required(...(ngDevMode ? [{
+      debugName: "formGroup"
+    }] : []));
+    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_3__.input.required(...(ngDevMode ? [{
+      debugName: "formControlName"
+    }] : []));
     blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.input)([{
       action: 'medium',
       icon: 'density_small'
@@ -1002,15 +1012,23 @@ let NgxEditorJs2MfeLoaderComponent = /*#__PURE__*/(() => {
     }, {
       action: 'display-large',
       icon: 'density_large'
-    }]);
+    }], ...(ngDevMode ? [{
+      debugName: "blockOptionActions"
+    }] : []));
     value = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.signal)({
       url: '',
       remoteName: '',
       exposedModule: ''
-    });
-    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.signal)('display-large');
+    }, ...(ngDevMode ? [{
+      debugName: "value"
+    }] : []));
+    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.signal)('display-large', ...(ngDevMode ? [{
+      debugName: "savedAction"
+    }] : []));
     actionCallbackBind = this.actionCallback.bind(this);
-    openOverlay = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.signal)(true);
+    openOverlay = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.signal)(true, ...(ngDevMode ? [{
+      debugName: "openOverlay"
+    }] : []));
     ngOnInit() {
       try {
         const possibleSavedValue = this.formGroup().get(this.formControlName());

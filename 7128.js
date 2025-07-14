@@ -27,11 +27,19 @@ __webpack_require__.r(__webpack_exports__);
 
 let NgxEditorJs2PanelComponent = /*#__PURE__*/(() => {
   class NgxEditorJs2PanelComponent {
-    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(0);
+    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(0, ...(ngDevMode ? [{
+      debugName: "sortIndex"
+    }] : []));
     componentInstanceName = 'NgxEditorJs2PanelComponent';
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(true);
-    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required();
-    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required();
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(true, ...(ngDevMode ? [{
+      debugName: "autofocus"
+    }] : []));
+    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required(...(ngDevMode ? [{
+      debugName: "formGroup"
+    }] : []));
+    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required(...(ngDevMode ? [{
+      debugName: "formControlName"
+    }] : []));
     blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)([{
       action: 'info',
       icon: 'info'
@@ -44,8 +52,12 @@ let NgxEditorJs2PanelComponent = /*#__PURE__*/(() => {
     }, {
       action: 'warning',
       icon: 'warning'
-    }]);
-    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.signal)('info');
+    }], ...(ngDevMode ? [{
+      debugName: "blockOptionActions"
+    }] : []));
+    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.signal)('info', ...(ngDevMode ? [{
+      debugName: "savedAction"
+    }] : []));
     actionCallbackBind = this.actionCallback.bind(this);
     panelIcons = {
       info: 'info',
@@ -95,7 +107,7 @@ let NgxEditorJs2PanelComponent = /*#__PURE__*/(() => {
         }
       },
       dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControlName, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_5__.ControlAccessorDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_5__.AutofocusDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_5__.ToolbarFabDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_5__.CleanPasteDataDirective, _angular_material_icon__WEBPACK_IMPORTED_MODULE_4__.MatIcon, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgClass],
-      styles: ["[_nghost-%COMP%]{display:block;position:relative}[_nghost-%COMP%]   p[_ngcontent-%COMP%]{line-height:1.6em}[_nghost-%COMP%]   .panel[_ngcontent-%COMP%]{border-left:5px solid currentColor;border-radius:4px;margin:1rem 0;padding:8px 0 8px 40px}[_nghost-%COMP%]   .panel-icon[_ngcontent-%COMP%]{position:absolute;left:16px;top:8px}[_nghost-%COMP%]   .info[_ngcontent-%COMP%]{background:#e8f0fe;color:#1a73e8}[_nghost-%COMP%]   .note[_ngcontent-%COMP%]{background:#ece7f6;color:#673ab7}[_nghost-%COMP%]   .tip[_ngcontent-%COMP%]{background:#e6f4ea;color:#107c41}[_nghost-%COMP%]   .warning[_ngcontent-%COMP%]{background:#fff4e5;color:#f57c00}"]
+      styles: ["[_nghost-%COMP%]{display:block;position:relative}[_nghost-%COMP%]   p[_ngcontent-%COMP%]{line-height:1.6em}[_nghost-%COMP%]   .panel[_ngcontent-%COMP%]{margin:1rem 0;padding:8px 0 8px 40px;border-left:5px solid currentColor;border-radius:4px}[_nghost-%COMP%]   .panel-icon[_ngcontent-%COMP%]{position:absolute;left:16px;top:8px}[_nghost-%COMP%]   .info[_ngcontent-%COMP%]{background:#e8f0fe;color:#1a73e8}[_nghost-%COMP%]   .note[_ngcontent-%COMP%]{background:#ece7f6;color:#673ab7}[_nghost-%COMP%]   .tip[_ngcontent-%COMP%]{background:#e6f4ea;color:#107c41}[_nghost-%COMP%]   .warning[_ngcontent-%COMP%]{background:#fff4e5;color:#f57c00}"]
     });
   }
   return NgxEditorJs2PanelComponent;

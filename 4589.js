@@ -14,9 +14,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ 85914);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
-/* harmony import */ var _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../dom_renderer-Frqw9gM5.mjs */ 83799);
+/* harmony import */ var _dom_renderer_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../dom_renderer.mjs */ 74080);
 /**
- * @license Angular v20.0.4
+ * @license Angular v20.1.0
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -307,7 +307,7 @@ function provideAnimationsAsync(type = 'animations') {
     useFactory: (doc, renderer, zone) => {
       return new AsyncAnimationRendererFactory(doc, renderer, zone, type);
     },
-    deps: [_angular_common__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT, _dom_renderer_Frqw9gM5_mjs__WEBPACK_IMPORTED_MODULE_2__.DomRendererFactory2, _angular_core__WEBPACK_IMPORTED_MODULE_1__.NgZone]
+    deps: [_angular_common__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT, _dom_renderer_mjs__WEBPACK_IMPORTED_MODULE_2__.DomRendererFactory2, _angular_core__WEBPACK_IMPORTED_MODULE_1__.NgZone]
   }, {
     provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__.ANIMATION_MODULE_TYPE,
     useValue: type === 'noop' ? 'NoopAnimations' : 'BrowserAnimations'
@@ -317,10 +317,10 @@ function provideAnimationsAsync(type = 'animations') {
 
 /***/ }),
 
-/***/ 83799:
-/*!***********************************************************************************!*\
-  !*** ./node_modules/@angular/platform-browser/fesm2022/dom_renderer-Frqw9gM5.mjs ***!
-  \***********************************************************************************/
+/***/ 74080:
+/*!**************************************************************************!*\
+  !*** ./node_modules/@angular/platform-browser/fesm2022/dom_renderer.mjs ***!
+  \**************************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -335,7 +335,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ 85914);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
 /**
- * @license Angular v20.0.4
+ * @license Angular v20.1.0
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -518,15 +518,13 @@ let SharedStylesHost = /*#__PURE__*/(() => {
      * Set of host DOM nodes that will have styles attached.
      */
     hosts = new Set();
-    /**
-     * Whether the application code is currently executing on a server.
-     */
-    isServer;
-    constructor(doc, appId, nonce, platformId = {}) {
+    constructor(doc, appId, nonce,
+    // Cannot remove it due to backward compatibility
+    // (it seems some TGP targets might be calling this constructor directly).
+    platformId = {}) {
       this.doc = doc;
       this.appId = appId;
       this.nonce = nonce;
-      this.isServer = (0,_angular_common__WEBPACK_IMPORTED_MODULE_0__.isPlatformServer)(platformId);
       addServerStyles(doc, appId, this.inline, this.external);
       this.hosts.add(doc.head);
     }
@@ -619,7 +617,7 @@ let SharedStylesHost = /*#__PURE__*/(() => {
         element.setAttribute('nonce', this.nonce);
       }
       // Add application identifier when on the server to support client-side reuse
-      if (this.isServer) {
+      if (typeof ngServerMode !== 'undefined' && ngServerMode) {
         element.setAttribute(APP_ID_ATTRIBUTE_NAME, this.appId);
       }
       // Insert the element into the DOM with the host node as parent

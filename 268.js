@@ -152,7 +152,9 @@ let ImageConfigComponent = /*#__PURE__*/(() => {
     value = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.input)({
       url: '',
       title: ''
-    });
+    }, ...(ngDevMode ? [{
+      debugName: "value"
+    }] : []));
     value$ = (0,_angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_6__.toObservable)(this.value);
     imageValue = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.output)();
     viewModel$ = this.value$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_9__.map)(value => ({
@@ -234,11 +236,19 @@ let ImageConfigComponent = /*#__PURE__*/(() => {
 })();
 let NgxEditorJs2ImageComponent = /*#__PURE__*/(() => {
   class NgxEditorJs2ImageComponent {
-    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.input)(0);
+    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.input)(0, ...(ngDevMode ? [{
+      debugName: "sortIndex"
+    }] : []));
     componentInstanceName = 'NgxEditorJs2ImageComponent';
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.input)(true);
-    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_1__.input.required();
-    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_1__.input.required();
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.input)(true, ...(ngDevMode ? [{
+      debugName: "autofocus"
+    }] : []));
+    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_1__.input.required(...(ngDevMode ? [{
+      debugName: "formGroup"
+    }] : []));
+    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_1__.input.required(...(ngDevMode ? [{
+      debugName: "formControlName"
+    }] : []));
     blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.input)([{
       action: 'flex-start',
       icon: 'format_align_left'
@@ -251,14 +261,22 @@ let NgxEditorJs2ImageComponent = /*#__PURE__*/(() => {
     }, {
       action: 'stretch',
       icon: 'format_align_justify'
-    }]);
+    }], ...(ngDevMode ? [{
+      debugName: "blockOptionActions"
+    }] : []));
     value = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.signal)({
       url: '',
       title: ''
-    });
-    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.signal)('flex-start');
+    }, ...(ngDevMode ? [{
+      debugName: "value"
+    }] : []));
+    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.signal)('flex-start', ...(ngDevMode ? [{
+      debugName: "savedAction"
+    }] : []));
     actionCallbackBind = this.actionCallback.bind(this);
-    openOverlay = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.signal)(true);
+    openOverlay = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.signal)(true, ...(ngDevMode ? [{
+      debugName: "openOverlay"
+    }] : []));
     ngOnInit() {
       try {
         const possibleSavedValue = this.formGroup().get(this.formControlName());

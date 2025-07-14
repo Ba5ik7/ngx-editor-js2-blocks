@@ -758,6 +758,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   MAT_MENU_SCROLL_STRATEGY: () => (/* binding */ MAT_MENU_SCROLL_STRATEGY),
 /* harmony export */   MAT_MENU_SCROLL_STRATEGY_FACTORY_PROVIDER: () => (/* binding */ MAT_MENU_SCROLL_STRATEGY_FACTORY_PROVIDER),
 /* harmony export */   MENU_PANEL_TOP_PADDING: () => (/* binding */ MENU_PANEL_TOP_PADDING),
+/* harmony export */   MatContextMenuTrigger: () => (/* binding */ MatContextMenuTrigger),
 /* harmony export */   MatMenu: () => (/* binding */ MatMenu),
 /* harmony export */   MatMenuContent: () => (/* binding */ MatMenuContent),
 /* harmony export */   MatMenuItem: () => (/* binding */ MatMenuItem),
@@ -779,10 +780,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _animation_DfMFjxHu_mjs__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./animation-DfMFjxHu.mjs */ 73388);
 /* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/cdk/bidi */ 48073);
 /* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/cdk/overlay */ 87351);
-/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/cdk/scrolling */ 25287);
+/* harmony import */ var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/cdk/platform */ 49583);
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/cdk/scrolling */ 25287);
 /* harmony import */ var _index_BFRo2fUq_mjs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./index-BFRo2fUq.mjs */ 89061);
 /* harmony import */ var _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./common-module-cKSwHniA.mjs */ 8126);
-/* harmony import */ var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/cdk/platform */ 49583);
 /* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/cdk/coercion */ 33981);
 /* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/cdk/layout */ 285);
 
@@ -824,8 +825,8 @@ const _c3 = ["*"];
 function MatMenu_ng_template_0_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function MatMenu_ng_template_0_Template_div_click_0_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomElementStart"](0, "div", 0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomListener"]("click", function MatMenu_ng_template_0_Template_div_click_0_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r1);
       const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r1.closed.emit("click"));
@@ -842,15 +843,15 @@ function MatMenu_ng_template_0_Template(rf, ctx) {
       const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r1._onAnimationDone($event.animationName));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomElementStart"](1, "div", 1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomElementEnd"]()();
   }
   if (rf & 2) {
     const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx_r1._classList);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-menu-panel-animations-disabled", ctx_r1._animationsDisabled)("mat-menu-panel-exit-animation", ctx_r1._panelAnimationState === "void")("mat-menu-panel-animating", ctx_r1._isAnimating);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("id", ctx_r1.panelId);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomProperty"]("id", ctx_r1.panelId);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-label", ctx_r1.ariaLabel || null)("aria-labelledby", ctx_r1.ariaLabelledby || null)("aria-describedby", ctx_r1.ariaDescribedby || null);
   }
 }
@@ -1544,7 +1545,7 @@ let MatMenu = /*#__PURE__*/(() => {
       template: function MatMenu_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, MatMenu_ng_template_0_Template, 3, 12, "ng-template");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomTemplate"](0, MatMenu_ng_template_0_Template, 3, 12, "ng-template");
         }
       },
       styles: ["mat-menu{display:none}.mat-mdc-menu-content{margin:0;padding:8px 0;outline:0}.mat-mdc-menu-content,.mat-mdc-menu-content .mat-mdc-menu-item .mat-mdc-menu-item-text{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;flex:1;white-space:normal;font-family:var(--mat-menu-item-label-text-font, var(--mat-sys-label-large-font));line-height:var(--mat-menu-item-label-text-line-height, var(--mat-sys-label-large-line-height));font-size:var(--mat-menu-item-label-text-size, var(--mat-sys-label-large-size));letter-spacing:var(--mat-menu-item-label-text-tracking, var(--mat-sys-label-large-tracking));font-weight:var(--mat-menu-item-label-text-weight, var(--mat-sys-label-large-weight))}@keyframes _mat-menu-enter{from{opacity:0;transform:scale(0.8)}to{opacity:1;transform:none}}@keyframes _mat-menu-exit{from{opacity:1}to{opacity:0}}.mat-mdc-menu-panel{min-width:112px;max-width:280px;overflow:auto;box-sizing:border-box;outline:0;animation:_mat-menu-enter 120ms cubic-bezier(0, 0, 0.2, 1);border-radius:var(--mat-menu-container-shape, var(--mat-sys-corner-extra-small));background-color:var(--mat-menu-container-color, var(--mat-sys-surface-container));box-shadow:var(--mat-menu-container-elevation-shadow, 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12));will-change:transform,opacity}.mat-mdc-menu-panel.mat-menu-panel-exit-animation{animation:_mat-menu-exit 100ms 25ms linear forwards}.mat-mdc-menu-panel.mat-menu-panel-animations-disabled{animation:none}.mat-mdc-menu-panel.mat-menu-panel-animating{pointer-events:none}.mat-mdc-menu-panel.mat-menu-panel-animating:has(.mat-mdc-menu-content:empty){display:none}@media(forced-colors: active){.mat-mdc-menu-panel{outline:solid 1px}}.mat-mdc-menu-panel .mat-divider{color:var(--mat-menu-divider-color, var(--mat-sys-surface-variant));margin-bottom:var(--mat-menu-divider-bottom-spacing, 8px);margin-top:var(--mat-menu-divider-top-spacing, 8px)}.mat-mdc-menu-item{display:flex;position:relative;align-items:center;justify-content:flex-start;overflow:hidden;padding:0;cursor:pointer;width:100%;text-align:left;box-sizing:border-box;color:inherit;font-size:inherit;background:none;text-decoration:none;margin:0;min-height:48px;padding-left:var(--mat-menu-item-leading-spacing, 12px);padding-right:var(--mat-menu-item-trailing-spacing, 12px);-webkit-user-select:none;user-select:none;cursor:pointer;outline:none;border:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}.mat-mdc-menu-item::-moz-focus-inner{border:0}[dir=rtl] .mat-mdc-menu-item{padding-left:var(--mat-menu-item-trailing-spacing, 12px);padding-right:var(--mat-menu-item-leading-spacing, 12px)}.mat-mdc-menu-item:has(.material-icons,mat-icon,[matButtonIcon]){padding-left:var(--mat-menu-item-with-icon-leading-spacing, 12px);padding-right:var(--mat-menu-item-with-icon-trailing-spacing, 12px)}[dir=rtl] .mat-mdc-menu-item:has(.material-icons,mat-icon,[matButtonIcon]){padding-left:var(--mat-menu-item-with-icon-trailing-spacing, 12px);padding-right:var(--mat-menu-item-with-icon-leading-spacing, 12px)}.mat-mdc-menu-item,.mat-mdc-menu-item:visited,.mat-mdc-menu-item:link{color:var(--mat-menu-item-label-text-color, var(--mat-sys-on-surface))}.mat-mdc-menu-item .mat-icon-no-color,.mat-mdc-menu-item .mat-mdc-menu-submenu-icon{color:var(--mat-menu-item-icon-color, var(--mat-sys-on-surface-variant))}.mat-mdc-menu-item[disabled]{cursor:default;opacity:.38}.mat-mdc-menu-item[disabled]::after{display:block;position:absolute;content:\"\";top:0;left:0;bottom:0;right:0}.mat-mdc-menu-item:focus{outline:0}.mat-mdc-menu-item .mat-icon{flex-shrink:0;margin-right:var(--mat-menu-item-spacing, 12px);height:var(--mat-menu-item-icon-size, 24px);width:var(--mat-menu-item-icon-size, 24px)}[dir=rtl] .mat-mdc-menu-item{text-align:right}[dir=rtl] .mat-mdc-menu-item .mat-icon{margin-right:0;margin-left:var(--mat-menu-item-spacing, 12px)}.mat-mdc-menu-item:not([disabled]):hover{background-color:var(--mat-menu-item-hover-state-layer-color, color-mix(in srgb, var(--mat-sys-on-surface) calc(var(--mat-sys-hover-state-layer-opacity) * 100%), transparent))}.mat-mdc-menu-item:not([disabled]).cdk-program-focused,.mat-mdc-menu-item:not([disabled]).cdk-keyboard-focused,.mat-mdc-menu-item:not([disabled]).mat-mdc-menu-item-highlighted{background-color:var(--mat-menu-item-focus-state-layer-color, color-mix(in srgb, var(--mat-sys-on-surface) calc(var(--mat-sys-focus-state-layer-opacity) * 100%), transparent))}@media(forced-colors: active){.mat-mdc-menu-item{margin-top:1px}}.mat-mdc-menu-submenu-icon{width:var(--mat-menu-item-icon-size, 24px);height:10px;fill:currentColor;padding-left:var(--mat-menu-item-spacing, 12px)}[dir=rtl] .mat-mdc-menu-submenu-icon{padding-right:var(--mat-menu-item-spacing, 12px);padding-left:0}[dir=rtl] .mat-mdc-menu-submenu-icon polygon{transform:scaleX(-1);transform-origin:center}@media(forced-colors: active){.mat-mdc-menu-submenu-icon{fill:CanvasText}}.mat-mdc-menu-item .mat-mdc-menu-ripple{top:0;left:0;right:0;bottom:0;position:absolute;pointer-events:none}\n"],
@@ -1594,8 +1595,9 @@ const MENU_PANEL_TOP_PADDING = 8;
 /** Mapping between menu panels and the last trigger that opened them. */
 const PANELS_TO_TRIGGERS = /*#__PURE__*/new WeakMap();
 /** Directive applied to an element that should trigger a `mat-menu`. */
-let MatMenuTrigger = /*#__PURE__*/(() => {
-  class MatMenuTrigger {
+let MatMenuTriggerBase = /*#__PURE__*/(() => {
+  class MatMenuTriggerBase {
+    _canHaveBackdrop;
     _element = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
     _viewContainerRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewContainerRef);
     _menuItemInstance = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(MatMenuItem, {
@@ -1611,12 +1613,10 @@ let MatMenuTrigger = /*#__PURE__*/(() => {
     _scrollStrategy = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(MAT_MENU_SCROLL_STRATEGY);
     _changeDetectorRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ChangeDetectorRef);
     _animationsDisabled = (0,_animation_DfMFjxHu_mjs__WEBPACK_IMPORTED_MODULE_15__._)();
-    _cleanupTouchstart;
     _portal;
     _overlayRef = null;
     _menuOpen = false;
     _closingActionsSubscription = rxjs__WEBPACK_IMPORTED_MODULE_3__.Subscription.EMPTY;
-    _hoverSubscription = rxjs__WEBPACK_IMPORTED_MODULE_3__.Subscription.EMPTY;
     _menuCloseSubscription = rxjs__WEBPACK_IMPORTED_MODULE_3__.Subscription.EMPTY;
     _pendingRemoval;
     /**
@@ -1632,25 +1632,15 @@ let MatMenuTrigger = /*#__PURE__*/(() => {
     // Tracking input type is necessary so it's possible to only auto-focus
     // the first item of the list when the menu is opened via the keyboard
     _openedBy = undefined;
-    /**
-     * @deprecated
-     * @breaking-change 8.0.0
-     */
-    get _deprecatedMatMenuTriggerFor() {
-      return this.menu;
+    /** Menu currently assigned to the trigger. */
+    get _menu() {
+      return this._menuInternal;
     }
-    set _deprecatedMatMenuTriggerFor(v) {
-      this.menu = v;
-    }
-    /** References the menu instance that the trigger is associated with. */
-    get menu() {
-      return this._menu;
-    }
-    set menu(menu) {
-      if (menu === this._menu) {
+    set _menu(menu) {
+      if (menu === this._menuInternal) {
         return;
       }
-      this._menu = menu;
+      this._menuInternal = menu;
       this._menuCloseSubscription.unsubscribe();
       if (menu) {
         if (menu === this._parentMaterialMenu && (typeof ngDevMode === 'undefined' || ngDevMode)) {
@@ -1664,61 +1654,23 @@ let MatMenuTrigger = /*#__PURE__*/(() => {
           }
         });
       }
-      this._menuItemInstance?._setTriggersSubmenu(this.triggersSubmenu());
+      this._menuItemInstance?._setTriggersSubmenu(this._triggersSubmenu());
     }
-    _menu;
-    /** Data to be passed along to any lazily-rendered content. */
-    menuData;
-    /**
-     * Whether focus should be restored when the menu is closed.
-     * Note that disabling this option can have accessibility implications
-     * and it's up to you to manage focus, if you decide to turn it off.
-     */
-    restoreFocus = true;
-    /** Event emitted when the associated menu is opened. */
-    menuOpened = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
-    /**
-     * Event emitted when the associated menu is opened.
-     * @deprecated Switch to `menuOpened` instead
-     * @breaking-change 8.0.0
-     */
-    // tslint:disable-next-line:no-output-on-prefix
-    onMenuOpen = this.menuOpened;
-    /** Event emitted when the associated menu is closed. */
-    menuClosed = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
-    /**
-     * Event emitted when the associated menu is closed.
-     * @deprecated Switch to `menuClosed` instead
-     * @breaking-change 8.0.0
-     */
-    // tslint:disable-next-line:no-output-on-prefix
-    onMenuClose = this.menuClosed;
-    constructor() {
+    _menuInternal;
+    constructor(_canHaveBackdrop) {
+      this._canHaveBackdrop = _canHaveBackdrop;
       const parentMenu = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(MAT_MENU_PANEL, {
         optional: true
       });
-      const renderer = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2);
       this._parentMaterialMenu = parentMenu instanceof MatMenu ? parentMenu : undefined;
-      this._cleanupTouchstart = renderer.listen(this._element.nativeElement, 'touchstart', event => {
-        if (!(0,_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_1__.isFakeTouchstartFromScreenReader)(event)) {
-          this._openedBy = 'touch';
-        }
-      }, {
-        passive: true
-      });
-    }
-    ngAfterContentInit() {
-      this._handleHover();
     }
     ngOnDestroy() {
-      if (this.menu && this._ownsMenu(this.menu)) {
-        PANELS_TO_TRIGGERS.delete(this.menu);
+      if (this._menu && this._ownsMenu(this._menu)) {
+        PANELS_TO_TRIGGERS.delete(this._menu);
       }
-      this._cleanupTouchstart();
       this._pendingRemoval?.unsubscribe();
       this._menuCloseSubscription.unsubscribe();
       this._closingActionsSubscription.unsubscribe();
-      this._hoverSubscription.unsubscribe();
       if (this._overlayRef) {
         this._overlayRef.dispose();
         this._overlayRef = null;
@@ -1733,16 +1685,15 @@ let MatMenuTrigger = /*#__PURE__*/(() => {
       return this._dir && this._dir.value === 'rtl' ? 'rtl' : 'ltr';
     }
     /** Whether the menu triggers a sub-menu or a top-level one. */
-    triggersSubmenu() {
-      return !!(this._menuItemInstance && this._parentMaterialMenu && this.menu);
+    _triggersSubmenu() {
+      return !!(this._menuItemInstance && this._parentMaterialMenu && this._menu);
     }
-    /** Toggles the menu between the open and closed states. */
-    toggleMenu() {
-      return this._menuOpen ? this.closeMenu() : this.openMenu();
+    _closeMenu() {
+      this._menu?.close.emit();
     }
-    /** Opens the menu. */
-    openMenu() {
-      const menu = this.menu;
+    /** Internal method to open menu providing option to auto focus on first item. */
+    _openMenu(autoFocus) {
+      const menu = this._menu;
       if (this._menuOpen || !menu) {
         return;
       }
@@ -1752,23 +1703,29 @@ let MatMenuTrigger = /*#__PURE__*/(() => {
       // If the same menu is currently attached to another trigger,
       // we need to close it so it doesn't end up in a broken state.
       if (previousTrigger && previousTrigger !== this) {
-        previousTrigger.closeMenu();
+        previousTrigger._closeMenu();
       }
       const overlayRef = this._createOverlay(menu);
       const overlayConfig = overlayRef.getConfig();
       const positionStrategy = overlayConfig.positionStrategy;
       this._setPosition(menu, positionStrategy);
-      overlayConfig.hasBackdrop = menu.hasBackdrop == null ? !this.triggersSubmenu() : menu.hasBackdrop;
+      if (this._canHaveBackdrop) {
+        overlayConfig.hasBackdrop = menu.hasBackdrop == null ? !this._triggersSubmenu() : menu.hasBackdrop;
+      } else {
+        overlayConfig.hasBackdrop = false;
+      }
       // We need the `hasAttached` check for the case where the user kicked off a removal animation,
       // but re-entered the menu. Re-attaching the same portal will trigger an error otherwise.
       if (!overlayRef.hasAttached()) {
         overlayRef.attach(this._getPortal(menu));
         menu.lazyContent?.attach(this.menuData);
       }
-      this._closingActionsSubscription = this._menuClosingActions().subscribe(() => this.closeMenu());
-      menu.parentMenu = this.triggersSubmenu() ? this._parentMaterialMenu : undefined;
+      this._closingActionsSubscription = this._menuClosingActions().subscribe(() => this._closeMenu());
+      menu.parentMenu = this._triggersSubmenu() ? this._parentMaterialMenu : undefined;
       menu.direction = this.dir;
-      menu.focusFirstItem(this._openedBy || 'program');
+      if (autoFocus) {
+        menu.focusFirstItem(this._openedBy || 'program');
+      }
       this._setIsMenuOpen(true);
       if (menu instanceof MatMenu) {
         menu._setIsOpen(true);
@@ -1780,10 +1737,6 @@ let MatMenuTrigger = /*#__PURE__*/(() => {
         });
       }
     }
-    /** Closes the menu. */
-    closeMenu() {
-      this.menu?.close.emit();
-    }
     /**
      * Focuses the menu trigger.
      * @param origin Source of the menu trigger's focus.
@@ -1794,12 +1747,6 @@ let MatMenuTrigger = /*#__PURE__*/(() => {
       } else {
         this._element.nativeElement.focus(options);
       }
-    }
-    /**
-     * Updates the position of the menu to ensure that it fits all options within the viewport.
-     */
-    updatePosition() {
-      this._overlayRef?.updatePosition();
     }
     /** Closes the menu and does the necessary cleanup. */
     _destroyMenu(reason) {
@@ -1829,7 +1776,7 @@ let MatMenuTrigger = /*#__PURE__*/(() => {
       // programmatically. We don't restore for non-root triggers, because it can prevent focus
       // from making it back to the root trigger when closing a long chain of menus by clicking
       // on the backdrop.
-      if (this.restoreFocus && (reason === 'keydown' || !this._openedBy || !this.triggersSubmenu())) {
+      if (this.restoreFocus && (reason === 'keydown' || !this._openedBy || !this._triggersSubmenu())) {
         this.focus(this._openedBy);
       }
       this._openedBy = undefined;
@@ -1840,7 +1787,7 @@ let MatMenuTrigger = /*#__PURE__*/(() => {
       if (isOpen !== this._menuOpen) {
         this._menuOpen = isOpen;
         this._menuOpen ? this.menuOpened.emit() : this.menuClosed.emit();
-        if (this.triggersSubmenu()) {
+        if (this._triggersSubmenu()) {
           this._menuItemInstance._setHighlighted(isOpen);
         }
         this._changeDetectorRef.markForCheck();
@@ -1856,8 +1803,8 @@ let MatMenuTrigger = /*#__PURE__*/(() => {
         this._subscribeToPositions(menu, config.positionStrategy);
         this._overlayRef = (0,_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.createOverlayRef)(this._injector, config);
         this._overlayRef.keydownEvents().subscribe(event => {
-          if (this.menu instanceof MatMenu) {
-            this.menu._handleKeydown(event);
+          if (this._menu instanceof MatMenu) {
+            this._menu._handleKeydown(event);
           }
         });
       }
@@ -1869,7 +1816,7 @@ let MatMenuTrigger = /*#__PURE__*/(() => {
      */
     _getOverlayConfig(menu) {
       return new _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.OverlayConfig({
-        positionStrategy: (0,_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.createFlexibleConnectedPositionStrategy)(this._injector, this._element).withLockedPosition().withGrowAfterOpen().withTransformOriginOn('.mat-menu-panel, .mat-mdc-menu-panel'),
+        positionStrategy: (0,_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.createFlexibleConnectedPositionStrategy)(this._injector, this._getOverlayOrigin()).withLockedPosition().withGrowAfterOpen().withTransformOriginOn('.mat-menu-panel, .mat-mdc-menu-panel'),
         backdropClass: menu.backdropClass || 'cdk-overlay-transparent-backdrop',
         panelClass: menu.overlayPanelClass,
         scrollStrategy: this._scrollStrategy(),
@@ -1904,7 +1851,7 @@ let MatMenuTrigger = /*#__PURE__*/(() => {
       let [originY, originFallbackY] = [overlayY, overlayFallbackY];
       let [overlayX, overlayFallbackX] = [originX, originFallbackX];
       let offsetY = 0;
-      if (this.triggersSubmenu()) {
+      if (this._triggersSubmenu()) {
         // When the menu is a sub-menu, it should always align itself
         // to the edges of the trigger, instead of overlapping it.
         overlayFallbackX = originX = menu.xPosition === 'before' ? 'start' : 'end';
@@ -1948,11 +1895,137 @@ let MatMenuTrigger = /*#__PURE__*/(() => {
     }
     /** Returns a stream that emits whenever an action that should close the menu occurs. */
     _menuClosingActions() {
-      const backdrop = this._overlayRef.backdropClick();
+      const outsideClicks = this._getOutsideClickStream(this._overlayRef);
       const detachments = this._overlayRef.detachments();
       const parentClose = this._parentMaterialMenu ? this._parentMaterialMenu.closed : (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.of)();
       const hover = this._parentMaterialMenu ? this._parentMaterialMenu._hovered().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.filter)(active => this._menuOpen && active !== this._menuItemInstance)) : (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.of)();
-      return (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.merge)(backdrop, parentClose, hover, detachments);
+      return (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.merge)(outsideClicks, parentClose, hover, detachments);
+    }
+    /** Gets the portal that should be attached to the overlay. */
+    _getPortal(menu) {
+      // Note that we can avoid this check by keeping the portal on the menu panel.
+      // While it would be cleaner, we'd have to introduce another required method on
+      // `MatMenuPanel`, making it harder to consume.
+      if (!this._portal || this._portal.templateRef !== menu.templateRef) {
+        this._portal = new _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_6__.TemplatePortal(menu.templateRef, this._viewContainerRef);
+      }
+      return this._portal;
+    }
+    /**
+     * Determines whether the trigger owns a specific menu panel, at the current point in time.
+     * This allows us to distinguish the case where the same panel is passed into multiple triggers
+     * and multiple are open at a time.
+     */
+    _ownsMenu(menu) {
+      return PANELS_TO_TRIGGERS.get(menu) === this;
+    }
+    static ɵfac = function MatMenuTriggerBase_Factory(__ngFactoryType__) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinvalidFactory"]();
+    };
+    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+      type: MatMenuTriggerBase
+    });
+  }
+  return MatMenuTriggerBase;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/** Directive applied to an element that should trigger a `mat-menu`. */
+let MatMenuTrigger = /*#__PURE__*/(() => {
+  class MatMenuTrigger extends MatMenuTriggerBase {
+    _cleanupTouchstart;
+    _hoverSubscription = rxjs__WEBPACK_IMPORTED_MODULE_3__.Subscription.EMPTY;
+    /**
+     * @deprecated
+     * @breaking-change 8.0.0
+     */
+    get _deprecatedMatMenuTriggerFor() {
+      return this.menu;
+    }
+    set _deprecatedMatMenuTriggerFor(v) {
+      this.menu = v;
+    }
+    /** References the menu instance that the trigger is associated with. */
+    get menu() {
+      return this._menu;
+    }
+    set menu(menu) {
+      this._menu = menu;
+    }
+    /** Data to be passed along to any lazily-rendered content. */
+    menuData;
+    /**
+     * Whether focus should be restored when the menu is closed.
+     * Note that disabling this option can have accessibility implications
+     * and it's up to you to manage focus, if you decide to turn it off.
+     */
+    restoreFocus = true;
+    /** Event emitted when the associated menu is opened. */
+    menuOpened = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
+    /**
+     * Event emitted when the associated menu is opened.
+     * @deprecated Switch to `menuOpened` instead
+     * @breaking-change 8.0.0
+     */
+    // tslint:disable-next-line:no-output-on-prefix
+    onMenuOpen = this.menuOpened;
+    /** Event emitted when the associated menu is closed. */
+    menuClosed = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
+    /**
+     * Event emitted when the associated menu is closed.
+     * @deprecated Switch to `menuClosed` instead
+     * @breaking-change 8.0.0
+     */
+    // tslint:disable-next-line:no-output-on-prefix
+    onMenuClose = this.menuClosed;
+    constructor() {
+      super(true);
+      const renderer = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2);
+      this._cleanupTouchstart = renderer.listen(this._element.nativeElement, 'touchstart', event => {
+        if (!(0,_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_1__.isFakeTouchstartFromScreenReader)(event)) {
+          this._openedBy = 'touch';
+        }
+      }, {
+        passive: true
+      });
+    }
+    /** Whether the menu triggers a sub-menu or a top-level one. */
+    triggersSubmenu() {
+      return super._triggersSubmenu();
+    }
+    /** Toggles the menu between the open and closed states. */
+    toggleMenu() {
+      return this.menuOpen ? this.closeMenu() : this.openMenu();
+    }
+    /** Opens the menu. */
+    openMenu() {
+      this._openMenu(true);
+    }
+    /** Closes the menu. */
+    closeMenu() {
+      this._closeMenu();
+    }
+    /**
+     * Updates the position of the menu to ensure that it fits all options within the viewport.
+     */
+    updatePosition() {
+      this._overlayRef?.updatePosition();
+    }
+    ngAfterContentInit() {
+      this._handleHover();
+    }
+    ngOnDestroy() {
+      super.ngOnDestroy();
+      this._cleanupTouchstart();
+      this._hoverSubscription.unsubscribe();
+    }
+    _getOverlayOrigin() {
+      return this._element;
+    }
+    _getOutsideClickStream(overlayRef) {
+      return overlayRef.backdropClick();
     }
     /** Handles mouse presses on the trigger. */
     _handleMousedown(event) {
@@ -1997,28 +2070,13 @@ let MatMenuTrigger = /*#__PURE__*/(() => {
         this._hoverSubscription = this._parentMaterialMenu._hovered().subscribe(active => {
           if (active === this._menuItemInstance && !active.disabled) {
             this._openedBy = 'mouse';
-            this.openMenu();
+            // Open the menu, but do NOT auto-focus on first item when just hovering.
+            // When VoiceOver is enabled, this is particularly confusing as the focus will
+            // cause another hover event, and continue opening sub-menus without interaction.
+            this._openMenu(false);
           }
         });
       }
-    }
-    /** Gets the portal that should be attached to the overlay. */
-    _getPortal(menu) {
-      // Note that we can avoid this check by keeping the portal on the menu panel.
-      // While it would be cleaner, we'd have to introduce another required method on
-      // `MatMenuPanel`, making it harder to consume.
-      if (!this._portal || this._portal.templateRef !== menu.templateRef) {
-        this._portal = new _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_6__.TemplatePortal(menu.templateRef, this._viewContainerRef);
-      }
-      return this._portal;
-    }
-    /**
-     * Determines whether the trigger owns a specific menu panel, at the current point in time.
-     * This allows us to distinguish the case where the same panel is passed into multiple triggers
-     * and multiple are open at a time.
-     */
-    _ownsMenu(menu) {
-      return PANELS_TO_TRIGGERS.get(menu) === this;
     }
     static ɵfac = function MatMenuTrigger_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || MatMenuTrigger)();
@@ -2054,10 +2112,195 @@ let MatMenuTrigger = /*#__PURE__*/(() => {
         menuClosed: "menuClosed",
         onMenuClose: "onMenuClose"
       },
-      exportAs: ["matMenuTrigger"]
+      exportAs: ["matMenuTrigger"],
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]]
     });
   }
   return MatMenuTrigger;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/**
+ * Trigger that opens a menu whenever the user right-clicks within its host element.
+ */
+let MatContextMenuTrigger = /*#__PURE__*/(() => {
+  class MatContextMenuTrigger extends MatMenuTriggerBase {
+    _point = {
+      x: 0,
+      y: 0,
+      initialX: 0,
+      initialY: 0,
+      initialScrollX: 0,
+      initialScrollY: 0
+    };
+    _triggerPressedControl = false;
+    _rootNode;
+    _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT);
+    _viewportRuler = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.ViewportRuler);
+    _scrollDispatcher = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.ScrollDispatcher);
+    _scrollSubscription;
+    /** References the menu instance that the trigger is associated with. */
+    get menu() {
+      return this._menu;
+    }
+    set menu(menu) {
+      this._menu = menu;
+    }
+    /** Data to be passed along to any lazily-rendered content. */
+    menuData;
+    /**
+     * Whether focus should be restored when the menu is closed.
+     * Note that disabling this option can have accessibility implications
+     * and it's up to you to manage focus, if you decide to turn it off.
+     */
+    restoreFocus = true;
+    /** Whether the context menu is disabled. */
+    disabled = false;
+    /** Event emitted when the associated menu is opened. */
+    menuOpened = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
+    /** Event emitted when the associated menu is closed. */
+    menuClosed = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
+    constructor() {
+      super(false);
+    }
+    ngOnDestroy() {
+      super.ngOnDestroy();
+      this._scrollSubscription?.unsubscribe();
+    }
+    /** Handler for `contextmenu` events. */
+    _handleContextMenuEvent(event) {
+      if (!this.disabled) {
+        event.preventDefault();
+        // If the menu is already open, only update its position.
+        if (this.menuOpen) {
+          this._initializePoint(event.clientX, event.clientY);
+          this._updatePosition();
+        } else {
+          this._openContextMenu(event);
+        }
+      }
+    }
+    _destroyMenu(reason) {
+      super._destroyMenu(reason);
+      this._scrollSubscription?.unsubscribe();
+    }
+    _getOverlayOrigin() {
+      return this._point;
+    }
+    _getOutsideClickStream(overlayRef) {
+      return overlayRef.outsidePointerEvents().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.skipWhile)((event, index) => {
+        if (event.type === 'contextmenu') {
+          // Do not close when attempting to open a context menu within the trigger.
+          return this._isWithinMenuOrTrigger((0,_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_9__._getEventTarget)(event));
+        } else if (event.type === 'auxclick') {
+          // Skip the first `auxclick` since it happens at
+          // the same time as the event that opens the menu.
+          if (index === 0) {
+            return true;
+          }
+          // Do not close on `auxclick` within the menu since we want to reposition the menu
+          // instead. Note that we have to resolve the clicked element using its position,
+          // rather than `event.target`, because the `target` is set to the `body`.
+          this._rootNode ??= (0,_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_9__._getShadowRoot)(this._element.nativeElement) || this._document;
+          return this._isWithinMenuOrTrigger(this._rootNode.elementFromPoint(event.clientX, event.clientY));
+        }
+        // Using a mouse, the `contextmenu` event can fire either when pressing the right button
+        // or left button + control. Most browsers won't dispatch a `click` event right after
+        // a `contextmenu` event triggered by left button + control, but Safari will (see #27832).
+        // This closes the menu immediately. To work around it, we check that both the triggering
+        // event and the current outside click event both had the control key pressed, and that
+        // that this is the first outside click event.
+        return this._triggerPressedControl && index === 0 && event.ctrlKey;
+      }));
+    }
+    /** Checks whether an element is within the trigger or the opened overlay. */
+    _isWithinMenuOrTrigger(target) {
+      if (!target) {
+        return false;
+      }
+      const element = this._element.nativeElement;
+      if (target === element || element.contains(target)) {
+        return true;
+      }
+      const overlay = this._overlayRef?.hostElement;
+      return overlay === target || !!overlay?.contains(target);
+    }
+    /** Opens the context menu. */
+    _openContextMenu(event) {
+      // A context menu can be triggered via a mouse right click or a keyboard shortcut.
+      if (event.button === 2) {
+        this._openedBy = 'mouse';
+      } else {
+        this._openedBy = event.button === 0 ? 'keyboard' : undefined;
+      }
+      this._initializePoint(event.clientX, event.clientY);
+      this._triggerPressedControl = event.ctrlKey;
+      super._openMenu(true);
+      this._scrollSubscription?.unsubscribe();
+      this._scrollSubscription = this._scrollDispatcher.scrolled(0).subscribe(() => {
+        // When passing a point to the connected position strategy, the position
+        // won't update as the user is scrolling so we have to do it manually.
+        const position = this._viewportRuler.getViewportScrollPosition();
+        const point = this._point;
+        point.y = point.initialY + (point.initialScrollY - position.top);
+        point.x = point.initialX + (point.initialScrollX - position.left);
+        this._updatePosition();
+      });
+    }
+    /** Initializes the point representing the origin relative to which the menu will be rendered. */
+    _initializePoint(x, y) {
+      const scrollPosition = this._viewportRuler.getViewportScrollPosition();
+      const point = this._point;
+      point.x = point.initialX = x;
+      point.y = point.initialY = y;
+      point.initialScrollX = scrollPosition.left;
+      point.initialScrollY = scrollPosition.top;
+    }
+    /** Refreshes the position of the overlay. */
+    _updatePosition() {
+      const overlayRef = this._overlayRef;
+      if (overlayRef) {
+        const positionStrategy = overlayRef.getConfig().positionStrategy;
+        positionStrategy.setOrigin(this._point);
+        overlayRef.updatePosition();
+      }
+    }
+    static ɵfac = function MatContextMenuTrigger_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || MatContextMenuTrigger)();
+    };
+    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+      type: MatContextMenuTrigger,
+      selectors: [["", "matContextMenuTriggerFor", ""]],
+      hostAttrs: [1, "mat-context-menu-trigger"],
+      hostVars: 3,
+      hostBindings: function MatContextMenuTrigger_HostBindings(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("contextmenu", function MatContextMenuTrigger_contextmenu_HostBindingHandler($event) {
+            return ctx._handleContextMenuEvent($event);
+          });
+        }
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-controls", ctx.menuOpen ? ctx.menu == null ? null : ctx.menu.panelId : null);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-context-menu-trigger-disabled", ctx.disabled);
+        }
+      },
+      inputs: {
+        menu: [0, "matContextMenuTriggerFor", "menu"],
+        menuData: [0, "matContextMenuTriggerData", "menuData"],
+        restoreFocus: [0, "matContextMenuTriggerRestoreFocus", "restoreFocus"],
+        disabled: [2, "matContextMenuTriggerDisabled", "disabled", _angular_core__WEBPACK_IMPORTED_MODULE_0__.booleanAttribute]
+      },
+      outputs: {
+        menuOpened: "menuOpened",
+        menuClosed: "menuClosed"
+      },
+      exportAs: ["matContextMenuTrigger"],
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]]
+    });
+  }
+  return MatContextMenuTrigger;
 })();
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
@@ -2072,7 +2315,7 @@ let MatMenuModule = /*#__PURE__*/(() => {
     });
     static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
       providers: [MAT_MENU_SCROLL_STRATEGY_FACTORY_PROVIDER],
-      imports: [_index_BFRo2fUq_mjs__WEBPACK_IMPORTED_MODULE_16__.M, _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_17__.M, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.OverlayModule, _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_9__.CdkScrollableModule, _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_17__.M]
+      imports: [_index_BFRo2fUq_mjs__WEBPACK_IMPORTED_MODULE_16__.M, _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_17__.M, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.OverlayModule, _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_10__.CdkScrollableModule, _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_17__.M]
     });
   }
   return MatMenuModule;

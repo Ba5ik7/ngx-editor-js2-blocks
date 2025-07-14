@@ -11,7 +11,7 @@ html{--mat-sys-background: #faf9fd;--mat-sys-error: #ba1a1a;--mat-sys-error-cont
   overflow: visible;
   color: var(--mat-sys-on-secondary-container);
   background-color: var(--mat-sys-secondary-container);
-  border-radius: var(--mdc-outlined-card-container-shape, var(--mat-sys-corner-medium));
+  border-radius: var(--mat-card-outlined-container-shape, var(--mat-sys-corner-medium));
   box-shadow: var(--mat-sys-level4);
 }
 .cdk-drag-preview *:not(toolbar) {
@@ -202,7 +202,13 @@ ngx-editor-js2-mermaidjs.cdk-drag-preview .edgePaths path {
 }
 
 ngx-editor-js2-panel.cdk-drag-preview .panel {
-  padding: 20px !important;
+  padding: 8px 0 8px 40px !important;
+}
+ngx-editor-js2-panel.cdk-drag-preview ul {
+  padding: 16px 0 16px 40px !important;
+}
+ngx-editor-js2-panel.cdk-drag-preview ul:not(:first-child) {
+  margin: 16px 0 16px 0 !important;
 }
 
 /* BASICS */

@@ -1,135 +1,9 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[5689],{
 
-/***/ 20913:
-/*!********************************************************************!*\
-  !*** ./node_modules/@angular/core/fesm2022/untracked-DmD_2MlC.mjs ***!
-  \********************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   createLinkedSignal: () => (/* binding */ createLinkedSignal),
-/* harmony export */   linkedSignalSetFn: () => (/* binding */ linkedSignalSetFn),
-/* harmony export */   linkedSignalUpdateFn: () => (/* binding */ linkedSignalUpdateFn),
-/* harmony export */   untracked: () => (/* binding */ untracked)
-/* harmony export */ });
-/* harmony import */ var _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./signal-nCiHhWf6.mjs */ 89595);
-/**
- * @license Angular v20.0.4
- * (c) 2010-2025 Google LLC. https://angular.io/
- * License: MIT
- */
-
-
-function createLinkedSignal(sourceFn, computationFn, equalityFn) {
-  const node = Object.create(LINKED_SIGNAL_NODE);
-  node.source = sourceFn;
-  node.computation = computationFn;
-  if (equalityFn != undefined) {
-    node.equal = equalityFn;
-  }
-  const linkedSignalGetter = () => {
-    // Check if the value needs updating before returning it.
-    (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
-    // Record that someone looked at this signal.
-    (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.producerAccessed)(node);
-    if (node.value === _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED) {
-      throw node.error;
-    }
-    return node.value;
-  };
-  const getter = linkedSignalGetter;
-  getter[_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.SIGNAL] = node;
-  if (typeof ngDevMode !== 'undefined' && ngDevMode) {
-    const debugName = node.debugName ? ' (' + node.debugName + ')' : '';
-    getter.toString = () => `[LinkedSignal${debugName}: ${node.value}]`;
-  }
-  (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.runPostProducerCreatedFn)(node);
-  return getter;
-}
-function linkedSignalSetFn(node, newValue) {
-  (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
-  (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.signalSetFn)(node, newValue);
-  (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.producerMarkClean)(node);
-}
-function linkedSignalUpdateFn(node, updater) {
-  (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
-  (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.signalUpdateFn)(node, updater);
-  (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.producerMarkClean)(node);
-}
-// Note: Using an IIFE here to ensure that the spread assignment is not considered
-// a side-effect, ending up preserving `LINKED_SIGNAL_NODE` and `REACTIVE_NODE`.
-// TODO: remove when https://github.com/evanw/esbuild/issues/3392 is resolved.
-const LINKED_SIGNAL_NODE = /* @__PURE__ */(() => {
-  return {
-    ..._signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.REACTIVE_NODE,
-    value: _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET,
-    dirty: true,
-    error: null,
-    equal: _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.defaultEquals,
-    kind: 'linkedSignal',
-    producerMustRecompute(node) {
-      // Force a recomputation if there's no current value, or if the current value is in the
-      // process of being calculated (which should throw an error).
-      return node.value === _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET || node.value === _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING;
-    },
-    producerRecomputeValue(node) {
-      if (node.value === _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING) {
-        // Our computation somehow led to a cyclic read of itself.
-        throw new Error(typeof ngDevMode !== 'undefined' && ngDevMode ? 'Detected cycle in computations.' : '');
-      }
-      const oldValue = node.value;
-      node.value = _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING;
-      const prevConsumer = (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerBeforeComputation)(node);
-      let newValue;
-      try {
-        const newSourceValue = node.source();
-        const prev = oldValue === _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET || oldValue === _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED ? undefined : {
-          source: node.sourceValue,
-          value: oldValue
-        };
-        newValue = node.computation(newSourceValue, prev);
-        node.sourceValue = newSourceValue;
-      } catch (err) {
-        newValue = _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED;
-        node.error = err;
-      } finally {
-        (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerAfterComputation)(node, prevConsumer);
-      }
-      if (oldValue !== _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET && newValue !== _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED && node.equal(oldValue, newValue)) {
-        // No change to `valueVersion` - old and new values are
-        // semantically equivalent.
-        node.value = oldValue;
-        return;
-      }
-      node.value = newValue;
-      node.version++;
-    }
-  };
-})();
-
-/**
- * Execute an arbitrary function in a non-reactive (non-tracking) context. The executed function
- * can, optionally, return a value.
- */
-function untracked(nonReactiveReadsFn) {
-  const prevConsumer = (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.setActiveConsumer)(null);
-  // We are not trying to catch any particular errors here, just making sure that the consumers
-  // stack is restored in case of errors.
-  try {
-    return nonReactiveReadsFn();
-  } finally {
-    (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.setActiveConsumer)(prevConsumer);
-  }
-}
-
-
-/***/ }),
-
-/***/ 38482:
-/*!*******************************************************************!*\
-  !*** ./node_modules/@angular/core/fesm2022/weak_ref-BaIq-pgY.mjs ***!
-  \*******************************************************************/
+/***/ 5847:
+/*!**********************************************************!*\
+  !*** ./node_modules/@angular/core/fesm2022/weak_ref.mjs ***!
+  \**********************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -137,7 +11,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setAlternateWeakRefImpl: () => (/* binding */ setAlternateWeakRefImpl)
 /* harmony export */ });
 /**
- * @license Angular v20.0.4
+ * @license Angular v20.1.0
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -149,143 +23,10 @@ function setAlternateWeakRefImpl(impl) {
 
 /***/ }),
 
-/***/ 85689:
-/*!********************************************************************!*\
-  !*** ./node_modules/@angular/core/fesm2022/primitives/signals.mjs ***!
-  \********************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   REACTIVE_NODE: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.REACTIVE_NODE),
-/* harmony export */   SIGNAL: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.SIGNAL),
-/* harmony export */   SIGNAL_NODE: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.SIGNAL_NODE),
-/* harmony export */   consumerAfterComputation: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerAfterComputation),
-/* harmony export */   consumerBeforeComputation: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerBeforeComputation),
-/* harmony export */   consumerDestroy: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerDestroy),
-/* harmony export */   consumerMarkDirty: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerMarkDirty),
-/* harmony export */   consumerPollProducersForChange: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerPollProducersForChange),
-/* harmony export */   createComputed: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.createComputed),
-/* harmony export */   createLinkedSignal: () => (/* reexport safe */ _untracked_DmD_2MlC_mjs__WEBPACK_IMPORTED_MODULE_1__.createLinkedSignal),
-/* harmony export */   createSignal: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.createSignal),
-/* harmony export */   createWatch: () => (/* binding */ createWatch),
-/* harmony export */   defaultEquals: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.defaultEquals),
-/* harmony export */   getActiveConsumer: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.getActiveConsumer),
-/* harmony export */   isInNotificationPhase: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.isInNotificationPhase),
-/* harmony export */   isReactive: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.isReactive),
-/* harmony export */   linkedSignalSetFn: () => (/* reexport safe */ _untracked_DmD_2MlC_mjs__WEBPACK_IMPORTED_MODULE_1__.linkedSignalSetFn),
-/* harmony export */   linkedSignalUpdateFn: () => (/* reexport safe */ _untracked_DmD_2MlC_mjs__WEBPACK_IMPORTED_MODULE_1__.linkedSignalUpdateFn),
-/* harmony export */   producerAccessed: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.producerAccessed),
-/* harmony export */   producerIncrementEpoch: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.producerIncrementEpoch),
-/* harmony export */   producerMarkClean: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.producerMarkClean),
-/* harmony export */   producerNotifyConsumers: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.producerNotifyConsumers),
-/* harmony export */   producerUpdateValueVersion: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion),
-/* harmony export */   producerUpdatesAllowed: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdatesAllowed),
-/* harmony export */   runPostProducerCreatedFn: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.runPostProducerCreatedFn),
-/* harmony export */   runPostSignalSetFn: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.runPostSignalSetFn),
-/* harmony export */   setActiveConsumer: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.setActiveConsumer),
-/* harmony export */   setAlternateWeakRefImpl: () => (/* reexport safe */ _weak_ref_BaIq_pgY_mjs__WEBPACK_IMPORTED_MODULE_2__.setAlternateWeakRefImpl),
-/* harmony export */   setPostProducerCreatedFn: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.setPostProducerCreatedFn),
-/* harmony export */   setPostSignalSetFn: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.setPostSignalSetFn),
-/* harmony export */   setThrowInvalidWriteToSignalError: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.setThrowInvalidWriteToSignalError),
-/* harmony export */   signalGetFn: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.signalGetFn),
-/* harmony export */   signalSetFn: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.signalSetFn),
-/* harmony export */   signalUpdateFn: () => (/* reexport safe */ _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.signalUpdateFn),
-/* harmony export */   untracked: () => (/* reexport safe */ _untracked_DmD_2MlC_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)
-/* harmony export */ });
-/* harmony import */ var _signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../signal-nCiHhWf6.mjs */ 89595);
-/* harmony import */ var _untracked_DmD_2MlC_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../untracked-DmD_2MlC.mjs */ 20913);
-/* harmony import */ var _weak_ref_BaIq_pgY_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../weak_ref-BaIq-pgY.mjs */ 38482);
-/**
- * @license Angular v20.0.4
- * (c) 2010-2025 Google LLC. https://angular.io/
- * License: MIT
- */
-
-
-
-
-
-function createWatch(fn, schedule, allowSignalWrites) {
-  const node = Object.create(WATCH_NODE);
-  if (allowSignalWrites) {
-    node.consumerAllowSignalWrites = true;
-  }
-  node.fn = fn;
-  node.schedule = schedule;
-  const registerOnCleanup = cleanupFn => {
-    node.cleanupFn = cleanupFn;
-  };
-  function isWatchNodeDestroyed(node) {
-    return node.fn === null && node.schedule === null;
-  }
-  function destroyWatchNode(node) {
-    if (!isWatchNodeDestroyed(node)) {
-      (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerDestroy)(node); // disconnect watcher from the reactive graph
-      node.cleanupFn();
-      // nullify references to the integration functions to mark node as destroyed
-      node.fn = null;
-      node.schedule = null;
-      node.cleanupFn = NOOP_CLEANUP_FN;
-    }
-  }
-  const run = () => {
-    if (node.fn === null) {
-      // trying to run a destroyed watch is noop
-      return;
-    }
-    if ((0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.isInNotificationPhase)()) {
-      throw new Error(typeof ngDevMode !== 'undefined' && ngDevMode ? 'Schedulers cannot synchronously execute watches while scheduling.' : '');
-    }
-    node.dirty = false;
-    if (node.hasRun && !(0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerPollProducersForChange)(node)) {
-      return;
-    }
-    node.hasRun = true;
-    const prevConsumer = (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerBeforeComputation)(node);
-    try {
-      node.cleanupFn();
-      node.cleanupFn = NOOP_CLEANUP_FN;
-      node.fn(registerOnCleanup);
-    } finally {
-      (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerAfterComputation)(node, prevConsumer);
-    }
-  };
-  node.ref = {
-    notify: () => (0,_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerMarkDirty)(node),
-    run,
-    cleanup: () => node.cleanupFn(),
-    destroy: () => destroyWatchNode(node),
-    [_signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.SIGNAL]: node
-  };
-  return node.ref;
-}
-const NOOP_CLEANUP_FN = () => {};
-// Note: Using an IIFE here to ensure that the spread assignment is not considered
-// a side-effect, ending up preserving `COMPUTED_NODE` and `REACTIVE_NODE`.
-// TODO: remove when https://github.com/evanw/esbuild/issues/3392 is resolved.
-const WATCH_NODE = /* @__PURE__ */(() => {
-  return {
-    ..._signal_nCiHhWf6_mjs__WEBPACK_IMPORTED_MODULE_0__.REACTIVE_NODE,
-    consumerIsAlwaysLive: true,
-    consumerAllowSignalWrites: false,
-    consumerMarkedDirty: node => {
-      if (node.schedule !== null) {
-        node.schedule(node.ref);
-      }
-    },
-    hasRun: false,
-    cleanupFn: NOOP_CLEANUP_FN
-  };
-})();
-
-
-/***/ }),
-
-/***/ 89595:
-/*!*****************************************************************!*\
-  !*** ./node_modules/@angular/core/fesm2022/signal-nCiHhWf6.mjs ***!
-  \*****************************************************************/
+/***/ 38677:
+/*!********************************************************!*\
+  !*** ./node_modules/@angular/core/fesm2022/signal.mjs ***!
+  \********************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -324,7 +65,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   signalUpdateFn: () => (/* binding */ signalUpdateFn)
 /* harmony export */ });
 /**
- * @license Angular v20.0.4
+ * @license Angular v20.1.0
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -826,6 +567,265 @@ function signalValueChanged(node) {
   producerNotifyConsumers(node);
   postSignalSetFn?.(node);
 }
+
+
+/***/ }),
+
+/***/ 77542:
+/*!***********************************************************!*\
+  !*** ./node_modules/@angular/core/fesm2022/untracked.mjs ***!
+  \***********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createLinkedSignal: () => (/* binding */ createLinkedSignal),
+/* harmony export */   linkedSignalSetFn: () => (/* binding */ linkedSignalSetFn),
+/* harmony export */   linkedSignalUpdateFn: () => (/* binding */ linkedSignalUpdateFn),
+/* harmony export */   untracked: () => (/* binding */ untracked)
+/* harmony export */ });
+/* harmony import */ var _signal_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./signal.mjs */ 38677);
+/**
+ * @license Angular v20.1.0
+ * (c) 2010-2025 Google LLC. https://angular.io/
+ * License: MIT
+ */
+
+
+function createLinkedSignal(sourceFn, computationFn, equalityFn) {
+  const node = Object.create(LINKED_SIGNAL_NODE);
+  node.source = sourceFn;
+  node.computation = computationFn;
+  if (equalityFn != undefined) {
+    node.equal = equalityFn;
+  }
+  const linkedSignalGetter = () => {
+    // Check if the value needs updating before returning it.
+    (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
+    // Record that someone looked at this signal.
+    (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.producerAccessed)(node);
+    if (node.value === _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED) {
+      throw node.error;
+    }
+    return node.value;
+  };
+  const getter = linkedSignalGetter;
+  getter[_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.SIGNAL] = node;
+  if (typeof ngDevMode !== 'undefined' && ngDevMode) {
+    const debugName = node.debugName ? ' (' + node.debugName + ')' : '';
+    getter.toString = () => `[LinkedSignal${debugName}: ${node.value}]`;
+  }
+  (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.runPostProducerCreatedFn)(node);
+  return getter;
+}
+function linkedSignalSetFn(node, newValue) {
+  (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
+  (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.signalSetFn)(node, newValue);
+  (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.producerMarkClean)(node);
+}
+function linkedSignalUpdateFn(node, updater) {
+  (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
+  (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.signalUpdateFn)(node, updater);
+  (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.producerMarkClean)(node);
+}
+// Note: Using an IIFE here to ensure that the spread assignment is not considered
+// a side-effect, ending up preserving `LINKED_SIGNAL_NODE` and `REACTIVE_NODE`.
+// TODO: remove when https://github.com/evanw/esbuild/issues/3392 is resolved.
+const LINKED_SIGNAL_NODE = /* @__PURE__ */(() => {
+  return {
+    ..._signal_mjs__WEBPACK_IMPORTED_MODULE_0__.REACTIVE_NODE,
+    value: _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET,
+    dirty: true,
+    error: null,
+    equal: _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.defaultEquals,
+    kind: 'linkedSignal',
+    producerMustRecompute(node) {
+      // Force a recomputation if there's no current value, or if the current value is in the
+      // process of being calculated (which should throw an error).
+      return node.value === _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET || node.value === _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING;
+    },
+    producerRecomputeValue(node) {
+      if (node.value === _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING) {
+        // Our computation somehow led to a cyclic read of itself.
+        throw new Error(typeof ngDevMode !== 'undefined' && ngDevMode ? 'Detected cycle in computations.' : '');
+      }
+      const oldValue = node.value;
+      node.value = _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING;
+      const prevConsumer = (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerBeforeComputation)(node);
+      let newValue;
+      try {
+        const newSourceValue = node.source();
+        const prev = oldValue === _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET || oldValue === _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED ? undefined : {
+          source: node.sourceValue,
+          value: oldValue
+        };
+        newValue = node.computation(newSourceValue, prev);
+        node.sourceValue = newSourceValue;
+      } catch (err) {
+        newValue = _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED;
+        node.error = err;
+      } finally {
+        (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerAfterComputation)(node, prevConsumer);
+      }
+      if (oldValue !== _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET && newValue !== _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED && node.equal(oldValue, newValue)) {
+        // No change to `valueVersion` - old and new values are
+        // semantically equivalent.
+        node.value = oldValue;
+        return;
+      }
+      node.value = newValue;
+      node.version++;
+    }
+  };
+})();
+
+/**
+ * Execute an arbitrary function in a non-reactive (non-tracking) context. The executed function
+ * can, optionally, return a value.
+ */
+function untracked(nonReactiveReadsFn) {
+  const prevConsumer = (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.setActiveConsumer)(null);
+  // We are not trying to catch any particular errors here, just making sure that the consumers
+  // stack is restored in case of errors.
+  try {
+    return nonReactiveReadsFn();
+  } finally {
+    (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.setActiveConsumer)(prevConsumer);
+  }
+}
+
+
+/***/ }),
+
+/***/ 85689:
+/*!********************************************************************!*\
+  !*** ./node_modules/@angular/core/fesm2022/primitives/signals.mjs ***!
+  \********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   REACTIVE_NODE: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.REACTIVE_NODE),
+/* harmony export */   SIGNAL: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.SIGNAL),
+/* harmony export */   SIGNAL_NODE: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.SIGNAL_NODE),
+/* harmony export */   consumerAfterComputation: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerAfterComputation),
+/* harmony export */   consumerBeforeComputation: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerBeforeComputation),
+/* harmony export */   consumerDestroy: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerDestroy),
+/* harmony export */   consumerMarkDirty: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerMarkDirty),
+/* harmony export */   consumerPollProducersForChange: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerPollProducersForChange),
+/* harmony export */   createComputed: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.createComputed),
+/* harmony export */   createLinkedSignal: () => (/* reexport safe */ _untracked_mjs__WEBPACK_IMPORTED_MODULE_1__.createLinkedSignal),
+/* harmony export */   createSignal: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.createSignal),
+/* harmony export */   createWatch: () => (/* binding */ createWatch),
+/* harmony export */   defaultEquals: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.defaultEquals),
+/* harmony export */   getActiveConsumer: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.getActiveConsumer),
+/* harmony export */   isInNotificationPhase: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.isInNotificationPhase),
+/* harmony export */   isReactive: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.isReactive),
+/* harmony export */   linkedSignalSetFn: () => (/* reexport safe */ _untracked_mjs__WEBPACK_IMPORTED_MODULE_1__.linkedSignalSetFn),
+/* harmony export */   linkedSignalUpdateFn: () => (/* reexport safe */ _untracked_mjs__WEBPACK_IMPORTED_MODULE_1__.linkedSignalUpdateFn),
+/* harmony export */   producerAccessed: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.producerAccessed),
+/* harmony export */   producerIncrementEpoch: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.producerIncrementEpoch),
+/* harmony export */   producerMarkClean: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.producerMarkClean),
+/* harmony export */   producerNotifyConsumers: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.producerNotifyConsumers),
+/* harmony export */   producerUpdateValueVersion: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion),
+/* harmony export */   producerUpdatesAllowed: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdatesAllowed),
+/* harmony export */   runPostProducerCreatedFn: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.runPostProducerCreatedFn),
+/* harmony export */   runPostSignalSetFn: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.runPostSignalSetFn),
+/* harmony export */   setActiveConsumer: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.setActiveConsumer),
+/* harmony export */   setAlternateWeakRefImpl: () => (/* reexport safe */ _weak_ref_mjs__WEBPACK_IMPORTED_MODULE_2__.setAlternateWeakRefImpl),
+/* harmony export */   setPostProducerCreatedFn: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.setPostProducerCreatedFn),
+/* harmony export */   setPostSignalSetFn: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.setPostSignalSetFn),
+/* harmony export */   setThrowInvalidWriteToSignalError: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.setThrowInvalidWriteToSignalError),
+/* harmony export */   signalGetFn: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.signalGetFn),
+/* harmony export */   signalSetFn: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.signalSetFn),
+/* harmony export */   signalUpdateFn: () => (/* reexport safe */ _signal_mjs__WEBPACK_IMPORTED_MODULE_0__.signalUpdateFn),
+/* harmony export */   untracked: () => (/* reexport safe */ _untracked_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)
+/* harmony export */ });
+/* harmony import */ var _signal_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../signal.mjs */ 38677);
+/* harmony import */ var _untracked_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../untracked.mjs */ 77542);
+/* harmony import */ var _weak_ref_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../weak_ref.mjs */ 5847);
+/**
+ * @license Angular v20.1.0
+ * (c) 2010-2025 Google LLC. https://angular.io/
+ * License: MIT
+ */
+
+
+
+
+
+function createWatch(fn, schedule, allowSignalWrites) {
+  const node = Object.create(WATCH_NODE);
+  if (allowSignalWrites) {
+    node.consumerAllowSignalWrites = true;
+  }
+  node.fn = fn;
+  node.schedule = schedule;
+  const registerOnCleanup = cleanupFn => {
+    node.cleanupFn = cleanupFn;
+  };
+  function isWatchNodeDestroyed(node) {
+    return node.fn === null && node.schedule === null;
+  }
+  function destroyWatchNode(node) {
+    if (!isWatchNodeDestroyed(node)) {
+      (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerDestroy)(node); // disconnect watcher from the reactive graph
+      node.cleanupFn();
+      // nullify references to the integration functions to mark node as destroyed
+      node.fn = null;
+      node.schedule = null;
+      node.cleanupFn = NOOP_CLEANUP_FN;
+    }
+  }
+  const run = () => {
+    if (node.fn === null) {
+      // trying to run a destroyed watch is noop
+      return;
+    }
+    if ((0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.isInNotificationPhase)()) {
+      throw new Error(typeof ngDevMode !== 'undefined' && ngDevMode ? 'Schedulers cannot synchronously execute watches while scheduling.' : '');
+    }
+    node.dirty = false;
+    if (node.hasRun && !(0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerPollProducersForChange)(node)) {
+      return;
+    }
+    node.hasRun = true;
+    const prevConsumer = (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerBeforeComputation)(node);
+    try {
+      node.cleanupFn();
+      node.cleanupFn = NOOP_CLEANUP_FN;
+      node.fn(registerOnCleanup);
+    } finally {
+      (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerAfterComputation)(node, prevConsumer);
+    }
+  };
+  node.ref = {
+    notify: () => (0,_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerMarkDirty)(node),
+    run,
+    cleanup: () => node.cleanupFn(),
+    destroy: () => destroyWatchNode(node),
+    [_signal_mjs__WEBPACK_IMPORTED_MODULE_0__.SIGNAL]: node
+  };
+  return node.ref;
+}
+const NOOP_CLEANUP_FN = () => {};
+// Note: Using an IIFE here to ensure that the spread assignment is not considered
+// a side-effect, ending up preserving `COMPUTED_NODE` and `REACTIVE_NODE`.
+// TODO: remove when https://github.com/evanw/esbuild/issues/3392 is resolved.
+const WATCH_NODE = /* @__PURE__ */(() => {
+  return {
+    ..._signal_mjs__WEBPACK_IMPORTED_MODULE_0__.REACTIVE_NODE,
+    consumerIsAlwaysLive: true,
+    consumerAllowSignalWrites: false,
+    consumerMarkedDirty: node => {
+      if (node.schedule !== null) {
+        node.schedule(node.ref);
+      }
+    },
+    hasRun: false,
+    cleanupFn: NOOP_CLEANUP_FN
+  };
+})();
 
 
 /***/ })
