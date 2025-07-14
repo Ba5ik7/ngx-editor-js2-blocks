@@ -1,63 +1,33 @@
-# NgxEditorJs2Blockquotes
+# NgxEditorJs2 Panel
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.0.
+This block offers Confluence‑style panels for [Ngx-Editor-Js2](https://www.npmjs.com/package/@tmdjr/ngx-editor-js2).
+Use it to highlight content such as notes, tips or warnings.
 
-## Code scaffolding
+## Features
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Preset styles: **info**, **note**, **tip** and **warning**.
+- Icon displayed to the left of the text.
+- Works with the editor's floating toolbar for quick style changes.
 
-```bash
-ng generate component component-name
+## Usage
+
+Include `NgxEditorJs2PanelComponent` in your configuration:
+
+```ts
+import { NgxEditorJs2PanelComponent } from '@tmdjr/ngx-editor-js2-panel';
+
+{
+  provide: NGX_EDITORJS_OPTIONS,
+  useValue: {
+    consumerSupportedBlocks: [
+      {
+        name: 'Panel',
+        component: NgxEditorJs2PanelComponent,
+        componentInstanceName: 'NgxEditorJs2PanelComponent'
+      }
+    ]
+  }
+}
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the library, run:
-
-```bash
-ng build ngx-editor-js2-blockquotes
-```
-
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
-
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/ngx-editor-js2-blockquotes
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+More information about configuring Ngx-Editor-Js2 can be found on [npm](https://www.npmjs.com/package/@tmdjr/ngx-editor-js2).

@@ -4,6 +4,18 @@ DEMO: [https://ba5ik7.github.io/ngx-editor-js2-blocks](https://ba5ik7.github.io/
 
 This repository contains custom blocks for [Ngx-EditorJs2](https://github.com/Ba5ik7/ngx-editorjs2). These blocks extend the editor with additional content types that can be used within the editor environment.
 
+## Available Blocks
+
+- **Blockquotes** – style quoted text with multiple display sizes.
+- **Codemirror** – embed a CodeMirror editor for code snippets.
+- **Image** – insert images with alignment controls and an edit overlay.
+- **MermaidJS** – render [Mermaid](https://mermaid.js.org/) diagrams inside the editor.
+- **MFE Loader** – load micro front‑end modules using Module Federation.
+- **Panel** – Confluence‑style info, note, tip, and warning panels.
+- **Pop Quiz** – create interactive quiz questions.
+
+All of these packages work alongside [Ngx-Editor-Js2](https://www.npmjs.com/package/@tmdjr/ngx-editor-js2).
+
 ## Getting Started
 
 ### Installation, Building, and Running

@@ -1,63 +1,33 @@
-# NgxEditorJs2PopQuiz
+# NgxEditorJs2 Pop Quiz
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.0.
+Create interactive quiz questions in [Ngx-Editor-Js2](https://www.npmjs.com/package/@tmdjr/ngx-editor-js2).
+A configuration overlay lets you define questions, answers and feedback messages.
 
-## Code scaffolding
+## Features
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Configure multiple choice questions with correct answers.
+- Stored configuration is managed via a helper service.
+- Toolbar size options to control the quiz display style.
 
-```bash
-ng generate component component-name
+## Usage
+
+Include `NgxEditorJs2PopQuizComponent` when setting up your editor:
+
+```ts
+import { NgxEditorJs2PopQuizComponent } from '@tmdjr/ngx-editor-js2-pop-quiz';
+
+{
+  provide: NGX_EDITORJS_OPTIONS,
+  useValue: {
+    consumerSupportedBlocks: [
+      {
+        name: 'Pop Quiz',
+        component: NgxEditorJs2PopQuizComponent,
+        componentInstanceName: 'NgxEditorJs2PopQuizComponent'
+      }
+    ]
+  }
+}
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the library, run:
-
-```bash
-ng build ngx-editor-js2-pop-quiz
-```
-
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
-
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/ngx-editor-js2-pop-quiz
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+See the [Ngx-Editor-Js2 package](https://www.npmjs.com/package/@tmdjr/ngx-editor-js2) for setup information.
