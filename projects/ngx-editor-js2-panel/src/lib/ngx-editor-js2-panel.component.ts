@@ -55,12 +55,10 @@ import {
           line-height: 1.6em;
         }
         .panel {
-          padding: 10px;
-          margin: 1rem 0;
-          border-left: 5px solid currentColor;
-          border-radius: 4px;
           margin: 1rem 0;
           padding: 8px 0 8px 40px;
+          border-left: 5px solid currentColor;
+          border-radius: 4px;
         }
         .panel-icon {
           position: absolute;

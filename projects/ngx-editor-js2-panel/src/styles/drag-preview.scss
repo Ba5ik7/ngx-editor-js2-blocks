@@ -1,5 +1,11 @@
 ngx-editor-js2-panel.cdk-drag-preview {
   .panel {
-    padding: 20px !important;
+    padding: 8px 0 8px 40px !important;
+  }
+  ul {
+    padding: 16px 0 16px 40px !important;
+    &:not(:first-child) {
+      margin: 16px 0 16px 0 !important;
+    }
   }
 }
