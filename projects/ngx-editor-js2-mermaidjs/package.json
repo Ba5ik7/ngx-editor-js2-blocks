@@ -1,6 +1,6 @@
 {
   "name": "@tmdjr/ngx-editor-js2-mermaidjs",
-  "version": "20.1.0",
+  "version": "20.1.1",
   "peerDependencies": {
     "@angular/animations": "^20.0.4",
     "@angular/cdk": "^20.0.3",
