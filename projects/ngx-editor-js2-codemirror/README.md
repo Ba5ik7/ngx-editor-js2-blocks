@@ -1,63 +1,33 @@
-# NgxEditorJs2Codemirror
+# NgxEditorJs2 Codemirror
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.0.
+This block embeds a [CodeMirror](https://codemirror.net/) editor inside [Ngx-Editor-Js2](https://www.npmjs.com/package/@tmdjr/ngx-editor-js2).
+Use it to display and edit code snippets with syntax highlighting.
 
-## Code scaffolding
+## Features
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- CodeMirror integration with customizable language modes.
+- Toolbar actions to switch between common languages.
+- Works seamlessly with the reactive form approach of Ngx-Editor-Js2.
 
-```bash
-ng generate component component-name
+## Usage
+
+Add `NgxEditorJs2CodemirrorComponent` to the `consumerSupportedBlocks` array:
+
+```ts
+import { NgxEditorJs2CodemirrorComponent } from '@tmdjr/ngx-editor-js2-codemirror';
+
+{
+  provide: NGX_EDITORJS_OPTIONS,
+  useValue: {
+    consumerSupportedBlocks: [
+      {
+        name: 'Code',
+        component: NgxEditorJs2CodemirrorComponent,
+        componentInstanceName: 'NgxEditorJs2CodemirrorComponent'
+      }
+    ]
+  }
+}
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the library, run:
-
-```bash
-ng build ngx-editor-js2-codemirror
-```
-
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
-
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/ngx-editor-js2-codemirror
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Visit the [Ngx-Editor-Js2](https://www.npmjs.com/package/@tmdjr/ngx-editor-js2) page for full configuration instructions.

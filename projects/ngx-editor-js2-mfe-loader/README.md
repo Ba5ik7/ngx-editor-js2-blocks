@@ -1,63 +1,33 @@
-# NgxEditorJs2MfeLoader
+# NgxEditorJs2 MFE Loader
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.0.
+Load remote modules inside [Ngx-Editor-Js2](https://www.npmjs.com/package/@tmdjr/ngx-editor-js2) using Angular Module Federation.
+Specify the remote entry, module name and exposed component through an overlay form.
 
-## Code scaffolding
+## Features
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Dynamically load micro‑frontend widgets.
+- Overlay dialog to configure the remote URL, name and exposed module key.
+- Supports display size options from the toolbar.
 
-```bash
-ng generate component component-name
+## Usage
+
+Register `NgxEditorJs2MfeLoaderComponent` in `NGX_EDITORJS_OPTIONS`:
+
+```ts
+import { NgxEditorJs2MfeLoaderComponent } from '@tmdjr/ngx-editor-js2-mfe-loader';
+
+{
+  provide: NGX_EDITORJS_OPTIONS,
+  useValue: {
+    consumerSupportedBlocks: [
+      {
+        name: 'MFE Loader',
+        component: NgxEditorJs2MfeLoaderComponent,
+        componentInstanceName: 'NgxEditorJs2MfeLoaderComponent'
+      }
+    ]
+  }
+}
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the library, run:
-
-```bash
-ng build ngx-editor-js2-mfe-loader
-```
-
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
-
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/ngx-editor-js2-mfe-loader
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+See [Ngx-Editor-Js2 on npm](https://www.npmjs.com/package/@tmdjr/ngx-editor-js2) for complete instructions.
