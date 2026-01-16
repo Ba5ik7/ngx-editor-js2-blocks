@@ -199,9 +199,9 @@ let MatCardTitleGroup = /*#__PURE__*/(() => {
       template: function MatCardTitleGroup_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomElementStart"](0, "div");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomElementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](2, 1);
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](3, 2);
         }
@@ -323,9 +323,9 @@ let MatCardHeader = /*#__PURE__*/(() => {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c3);
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomElementStart"](1, "div", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 0);
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](2, 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomElementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](3, 2);
         }
       },

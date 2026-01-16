@@ -818,6 +818,668 @@ function coerceObservable(data) {
 
 /***/ }),
 
+/***/ 25662:
+/*!***********************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/focus-monitor-DLjkiju1.mjs ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   C: () => (/* binding */ CdkMonitorFocus),
+/* harmony export */   F: () => (/* binding */ FocusMonitor),
+/* harmony export */   I: () => (/* binding */ InputModalityDetector),
+/* harmony export */   a: () => (/* binding */ INPUT_MODALITY_DETECTOR_DEFAULT_OPTIONS),
+/* harmony export */   b: () => (/* binding */ INPUT_MODALITY_DETECTOR_OPTIONS),
+/* harmony export */   c: () => (/* binding */ FocusMonitorDetectionMode),
+/* harmony export */   d: () => (/* binding */ FOCUS_MONITOR_DEFAULT_OPTIONS)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 44866);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 32778);
+/* harmony import */ var _fake_event_detection_DWOdFTFz_mjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./fake-event-detection-DWOdFTFz.mjs */ 513);
+/* harmony import */ var _keycodes_CpHkExLC_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./keycodes-CpHkExLC.mjs */ 5758);
+/* harmony import */ var _shadow_dom_B0oHn41l_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./shadow-dom-B0oHn41l.mjs */ 66488);
+/* harmony import */ var _platform_DNDzkVcI_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./platform-DNDzkVcI.mjs */ 6427);
+/* harmony import */ var _passive_listeners_esHZRgIN_mjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./passive-listeners-esHZRgIN.mjs */ 92516);
+/* harmony import */ var _element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./element-x4z00URv.mjs */ 94724);
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Injectable options for the InputModalityDetector. These are shallowly merged with the default
+ * options.
+ */
+const INPUT_MODALITY_DETECTOR_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('cdk-input-modality-detector-options');
+/**
+ * Default options for the InputModalityDetector.
+ *
+ * Modifier keys are ignored by default (i.e. when pressed won't cause the service to detect
+ * keyboard input modality) for two reasons:
+ *
+ * 1. Modifier keys are commonly used with mouse to perform actions such as 'right click' or 'open
+ *    in new tab', and are thus less representative of actual keyboard interaction.
+ * 2. VoiceOver triggers some keyboard events when linearly navigating with Control + Option (but
+ *    confusingly not with Caps Lock). Thus, to have parity with other screen readers, we ignore
+ *    these keys so as to not update the input modality.
+ *
+ * Note that we do not by default ignore the right Meta key on Safari because it has the same key
+ * code as the ContextMenu key on other browsers. When we switch to using event.key, we can
+ * distinguish between the two.
+ */
+const INPUT_MODALITY_DETECTOR_DEFAULT_OPTIONS = {
+  ignoreKeys: [_keycodes_CpHkExLC_mjs__WEBPACK_IMPORTED_MODULE_3__.d, _keycodes_CpHkExLC_mjs__WEBPACK_IMPORTED_MODULE_3__.C, _keycodes_CpHkExLC_mjs__WEBPACK_IMPORTED_MODULE_3__.M, _keycodes_CpHkExLC_mjs__WEBPACK_IMPORTED_MODULE_3__.e, _keycodes_CpHkExLC_mjs__WEBPACK_IMPORTED_MODULE_3__.f]
+};
+/**
+ * The amount of time needed to pass after a touchstart event in order for a subsequent mousedown
+ * event to be attributed as mouse and not touch.
+ *
+ * This is the value used by AngularJS Material. Through trial and error (on iPhone 6S) they found
+ * that a value of around 650ms seems appropriate.
+ */
+const TOUCH_BUFFER_MS = 650;
+/**
+ * Event listener options that enable capturing and also mark the listener as passive if the browser
+ * supports it.
+ */
+const modalityEventListenerOptions = {
+  passive: true,
+  capture: true
+};
+/**
+ * Service that detects the user's input modality.
+ *
+ * This service does not update the input modality when a user navigates with a screen reader
+ * (e.g. linear navigation with VoiceOver, object navigation / browse mode with NVDA, virtual PC
+ * cursor mode with JAWS). This is in part due to technical limitations (i.e. keyboard events do not
+ * fire as expected in these modes) but is also arguably the correct behavior. Navigating with a
+ * screen reader is akin to visually scanning a page, and should not be interpreted as actual user
+ * input interaction.
+ *
+ * When a user is not navigating but *interacting* with a screen reader, this service attempts to
+ * update the input modality to keyboard, but in general this service's behavior is largely
+ * undefined.
+ */
+let InputModalityDetector = /*#__PURE__*/(() => {
+  class InputModalityDetector {
+    _platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_platform_DNDzkVcI_mjs__WEBPACK_IMPORTED_MODULE_4__.P);
+    _listenerCleanups;
+    /** Emits whenever an input modality is detected. */
+    modalityDetected;
+    /** Emits when the input modality changes. */
+    modalityChanged;
+    /** The most recently detected input modality. */
+    get mostRecentModality() {
+      return this._modality.value;
+    }
+    /**
+     * The most recently detected input modality event target. Is null if no input modality has been
+     * detected or if the associated event target is null for some unknown reason.
+     */
+    _mostRecentTarget = null;
+    /** The underlying BehaviorSubject that emits whenever an input modality is detected. */
+    _modality = new rxjs__WEBPACK_IMPORTED_MODULE_1__.BehaviorSubject(null);
+    /** Options for this InputModalityDetector. */
+    _options;
+    /**
+     * The timestamp of the last touch input modality. Used to determine whether mousedown events
+     * should be attributed to mouse or touch.
+     */
+    _lastTouchMs = 0;
+    /**
+     * Handles keydown events. Must be an arrow function in order to preserve the context when it gets
+     * bound.
+     */
+    _onKeydown = event => {
+      // If this is one of the keys we should ignore, then ignore it and don't update the input
+      // modality to keyboard.
+      if (this._options?.ignoreKeys?.some(keyCode => keyCode === event.keyCode)) {
+        return;
+      }
+      this._modality.next('keyboard');
+      this._mostRecentTarget = (0,_shadow_dom_B0oHn41l_mjs__WEBPACK_IMPORTED_MODULE_5__._)(event);
+    };
+    /**
+     * Handles mousedown events. Must be an arrow function in order to preserve the context when it
+     * gets bound.
+     */
+    _onMousedown = event => {
+      // Touches trigger both touch and mouse events, so we need to distinguish between mouse events
+      // that were triggered via mouse vs touch. To do so, check if the mouse event occurs closely
+      // after the previous touch event.
+      if (Date.now() - this._lastTouchMs < TOUCH_BUFFER_MS) {
+        return;
+      }
+      // Fake mousedown events are fired by some screen readers when controls are activated by the
+      // screen reader. Attribute them to keyboard input modality.
+      this._modality.next((0,_fake_event_detection_DWOdFTFz_mjs__WEBPACK_IMPORTED_MODULE_6__.i)(event) ? 'keyboard' : 'mouse');
+      this._mostRecentTarget = (0,_shadow_dom_B0oHn41l_mjs__WEBPACK_IMPORTED_MODULE_5__._)(event);
+    };
+    /**
+     * Handles touchstart events. Must be an arrow function in order to preserve the context when it
+     * gets bound.
+     */
+    _onTouchstart = event => {
+      // Same scenario as mentioned in _onMousedown, but on touch screen devices, fake touchstart
+      // events are fired. Again, attribute to keyboard input modality.
+      if ((0,_fake_event_detection_DWOdFTFz_mjs__WEBPACK_IMPORTED_MODULE_6__.a)(event)) {
+        this._modality.next('keyboard');
+        return;
+      }
+      // Store the timestamp of this touch event, as it's used to distinguish between mouse events
+      // triggered via mouse vs touch.
+      this._lastTouchMs = Date.now();
+      this._modality.next('touch');
+      this._mostRecentTarget = (0,_shadow_dom_B0oHn41l_mjs__WEBPACK_IMPORTED_MODULE_5__._)(event);
+    };
+    constructor() {
+      const ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone);
+      const document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT);
+      const options = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(INPUT_MODALITY_DETECTOR_OPTIONS, {
+        optional: true
+      });
+      this._options = {
+        ...INPUT_MODALITY_DETECTOR_DEFAULT_OPTIONS,
+        ...options
+      };
+      // Skip the first emission as it's null.
+      this.modalityDetected = this._modality.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.skip)(1));
+      this.modalityChanged = this.modalityDetected.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.distinctUntilChanged)());
+      // If we're not in a browser, this service should do nothing, as there's no relevant input
+      // modality to detect.
+      if (this._platform.isBrowser) {
+        const renderer = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.RendererFactory2).createRenderer(null, null);
+        this._listenerCleanups = ngZone.runOutsideAngular(() => {
+          return [renderer.listen(document, 'keydown', this._onKeydown, modalityEventListenerOptions), renderer.listen(document, 'mousedown', this._onMousedown, modalityEventListenerOptions), renderer.listen(document, 'touchstart', this._onTouchstart, modalityEventListenerOptions)];
+        });
+      }
+    }
+    ngOnDestroy() {
+      this._modality.complete();
+      this._listenerCleanups?.forEach(cleanup => cleanup());
+    }
+    static ɵfac = function InputModalityDetector_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || InputModalityDetector)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: InputModalityDetector,
+      factory: InputModalityDetector.ɵfac,
+      providedIn: 'root'
+    });
+  }
+  return InputModalityDetector;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/** Detection mode used for attributing the origin of a focus event. */
+var FocusMonitorDetectionMode = /*#__PURE__*/function (FocusMonitorDetectionMode) {
+  /**
+   * Any mousedown, keydown, or touchstart event that happened in the previous
+   * tick or the current tick will be used to assign a focus event's origin (to
+   * either mouse, keyboard, or touch). This is the default option.
+   */
+  FocusMonitorDetectionMode[FocusMonitorDetectionMode["IMMEDIATE"] = 0] = "IMMEDIATE";
+  /**
+   * A focus event's origin is always attributed to the last corresponding
+   * mousedown, keydown, or touchstart event, no matter how long ago it occurred.
+   */
+  FocusMonitorDetectionMode[FocusMonitorDetectionMode["EVENTUAL"] = 1] = "EVENTUAL";
+  return FocusMonitorDetectionMode;
+}(FocusMonitorDetectionMode || {});
+/** InjectionToken for FocusMonitorOptions. */
+const FOCUS_MONITOR_DEFAULT_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('cdk-focus-monitor-default-options');
+/**
+ * Event listener options that enable capturing and also
+ * mark the listener as passive if the browser supports it.
+ */
+const captureEventListenerOptions = /*#__PURE__*/(0,_passive_listeners_esHZRgIN_mjs__WEBPACK_IMPORTED_MODULE_7__.n)({
+  passive: true,
+  capture: true
+});
+/** Monitors mouse and keyboard events to determine the cause of focus events. */
+let FocusMonitor = /*#__PURE__*/(() => {
+  class FocusMonitor {
+    _ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone);
+    _platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_platform_DNDzkVcI_mjs__WEBPACK_IMPORTED_MODULE_4__.P);
+    _inputModalityDetector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(InputModalityDetector);
+    /** The focus origin that the next focus event is a result of. */
+    _origin = null;
+    /** The FocusOrigin of the last focus event tracked by the FocusMonitor. */
+    _lastFocusOrigin;
+    /** Whether the window has just been focused. */
+    _windowFocused = false;
+    /** The timeout id of the window focus timeout. */
+    _windowFocusTimeoutId;
+    /** The timeout id of the origin clearing timeout. */
+    _originTimeoutId;
+    /**
+     * Whether the origin was determined via a touch interaction. Necessary as properly attributing
+     * focus events to touch interactions requires special logic.
+     */
+    _originFromTouchInteraction = false;
+    /** Map of elements being monitored to their info. */
+    _elementInfo = new Map();
+    /** The number of elements currently being monitored. */
+    _monitoredElementCount = 0;
+    /**
+     * Keeps track of the root nodes to which we've currently bound a focus/blur handler,
+     * as well as the number of monitored elements that they contain. We have to treat focus/blur
+     * handlers differently from the rest of the events, because the browser won't emit events
+     * to the document when focus moves inside of a shadow root.
+     */
+    _rootNodeFocusListenerCount = new Map();
+    /**
+     * The specified detection mode, used for attributing the origin of a focus
+     * event.
+     */
+    _detectionMode;
+    /**
+     * Event listener for `focus` events on the window.
+     * Needs to be an arrow function in order to preserve the context when it gets bound.
+     */
+    _windowFocusListener = () => {
+      // Make a note of when the window regains focus, so we can
+      // restore the origin info for the focused element.
+      this._windowFocused = true;
+      this._windowFocusTimeoutId = setTimeout(() => this._windowFocused = false);
+    };
+    /** Used to reference correct document/window */
+    _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT, {
+      optional: true
+    });
+    /** Subject for stopping our InputModalityDetector subscription. */
+    _stopInputModalityDetector = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
+    constructor() {
+      const options = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(FOCUS_MONITOR_DEFAULT_OPTIONS, {
+        optional: true
+      });
+      this._detectionMode = options?.detectionMode || FocusMonitorDetectionMode.IMMEDIATE;
+    }
+    /**
+     * Event listener for `focus` and 'blur' events on the document.
+     * Needs to be an arrow function in order to preserve the context when it gets bound.
+     */
+    _rootNodeFocusAndBlurListener = event => {
+      const target = (0,_shadow_dom_B0oHn41l_mjs__WEBPACK_IMPORTED_MODULE_5__._)(event);
+      // We need to walk up the ancestor chain in order to support `checkChildren`.
+      for (let element = target; element; element = element.parentElement) {
+        if (event.type === 'focus') {
+          this._onFocus(event, element);
+        } else {
+          this._onBlur(event, element);
+        }
+      }
+    };
+    monitor(element, checkChildren = false) {
+      const nativeElement = (0,_element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_8__.a)(element);
+      // Do nothing if we're not on the browser platform or the passed in node isn't an element.
+      if (!this._platform.isBrowser || nativeElement.nodeType !== 1) {
+        // Note: we don't want the observable to emit at all so we don't pass any parameters.
+        return (0,rxjs__WEBPACK_IMPORTED_MODULE_1__.of)();
+      }
+      // If the element is inside the shadow DOM, we need to bind our focus/blur listeners to
+      // the shadow root, rather than the `document`, because the browser won't emit focus events
+      // to the `document`, if focus is moving within the same shadow root.
+      const rootNode = (0,_shadow_dom_B0oHn41l_mjs__WEBPACK_IMPORTED_MODULE_5__.a)(nativeElement) || this._getDocument();
+      const cachedInfo = this._elementInfo.get(nativeElement);
+      // Check if we're already monitoring this element.
+      if (cachedInfo) {
+        if (checkChildren) {
+          // TODO(COMP-318): this can be problematic, because it'll turn all non-checkChildren
+          // observers into ones that behave as if `checkChildren` was turned on. We need a more
+          // robust solution.
+          cachedInfo.checkChildren = true;
+        }
+        return cachedInfo.subject;
+      }
+      // Create monitored element info.
+      const info = {
+        checkChildren: checkChildren,
+        subject: new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject(),
+        rootNode
+      };
+      this._elementInfo.set(nativeElement, info);
+      this._registerGlobalListeners(info);
+      return info.subject;
+    }
+    stopMonitoring(element) {
+      const nativeElement = (0,_element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_8__.a)(element);
+      const elementInfo = this._elementInfo.get(nativeElement);
+      if (elementInfo) {
+        elementInfo.subject.complete();
+        this._setClasses(nativeElement);
+        this._elementInfo.delete(nativeElement);
+        this._removeGlobalListeners(elementInfo);
+      }
+    }
+    focusVia(element, origin, options) {
+      const nativeElement = (0,_element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_8__.a)(element);
+      const focusedElement = this._getDocument().activeElement;
+      // If the element is focused already, calling `focus` again won't trigger the event listener
+      // which means that the focus classes won't be updated. If that's the case, update the classes
+      // directly without waiting for an event.
+      if (nativeElement === focusedElement) {
+        this._getClosestElementsInfo(nativeElement).forEach(([currentElement, info]) => this._originChanged(currentElement, origin, info));
+      } else {
+        this._setOrigin(origin);
+        // `focus` isn't available on the server
+        if (typeof nativeElement.focus === 'function') {
+          nativeElement.focus(options);
+        }
+      }
+    }
+    ngOnDestroy() {
+      this._elementInfo.forEach((_info, element) => this.stopMonitoring(element));
+    }
+    /** Access injected document if available or fallback to global document reference */
+    _getDocument() {
+      return this._document || document;
+    }
+    /** Use defaultView of injected document if available or fallback to global window reference */
+    _getWindow() {
+      const doc = this._getDocument();
+      return doc.defaultView || window;
+    }
+    _getFocusOrigin(focusEventTarget) {
+      if (this._origin) {
+        // If the origin was realized via a touch interaction, we need to perform additional checks
+        // to determine whether the focus origin should be attributed to touch or program.
+        if (this._originFromTouchInteraction) {
+          return this._shouldBeAttributedToTouch(focusEventTarget) ? 'touch' : 'program';
+        } else {
+          return this._origin;
+        }
+      }
+      // If the window has just regained focus, we can restore the most recent origin from before the
+      // window blurred. Otherwise, we've reached the point where we can't identify the source of the
+      // focus. This typically means one of two things happened:
+      //
+      // 1) The element was programmatically focused, or
+      // 2) The element was focused via screen reader navigation (which generally doesn't fire
+      //    events).
+      //
+      // Because we can't distinguish between these two cases, we default to setting `program`.
+      if (this._windowFocused && this._lastFocusOrigin) {
+        return this._lastFocusOrigin;
+      }
+      // If the interaction is coming from an input label, we consider it a mouse interactions.
+      // This is a special case where focus moves on `click`, rather than `mousedown` which breaks
+      // our detection, because all our assumptions are for `mousedown`. We need to handle this
+      // special case, because it's very common for checkboxes and radio buttons.
+      if (focusEventTarget && this._isLastInteractionFromInputLabel(focusEventTarget)) {
+        return 'mouse';
+      }
+      return 'program';
+    }
+    /**
+     * Returns whether the focus event should be attributed to touch. Recall that in IMMEDIATE mode, a
+     * touch origin isn't immediately reset at the next tick (see _setOrigin). This means that when we
+     * handle a focus event following a touch interaction, we need to determine whether (1) the focus
+     * event was directly caused by the touch interaction or (2) the focus event was caused by a
+     * subsequent programmatic focus call triggered by the touch interaction.
+     * @param focusEventTarget The target of the focus event under examination.
+     */
+    _shouldBeAttributedToTouch(focusEventTarget) {
+      // Please note that this check is not perfect. Consider the following edge case:
+      //
+      // <div #parent tabindex="0">
+      //   <div #child tabindex="0" (click)="#parent.focus()"></div>
+      // </div>
+      //
+      // Suppose there is a FocusMonitor in IMMEDIATE mode attached to #parent. When the user touches
+      // #child, #parent is programmatically focused. This code will attribute the focus to touch
+      // instead of program. This is a relatively minor edge-case that can be worked around by using
+      // focusVia(parent, 'program') to focus #parent.
+      return this._detectionMode === FocusMonitorDetectionMode.EVENTUAL || !!focusEventTarget?.contains(this._inputModalityDetector._mostRecentTarget);
+    }
+    /**
+     * Sets the focus classes on the element based on the given focus origin.
+     * @param element The element to update the classes on.
+     * @param origin The focus origin.
+     */
+    _setClasses(element, origin) {
+      element.classList.toggle('cdk-focused', !!origin);
+      element.classList.toggle('cdk-touch-focused', origin === 'touch');
+      element.classList.toggle('cdk-keyboard-focused', origin === 'keyboard');
+      element.classList.toggle('cdk-mouse-focused', origin === 'mouse');
+      element.classList.toggle('cdk-program-focused', origin === 'program');
+    }
+    /**
+     * Updates the focus origin. If we're using immediate detection mode, we schedule an async
+     * function to clear the origin at the end of a timeout. The duration of the timeout depends on
+     * the origin being set.
+     * @param origin The origin to set.
+     * @param isFromInteraction Whether we are setting the origin from an interaction event.
+     */
+    _setOrigin(origin, isFromInteraction = false) {
+      this._ngZone.runOutsideAngular(() => {
+        this._origin = origin;
+        this._originFromTouchInteraction = origin === 'touch' && isFromInteraction;
+        // If we're in IMMEDIATE mode, reset the origin at the next tick (or in `TOUCH_BUFFER_MS` ms
+        // for a touch event). We reset the origin at the next tick because Firefox focuses one tick
+        // after the interaction event. We wait `TOUCH_BUFFER_MS` ms before resetting the origin for
+        // a touch event because when a touch event is fired, the associated focus event isn't yet in
+        // the event queue. Before doing so, clear any pending timeouts.
+        if (this._detectionMode === FocusMonitorDetectionMode.IMMEDIATE) {
+          clearTimeout(this._originTimeoutId);
+          const ms = this._originFromTouchInteraction ? TOUCH_BUFFER_MS : 1;
+          this._originTimeoutId = setTimeout(() => this._origin = null, ms);
+        }
+      });
+    }
+    /**
+     * Handles focus events on a registered element.
+     * @param event The focus event.
+     * @param element The monitored element.
+     */
+    _onFocus(event, element) {
+      // NOTE(mmalerba): We currently set the classes based on the focus origin of the most recent
+      // focus event affecting the monitored element. If we want to use the origin of the first event
+      // instead we should check for the cdk-focused class here and return if the element already has
+      // it. (This only matters for elements that have includesChildren = true).
+      // If we are not counting child-element-focus as focused, make sure that the event target is the
+      // monitored element itself.
+      const elementInfo = this._elementInfo.get(element);
+      const focusEventTarget = (0,_shadow_dom_B0oHn41l_mjs__WEBPACK_IMPORTED_MODULE_5__._)(event);
+      if (!elementInfo || !elementInfo.checkChildren && element !== focusEventTarget) {
+        return;
+      }
+      this._originChanged(element, this._getFocusOrigin(focusEventTarget), elementInfo);
+    }
+    /**
+     * Handles blur events on a registered element.
+     * @param event The blur event.
+     * @param element The monitored element.
+     */
+    _onBlur(event, element) {
+      // If we are counting child-element-focus as focused, make sure that we aren't just blurring in
+      // order to focus another child of the monitored element.
+      const elementInfo = this._elementInfo.get(element);
+      if (!elementInfo || elementInfo.checkChildren && event.relatedTarget instanceof Node && element.contains(event.relatedTarget)) {
+        return;
+      }
+      this._setClasses(element);
+      this._emitOrigin(elementInfo, null);
+    }
+    _emitOrigin(info, origin) {
+      if (info.subject.observers.length) {
+        this._ngZone.run(() => info.subject.next(origin));
+      }
+    }
+    _registerGlobalListeners(elementInfo) {
+      if (!this._platform.isBrowser) {
+        return;
+      }
+      const rootNode = elementInfo.rootNode;
+      const rootNodeFocusListeners = this._rootNodeFocusListenerCount.get(rootNode) || 0;
+      if (!rootNodeFocusListeners) {
+        this._ngZone.runOutsideAngular(() => {
+          rootNode.addEventListener('focus', this._rootNodeFocusAndBlurListener, captureEventListenerOptions);
+          rootNode.addEventListener('blur', this._rootNodeFocusAndBlurListener, captureEventListenerOptions);
+        });
+      }
+      this._rootNodeFocusListenerCount.set(rootNode, rootNodeFocusListeners + 1);
+      // Register global listeners when first element is monitored.
+      if (++this._monitoredElementCount === 1) {
+        // Note: we listen to events in the capture phase so we
+        // can detect them even if the user stops propagation.
+        this._ngZone.runOutsideAngular(() => {
+          const window = this._getWindow();
+          window.addEventListener('focus', this._windowFocusListener);
+        });
+        // The InputModalityDetector is also just a collection of global listeners.
+        this._inputModalityDetector.modalityDetected.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.takeUntil)(this._stopInputModalityDetector)).subscribe(modality => {
+          this._setOrigin(modality, true /* isFromInteraction */);
+        });
+      }
+    }
+    _removeGlobalListeners(elementInfo) {
+      const rootNode = elementInfo.rootNode;
+      if (this._rootNodeFocusListenerCount.has(rootNode)) {
+        const rootNodeFocusListeners = this._rootNodeFocusListenerCount.get(rootNode);
+        if (rootNodeFocusListeners > 1) {
+          this._rootNodeFocusListenerCount.set(rootNode, rootNodeFocusListeners - 1);
+        } else {
+          rootNode.removeEventListener('focus', this._rootNodeFocusAndBlurListener, captureEventListenerOptions);
+          rootNode.removeEventListener('blur', this._rootNodeFocusAndBlurListener, captureEventListenerOptions);
+          this._rootNodeFocusListenerCount.delete(rootNode);
+        }
+      }
+      // Unregister global listeners when last element is unmonitored.
+      if (! --this._monitoredElementCount) {
+        const window = this._getWindow();
+        window.removeEventListener('focus', this._windowFocusListener);
+        // Equivalently, stop our InputModalityDetector subscription.
+        this._stopInputModalityDetector.next();
+        // Clear timeouts for all potentially pending timeouts to prevent the leaks.
+        clearTimeout(this._windowFocusTimeoutId);
+        clearTimeout(this._originTimeoutId);
+      }
+    }
+    /** Updates all the state on an element once its focus origin has changed. */
+    _originChanged(element, origin, elementInfo) {
+      this._setClasses(element, origin);
+      this._emitOrigin(elementInfo, origin);
+      this._lastFocusOrigin = origin;
+    }
+    /**
+     * Collects the `MonitoredElementInfo` of a particular element and
+     * all of its ancestors that have enabled `checkChildren`.
+     * @param element Element from which to start the search.
+     */
+    _getClosestElementsInfo(element) {
+      const results = [];
+      this._elementInfo.forEach((info, currentElement) => {
+        if (currentElement === element || info.checkChildren && currentElement.contains(element)) {
+          results.push([currentElement, info]);
+        }
+      });
+      return results;
+    }
+    /**
+     * Returns whether an interaction is likely to have come from the user clicking the `label` of
+     * an `input` or `textarea` in order to focus it.
+     * @param focusEventTarget Target currently receiving focus.
+     */
+    _isLastInteractionFromInputLabel(focusEventTarget) {
+      const {
+        _mostRecentTarget: mostRecentTarget,
+        mostRecentModality
+      } = this._inputModalityDetector;
+      // If the last interaction used the mouse on an element contained by one of the labels
+      // of an `input`/`textarea` that is currently focused, it is very likely that the
+      // user redirected focus using the label.
+      if (mostRecentModality !== 'mouse' || !mostRecentTarget || mostRecentTarget === focusEventTarget || focusEventTarget.nodeName !== 'INPUT' && focusEventTarget.nodeName !== 'TEXTAREA' || focusEventTarget.disabled) {
+        return false;
+      }
+      const labels = focusEventTarget.labels;
+      if (labels) {
+        for (let i = 0; i < labels.length; i++) {
+          if (labels[i].contains(mostRecentTarget)) {
+            return true;
+          }
+        }
+      }
+      return false;
+    }
+    static ɵfac = function FocusMonitor_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || FocusMonitor)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: FocusMonitor,
+      factory: FocusMonitor.ɵfac,
+      providedIn: 'root'
+    });
+  }
+  return FocusMonitor;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+/**
+ * Directive that determines how a particular element was focused (via keyboard, mouse, touch, or
+ * programmatically) and adds corresponding classes to the element.
+ *
+ * There are two variants of this directive:
+ * 1) cdkMonitorElementFocus: does not consider an element to be focused if one of its children is
+ *    focused.
+ * 2) cdkMonitorSubtreeFocus: considers an element focused if it or any of its children are focused.
+ */
+let CdkMonitorFocus = /*#__PURE__*/(() => {
+  class CdkMonitorFocus {
+    _elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
+    _focusMonitor = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(FocusMonitor);
+    _monitorSubscription;
+    _focusOrigin = null;
+    cdkFocusChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
+    constructor() {}
+    get focusOrigin() {
+      return this._focusOrigin;
+    }
+    ngAfterViewInit() {
+      const element = this._elementRef.nativeElement;
+      this._monitorSubscription = this._focusMonitor.monitor(element, element.nodeType === 1 && element.hasAttribute('cdkMonitorSubtreeFocus')).subscribe(origin => {
+        this._focusOrigin = origin;
+        this.cdkFocusChange.emit(origin);
+      });
+    }
+    ngOnDestroy() {
+      this._focusMonitor.stopMonitoring(this._elementRef);
+      if (this._monitorSubscription) {
+        this._monitorSubscription.unsubscribe();
+      }
+    }
+    static ɵfac = function CdkMonitorFocus_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || CdkMonitorFocus)();
+    };
+    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+      type: CdkMonitorFocus,
+      selectors: [["", "cdkMonitorElementFocus", ""], ["", "cdkMonitorSubtreeFocus", ""]],
+      outputs: {
+        cdkFocusChange: "cdkFocusChange"
+      },
+      exportAs: ["cdkMonitorFocus"]
+    });
+  }
+  return CdkMonitorFocus;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+
+/***/ }),
+
 /***/ 39539:
 /*!**********************************************************!*\
   !*** ./node_modules/@angular/cdk/fesm2022/observers.mjs ***!
@@ -1352,36 +2014,36 @@ class Typeahead {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A11yModule: () => (/* reexport safe */ _a11y_module_BPzgKr79_mjs__WEBPACK_IMPORTED_MODULE_1__.A),
+/* harmony export */   A11yModule: () => (/* reexport safe */ _a11y_module_DHa4AVFz_mjs__WEBPACK_IMPORTED_MODULE_1__.A),
 /* harmony export */   ActiveDescendantKeyManager: () => (/* reexport safe */ _activedescendant_key_manager_CZAE5aFC_mjs__WEBPACK_IMPORTED_MODULE_4__.A),
 /* harmony export */   AriaDescriber: () => (/* binding */ AriaDescriber),
 /* harmony export */   CDK_DESCRIBEDBY_HOST_ATTRIBUTE: () => (/* binding */ CDK_DESCRIBEDBY_HOST_ATTRIBUTE),
 /* harmony export */   CDK_DESCRIBEDBY_ID_PREFIX: () => (/* binding */ CDK_DESCRIBEDBY_ID_PREFIX),
-/* harmony export */   CdkAriaLive: () => (/* reexport safe */ _a11y_module_BPzgKr79_mjs__WEBPACK_IMPORTED_MODULE_1__.d),
-/* harmony export */   CdkMonitorFocus: () => (/* reexport safe */ _focus_monitor_DUe99AIS_mjs__WEBPACK_IMPORTED_MODULE_0__.C),
-/* harmony export */   CdkTrapFocus: () => (/* reexport safe */ _a11y_module_BPzgKr79_mjs__WEBPACK_IMPORTED_MODULE_1__.C),
+/* harmony export */   CdkAriaLive: () => (/* reexport safe */ _a11y_module_DHa4AVFz_mjs__WEBPACK_IMPORTED_MODULE_1__.d),
+/* harmony export */   CdkMonitorFocus: () => (/* reexport safe */ _focus_monitor_DLjkiju1_mjs__WEBPACK_IMPORTED_MODULE_0__.C),
+/* harmony export */   CdkTrapFocus: () => (/* reexport safe */ _a11y_module_DHa4AVFz_mjs__WEBPACK_IMPORTED_MODULE_1__.C),
 /* harmony export */   ConfigurableFocusTrap: () => (/* binding */ ConfigurableFocusTrap),
 /* harmony export */   ConfigurableFocusTrapFactory: () => (/* binding */ ConfigurableFocusTrapFactory),
 /* harmony export */   EventListenerFocusTrapInertStrategy: () => (/* binding */ EventListenerFocusTrapInertStrategy),
-/* harmony export */   FOCUS_MONITOR_DEFAULT_OPTIONS: () => (/* reexport safe */ _focus_monitor_DUe99AIS_mjs__WEBPACK_IMPORTED_MODULE_0__.d),
+/* harmony export */   FOCUS_MONITOR_DEFAULT_OPTIONS: () => (/* reexport safe */ _focus_monitor_DLjkiju1_mjs__WEBPACK_IMPORTED_MODULE_0__.d),
 /* harmony export */   FOCUS_TRAP_INERT_STRATEGY: () => (/* binding */ FOCUS_TRAP_INERT_STRATEGY),
 /* harmony export */   FocusKeyManager: () => (/* reexport safe */ _focus_key_manager_CPmlyB_c_mjs__WEBPACK_IMPORTED_MODULE_5__.F),
-/* harmony export */   FocusMonitor: () => (/* reexport safe */ _focus_monitor_DUe99AIS_mjs__WEBPACK_IMPORTED_MODULE_0__.F),
-/* harmony export */   FocusMonitorDetectionMode: () => (/* reexport safe */ _focus_monitor_DUe99AIS_mjs__WEBPACK_IMPORTED_MODULE_0__.c),
-/* harmony export */   FocusTrap: () => (/* reexport safe */ _a11y_module_BPzgKr79_mjs__WEBPACK_IMPORTED_MODULE_1__.a),
-/* harmony export */   FocusTrapFactory: () => (/* reexport safe */ _a11y_module_BPzgKr79_mjs__WEBPACK_IMPORTED_MODULE_1__.F),
-/* harmony export */   HighContrastMode: () => (/* reexport safe */ _a11y_module_BPzgKr79_mjs__WEBPACK_IMPORTED_MODULE_1__.b),
-/* harmony export */   HighContrastModeDetector: () => (/* reexport safe */ _a11y_module_BPzgKr79_mjs__WEBPACK_IMPORTED_MODULE_1__.H),
-/* harmony export */   INPUT_MODALITY_DETECTOR_DEFAULT_OPTIONS: () => (/* reexport safe */ _focus_monitor_DUe99AIS_mjs__WEBPACK_IMPORTED_MODULE_0__.a),
-/* harmony export */   INPUT_MODALITY_DETECTOR_OPTIONS: () => (/* reexport safe */ _focus_monitor_DUe99AIS_mjs__WEBPACK_IMPORTED_MODULE_0__.b),
-/* harmony export */   InputModalityDetector: () => (/* reexport safe */ _focus_monitor_DUe99AIS_mjs__WEBPACK_IMPORTED_MODULE_0__.I),
-/* harmony export */   InteractivityChecker: () => (/* reexport safe */ _a11y_module_BPzgKr79_mjs__WEBPACK_IMPORTED_MODULE_1__.I),
-/* harmony export */   IsFocusableConfig: () => (/* reexport safe */ _a11y_module_BPzgKr79_mjs__WEBPACK_IMPORTED_MODULE_1__.c),
-/* harmony export */   LIVE_ANNOUNCER_DEFAULT_OPTIONS: () => (/* reexport safe */ _a11y_module_BPzgKr79_mjs__WEBPACK_IMPORTED_MODULE_1__.g),
-/* harmony export */   LIVE_ANNOUNCER_ELEMENT_TOKEN: () => (/* reexport safe */ _a11y_module_BPzgKr79_mjs__WEBPACK_IMPORTED_MODULE_1__.e),
-/* harmony export */   LIVE_ANNOUNCER_ELEMENT_TOKEN_FACTORY: () => (/* reexport safe */ _a11y_module_BPzgKr79_mjs__WEBPACK_IMPORTED_MODULE_1__.f),
+/* harmony export */   FocusMonitor: () => (/* reexport safe */ _focus_monitor_DLjkiju1_mjs__WEBPACK_IMPORTED_MODULE_0__.F),
+/* harmony export */   FocusMonitorDetectionMode: () => (/* reexport safe */ _focus_monitor_DLjkiju1_mjs__WEBPACK_IMPORTED_MODULE_0__.c),
+/* harmony export */   FocusTrap: () => (/* reexport safe */ _a11y_module_DHa4AVFz_mjs__WEBPACK_IMPORTED_MODULE_1__.a),
+/* harmony export */   FocusTrapFactory: () => (/* reexport safe */ _a11y_module_DHa4AVFz_mjs__WEBPACK_IMPORTED_MODULE_1__.F),
+/* harmony export */   HighContrastMode: () => (/* reexport safe */ _a11y_module_DHa4AVFz_mjs__WEBPACK_IMPORTED_MODULE_1__.b),
+/* harmony export */   HighContrastModeDetector: () => (/* reexport safe */ _a11y_module_DHa4AVFz_mjs__WEBPACK_IMPORTED_MODULE_1__.H),
+/* harmony export */   INPUT_MODALITY_DETECTOR_DEFAULT_OPTIONS: () => (/* reexport safe */ _focus_monitor_DLjkiju1_mjs__WEBPACK_IMPORTED_MODULE_0__.a),
+/* harmony export */   INPUT_MODALITY_DETECTOR_OPTIONS: () => (/* reexport safe */ _focus_monitor_DLjkiju1_mjs__WEBPACK_IMPORTED_MODULE_0__.b),
+/* harmony export */   InputModalityDetector: () => (/* reexport safe */ _focus_monitor_DLjkiju1_mjs__WEBPACK_IMPORTED_MODULE_0__.I),
+/* harmony export */   InteractivityChecker: () => (/* reexport safe */ _a11y_module_DHa4AVFz_mjs__WEBPACK_IMPORTED_MODULE_1__.I),
+/* harmony export */   IsFocusableConfig: () => (/* reexport safe */ _a11y_module_DHa4AVFz_mjs__WEBPACK_IMPORTED_MODULE_1__.c),
+/* harmony export */   LIVE_ANNOUNCER_DEFAULT_OPTIONS: () => (/* reexport safe */ _a11y_module_DHa4AVFz_mjs__WEBPACK_IMPORTED_MODULE_1__.g),
+/* harmony export */   LIVE_ANNOUNCER_ELEMENT_TOKEN: () => (/* reexport safe */ _a11y_module_DHa4AVFz_mjs__WEBPACK_IMPORTED_MODULE_1__.e),
+/* harmony export */   LIVE_ANNOUNCER_ELEMENT_TOKEN_FACTORY: () => (/* reexport safe */ _a11y_module_DHa4AVFz_mjs__WEBPACK_IMPORTED_MODULE_1__.f),
 /* harmony export */   ListKeyManager: () => (/* reexport safe */ _list_key_manager_C7tp3RbG_mjs__WEBPACK_IMPORTED_MODULE_6__.L),
-/* harmony export */   LiveAnnouncer: () => (/* reexport safe */ _a11y_module_BPzgKr79_mjs__WEBPACK_IMPORTED_MODULE_1__.L),
+/* harmony export */   LiveAnnouncer: () => (/* reexport safe */ _a11y_module_DHa4AVFz_mjs__WEBPACK_IMPORTED_MODULE_1__.L),
 /* harmony export */   MESSAGES_CONTAINER_ID: () => (/* binding */ MESSAGES_CONTAINER_ID),
 /* harmony export */   NOOP_TREE_KEY_MANAGER_FACTORY: () => (/* binding */ NOOP_TREE_KEY_MANAGER_FACTORY),
 /* harmony export */   NOOP_TREE_KEY_MANAGER_FACTORY_PROVIDER: () => (/* binding */ NOOP_TREE_KEY_MANAGER_FACTORY_PROVIDER),
@@ -1397,8 +2059,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   isFakeTouchstartFromScreenReader: () => (/* reexport safe */ _fake_event_detection_DWOdFTFz_mjs__WEBPACK_IMPORTED_MODULE_9__.a),
 /* harmony export */   removeAriaReferencedId: () => (/* binding */ removeAriaReferencedId)
 /* harmony export */ });
-/* harmony import */ var _focus_monitor_DUe99AIS_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./focus-monitor-DUe99AIS.mjs */ 76841);
-/* harmony import */ var _a11y_module_BPzgKr79_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./a11y-module-BPzgKr79.mjs */ 95236);
+/* harmony import */ var _focus_monitor_DLjkiju1_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./focus-monitor-DLjkiju1.mjs */ 25662);
+/* harmony import */ var _a11y_module_DHa4AVFz_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./a11y-module-DHa4AVFz.mjs */ 87438);
 /* harmony import */ var _id_generator_LuoRZSid_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./id-generator-LuoRZSid.mjs */ 51590);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 27940);
 /* harmony import */ var _platform_DNDzkVcI_mjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./platform-DNDzkVcI.mjs */ 6427);
@@ -1793,7 +2455,7 @@ const NOOP_TREE_KEY_MANAGER_FACTORY_PROVIDER = {
  * This class uses a strategy pattern that determines how it traps focus.
  * See FocusTrapInertStrategy.
  */
-class ConfigurableFocusTrap extends _a11y_module_BPzgKr79_mjs__WEBPACK_IMPORTED_MODULE_1__.a {
+class ConfigurableFocusTrap extends _a11y_module_DHa4AVFz_mjs__WEBPACK_IMPORTED_MODULE_1__.a {
   _focusTrapManager;
   _inertStrategy;
   /** Whether the FocusTrap is enabled. */
@@ -1939,7 +2601,7 @@ let FocusTrapManager = /*#__PURE__*/(() => {
 /** Factory that allows easy instantiation of configurable focus traps. */
 let ConfigurableFocusTrapFactory = /*#__PURE__*/(() => {
   class ConfigurableFocusTrapFactory {
-    _checker = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_a11y_module_BPzgKr79_mjs__WEBPACK_IMPORTED_MODULE_1__.I);
+    _checker = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_a11y_module_DHa4AVFz_mjs__WEBPACK_IMPORTED_MODULE_1__.I);
     _ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgZone);
     _focusTrapManager = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(FocusTrapManager);
     _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_3__.DOCUMENT);
@@ -2125,661 +2787,6 @@ function hasModifierKey(event, ...modifiers) {
   }
   return event.altKey || event.shiftKey || event.ctrlKey || event.metaKey;
 }
-
-
-/***/ }),
-
-/***/ 76841:
-/*!***********************************************************************!*\
-  !*** ./node_modules/@angular/cdk/fesm2022/focus-monitor-DUe99AIS.mjs ***!
-  \***********************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   C: () => (/* binding */ CdkMonitorFocus),
-/* harmony export */   F: () => (/* binding */ FocusMonitor),
-/* harmony export */   I: () => (/* binding */ InputModalityDetector),
-/* harmony export */   a: () => (/* binding */ INPUT_MODALITY_DETECTOR_DEFAULT_OPTIONS),
-/* harmony export */   b: () => (/* binding */ INPUT_MODALITY_DETECTOR_OPTIONS),
-/* harmony export */   c: () => (/* binding */ FocusMonitorDetectionMode),
-/* harmony export */   d: () => (/* binding */ FOCUS_MONITOR_DEFAULT_OPTIONS)
-/* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 44866);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 32778);
-/* harmony import */ var _fake_event_detection_DWOdFTFz_mjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./fake-event-detection-DWOdFTFz.mjs */ 513);
-/* harmony import */ var _keycodes_CpHkExLC_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./keycodes-CpHkExLC.mjs */ 5758);
-/* harmony import */ var _shadow_dom_B0oHn41l_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./shadow-dom-B0oHn41l.mjs */ 66488);
-/* harmony import */ var _platform_DNDzkVcI_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./platform-DNDzkVcI.mjs */ 6427);
-/* harmony import */ var _passive_listeners_esHZRgIN_mjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./passive-listeners-esHZRgIN.mjs */ 92516);
-/* harmony import */ var _element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./element-x4z00URv.mjs */ 94724);
-
-
-
-
-
-
-
-
-
-
-
-/**
- * Injectable options for the InputModalityDetector. These are shallowly merged with the default
- * options.
- */
-const INPUT_MODALITY_DETECTOR_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('cdk-input-modality-detector-options');
-/**
- * Default options for the InputModalityDetector.
- *
- * Modifier keys are ignored by default (i.e. when pressed won't cause the service to detect
- * keyboard input modality) for two reasons:
- *
- * 1. Modifier keys are commonly used with mouse to perform actions such as 'right click' or 'open
- *    in new tab', and are thus less representative of actual keyboard interaction.
- * 2. VoiceOver triggers some keyboard events when linearly navigating with Control + Option (but
- *    confusingly not with Caps Lock). Thus, to have parity with other screen readers, we ignore
- *    these keys so as to not update the input modality.
- *
- * Note that we do not by default ignore the right Meta key on Safari because it has the same key
- * code as the ContextMenu key on other browsers. When we switch to using event.key, we can
- * distinguish between the two.
- */
-const INPUT_MODALITY_DETECTOR_DEFAULT_OPTIONS = {
-  ignoreKeys: [_keycodes_CpHkExLC_mjs__WEBPACK_IMPORTED_MODULE_3__.d, _keycodes_CpHkExLC_mjs__WEBPACK_IMPORTED_MODULE_3__.C, _keycodes_CpHkExLC_mjs__WEBPACK_IMPORTED_MODULE_3__.M, _keycodes_CpHkExLC_mjs__WEBPACK_IMPORTED_MODULE_3__.e, _keycodes_CpHkExLC_mjs__WEBPACK_IMPORTED_MODULE_3__.f]
-};
-/**
- * The amount of time needed to pass after a touchstart event in order for a subsequent mousedown
- * event to be attributed as mouse and not touch.
- *
- * This is the value used by AngularJS Material. Through trial and error (on iPhone 6S) they found
- * that a value of around 650ms seems appropriate.
- */
-const TOUCH_BUFFER_MS = 650;
-/**
- * Event listener options that enable capturing and also mark the listener as passive if the browser
- * supports it.
- */
-const modalityEventListenerOptions = {
-  passive: true,
-  capture: true
-};
-/**
- * Service that detects the user's input modality.
- *
- * This service does not update the input modality when a user navigates with a screen reader
- * (e.g. linear navigation with VoiceOver, object navigation / browse mode with NVDA, virtual PC
- * cursor mode with JAWS). This is in part due to technical limitations (i.e. keyboard events do not
- * fire as expected in these modes) but is also arguably the correct behavior. Navigating with a
- * screen reader is akin to visually scanning a page, and should not be interpreted as actual user
- * input interaction.
- *
- * When a user is not navigating but *interacting* with a screen reader, this service attempts to
- * update the input modality to keyboard, but in general this service's behavior is largely
- * undefined.
- */
-let InputModalityDetector = /*#__PURE__*/(() => {
-  class InputModalityDetector {
-    _platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_platform_DNDzkVcI_mjs__WEBPACK_IMPORTED_MODULE_4__.P);
-    _listenerCleanups;
-    /** Emits whenever an input modality is detected. */
-    modalityDetected;
-    /** Emits when the input modality changes. */
-    modalityChanged;
-    /** The most recently detected input modality. */
-    get mostRecentModality() {
-      return this._modality.value;
-    }
-    /**
-     * The most recently detected input modality event target. Is null if no input modality has been
-     * detected or if the associated event target is null for some unknown reason.
-     */
-    _mostRecentTarget = null;
-    /** The underlying BehaviorSubject that emits whenever an input modality is detected. */
-    _modality = new rxjs__WEBPACK_IMPORTED_MODULE_1__.BehaviorSubject(null);
-    /** Options for this InputModalityDetector. */
-    _options;
-    /**
-     * The timestamp of the last touch input modality. Used to determine whether mousedown events
-     * should be attributed to mouse or touch.
-     */
-    _lastTouchMs = 0;
-    /**
-     * Handles keydown events. Must be an arrow function in order to preserve the context when it gets
-     * bound.
-     */
-    _onKeydown = event => {
-      // If this is one of the keys we should ignore, then ignore it and don't update the input
-      // modality to keyboard.
-      if (this._options?.ignoreKeys?.some(keyCode => keyCode === event.keyCode)) {
-        return;
-      }
-      this._modality.next('keyboard');
-      this._mostRecentTarget = (0,_shadow_dom_B0oHn41l_mjs__WEBPACK_IMPORTED_MODULE_5__._)(event);
-    };
-    /**
-     * Handles mousedown events. Must be an arrow function in order to preserve the context when it
-     * gets bound.
-     */
-    _onMousedown = event => {
-      // Touches trigger both touch and mouse events, so we need to distinguish between mouse events
-      // that were triggered via mouse vs touch. To do so, check if the mouse event occurs closely
-      // after the previous touch event.
-      if (Date.now() - this._lastTouchMs < TOUCH_BUFFER_MS) {
-        return;
-      }
-      // Fake mousedown events are fired by some screen readers when controls are activated by the
-      // screen reader. Attribute them to keyboard input modality.
-      this._modality.next((0,_fake_event_detection_DWOdFTFz_mjs__WEBPACK_IMPORTED_MODULE_6__.i)(event) ? 'keyboard' : 'mouse');
-      this._mostRecentTarget = (0,_shadow_dom_B0oHn41l_mjs__WEBPACK_IMPORTED_MODULE_5__._)(event);
-    };
-    /**
-     * Handles touchstart events. Must be an arrow function in order to preserve the context when it
-     * gets bound.
-     */
-    _onTouchstart = event => {
-      // Same scenario as mentioned in _onMousedown, but on touch screen devices, fake touchstart
-      // events are fired. Again, attribute to keyboard input modality.
-      if ((0,_fake_event_detection_DWOdFTFz_mjs__WEBPACK_IMPORTED_MODULE_6__.a)(event)) {
-        this._modality.next('keyboard');
-        return;
-      }
-      // Store the timestamp of this touch event, as it's used to distinguish between mouse events
-      // triggered via mouse vs touch.
-      this._lastTouchMs = Date.now();
-      this._modality.next('touch');
-      this._mostRecentTarget = (0,_shadow_dom_B0oHn41l_mjs__WEBPACK_IMPORTED_MODULE_5__._)(event);
-    };
-    constructor() {
-      const ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone);
-      const document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT);
-      const options = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(INPUT_MODALITY_DETECTOR_OPTIONS, {
-        optional: true
-      });
-      this._options = {
-        ...INPUT_MODALITY_DETECTOR_DEFAULT_OPTIONS,
-        ...options
-      };
-      // Skip the first emission as it's null.
-      this.modalityDetected = this._modality.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.skip)(1));
-      this.modalityChanged = this.modalityDetected.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.distinctUntilChanged)());
-      // If we're not in a browser, this service should do nothing, as there's no relevant input
-      // modality to detect.
-      if (this._platform.isBrowser) {
-        const renderer = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.RendererFactory2).createRenderer(null, null);
-        this._listenerCleanups = ngZone.runOutsideAngular(() => {
-          return [renderer.listen(document, 'keydown', this._onKeydown, modalityEventListenerOptions), renderer.listen(document, 'mousedown', this._onMousedown, modalityEventListenerOptions), renderer.listen(document, 'touchstart', this._onTouchstart, modalityEventListenerOptions)];
-        });
-      }
-    }
-    ngOnDestroy() {
-      this._modality.complete();
-      this._listenerCleanups?.forEach(cleanup => cleanup());
-    }
-    static ɵfac = function InputModalityDetector_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || InputModalityDetector)();
-    };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: InputModalityDetector,
-      factory: InputModalityDetector.ɵfac,
-      providedIn: 'root'
-    });
-  }
-  return InputModalityDetector;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/** Detection mode used for attributing the origin of a focus event. */
-var FocusMonitorDetectionMode = /*#__PURE__*/function (FocusMonitorDetectionMode) {
-  /**
-   * Any mousedown, keydown, or touchstart event that happened in the previous
-   * tick or the current tick will be used to assign a focus event's origin (to
-   * either mouse, keyboard, or touch). This is the default option.
-   */
-  FocusMonitorDetectionMode[FocusMonitorDetectionMode["IMMEDIATE"] = 0] = "IMMEDIATE";
-  /**
-   * A focus event's origin is always attributed to the last corresponding
-   * mousedown, keydown, or touchstart event, no matter how long ago it occurred.
-   */
-  FocusMonitorDetectionMode[FocusMonitorDetectionMode["EVENTUAL"] = 1] = "EVENTUAL";
-  return FocusMonitorDetectionMode;
-}(FocusMonitorDetectionMode || {});
-/** InjectionToken for FocusMonitorOptions. */
-const FOCUS_MONITOR_DEFAULT_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('cdk-focus-monitor-default-options');
-/**
- * Event listener options that enable capturing and also
- * mark the listener as passive if the browser supports it.
- */
-const captureEventListenerOptions = /*#__PURE__*/(0,_passive_listeners_esHZRgIN_mjs__WEBPACK_IMPORTED_MODULE_7__.n)({
-  passive: true,
-  capture: true
-});
-/** Monitors mouse and keyboard events to determine the cause of focus events. */
-let FocusMonitor = /*#__PURE__*/(() => {
-  class FocusMonitor {
-    _ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone);
-    _platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_platform_DNDzkVcI_mjs__WEBPACK_IMPORTED_MODULE_4__.P);
-    _inputModalityDetector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(InputModalityDetector);
-    /** The focus origin that the next focus event is a result of. */
-    _origin = null;
-    /** The FocusOrigin of the last focus event tracked by the FocusMonitor. */
-    _lastFocusOrigin;
-    /** Whether the window has just been focused. */
-    _windowFocused = false;
-    /** The timeout id of the window focus timeout. */
-    _windowFocusTimeoutId;
-    /** The timeout id of the origin clearing timeout. */
-    _originTimeoutId;
-    /**
-     * Whether the origin was determined via a touch interaction. Necessary as properly attributing
-     * focus events to touch interactions requires special logic.
-     */
-    _originFromTouchInteraction = false;
-    /** Map of elements being monitored to their info. */
-    _elementInfo = new Map();
-    /** The number of elements currently being monitored. */
-    _monitoredElementCount = 0;
-    /**
-     * Keeps track of the root nodes to which we've currently bound a focus/blur handler,
-     * as well as the number of monitored elements that they contain. We have to treat focus/blur
-     * handlers differently from the rest of the events, because the browser won't emit events
-     * to the document when focus moves inside of a shadow root.
-     */
-    _rootNodeFocusListenerCount = new Map();
-    /**
-     * The specified detection mode, used for attributing the origin of a focus
-     * event.
-     */
-    _detectionMode;
-    /**
-     * Event listener for `focus` events on the window.
-     * Needs to be an arrow function in order to preserve the context when it gets bound.
-     */
-    _windowFocusListener = () => {
-      // Make a note of when the window regains focus, so we can
-      // restore the origin info for the focused element.
-      this._windowFocused = true;
-      this._windowFocusTimeoutId = setTimeout(() => this._windowFocused = false);
-    };
-    /** Used to reference correct document/window */
-    _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT);
-    /** Subject for stopping our InputModalityDetector subscription. */
-    _stopInputModalityDetector = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
-    constructor() {
-      const options = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(FOCUS_MONITOR_DEFAULT_OPTIONS, {
-        optional: true
-      });
-      this._detectionMode = options?.detectionMode || FocusMonitorDetectionMode.IMMEDIATE;
-    }
-    /**
-     * Event listener for `focus` and 'blur' events on the document.
-     * Needs to be an arrow function in order to preserve the context when it gets bound.
-     */
-    _rootNodeFocusAndBlurListener = event => {
-      const target = (0,_shadow_dom_B0oHn41l_mjs__WEBPACK_IMPORTED_MODULE_5__._)(event);
-      // We need to walk up the ancestor chain in order to support `checkChildren`.
-      for (let element = target; element; element = element.parentElement) {
-        if (event.type === 'focus') {
-          this._onFocus(event, element);
-        } else {
-          this._onBlur(event, element);
-        }
-      }
-    };
-    monitor(element, checkChildren = false) {
-      const nativeElement = (0,_element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_8__.a)(element);
-      // Do nothing if we're not on the browser platform or the passed in node isn't an element.
-      if (!this._platform.isBrowser || nativeElement.nodeType !== 1) {
-        // Note: we don't want the observable to emit at all so we don't pass any parameters.
-        return (0,rxjs__WEBPACK_IMPORTED_MODULE_1__.of)();
-      }
-      // If the element is inside the shadow DOM, we need to bind our focus/blur listeners to
-      // the shadow root, rather than the `document`, because the browser won't emit focus events
-      // to the `document`, if focus is moving within the same shadow root.
-      const rootNode = (0,_shadow_dom_B0oHn41l_mjs__WEBPACK_IMPORTED_MODULE_5__.a)(nativeElement) || this._document;
-      const cachedInfo = this._elementInfo.get(nativeElement);
-      // Check if we're already monitoring this element.
-      if (cachedInfo) {
-        if (checkChildren) {
-          // TODO(COMP-318): this can be problematic, because it'll turn all non-checkChildren
-          // observers into ones that behave as if `checkChildren` was turned on. We need a more
-          // robust solution.
-          cachedInfo.checkChildren = true;
-        }
-        return cachedInfo.subject;
-      }
-      // Create monitored element info.
-      const info = {
-        checkChildren: checkChildren,
-        subject: new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject(),
-        rootNode
-      };
-      this._elementInfo.set(nativeElement, info);
-      this._registerGlobalListeners(info);
-      return info.subject;
-    }
-    stopMonitoring(element) {
-      const nativeElement = (0,_element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_8__.a)(element);
-      const elementInfo = this._elementInfo.get(nativeElement);
-      if (elementInfo) {
-        elementInfo.subject.complete();
-        this._setClasses(nativeElement);
-        this._elementInfo.delete(nativeElement);
-        this._removeGlobalListeners(elementInfo);
-      }
-    }
-    focusVia(element, origin, options) {
-      const nativeElement = (0,_element_x4z00URv_mjs__WEBPACK_IMPORTED_MODULE_8__.a)(element);
-      const focusedElement = this._document.activeElement;
-      // If the element is focused already, calling `focus` again won't trigger the event listener
-      // which means that the focus classes won't be updated. If that's the case, update the classes
-      // directly without waiting for an event.
-      if (nativeElement === focusedElement) {
-        this._getClosestElementsInfo(nativeElement).forEach(([currentElement, info]) => this._originChanged(currentElement, origin, info));
-      } else {
-        this._setOrigin(origin);
-        // `focus` isn't available on the server
-        if (typeof nativeElement.focus === 'function') {
-          nativeElement.focus(options);
-        }
-      }
-    }
-    ngOnDestroy() {
-      this._elementInfo.forEach((_info, element) => this.stopMonitoring(element));
-    }
-    /** Use defaultView of injected document if available or fallback to global window reference */
-    _getWindow() {
-      return this._document.defaultView || window;
-    }
-    _getFocusOrigin(focusEventTarget) {
-      if (this._origin) {
-        // If the origin was realized via a touch interaction, we need to perform additional checks
-        // to determine whether the focus origin should be attributed to touch or program.
-        if (this._originFromTouchInteraction) {
-          return this._shouldBeAttributedToTouch(focusEventTarget) ? 'touch' : 'program';
-        } else {
-          return this._origin;
-        }
-      }
-      // If the window has just regained focus, we can restore the most recent origin from before the
-      // window blurred. Otherwise, we've reached the point where we can't identify the source of the
-      // focus. This typically means one of two things happened:
-      //
-      // 1) The element was programmatically focused, or
-      // 2) The element was focused via screen reader navigation (which generally doesn't fire
-      //    events).
-      //
-      // Because we can't distinguish between these two cases, we default to setting `program`.
-      if (this._windowFocused && this._lastFocusOrigin) {
-        return this._lastFocusOrigin;
-      }
-      // If the interaction is coming from an input label, we consider it a mouse interactions.
-      // This is a special case where focus moves on `click`, rather than `mousedown` which breaks
-      // our detection, because all our assumptions are for `mousedown`. We need to handle this
-      // special case, because it's very common for checkboxes and radio buttons.
-      if (focusEventTarget && this._isLastInteractionFromInputLabel(focusEventTarget)) {
-        return 'mouse';
-      }
-      return 'program';
-    }
-    /**
-     * Returns whether the focus event should be attributed to touch. Recall that in IMMEDIATE mode, a
-     * touch origin isn't immediately reset at the next tick (see _setOrigin). This means that when we
-     * handle a focus event following a touch interaction, we need to determine whether (1) the focus
-     * event was directly caused by the touch interaction or (2) the focus event was caused by a
-     * subsequent programmatic focus call triggered by the touch interaction.
-     * @param focusEventTarget The target of the focus event under examination.
-     */
-    _shouldBeAttributedToTouch(focusEventTarget) {
-      // Please note that this check is not perfect. Consider the following edge case:
-      //
-      // <div #parent tabindex="0">
-      //   <div #child tabindex="0" (click)="#parent.focus()"></div>
-      // </div>
-      //
-      // Suppose there is a FocusMonitor in IMMEDIATE mode attached to #parent. When the user touches
-      // #child, #parent is programmatically focused. This code will attribute the focus to touch
-      // instead of program. This is a relatively minor edge-case that can be worked around by using
-      // focusVia(parent, 'program') to focus #parent.
-      return this._detectionMode === FocusMonitorDetectionMode.EVENTUAL || !!focusEventTarget?.contains(this._inputModalityDetector._mostRecentTarget);
-    }
-    /**
-     * Sets the focus classes on the element based on the given focus origin.
-     * @param element The element to update the classes on.
-     * @param origin The focus origin.
-     */
-    _setClasses(element, origin) {
-      element.classList.toggle('cdk-focused', !!origin);
-      element.classList.toggle('cdk-touch-focused', origin === 'touch');
-      element.classList.toggle('cdk-keyboard-focused', origin === 'keyboard');
-      element.classList.toggle('cdk-mouse-focused', origin === 'mouse');
-      element.classList.toggle('cdk-program-focused', origin === 'program');
-    }
-    /**
-     * Updates the focus origin. If we're using immediate detection mode, we schedule an async
-     * function to clear the origin at the end of a timeout. The duration of the timeout depends on
-     * the origin being set.
-     * @param origin The origin to set.
-     * @param isFromInteraction Whether we are setting the origin from an interaction event.
-     */
-    _setOrigin(origin, isFromInteraction = false) {
-      this._ngZone.runOutsideAngular(() => {
-        this._origin = origin;
-        this._originFromTouchInteraction = origin === 'touch' && isFromInteraction;
-        // If we're in IMMEDIATE mode, reset the origin at the next tick (or in `TOUCH_BUFFER_MS` ms
-        // for a touch event). We reset the origin at the next tick because Firefox focuses one tick
-        // after the interaction event. We wait `TOUCH_BUFFER_MS` ms before resetting the origin for
-        // a touch event because when a touch event is fired, the associated focus event isn't yet in
-        // the event queue. Before doing so, clear any pending timeouts.
-        if (this._detectionMode === FocusMonitorDetectionMode.IMMEDIATE) {
-          clearTimeout(this._originTimeoutId);
-          const ms = this._originFromTouchInteraction ? TOUCH_BUFFER_MS : 1;
-          this._originTimeoutId = setTimeout(() => this._origin = null, ms);
-        }
-      });
-    }
-    /**
-     * Handles focus events on a registered element.
-     * @param event The focus event.
-     * @param element The monitored element.
-     */
-    _onFocus(event, element) {
-      // NOTE(mmalerba): We currently set the classes based on the focus origin of the most recent
-      // focus event affecting the monitored element. If we want to use the origin of the first event
-      // instead we should check for the cdk-focused class here and return if the element already has
-      // it. (This only matters for elements that have includesChildren = true).
-      // If we are not counting child-element-focus as focused, make sure that the event target is the
-      // monitored element itself.
-      const elementInfo = this._elementInfo.get(element);
-      const focusEventTarget = (0,_shadow_dom_B0oHn41l_mjs__WEBPACK_IMPORTED_MODULE_5__._)(event);
-      if (!elementInfo || !elementInfo.checkChildren && element !== focusEventTarget) {
-        return;
-      }
-      this._originChanged(element, this._getFocusOrigin(focusEventTarget), elementInfo);
-    }
-    /**
-     * Handles blur events on a registered element.
-     * @param event The blur event.
-     * @param element The monitored element.
-     */
-    _onBlur(event, element) {
-      // If we are counting child-element-focus as focused, make sure that we aren't just blurring in
-      // order to focus another child of the monitored element.
-      const elementInfo = this._elementInfo.get(element);
-      if (!elementInfo || elementInfo.checkChildren && event.relatedTarget instanceof Node && element.contains(event.relatedTarget)) {
-        return;
-      }
-      this._setClasses(element);
-      this._emitOrigin(elementInfo, null);
-    }
-    _emitOrigin(info, origin) {
-      if (info.subject.observers.length) {
-        this._ngZone.run(() => info.subject.next(origin));
-      }
-    }
-    _registerGlobalListeners(elementInfo) {
-      if (!this._platform.isBrowser) {
-        return;
-      }
-      const rootNode = elementInfo.rootNode;
-      const rootNodeFocusListeners = this._rootNodeFocusListenerCount.get(rootNode) || 0;
-      if (!rootNodeFocusListeners) {
-        this._ngZone.runOutsideAngular(() => {
-          rootNode.addEventListener('focus', this._rootNodeFocusAndBlurListener, captureEventListenerOptions);
-          rootNode.addEventListener('blur', this._rootNodeFocusAndBlurListener, captureEventListenerOptions);
-        });
-      }
-      this._rootNodeFocusListenerCount.set(rootNode, rootNodeFocusListeners + 1);
-      // Register global listeners when first element is monitored.
-      if (++this._monitoredElementCount === 1) {
-        // Note: we listen to events in the capture phase so we
-        // can detect them even if the user stops propagation.
-        this._ngZone.runOutsideAngular(() => {
-          const window = this._getWindow();
-          window.addEventListener('focus', this._windowFocusListener);
-        });
-        // The InputModalityDetector is also just a collection of global listeners.
-        this._inputModalityDetector.modalityDetected.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.takeUntil)(this._stopInputModalityDetector)).subscribe(modality => {
-          this._setOrigin(modality, true /* isFromInteraction */);
-        });
-      }
-    }
-    _removeGlobalListeners(elementInfo) {
-      const rootNode = elementInfo.rootNode;
-      if (this._rootNodeFocusListenerCount.has(rootNode)) {
-        const rootNodeFocusListeners = this._rootNodeFocusListenerCount.get(rootNode);
-        if (rootNodeFocusListeners > 1) {
-          this._rootNodeFocusListenerCount.set(rootNode, rootNodeFocusListeners - 1);
-        } else {
-          rootNode.removeEventListener('focus', this._rootNodeFocusAndBlurListener, captureEventListenerOptions);
-          rootNode.removeEventListener('blur', this._rootNodeFocusAndBlurListener, captureEventListenerOptions);
-          this._rootNodeFocusListenerCount.delete(rootNode);
-        }
-      }
-      // Unregister global listeners when last element is unmonitored.
-      if (! --this._monitoredElementCount) {
-        const window = this._getWindow();
-        window.removeEventListener('focus', this._windowFocusListener);
-        // Equivalently, stop our InputModalityDetector subscription.
-        this._stopInputModalityDetector.next();
-        // Clear timeouts for all potentially pending timeouts to prevent the leaks.
-        clearTimeout(this._windowFocusTimeoutId);
-        clearTimeout(this._originTimeoutId);
-      }
-    }
-    /** Updates all the state on an element once its focus origin has changed. */
-    _originChanged(element, origin, elementInfo) {
-      this._setClasses(element, origin);
-      this._emitOrigin(elementInfo, origin);
-      this._lastFocusOrigin = origin;
-    }
-    /**
-     * Collects the `MonitoredElementInfo` of a particular element and
-     * all of its ancestors that have enabled `checkChildren`.
-     * @param element Element from which to start the search.
-     */
-    _getClosestElementsInfo(element) {
-      const results = [];
-      this._elementInfo.forEach((info, currentElement) => {
-        if (currentElement === element || info.checkChildren && currentElement.contains(element)) {
-          results.push([currentElement, info]);
-        }
-      });
-      return results;
-    }
-    /**
-     * Returns whether an interaction is likely to have come from the user clicking the `label` of
-     * an `input` or `textarea` in order to focus it.
-     * @param focusEventTarget Target currently receiving focus.
-     */
-    _isLastInteractionFromInputLabel(focusEventTarget) {
-      const {
-        _mostRecentTarget: mostRecentTarget,
-        mostRecentModality
-      } = this._inputModalityDetector;
-      // If the last interaction used the mouse on an element contained by one of the labels
-      // of an `input`/`textarea` that is currently focused, it is very likely that the
-      // user redirected focus using the label.
-      if (mostRecentModality !== 'mouse' || !mostRecentTarget || mostRecentTarget === focusEventTarget || focusEventTarget.nodeName !== 'INPUT' && focusEventTarget.nodeName !== 'TEXTAREA' || focusEventTarget.disabled) {
-        return false;
-      }
-      const labels = focusEventTarget.labels;
-      if (labels) {
-        for (let i = 0; i < labels.length; i++) {
-          if (labels[i].contains(mostRecentTarget)) {
-            return true;
-          }
-        }
-      }
-      return false;
-    }
-    static ɵfac = function FocusMonitor_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || FocusMonitor)();
-    };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: FocusMonitor,
-      factory: FocusMonitor.ɵfac,
-      providedIn: 'root'
-    });
-  }
-  return FocusMonitor;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-/**
- * Directive that determines how a particular element was focused (via keyboard, mouse, touch, or
- * programmatically) and adds corresponding classes to the element.
- *
- * There are two variants of this directive:
- * 1) cdkMonitorElementFocus: does not consider an element to be focused if one of its children is
- *    focused.
- * 2) cdkMonitorSubtreeFocus: considers an element focused if it or any of its children are focused.
- */
-let CdkMonitorFocus = /*#__PURE__*/(() => {
-  class CdkMonitorFocus {
-    _elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
-    _focusMonitor = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(FocusMonitor);
-    _monitorSubscription;
-    _focusOrigin = null;
-    cdkFocusChange = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
-    constructor() {}
-    get focusOrigin() {
-      return this._focusOrigin;
-    }
-    ngAfterViewInit() {
-      const element = this._elementRef.nativeElement;
-      this._monitorSubscription = this._focusMonitor.monitor(element, element.nodeType === 1 && element.hasAttribute('cdkMonitorSubtreeFocus')).subscribe(origin => {
-        this._focusOrigin = origin;
-        this.cdkFocusChange.emit(origin);
-      });
-    }
-    ngOnDestroy() {
-      this._focusMonitor.stopMonitoring(this._elementRef);
-      if (this._monitorSubscription) {
-        this._monitorSubscription.unsubscribe();
-      }
-    }
-    static ɵfac = function CdkMonitorFocus_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || CdkMonitorFocus)();
-    };
-    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-      type: CdkMonitorFocus,
-      selectors: [["", "cdkMonitorElementFocus", ""], ["", "cdkMonitorSubtreeFocus", ""]],
-      outputs: {
-        cdkFocusChange: "cdkFocusChange"
-      },
-      exportAs: ["cdkMonitorFocus"]
-    });
-  }
-  return CdkMonitorFocus;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
 
 
 /***/ }),
@@ -3437,93 +3444,9 @@ const TREE_KEY_MANAGER_FACTORY_PROVIDER = {
 
 /***/ }),
 
-/***/ 92516:
-/*!***************************************************************************!*\
-  !*** ./node_modules/@angular/cdk/fesm2022/passive-listeners-esHZRgIN.mjs ***!
-  \***************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   n: () => (/* binding */ normalizePassiveListenerOptions),
-/* harmony export */   s: () => (/* binding */ supportsPassiveEventListeners)
-/* harmony export */ });
-/** Cached result of whether the user's browser supports passive event listeners. */
-let supportsPassiveEvents;
-/**
- * Checks whether the user's browser supports passive event listeners.
- * See: https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md
- */
-function supportsPassiveEventListeners() {
-  if (supportsPassiveEvents == null && typeof window !== 'undefined') {
-    try {
-      window.addEventListener('test', null, Object.defineProperty({}, 'passive', {
-        get: () => supportsPassiveEvents = true
-      }));
-    } finally {
-      supportsPassiveEvents = supportsPassiveEvents || false;
-    }
-  }
-  return supportsPassiveEvents;
-}
-/**
- * Normalizes an `AddEventListener` object to something that can be passed
- * to `addEventListener` on any browser, no matter whether it supports the
- * `options` parameter.
- * @param options Object to be normalized.
- */
-function normalizePassiveListenerOptions(options) {
-  return supportsPassiveEventListeners() ? options : !!options.capture;
-}
-
-
-/***/ }),
-
-/***/ 94724:
-/*!*****************************************************************!*\
-  !*** ./node_modules/@angular/cdk/fesm2022/element-x4z00URv.mjs ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   _: () => (/* binding */ _isNumberValue),
-/* harmony export */   a: () => (/* binding */ coerceElement),
-/* harmony export */   c: () => (/* binding */ coerceNumberProperty)
-/* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
-
-function coerceNumberProperty(value, fallbackValue = 0) {
-  if (_isNumberValue(value)) {
-    return Number(value);
-  }
-  return arguments.length === 2 ? fallbackValue : 0;
-}
-/**
- * Whether the provided value is considered a number.
- * @docs-private
- */
-function _isNumberValue(value) {
-  // parseFloat(value) handles most of the cases we're interested in (it treats null, empty string,
-  // and other non-number values as NaN, where Number just uses 0) but it considers the string
-  // '123hello' to be a valid number. Therefore we also check if Number(value) is NaN.
-  return !isNaN(parseFloat(value)) && !isNaN(Number(value));
-}
-
-/**
- * Coerces an ElementRef or an Element into an element.
- * Useful for APIs that can accept either a ref or the native element itself.
- */
-function coerceElement(elementOrRef) {
-  return elementOrRef instanceof _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef ? elementOrRef.nativeElement : elementOrRef;
-}
-
-
-/***/ }),
-
-/***/ 95236:
+/***/ 87438:
 /*!*********************************************************************!*\
-  !*** ./node_modules/@angular/cdk/fesm2022/a11y-module-BPzgKr79.mjs ***!
+  !*** ./node_modules/@angular/cdk/fesm2022/a11y-module-DHa4AVFz.mjs ***!
   \*********************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
@@ -4500,6 +4423,90 @@ let A11yModule = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+
+/***/ }),
+
+/***/ 92516:
+/*!***************************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/passive-listeners-esHZRgIN.mjs ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   n: () => (/* binding */ normalizePassiveListenerOptions),
+/* harmony export */   s: () => (/* binding */ supportsPassiveEventListeners)
+/* harmony export */ });
+/** Cached result of whether the user's browser supports passive event listeners. */
+let supportsPassiveEvents;
+/**
+ * Checks whether the user's browser supports passive event listeners.
+ * See: https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md
+ */
+function supportsPassiveEventListeners() {
+  if (supportsPassiveEvents == null && typeof window !== 'undefined') {
+    try {
+      window.addEventListener('test', null, Object.defineProperty({}, 'passive', {
+        get: () => supportsPassiveEvents = true
+      }));
+    } finally {
+      supportsPassiveEvents = supportsPassiveEvents || false;
+    }
+  }
+  return supportsPassiveEvents;
+}
+/**
+ * Normalizes an `AddEventListener` object to something that can be passed
+ * to `addEventListener` on any browser, no matter whether it supports the
+ * `options` parameter.
+ * @param options Object to be normalized.
+ */
+function normalizePassiveListenerOptions(options) {
+  return supportsPassiveEventListeners() ? options : !!options.capture;
+}
+
+
+/***/ }),
+
+/***/ 94724:
+/*!*****************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/element-x4z00URv.mjs ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   _: () => (/* binding */ _isNumberValue),
+/* harmony export */   a: () => (/* binding */ coerceElement),
+/* harmony export */   c: () => (/* binding */ coerceNumberProperty)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+
+function coerceNumberProperty(value, fallbackValue = 0) {
+  if (_isNumberValue(value)) {
+    return Number(value);
+  }
+  return arguments.length === 2 ? fallbackValue : 0;
+}
+/**
+ * Whether the provided value is considered a number.
+ * @docs-private
+ */
+function _isNumberValue(value) {
+  // parseFloat(value) handles most of the cases we're interested in (it treats null, empty string,
+  // and other non-number values as NaN, where Number just uses 0) but it considers the string
+  // '123hello' to be a valid number. Therefore we also check if Number(value) is NaN.
+  return !isNaN(parseFloat(value)) && !isNaN(Number(value));
+}
+
+/**
+ * Coerces an ElementRef or an Element into an element.
+ * Useful for APIs that can accept either a ref or the native element itself.
+ */
+function coerceElement(elementOrRef) {
+  return elementOrRef instanceof _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef ? elementOrRef.nativeElement : elementOrRef;
+}
 
 
 /***/ }),

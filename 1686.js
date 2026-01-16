@@ -311,19 +311,11 @@ function NgxEditorJs2CodemirrorComponent_Conditional_0_Template(rf, ctx) {
 }
 let NgxEditorJs2CodemirrorComponent = /*#__PURE__*/(() => {
   class NgxEditorJs2CodemirrorComponent {
-    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(0, ...(ngDevMode ? [{
-      debugName: "sortIndex"
-    }] : []));
+    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(0);
     componentInstanceName = 'NgxEditorJs2CodemirrorComponent';
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true, ...(ngDevMode ? [{
-      debugName: "autofocus"
-    }] : []));
-    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
-      debugName: "formGroup"
-    }] : []));
-    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
-      debugName: "formControlName"
-    }] : []));
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true);
+    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
+    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
     blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)([{
       action: 'text/typescript',
       icon: 'javascript'
@@ -333,9 +325,7 @@ let NgxEditorJs2CodemirrorComponent = /*#__PURE__*/(() => {
     }, {
       action: 'xml',
       icon: 'html'
-    }], ...(ngDevMode ? [{
-      debugName: "blockOptionActions"
-    }] : []));
+    }]);
     codeMirrorOptions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)({
       lineNumbers: true,
       theme: 'material-palenight',
@@ -349,12 +339,8 @@ let NgxEditorJs2CodemirrorComponent = /*#__PURE__*/(() => {
       indentUnit: 2,
       tabSize: 2,
       cursorScrollMargin: 5
-    }, ...(ngDevMode ? [{
-      debugName: "codeMirrorOptions"
-    }] : []));
-    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('display-large', ...(ngDevMode ? [{
-      debugName: "savedAction"
-    }] : []));
+    });
+    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('display-large');
     actionCallbackBind = this.actionCallback.bind(this);
     actionCallback(action) {
       this.codeMirrorOptions.update(prev => ({
@@ -365,9 +351,7 @@ let NgxEditorJs2CodemirrorComponent = /*#__PURE__*/(() => {
     }
     // ! Hotfix for perspective: 2500px;
     // Need create a delay to wait for the animation to finish before showing the component
-    waitForAnimation = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false, ...(ngDevMode ? [{
-      debugName: "waitForAnimation"
-    }] : []));
+    waitForAnimation = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false);
     constructor() {
       setTimeout(() => {
         this.waitForAnimation.update(() => true);

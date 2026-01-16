@@ -1,53 +1,48 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[7935],{
 
-/***/ 1919:
-/*!***********************************************************************!*\
-  !*** ./node_modules/@angular/common/fesm2022/platform_navigation.mjs ***!
-  \***********************************************************************/
+/***/ 30834:
+/*!****************************************************************!*\
+  !*** ./node_modules/@angular/common/fesm2022/xhr-CEmSPUGj.mjs ***!
+  \****************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   PlatformNavigation: () => (/* binding */ PlatformNavigation)
+/* harmony export */   XhrFactory: () => (/* binding */ XhrFactory),
+/* harmony export */   parseCookieValue: () => (/* binding */ parseCookieValue)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
 /**
- * @license Angular v20.1.0
+ * @license Angular v20.0.4
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
 
-
-
+function parseCookieValue(cookieStr, name) {
+  name = encodeURIComponent(name);
+  for (const cookie of cookieStr.split(';')) {
+    const eqIndex = cookie.indexOf('=');
+    const [cookieName, cookieValue] = eqIndex == -1 ? [cookie, ''] : [cookie.slice(0, eqIndex), cookie.slice(eqIndex + 1)];
+    if (cookieName.trim() === name) {
+      return decodeURIComponent(cookieValue);
+    }
+  }
+  return null;
+}
 
 /**
- * This class wraps the platform Navigation API which allows server-specific and test
- * implementations.
+ * A wrapper around the `XMLHttpRequest` constructor.
+ *
+ * @publicApi
  */
-let PlatformNavigation = /*#__PURE__*/(() => {
-  class PlatformNavigation {
-    static ɵfac = function PlatformNavigation_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || PlatformNavigation)();
-    };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: PlatformNavigation,
-      factory: () => (() => window.navigation)(),
-      providedIn: 'platform'
-    });
-  }
-  return PlatformNavigation;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
+class XhrFactory {}
 
 
 /***/ }),
 
-/***/ 35430:
-/*!************************************************************!*\
-  !*** ./node_modules/@angular/common/fesm2022/location.mjs ***!
-  \************************************************************/
+/***/ 31676:
+/*!*********************************************************************!*\
+  !*** ./node_modules/@angular/common/fesm2022/location-BIEtBxGx.mjs ***!
+  \*********************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -68,7 +63,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 44866);
 /**
- * @license Angular v20.1.0
+ * @license Angular v20.0.4
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -725,41 +720,46 @@ function _stripOrigin(baseHref) {
 
 /***/ }),
 
-/***/ 46523:
-/*!*******************************************************!*\
-  !*** ./node_modules/@angular/common/fesm2022/xhr.mjs ***!
-  \*******************************************************/
+/***/ 38786:
+/*!********************************************************************************!*\
+  !*** ./node_modules/@angular/common/fesm2022/platform_navigation-B45Jeakb.mjs ***!
+  \********************************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   XhrFactory: () => (/* binding */ XhrFactory),
-/* harmony export */   parseCookieValue: () => (/* binding */ parseCookieValue)
+/* harmony export */   PlatformNavigation: () => (/* binding */ PlatformNavigation)
 /* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
 /**
- * @license Angular v20.1.0
+ * @license Angular v20.0.4
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
 
-function parseCookieValue(cookieStr, name) {
-  name = encodeURIComponent(name);
-  for (const cookie of cookieStr.split(';')) {
-    const eqIndex = cookie.indexOf('=');
-    const [cookieName, cookieValue] = eqIndex == -1 ? [cookie, ''] : [cookie.slice(0, eqIndex), cookie.slice(eqIndex + 1)];
-    if (cookieName.trim() === name) {
-      return decodeURIComponent(cookieValue);
-    }
-  }
-  return null;
-}
+
+
 
 /**
- * A wrapper around the `XMLHttpRequest` constructor.
- *
- * @publicApi
+ * This class wraps the platform Navigation API which allows server-specific and test
+ * implementations.
  */
-class XhrFactory {}
+let PlatformNavigation = /*#__PURE__*/(() => {
+  class PlatformNavigation {
+    static ɵfac = function PlatformNavigation_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || PlatformNavigation)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: PlatformNavigation,
+      factory: () => (() => window.navigation)(),
+      providedIn: 'platform'
+    });
+  }
+  return PlatformNavigation;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
 
 
 /***/ }),
@@ -772,86 +772,86 @@ class XhrFactory {}
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   APP_BASE_HREF: () => (/* reexport safe */ _location_mjs__WEBPACK_IMPORTED_MODULE_4__.APP_BASE_HREF),
-/* harmony export */   AsyncPipe: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.AsyncPipe),
-/* harmony export */   BrowserPlatformLocation: () => (/* reexport safe */ _location_mjs__WEBPACK_IMPORTED_MODULE_4__.BrowserPlatformLocation),
-/* harmony export */   CommonModule: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.CommonModule),
-/* harmony export */   CurrencyPipe: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.CurrencyPipe),
-/* harmony export */   DATE_PIPE_DEFAULT_OPTIONS: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.DATE_PIPE_DEFAULT_OPTIONS),
-/* harmony export */   DATE_PIPE_DEFAULT_TIMEZONE: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.DATE_PIPE_DEFAULT_TIMEZONE),
+/* harmony export */   APP_BASE_HREF: () => (/* reexport safe */ _location_BIEtBxGx_mjs__WEBPACK_IMPORTED_MODULE_4__.APP_BASE_HREF),
+/* harmony export */   AsyncPipe: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.AsyncPipe),
+/* harmony export */   BrowserPlatformLocation: () => (/* reexport safe */ _location_BIEtBxGx_mjs__WEBPACK_IMPORTED_MODULE_4__.BrowserPlatformLocation),
+/* harmony export */   CommonModule: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.CommonModule),
+/* harmony export */   CurrencyPipe: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.CurrencyPipe),
+/* harmony export */   DATE_PIPE_DEFAULT_OPTIONS: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.DATE_PIPE_DEFAULT_OPTIONS),
+/* harmony export */   DATE_PIPE_DEFAULT_TIMEZONE: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.DATE_PIPE_DEFAULT_TIMEZONE),
 /* harmony export */   DOCUMENT: () => (/* reexport safe */ _angular_core__WEBPACK_IMPORTED_MODULE_2__.DOCUMENT),
-/* harmony export */   DatePipe: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.DatePipe),
-/* harmony export */   DecimalPipe: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.DecimalPipe),
-/* harmony export */   FormStyle: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.FormStyle),
-/* harmony export */   FormatWidth: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.FormatWidth),
-/* harmony export */   HashLocationStrategy: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.HashLocationStrategy),
-/* harmony export */   I18nPluralPipe: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.I18nPluralPipe),
-/* harmony export */   I18nSelectPipe: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.I18nSelectPipe),
+/* harmony export */   DatePipe: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.DatePipe),
+/* harmony export */   DecimalPipe: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.DecimalPipe),
+/* harmony export */   FormStyle: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.FormStyle),
+/* harmony export */   FormatWidth: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.FormatWidth),
+/* harmony export */   HashLocationStrategy: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.HashLocationStrategy),
+/* harmony export */   I18nPluralPipe: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.I18nPluralPipe),
+/* harmony export */   I18nSelectPipe: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.I18nSelectPipe),
 /* harmony export */   IMAGE_CONFIG: () => (/* reexport safe */ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵIMAGE_CONFIG"]),
 /* harmony export */   IMAGE_LOADER: () => (/* binding */ IMAGE_LOADER),
-/* harmony export */   JsonPipe: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.JsonPipe),
-/* harmony export */   KeyValuePipe: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.KeyValuePipe),
-/* harmony export */   LOCATION_INITIALIZED: () => (/* reexport safe */ _location_mjs__WEBPACK_IMPORTED_MODULE_4__.LOCATION_INITIALIZED),
-/* harmony export */   Location: () => (/* reexport safe */ _location_mjs__WEBPACK_IMPORTED_MODULE_4__.Location),
-/* harmony export */   LocationStrategy: () => (/* reexport safe */ _location_mjs__WEBPACK_IMPORTED_MODULE_4__.LocationStrategy),
-/* harmony export */   LowerCasePipe: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.LowerCasePipe),
-/* harmony export */   NgClass: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.NgClass),
-/* harmony export */   NgComponentOutlet: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.NgComponentOutlet),
-/* harmony export */   NgFor: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.NgForOf),
-/* harmony export */   NgForOf: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.NgForOf),
-/* harmony export */   NgForOfContext: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.NgForOfContext),
-/* harmony export */   NgIf: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.NgIf),
-/* harmony export */   NgIfContext: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.NgIfContext),
-/* harmony export */   NgLocaleLocalization: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.NgLocaleLocalization),
-/* harmony export */   NgLocalization: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.NgLocalization),
+/* harmony export */   JsonPipe: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.JsonPipe),
+/* harmony export */   KeyValuePipe: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.KeyValuePipe),
+/* harmony export */   LOCATION_INITIALIZED: () => (/* reexport safe */ _location_BIEtBxGx_mjs__WEBPACK_IMPORTED_MODULE_4__.LOCATION_INITIALIZED),
+/* harmony export */   Location: () => (/* reexport safe */ _location_BIEtBxGx_mjs__WEBPACK_IMPORTED_MODULE_4__.Location),
+/* harmony export */   LocationStrategy: () => (/* reexport safe */ _location_BIEtBxGx_mjs__WEBPACK_IMPORTED_MODULE_4__.LocationStrategy),
+/* harmony export */   LowerCasePipe: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.LowerCasePipe),
+/* harmony export */   NgClass: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.NgClass),
+/* harmony export */   NgComponentOutlet: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.NgComponentOutlet),
+/* harmony export */   NgFor: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.NgForOf),
+/* harmony export */   NgForOf: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.NgForOf),
+/* harmony export */   NgForOfContext: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.NgForOfContext),
+/* harmony export */   NgIf: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.NgIf),
+/* harmony export */   NgIfContext: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.NgIfContext),
+/* harmony export */   NgLocaleLocalization: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.NgLocaleLocalization),
+/* harmony export */   NgLocalization: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.NgLocalization),
 /* harmony export */   NgOptimizedImage: () => (/* binding */ NgOptimizedImage),
-/* harmony export */   NgPlural: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.NgPlural),
-/* harmony export */   NgPluralCase: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.NgPluralCase),
-/* harmony export */   NgStyle: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.NgStyle),
-/* harmony export */   NgSwitch: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.NgSwitch),
-/* harmony export */   NgSwitchCase: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.NgSwitchCase),
-/* harmony export */   NgSwitchDefault: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.NgSwitchDefault),
-/* harmony export */   NgTemplateOutlet: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.NgTemplateOutlet),
-/* harmony export */   NumberFormatStyle: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.NumberFormatStyle),
-/* harmony export */   NumberSymbol: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.NumberSymbol),
+/* harmony export */   NgPlural: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.NgPlural),
+/* harmony export */   NgPluralCase: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.NgPluralCase),
+/* harmony export */   NgStyle: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.NgStyle),
+/* harmony export */   NgSwitch: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.NgSwitch),
+/* harmony export */   NgSwitchCase: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.NgSwitchCase),
+/* harmony export */   NgSwitchDefault: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.NgSwitchDefault),
+/* harmony export */   NgTemplateOutlet: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.NgTemplateOutlet),
+/* harmony export */   NumberFormatStyle: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.NumberFormatStyle),
+/* harmony export */   NumberSymbol: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.NumberSymbol),
 /* harmony export */   PRECONNECT_CHECK_BLOCKLIST: () => (/* binding */ PRECONNECT_CHECK_BLOCKLIST),
-/* harmony export */   PathLocationStrategy: () => (/* reexport safe */ _location_mjs__WEBPACK_IMPORTED_MODULE_4__.PathLocationStrategy),
-/* harmony export */   PercentPipe: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.PercentPipe),
-/* harmony export */   PlatformLocation: () => (/* reexport safe */ _location_mjs__WEBPACK_IMPORTED_MODULE_4__.PlatformLocation),
-/* harmony export */   Plural: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.Plural),
-/* harmony export */   SlicePipe: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.SlicePipe),
-/* harmony export */   TitleCasePipe: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.TitleCasePipe),
-/* harmony export */   TranslationWidth: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.TranslationWidth),
-/* harmony export */   UpperCasePipe: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.UpperCasePipe),
+/* harmony export */   PathLocationStrategy: () => (/* reexport safe */ _location_BIEtBxGx_mjs__WEBPACK_IMPORTED_MODULE_4__.PathLocationStrategy),
+/* harmony export */   PercentPipe: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.PercentPipe),
+/* harmony export */   PlatformLocation: () => (/* reexport safe */ _location_BIEtBxGx_mjs__WEBPACK_IMPORTED_MODULE_4__.PlatformLocation),
+/* harmony export */   Plural: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.Plural),
+/* harmony export */   SlicePipe: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.SlicePipe),
+/* harmony export */   TitleCasePipe: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.TitleCasePipe),
+/* harmony export */   TranslationWidth: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.TranslationWidth),
+/* harmony export */   UpperCasePipe: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.UpperCasePipe),
 /* harmony export */   VERSION: () => (/* binding */ VERSION),
 /* harmony export */   ViewportScroller: () => (/* binding */ ViewportScroller),
-/* harmony export */   WeekDay: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.WeekDay),
-/* harmony export */   XhrFactory: () => (/* reexport safe */ _xhr_mjs__WEBPACK_IMPORTED_MODULE_3__.XhrFactory),
-/* harmony export */   formatCurrency: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.formatCurrency),
-/* harmony export */   formatDate: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.formatDate),
-/* harmony export */   formatNumber: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.formatNumber),
-/* harmony export */   formatPercent: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.formatPercent),
-/* harmony export */   getCurrencySymbol: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getCurrencySymbol),
-/* harmony export */   getLocaleCurrencyCode: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleCurrencyCode),
-/* harmony export */   getLocaleCurrencyName: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleCurrencyName),
-/* harmony export */   getLocaleCurrencySymbol: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleCurrencySymbol),
-/* harmony export */   getLocaleDateFormat: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleDateFormat),
-/* harmony export */   getLocaleDateTimeFormat: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleDateTimeFormat),
-/* harmony export */   getLocaleDayNames: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleDayNames),
-/* harmony export */   getLocaleDayPeriods: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleDayPeriods),
-/* harmony export */   getLocaleDirection: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleDirection),
-/* harmony export */   getLocaleEraNames: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleEraNames),
-/* harmony export */   getLocaleExtraDayPeriodRules: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleExtraDayPeriodRules),
-/* harmony export */   getLocaleExtraDayPeriods: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleExtraDayPeriods),
-/* harmony export */   getLocaleFirstDayOfWeek: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleFirstDayOfWeek),
-/* harmony export */   getLocaleId: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleId),
-/* harmony export */   getLocaleMonthNames: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleMonthNames),
-/* harmony export */   getLocaleNumberFormat: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleNumberFormat),
-/* harmony export */   getLocaleNumberSymbol: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleNumberSymbol),
-/* harmony export */   getLocalePluralCase: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocalePluralCase),
-/* harmony export */   getLocaleTimeFormat: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleTimeFormat),
-/* harmony export */   getLocaleWeekEndRange: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleWeekEndRange),
-/* harmony export */   getNumberOfCurrencyDigits: () => (/* reexport safe */ _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__.getNumberOfCurrencyDigits),
+/* harmony export */   WeekDay: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.WeekDay),
+/* harmony export */   XhrFactory: () => (/* reexport safe */ _xhr_CEmSPUGj_mjs__WEBPACK_IMPORTED_MODULE_3__.XhrFactory),
+/* harmony export */   formatCurrency: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.formatCurrency),
+/* harmony export */   formatDate: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.formatDate),
+/* harmony export */   formatNumber: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.formatNumber),
+/* harmony export */   formatPercent: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.formatPercent),
+/* harmony export */   getCurrencySymbol: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getCurrencySymbol),
+/* harmony export */   getLocaleCurrencyCode: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleCurrencyCode),
+/* harmony export */   getLocaleCurrencyName: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleCurrencyName),
+/* harmony export */   getLocaleCurrencySymbol: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleCurrencySymbol),
+/* harmony export */   getLocaleDateFormat: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleDateFormat),
+/* harmony export */   getLocaleDateTimeFormat: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleDateTimeFormat),
+/* harmony export */   getLocaleDayNames: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleDayNames),
+/* harmony export */   getLocaleDayPeriods: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleDayPeriods),
+/* harmony export */   getLocaleDirection: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleDirection),
+/* harmony export */   getLocaleEraNames: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleEraNames),
+/* harmony export */   getLocaleExtraDayPeriodRules: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleExtraDayPeriodRules),
+/* harmony export */   getLocaleExtraDayPeriods: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleExtraDayPeriods),
+/* harmony export */   getLocaleFirstDayOfWeek: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleFirstDayOfWeek),
+/* harmony export */   getLocaleId: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleId),
+/* harmony export */   getLocaleMonthNames: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleMonthNames),
+/* harmony export */   getLocaleNumberFormat: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleNumberFormat),
+/* harmony export */   getLocaleNumberSymbol: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleNumberSymbol),
+/* harmony export */   getLocalePluralCase: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocalePluralCase),
+/* harmony export */   getLocaleTimeFormat: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleTimeFormat),
+/* harmony export */   getLocaleWeekEndRange: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getLocaleWeekEndRange),
+/* harmony export */   getNumberOfCurrencyDigits: () => (/* reexport safe */ _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__.getNumberOfCurrencyDigits),
 /* harmony export */   isPlatformBrowser: () => (/* binding */ isPlatformBrowser),
 /* harmony export */   isPlatformServer: () => (/* binding */ isPlatformServer),
 /* harmony export */   provideCloudflareLoader: () => (/* binding */ provideCloudflareLoader),
@@ -860,26 +860,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   provideImgixLoader: () => (/* binding */ provideImgixLoader),
 /* harmony export */   provideNetlifyLoader: () => (/* binding */ provideNetlifyLoader),
 /* harmony export */   registerLocaleData: () => (/* binding */ registerLocaleData),
-/* harmony export */   "ɵDomAdapter": () => (/* reexport safe */ _location_mjs__WEBPACK_IMPORTED_MODULE_4__.DomAdapter),
+/* harmony export */   "ɵDomAdapter": () => (/* reexport safe */ _location_BIEtBxGx_mjs__WEBPACK_IMPORTED_MODULE_4__.DomAdapter),
 /* harmony export */   "ɵNullViewportScroller": () => (/* binding */ NullViewportScroller),
 /* harmony export */   "ɵPLATFORM_BROWSER_ID": () => (/* binding */ PLATFORM_BROWSER_ID),
 /* harmony export */   "ɵPLATFORM_SERVER_ID": () => (/* binding */ PLATFORM_SERVER_ID),
-/* harmony export */   "ɵPlatformNavigation": () => (/* reexport safe */ _platform_navigation_mjs__WEBPACK_IMPORTED_MODULE_5__.PlatformNavigation),
-/* harmony export */   "ɵgetDOM": () => (/* reexport safe */ _location_mjs__WEBPACK_IMPORTED_MODULE_4__.getDOM),
-/* harmony export */   "ɵnormalizeQueryParams": () => (/* reexport safe */ _location_mjs__WEBPACK_IMPORTED_MODULE_4__.normalizeQueryParams),
-/* harmony export */   "ɵparseCookieValue": () => (/* reexport safe */ _xhr_mjs__WEBPACK_IMPORTED_MODULE_3__.parseCookieValue),
-/* harmony export */   "ɵsetRootDomAdapter": () => (/* reexport safe */ _location_mjs__WEBPACK_IMPORTED_MODULE_4__.setRootDomAdapter)
+/* harmony export */   "ɵPlatformNavigation": () => (/* reexport safe */ _platform_navigation_B45Jeakb_mjs__WEBPACK_IMPORTED_MODULE_5__.PlatformNavigation),
+/* harmony export */   "ɵgetDOM": () => (/* reexport safe */ _location_BIEtBxGx_mjs__WEBPACK_IMPORTED_MODULE_4__.getDOM),
+/* harmony export */   "ɵnormalizeQueryParams": () => (/* reexport safe */ _location_BIEtBxGx_mjs__WEBPACK_IMPORTED_MODULE_4__.normalizeQueryParams),
+/* harmony export */   "ɵparseCookieValue": () => (/* reexport safe */ _xhr_CEmSPUGj_mjs__WEBPACK_IMPORTED_MODULE_3__.parseCookieValue),
+/* harmony export */   "ɵsetRootDomAdapter": () => (/* reexport safe */ _location_BIEtBxGx_mjs__WEBPACK_IMPORTED_MODULE_4__.setRootDomAdapter)
 /* harmony export */ });
 /* harmony import */ var _Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
-/* harmony import */ var _common_module_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./common_module.mjs */ 93683);
+/* harmony import */ var _common_module_D4mHDfs1_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./common_module-D4mHDfs1.mjs */ 87945);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 27940);
-/* harmony import */ var _xhr_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./xhr.mjs */ 46523);
-/* harmony import */ var _location_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./location.mjs */ 35430);
-/* harmony import */ var _platform_navigation_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./platform_navigation.mjs */ 1919);
+/* harmony import */ var _xhr_CEmSPUGj_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./xhr-CEmSPUGj.mjs */ 30834);
+/* harmony import */ var _location_BIEtBxGx_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./location-BIEtBxGx.mjs */ 31676);
+/* harmony import */ var _platform_navigation_B45Jeakb_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./platform_navigation-B45Jeakb.mjs */ 38786);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ 44866);
 
 /**
- * @license Angular v20.1.0
+ * @license Angular v20.0.4
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -930,7 +930,7 @@ function isPlatformServer(platformId) {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_2__.Version('20.1.0');
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_2__.Version('20.0.4');
 
 /**
  * Defines a scroll position manager. Implemented by `BrowserViewportScroller`.
@@ -1020,11 +1020,7 @@ class BrowserViewportScroller {
    * Disables automatic scroll restoration provided by the browser.
    */
   setHistoryScrollRestoration(scrollRestoration) {
-    try {
-      this.window.history.scrollRestoration = scrollRestoration;
-    } catch {
-      console.warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵformatRuntimeError"])(2400 /* RuntimeErrorCode.SCROLL_RESTORATION_UNSUPPORTED */, ngDevMode && 'Failed to set `window.history.scrollRestoration`. ' + 'This may occur when:\n' + '• The script is running inside a sandboxed iframe\n' + '• The window is partially navigated or inactive\n' + '• The script is executed in an untrusted or special context (e.g., test runners, browser extensions, or content previews)\n' + 'Scroll position may not be preserved across navigation.'));
-    }
+    this.window.history.scrollRestoration = scrollRestoration;
   }
   /**
    * Scrolls to an element using the native offset and the specified offset set on this scroller.
@@ -1986,17 +1982,6 @@ let NgOptimizedImage = /*#__PURE__*/(() => {
      */
     height;
     /**
-     * The desired decoding behavior for the image. Defaults to `auto`
-     * if not explicitly set, matching native browser behavior.
-     *
-     * Use `async` to decode the image off the main thread (non-blocking),
-     * `sync` for immediate decoding (blocking), or `auto` to let the
-     * browser decide the optimal strategy.
-     *
-     * [Spec](https://html.spec.whatwg.org/multipage/images.html#image-decoding-hint)
-     */
-    decoding;
-    /**
      * The desired loading behavior (lazy, eager, or auto). Defaults to `lazy`,
      * which is recommended for most images.
      *
@@ -2089,7 +2074,6 @@ let NgOptimizedImage = /*#__PURE__*/(() => {
           ngZone.runOutsideAngular(() => assertNoImageDistortion(this, this.imgElement, this.renderer));
         }
         assertValidLoadingInput(this);
-        assertValidDecodingInput(this);
         if (!this.ngSrcset) {
           assertNoComplexSizes(this);
         }
@@ -2125,7 +2109,6 @@ let NgOptimizedImage = /*#__PURE__*/(() => {
       }
       this.setHostAttribute('loading', this.getLoadingBehavior());
       this.setHostAttribute('fetchpriority', this.getFetchPriority());
-      this.setHostAttribute('decoding', this.getDecoding());
       // The `data-ng-img` attribute flags an image as using the directive, to allow
       // for analysis of the directive's performance.
       this.setHostAttribute('ng-img', 'true');
@@ -2185,19 +2168,6 @@ let NgOptimizedImage = /*#__PURE__*/(() => {
     }
     getFetchPriority() {
       return this.priority ? 'high' : 'auto';
-    }
-    getDecoding() {
-      if (this.priority) {
-        // `sync` means the image is decoded immediately when it's loaded,
-        // reducing the risk of content shifting later (important for LCP).
-        // If we're marking an image as priority, we want it decoded and
-        // painted as early as possible.
-        return 'sync';
-      }
-      // Returns the value of the `decoding` attribute, defaulting to `auto`
-      // if not explicitly provided. This mimics native browser behavior and
-      // avoids breaking changes when no decoding strategy is specified.
-      return this.decoding ?? 'auto';
     }
     getRewrittenSrc() {
       // ImageLoaderConfig supports setting a width property. However, we're not setting width here
@@ -2343,7 +2313,6 @@ let NgOptimizedImage = /*#__PURE__*/(() => {
         sizes: "sizes",
         width: [2, "width", "width", _angular_core__WEBPACK_IMPORTED_MODULE_2__.numberAttribute],
         height: [2, "height", "height", _angular_core__WEBPACK_IMPORTED_MODULE_2__.numberAttribute],
-        decoding: "decoding",
         loading: "loading",
         priority: [2, "priority", "priority", _angular_core__WEBPACK_IMPORTED_MODULE_2__.booleanAttribute],
         loaderParams: "loaderParams",
@@ -2648,15 +2617,6 @@ function assertValidLoadingInput(dir) {
   }
 }
 /**
- * Verifies that the `decoding` attribute is set to a valid input.
- */
-function assertValidDecodingInput(dir) {
-  const validInputs = ['sync', 'async', 'auto'];
-  if (typeof dir.decoding === 'string' && !validInputs.includes(dir.decoding)) {
-    throw new _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵRuntimeError"](2952 /* RuntimeErrorCode.INVALID_INPUT */, `${imgDirectiveDetails(dir.ngSrc)} the \`decoding\` attribute ` + `has an invalid value (\`${dir.decoding}\`). ` + `To fix this, provide a valid value ("sync", "async", or "auto").`);
-  }
-}
-/**
  * Warns if NOT using a loader (falling back to the generic loader) and
  * the image appears to be hosted on one of the image CDNs for which
  * we do have a built-in image loader. Suggests switching to the
@@ -2767,49 +2727,10 @@ function booleanOrUrlAttribute(value) {
 
 /***/ }),
 
-/***/ 89204:
-/*!*********************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js ***!
-  \*********************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ _asyncToGenerator)
-/* harmony export */ });
-function asyncGeneratorStep(n, t, e, r, o, a, c) {
-  try {
-    var i = n[a](c),
-      u = i.value;
-  } catch (n) {
-    return void e(n);
-  }
-  i.done ? t(u) : Promise.resolve(u).then(r, o);
-}
-function _asyncToGenerator(n) {
-  return function () {
-    var t = this,
-      e = arguments;
-    return new Promise(function (r, o) {
-      var a = n.apply(t, e);
-      function _next(n) {
-        asyncGeneratorStep(a, r, o, _next, _throw, "next", n);
-      }
-      function _throw(n) {
-        asyncGeneratorStep(a, r, o, _next, _throw, "throw", n);
-      }
-      _next(void 0);
-    });
-  };
-}
-
-
-/***/ }),
-
-/***/ 93683:
-/*!*****************************************************************!*\
-  !*** ./node_modules/@angular/common/fesm2022/common_module.mjs ***!
-  \*****************************************************************/
+/***/ 87945:
+/*!**************************************************************************!*\
+  !*** ./node_modules/@angular/common/fesm2022/common_module-D4mHDfs1.mjs ***!
+  \**************************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -2880,9 +2801,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getNumberOfCurrencyDigits: () => (/* binding */ getNumberOfCurrencyDigits)
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
-/* harmony import */ var _location_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./location.mjs */ 35430);
+/* harmony import */ var _location_BIEtBxGx_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./location-BIEtBxGx.mjs */ 31676);
 /**
- * @license Angular v20.1.0
+ * @license Angular v20.0.4
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -2910,7 +2831,7 @@ __webpack_require__.r(__webpack_exports__);
  * @publicApi
  */
 let HashLocationStrategy = /*#__PURE__*/(() => {
-  class HashLocationStrategy extends _location_mjs__WEBPACK_IMPORTED_MODULE_1__.LocationStrategy {
+  class HashLocationStrategy extends _location_BIEtBxGx_mjs__WEBPACK_IMPORTED_MODULE_1__.LocationStrategy {
     _platformLocation;
     _baseHref = '';
     _removeListenerFns = [];
@@ -2940,15 +2861,15 @@ let HashLocationStrategy = /*#__PURE__*/(() => {
       return path.length > 0 ? path.substring(1) : path;
     }
     prepareExternalUrl(internal) {
-      const url = (0,_location_mjs__WEBPACK_IMPORTED_MODULE_1__.joinWithSlash)(this._baseHref, internal);
+      const url = (0,_location_BIEtBxGx_mjs__WEBPACK_IMPORTED_MODULE_1__.joinWithSlash)(this._baseHref, internal);
       return url.length > 0 ? '#' + url : url;
     }
     pushState(state, title, path, queryParams) {
-      const url = this.prepareExternalUrl(path + (0,_location_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeQueryParams)(queryParams)) || this._platformLocation.pathname;
+      const url = this.prepareExternalUrl(path + (0,_location_BIEtBxGx_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeQueryParams)(queryParams)) || this._platformLocation.pathname;
       this._platformLocation.pushState(state, title, url);
     }
     replaceState(state, title, path, queryParams) {
-      const url = this.prepareExternalUrl(path + (0,_location_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeQueryParams)(queryParams)) || this._platformLocation.pathname;
+      const url = this.prepareExternalUrl(path + (0,_location_BIEtBxGx_mjs__WEBPACK_IMPORTED_MODULE_1__.normalizeQueryParams)(queryParams)) || this._platformLocation.pathname;
       this._platformLocation.replaceState(state, title, url);
     }
     forward() {
@@ -2964,7 +2885,7 @@ let HashLocationStrategy = /*#__PURE__*/(() => {
       this._platformLocation.historyGo?.(relativePosition);
     }
     static ɵfac = function HashLocationStrategy_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || HashLocationStrategy)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_location_mjs__WEBPACK_IMPORTED_MODULE_1__.PlatformLocation), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_location_mjs__WEBPACK_IMPORTED_MODULE_1__.APP_BASE_HREF, 8));
+      return new (__ngFactoryType__ || HashLocationStrategy)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_location_BIEtBxGx_mjs__WEBPACK_IMPORTED_MODULE_1__.PlatformLocation), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_location_BIEtBxGx_mjs__WEBPACK_IMPORTED_MODULE_1__.APP_BASE_HREF, 8));
     };
     static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
       token: HashLocationStrategy,
@@ -5190,9 +5111,6 @@ let NgClass = /*#__PURE__*/(() => {
  * * `ngComponentOutletInjector`: Optional custom {@link Injector} that will be used as parent for
  * the Component. Defaults to the injector of the current view container.
  *
- * * `ngComponentOutletEnvironmentInjector`: Optional custom {@link EnvironmentInjector} which will
- * provide the component's environment.
- *
  * * `ngComponentOutletContent`: Optional list of projectable nodes to insert into the content
  * section of the component, if it exists.
  *
@@ -5252,7 +5170,6 @@ let NgComponentOutlet = /*#__PURE__*/(() => {
     ngComponentOutlet = null;
     ngComponentOutletInputs;
     ngComponentOutletInjector;
-    ngComponentOutletEnvironmentInjector;
     ngComponentOutletContent;
     ngComponentOutletNgModule;
     /**
@@ -5287,7 +5204,7 @@ let NgComponentOutlet = /*#__PURE__*/(() => {
       // Note: square brackets property accessor is safe for Closure compiler optimizations (the
       // `changes` argument of the `ngOnChanges` lifecycle hook retains the names of the fields that
       // were changed).
-      return changes['ngComponentOutlet'] !== undefined || changes['ngComponentOutletContent'] !== undefined || changes['ngComponentOutletInjector'] !== undefined || changes['ngComponentOutletEnvironmentInjector'] !== undefined || this._needToReCreateNgModuleInstance(changes);
+      return changes['ngComponentOutlet'] !== undefined || changes['ngComponentOutletContent'] !== undefined || changes['ngComponentOutletInjector'] !== undefined || this._needToReCreateNgModuleInstance(changes);
     }
     /** @docs-private */
     ngOnChanges(changes) {
@@ -5310,8 +5227,7 @@ let NgComponentOutlet = /*#__PURE__*/(() => {
           this._componentRef = this._viewContainerRef.createComponent(this.ngComponentOutlet, {
             injector,
             ngModuleRef: this._moduleRef,
-            projectableNodes: this.ngComponentOutletContent,
-            environmentInjector: this.ngComponentOutletEnvironmentInjector
+            projectableNodes: this.ngComponentOutletContent
           });
         }
       }
@@ -5354,7 +5270,6 @@ let NgComponentOutlet = /*#__PURE__*/(() => {
         ngComponentOutlet: "ngComponentOutlet",
         ngComponentOutletInputs: "ngComponentOutletInputs",
         ngComponentOutletInjector: "ngComponentOutletInjector",
-        ngComponentOutletEnvironmentInjector: "ngComponentOutletEnvironmentInjector",
         ngComponentOutletContent: "ngComponentOutletContent",
         ngComponentOutletNgModule: "ngComponentOutletNgModule",
         ngComponentOutletNgModuleFactory: "ngComponentOutletNgModuleFactory"
@@ -5820,7 +5735,7 @@ function getTypeName(type) {
  * @publicApi
  *
  * @deprecated 20.0
- * Use the `@if` block instead. Intent to remove in v22
+ * Use the @if block instead. Intent to remove in v22
  */
 let NgIf = /*#__PURE__*/(() => {
   class NgIf {
@@ -5836,7 +5751,7 @@ let NgIf = /*#__PURE__*/(() => {
     }
     /**
      * The Boolean expression to evaluate as the condition for showing a template.
-     * @deprecated Use the `@if` block instead. Intent to remove in v22
+     * @deprecated Use the @if block instead. Intent to remove in v22
      */
     set ngIf(condition) {
       this._context.$implicit = this._context.ngIf = condition;
@@ -5844,7 +5759,7 @@ let NgIf = /*#__PURE__*/(() => {
     }
     /**
      * A template to show if the condition expression evaluates to true.
-     * @deprecated Use the `@if` block instead. Intent to remove in v22
+     * @deprecated Use the @if block instead. Intent to remove in v22
      */
     set ngIfThen(templateRef) {
       assertTemplate(templateRef, (typeof ngDevMode === 'undefined' || ngDevMode) && 'ngIfThen');
@@ -5854,7 +5769,7 @@ let NgIf = /*#__PURE__*/(() => {
     }
     /**
      * A template to show if the condition expression evaluates to false.
-     * @deprecated Use the `@if` block instead. Intent to remove in v22
+     * @deprecated Use the @if block instead. Intent to remove in v22
      */
     set ngIfElse(templateRef) {
       assertTemplate(templateRef, (typeof ngDevMode === 'undefined' || ngDevMode) && 'ngIfElse');
@@ -6024,7 +5939,7 @@ class SwitchView {
  * @see [Structural Directives](guide/directives/structural-directives)
  *
  * @deprecated 20.0
- * Use the `@switch` block instead. Intent to remove in v22
+ * Use the @switch block instead. Intent to remove in v22
  */
 let NgSwitch = /*#__PURE__*/(() => {
   class NgSwitch {
@@ -6034,7 +5949,7 @@ let NgSwitch = /*#__PURE__*/(() => {
     _lastCaseCheckIndex = 0;
     _lastCasesMatched = false;
     _ngSwitch;
-    /** @deprecated Use the `@switch` block instead. Intent to remove in v22 */
+    /** @deprecated Use the @switch block instead. Intent to remove in v22 */
     set ngSwitch(newValue) {
       this._ngSwitch = newValue;
       if (this._caseCount === 0) {
@@ -6118,7 +6033,7 @@ let NgSwitch = /*#__PURE__*/(() => {
  * @see {@link NgSwitchDefault}
  *
  * @deprecated 20.0
- * Use the `@case` block within a `@switch` block instead. Intent to remove in v22
+ * Use the @case block within a @switch block instead. Intent to remove in v22
  */
 let NgSwitchCase = /*#__PURE__*/(() => {
   class NgSwitchCase {
@@ -6126,7 +6041,7 @@ let NgSwitchCase = /*#__PURE__*/(() => {
     _view;
     /**
      * Stores the HTML template to be selected on match.
-     * @deprecated Use the `@case` block within a `@switch` block instead. Intent to remove in v22
+     * @deprecated Use the @case block within a @switch block instead. Intent to remove in v22
      */
     ngSwitchCase;
     constructor(viewContainer, templateRef, ngSwitch) {
@@ -6174,7 +6089,7 @@ let NgSwitchCase = /*#__PURE__*/(() => {
  * @see {@link NgSwitchCase}
  *
  * @deprecated 20.0
- * Use the `@default` block within a `@switch` block instead. Intent to remove in v22
+ * Use the @default block within a @switch block instead. Intent to remove in v22
  */
 let NgSwitchDefault = /*#__PURE__*/(() => {
   class NgSwitchDefault {
@@ -7647,6 +7562,45 @@ let CommonModule = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+
+/***/ }),
+
+/***/ 89204:
+/*!*********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _asyncToGenerator)
+/* harmony export */ });
+function asyncGeneratorStep(n, t, e, r, o, a, c) {
+  try {
+    var i = n[a](c),
+      u = i.value;
+  } catch (n) {
+    return void e(n);
+  }
+  i.done ? t(u) : Promise.resolve(u).then(r, o);
+}
+function _asyncToGenerator(n) {
+  return function () {
+    var t = this,
+      e = arguments;
+    return new Promise(function (r, o) {
+      var a = n.apply(t, e);
+      function _next(n) {
+        asyncGeneratorStep(a, r, o, _next, _throw, "next", n);
+      }
+      function _throw(n) {
+        asyncGeneratorStep(a, r, o, _next, _throw, "throw", n);
+      }
+      _next(void 0);
+    });
+  };
+}
 
 
 /***/ })

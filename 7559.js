@@ -325,7 +325,9 @@ let CdkTextareaAutosize = /*#__PURE__*/(() => {
     /** Cached scroll top of a textarea */
     _cachedScrollTop;
     /** Used to reference correct document/window */
-    _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT);
+    _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT, {
+      optional: true
+    });
     _hasFocus;
     _isViewInited = false;
     constructor() {

@@ -745,14 +745,16 @@ let EditorJsService = /*#__PURE__*/(() => {
         autofocus: true
       });
     }
-    addBlockComponent(ngxEditorJsBlock) {
-      return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.forkJoin)([this.createFormGroupControl(ngxEditorJsBlock), this.attachComponent(ngxEditorJsBlock), this.blockMovementService.updateComponentIndices(this.ngxEditor)]).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_2__.map)(() => void 0));
+    addBlockComponent(ngxEditorJsBlock, emitEvent = true) {
+      return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.forkJoin)([this.createFormGroupControl(ngxEditorJsBlock, emitEvent), this.attachComponent(ngxEditorJsBlock), this.blockMovementService.updateComponentIndices(this.ngxEditor)]).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_2__.map)(() => void 0));
     }
     createFormGroupControl({
       blockId,
       dataClean
-    }) {
-      return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(this.formBuilder.control(dataClean, [])).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_2__.tap)(formControl => this.formGroup.addControl(blockId, formControl)));
+    }, emitEvent = true) {
+      return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(this.formBuilder.control(dataClean, [])).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_2__.tap)(formControl => this.formGroup.addControl(blockId, formControl, {
+        emitEvent
+      })));
     }
     attachComponent({
       component,
@@ -765,6 +767,7 @@ let EditorJsService = /*#__PURE__*/(() => {
         const componentRef = this.ngxEditor.createComponent(component, {
           index
         });
+        componentRef.location.nativeElement.classList.add('ngx-editor-js2-block');
         componentRef.setInput('sortIndex', index);
         componentRef.setInput('formGroup', this.formGroup);
         componentRef.setInput('formControlName', controlName);
@@ -1139,7 +1142,7 @@ let NgxEditorJs2Service = /*#__PURE__*/(() => {
       }));
     }
     addBlocksToEditorJs(blocks) {
-      return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.combineLatest)(blocks.map(block => this.editorJsService.addBlockComponent(block)));
+      return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.combineLatest)(blocks.map(block => this.editorJsService.addBlockComponent(block, false)));
     }
     static ɵfac = function NgxEditorJs2Service_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || NgxEditorJs2Service)();
@@ -1171,28 +1174,8 @@ let EditorJsComponent = /*#__PURE__*/(() => {
         this.editorJsService.setNgxEditor(this.ngxEditor());
       });
     }
-    // * DEBUGGING
-    // ngOnInit() {
-    //   this.editorJsService.formGroup.valueChanges.subscribe((value) => {
-    //     console.log('[formGroup.value] : ', value);
-    //   });
-    //   this.editorJsService.blockComponents$.subscribe((components) => {
-    //     console.log('[components] : ', components);
-    //   });
-    // }
     drop(event) {
-      (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.lastValueFrom)(this.editorJsService.moveBlockComponentPosition(event.previousIndex, event.currentIndex)).then(() => {
-        // DRAG ANIMATION HOT FIX
-        // Wait for Angular to update the DOM, then remove the animation class
-        requestAnimationFrame(() => {
-          document.querySelectorAll('.cdk-drag-animating').forEach(el => {
-            const element = el;
-            element.classList.remove('cdk-drag-animating'); // Ensure old class is removed
-            void element.offsetWidth; // Force reflow
-            element.classList.add('cdk-drag-animating'); // Re-add for next drag
-          });
-        });
-      });
+      void (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.lastValueFrom)(this.editorJsService.moveBlockComponentPosition(event.previousIndex, event.currentIndex).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_2__.tap)(() => this.editorJsService.formGroup.updateValueAndValidity())));
     }
     static ɵfac = function EditorJsComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || EditorJsComponent)();
@@ -1436,11 +1419,17 @@ let NgxEditorJs2Component = /*#__PURE__*/(() => {
     inlineToolbarSerivce = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(ToolbarInlineService);
     editorJsService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(EditorJsService);
     ngxEditorJs2Service = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NgxEditorJs2Service);
+    constructor() {
+      this.editorJsService.formGroup.valueChanges.pipe((0,_angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_8__.takeUntilDestroyed)(), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.debounceTime)(500), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.switchMap)(() => this.editorJsService.getBlocks$()), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.tap)(blocks => this.formChanged.emit(blocks))).subscribe();
+    }
     blocks = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)([]);
+    // Allows the parent component to request the current blocks
     blocksRequested = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.output)();
     requestBlocks = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required({
       transform: value => value && this.blocksRequested.emit(this.editorJsService.getBlocks$())
     });
+    // Tells the parent component when the form has changed
+    formChanged = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.output)();
     bootstrapEditorJs$ = (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.combineLatest)([(0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(ToolFabService).toolbarComponentRef$, this.ngxEditorJs2Service.loadBlocks$, (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.fromEvent)(document, 'selectionchange').pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_2__.debounceTime)(200), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.switchMap)(event => this.inlineToolbarSerivce.determineToDisplayInlineToolbarBlock(event)))]);
     static ɵfac = function NgxEditorJs2Component_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || NgxEditorJs2Component)();
@@ -1453,7 +1442,8 @@ let NgxEditorJs2Component = /*#__PURE__*/(() => {
         requestBlocks: [1, "requestBlocks"]
       },
       outputs: {
-        blocksRequested: "blocksRequested"
+        blocksRequested: "blocksRequested",
+        formChanged: "formChanged"
       },
       decls: 2,
       vars: 4,
@@ -1514,19 +1504,11 @@ __webpack_require__.r(__webpack_exports__);
 
 let NgxEditorJs2BlockquotesComponent = /*#__PURE__*/(() => {
   class NgxEditorJs2BlockquotesComponent {
-    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(0, ...(ngDevMode ? [{
-      debugName: "sortIndex"
-    }] : []));
+    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(0);
     componentInstanceName = 'NgxEditorJs2BlockquotesComponent';
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true, ...(ngDevMode ? [{
-      debugName: "autofocus"
-    }] : []));
-    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
-      debugName: "formGroup"
-    }] : []));
-    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
-      debugName: "formControlName"
-    }] : []));
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true);
+    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
+    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
     blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)([{
       action: 'medium',
       icon: 'density_small'
@@ -1536,12 +1518,8 @@ let NgxEditorJs2BlockquotesComponent = /*#__PURE__*/(() => {
     }, {
       action: 'display-large',
       icon: 'density_large'
-    }], ...(ngDevMode ? [{
-      debugName: "blockOptionActions"
-    }] : []));
-    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('display-large', ...(ngDevMode ? [{
-      debugName: "savedAction"
-    }] : []));
+    }]);
+    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('display-large');
     actionCallbackBind = this.actionCallback.bind(this);
     actionCallback(action) {
       this.savedAction.update(() => action);

@@ -77,7 +77,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 44866);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 32778);
 /**
- * @license Angular v20.1.0
+ * @license Angular v20.0.4
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -2010,12 +2010,8 @@ class AbstractControl {
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.untracked)(() => this.statusReactive.set(v));
   }
   /** @internal */
-  _status = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.computed)(() => this.statusReactive(), ...(ngDevMode ? [{
-    debugName: "_status"
-  }] : []));
-  statusReactive = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(undefined, ...(ngDevMode ? [{
-    debugName: "statusReactive"
-  }] : []));
+  _status = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.computed)(() => this.statusReactive());
+  statusReactive = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(undefined);
   /**
    * A control is `valid` when its `status` is `VALID`.
    *
@@ -2094,12 +2090,8 @@ class AbstractControl {
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.untracked)(() => this.pristineReactive.set(v));
   }
   /** @internal */
-  _pristine = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.computed)(() => this.pristineReactive(), ...(ngDevMode ? [{
-    debugName: "_pristine"
-  }] : []));
-  pristineReactive = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(true, ...(ngDevMode ? [{
-    debugName: "pristineReactive"
-  }] : []));
+  _pristine = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.computed)(() => this.pristineReactive());
+  pristineReactive = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(true);
   /**
    * A control is `dirty` if the user has changed the value
    * in the UI.
@@ -2123,12 +2115,8 @@ class AbstractControl {
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.untracked)(() => this.touchedReactive.set(v));
   }
   /** @internal */
-  _touched = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.computed)(() => this.touchedReactive(), ...(ngDevMode ? [{
-    debugName: "_touched"
-  }] : []));
-  touchedReactive = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false, ...(ngDevMode ? [{
-    debugName: "touchedReactive"
-  }] : []));
+  _touched = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.computed)(() => this.touchedReactive());
+  touchedReactive = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false);
   /**
    * True if the control has not been marked as touched
    *
@@ -3720,12 +3708,8 @@ let NgForm = /*#__PURE__*/(() => {
       return (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.untracked)(this.submittedReactive);
     }
     /** @internal */
-    _submitted = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.computed)(() => this.submittedReactive(), ...(ngDevMode ? [{
-      debugName: "_submitted"
-    }] : []));
-    submittedReactive = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false, ...(ngDevMode ? [{
-      debugName: "submittedReactive"
-    }] : []));
+    _submitted = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.computed)(() => this.submittedReactive());
+    submittedReactive = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false);
     _directives = new Set();
     /**
      * @description
@@ -5199,12 +5183,8 @@ let FormGroupDirective = /*#__PURE__*/(() => {
       this._submittedReactive.set(value);
     }
     /** @internal */
-    _submitted = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.computed)(() => this._submittedReactive(), ...(ngDevMode ? [{
-      debugName: "_submitted"
-    }] : []));
-    _submittedReactive = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false, ...(ngDevMode ? [{
-      debugName: "_submittedReactive"
-    }] : []));
+    _submitted = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.computed)(() => this._submittedReactive());
+    _submittedReactive = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false);
     /**
      * Reference to an old form group input value, which is needed to cleanup
      * old instance in case it was replaced with a new one.
@@ -5979,61 +5959,11 @@ let SelectControlValueAccessor = /*#__PURE__*/(() => {
       this._compareWith = fn;
     }
     _compareWith = Object.is;
-    // We need this because we might be in the process of destroying the root
-    // injector, which is marked as destroyed before running destroy hooks.
-    // Attempting to use afterNextRender with the node injector would evntually
-    // run into that already destroyed injector.
-    appRefInjector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ApplicationRef).injector;
-    // TODO(atscott): Remove once destroyed is exposed on EnvironmentInjector
-    appRefDestroyRef = this.appRefInjector.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DestroyRef);
-    destroyRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DestroyRef);
-    cdr = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ChangeDetectorRef);
-    _queuedWrite = false;
-    /**
-     * This is needed to efficiently set the select value when adding/removing options. If
-     * writeValue is instead called for every added/removed option, this results in exponentially
-     * more _compareValue calls than the number of option elements (issue #41330).
-     *
-     * Secondly, calling writeValue when rendering individual option elements instead of after they
-     * are all rendered caused an issue in Safari and IE 11 where the first option element failed
-     * to be deselected when no option matched the select ngModel. This was because Angular would
-     * set the select element's value property before appending the option's child text node to the
-     * DOM (issue #14505).
-     *
-     * Finally, this approach is necessary to avoid an issue with delayed element removal when
-     * using the animations module (in all browsers). Otherwise when a selected option is removed
-     * (so no option matches the ngModel anymore), Angular would change the select element value
-     * before actually removing the option from the DOM. Then when the option is finally removed
-     * from the DOM, the browser would change the select value to that of the first option, even
-     * though it doesn't match the ngModel (issue #18430).
-     *
-     * @internal
-     */
-    _writeValueAfterRender() {
-      if (this._queuedWrite || this.appRefDestroyRef.destroyed) {
-        return;
-      }
-      this._queuedWrite = true;
-      (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.afterNextRender)({
-        write: () => {
-          if (this.destroyRef.destroyed) {
-            return;
-          }
-          this._queuedWrite = false;
-          this.writeValue(this.value);
-        }
-      }, {
-        injector: this.appRefInjector
-      });
-    }
     /**
      * Sets the "value" property on the select element.
      * @docs-private
      */
     writeValue(value) {
-      // TODO(atscott): This could likely be optimized more by only marking for check if the value is changed
-      // note that this needs to include both the internal value and the value in the DOM.
-      this.cdr.markForCheck();
       this.value = value;
       const id = this._getOptionId(value);
       const valueString = _buildValueString$1(id, value);
@@ -6130,7 +6060,7 @@ let NgSelectOption = /*#__PURE__*/(() => {
       if (this._select == null) return;
       this._select._optionMap.set(this.id, value);
       this._setElementValue(_buildValueString$1(this.id, value));
-      this._select._writeValueAfterRender();
+      this._select.writeValue(this._select.value);
     }
     /**
      * @description
@@ -6139,7 +6069,7 @@ let NgSelectOption = /*#__PURE__*/(() => {
      */
     set value(value) {
       this._setElementValue(value);
-      if (this._select) this._select._writeValueAfterRender();
+      if (this._select) this._select.writeValue(this._select.value);
     }
     /** @internal */
     _setElementValue(value) {
@@ -6149,7 +6079,7 @@ let NgSelectOption = /*#__PURE__*/(() => {
     ngOnDestroy() {
       if (this._select) {
         this._select._optionMap.delete(this.id);
-        this._select._writeValueAfterRender();
+        this._select.writeValue(this._select.value);
       }
     }
     static ɵfac = function NgSelectOption_Factory(__ngFactoryType__) {
@@ -7818,7 +7748,7 @@ let UntypedFormBuilder = /*#__PURE__*/(() => {
 /**
  * @publicApi
  */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('20.1.0');
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('20.0.4');
 
 /**
  * Exports the required providers and directives for template-driven forms,

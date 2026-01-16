@@ -1244,7 +1244,7 @@ let CdkStep = /*#__PURE__*/(() => {
       template: function CdkStep_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomTemplate"](0, CdkStep_ng_template_0_Template, 1, 0, "ng-template");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, CdkStep_ng_template_0_Template, 1, 0, "ng-template");
         }
       },
       encapsulation: 2,

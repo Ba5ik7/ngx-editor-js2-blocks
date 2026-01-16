@@ -27,19 +27,11 @@ __webpack_require__.r(__webpack_exports__);
 
 let NgxEditorJs2PanelComponent = /*#__PURE__*/(() => {
   class NgxEditorJs2PanelComponent {
-    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(0, ...(ngDevMode ? [{
-      debugName: "sortIndex"
-    }] : []));
+    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(0);
     componentInstanceName = 'NgxEditorJs2PanelComponent';
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(true, ...(ngDevMode ? [{
-      debugName: "autofocus"
-    }] : []));
-    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required(...(ngDevMode ? [{
-      debugName: "formGroup"
-    }] : []));
-    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required(...(ngDevMode ? [{
-      debugName: "formControlName"
-    }] : []));
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(true);
+    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required();
+    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required();
     blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)([{
       action: 'info',
       icon: 'info'
@@ -52,12 +44,8 @@ let NgxEditorJs2PanelComponent = /*#__PURE__*/(() => {
     }, {
       action: 'warning',
       icon: 'warning'
-    }], ...(ngDevMode ? [{
-      debugName: "blockOptionActions"
-    }] : []));
-    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.signal)('info', ...(ngDevMode ? [{
-      debugName: "savedAction"
-    }] : []));
+    }]);
+    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.signal)('info');
     actionCallbackBind = this.actionCallback.bind(this);
     panelIcons = {
       info: 'info',

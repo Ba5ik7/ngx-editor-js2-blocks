@@ -1,5 +1,44 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[6443],{
 
+/***/ 30834:
+/*!****************************************************************!*\
+  !*** ./node_modules/@angular/common/fesm2022/xhr-CEmSPUGj.mjs ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   XhrFactory: () => (/* binding */ XhrFactory),
+/* harmony export */   parseCookieValue: () => (/* binding */ parseCookieValue)
+/* harmony export */ });
+/**
+ * @license Angular v20.0.4
+ * (c) 2010-2025 Google LLC. https://angular.io/
+ * License: MIT
+ */
+
+function parseCookieValue(cookieStr, name) {
+  name = encodeURIComponent(name);
+  for (const cookie of cookieStr.split(';')) {
+    const eqIndex = cookie.indexOf('=');
+    const [cookieName, cookieValue] = eqIndex == -1 ? [cookie, ''] : [cookie.slice(0, eqIndex), cookie.slice(eqIndex + 1)];
+    if (cookieName.trim() === name) {
+      return decodeURIComponent(cookieValue);
+    }
+  }
+  return null;
+}
+
+/**
+ * A wrapper around the `XMLHttpRequest` constructor.
+ *
+ * @publicApi
+ */
+class XhrFactory {}
+
+
+/***/ }),
+
 /***/ 46443:
 /*!********************************************************!*\
   !*** ./node_modules/@angular/common/fesm2022/http.mjs ***!
@@ -8,53 +47,53 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   FetchBackend: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.FetchBackend),
-/* harmony export */   HTTP_INTERCEPTORS: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HTTP_INTERCEPTORS),
+/* harmony export */   FetchBackend: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.FetchBackend),
+/* harmony export */   HTTP_INTERCEPTORS: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HTTP_INTERCEPTORS),
 /* harmony export */   HTTP_TRANSFER_CACHE_ORIGIN_MAP: () => (/* binding */ HTTP_TRANSFER_CACHE_ORIGIN_MAP),
-/* harmony export */   HttpBackend: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpBackend),
-/* harmony export */   HttpClient: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClient),
-/* harmony export */   HttpClientJsonpModule: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClientJsonpModule),
-/* harmony export */   HttpClientModule: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClientModule),
-/* harmony export */   HttpClientXsrfModule: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClientXsrfModule),
-/* harmony export */   HttpContext: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpContext),
-/* harmony export */   HttpContextToken: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpContextToken),
-/* harmony export */   HttpErrorResponse: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpErrorResponse),
-/* harmony export */   HttpEventType: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpEventType),
-/* harmony export */   HttpFeatureKind: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpFeatureKind),
-/* harmony export */   HttpHandler: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHandler),
-/* harmony export */   HttpHeaderResponse: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaderResponse),
-/* harmony export */   HttpHeaders: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders),
-/* harmony export */   HttpParams: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpParams),
-/* harmony export */   HttpRequest: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpRequest),
-/* harmony export */   HttpResponse: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponse),
-/* harmony export */   HttpResponseBase: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponseBase),
-/* harmony export */   HttpStatusCode: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpStatusCode),
-/* harmony export */   HttpUrlEncodingCodec: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpUrlEncodingCodec),
-/* harmony export */   HttpXhrBackend: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpXhrBackend),
-/* harmony export */   HttpXsrfTokenExtractor: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpXsrfTokenExtractor),
-/* harmony export */   JsonpClientBackend: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.JsonpClientBackend),
-/* harmony export */   JsonpInterceptor: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.JsonpInterceptor),
+/* harmony export */   HttpBackend: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpBackend),
+/* harmony export */   HttpClient: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClient),
+/* harmony export */   HttpClientJsonpModule: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClientJsonpModule),
+/* harmony export */   HttpClientModule: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClientModule),
+/* harmony export */   HttpClientXsrfModule: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClientXsrfModule),
+/* harmony export */   HttpContext: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpContext),
+/* harmony export */   HttpContextToken: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpContextToken),
+/* harmony export */   HttpErrorResponse: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpErrorResponse),
+/* harmony export */   HttpEventType: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpEventType),
+/* harmony export */   HttpFeatureKind: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpFeatureKind),
+/* harmony export */   HttpHandler: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHandler),
+/* harmony export */   HttpHeaderResponse: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaderResponse),
+/* harmony export */   HttpHeaders: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders),
+/* harmony export */   HttpParams: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpParams),
+/* harmony export */   HttpRequest: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpRequest),
+/* harmony export */   HttpResponse: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponse),
+/* harmony export */   HttpResponseBase: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponseBase),
+/* harmony export */   HttpStatusCode: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpStatusCode),
+/* harmony export */   HttpUrlEncodingCodec: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpUrlEncodingCodec),
+/* harmony export */   HttpXhrBackend: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpXhrBackend),
+/* harmony export */   HttpXsrfTokenExtractor: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpXsrfTokenExtractor),
+/* harmony export */   JsonpClientBackend: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.JsonpClientBackend),
+/* harmony export */   JsonpInterceptor: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.JsonpInterceptor),
 /* harmony export */   httpResource: () => (/* binding */ httpResource),
-/* harmony export */   provideHttpClient: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.provideHttpClient),
-/* harmony export */   withFetch: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.withFetch),
-/* harmony export */   withInterceptors: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.withInterceptors),
-/* harmony export */   withInterceptorsFromDi: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.withInterceptorsFromDi),
-/* harmony export */   withJsonpSupport: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.withJsonpSupport),
-/* harmony export */   withNoXsrfProtection: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.withNoXsrfProtection),
-/* harmony export */   withRequestsMadeViaParent: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.withRequestsMadeViaParent),
-/* harmony export */   withXsrfConfiguration: () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.withXsrfConfiguration),
-/* harmony export */   "ɵHTTP_ROOT_INTERCEPTOR_FNS": () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HTTP_ROOT_INTERCEPTOR_FNS),
-/* harmony export */   "ɵHttpInterceptingHandler": () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpInterceptorHandler),
-/* harmony export */   "ɵHttpInterceptorHandler": () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpInterceptorHandler),
-/* harmony export */   "ɵREQUESTS_CONTRIBUTE_TO_STABILITY": () => (/* reexport safe */ _module_mjs__WEBPACK_IMPORTED_MODULE_0__.REQUESTS_CONTRIBUTE_TO_STABILITY),
+/* harmony export */   provideHttpClient: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.provideHttpClient),
+/* harmony export */   withFetch: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.withFetch),
+/* harmony export */   withInterceptors: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.withInterceptors),
+/* harmony export */   withInterceptorsFromDi: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.withInterceptorsFromDi),
+/* harmony export */   withJsonpSupport: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.withJsonpSupport),
+/* harmony export */   withNoXsrfProtection: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.withNoXsrfProtection),
+/* harmony export */   withRequestsMadeViaParent: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.withRequestsMadeViaParent),
+/* harmony export */   withXsrfConfiguration: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.withXsrfConfiguration),
+/* harmony export */   "ɵHTTP_ROOT_INTERCEPTOR_FNS": () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HTTP_ROOT_INTERCEPTOR_FNS),
+/* harmony export */   "ɵHttpInterceptingHandler": () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpInterceptorHandler),
+/* harmony export */   "ɵHttpInterceptorHandler": () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpInterceptorHandler),
+/* harmony export */   "ɵREQUESTS_CONTRIBUTE_TO_STABILITY": () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.REQUESTS_CONTRIBUTE_TO_STABILITY),
 /* harmony export */   "ɵwithHttpTransferCache": () => (/* binding */ withHttpTransferCache)
 /* harmony export */ });
-/* harmony import */ var _module_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./module.mjs */ 63855);
+/* harmony import */ var _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./module-CBsxN_3E.mjs */ 47215);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 44866);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 32778);
 /**
- * @license Angular v20.1.0
+ * @license Angular v20.0.4
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -100,25 +139,18 @@ function normalizeRequest(request, responseType) {
       url: unwrappedRequest
     };
   }
-  const headers = unwrappedRequest.headers instanceof _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders ? unwrappedRequest.headers : new _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders(unwrappedRequest.headers);
-  const params = unwrappedRequest.params instanceof _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpParams ? unwrappedRequest.params : new _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpParams({
+  const headers = unwrappedRequest.headers instanceof _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders ? unwrappedRequest.headers : new _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders(unwrappedRequest.headers);
+  const params = unwrappedRequest.params instanceof _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpParams ? unwrappedRequest.params : new _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpParams({
     fromObject: unwrappedRequest.params
   });
-  return new _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpRequest(unwrappedRequest.method ?? 'GET', unwrappedRequest.url, unwrappedRequest.body ?? null, {
+  return new _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpRequest(unwrappedRequest.method ?? 'GET', unwrappedRequest.url, unwrappedRequest.body ?? null, {
     headers,
     params,
     reportProgress: unwrappedRequest.reportProgress,
     withCredentials: unwrappedRequest.withCredentials,
-    keepalive: unwrappedRequest.keepalive,
-    cache: unwrappedRequest.cache,
-    priority: unwrappedRequest.priority,
-    mode: unwrappedRequest.mode,
-    redirect: unwrappedRequest.redirect,
     responseType,
     context: unwrappedRequest.context,
-    transferCache: unwrappedRequest.transferCache,
-    credentials: unwrappedRequest.credentials,
-    timeout: unwrappedRequest.timeout
+    transferCache: unwrappedRequest.transferCache
   });
 }
 class HttpResourceImpl extends _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵResourceImpl"] {
@@ -135,9 +167,7 @@ class HttpResourceImpl extends _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRes
     source: this.extRequest,
     computation: () => undefined
   });
-  headers = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.computed)(() => this.status() === 'resolved' || this.status() === 'error' ? this._headers() : undefined, ...(ngDevMode ? [{
-    debugName: "headers"
-  }] : []));
+  headers = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.computed)(() => this.status() === 'resolved' || this.status() === 'error' ? this._headers() : undefined);
   progress = /*#__PURE__*/this._progress.asReadonly();
   statusCode = /*#__PURE__*/this._statusCode.asReadonly();
   constructor(injector, request, defaultValue, parse, equal) {
@@ -153,9 +183,7 @@ class HttpResourceImpl extends _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRes
       // Start off stream as undefined.
       const stream = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.signal)({
         value: undefined
-      }, ...(ngDevMode ? [{
-        debugName: "stream"
-      }] : []));
+      });
       let resolve;
       const promise = new Promise(r => resolve = r);
       const send = value => {
@@ -166,7 +194,7 @@ class HttpResourceImpl extends _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRes
       sub = this.client.request(request).subscribe({
         next: event => {
           switch (event.type) {
-            case _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpEventType.Response:
+            case _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpEventType.Response:
               this._headers.set(event.headers);
               this._statusCode.set(event.status);
               try {
@@ -179,13 +207,13 @@ class HttpResourceImpl extends _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRes
                 });
               }
               break;
-            case _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpEventType.DownloadProgress:
+            case _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpEventType.DownloadProgress:
               this._progress.set(event);
               break;
           }
         },
         error: error => {
-          if (error instanceof _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpErrorResponse) {
+          if (error instanceof _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpErrorResponse) {
             this._headers.set(error.headers);
             this._statusCode.set(error.status);
           }
@@ -205,7 +233,7 @@ class HttpResourceImpl extends _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRes
       });
       return promise;
     }, defaultValue, equal, injector);
-    this.client = injector.get(_module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClient);
+    this.client = injector.get(_module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClient);
   }
 }
 
@@ -304,14 +332,14 @@ function transferCacheInterceptorFn(req, next) {
     // We want to warn users accessing a header provided from the cache
     // That HttpTransferCache alters the headers
     // The warning will be logged a single time by HttpHeaders instance
-    let headers = new _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders(httpHeaders);
+    let headers = new _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders(httpHeaders);
     if (typeof ngDevMode === 'undefined' || ngDevMode) {
       // Append extra logic in dev mode to produce a warning when a header
       // that was not transferred to the client is accessed in the code via `get`
       // and `has` calls.
       headers = appendMissingHeadersDetection(req.url, headers, headersToInclude ?? []);
     }
-    return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(new _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponse({
+    return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(new _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponse({
       body,
       headers,
       status,
@@ -319,24 +347,19 @@ function transferCacheInterceptorFn(req, next) {
       url
     }));
   }
-  const event$ = next(req);
-  if (typeof ngServerMode !== 'undefined' && ngServerMode) {
-    // Request not found in cache. Make the request and cache it if on the server.
-    return event$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.tap)(event => {
-      // Only cache successful HTTP responses.
-      if (event instanceof _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponse) {
-        transferState.set(storeKey, {
-          [BODY]: event.body,
-          [HEADERS]: getFilteredHeaders(event.headers, headersToInclude),
-          [STATUS]: event.status,
-          [STATUS_TEXT]: event.statusText,
-          [REQ_URL]: requestUrl,
-          [RESPONSE_TYPE]: req.responseType
-        });
-      }
-    }));
-  }
-  return event$;
+  // Request not found in cache. Make the request and cache it if on the server.
+  return next(req).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.tap)(event => {
+    if (event instanceof _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponse && typeof ngServerMode !== 'undefined' && ngServerMode) {
+      transferState.set(storeKey, {
+        [BODY]: event.body,
+        [HEADERS]: getFilteredHeaders(event.headers, headersToInclude),
+        [STATUS]: event.status,
+        [STATUS_TEXT]: event.statusText,
+        [REQ_URL]: requestUrl,
+        [RESPONSE_TYPE]: req.responseType
+      });
+    }
+  }));
 }
 /** @returns true when the requests contains autorization related headers. */
 function hasAuthHeaders(req) {
@@ -414,7 +437,7 @@ function withHttpTransferCache(cacheOptions) {
       };
     }
   }, {
-    provide: _module_mjs__WEBPACK_IMPORTED_MODULE_0__.HTTP_ROOT_INTERCEPTOR_FNS,
+    provide: _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HTTP_ROOT_INTERCEPTOR_FNS,
     useValue: transferCacheInterceptorFn,
     multi: true
   }, {
@@ -479,49 +502,10 @@ function verifyMappedOrigin(url) {
 
 /***/ }),
 
-/***/ 46523:
-/*!*******************************************************!*\
-  !*** ./node_modules/@angular/common/fesm2022/xhr.mjs ***!
-  \*******************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   XhrFactory: () => (/* binding */ XhrFactory),
-/* harmony export */   parseCookieValue: () => (/* binding */ parseCookieValue)
-/* harmony export */ });
-/**
- * @license Angular v20.1.0
- * (c) 2010-2025 Google LLC. https://angular.io/
- * License: MIT
- */
-
-function parseCookieValue(cookieStr, name) {
-  name = encodeURIComponent(name);
-  for (const cookie of cookieStr.split(';')) {
-    const eqIndex = cookie.indexOf('=');
-    const [cookieName, cookieValue] = eqIndex == -1 ? [cookie, ''] : [cookie.slice(0, eqIndex), cookie.slice(eqIndex + 1)];
-    if (cookieName.trim() === name) {
-      return decodeURIComponent(cookieValue);
-    }
-  }
-  return null;
-}
-
-/**
- * A wrapper around the `XMLHttpRequest` constructor.
- *
- * @publicApi
- */
-class XhrFactory {}
-
-
-/***/ }),
-
-/***/ 63855:
-/*!**********************************************************!*\
-  !*** ./node_modules/@angular/common/fesm2022/module.mjs ***!
-  \**********************************************************/
+/***/ 47215:
+/*!*******************************************************************!*\
+  !*** ./node_modules/@angular/common/fesm2022/module-CBsxN_3E.mjs ***!
+  \*******************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -567,10 +551,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 32778);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 44866);
-/* harmony import */ var _xhr_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./xhr.mjs */ 46523);
+/* harmony import */ var _xhr_CEmSPUGj_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./xhr-CEmSPUGj.mjs */ 30834);
 
 /**
- * @license Angular v20.1.0
+ * @license Angular v20.0.4
  * (c) 2010-2025 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -1367,33 +1351,9 @@ class HttpRequest {
    */
   withCredentials = false;
   /**
-   *  The credentials mode of the request, which determines how cookies and HTTP authentication are handled.
-   *  This can affect whether cookies are sent with the request, and how authentication is handled.
-   */
-  credentials;
-  /**
    * When using the fetch implementation and set to `true`, the browser will not abort the associated request if the page that initiated it is unloaded before the request is complete.
    */
   keepalive = false;
-  /**
-   * Controls how the request will interact with the browser's HTTP cache.
-   * This affects whether a response is retrieved from the cache, how it is stored, or if it bypasses the cache altogether.
-   */
-  cache;
-  /**
-   * Indicates the relative priority of the request. This may be used by the browser to decide the order in which requests are dispatched and resources fetched.
-   */
-  priority;
-  /**
-   * The mode of the request, which determines how the request will interact with the browser's security model.
-   * This can affect things like CORS (Cross-Origin Resource Sharing) and same-origin policies.
-   */
-  mode;
-  /**
-   * The redirect mode of the request, which determines how redirects are handled.
-   * This can affect whether the request follows redirects automatically, or if it fails when a redirect occurs.
-   */
-  redirect;
   /**
    * The expected response type of the server.
    *
@@ -1424,10 +1384,6 @@ class HttpRequest {
    * The HttpTransferCache option for the request
    */
   transferCache;
-  /**
-   * The timeout for the backend HTTP request in ms.
-   */
-  timeout;
   constructor(method, url, third, fourth) {
     this.url = url;
     this.method = method.toUpperCase();
@@ -1455,37 +1411,14 @@ class HttpRequest {
         this.responseType = options.responseType;
       }
       // Override headers if they're provided.
-      if (options.headers) {
+      if (!!options.headers) {
         this.headers = options.headers;
       }
-      if (options.context) {
+      if (!!options.context) {
         this.context = options.context;
       }
-      if (options.params) {
+      if (!!options.params) {
         this.params = options.params;
-      }
-      if (options.priority) {
-        this.priority = options.priority;
-      }
-      if (options.cache) {
-        this.cache = options.cache;
-      }
-      if (options.credentials) {
-        this.credentials = options.credentials;
-      }
-      if (typeof options.timeout === 'number') {
-        // XHR will ignore any value below 1. AbortSignals only accept unsigned integers.
-        if (options.timeout < 1 || !Number.isInteger(options.timeout)) {
-          // TODO: create a runtime error
-          throw new Error(ngDevMode ? '`timeout` must be a positive integer value' : '');
-        }
-        this.timeout = options.timeout;
-      }
-      if (options.mode) {
-        this.mode = options.mode;
-      }
-      if (options.redirect) {
-        this.redirect = options.redirect;
       }
       // We do want to assign transferCache even if it's falsy (false is valid value)
       this.transferCache = options.transferCache;
@@ -1591,15 +1524,9 @@ class HttpRequest {
     const url = update.url || this.url;
     const responseType = update.responseType || this.responseType;
     const keepalive = update.keepalive ?? this.keepalive;
-    const priority = update.priority || this.priority;
-    const cache = update.cache || this.cache;
-    const mode = update.mode || this.mode;
-    const redirect = update.redirect || this.redirect;
-    const credentials = update.credentials || this.credentials;
     // Carefully handle the transferCache to differentiate between
     // `false` and `undefined` in the update args.
     const transferCache = update.transferCache ?? this.transferCache;
-    const timeout = update.timeout ?? this.timeout;
     // The body is somewhat special - a `null` value in update.body means
     // whatever current body is present is being overridden with an empty
     // body, whereas an `undefined` value in update.body implies no
@@ -1634,13 +1561,7 @@ class HttpRequest {
       responseType,
       withCredentials,
       transferCache,
-      keepalive,
-      cache,
-      priority,
-      timeout,
-      mode,
-      redirect,
-      credentials
+      keepalive
     });
   }
 }
@@ -1925,11 +1846,7 @@ function addBody(options, body) {
     responseType: options.responseType,
     withCredentials: options.withCredentials,
     transferCache: options.transferCache,
-    keepalive: options.keepalive,
-    priority: options.priority,
-    cache: options.cache,
-    mode: options.mode,
-    redirect: options.redirect
+    keepalive: options.keepalive
   };
 }
 /**
@@ -2056,12 +1973,7 @@ let HttpClient = /*#__PURE__*/(() => {
           responseType: options.responseType || 'json',
           withCredentials: options.withCredentials,
           transferCache: options.transferCache,
-          keepalive: options.keepalive,
-          priority: options.priority,
-          cache: options.cache,
-          mode: options.mode,
-          redirect: options.redirect,
-          credentials: options.credentials
+          keepalive: options.keepalive
         });
       }
       // Start with an Observable.of() the initial request, and run the handler (which
@@ -2280,22 +2192,7 @@ let FetchBackend = /*#__PURE__*/(() => {
         this.doRequest(request, aborter.signal, observer).then(noop, error => observer.error(new HttpErrorResponse({
           error
         })));
-        let timeoutId;
-        if (request.timeout) {
-          // TODO: Replace with AbortSignal.any([aborter.signal, AbortSignal.timeout(request.timeout)])
-          // when AbortSignal.any support is Baseline widely available (NET nov. 2026)
-          timeoutId = this.ngZone.runOutsideAngular(() => setTimeout(() => {
-            if (!aborter.signal.aborted) {
-              aborter.abort(new DOMException('signal timed out', 'TimeoutError'));
-            }
-          }, request.timeout));
-        }
-        return () => {
-          if (timeoutId !== undefined) {
-            clearTimeout(timeoutId);
-          }
-          aborter.abort();
-        };
+        return () => aborter.abort();
       });
     }
     doRequest(request, signal, observer) {
@@ -2471,16 +2368,7 @@ let FetchBackend = /*#__PURE__*/(() => {
     createRequestInit(req) {
       // We could share some of this logic with the XhrBackend
       const headers = {};
-      let credentials;
-      // If the request has a credentials property, use it.
-      // Otherwise, if the request has withCredentials set to true, use 'include'.
-      credentials = req.credentials;
-      // If withCredentials is true should be set to 'include', for compatibility
-      if (req.withCredentials) {
-        // A warning is logged in development mode if the request has both
-        (typeof ngDevMode === 'undefined' || ngDevMode) && warningOptionsMessage(req);
-        credentials = 'include';
-      }
+      const credentials = req.withCredentials ? 'include' : undefined;
       // Setting all the requested headers.
       req.headers.forEach((name, values) => headers[name] = values.join(','));
       // Add an Accept header if one isn't present already.
@@ -2500,11 +2388,7 @@ let FetchBackend = /*#__PURE__*/(() => {
         method: req.method,
         headers,
         credentials,
-        keepalive: req.keepalive,
-        cache: req.cache,
-        priority: req.priority,
-        mode: req.mode,
-        redirect: req.redirect
+        keepalive: req.keepalive
       };
     }
     concatChunks(chunks, totalLength) {
@@ -2534,11 +2418,6 @@ let FetchBackend = /*#__PURE__*/(() => {
  */
 class FetchFactory {}
 function noop() {}
-function warningOptionsMessage(req) {
-  if (req.credentials && req.withCredentials) {
-    console.warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵformatRuntimeError"])(2819 /* RuntimeErrorCode.WITH_CREDENTIALS_OVERRIDES_EXPLICIT_CREDENTIALS */, `Angular detected that a \`HttpClient\` request has both \`withCredentials: true\` and \`credentials: '${req.credentials}'\` options. The \`withCredentials\` option is overriding the explicit \`credentials\` setting to 'include'. Consider removing \`withCredentials\` and using \`credentials: '${req.credentials}'\` directly for clarity.`));
-  }
-}
 /**
  * Zone.js treats a rejected promise that has not yet been awaited
  * as an unhandled error. This function adds a noop `.then` to make
@@ -2948,40 +2827,6 @@ function getResponseUrl(xhr) {
   return null;
 }
 /**
- * Validates whether the request is compatible with the XHR backend.
- * Show a warning if the request contains options that are not supported by XHR.
- */
-function validateXhrCompatibility(req) {
-  const unsupportedOptions = [{
-    property: 'keepalive',
-    errorCode: 2813 /* RuntimeErrorCode.KEEPALIVE_NOT_SUPPORTED_WITH_XHR */
-  }, {
-    property: 'cache',
-    errorCode: 2814 /* RuntimeErrorCode.CACHE_NOT_SUPPORTED_WITH_XHR */
-  }, {
-    property: 'priority',
-    errorCode: 2815 /* RuntimeErrorCode.PRIORITY_NOT_SUPPORTED_WITH_XHR */
-  }, {
-    property: 'mode',
-    errorCode: 2816 /* RuntimeErrorCode.MODE_NOT_SUPPORTED_WITH_XHR */
-  }, {
-    property: 'redirect',
-    errorCode: 2817 /* RuntimeErrorCode.REDIRECT_NOT_SUPPORTED_WITH_XHR */
-  }, {
-    property: 'credentials',
-    errorCode: 2818 /* RuntimeErrorCode.CREDENTIALS_NOT_SUPPORTED_WITH_XHR */
-  }];
-  // Check each unsupported option and warn if present
-  for (const {
-    property,
-    errorCode
-  } of unsupportedOptions) {
-    if (property in req) {
-      console.warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵformatRuntimeError"])(errorCode, `Angular detected that a \`HttpClient\` request with the \`${property}\` option was sent using XHR, which does not support it. To use the \`${property}\` option, enable Fetch API support by passing \`withFetch()\` as an argument to \`provideHttpClient()\`.`));
-    }
-  }
-}
-/**
  * Uses `XMLHttpRequest` to send requests to a backend server.
  * @see {@link HttpHandler}
  * @see {@link JsonpClientBackend}
@@ -3005,19 +2850,14 @@ let HttpXhrBackend = /*#__PURE__*/(() => {
       if (req.method === 'JSONP') {
         throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](-2800 /* RuntimeErrorCode.MISSING_JSONP_MODULE */, (typeof ngDevMode === 'undefined' || ngDevMode) && `Cannot make a JSONP request without JSONP support. To fix the problem, either add the \`withJsonpSupport()\` call (if \`provideHttpClient()\` is used) or import the \`HttpClientJsonpModule\` in the root NgModule.`);
       }
-      // Validate that the request is compatible with the XHR backend.
-      ngDevMode && validateXhrCompatibility(req);
+      if (req.keepalive && ngDevMode) {
+        console.warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵformatRuntimeError"])(2813 /* RuntimeErrorCode.KEEPALIVE_NOT_SUPPORTED_WITH_XHR */, `Angular detected that a \`HttpClient\` request with the \`keepalive\` option was sent using XHR, which does not support it. To use the \`keepalive\` option, enable Fetch API support by passing \`withFetch()\` as an argument to \`provideHttpClient()\`.`));
+      }
       // Check whether this factory has a special function to load an XHR implementation
       // for various non-browser environments. We currently limit it to only `ServerXhr`
       // class, which needs to load an XHR implementation.
       const xhrFactory = this.xhrFactory;
-      const source =
-      // Note that `ɵloadImpl` is never defined in client bundles and can be
-      // safely dropped whenever we're running in the browser.
-      // This branching is redundant.
-      // The `ngServerMode` guard also enables tree-shaking of the `from()`
-      // function from the common bundle, as it's only used in server code.
-      typeof ngServerMode !== 'undefined' && ngServerMode && xhrFactory.ɵloadImpl ? (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.from)(xhrFactory.ɵloadImpl()) : (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.of)(null);
+      const source = xhrFactory.ɵloadImpl ? (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.from)(xhrFactory.ɵloadImpl()) : (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.of)(null);
       return source.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.switchMap)(() => {
         // Everything happens on Observable subscription.
         return new rxjs__WEBPACK_IMPORTED_MODULE_3__.Observable(observer => {
@@ -3041,9 +2881,6 @@ let HttpXhrBackend = /*#__PURE__*/(() => {
             if (detectedType !== null) {
               xhr.setRequestHeader(CONTENT_TYPE_HEADER, detectedType);
             }
-          }
-          if (req.timeout) {
-            xhr.timeout = req.timeout;
           }
           // Set the responseType if one was requested.
           if (req.responseType) {
@@ -3178,21 +3015,6 @@ let HttpXhrBackend = /*#__PURE__*/(() => {
             });
             observer.error(res);
           };
-          let onTimeout = onError;
-          if (req.timeout) {
-            onTimeout = _ => {
-              const {
-                url
-              } = partialFromXhr();
-              const res = new HttpErrorResponse({
-                error: new DOMException('Request timed out', 'TimeoutError'),
-                status: xhr.status || 0,
-                statusText: xhr.statusText || 'Request timeout',
-                url: url || undefined
-              });
-              observer.error(res);
-            };
-          }
           // The sentHeaders flag tracks whether the HttpResponseHeaders event
           // has been sent on the stream. This is necessary to track if progress
           // is enabled since the event will be sent on only the first download
@@ -3245,7 +3067,7 @@ let HttpXhrBackend = /*#__PURE__*/(() => {
           // By default, register for load and error events.
           xhr.addEventListener('load', onLoad);
           xhr.addEventListener('error', onError);
-          xhr.addEventListener('timeout', onTimeout);
+          xhr.addEventListener('timeout', onError);
           xhr.addEventListener('abort', onError);
           // Progress events are only enabled if requested.
           if (req.reportProgress) {
@@ -3268,7 +3090,7 @@ let HttpXhrBackend = /*#__PURE__*/(() => {
             xhr.removeEventListener('error', onError);
             xhr.removeEventListener('abort', onError);
             xhr.removeEventListener('load', onLoad);
-            xhr.removeEventListener('timeout', onTimeout);
+            xhr.removeEventListener('timeout', onError);
             if (req.reportProgress) {
               xhr.removeEventListener('progress', onDownProgress);
               if (reqBody !== null && xhr.upload) {
@@ -3284,7 +3106,7 @@ let HttpXhrBackend = /*#__PURE__*/(() => {
       }));
     }
     static ɵfac = function HttpXhrBackend_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || HttpXhrBackend)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_xhr_mjs__WEBPACK_IMPORTED_MODULE_4__.XhrFactory));
+      return new (__ngFactoryType__ || HttpXhrBackend)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_xhr_CEmSPUGj_mjs__WEBPACK_IMPORTED_MODULE_4__.XhrFactory));
     };
     static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
       token: HttpXhrBackend,
@@ -3337,7 +3159,7 @@ let HttpXsrfCookieExtractor = /*#__PURE__*/(() => {
       const cookieString = this.doc.cookie || '';
       if (cookieString !== this.lastCookieString) {
         this.parseCount++;
-        this.lastToken = (0,_xhr_mjs__WEBPACK_IMPORTED_MODULE_4__.parseCookieValue)(cookieString, this.cookieName);
+        this.lastToken = (0,_xhr_CEmSPUGj_mjs__WEBPACK_IMPORTED_MODULE_4__.parseCookieValue)(cookieString, this.cookieName);
         this.lastCookieString = cookieString;
       }
       return this.lastToken;

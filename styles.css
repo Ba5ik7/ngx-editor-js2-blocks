@@ -7,23 +7,23 @@ html{--mat-sys-background: #faf9fd;--mat-sys-error: #ba1a1a;--mat-sys-error-cont
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].rules[0].oneOf[0].use[2]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[6].rules[1].use[0]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[6].rules[1].use[1]!./projects/demo/src/styles.scss?ngGlobalStyle ***!
   \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* You can add global styles to this file, and also import other style files */
-.cdk-drag-preview {
+.ngx-editor-js2-block.cdk-drag-preview {
   overflow: visible;
   color: var(--mat-sys-on-secondary-container);
   background-color: var(--mat-sys-secondary-container);
   border-radius: var(--mat-card-outlined-container-shape, var(--mat-sys-corner-medium));
   box-shadow: var(--mat-sys-level4);
 }
-.cdk-drag-preview *:not(toolbar) {
+.ngx-editor-js2-block.cdk-drag-preview *:not(toolbar) {
   padding: 0 !important;
   margin: 0 !important;
 }
 
-.cdk-drag-placeholder {
+.ngx-editor-js2-block.cdk-drag-placeholder {
   opacity: 0;
 }
 
-.cdk-drag-animating {
+.block-list.cdk-drop-list-dragging .ngx-editor-js2-block:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 

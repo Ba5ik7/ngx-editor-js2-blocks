@@ -25,19 +25,11 @@ __webpack_require__.r(__webpack_exports__);
 
 let NgxEditorJs2BlockquotesComponent = /*#__PURE__*/(() => {
   class NgxEditorJs2BlockquotesComponent {
-    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(0, ...(ngDevMode ? [{
-      debugName: "sortIndex"
-    }] : []));
+    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(0);
     componentInstanceName = 'NgxEditorJs2BlockquotesComponent';
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true, ...(ngDevMode ? [{
-      debugName: "autofocus"
-    }] : []));
-    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
-      debugName: "formGroup"
-    }] : []));
-    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
-      debugName: "formControlName"
-    }] : []));
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true);
+    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
+    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
     blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)([{
       action: 'medium',
       icon: 'density_small'
@@ -47,12 +39,8 @@ let NgxEditorJs2BlockquotesComponent = /*#__PURE__*/(() => {
     }, {
       action: 'display-large',
       icon: 'density_large'
-    }], ...(ngDevMode ? [{
-      debugName: "blockOptionActions"
-    }] : []));
-    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('display-large', ...(ngDevMode ? [{
-      debugName: "savedAction"
-    }] : []));
+    }]);
+    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('display-large');
     actionCallbackBind = this.actionCallback.bind(this);
     actionCallback(action) {
       this.savedAction.update(() => action);

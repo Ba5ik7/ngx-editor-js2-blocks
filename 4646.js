@@ -410,15 +410,15 @@ let MatOptgroup = /*#__PURE__*/(() => {
       template: function MatOptgroup_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵprojectionDef"](_c0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdomElementStart"](0, "span", 0)(1, "span", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "span", 0)(1, "span", 1);
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2);
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵprojection"](3);
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdomElementEnd"]()();
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵprojection"](4, 1);
         }
         if (rf & 2) {
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("mdc-list-item--disabled", ctx.disabled);
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdomProperty"]("id", ctx._labelId);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("id", ctx._labelId);
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"]("", ctx.label, " ");
         }
@@ -2119,7 +2119,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /** Current version of Angular Material. */
-const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.Version('20.1.0');
+const VERSION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.Version('20.0.3');
 
 /**
  * Matches strings that have the form of a valid RFC 3339 string
