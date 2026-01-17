@@ -1,4 +1,7 @@
 ngx-editor-js2-panel.cdk-drag-preview {
+  & *:not(toolbar) {
+    margin: 0 !important;
+  }
   .panel {
     padding: 8px 0 8px 40px !important;
   }

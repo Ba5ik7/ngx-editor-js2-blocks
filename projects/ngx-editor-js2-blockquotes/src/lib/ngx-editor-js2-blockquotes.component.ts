@@ -9,6 +9,7 @@ import {
   BlockOptionAction,
   ControlAccessorDirective,
   ToolbarFabDirective,
+  CleanPasteDataDirective
 } from '@tmdjr/ngx-editor-js2';
 
 @Component({
@@ -20,14 +21,16 @@ import {
     ControlAccessorDirective,
     AutofocusDirective,
     ToolbarFabDirective,
+    CleanPasteDataDirective,
     NgClass,
-  ],
+],
   template: `
     <ng-container [formGroup]="formGroup()">
       <blockquote
         controlAccessor
         contentEditable
         toolbarFab
+        cleanPasteData
         [ngClass]="savedAction()"
         [defaultValue]="formGroup().get(formControlName())?.value"
         [actionCallback]="actionCallbackBind"
@@ -58,7 +61,7 @@ import {
 
         blockquote {
           margin: 20px 0px;
-          padding: 5px 0px 5px 20px;
+          padding: 5px 0px 5px 1em;
           border-left: 5px solid var(--mat-sys-primary);
         }
       }

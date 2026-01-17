@@ -1,4 +1,9 @@
+
 ngx-editor-js2-mermaidjs.cdk-drag-preview {
+  & *:not(toolbar) {
+    margin: 0 !important;
+  }
+
   .CodeMirror-sizer {
     margin-left: 29px !important;
   }

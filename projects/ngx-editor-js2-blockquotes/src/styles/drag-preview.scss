@@ -1,5 +1,12 @@
 ngx-editor-js2-blockquotes.cdk-drag-preview {
-    blockquote {
-      padding: 5px 0px 5px 20px!important;
+  & *:not(toolbar, ul) {
+    margin: 0 !important;
+  }
+  blockquote {
+    padding: 5px 0px 5px 1em !important;
+    ul {
+      margin: 1em 0 !important;
+      padding-left: 1em !important;
     }
+  }
 }
