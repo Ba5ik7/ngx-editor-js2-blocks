@@ -15,7 +15,6 @@ html{--mat-sys-background: #faf9fd;--mat-sys-error: #ba1a1a;--mat-sys-error-cont
   box-shadow: var(--mat-sys-level4);
 }
 .ngx-editor-js2-block.cdk-drag-preview *:not(toolbar) {
-  padding: 0 !important;
   margin: 0 !important;
 }
 
