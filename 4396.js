@@ -351,7 +351,8 @@ let NgxEditorJs2PopQuizService = /*#__PURE__*/(() => {
       };
     }
     updateParentFormGroupValue(value) {
-      this.parentFormGroup.get(this.parentFormControlName)?.setValue(JSON.stringify(value));
+      const marshalValue = this.marshalFormGroupIntoFormValue(value);
+      this.parentFormGroup.get(this.parentFormControlName)?.setValue(JSON.stringify(marshalValue));
     }
     marshalFormGroupIntoFormValue(value) {
       return {

@@ -365,7 +365,7 @@ let AppService = /*#__PURE__*/(() => {
     requestBlocks = new rxjs__WEBPACK_IMPORTED_MODULE_0__.BehaviorSubject({});
     requestBlocks$ = this.requestBlocks.asObservable();
     handleBlocks(blocks$) {
-      void (0,rxjs__WEBPACK_IMPORTED_MODULE_0__.lastValueFrom)(blocks$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_0__.tap)(console.table)));
+      void (0,rxjs__WEBPACK_IMPORTED_MODULE_0__.lastValueFrom)(blocks$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_0__.tap)(() => console.log('Tesing'))));
     }
     static ɵfac = function AppService_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || AppService)();

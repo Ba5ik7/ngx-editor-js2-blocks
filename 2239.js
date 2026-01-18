@@ -1541,7 +1541,7 @@ let NgxEditorJs2BlockquotesComponent = /*#__PURE__*/(() => {
       features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵHostDirectivesFeature"]([_angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_3__.CdkDrag])],
       decls: 2,
       vars: 8,
-      consts: [[3, "formGroup"], ["controlAccessor", "", "contentEditable", "", "toolbarFab", "", 3, "ngClass", "defaultValue", "actionCallback", "autofocus", "blockOptionActions", "formControlName", "componentContextPositionIndex"]],
+      consts: [[3, "formGroup"], ["controlAccessor", "", "contentEditable", "", "toolbarFab", "", "cleanPasteData", "", 3, "ngClass", "defaultValue", "actionCallback", "autofocus", "blockOptionActions", "formControlName", "componentContextPositionIndex"]],
       template: function NgxEditorJs2BlockquotesComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0, 0);
@@ -1555,8 +1555,8 @@ let NgxEditorJs2BlockquotesComponent = /*#__PURE__*/(() => {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.savedAction())("defaultValue", (tmp_2_0 = ctx.formGroup().get(ctx.formControlName())) == null ? null : tmp_2_0.value)("actionCallback", ctx.actionCallbackBind)("autofocus", ctx.autofocus())("blockOptionActions", ctx.blockOptionActions())("formControlName", ctx.formControlName())("componentContextPositionIndex", ctx.sortIndex());
         }
       },
-      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControlName, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.ControlAccessorDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.AutofocusDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.ToolbarFabDirective, _angular_common__WEBPACK_IMPORTED_MODULE_2__.NgClass],
-      styles: ["[_nghost-%COMP%]{display:block;position:relative}[_nghost-%COMP%]   .medium[_ngcontent-%COMP%]{font:var(--mat-sys-body-medium);font-weight:100}[_nghost-%COMP%]   .display-small[_ngcontent-%COMP%]{font:var(--mat-sys-display-small);font-weight:100}[_nghost-%COMP%]   .display-large[_ngcontent-%COMP%]{font:var(--mat-sys-display-large);font-weight:100}[_nghost-%COMP%]   blockquote[_ngcontent-%COMP%]{margin:20px 0;padding:5px 0 5px 20px;border-left:5px solid var(--mat-sys-primary)}"]
+      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControlName, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.ControlAccessorDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.AutofocusDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.ToolbarFabDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.CleanPasteDataDirective, _angular_common__WEBPACK_IMPORTED_MODULE_2__.NgClass],
+      styles: ["[_nghost-%COMP%]{display:block;position:relative}[_nghost-%COMP%]   .medium[_ngcontent-%COMP%]{font:var(--mat-sys-body-medium);font-weight:100}[_nghost-%COMP%]   .display-small[_ngcontent-%COMP%]{font:var(--mat-sys-display-small);font-weight:100}[_nghost-%COMP%]   .display-large[_ngcontent-%COMP%]{font:var(--mat-sys-display-large);font-weight:100}[_nghost-%COMP%]   blockquote[_ngcontent-%COMP%]{margin:20px 0;padding:5px 0 5px 1em;border-left:5px solid var(--mat-sys-primary)}"]
     });
   }
   return NgxEditorJs2BlockquotesComponent;
