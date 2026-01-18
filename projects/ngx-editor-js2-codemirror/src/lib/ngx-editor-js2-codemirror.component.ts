@@ -10,20 +10,19 @@ import {
   ControlAccessorDirective,
   ToolbarFabDirective,
 } from '@tmdjr/ngx-editor-js2';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'ngx-editor-js2-codemirror',
   host: { class: 'cdk-drag-animating no-toolbar-inline' },
   hostDirectives: [CdkDrag],
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     ControlAccessorDirective,
     AutofocusDirective,
     ToolbarFabDirective,
-    CodemirrorModule,
-  ],
+    CodemirrorModule
+],
   template: `
   @if( waitForAnimation() ) {
     <ng-container [formGroup]="formGroup()">
