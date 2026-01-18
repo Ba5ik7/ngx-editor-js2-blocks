@@ -42,7 +42,6 @@ jobs:
 
           echo "matrix=$JSON" >> "$GITHUB_OUTPUT"
 
-
   publish:
     needs: detect
     if: ${{ fromJson(needs.detect.outputs.matrix).include[0] != null }}
@@ -60,6 +59,11 @@ jobs:
           registry-url: https://registry.npmjs.org
           cache: npm
           always-auth: true
+
+      - name: Force git to use HTTPS instead of SSH for GitHub
+        run: |
+          git config --global url."https://github.com/".insteadOf "ssh://git@github.com/"
+          git config --global url."https://github.com/".insteadOf "git@github.com:"
 
       - name: Use npm 11.6.0
         run: npm i -g npm@11.6.0
