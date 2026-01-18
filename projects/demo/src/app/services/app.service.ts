@@ -254,7 +254,6 @@ export const TEST_DATA_TWO: NgxEditorJsBlock[] = [
     savedAction: 'small',
   },
 ];
-
 @Injectable({
   providedIn: 'root',
 })
@@ -266,6 +265,6 @@ export class AppService {
   requestBlocks$ = this.requestBlocks.asObservable();
 
   handleBlocks(blocks$: Observable<NgxEditorJsBlock[]>) {
-    void lastValueFrom(blocks$.pipe(tap(console.table)));
+    void lastValueFrom(blocks$.pipe(tap(() => console.log('Tesing'))));
   }
 }

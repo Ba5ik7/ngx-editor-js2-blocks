@@ -131,10 +131,11 @@ export class NgxEditorJs2PopQuizService {
     };
   }
 
-  updateParentFormGroupValue(value: QuizConfig) {
+  updateParentFormGroupValue(value: QuizConfigFormRawData) {
+    const marshalValue = this.marshalFormGroupIntoFormValue(value);
     this.parentFormGroup
       .get(this.parentFormControlName)
-      ?.setValue(JSON.stringify(value));
+      ?.setValue(JSON.stringify(marshalValue));
   }
 
   marshalFormGroupIntoFormValue(value: QuizConfigFormRawData): QuizConfig {
