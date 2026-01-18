@@ -20,7 +20,6 @@ jobs:
           BEFORE="${{ github.event.before }}"
           AFTER="${{ github.sha }}"
 
-          # Fallback for edge cases (e.g. first push)
           if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
             BEFORE="$(git rev-list --max-parents=0 HEAD)"
           fi
@@ -30,20 +29,19 @@ jobs:
             | cut -d/ -f2 \
             | sort -u)
 
-          # Only publish actual libs (skip demo app)
-          # Adjust this filter to match your publishable libs
           PUBLISHABLE=$(echo "$CHANGED" | grep -E '^ngx-editor-js2-' || true)
 
           if [ -z "$PUBLISHABLE" ]; then
-            echo 'matrix={"include":[]}' >> $GITHUB_OUTPUT
+            echo 'matrix={"include":[]}' >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
           JSON=$(printf '%s\n' "$PUBLISHABLE" \
-            | awk '{printf "{\"project\":\"%s\"}\n",$1}' \
-            | jq -s '{include: .}')
+            | awk 'NF{printf "{\"project\":\"%s\"}\n",$1}' \
+            | jq -cs '{include: .}')
 
-          echo "matrix=$JSON" >> $GITHUB_OUTPUT
+          echo "matrix=$JSON" >> "$GITHUB_OUTPUT"
+
 
   publish:
     needs: detect
