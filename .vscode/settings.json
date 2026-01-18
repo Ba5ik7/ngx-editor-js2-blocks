@@ -1,79 +1,29 @@
-// Cobalt2 Theme with Peacock
-// {
-//   "workbench.colorCustomizations": {
-//     "activityBar.activeBackground": "#c9eb45",
-//     "activityBar.background": "#c9eb45",
-//     "activityBar.foreground": "#15202b",
-//     "activityBar.inactiveForeground": "#15202b99",
-//     "activityBarBadge.background": "#16a5c9",
-//     "activityBarBadge.foreground": "#e7e7e7",
-//     "commandCenter.border": "#15202b99",
-//     "sash.hoverBorder": "#c9eb45",
-//     "statusBar.background": "#bbe518",
-//     "statusBar.foreground": "#15202b",
-//     "statusBarItem.hoverBackground": "#95b713",
-//     "statusBarItem.remoteBackground": "#bbe518",
-//     "statusBarItem.remoteForeground": "#15202b",
-//     "titleBar.activeBackground": "#bbe518",
-//     "titleBar.activeForeground": "#15202b",
-//     "titleBar.inactiveBackground": "#bbe51899",
-//     "titleBar.inactiveForeground": "#15202b99"
-//   },
-//   "peacock.color": "#bbe518"
-// }
-
-// Cobalt Next Theme
 {
-  "editor.bracketPairColorization.enabled": true, // Native bracket matching - colors included in theme
-  "color-highlight.markerType": "underline", // requires Color Highlight Extension
-  "color-highlight.markRuler": false, // requires Color Highlight Extension
-  "editor.colorDecorators": false, // using Color Hightlight instead
-  "editor.cursorBlinking": "solid",
-  "editor.cursorStyle": "line",
-  "editor.cursorWidth": 3,
-  "editor.letterSpacing": 0.5,
-  "editor.lineHeight": 32,
-  "editor.fontFamily": "Cascadia Code, Fira Code, Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontSize": 16,
-  "editor.fontWeight": "400",
-  "editor.matchBrackets": "always", // using Subtle Match Brackets instead
-  "editor.tabSize": 2,
-  "files.trimTrailingWhitespace": true,
-  "subtleBrackets.style": { // requires Subtle Match Bracket Extension
-    "global": {
-      "borderColor": "#fac863",
-      "borderWidth": "2px"
-    }
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
   },
-  "terminal.integrated.fontFamily": "Inconsolata for Powerline",
-  "terminal.integrated.fontSize": 14,
-  "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
-  // "workbench.colorTheme": "Cobalt2",
-  "workbench.editor.tabSizing": "shrink",
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.startupEditor": "newUntitledFile",
-  "editor.selectionHighlight": false,
-  "editor.foldingHighlight": false,
-  "editor.guides.highlightActiveBracketPair": false,
-  "editor.unicodeHighlight.includeStrings": false,
-  "editor.inlineSuggest.syntaxHighlightingEnabled": false,
-  "better-comments.highlightPlainText": false,
-  "angular-jest-test-runner.debug.projectPath": "${workspaceFolder}/projects/ngx-editor-js2/",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
-
-// {
-//   // This is all that matters
-//   "workbench.colorTheme": "Cobalt2",
-//   // The Cursive font is operator Mono, it's $200 and you need to buy it to get the cursive. Dank Mono or Victor Mono are good alternatives
-//   "editor.fontFamily": "Operator Mono, Menlo, Monaco, 'Courier New', monospace",
-//   "editor.fontSize": 17,
-//   "editor.lineHeight": 25,
-//   "editor.letterSpacing": 0.5,
-//   "files.trimTrailingWhitespace": true,
-//   "editor.fontWeight": "400",
-//   "prettier.eslintIntegration": true,
-//   "editor.cursorStyle": "line",
-//   "editor.cursorWidth": 5,
-//   "editor.cursorBlinking": "solid",
-//   "editor.renderWhitespace": "all",
-// }

@@ -1,8 +1,9 @@
+import { CdkDrag } from '@angular/cdk/drag-drop';
 import { NgClass } from '@angular/common';
 import { Component, input, signal } from '@angular/core';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFabButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import {
   AutofocusDirective,
   BlockComponent,
@@ -10,7 +11,6 @@ import {
   ControlAccessorDirective,
   ToolbarFabDirective,
 } from '@tmdjr/ngx-editor-js2';
-import { CdkDrag } from '@angular/cdk/drag-drop';
 import { ImageConfigComponent } from './image-config/image-config.component';
 
 type Value = { url: string; title: string };
