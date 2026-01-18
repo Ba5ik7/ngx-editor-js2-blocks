@@ -58,7 +58,6 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org
           cache: npm
-          always-auth: true
 
       - name: Use npm 11.6.0
         run: npm i -g npm@11.6.0
@@ -94,5 +93,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           PROJECT: ${{ matrix.project }}
+          NPM_CONFIG_GIT_CHECKS: "false"
         run: |
-          npm publish --access public "dist/$PROJECT"
+          npm publish --no-git-checks --access public "dist/$PROJECT"
