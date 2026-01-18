@@ -1,100 +1,195 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[6443],{
 
-/***/ 30834:
-/*!****************************************************************!*\
-  !*** ./node_modules/@angular/common/fesm2022/xhr-CEmSPUGj.mjs ***!
-  \****************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+/***/ 8963
+/*!****************************************************************************!*\
+  !*** ./node_modules/@angular/common/fesm2022/_platform_location-chunk.mjs ***!
+  \****************************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   XhrFactory: () => (/* binding */ XhrFactory),
-/* harmony export */   parseCookieValue: () => (/* binding */ parseCookieValue)
+/* harmony export */   BrowserPlatformLocation: () => (/* binding */ BrowserPlatformLocation),
+/* harmony export */   DomAdapter: () => (/* binding */ DomAdapter),
+/* harmony export */   LOCATION_INITIALIZED: () => (/* binding */ LOCATION_INITIALIZED),
+/* harmony export */   PlatformLocation: () => (/* binding */ PlatformLocation),
+/* harmony export */   getDOM: () => (/* binding */ getDOM),
+/* harmony export */   setRootDomAdapter: () => (/* binding */ setRootDomAdapter)
 /* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 51356);
 /**
- * @license Angular v20.0.4
- * (c) 2010-2025 Google LLC. https://angular.io/
+ * @license Angular v21.1.0
+ * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
 
-function parseCookieValue(cookieStr, name) {
-  name = encodeURIComponent(name);
-  for (const cookie of cookieStr.split(';')) {
-    const eqIndex = cookie.indexOf('=');
-    const [cookieName, cookieValue] = eqIndex == -1 ? [cookie, ''] : [cookie.slice(0, eqIndex), cookie.slice(eqIndex + 1)];
-    if (cookieName.trim() === name) {
-      return decodeURIComponent(cookieValue);
-    }
-  }
-  return null;
+
+
+let _DOM = null;
+function getDOM() {
+  return _DOM;
 }
+function setRootDomAdapter(adapter) {
+  _DOM ??= adapter;
+}
+class DomAdapter {}
+let PlatformLocation = /*#__PURE__*/(() => {
+  class PlatformLocation {
+    historyGo(relativePosition) {
+      throw new Error(ngDevMode ? 'Not implemented' : '');
+    }
+    static ɵfac = function PlatformLocation_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || PlatformLocation)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: PlatformLocation,
+      factory: () => (() => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(BrowserPlatformLocation))(),
+      providedIn: 'platform'
+    });
+  }
+  return PlatformLocation;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const LOCATION_INITIALIZED = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(typeof ngDevMode !== 'undefined' && ngDevMode ? 'Location Initialized' : '');
+let BrowserPlatformLocation = /*#__PURE__*/(() => {
+  class BrowserPlatformLocation extends PlatformLocation {
+    _location;
+    _history;
+    _doc = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT);
+    constructor() {
+      super();
+      this._location = window.location;
+      this._history = window.history;
+    }
+    getBaseHrefFromDOM() {
+      return getDOM().getBaseHref(this._doc);
+    }
+    onPopState(fn) {
+      const window = getDOM().getGlobalEventTarget(this._doc, 'window');
+      window.addEventListener('popstate', fn, false);
+      return () => window.removeEventListener('popstate', fn);
+    }
+    onHashChange(fn) {
+      const window = getDOM().getGlobalEventTarget(this._doc, 'window');
+      window.addEventListener('hashchange', fn, false);
+      return () => window.removeEventListener('hashchange', fn);
+    }
+    get href() {
+      return this._location.href;
+    }
+    get protocol() {
+      return this._location.protocol;
+    }
+    get hostname() {
+      return this._location.hostname;
+    }
+    get port() {
+      return this._location.port;
+    }
+    get pathname() {
+      return this._location.pathname;
+    }
+    get search() {
+      return this._location.search;
+    }
+    get hash() {
+      return this._location.hash;
+    }
+    set pathname(newPath) {
+      this._location.pathname = newPath;
+    }
+    pushState(state, title, url) {
+      this._history.pushState(state, title, url);
+    }
+    replaceState(state, title, url) {
+      this._history.replaceState(state, title, url);
+    }
+    forward() {
+      this._history.forward();
+    }
+    back() {
+      this._history.back();
+    }
+    historyGo(relativePosition = 0) {
+      this._history.go(relativePosition);
+    }
+    getState() {
+      return this._history.state;
+    }
+    static ɵfac = function BrowserPlatformLocation_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || BrowserPlatformLocation)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: BrowserPlatformLocation,
+      factory: () => (() => new BrowserPlatformLocation())(),
+      providedIn: 'platform'
+    });
+  }
+  return BrowserPlatformLocation;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
 
-/**
- * A wrapper around the `XMLHttpRequest` constructor.
- *
- * @publicApi
- */
-class XhrFactory {}
 
+/***/ },
 
-/***/ }),
-
-/***/ 46443:
+/***/ 46443
 /*!********************************************************!*\
   !*** ./node_modules/@angular/common/fesm2022/http.mjs ***!
   \********************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   FetchBackend: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.FetchBackend),
-/* harmony export */   HTTP_INTERCEPTORS: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HTTP_INTERCEPTORS),
+/* harmony export */   FetchBackend: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.FetchBackend),
+/* harmony export */   HTTP_INTERCEPTORS: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HTTP_INTERCEPTORS),
 /* harmony export */   HTTP_TRANSFER_CACHE_ORIGIN_MAP: () => (/* binding */ HTTP_TRANSFER_CACHE_ORIGIN_MAP),
-/* harmony export */   HttpBackend: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpBackend),
-/* harmony export */   HttpClient: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClient),
-/* harmony export */   HttpClientJsonpModule: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClientJsonpModule),
-/* harmony export */   HttpClientModule: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClientModule),
-/* harmony export */   HttpClientXsrfModule: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClientXsrfModule),
-/* harmony export */   HttpContext: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpContext),
-/* harmony export */   HttpContextToken: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpContextToken),
-/* harmony export */   HttpErrorResponse: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpErrorResponse),
-/* harmony export */   HttpEventType: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpEventType),
-/* harmony export */   HttpFeatureKind: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpFeatureKind),
-/* harmony export */   HttpHandler: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHandler),
-/* harmony export */   HttpHeaderResponse: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaderResponse),
-/* harmony export */   HttpHeaders: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders),
-/* harmony export */   HttpParams: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpParams),
-/* harmony export */   HttpRequest: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpRequest),
-/* harmony export */   HttpResponse: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponse),
-/* harmony export */   HttpResponseBase: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponseBase),
-/* harmony export */   HttpStatusCode: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpStatusCode),
-/* harmony export */   HttpUrlEncodingCodec: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpUrlEncodingCodec),
-/* harmony export */   HttpXhrBackend: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpXhrBackend),
-/* harmony export */   HttpXsrfTokenExtractor: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpXsrfTokenExtractor),
-/* harmony export */   JsonpClientBackend: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.JsonpClientBackend),
-/* harmony export */   JsonpInterceptor: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.JsonpInterceptor),
+/* harmony export */   HttpBackend: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpBackend),
+/* harmony export */   HttpClient: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClient),
+/* harmony export */   HttpClientJsonpModule: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClientJsonpModule),
+/* harmony export */   HttpClientModule: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClientModule),
+/* harmony export */   HttpClientXsrfModule: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClientXsrfModule),
+/* harmony export */   HttpContext: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpContext),
+/* harmony export */   HttpContextToken: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpContextToken),
+/* harmony export */   HttpErrorResponse: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpErrorResponse),
+/* harmony export */   HttpEventType: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpEventType),
+/* harmony export */   HttpFeatureKind: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpFeatureKind),
+/* harmony export */   HttpHandler: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHandler),
+/* harmony export */   HttpHeaderResponse: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaderResponse),
+/* harmony export */   HttpHeaders: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders),
+/* harmony export */   HttpParams: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpParams),
+/* harmony export */   HttpRequest: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpRequest),
+/* harmony export */   HttpResponse: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponse),
+/* harmony export */   HttpResponseBase: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponseBase),
+/* harmony export */   HttpStatusCode: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpStatusCode),
+/* harmony export */   HttpUrlEncodingCodec: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpUrlEncodingCodec),
+/* harmony export */   HttpXhrBackend: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpXhrBackend),
+/* harmony export */   HttpXsrfTokenExtractor: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpXsrfTokenExtractor),
+/* harmony export */   JsonpClientBackend: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.JsonpClientBackend),
+/* harmony export */   JsonpInterceptor: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.JsonpInterceptor),
 /* harmony export */   httpResource: () => (/* binding */ httpResource),
-/* harmony export */   provideHttpClient: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.provideHttpClient),
-/* harmony export */   withFetch: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.withFetch),
-/* harmony export */   withInterceptors: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.withInterceptors),
-/* harmony export */   withInterceptorsFromDi: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.withInterceptorsFromDi),
-/* harmony export */   withJsonpSupport: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.withJsonpSupport),
-/* harmony export */   withNoXsrfProtection: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.withNoXsrfProtection),
-/* harmony export */   withRequestsMadeViaParent: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.withRequestsMadeViaParent),
-/* harmony export */   withXsrfConfiguration: () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.withXsrfConfiguration),
-/* harmony export */   "ɵHTTP_ROOT_INTERCEPTOR_FNS": () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HTTP_ROOT_INTERCEPTOR_FNS),
-/* harmony export */   "ɵHttpInterceptingHandler": () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpInterceptorHandler),
-/* harmony export */   "ɵHttpInterceptorHandler": () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpInterceptorHandler),
-/* harmony export */   "ɵREQUESTS_CONTRIBUTE_TO_STABILITY": () => (/* reexport safe */ _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.REQUESTS_CONTRIBUTE_TO_STABILITY),
+/* harmony export */   provideHttpClient: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.provideHttpClient),
+/* harmony export */   withFetch: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withFetch),
+/* harmony export */   withInterceptors: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withInterceptors),
+/* harmony export */   withInterceptorsFromDi: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withInterceptorsFromDi),
+/* harmony export */   withJsonpSupport: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withJsonpSupport),
+/* harmony export */   withNoXsrfProtection: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withNoXsrfProtection),
+/* harmony export */   withRequestsMadeViaParent: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withRequestsMadeViaParent),
+/* harmony export */   withXsrfConfiguration: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withXsrfConfiguration),
+/* harmony export */   "ɵHTTP_ROOT_INTERCEPTOR_FNS": () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HTTP_ROOT_INTERCEPTOR_FNS),
+/* harmony export */   "ɵHttpInterceptingHandler": () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpInterceptorHandler),
+/* harmony export */   "ɵREQUESTS_CONTRIBUTE_TO_STABILITY": () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.REQUESTS_CONTRIBUTE_TO_STABILITY),
 /* harmony export */   "ɵwithHttpTransferCache": () => (/* binding */ withHttpTransferCache)
 /* harmony export */ });
-/* harmony import */ var _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./module-CBsxN_3E.mjs */ 47215);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_module-chunk.mjs */ 50698);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 44866);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 32778);
 /**
- * @license Angular v20.0.4
- * (c) 2010-2025 Google LLC. https://angular.io/
+ * @license Angular v21.1.0
+ * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
 
@@ -105,15 +200,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-/**
- * `httpResource` makes a reactive HTTP request and exposes the request status and response value as
- * a `WritableResource`. By default, it assumes that the backend will return JSON data. To make a
- * request that expects a different kind of data, you can use a sub-constructor of `httpResource`,
- * such as `httpResource.text`.
- *
- * @experimental 19.2
- * @initializerApiFunction
- */
 const httpResource = /*#__PURE__*/(() => {
   const jsonFn = makeHttpResourceFn('json');
   jsonFn.arrayBuffer = makeHttpResourceFn('arraybuffer');
@@ -127,7 +213,7 @@ function makeHttpResourceFn(responseType) {
       (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.assertInInjectionContext)(httpResource);
     }
     const injector = options?.injector ?? (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injector);
-    return new HttpResourceImpl(injector, () => normalizeRequest(request, responseType), options?.defaultValue, options?.parse, options?.equal);
+    return new HttpResourceImpl(injector, () => normalizeRequest(request, responseType), options?.defaultValue, options?.debugName, options?.parse, options?.equal);
   };
 }
 function normalizeRequest(request, responseType) {
@@ -139,51 +225,71 @@ function normalizeRequest(request, responseType) {
       url: unwrappedRequest
     };
   }
-  const headers = unwrappedRequest.headers instanceof _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders ? unwrappedRequest.headers : new _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders(unwrappedRequest.headers);
-  const params = unwrappedRequest.params instanceof _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpParams ? unwrappedRequest.params : new _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpParams({
+  const headers = unwrappedRequest.headers instanceof _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders ? unwrappedRequest.headers : new _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders(unwrappedRequest.headers);
+  const params = unwrappedRequest.params instanceof _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpParams ? unwrappedRequest.params : new _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpParams({
     fromObject: unwrappedRequest.params
   });
-  return new _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpRequest(unwrappedRequest.method ?? 'GET', unwrappedRequest.url, unwrappedRequest.body ?? null, {
+  return new _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpRequest(unwrappedRequest.method ?? 'GET', unwrappedRequest.url, unwrappedRequest.body ?? null, {
     headers,
     params,
     reportProgress: unwrappedRequest.reportProgress,
     withCredentials: unwrappedRequest.withCredentials,
+    keepalive: unwrappedRequest.keepalive,
+    cache: unwrappedRequest.cache,
+    priority: unwrappedRequest.priority,
+    mode: unwrappedRequest.mode,
+    redirect: unwrappedRequest.redirect,
     responseType,
     context: unwrappedRequest.context,
-    transferCache: unwrappedRequest.transferCache
+    transferCache: unwrappedRequest.transferCache,
+    credentials: unwrappedRequest.credentials,
+    referrer: unwrappedRequest.referrer,
+    referrerPolicy: unwrappedRequest.referrerPolicy,
+    integrity: unwrappedRequest.integrity,
+    timeout: unwrappedRequest.timeout
   });
 }
 class HttpResourceImpl extends _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵResourceImpl"] {
   client;
   _headers = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.linkedSignal)({
+    ...(ngDevMode ? {
+      debugName: "_headers"
+    } : {}),
     source: this.extRequest,
     computation: () => undefined
   });
   _progress = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.linkedSignal)({
+    ...(ngDevMode ? {
+      debugName: "_progress"
+    } : {}),
     source: this.extRequest,
     computation: () => undefined
   });
   _statusCode = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.linkedSignal)({
+    ...(ngDevMode ? {
+      debugName: "_statusCode"
+    } : {}),
     source: this.extRequest,
     computation: () => undefined
   });
-  headers = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.computed)(() => this.status() === 'resolved' || this.status() === 'error' ? this._headers() : undefined);
+  headers = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.computed)(() => this.status() === 'resolved' || this.status() === 'error' ? this._headers() : undefined, ...(ngDevMode ? [{
+    debugName: "headers"
+  }] : []));
   progress = /*#__PURE__*/this._progress.asReadonly();
   statusCode = /*#__PURE__*/this._statusCode.asReadonly();
-  constructor(injector, request, defaultValue, parse, equal) {
+  constructor(injector, request, defaultValue, debugName, parse, equal) {
     super(request, ({
       params: request,
       abortSignal
     }) => {
       let sub;
-      // Track the abort listener so it can be removed if the Observable completes (as a memory
-      // optimization).
       const onAbort = () => sub.unsubscribe();
       abortSignal.addEventListener('abort', onAbort);
-      // Start off stream as undefined.
       const stream = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.signal)({
         value: undefined
-      });
+      }, ...(ngDevMode ? [{
+        debugName: "stream"
+      }] : []));
       let resolve;
       const promise = new Promise(r => resolve = r);
       const send = value => {
@@ -194,7 +300,7 @@ class HttpResourceImpl extends _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRes
       sub = this.client.request(request).subscribe({
         next: event => {
           switch (event.type) {
-            case _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpEventType.Response:
+            case _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpEventType.Response:
               this._headers.set(event.headers);
               this._statusCode.set(event.status);
               try {
@@ -207,13 +313,13 @@ class HttpResourceImpl extends _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRes
                 });
               }
               break;
-            case _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpEventType.DownloadProgress:
+            case _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpEventType.DownloadProgress:
               this._progress.set(event);
               break;
           }
         },
         error: error => {
-          if (error instanceof _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpErrorResponse) {
+          if (error instanceof _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpErrorResponse) {
             this._headers.set(error.headers);
             this._statusCode.set(error.status);
           }
@@ -225,58 +331,31 @@ class HttpResourceImpl extends _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRes
         complete: () => {
           if (resolve) {
             send({
-              error: new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](991 /* ɵRuntimeErrorCode.RESOURCE_COMPLETED_BEFORE_PRODUCING_VALUE */, ngDevMode && 'Resource completed before producing a value')
+              error: new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](991, ngDevMode && 'Resource completed before producing a value')
             });
           }
           abortSignal.removeEventListener('abort', onAbort);
         }
       });
       return promise;
-    }, defaultValue, equal, injector);
-    this.client = injector.get(_module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClient);
+    }, defaultValue, equal, debugName, injector);
+    this.client = injector.get(_module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClient);
+  }
+  set(value) {
+    super.set(value);
+    this._headers.set(undefined);
+    this._progress.set(undefined);
+    this._statusCode.set(undefined);
   }
 }
-
-/**
- * If your application uses different HTTP origins to make API calls (via `HttpClient`) on the server and
- * on the client, the `HTTP_TRANSFER_CACHE_ORIGIN_MAP` token allows you to establish a mapping
- * between those origins, so that `HttpTransferCache` feature can recognize those requests as the same
- * ones and reuse the data cached on the server during hydration on the client.
- *
- * **Important note**: the `HTTP_TRANSFER_CACHE_ORIGIN_MAP` token should *only* be provided in
- * the *server* code of your application (typically in the `app.server.config.ts` script). Angular throws an
- * error if it detects that the token is defined while running on the client.
- *
- * @usageNotes
- *
- * When the same API endpoint is accessed via `http://internal-domain.com:8080` on the server and
- * via `https://external-domain.com` on the client, you can use the following configuration:
- * ```ts
- * // in app.server.config.ts
- * {
- *     provide: HTTP_TRANSFER_CACHE_ORIGIN_MAP,
- *     useValue: {
- *         'http://internal-domain.com:8080': 'https://external-domain.com'
- *     }
- * }
- * ```
- *
- * @publicApi
- */
-const HTTP_TRANSFER_CACHE_ORIGIN_MAP = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(ngDevMode ? 'HTTP_TRANSFER_CACHE_ORIGIN_MAP' : '');
-/**
- * Keys within cached response data structure.
- */
+const HTTP_TRANSFER_CACHE_ORIGIN_MAP = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(typeof ngDevMode !== 'undefined' && ngDevMode ? 'HTTP_TRANSFER_CACHE_ORIGIN_MAP' : '');
 const BODY = 'b';
 const HEADERS = 'h';
 const STATUS = 's';
 const STATUS_TEXT = 'st';
 const REQ_URL = 'u';
 const RESPONSE_TYPE = 'rt';
-const CACHE_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(ngDevMode ? 'HTTP_TRANSFER_STATE_CACHE_OPTIONS' : '');
-/**
- * A list of allowed HTTP methods to cache.
- */
+const CACHE_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(typeof ngDevMode !== 'undefined' && ngDevMode ? 'HTTP_TRANSFER_STATE_CACHE_OPTIONS' : '');
 const ALLOWED_METHODS = ['GET', 'HEAD'];
 function transferCacheInterceptorFn(req, next) {
   const {
@@ -287,12 +366,7 @@ function transferCacheInterceptorFn(req, next) {
     transferCache: requestOptions,
     method: requestMethod
   } = req;
-  // In the following situations we do not want to cache the request
-  if (!isCacheActive || requestOptions === false ||
-  // POST requests are allowed either globally or at request level
-  requestMethod === 'POST' && !globalOptions.includePostRequests && !requestOptions || requestMethod !== 'POST' && !ALLOWED_METHODS.includes(requestMethod) ||
-  // Do not cache request that require authorization when includeRequestsWithAuthHeaders is falsey
-  !globalOptions.includeRequestsWithAuthHeaders && hasAuthHeaders(req) || globalOptions.filter?.(req) === false) {
+  if (!isCacheActive || requestOptions === false || requestMethod === 'POST' && !globalOptions.includePostRequests && !requestOptions || requestMethod !== 'POST' && !ALLOWED_METHODS.includes(requestMethod) || !globalOptions.includeRequestsWithAuthHeaders && hasAuthHeaders(req) || globalOptions.filter?.(req) === false) {
     return next(req);
   }
   const transferState = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.TransferState);
@@ -300,14 +374,13 @@ function transferCacheInterceptorFn(req, next) {
     optional: true
   });
   if (typeof ngServerMode !== 'undefined' && !ngServerMode && originMap) {
-    throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2803 /* RuntimeErrorCode.HTTP_ORIGIN_MAP_USED_IN_CLIENT */, ngDevMode && 'Angular detected that the `HTTP_TRANSFER_CACHE_ORIGIN_MAP` token is configured and ' + 'present in the client side code. Please ensure that this token is only provided in the ' + 'server code of the application.');
+    throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2803, ngDevMode && 'Angular detected that the `HTTP_TRANSFER_CACHE_ORIGIN_MAP` token is configured and ' + 'present in the client side code. Please ensure that this token is only provided in the ' + 'server code of the application.');
   }
   const requestUrl = typeof ngServerMode !== 'undefined' && ngServerMode && originMap ? mapRequestOriginUrl(req.url, originMap) : req.url;
   const storeKey = makeCacheKey(req, requestUrl);
   const response = transferState.get(storeKey, null);
   let headersToInclude = globalOptions.includeHeaders;
   if (typeof requestOptions === 'object' && requestOptions.includeHeaders) {
-    // Request-specific config takes precedence over the global config.
     headersToInclude = requestOptions.includeHeaders;
   }
   if (response) {
@@ -319,7 +392,6 @@ function transferCacheInterceptorFn(req, next) {
       [STATUS_TEXT]: statusText,
       [REQ_URL]: url
     } = response;
-    // Request found in cache. Respond using it.
     let body = undecodedBody;
     switch (responseType) {
       case 'arraybuffer':
@@ -329,17 +401,11 @@ function transferCacheInterceptorFn(req, next) {
         body = new Blob([undecodedBody]);
         break;
     }
-    // We want to warn users accessing a header provided from the cache
-    // That HttpTransferCache alters the headers
-    // The warning will be logged a single time by HttpHeaders instance
-    let headers = new _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders(httpHeaders);
+    let headers = new _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders(httpHeaders);
     if (typeof ngDevMode === 'undefined' || ngDevMode) {
-      // Append extra logic in dev mode to produce a warning when a header
-      // that was not transferred to the client is accessed in the code via `get`
-      // and `has` calls.
       headers = appendMissingHeadersDetection(req.url, headers, headersToInclude ?? []);
     }
-    return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(new _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponse({
+    return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(new _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponse({
       body,
       headers,
       status,
@@ -347,21 +413,23 @@ function transferCacheInterceptorFn(req, next) {
       url
     }));
   }
-  // Request not found in cache. Make the request and cache it if on the server.
-  return next(req).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.tap)(event => {
-    if (event instanceof _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponse && typeof ngServerMode !== 'undefined' && ngServerMode) {
-      transferState.set(storeKey, {
-        [BODY]: event.body,
-        [HEADERS]: getFilteredHeaders(event.headers, headersToInclude),
-        [STATUS]: event.status,
-        [STATUS_TEXT]: event.statusText,
-        [REQ_URL]: requestUrl,
-        [RESPONSE_TYPE]: req.responseType
-      });
-    }
-  }));
+  const event$ = next(req);
+  if (typeof ngServerMode !== 'undefined' && ngServerMode) {
+    return event$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.tap)(event => {
+      if (event instanceof _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponse) {
+        transferState.set(storeKey, {
+          [BODY]: event.body,
+          [HEADERS]: getFilteredHeaders(event.headers, headersToInclude),
+          [STATUS]: event.status,
+          [STATUS_TEXT]: event.statusText,
+          [REQ_URL]: requestUrl,
+          [RESPONSE_TYPE]: req.responseType
+        });
+      }
+    }));
+  }
+  return event$;
 }
-/** @returns true when the requests contains autorization related headers. */
 function hasAuthHeaders(req) {
   return req.headers.has('authorization') || req.headers.has('proxy-authorization');
 }
@@ -382,7 +450,6 @@ function sortAndConcatParams(params) {
   return [...params.keys()].sort().map(k => `${k}=${params.getAll(k)}`).join('&');
 }
 function makeCacheKey(request, mappedRequestUrl) {
-  // make the params encoded same as a url so it's easy to identify
   const {
     params,
     method,
@@ -399,33 +466,14 @@ function makeCacheKey(request, mappedRequestUrl) {
   const hash = generateHash(key);
   return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.makeStateKey)(hash);
 }
-/**
- * A method that returns a hash representation of a string using a variant of DJB2 hash
- * algorithm.
- *
- * This is the same hashing logic that is used to generate component ids.
- */
 function generateHash(value) {
   let hash = 0;
   for (const char of value) {
     hash = Math.imul(31, hash) + char.charCodeAt(0) << 0;
   }
-  // Force positive number hash.
-  // 2147483647 = equivalent of Integer.MAX_VALUE.
   hash += 2147483647 + 1;
   return hash.toString();
 }
-/**
- * Returns the DI providers needed to enable HTTP transfer cache.
- *
- * By default, when using server rendering, requests are performed twice: once on the server and
- * other one on the browser.
- *
- * When these providers are added, requests performed on the server are cached and reused during the
- * bootstrapping of the application in the browser thus avoiding duplicate requests and reducing
- * load time.
- *
- */
 function withHttpTransferCache(cacheOptions) {
   return [{
     provide: CACHE_OPTIONS,
@@ -437,7 +485,7 @@ function withHttpTransferCache(cacheOptions) {
       };
     }
   }, {
-    provide: _module_CBsxN_3E_mjs__WEBPACK_IMPORTED_MODULE_0__.HTTP_ROOT_INTERCEPTOR_FNS,
+    provide: _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HTTP_ROOT_INTERCEPTOR_FNS,
     useValue: transferCacheInterceptorFn,
     multi: true
   }, {
@@ -454,10 +502,6 @@ function withHttpTransferCache(cacheOptions) {
     }
   }];
 }
-/**
- * This function will add a proxy to an HttpHeader to intercept calls to get/has
- * and log a warning if the header entry requested has been removed
- */
 function appendMissingHeadersDetection(url, headers, headersToInclude) {
   const warningProduced = new Set();
   return new Proxy(headers, {
@@ -468,15 +512,12 @@ function appendMissingHeadersDetection(url, headers, headersToInclude) {
         return value;
       }
       return headerName => {
-        // We log when the key has been removed and a warning hasn't been produced for the header
-        const key = (prop + ':' + headerName).toLowerCase(); // e.g. `get:cache-control`
+        const key = (prop + ':' + headerName).toLowerCase();
         if (!headersToInclude.includes(headerName) && !warningProduced.has(key)) {
           warningProduced.add(key);
           const truncatedUrl = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵtruncateMiddle"])(url);
-          // TODO: create Error guide for this warning
-          console.warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵformatRuntimeError"])(2802 /* RuntimeErrorCode.HEADERS_ALTERED_BY_TRANSFER_CACHE */, `Angular detected that the \`${headerName}\` header is accessed, but the value of the header ` + `was not transferred from the server to the client by the HttpTransferCache. ` + `To include the value of the \`${headerName}\` header for the \`${truncatedUrl}\` request, ` + `use the \`includeHeaders\` list. The \`includeHeaders\` can be defined either ` + `on a request level by adding the \`transferCache\` parameter, or on an application ` + `level by adding the \`httpCacheTransfer.includeHeaders\` argument to the ` + `\`provideClientHydration()\` call. `));
+          console.warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵformatRuntimeError"])(-2802, `Angular detected that the \`${headerName}\` header is accessed, but the value of the header ` + `was not transferred from the server to the client by the HttpTransferCache. ` + `To include the value of the \`${headerName}\` header for the \`${truncatedUrl}\` request, ` + `use the \`includeHeaders\` list. The \`includeHeaders\` can be defined either ` + `on a request level by adding the \`transferCache\` parameter, or on an application ` + `level by adding the \`httpCacheTransfer.includeHeaders\` argument to the ` + `\`provideClientHydration()\` call. `));
         }
-        // invoking the original method
         return value.apply(target, [headerName]);
       };
     }
@@ -495,18 +536,18 @@ function mapRequestOriginUrl(url, originMap) {
 }
 function verifyMappedOrigin(url) {
   if (new URL(url, 'resolve://').pathname !== '/') {
-    throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2804 /* RuntimeErrorCode.HTTP_ORIGIN_MAP_CONTAINS_PATH */, 'Angular detected a URL with a path segment in the value provided for the ' + `\`HTTP_TRANSFER_CACHE_ORIGIN_MAP\` token: ${url}. The map should only contain origins ` + 'without any other segments.');
+    throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2804, 'Angular detected a URL with a path segment in the value provided for the ' + `\`HTTP_TRANSFER_CACHE_ORIGIN_MAP\` token: ${url}. The map should only contain origins ` + 'without any other segments.');
   }
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ 47215:
-/*!*******************************************************************!*\
-  !*** ./node_modules/@angular/common/fesm2022/module-CBsxN_3E.mjs ***!
-  \*******************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+/***/ 50698
+/*!*****************************************************************!*\
+  !*** ./node_modules/@angular/common/fesm2022/_module-chunk.mjs ***!
+  \*****************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -548,14 +589,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   withXsrfConfiguration: () => (/* binding */ withXsrfConfiguration)
 /* harmony export */ });
 /* harmony import */ var _Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 32778);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 44866);
-/* harmony import */ var _xhr_CEmSPUGj_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./xhr-CEmSPUGj.mjs */ 30834);
+/* harmony import */ var _xhr_chunk_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_xhr-chunk.mjs */ 97516);
+/* harmony import */ var _platform_location_chunk_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./_platform_location-chunk.mjs */ 8963);
 
 /**
- * @license Angular v20.0.4
- * (c) 2010-2025 Google LLC. https://angular.io/
+ * @license Angular v21.1.0
+ * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
 
@@ -565,57 +607,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-/**
- * Transforms an `HttpRequest` into a stream of `HttpEvent`s, one of which will likely be a
- * `HttpResponse`.
- *
- * `HttpHandler` is injectable. When injected, the handler instance dispatches requests to the
- * first interceptor in the chain, which dispatches to the second, etc, eventually reaching the
- * `HttpBackend`.
- *
- * In an `HttpInterceptor`, the `HttpHandler` parameter is the next interceptor in the chain.
- *
- * @publicApi
- */
-class HttpHandler {}
-/**
- * A final `HttpHandler` which will dispatch the request via browser HTTP APIs to a backend.
- *
- * Interceptors sit between the `HttpClient` interface and the `HttpBackend`.
- *
- * When injected, `HttpBackend` dispatches requests directly to the backend, without going
- * through the interceptor chain.
- *
- * @publicApi
- */
-class HttpBackend {}
-
-/**
- * Represents the header configuration options for an HTTP request.
- * Instances are immutable. Modifying methods return a cloned
- * instance with the change. The original object is never changed.
- *
- * @publicApi
- */
 class HttpHeaders {
-  /**
-   * Internal map of lowercase header names to values.
-   */
   headers;
-  /**
-   * Internal map of lowercased header names to the normalized
-   * form of the name (the form seen first).
-   */
   normalizedNames = /*#__PURE__*/new Map();
-  /**
-   * Complete the lazy initialization of this object (needed before reading).
-   */
   lazyInit;
-  /**
-   * Queued updates to be materialized the next initialization.
-   */
   lazyUpdate = null;
-  /**  Constructs a new HTTP header object with the given values.*/
   constructor(headers) {
     if (!headers) {
       this.headers = new Map();
@@ -648,58 +644,23 @@ class HttpHeaders {
       };
     }
   }
-  /**
-   * Checks for existence of a given header.
-   *
-   * @param name The header name to check for existence.
-   *
-   * @returns True if the header exists, false otherwise.
-   */
   has(name) {
     this.init();
     return this.headers.has(name.toLowerCase());
   }
-  /**
-   * Retrieves the first value of a given header.
-   *
-   * @param name The header name.
-   *
-   * @returns The value string if the header exists, null otherwise
-   */
   get(name) {
     this.init();
     const values = this.headers.get(name.toLowerCase());
     return values && values.length > 0 ? values[0] : null;
   }
-  /**
-   * Retrieves the names of the headers.
-   *
-   * @returns A list of header names.
-   */
   keys() {
     this.init();
     return Array.from(this.normalizedNames.values());
   }
-  /**
-   * Retrieves a list of values for a given header.
-   *
-   * @param name The header name from which to retrieve values.
-   *
-   * @returns A string of values if the header exists, null otherwise.
-   */
   getAll(name) {
     this.init();
     return this.headers.get(name.toLowerCase()) || null;
   }
-  /**
-   * Appends a new value to the existing set of values for a header
-   * and returns them in a clone of the original instance.
-   *
-   * @param name The header name for which to append the values.
-   * @param value The value to append.
-   *
-   * @returns A clone of the HTTP headers object with the value appended to the given header.
-   */
   append(name, value) {
     return this.clone({
       name,
@@ -707,16 +668,6 @@ class HttpHeaders {
       op: 'a'
     });
   }
-  /**
-   * Sets or modifies a value for a given header in a clone of the original instance.
-   * If the header already exists, its value is replaced with the given value
-   * in the returned object.
-   *
-   * @param name The header name.
-   * @param value The value or values to set or override for the given header.
-   *
-   * @returns A clone of the HTTP headers object with the newly set header value.
-   */
   set(name, value) {
     return this.clone({
       name,
@@ -724,14 +675,6 @@ class HttpHeaders {
       op: 's'
     });
   }
-  /**
-   * Deletes values for a given header in a clone of the original instance.
-   *
-   * @param name The header name.
-   * @param value The value or values to delete for the given header.
-   *
-   * @returns A clone of the HTTP headers object with the given value deleted.
-   */
   delete(name, value) {
     return this.clone({
       name,
@@ -824,19 +767,11 @@ class HttpHeaders {
     this.headers.set(key, headerValues);
     this.maybeSetNormalizedName(name, key);
   }
-  /**
-   * @internal
-   */
   forEach(fn) {
     this.init();
     Array.from(this.normalizedNames.keys()).forEach(key => fn(this.normalizedNames.get(key), this.headers.get(key)));
   }
 }
-/**
- * Verifies that the headers object has the right shape: the values
- * must be either strings, numbers or arrays. Throws an error if an invalid
- * header value is present.
- */
 function assertValidHeaders(headers) {
   for (const [key, value] of Object.entries(headers)) {
     if (!(typeof value === 'string' || typeof value === 'number') && !Array.isArray(value)) {
@@ -844,47 +779,45 @@ function assertValidHeaders(headers) {
     }
   }
 }
-
-/**
- * Provides encoding and decoding of URL parameter and query-string values.
- *
- * Serializes and parses URL parameter keys and values to encode and decode them.
- * If you pass URL query parameters without encoding,
- * the query parameters can be misinterpreted at the receiving end.
- *
- *
- * @publicApi
- */
+class HttpContextToken {
+  defaultValue;
+  constructor(defaultValue) {
+    this.defaultValue = defaultValue;
+  }
+}
+class HttpContext {
+  map = /*#__PURE__*/new Map();
+  set(token, value) {
+    this.map.set(token, value);
+    return this;
+  }
+  get(token) {
+    if (!this.map.has(token)) {
+      this.map.set(token, token.defaultValue());
+    }
+    return this.map.get(token);
+  }
+  delete(token) {
+    this.map.delete(token);
+    return this;
+  }
+  has(token) {
+    return this.map.has(token);
+  }
+  keys() {
+    return this.map.keys();
+  }
+}
 class HttpUrlEncodingCodec {
-  /**
-   * Encodes a key name for a URL parameter or query-string.
-   * @param key The key name.
-   * @returns The encoded key name.
-   */
   encodeKey(key) {
     return standardEncoding(key);
   }
-  /**
-   * Encodes the value of a URL parameter or query-string.
-   * @param value The value.
-   * @returns The encoded value.
-   */
   encodeValue(value) {
     return standardEncoding(value);
   }
-  /**
-   * Decodes an encoded URL parameter or query-string key.
-   * @param key The encoded key name.
-   * @returns The decoded key name.
-   */
   decodeKey(key) {
     return decodeURIComponent(key);
   }
-  /**
-   * Decodes an encoded URL parameter or query-string value.
-   * @param value The encoded value.
-   * @returns The decoded value.
-   */
   decodeValue(value) {
     return decodeURIComponent(value);
   }
@@ -892,9 +825,6 @@ class HttpUrlEncodingCodec {
 function paramParser(rawParams, codec) {
   const map = new Map();
   if (rawParams.length > 0) {
-    // The `window.location.search` can be used while creating an instance of the `HttpParams` class
-    // (e.g. `new HttpParams({ fromString: window.location.search })`). The `window.location.search`
-    // may start with the `?` char, so we strip it if it's present.
     const params = rawParams.replace(/^\?/, '').split('&');
     params.forEach(param => {
       const eqIdx = param.indexOf('=');
@@ -906,9 +836,6 @@ function paramParser(rawParams, codec) {
   }
   return map;
 }
-/**
- * Encode input string with standard encodeURIComponent and then un-encode specific characters.
- */
 const STANDARD_ENCODING_REGEX = /%(\d[a-f0-9])/gi;
 const STANDARD_ENCODING_REPLACEMENTS = {
   '40': '@',
@@ -926,14 +853,6 @@ function standardEncoding(v) {
 function valueToString(value) {
   return `${value}`;
 }
-/**
- * An HTTP request/response body that represents serialized parameters,
- * per the MIME type `application/x-www-form-urlencoded`.
- *
- * This class is immutable; all mutation operations return a new instance.
- *
- * @publicApi
- */
 class HttpParams {
   map;
   encoder;
@@ -943,14 +862,13 @@ class HttpParams {
     this.encoder = options.encoder || new HttpUrlEncodingCodec();
     if (options.fromString) {
       if (options.fromObject) {
-        throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2805 /* RuntimeErrorCode.CANNOT_SPECIFY_BOTH_FROM_STRING_AND_FROM_OBJECT */, ngDevMode && 'Cannot specify both fromString and fromObject.');
+        throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2805, ngDevMode && 'Cannot specify both fromString and fromObject.');
       }
       this.map = paramParser(options.fromString, this.encoder);
     } else if (!!options.fromObject) {
       this.map = new Map();
       Object.keys(options.fromObject).forEach(key => {
         const value = options.fromObject[key];
-        // convert the values to strings
         const values = Array.isArray(value) ? value.map(valueToString) : [valueToString(value)];
         this.map.set(key, values);
       });
@@ -958,51 +876,23 @@ class HttpParams {
       this.map = null;
     }
   }
-  /**
-   * Reports whether the body includes one or more values for a given parameter.
-   * @param param The parameter name.
-   * @returns True if the parameter has one or more values,
-   * false if it has no value or is not present.
-   */
   has(param) {
     this.init();
     return this.map.has(param);
   }
-  /**
-   * Retrieves the first value for a parameter.
-   * @param param The parameter name.
-   * @returns The first value of the given parameter,
-   * or `null` if the parameter is not present.
-   */
   get(param) {
     this.init();
     const res = this.map.get(param);
     return !!res ? res[0] : null;
   }
-  /**
-   * Retrieves all values for a  parameter.
-   * @param param The parameter name.
-   * @returns All values in a string array,
-   * or `null` if the parameter not present.
-   */
   getAll(param) {
     this.init();
     return this.map.get(param) || null;
   }
-  /**
-   * Retrieves all the parameters for this body.
-   * @returns The parameter names in a string array.
-   */
   keys() {
     this.init();
     return Array.from(this.map.keys());
   }
-  /**
-   * Appends a new value to existing values for a parameter.
-   * @param param The parameter name.
-   * @param value The new value to add.
-   * @return A new body with the appended value.
-   */
   append(param, value) {
     return this.clone({
       param,
@@ -1010,11 +900,6 @@ class HttpParams {
       op: 'a'
     });
   }
-  /**
-   * Constructs a new body with appended values for the given parameter name.
-   * @param params parameters and values
-   * @return A new body with the new value.
-   */
   appendAll(params) {
     const updates = [];
     Object.keys(params).forEach(param => {
@@ -1037,12 +922,6 @@ class HttpParams {
     });
     return this.clone(updates);
   }
-  /**
-   * Replaces the value for a parameter.
-   * @param param The parameter name.
-   * @param value The new value.
-   * @return A new body with the new value.
-   */
   set(param, value) {
     return this.clone({
       param,
@@ -1050,13 +929,6 @@ class HttpParams {
       op: 's'
     });
   }
-  /**
-   * Removes a given value or all values from a parameter.
-   * @param param The parameter name.
-   * @param value The value to remove, if provided.
-   * @return A new body with the given value removed, or with all values
-   * removed if no value is specified.
-   */
   delete(param, value) {
     return this.clone({
       param,
@@ -1064,22 +936,12 @@ class HttpParams {
       op: 'd'
     });
   }
-  /**
-   * Serializes the body to an encoded string, where key-value pairs (separated by `=`) are
-   * separated by `&`s.
-   */
   toString() {
     this.init();
     return this.keys().map(key => {
       const eKey = this.encoder.encodeKey(key);
-      // `a: ['1']` produces `'a=1'`
-      // `b: []` produces `''`
-      // `c: ['1', '2']` produces `'c=1&c=2'`
       return this.map.get(key).map(value => eKey + '=' + this.encoder.encodeValue(value)).join('&');
-    })
-    // filter out empty values because `b: []` produces `''`
-    // which results in `a=1&&c=1&c=2` instead of `a=1&c=1&c=2` if we don't
-    .filter(param => param !== '').join('&');
+    }).filter(param => param !== '').join('&');
   }
   clone(update) {
     const clone = new HttpParams({
@@ -1126,110 +988,6 @@ class HttpParams {
     }
   }
 }
-
-/**
- * A token used to manipulate and access values stored in `HttpContext`.
- *
- * @publicApi
- */
-class HttpContextToken {
-  defaultValue;
-  constructor(defaultValue) {
-    this.defaultValue = defaultValue;
-  }
-}
-/**
- * Http context stores arbitrary user defined values and ensures type safety without
- * actually knowing the types. It is backed by a `Map` and guarantees that keys do not clash.
- *
- * This context is mutable and is shared between cloned requests unless explicitly specified.
- *
- * @usageNotes
- *
- * ### Usage Example
- *
- * ```ts
- * // inside cache.interceptors.ts
- * export const IS_CACHE_ENABLED = new HttpContextToken<boolean>(() => false);
- *
- * export class CacheInterceptor implements HttpInterceptor {
- *
- *   intercept(req: HttpRequest<any>, delegate: HttpHandler): Observable<HttpEvent<any>> {
- *     if (req.context.get(IS_CACHE_ENABLED) === true) {
- *       return ...;
- *     }
- *     return delegate.handle(req);
- *   }
- * }
- *
- * // inside a service
- *
- * this.httpClient.get('/api/weather', {
- *   context: new HttpContext().set(IS_CACHE_ENABLED, true)
- * }).subscribe(...);
- * ```
- *
- * @publicApi
- */
-class HttpContext {
-  map = /*#__PURE__*/new Map();
-  /**
-   * Store a value in the context. If a value is already present it will be overwritten.
-   *
-   * @param token The reference to an instance of `HttpContextToken`.
-   * @param value The value to store.
-   *
-   * @returns A reference to itself for easy chaining.
-   */
-  set(token, value) {
-    this.map.set(token, value);
-    return this;
-  }
-  /**
-   * Retrieve the value associated with the given token.
-   *
-   * @param token The reference to an instance of `HttpContextToken`.
-   *
-   * @returns The stored value or default if one is defined.
-   */
-  get(token) {
-    if (!this.map.has(token)) {
-      this.map.set(token, token.defaultValue());
-    }
-    return this.map.get(token);
-  }
-  /**
-   * Delete the value associated with the given token.
-   *
-   * @param token The reference to an instance of `HttpContextToken`.
-   *
-   * @returns A reference to itself for easy chaining.
-   */
-  delete(token) {
-    this.map.delete(token);
-    return this;
-  }
-  /**
-   * Checks for existence of a given token.
-   *
-   * @param token The reference to an instance of `HttpContextToken`.
-   *
-   * @returns True if the token exists, false otherwise.
-   */
-  has(token) {
-    return this.map.has(token);
-  }
-  /**
-   * @returns a list of tokens currently stored in the context.
-   */
-  keys() {
-    return this.map.keys();
-  }
-}
-
-/**
- * Determine whether the given HTTP method may include a body.
- */
 function mightHaveBody(method) {
   switch (method) {
     case 'DELETE':
@@ -1242,317 +1000,185 @@ function mightHaveBody(method) {
       return true;
   }
 }
-/**
- * Safely assert whether the given value is an ArrayBuffer.
- *
- * In some execution environments ArrayBuffer is not defined.
- */
 function isArrayBuffer(value) {
   return typeof ArrayBuffer !== 'undefined' && value instanceof ArrayBuffer;
 }
-/**
- * Safely assert whether the given value is a Blob.
- *
- * In some execution environments Blob is not defined.
- */
 function isBlob(value) {
   return typeof Blob !== 'undefined' && value instanceof Blob;
 }
-/**
- * Safely assert whether the given value is a FormData instance.
- *
- * In some execution environments FormData is not defined.
- */
 function isFormData(value) {
   return typeof FormData !== 'undefined' && value instanceof FormData;
 }
-/**
- * Safely assert whether the given value is a URLSearchParams instance.
- *
- * In some execution environments URLSearchParams is not defined.
- */
 function isUrlSearchParams(value) {
   return typeof URLSearchParams !== 'undefined' && value instanceof URLSearchParams;
 }
-/**
- * `Content-Type` is an HTTP header used to indicate the media type
- * (also known as MIME type) of the resource being sent to the client
- * or received from the server.
- */
 const CONTENT_TYPE_HEADER = 'Content-Type';
-/**
- * The `Accept` header is an HTTP request header that indicates the media types
- * (or content types) the client is willing to receive from the server.
- */
 const ACCEPT_HEADER = 'Accept';
-/**
- * `X-Request-URL` is a custom HTTP header used in older browser versions,
- * including Firefox (< 32), Chrome (< 37), Safari (< 8), and Internet Explorer,
- * to include the full URL of the request in cross-origin requests.
- */
-const X_REQUEST_URL_HEADER = 'X-Request-URL';
-/**
- * `text/plain` is a content type used to indicate that the content being
- * sent is plain text with no special formatting or structured data
- * like HTML, XML, or JSON.
- */
 const TEXT_CONTENT_TYPE = 'text/plain';
-/**
- * `application/json` is a content type used to indicate that the content
- * being sent is in the JSON format.
- */
 const JSON_CONTENT_TYPE = 'application/json';
-/**
- * `application/json, text/plain, *\/*` is a content negotiation string often seen in the
- * Accept header of HTTP requests. It indicates the types of content the client is willing
- * to accept from the server, with a preference for `application/json` and `text/plain`,
- * but also accepting any other type (*\/*).
- */
 const ACCEPT_HEADER_VALUE = `${JSON_CONTENT_TYPE}, ${TEXT_CONTENT_TYPE}, */*`;
-/**
- * An outgoing HTTP request with an optional typed body.
- *
- * `HttpRequest` represents an outgoing request, including URL, method,
- * headers, body, and other request configuration options. Instances should be
- * assumed to be immutable. To modify a `HttpRequest`, the `clone`
- * method should be used.
- *
- * @publicApi
- */
 class HttpRequest {
   url;
-  /**
-   * The request body, or `null` if one isn't set.
-   *
-   * Bodies are not enforced to be immutable, as they can include a reference to any
-   * user-defined data type. However, interceptors should take care to preserve
-   * idempotence by treating them as such.
-   */
   body = null;
-  /**
-   * Outgoing headers for this request.
-   */
   headers;
-  /**
-   * Shared and mutable context that can be used by interceptors
-   */
   context;
-  /**
-   * Whether this request should be made in a way that exposes progress events.
-   *
-   * Progress events are expensive (change detection runs on each event) and so
-   * they should only be requested if the consumer intends to monitor them.
-   *
-   * Note: The `FetchBackend` doesn't support progress report on uploads.
-   */
   reportProgress = false;
-  /**
-   * Whether this request should be sent with outgoing credentials (cookies).
-   */
   withCredentials = false;
-  /**
-   * When using the fetch implementation and set to `true`, the browser will not abort the associated request if the page that initiated it is unloaded before the request is complete.
-   */
+  credentials;
   keepalive = false;
-  /**
-   * The expected response type of the server.
-   *
-   * This is used to parse the response appropriately before returning it to
-   * the requestee.
-   */
+  cache;
+  priority;
+  mode;
+  redirect;
+  referrer;
+  integrity;
+  referrerPolicy;
   responseType = 'json';
-  /**
-   * The outgoing HTTP request method.
-   */
   method;
-  /**
-   * Outgoing URL parameters.
-   *
-   * To pass a string representation of HTTP parameters in the URL-query-string format,
-   * the `HttpParamsOptions`' `fromString` may be used. For example:
-   *
-   * ```ts
-   * new HttpParams({fromString: 'angular=awesome'})
-   * ```
-   */
   params;
-  /**
-   * The outgoing URL with all URL parameters set.
-   */
   urlWithParams;
-  /**
-   * The HttpTransferCache option for the request
-   */
   transferCache;
+  timeout;
   constructor(method, url, third, fourth) {
     this.url = url;
     this.method = method.toUpperCase();
-    // Next, need to figure out which argument holds the HttpRequestInit
-    // options, if any.
     let options;
-    // Check whether a body argument is expected. The only valid way to omit
-    // the body argument is to use a known no-body method like GET.
     if (mightHaveBody(this.method) || !!fourth) {
-      // Body is the third argument, options are the fourth.
       this.body = third !== undefined ? third : null;
       options = fourth;
     } else {
-      // No body required, options are the third argument. The body stays null.
       options = third;
     }
-    // If options have been passed, interpret them.
     if (options) {
-      // Normalize reportProgress and withCredentials.
       this.reportProgress = !!options.reportProgress;
       this.withCredentials = !!options.withCredentials;
       this.keepalive = !!options.keepalive;
-      // Override default response type of 'json' if one is provided.
       if (!!options.responseType) {
         this.responseType = options.responseType;
       }
-      // Override headers if they're provided.
-      if (!!options.headers) {
+      if (options.headers) {
         this.headers = options.headers;
       }
-      if (!!options.context) {
+      if (options.context) {
         this.context = options.context;
       }
-      if (!!options.params) {
+      if (options.params) {
         this.params = options.params;
       }
-      // We do want to assign transferCache even if it's falsy (false is valid value)
+      if (options.priority) {
+        this.priority = options.priority;
+      }
+      if (options.cache) {
+        this.cache = options.cache;
+      }
+      if (options.credentials) {
+        this.credentials = options.credentials;
+      }
+      if (typeof options.timeout === 'number') {
+        if (options.timeout < 1 || !Number.isInteger(options.timeout)) {
+          throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2822, ngDevMode ? '`timeout` must be a positive integer value' : '');
+        }
+        this.timeout = options.timeout;
+      }
+      if (options.mode) {
+        this.mode = options.mode;
+      }
+      if (options.redirect) {
+        this.redirect = options.redirect;
+      }
+      if (options.integrity) {
+        this.integrity = options.integrity;
+      }
+      if (options.referrer) {
+        this.referrer = options.referrer;
+      }
+      if (options.referrerPolicy) {
+        this.referrerPolicy = options.referrerPolicy;
+      }
       this.transferCache = options.transferCache;
     }
-    // If no headers have been passed in, construct a new HttpHeaders instance.
     this.headers ??= new HttpHeaders();
-    // If no context have been passed in, construct a new HttpContext instance.
     this.context ??= new HttpContext();
-    // If no parameters have been passed in, construct a new HttpUrlEncodedParams instance.
     if (!this.params) {
       this.params = new HttpParams();
       this.urlWithParams = url;
     } else {
-      // Encode the parameters to a string in preparation for inclusion in the URL.
       const params = this.params.toString();
       if (params.length === 0) {
-        // No parameters, the visible URL is just the URL given at creation time.
         this.urlWithParams = url;
       } else {
-        // Does the URL already have query parameters? Look for '?'.
         const qIdx = url.indexOf('?');
-        // There are 3 cases to handle:
-        // 1) No existing parameters -> append '?' followed by params.
-        // 2) '?' exists and is followed by existing query string ->
-        //    append '&' followed by params.
-        // 3) '?' exists at the end of the url -> append params directly.
-        // This basically amounts to determining the character, if any, with
-        // which to join the URL and parameters.
         const sep = qIdx === -1 ? '?' : qIdx < url.length - 1 ? '&' : '';
         this.urlWithParams = url + sep + params;
       }
     }
   }
-  /**
-   * Transform the free-form body into a serialized format suitable for
-   * transmission to the server.
-   */
   serializeBody() {
-    // If no body is present, no need to serialize it.
     if (this.body === null) {
       return null;
     }
-    // Check whether the body is already in a serialized form. If so,
-    // it can just be returned directly.
     if (typeof this.body === 'string' || isArrayBuffer(this.body) || isBlob(this.body) || isFormData(this.body) || isUrlSearchParams(this.body)) {
       return this.body;
     }
-    // Check whether the body is an instance of HttpUrlEncodedParams.
     if (this.body instanceof HttpParams) {
       return this.body.toString();
     }
-    // Check whether the body is an object or array, and serialize with JSON if so.
     if (typeof this.body === 'object' || typeof this.body === 'boolean' || Array.isArray(this.body)) {
       return JSON.stringify(this.body);
     }
-    // Fall back on toString() for everything else.
     return this.body.toString();
   }
-  /**
-   * Examine the body and attempt to infer an appropriate MIME type
-   * for it.
-   *
-   * If no such type can be inferred, this method will return `null`.
-   */
   detectContentTypeHeader() {
-    // An empty body has no content type.
     if (this.body === null) {
       return null;
     }
-    // FormData bodies rely on the browser's content type assignment.
     if (isFormData(this.body)) {
       return null;
     }
-    // Blobs usually have their own content type. If it doesn't, then
-    // no type can be inferred.
     if (isBlob(this.body)) {
       return this.body.type || null;
     }
-    // Array buffers have unknown contents and thus no type can be inferred.
     if (isArrayBuffer(this.body)) {
       return null;
     }
-    // Technically, strings could be a form of JSON data, but it's safe enough
-    // to assume they're plain strings.
     if (typeof this.body === 'string') {
       return TEXT_CONTENT_TYPE;
     }
-    // `HttpUrlEncodedParams` has its own content-type.
     if (this.body instanceof HttpParams) {
       return 'application/x-www-form-urlencoded;charset=UTF-8';
     }
-    // Arrays, objects, boolean and numbers will be encoded as JSON.
     if (typeof this.body === 'object' || typeof this.body === 'number' || typeof this.body === 'boolean') {
       return JSON_CONTENT_TYPE;
     }
-    // No type could be inferred.
     return null;
   }
   clone(update = {}) {
-    // For method, url, and responseType, take the current value unless
-    // it is overridden in the update hash.
     const method = update.method || this.method;
     const url = update.url || this.url;
     const responseType = update.responseType || this.responseType;
     const keepalive = update.keepalive ?? this.keepalive;
-    // Carefully handle the transferCache to differentiate between
-    // `false` and `undefined` in the update args.
+    const priority = update.priority || this.priority;
+    const cache = update.cache || this.cache;
+    const mode = update.mode || this.mode;
+    const redirect = update.redirect || this.redirect;
+    const credentials = update.credentials || this.credentials;
+    const referrer = update.referrer || this.referrer;
+    const integrity = update.integrity || this.integrity;
+    const referrerPolicy = update.referrerPolicy || this.referrerPolicy;
     const transferCache = update.transferCache ?? this.transferCache;
-    // The body is somewhat special - a `null` value in update.body means
-    // whatever current body is present is being overridden with an empty
-    // body, whereas an `undefined` value in update.body implies no
-    // override.
+    const timeout = update.timeout ?? this.timeout;
     const body = update.body !== undefined ? update.body : this.body;
-    // Carefully handle the boolean options to differentiate between
-    // `false` and `undefined` in the update args.
     const withCredentials = update.withCredentials ?? this.withCredentials;
     const reportProgress = update.reportProgress ?? this.reportProgress;
-    // Headers and params may be appended to if `setHeaders` or
-    // `setParams` are used.
     let headers = update.headers || this.headers;
     let params = update.params || this.params;
-    // Pass on context if needed
     const context = update.context ?? this.context;
-    // Check whether the caller has asked to add headers.
     if (update.setHeaders !== undefined) {
-      // Set every requested header.
       headers = Object.keys(update.setHeaders).reduce((headers, name) => headers.set(name, update.setHeaders[name]), headers);
     }
-    // Check whether the caller has asked to set params.
     if (update.setParams) {
-      // Set every requested param.
       params = Object.keys(update.setParams).reduce((params, param) => params.set(param, update.setParams[param]), params);
     }
-    // Finally, construct the new HttpRequest using the pieces from above.
     return new HttpRequest(method, url, body, {
       params,
       headers,
@@ -1561,118 +1187,53 @@ class HttpRequest {
       responseType,
       withCredentials,
       transferCache,
-      keepalive
+      keepalive,
+      cache,
+      priority,
+      timeout,
+      mode,
+      redirect,
+      credentials,
+      referrer,
+      integrity,
+      referrerPolicy
     });
   }
 }
-
-/**
- * Type enumeration for the different kinds of `HttpEvent`.
- *
- * @publicApi
- */
 var HttpEventType = /*#__PURE__*/function (HttpEventType) {
-  /**
-   * The request was sent out over the wire.
-   */
   HttpEventType[HttpEventType["Sent"] = 0] = "Sent";
-  /**
-   * An upload progress event was received.
-   *
-   * Note: The `FetchBackend` doesn't support progress report on uploads.
-   */
   HttpEventType[HttpEventType["UploadProgress"] = 1] = "UploadProgress";
-  /**
-   * The response status code and headers were received.
-   */
   HttpEventType[HttpEventType["ResponseHeader"] = 2] = "ResponseHeader";
-  /**
-   * A download progress event was received.
-   */
   HttpEventType[HttpEventType["DownloadProgress"] = 3] = "DownloadProgress";
-  /**
-   * The full response including the body was received.
-   */
   HttpEventType[HttpEventType["Response"] = 4] = "Response";
-  /**
-   * A custom event from an interceptor or a backend.
-   */
   HttpEventType[HttpEventType["User"] = 5] = "User";
   return HttpEventType;
 }(HttpEventType || {});
-/**
- * Base class for both `HttpResponse` and `HttpHeaderResponse`.
- *
- * @publicApi
- */
 class HttpResponseBase {
-  /**
-   * All response headers.
-   */
   headers;
-  /**
-   * Response status code.
-   */
   status;
-  /**
-   * Textual description of response status code, defaults to OK.
-   *
-   * Do not depend on this.
-   */
   statusText;
-  /**
-   * URL of the resource retrieved, or null if not available.
-   */
   url;
-  /**
-   * Whether the status code falls in the 2xx range.
-   */
   ok;
-  /**
-   * Type of the response, narrowed to either the full response or the header.
-   */
   type;
-  /**
-   * Super-constructor for all responses.
-   *
-   * The single parameter accepted is an initialization hash. Any properties
-   * of the response passed there will override the default values.
-   */
+  redirected;
+  responseType;
   constructor(init, defaultStatus = 200, defaultStatusText = 'OK') {
-    // If the hash has values passed, use them to initialize the response.
-    // Otherwise use the default values.
     this.headers = init.headers || new HttpHeaders();
     this.status = init.status !== undefined ? init.status : defaultStatus;
     this.statusText = init.statusText || defaultStatusText;
     this.url = init.url || null;
-    // Cache the ok value to avoid defining a getter.
+    this.redirected = init.redirected;
+    this.responseType = init.responseType;
     this.ok = this.status >= 200 && this.status < 300;
   }
 }
-/**
- * A partial HTTP response which only includes the status and header data,
- * but no response body.
- *
- * `HttpHeaderResponse` is a `HttpEvent` available on the response
- * event stream, only when progress events are requested.
- *
- * @publicApi
- */
 class HttpHeaderResponse extends HttpResponseBase {
-  /**
-   * Create a new `HttpHeaderResponse` with the given parameters.
-   */
   constructor(init = {}) {
     super(init);
   }
   type = HttpEventType.ResponseHeader;
-  /**
-   * Copy this `HttpHeaderResponse`, overriding its contents with the
-   * given parameter hash.
-   */
   clone(update = {}) {
-    // Perform a straightforward initialization of the new HttpHeaderResponse,
-    // overriding the current parameters with new ones if given.
     return new HttpHeaderResponse({
       headers: update.headers || this.headers,
       status: update.status !== undefined ? update.status : this.status,
@@ -1681,23 +1242,8 @@ class HttpHeaderResponse extends HttpResponseBase {
     });
   }
 }
-/**
- * A full HTTP response, including a typed response body (which may be `null`
- * if one was not returned).
- *
- * `HttpResponse` is a `HttpEvent` available on the response event
- * stream.
- *
- * @publicApi
- */
 class HttpResponse extends HttpResponseBase {
-  /**
-   * The response body, or `null` if one was not returned.
-   */
   body;
-  /**
-   * Construct a new `HttpResponse`.
-   */
   constructor(init = {}) {
     super(init);
     this.body = init.body !== undefined ? init.body : null;
@@ -1709,37 +1255,19 @@ class HttpResponse extends HttpResponseBase {
       headers: update.headers || this.headers,
       status: update.status !== undefined ? update.status : this.status,
       statusText: update.statusText || this.statusText,
-      url: update.url || this.url || undefined
+      url: update.url || this.url || undefined,
+      redirected: update.redirected ?? this.redirected,
+      responseType: update.responseType ?? this.responseType
     });
   }
 }
-/**
- * A response that represents an error or failure, either from a
- * non-successful HTTP status, an error while executing the request,
- * or some other failure which occurred during the parsing of the response.
- *
- * Any error returned on the `Observable` response stream will be
- * wrapped in an `HttpErrorResponse` to provide additional context about
- * the state of the HTTP layer when the error occurred. The error property
- * will contain either a wrapped Error object or the error response returned
- * from the server.
- *
- * @publicApi
- */
 class HttpErrorResponse extends HttpResponseBase {
   name = 'HttpErrorResponse';
   message;
   error;
-  /**
-   * Errors are never okay, even when the status code is in the 2xx success range.
-   */
   ok = false;
   constructor(init) {
-    // Initialize with a default status of 0 / Unknown Error.
     super(init, 0, 'Unknown Error');
-    // If the response was successful, then this was a parse error. Otherwise, it was
-    // a protocol-level failure of some sort. Either the request failed in transit
-    // or the server returned an unsuccessful status code.
     if (this.status >= 200 && this.status < 300) {
       this.message = `Http failure during parsing for ${init.url || '(unknown url)'}`;
     } else {
@@ -1748,17 +1276,8 @@ class HttpErrorResponse extends HttpResponseBase {
     this.error = init.error || null;
   }
 }
-/**
- * We use these constant to prevent pulling the whole HttpStatusCode enum
- * Those are the only ones referenced directly by the framework
- */
 const HTTP_STATUS_CODE_OK = 200;
 const HTTP_STATUS_CODE_NO_CONTENT = 204;
-/**
- * Http status codes.
- * As per https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
- * @publicApi
- */
 var HttpStatusCode = /*#__PURE__*/function (HttpStatusCode) {
   HttpStatusCode[HttpStatusCode["Continue"] = 100] = "Continue";
   HttpStatusCode[HttpStatusCode["SwitchingProtocols"] = 101] = "SwitchingProtocols";
@@ -1825,374 +1344,35 @@ var HttpStatusCode = /*#__PURE__*/function (HttpStatusCode) {
   HttpStatusCode[HttpStatusCode["NetworkAuthenticationRequired"] = 511] = "NetworkAuthenticationRequired";
   return HttpStatusCode;
 }(HttpStatusCode || {});
-/**
- * Constructs an instance of `HttpRequestOptions<T>` from a source `HttpMethodOptions` and
- * the given `body`. This function clones the object and adds the body.
- *
- * Note that the `responseType` *options* value is a String that identifies the
- * single data type of the response.
- * A single overload version of the method handles each response type.
- * The value of `responseType` cannot be a union, as the combined signature could imply.
- *
- */
-function addBody(options, body) {
-  return {
-    body,
-    headers: options.headers,
-    context: options.context,
-    observe: options.observe,
-    params: options.params,
-    reportProgress: options.reportProgress,
-    responseType: options.responseType,
-    withCredentials: options.withCredentials,
-    transferCache: options.transferCache,
-    keepalive: options.keepalive
-  };
-}
-/**
- * Performs HTTP requests.
- * This service is available as an injectable class, with methods to perform HTTP requests.
- * Each request method has multiple signatures, and the return type varies based on
- * the signature that is called (mainly the values of `observe` and `responseType`).
- *
- * Note that the `responseType` *options* value is a String that identifies the
- * single data type of the response.
- * A single overload version of the method handles each response type.
- * The value of `responseType` cannot be a union, as the combined signature could imply.
- *
- * @usageNotes
- *
- * ### HTTP Request Example
- *
- * ```ts
- *  // GET heroes whose name contains search term
- * searchHeroes(term: string): observable<Hero[]>{
- *
- *  const params = new HttpParams({fromString: 'name=term'});
- *    return this.httpClient.request('GET', this.heroesUrl, {responseType:'json', params});
- * }
- * ```
- *
- * Alternatively, the parameter string can be used without invoking HttpParams
- * by directly joining to the URL.
- * ```ts
- * this.httpClient.request('GET', this.heroesUrl + '?' + 'name=term', {responseType:'json'});
- * ```
- *
- *
- * ### JSONP Example
- * ```ts
- * requestJsonp(url, callback = 'callback') {
- *  return this.httpClient.jsonp(this.heroesURL, callback);
- * }
- * ```
- *
- * ### PATCH Example
- * ```ts
- * // PATCH one of the heroes' name
- * patchHero (id: number, heroName: string): Observable<{}> {
- * const url = `${this.heroesUrl}/${id}`;   // PATCH api/heroes/42
- *  return this.httpClient.patch(url, {name: heroName}, httpOptions)
- *    .pipe(catchError(this.handleError('patchHero')));
- * }
- * ```
- *
- * @see [HTTP Guide](guide/http)
- * @see [HTTP Request](api/common/http/HttpRequest)
- *
- * @publicApi
- */
-let HttpClient = /*#__PURE__*/(() => {
-  class HttpClient {
-    handler;
-    constructor(handler) {
-      this.handler = handler;
-    }
-    /**
-     * Constructs an observable for a generic HTTP request that, when subscribed,
-     * fires the request through the chain of registered interceptors and on to the
-     * server.
-     *
-     * You can pass an `HttpRequest` directly as the only parameter. In this case,
-     * the call returns an observable of the raw `HttpEvent` stream.
-     *
-     * Alternatively you can pass an HTTP method as the first parameter,
-     * a URL string as the second, and an options hash containing the request body as the third.
-     * See `addBody()`. In this case, the specified `responseType` and `observe` options determine the
-     * type of returned observable.
-     *   * The `responseType` value determines how a successful response body is parsed.
-     *   * If `responseType` is the default `json`, you can pass a type interface for the resulting
-     * object as a type parameter to the call.
-     *
-     * The `observe` value determines the return type, according to what you are interested in
-     * observing.
-     *   * An `observe` value of events returns an observable of the raw `HttpEvent` stream, including
-     * progress events by default.
-     *   * An `observe` value of response returns an observable of `HttpResponse<T>`,
-     * where the `T` parameter depends on the `responseType` and any optionally provided type
-     * parameter.
-     *   * An `observe` value of body returns an observable of `<T>` with the same `T` body type.
-     *
-     */
-    request(first, url, options = {}) {
-      let req;
-      // First, check whether the primary argument is an instance of `HttpRequest`.
-      if (first instanceof HttpRequest) {
-        // It is. The other arguments must be undefined (per the signatures) and can be
-        // ignored.
-        req = first;
-      } else {
-        // It's a string, so it represents a URL. Construct a request based on it,
-        // and incorporate the remaining arguments (assuming `GET` unless a method is
-        // provided.
-        // Figure out the headers.
-        let headers = undefined;
-        if (options.headers instanceof HttpHeaders) {
-          headers = options.headers;
-        } else {
-          headers = new HttpHeaders(options.headers);
-        }
-        // Sort out parameters.
-        let params = undefined;
-        if (!!options.params) {
-          if (options.params instanceof HttpParams) {
-            params = options.params;
-          } else {
-            params = new HttpParams({
-              fromObject: options.params
-            });
-          }
-        }
-        // Construct the request.
-        req = new HttpRequest(first, url, options.body !== undefined ? options.body : null, {
-          headers,
-          context: options.context,
-          params,
-          reportProgress: options.reportProgress,
-          // By default, JSON is assumed to be returned for all calls.
-          responseType: options.responseType || 'json',
-          withCredentials: options.withCredentials,
-          transferCache: options.transferCache,
-          keepalive: options.keepalive
-        });
-      }
-      // Start with an Observable.of() the initial request, and run the handler (which
-      // includes all interceptors) inside a concatMap(). This way, the handler runs
-      // inside an Observable chain, which causes interceptors to be re-run on every
-      // subscription (this also makes retries re-run the handler, including interceptors).
-      const events$ = (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.of)(req).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.concatMap)(req => this.handler.handle(req)));
-      // If coming via the API signature which accepts a previously constructed HttpRequest,
-      // the only option is to get the event stream. Otherwise, return the event stream if
-      // that is what was requested.
-      if (first instanceof HttpRequest || options.observe === 'events') {
-        return events$;
-      }
-      // The requested stream contains either the full response or the body. In either
-      // case, the first step is to filter the event stream to extract a stream of
-      // responses(s).
-      const res$ = events$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.filter)(event => event instanceof HttpResponse));
-      // Decide which stream to return.
-      switch (options.observe || 'body') {
-        case 'body':
-          // The requested stream is the body. Map the response stream to the response
-          // body. This could be done more simply, but a misbehaving interceptor might
-          // transform the response body into a different format and ignore the requested
-          // responseType. Guard against this by validating that the response is of the
-          // requested type.
-          switch (req.responseType) {
-            case 'arraybuffer':
-              return res$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(res => {
-                // Validate that the body is an ArrayBuffer.
-                if (res.body !== null && !(res.body instanceof ArrayBuffer)) {
-                  throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2806 /* RuntimeErrorCode.RESPONSE_IS_NOT_AN_ARRAY_BUFFER */, ngDevMode && 'Response is not an ArrayBuffer.');
-                }
-                return res.body;
-              }));
-            case 'blob':
-              return res$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(res => {
-                // Validate that the body is a Blob.
-                if (res.body !== null && !(res.body instanceof Blob)) {
-                  throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2807 /* RuntimeErrorCode.RESPONSE_IS_NOT_A_BLOB */, ngDevMode && 'Response is not a Blob.');
-                }
-                return res.body;
-              }));
-            case 'text':
-              return res$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(res => {
-                // Validate that the body is a string.
-                if (res.body !== null && typeof res.body !== 'string') {
-                  throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2808 /* RuntimeErrorCode.RESPONSE_IS_NOT_A_STRING */, ngDevMode && 'Response is not a string.');
-                }
-                return res.body;
-              }));
-            case 'json':
-            default:
-              // No validation needed for JSON responses, as they can be of any type.
-              return res$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(res => res.body));
-          }
-        case 'response':
-          // The response stream was requested directly, so return it.
-          return res$;
-        default:
-          // Guard against new future observe types being added.
-          throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2809 /* RuntimeErrorCode.UNHANDLED_OBSERVE_TYPE */, ngDevMode && `Unreachable: unhandled observe type ${options.observe}}`);
-      }
-    }
-    /**
-     * Constructs an observable that, when subscribed, causes the configured
-     * `DELETE` request to execute on the server. See the individual overloads for
-     * details on the return type.
-     *
-     * @param url     The endpoint URL.
-     * @param options The HTTP options to send with the request.
-     *
-     */
-    delete(url, options = {}) {
-      return this.request('DELETE', url, options);
-    }
-    /**
-     * Constructs an observable that, when subscribed, causes the configured
-     * `GET` request to execute on the server. See the individual overloads for
-     * details on the return type.
-     */
-    get(url, options = {}) {
-      return this.request('GET', url, options);
-    }
-    /**
-     * Constructs an observable that, when subscribed, causes the configured
-     * `HEAD` request to execute on the server. The `HEAD` method returns
-     * meta information about the resource without transferring the
-     * resource itself. See the individual overloads for
-     * details on the return type.
-     */
-    head(url, options = {}) {
-      return this.request('HEAD', url, options);
-    }
-    /**
-     * Constructs an `Observable` that, when subscribed, causes a request with the special method
-     * `JSONP` to be dispatched via the interceptor pipeline.
-     * The [JSONP pattern](https://en.wikipedia.org/wiki/JSONP) works around limitations of certain
-     * API endpoints that don't support newer,
-     * and preferable [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) protocol.
-     * JSONP treats the endpoint API as a JavaScript file and tricks the browser to process the
-     * requests even if the API endpoint is not located on the same domain (origin) as the client-side
-     * application making the request.
-     * The endpoint API must support JSONP callback for JSONP requests to work.
-     * The resource API returns the JSON response wrapped in a callback function.
-     * You can pass the callback function name as one of the query parameters.
-     * Note that JSONP requests can only be used with `GET` requests.
-     *
-     * @param url The resource URL.
-     * @param callbackParam The callback function name.
-     *
-     */
-    jsonp(url, callbackParam) {
-      return this.request('JSONP', url, {
-        params: new HttpParams().append(callbackParam, 'JSONP_CALLBACK'),
-        observe: 'body',
-        responseType: 'json'
-      });
-    }
-    /**
-     * Constructs an `Observable` that, when subscribed, causes the configured
-     * `OPTIONS` request to execute on the server. This method allows the client
-     * to determine the supported HTTP methods and other capabilities of an endpoint,
-     * without implying a resource action. See the individual overloads for
-     * details on the return type.
-     */
-    options(url, options = {}) {
-      return this.request('OPTIONS', url, options);
-    }
-    /**
-     * Constructs an observable that, when subscribed, causes the configured
-     * `PATCH` request to execute on the server. See the individual overloads for
-     * details on the return type.
-     */
-    patch(url, body, options = {}) {
-      return this.request('PATCH', url, addBody(options, body));
-    }
-    /**
-     * Constructs an observable that, when subscribed, causes the configured
-     * `POST` request to execute on the server. The server responds with the location of
-     * the replaced resource. See the individual overloads for
-     * details on the return type.
-     */
-    post(url, body, options = {}) {
-      return this.request('POST', url, addBody(options, body));
-    }
-    /**
-     * Constructs an observable that, when subscribed, causes the configured
-     * `PUT` request to execute on the server. The `PUT` method replaces an existing resource
-     * with a new set of values.
-     * See the individual overloads for details on the return type.
-     */
-    put(url, body, options = {}) {
-      return this.request('PUT', url, addBody(options, body));
-    }
-    static ɵfac = function HttpClient_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || HttpClient)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](HttpHandler));
-    };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
-      token: HttpClient,
-      factory: HttpClient.ɵfac
-    });
-  }
-  return HttpClient;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
 const XSSI_PREFIX$1 = /^\)\]\}',?\n/;
-/**
- * Determine an appropriate URL for the response, by checking either
- * response url or the X-Request-URL header.
- */
-function getResponseUrl$1(response) {
-  if (response.url) {
-    return response.url;
-  }
-  // stored as lowercase in the map
-  const xRequestUrl = X_REQUEST_URL_HEADER.toLocaleLowerCase();
-  return response.headers.get(xRequestUrl);
-}
-/**
- * An internal injection token to reference `FetchBackend` implementation
- * in a tree-shakable way.
- */
 const FETCH_BACKEND = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(typeof ngDevMode === 'undefined' || ngDevMode ? 'FETCH_BACKEND' : '');
-/**
- * Uses `fetch` to send requests to a backend server.
- *
- * This `FetchBackend` requires the support of the
- * [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) which is available on all
- * supported browsers and on Node.js v18 or later.
- *
- * @see {@link HttpHandler}
- *
- * @publicApi
- */
 let FetchBackend = /*#__PURE__*/(() => {
   class FetchBackend {
-    // We use an arrow function to always reference the current global implementation of `fetch`.
-    // This is helpful for cases when the global `fetch` implementation is modified by external code,
-    // see https://github.com/angular/angular/issues/57527.
     fetchImpl = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(FetchFactory, {
       optional: true
     })?.fetch ?? ((...args) => globalThis.fetch(...args));
     ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.NgZone);
     destroyRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.DestroyRef);
-    destroyed = false;
-    constructor() {
-      this.destroyRef.onDestroy(() => {
-        this.destroyed = true;
-      });
-    }
     handle(request) {
       return new rxjs__WEBPACK_IMPORTED_MODULE_3__.Observable(observer => {
         const aborter = new AbortController();
         this.doRequest(request, aborter.signal, observer).then(noop, error => observer.error(new HttpErrorResponse({
           error
         })));
-        return () => aborter.abort();
+        let timeoutId;
+        if (request.timeout) {
+          timeoutId = this.ngZone.runOutsideAngular(() => setTimeout(() => {
+            if (!aborter.signal.aborted) {
+              aborter.abort(new DOMException('signal timed out', 'TimeoutError'));
+            }
+          }, request.timeout));
+        }
+        return () => {
+          if (timeoutId !== undefined) {
+            clearTimeout(timeoutId);
+          }
+          aborter.abort();
+        };
       });
     }
     doRequest(request, signal, observer) {
@@ -2201,18 +1381,11 @@ let FetchBackend = /*#__PURE__*/(() => {
         const init = _this.createRequestInit(request);
         let response;
         try {
-          // Run fetch outside of Angular zone.
-          // This is due to Node.js fetch implementation (Undici) which uses a number of setTimeouts to check if
-          // the response should eventually timeout which causes extra CD cycles every 500ms
           const fetchPromise = _this.ngZone.runOutsideAngular(() => _this.fetchImpl(request.urlWithParams, {
             signal,
             ...init
           }));
-          // Make sure Zone.js doesn't trigger false-positive unhandled promise
-          // error in case the Promise is rejected synchronously. See function
-          // description for additional information.
           silenceSuperfluousUnhandledPromiseRejection(fetchPromise);
-          // Send the `Sent` event before awaiting the response.
           observer.next({
             type: HttpEventType.Sent
           });
@@ -2229,7 +1402,7 @@ let FetchBackend = /*#__PURE__*/(() => {
         }
         const headers = new HttpHeaders(response.headers);
         const statusText = response.statusText;
-        const url = getResponseUrl$1(response) ?? request.urlWithParams;
+        const url = response.url || request.urlWithParams;
         let status = response.status;
         let body = null;
         if (request.reportProgress) {
@@ -2241,31 +1414,17 @@ let FetchBackend = /*#__PURE__*/(() => {
           }));
         }
         if (response.body) {
-          // Read Progress
           const contentLength = response.headers.get('content-length');
           const chunks = [];
           const reader = response.body.getReader();
           let receivedLength = 0;
           let decoder;
           let partialText;
-          // We have to check whether the Zone is defined in the global scope because this may be called
-          // when the zone is nooped.
           const reqZone = typeof Zone !== 'undefined' && Zone.current;
           let canceled = false;
-          // Perform response processing outside of Angular zone to
-          // ensure no excessive change detection runs are executed
-          // Here calling the async ReadableStreamDefaultReader.read() is responsible for triggering CD
           yield _this.ngZone.runOutsideAngular(/*#__PURE__*/(0,_Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
             while (true) {
-              // Prevent reading chunks if the app is destroyed. Otherwise, we risk doing
-              // unnecessary work or triggering side effects after teardown.
-              // This may happen if the app was explicitly destroyed before
-              // the response returned entirely.
-              if (_this.destroyed) {
-                // Streams left in a pending state (due to `break` without cancel) may
-                // continue consuming or holding onto data behind the scenes.
-                // Calling `reader.cancel()` allows the browser or the underlying
-                // system to release any network or memory resources associated with the stream.
+              if (_this.destroyRef.destroyed) {
                 yield reader.cancel();
                 canceled = true;
                 break;
@@ -2293,50 +1452,41 @@ let FetchBackend = /*#__PURE__*/(() => {
               }
             }
           }));
-          // We need to manage the canceled state — because the Streams API does not
-          // expose a direct `.state` property on the reader.
-          // We need to `return` because `parseBody` may not be able to parse chunks
-          // that were only partially read (due to cancellation caused by app destruction).
           if (canceled) {
             observer.complete();
             return;
           }
-          // Combine all chunks.
           const chunksAll = _this.concatChunks(chunks, receivedLength);
           try {
             const contentType = response.headers.get(CONTENT_TYPE_HEADER) ?? '';
-            body = _this.parseBody(request, chunksAll, contentType);
+            body = _this.parseBody(request, chunksAll, contentType, status);
           } catch (error) {
-            // Body loading or parsing failed
             observer.error(new HttpErrorResponse({
               error,
               headers: new HttpHeaders(response.headers),
               status: response.status,
               statusText: response.statusText,
-              url: getResponseUrl$1(response) ?? request.urlWithParams
+              url: response.url || request.urlWithParams
             }));
             return;
           }
         }
-        // Same behavior as the XhrBackend
         if (status === 0) {
           status = body ? HTTP_STATUS_CODE_OK : 0;
         }
-        // ok determines whether the response will be transmitted on the event or
-        // error channel. Unsuccessful status codes (not 2xx) will always be errors,
-        // but a successful status code can still result in an error if the user
-        // asked for JSON data and the body cannot be parsed as such.
         const ok = status >= 200 && status < 300;
+        const redirected = response.redirected;
+        const responseType = response.type;
         if (ok) {
           observer.next(new HttpResponse({
             body,
             headers,
             status,
             statusText,
-            url
+            url,
+            redirected,
+            responseType
           }));
-          // The full body has been received and delivered, no further events
-          // are possible. This request is complete.
           observer.complete();
         } else {
           observer.error(new HttpErrorResponse({
@@ -2344,17 +1494,28 @@ let FetchBackend = /*#__PURE__*/(() => {
             headers,
             status,
             statusText,
-            url
+            url,
+            redirected,
+            responseType
           }));
         }
       })();
     }
-    parseBody(request, binContent, contentType) {
+    parseBody(request, binContent, contentType, status) {
       switch (request.responseType) {
         case 'json':
-          // stripping the XSSI when present
           const text = new TextDecoder().decode(binContent).replace(XSSI_PREFIX$1, '');
-          return text === '' ? null : JSON.parse(text);
+          if (text === '') {
+            return null;
+          }
+          try {
+            return JSON.parse(text);
+          } catch (e) {
+            if (status < 200 || status >= 300) {
+              return text;
+            }
+            throw e;
+          }
         case 'text':
           return new TextDecoder().decode(binContent);
         case 'blob':
@@ -2366,19 +1527,19 @@ let FetchBackend = /*#__PURE__*/(() => {
       }
     }
     createRequestInit(req) {
-      // We could share some of this logic with the XhrBackend
       const headers = {};
-      const credentials = req.withCredentials ? 'include' : undefined;
-      // Setting all the requested headers.
+      let credentials;
+      credentials = req.credentials;
+      if (req.withCredentials) {
+        (typeof ngDevMode === 'undefined' || ngDevMode) && warningOptionsMessage(req);
+        credentials = 'include';
+      }
       req.headers.forEach((name, values) => headers[name] = values.join(','));
-      // Add an Accept header if one isn't present already.
       if (!req.headers.has(ACCEPT_HEADER)) {
         headers[ACCEPT_HEADER] = ACCEPT_HEADER_VALUE;
       }
-      // Auto-detect the Content-Type header if one isn't present already.
       if (!req.headers.has(CONTENT_TYPE_HEADER)) {
         const detectedType = req.detectContentTypeHeader();
-        // Sometimes Content-Type detection fails.
         if (detectedType !== null) {
           headers[CONTENT_TYPE_HEADER] = detectedType;
         }
@@ -2388,7 +1549,14 @@ let FetchBackend = /*#__PURE__*/(() => {
         method: req.method,
         headers,
         credentials,
-        keepalive: req.keepalive
+        keepalive: req.keepalive,
+        cache: req.cache,
+        priority: req.priority,
+        mode: req.mode,
+        redirect: req.redirect,
+        referrer: req.referrer,
+        integrity: req.integrity,
+        referrerPolicy: req.referrerPolicy
       };
     }
     concatChunks(chunks, totalLength) {
@@ -2413,65 +1581,285 @@ let FetchBackend = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-/**
- * Abstract class to provide a mocked implementation of `fetch()`
- */
 class FetchFactory {}
 function noop() {}
-/**
- * Zone.js treats a rejected promise that has not yet been awaited
- * as an unhandled error. This function adds a noop `.then` to make
- * sure that Zone.js doesn't throw an error if the Promise is rejected
- * synchronously.
- */
+function warningOptionsMessage(req) {
+  if (req.credentials && req.withCredentials) {
+    console.warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵformatRuntimeError"])(2819, `Angular detected that a \`HttpClient\` request has both \`withCredentials: true\` and \`credentials: '${req.credentials}'\` options. The \`withCredentials\` option is overriding the explicit \`credentials\` setting to 'include'. Consider removing \`withCredentials\` and using \`credentials: '${req.credentials}'\` directly for clarity.`));
+  }
+}
 function silenceSuperfluousUnhandledPromiseRejection(promise) {
   promise.then(noop, noop);
 }
+const XSSI_PREFIX = /^\)\]\}',?\n/;
+function validateXhrCompatibility(req) {
+  const unsupportedOptions = [{
+    property: 'keepalive',
+    errorCode: 2813
+  }, {
+    property: 'cache',
+    errorCode: 2814
+  }, {
+    property: 'priority',
+    errorCode: 2815
+  }, {
+    property: 'mode',
+    errorCode: 2816
+  }, {
+    property: 'redirect',
+    errorCode: 2817
+  }, {
+    property: 'credentials',
+    errorCode: 2818
+  }, {
+    property: 'integrity',
+    errorCode: 2820
+  }, {
+    property: 'referrer',
+    errorCode: 2821
+  }, {
+    property: 'referrerPolicy',
+    errorCode: 2823
+  }];
+  for (const {
+    property,
+    errorCode
+  } of unsupportedOptions) {
+    if (req[property]) {
+      console.warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵformatRuntimeError"])(errorCode, `Angular detected that a \`HttpClient\` request with the \`${property}\` option was sent using XHR, which does not support it. To use the \`${property}\` option, enable Fetch API support by passing \`withFetch()\` as an argument to \`provideHttpClient()\`.`));
+    }
+  }
+}
+let HttpXhrBackend = /*#__PURE__*/(() => {
+  class HttpXhrBackend {
+    xhrFactory;
+    tracingService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵTracingService"], {
+      optional: true
+    });
+    constructor(xhrFactory) {
+      this.xhrFactory = xhrFactory;
+    }
+    maybePropagateTrace(fn) {
+      return this.tracingService?.propagate ? this.tracingService.propagate(fn) : fn;
+    }
+    handle(req) {
+      if (req.method === 'JSONP') {
+        throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](-2800, (typeof ngDevMode === 'undefined' || ngDevMode) && `Cannot make a JSONP request without JSONP support. To fix the problem, either add the \`withJsonpSupport()\` call (if \`provideHttpClient()\` is used) or import the \`HttpClientJsonpModule\` in the root NgModule.`);
+      }
+      ngDevMode && validateXhrCompatibility(req);
+      const xhrFactory = this.xhrFactory;
+      const source = typeof ngServerMode !== 'undefined' && ngServerMode && xhrFactory.ɵloadImpl ? (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.from)(xhrFactory.ɵloadImpl()) : (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.of)(null);
+      return source.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.switchMap)(() => {
+        return new rxjs__WEBPACK_IMPORTED_MODULE_3__.Observable(observer => {
+          const xhr = xhrFactory.build();
+          xhr.open(req.method, req.urlWithParams);
+          if (req.withCredentials) {
+            xhr.withCredentials = true;
+          }
+          req.headers.forEach((name, values) => xhr.setRequestHeader(name, values.join(',')));
+          if (!req.headers.has(ACCEPT_HEADER)) {
+            xhr.setRequestHeader(ACCEPT_HEADER, ACCEPT_HEADER_VALUE);
+          }
+          if (!req.headers.has(CONTENT_TYPE_HEADER)) {
+            const detectedType = req.detectContentTypeHeader();
+            if (detectedType !== null) {
+              xhr.setRequestHeader(CONTENT_TYPE_HEADER, detectedType);
+            }
+          }
+          if (req.timeout) {
+            xhr.timeout = req.timeout;
+          }
+          if (req.responseType) {
+            const responseType = req.responseType.toLowerCase();
+            xhr.responseType = responseType !== 'json' ? responseType : 'text';
+          }
+          const reqBody = req.serializeBody();
+          let headerResponse = null;
+          const partialFromXhr = () => {
+            if (headerResponse !== null) {
+              return headerResponse;
+            }
+            const statusText = xhr.statusText || 'OK';
+            const headers = new HttpHeaders(xhr.getAllResponseHeaders());
+            const url = xhr.responseURL || req.url;
+            headerResponse = new HttpHeaderResponse({
+              headers,
+              status: xhr.status,
+              statusText,
+              url
+            });
+            return headerResponse;
+          };
+          const onLoad = this.maybePropagateTrace(() => {
+            let {
+              headers,
+              status,
+              statusText,
+              url
+            } = partialFromXhr();
+            let body = null;
+            if (status !== HTTP_STATUS_CODE_NO_CONTENT) {
+              body = typeof xhr.response === 'undefined' ? xhr.responseText : xhr.response;
+            }
+            if (status === 0) {
+              status = !!body ? HTTP_STATUS_CODE_OK : 0;
+            }
+            let ok = status >= 200 && status < 300;
+            if (req.responseType === 'json' && typeof body === 'string') {
+              const originalBody = body;
+              body = body.replace(XSSI_PREFIX, '');
+              try {
+                body = body !== '' ? JSON.parse(body) : null;
+              } catch (error) {
+                body = originalBody;
+                if (ok) {
+                  ok = false;
+                  body = {
+                    error,
+                    text: body
+                  };
+                }
+              }
+            }
+            if (ok) {
+              observer.next(new HttpResponse({
+                body,
+                headers,
+                status,
+                statusText,
+                url: url || undefined
+              }));
+              observer.complete();
+            } else {
+              observer.error(new HttpErrorResponse({
+                error: body,
+                headers,
+                status,
+                statusText,
+                url: url || undefined
+              }));
+            }
+          });
+          const onError = this.maybePropagateTrace(error => {
+            const {
+              url
+            } = partialFromXhr();
+            const res = new HttpErrorResponse({
+              error,
+              status: xhr.status || 0,
+              statusText: xhr.statusText || 'Unknown Error',
+              url: url || undefined
+            });
+            observer.error(res);
+          });
+          let onTimeout = onError;
+          if (req.timeout) {
+            onTimeout = this.maybePropagateTrace(_ => {
+              const {
+                url
+              } = partialFromXhr();
+              const res = new HttpErrorResponse({
+                error: new DOMException('Request timed out', 'TimeoutError'),
+                status: xhr.status || 0,
+                statusText: xhr.statusText || 'Request timeout',
+                url: url || undefined
+              });
+              observer.error(res);
+            });
+          }
+          let sentHeaders = false;
+          const onDownProgress = this.maybePropagateTrace(event => {
+            if (!sentHeaders) {
+              observer.next(partialFromXhr());
+              sentHeaders = true;
+            }
+            let progressEvent = {
+              type: HttpEventType.DownloadProgress,
+              loaded: event.loaded
+            };
+            if (event.lengthComputable) {
+              progressEvent.total = event.total;
+            }
+            if (req.responseType === 'text' && !!xhr.responseText) {
+              progressEvent.partialText = xhr.responseText;
+            }
+            observer.next(progressEvent);
+          });
+          const onUpProgress = this.maybePropagateTrace(event => {
+            let progress = {
+              type: HttpEventType.UploadProgress,
+              loaded: event.loaded
+            };
+            if (event.lengthComputable) {
+              progress.total = event.total;
+            }
+            observer.next(progress);
+          });
+          xhr.addEventListener('load', onLoad);
+          xhr.addEventListener('error', onError);
+          xhr.addEventListener('timeout', onTimeout);
+          xhr.addEventListener('abort', onError);
+          if (req.reportProgress) {
+            xhr.addEventListener('progress', onDownProgress);
+            if (reqBody !== null && xhr.upload) {
+              xhr.upload.addEventListener('progress', onUpProgress);
+            }
+          }
+          xhr.send(reqBody);
+          observer.next({
+            type: HttpEventType.Sent
+          });
+          return () => {
+            xhr.removeEventListener('error', onError);
+            xhr.removeEventListener('abort', onError);
+            xhr.removeEventListener('load', onLoad);
+            xhr.removeEventListener('timeout', onTimeout);
+            if (req.reportProgress) {
+              xhr.removeEventListener('progress', onDownProgress);
+              if (reqBody !== null && xhr.upload) {
+                xhr.upload.removeEventListener('progress', onUpProgress);
+              }
+            }
+            if (xhr.readyState !== xhr.DONE) {
+              xhr.abort();
+            }
+          };
+        });
+      }));
+    }
+    static ɵfac = function HttpXhrBackend_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || HttpXhrBackend)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_xhr_chunk_mjs__WEBPACK_IMPORTED_MODULE_4__.XhrFactory));
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+      token: HttpXhrBackend,
+      factory: HttpXhrBackend.ɵfac,
+      providedIn: 'root'
+    });
+  }
+  return HttpXhrBackend;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
 function interceptorChainEndFn(req, finalHandlerFn) {
   return finalHandlerFn(req);
 }
-/**
- * Constructs a `ChainedInterceptorFn` which adapts a legacy `HttpInterceptor` to the
- * `ChainedInterceptorFn` interface.
- */
 function adaptLegacyInterceptorToChain(chainTailFn, interceptor) {
   return (initialRequest, finalHandlerFn) => interceptor.intercept(initialRequest, {
     handle: downstreamRequest => chainTailFn(downstreamRequest, finalHandlerFn)
   });
 }
-/**
- * Constructs a `ChainedInterceptorFn` which wraps and invokes a functional interceptor in the given
- * injector.
- */
 function chainedInterceptorFn(chainTailFn, interceptorFn, injector) {
   return (initialRequest, finalHandlerFn) => (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.runInInjectionContext)(injector, () => interceptorFn(initialRequest, downstreamRequest => chainTailFn(downstreamRequest, finalHandlerFn)));
 }
-/**
- * A multi-provider token that represents the array of registered
- * `HttpInterceptor` objects.
- *
- * @publicApi
- */
-const HTTP_INTERCEPTORS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(ngDevMode ? 'HTTP_INTERCEPTORS' : '');
-/**
- * A multi-provided token of `HttpInterceptorFn`s.
- */
-const HTTP_INTERCEPTOR_FNS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(ngDevMode ? 'HTTP_INTERCEPTOR_FNS' : '');
-/**
- * A multi-provided token of `HttpInterceptorFn`s that are only set in root.
- */
-const HTTP_ROOT_INTERCEPTOR_FNS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(ngDevMode ? 'HTTP_ROOT_INTERCEPTOR_FNS' : '');
-// TODO(atscott): We need a larger discussion about stability and what should contribute to stability.
-// Should the whole interceptor chain contribute to stability or just the backend request #55075?
-// Should HttpClient contribute to stability automatically at all?
-const REQUESTS_CONTRIBUTE_TO_STABILITY = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(ngDevMode ? 'REQUESTS_CONTRIBUTE_TO_STABILITY' : '', {
-  providedIn: 'root',
+const HTTP_INTERCEPTORS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(typeof ngDevMode !== 'undefined' && ngDevMode ? 'HTTP_INTERCEPTORS' : '');
+const HTTP_INTERCEPTOR_FNS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(typeof ngDevMode !== 'undefined' && ngDevMode ? 'HTTP_INTERCEPTOR_FNS' : '', {
+  factory: () => []
+});
+const HTTP_ROOT_INTERCEPTOR_FNS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(typeof ngDevMode !== 'undefined' && ngDevMode ? 'HTTP_ROOT_INTERCEPTOR_FNS' : '');
+const REQUESTS_CONTRIBUTE_TO_STABILITY = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(typeof ngDevMode !== 'undefined' && ngDevMode ? 'REQUESTS_CONTRIBUTE_TO_STABILITY' : '', {
   factory: () => true
 });
-/**
- * Creates an `HttpInterceptorFn` which lazily initializes an interceptor chain from the legacy
- * class-based interceptors and runs the request through it.
- */
 function legacyInterceptorFnFactory() {
   let chain = null;
   return (req, handler) => {
@@ -2479,10 +1867,6 @@ function legacyInterceptorFnFactory() {
       const interceptors = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(HTTP_INTERCEPTORS, {
         optional: true
       }) ?? [];
-      // Note: interceptors are wrapped right-to-left so that final execution order is
-      // left-to-right. That is, if `interceptors` is the array `[a, b, c]`, we want to
-      // produce a chain that is conceptually `c(b(a(end)))`, which we build from the inside
-      // out.
       chain = interceptors.reduceRight(adaptLegacyInterceptorToChain, interceptorChainEndFn);
     }
     const pendingTasks = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.PendingTasks);
@@ -2495,40 +1879,52 @@ function legacyInterceptorFnFactory() {
     }
   };
 }
+let HttpBackend = /*#__PURE__*/(() => {
+  class HttpBackend {
+    static ɵfac = function HttpBackend_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || HttpBackend)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+      token: HttpBackend,
+      factory: function HttpBackend_Factory(__ngFactoryType__) {
+        let __ngConditionalFactory__ = null;
+        if (__ngFactoryType__) {
+          __ngConditionalFactory__ = new (__ngFactoryType__ || HttpBackend)();
+        } else {
+          __ngConditionalFactory__ = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](HttpXhrBackend);
+        }
+        return __ngConditionalFactory__;
+      },
+      providedIn: 'root'
+    });
+  }
+  return HttpBackend;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
 let fetchBackendWarningDisplayed = false;
 let HttpInterceptorHandler = /*#__PURE__*/(() => {
-  class HttpInterceptorHandler extends HttpHandler {
+  class HttpInterceptorHandler {
     backend;
     injector;
     chain = null;
     pendingTasks = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.PendingTasks);
     contributeToStability = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(REQUESTS_CONTRIBUTE_TO_STABILITY);
     constructor(backend, injector) {
-      super();
       this.backend = backend;
       this.injector = injector;
-      // We strongly recommend using fetch backend for HTTP calls when SSR is used
-      // for an application. The logic below checks if that's the case and produces
-      // a warning otherwise.
       if ((typeof ngDevMode === 'undefined' || ngDevMode) && !fetchBackendWarningDisplayed) {
-        // This flag is necessary because provideHttpClientTesting() overrides the backend
-        // even if `withFetch()` is used within the test. When the testing HTTP backend is provided,
-        // no HTTP calls are actually performed during the test, so producing a warning would be
-        // misleading.
         const isTestingBackend = this.backend.isTestingBackend;
         if (typeof ngServerMode !== 'undefined' && ngServerMode && !(this.backend instanceof FetchBackend) && !isTestingBackend) {
           fetchBackendWarningDisplayed = true;
-          injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵConsole"]).warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵformatRuntimeError"])(2801 /* RuntimeErrorCode.NOT_USING_FETCH_BACKEND_IN_SSR */, 'Angular detected that `HttpClient` is not configured ' + "to use `fetch` APIs. It's strongly recommended to " + 'enable `fetch` for applications that use Server-Side Rendering ' + 'for better performance and compatibility. ' + 'To enable `fetch`, add the `withFetch()` to the `provideHttpClient()` ' + 'call at the root of the application.'));
+          injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵConsole"]).warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵformatRuntimeError"])(2801, 'Angular detected that `HttpClient` is not configured ' + "to use `fetch` APIs. It's strongly recommended to " + 'enable `fetch` for applications that use Server-Side Rendering ' + 'for better performance and compatibility. ' + 'To enable `fetch`, add the `withFetch()` to the `provideHttpClient()` ' + 'call at the root of the application.'));
         }
       }
     }
     handle(initialRequest) {
       if (this.chain === null) {
         const dedupedInterceptorFns = Array.from(new Set([...this.injector.get(HTTP_INTERCEPTOR_FNS), ...this.injector.get(HTTP_ROOT_INTERCEPTOR_FNS, [])]));
-        // Note: interceptors are wrapped right-to-left so that final execution order is
-        // left-to-right. That is, if `dedupedInterceptorFns` is the array `[a, b, c]`, we want to
-        // produce a chain that is conceptually `c(b(a(end)))`, which we build from the inside
-        // out.
         this.chain = dedupedInterceptorFns.reduceRight((nextSequencedFn, interceptorFn) => chainedInterceptorFn(nextSequencedFn, interceptorFn, this.injector), interceptorChainEndFn);
       }
       if (this.contributeToStability) {
@@ -2543,7 +1939,8 @@ let HttpInterceptorHandler = /*#__PURE__*/(() => {
     };
     static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
       token: HttpInterceptorHandler,
-      factory: HttpInterceptorHandler.ɵfac
+      factory: HttpInterceptorHandler.ɵfac,
+      providedIn: 'root'
     });
   }
   return HttpInterceptorHandler;
@@ -2551,147 +1948,237 @@ let HttpInterceptorHandler = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-
-// Every request made through JSONP needs a callback name that's unique across the
-// whole page. Each request is assigned an id and the callback name is constructed
-// from that. The next id to be assigned is tracked in a global variable here that
-// is shared among all applications on the page.
+let HttpHandler = /*#__PURE__*/(() => {
+  class HttpHandler {
+    static ɵfac = function HttpHandler_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || HttpHandler)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+      token: HttpHandler,
+      factory: function HttpHandler_Factory(__ngFactoryType__) {
+        let __ngConditionalFactory__ = null;
+        if (__ngFactoryType__) {
+          __ngConditionalFactory__ = new (__ngFactoryType__ || HttpHandler)();
+        } else {
+          __ngConditionalFactory__ = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](HttpInterceptorHandler);
+        }
+        return __ngConditionalFactory__;
+      },
+      providedIn: 'root'
+    });
+  }
+  return HttpHandler;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+function addBody(options, body) {
+  return {
+    body,
+    headers: options.headers,
+    context: options.context,
+    observe: options.observe,
+    params: options.params,
+    reportProgress: options.reportProgress,
+    responseType: options.responseType,
+    withCredentials: options.withCredentials,
+    credentials: options.credentials,
+    transferCache: options.transferCache,
+    timeout: options.timeout,
+    keepalive: options.keepalive,
+    priority: options.priority,
+    cache: options.cache,
+    mode: options.mode,
+    redirect: options.redirect,
+    integrity: options.integrity,
+    referrer: options.referrer,
+    referrerPolicy: options.referrerPolicy
+  };
+}
+let HttpClient = /*#__PURE__*/(() => {
+  class HttpClient {
+    handler;
+    constructor(handler) {
+      this.handler = handler;
+    }
+    request(first, url, options = {}) {
+      let req;
+      if (first instanceof HttpRequest) {
+        req = first;
+      } else {
+        let headers = undefined;
+        if (options.headers instanceof HttpHeaders) {
+          headers = options.headers;
+        } else {
+          headers = new HttpHeaders(options.headers);
+        }
+        let params = undefined;
+        if (!!options.params) {
+          if (options.params instanceof HttpParams) {
+            params = options.params;
+          } else {
+            params = new HttpParams({
+              fromObject: options.params
+            });
+          }
+        }
+        req = new HttpRequest(first, url, options.body !== undefined ? options.body : null, {
+          headers,
+          context: options.context,
+          params,
+          reportProgress: options.reportProgress,
+          responseType: options.responseType || 'json',
+          withCredentials: options.withCredentials,
+          transferCache: options.transferCache,
+          keepalive: options.keepalive,
+          priority: options.priority,
+          cache: options.cache,
+          mode: options.mode,
+          redirect: options.redirect,
+          credentials: options.credentials,
+          referrer: options.referrer,
+          referrerPolicy: options.referrerPolicy,
+          integrity: options.integrity,
+          timeout: options.timeout
+        });
+      }
+      const events$ = (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.of)(req).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.concatMap)(req => this.handler.handle(req)));
+      if (first instanceof HttpRequest || options.observe === 'events') {
+        return events$;
+      }
+      const res$ = events$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.filter)(event => event instanceof HttpResponse));
+      switch (options.observe || 'body') {
+        case 'body':
+          switch (req.responseType) {
+            case 'arraybuffer':
+              return res$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(res => {
+                if (res.body !== null && !(res.body instanceof ArrayBuffer)) {
+                  throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2806, ngDevMode && 'Response is not an ArrayBuffer.');
+                }
+                return res.body;
+              }));
+            case 'blob':
+              return res$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(res => {
+                if (res.body !== null && !(res.body instanceof Blob)) {
+                  throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2807, ngDevMode && 'Response is not a Blob.');
+                }
+                return res.body;
+              }));
+            case 'text':
+              return res$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(res => {
+                if (res.body !== null && typeof res.body !== 'string') {
+                  throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2808, ngDevMode && 'Response is not a string.');
+                }
+                return res.body;
+              }));
+            case 'json':
+            default:
+              return res$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(res => res.body));
+          }
+        case 'response':
+          return res$;
+        default:
+          throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2809, ngDevMode && `Unreachable: unhandled observe type ${options.observe}}`);
+      }
+    }
+    delete(url, options = {}) {
+      return this.request('DELETE', url, options);
+    }
+    get(url, options = {}) {
+      return this.request('GET', url, options);
+    }
+    head(url, options = {}) {
+      return this.request('HEAD', url, options);
+    }
+    jsonp(url, callbackParam) {
+      return this.request('JSONP', url, {
+        params: new HttpParams().append(callbackParam, 'JSONP_CALLBACK'),
+        observe: 'body',
+        responseType: 'json'
+      });
+    }
+    options(url, options = {}) {
+      return this.request('OPTIONS', url, options);
+    }
+    patch(url, body, options = {}) {
+      return this.request('PATCH', url, addBody(options, body));
+    }
+    post(url, body, options = {}) {
+      return this.request('POST', url, addBody(options, body));
+    }
+    put(url, body, options = {}) {
+      return this.request('PUT', url, addBody(options, body));
+    }
+    static ɵfac = function HttpClient_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || HttpClient)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](HttpHandler));
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+      token: HttpClient,
+      factory: HttpClient.ɵfac,
+      providedIn: 'root'
+    });
+  }
+  return HttpClient;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
 let nextRequestId = 0;
-/**
- * When a pending <script> is unsubscribed we'll move it to this document, so it won't be
- * executed.
- */
 let foreignDocument;
-// Error text given when a JSONP script is injected, but doesn't invoke the callback
-// passed in its URL.
 const JSONP_ERR_NO_CALLBACK = 'JSONP injected script did not invoke callback.';
-// Error text given when a request is passed to the JsonpClientBackend that doesn't
-// have a request method JSONP.
 const JSONP_ERR_WRONG_METHOD = 'JSONP requests must use JSONP request method.';
 const JSONP_ERR_WRONG_RESPONSE_TYPE = 'JSONP requests must use Json response type.';
-// Error text given when a request is passed to the JsonpClientBackend that has
-// headers set
 const JSONP_ERR_HEADERS_NOT_SUPPORTED = 'JSONP requests do not support headers.';
-/**
- * DI token/abstract type representing a map of JSONP callbacks.
- *
- * In the browser, this should always be the `window` object.
- *
- *
- */
 class JsonpCallbackContext {}
-/**
- * Factory function that determines where to store JSONP callbacks.
- *
- * Ordinarily JSONP callbacks are stored on the `window` object, but this may not exist
- * in test environments. In that case, callbacks are stored on an anonymous object instead.
- *
- *
- */
 function jsonpCallbackContext() {
   if (typeof window === 'object') {
     return window;
   }
   return {};
 }
-/**
- * Processes an `HttpRequest` with the JSONP method,
- * by performing JSONP style requests.
- * @see {@link HttpHandler}
- * @see {@link HttpXhrBackend}
- *
- * @publicApi
- */
 let JsonpClientBackend = /*#__PURE__*/(() => {
   class JsonpClientBackend {
     callbackMap;
     document;
-    /**
-     * A resolved promise that can be used to schedule microtasks in the event handlers.
-     */
     resolvedPromise = Promise.resolve();
     constructor(callbackMap, document) {
       this.callbackMap = callbackMap;
       this.document = document;
     }
-    /**
-     * Get the name of the next callback method, by incrementing the global `nextRequestId`.
-     */
     nextCallback() {
       return `ng_jsonp_callback_${nextRequestId++}`;
     }
-    /**
-     * Processes a JSONP request and returns an event stream of the results.
-     * @param req The request object.
-     * @returns An observable of the response events.
-     *
-     */
     handle(req) {
-      // Firstly, check both the method and response type. If either doesn't match
-      // then the request was improperly routed here and cannot be handled.
       if (req.method !== 'JSONP') {
-        throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2810 /* RuntimeErrorCode.JSONP_WRONG_METHOD */, ngDevMode && JSONP_ERR_WRONG_METHOD);
+        throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2810, ngDevMode && JSONP_ERR_WRONG_METHOD);
       } else if (req.responseType !== 'json') {
-        throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2811 /* RuntimeErrorCode.JSONP_WRONG_RESPONSE_TYPE */, ngDevMode && JSONP_ERR_WRONG_RESPONSE_TYPE);
+        throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2811, ngDevMode && JSONP_ERR_WRONG_RESPONSE_TYPE);
       }
-      // Check the request headers. JSONP doesn't support headers and
-      // cannot set any that were supplied.
       if (req.headers.keys().length > 0) {
-        throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2812 /* RuntimeErrorCode.JSONP_HEADERS_NOT_SUPPORTED */, ngDevMode && JSONP_ERR_HEADERS_NOT_SUPPORTED);
+        throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2812, ngDevMode && JSONP_ERR_HEADERS_NOT_SUPPORTED);
       }
-      // Everything else happens inside the Observable boundary.
       return new rxjs__WEBPACK_IMPORTED_MODULE_3__.Observable(observer => {
-        // The first step to make a request is to generate the callback name, and replace the
-        // callback placeholder in the URL with the name. Care has to be taken here to ensure
-        // a trailing &, if matched, gets inserted back into the URL in the correct place.
         const callback = this.nextCallback();
         const url = req.urlWithParams.replace(/=JSONP_CALLBACK(&|$)/, `=${callback}$1`);
-        // Construct the <script> tag and point it at the URL.
         const node = this.document.createElement('script');
         node.src = url;
-        // A JSONP request requires waiting for multiple callbacks. These variables
-        // are closed over and track state across those callbacks.
-        // The response object, if one has been received, or null otherwise.
         let body = null;
-        // Whether the response callback has been called.
         let finished = false;
-        // Set the response callback in this.callbackMap (which will be the window
-        // object in the browser. The script being loaded via the <script> tag will
-        // eventually call this callback.
         this.callbackMap[callback] = data => {
-          // Data has been received from the JSONP script. Firstly, delete this callback.
           delete this.callbackMap[callback];
-          // Set state to indicate data was received.
           body = data;
           finished = true;
         };
-        // cleanup() is a utility closure that removes the <script> from the page and
-        // the response callback from the window. This logic is used in both the
-        // success, error, and cancellation paths, so it's extracted out for convenience.
         const cleanup = () => {
           node.removeEventListener('load', onLoad);
           node.removeEventListener('error', onError);
-          // Remove the <script> tag if it's still on the page.
           node.remove();
-          // Remove the response callback from the callbackMap (window object in the
-          // browser).
           delete this.callbackMap[callback];
         };
-        // onLoad() is the success callback which runs after the response callback
-        // if the JSONP script loads successfully. The event itself is unimportant.
-        // If something went wrong, onLoad() may run without the response callback
-        // having been invoked.
         const onLoad = () => {
-          // We wrap it in an extra Promise, to ensure the microtask
-          // is scheduled after the loaded endpoint has executed any potential microtask itself,
-          // which is not guaranteed in Internet Explorer and EdgeHTML. See issue #39496
           this.resolvedPromise.then(() => {
-            // Cleanup the page.
             cleanup();
-            // Check whether the response callback has run.
             if (!finished) {
-              // It hasn't, something went wrong with the request. Return an error via
-              // the Observable error path. All JSONP errors have status 0.
               observer.error(new HttpErrorResponse({
                 url,
                 status: 0,
@@ -2700,24 +2187,17 @@ let JsonpClientBackend = /*#__PURE__*/(() => {
               }));
               return;
             }
-            // Success. body either contains the response body or null if none was
-            // returned.
             observer.next(new HttpResponse({
               body,
               status: HTTP_STATUS_CODE_OK,
               statusText: 'OK',
               url
             }));
-            // Complete the stream, the response is over.
             observer.complete();
           });
         };
-        // onError() is the error callback, which runs if the script returned generates
-        // a Javascript error. It emits the error via the Observable error channel as
-        // a HttpErrorResponse.
         const onError = error => {
           cleanup();
-          // Wrap the error in a HttpErrorResponse.
           observer.error(new HttpErrorResponse({
             error,
             status: 0,
@@ -2725,29 +2205,21 @@ let JsonpClientBackend = /*#__PURE__*/(() => {
             url
           }));
         };
-        // Subscribe to both the success (load) and error events on the <script> tag,
-        // and add it to the page.
         node.addEventListener('load', onLoad);
         node.addEventListener('error', onError);
         this.document.body.appendChild(node);
-        // The request has now been successfully sent.
         observer.next({
           type: HttpEventType.Sent
         });
-        // Cancellation handler.
         return () => {
           if (!finished) {
             this.removeListeners(node);
           }
-          // And finally, clean up the page.
           cleanup();
         };
       });
     }
     removeListeners(script) {
-      // Issue #34818
-      // Changing <script>'s ownerDocument will prevent it from execution.
-      // https://html.spec.whatwg.org/multipage/scripting.html#execute-the-script-block
       foreignDocument ??= this.document.implementation.createHTMLDocument();
       foreignDocument.adoptNode(script);
     }
@@ -2764,37 +2236,18 @@ let JsonpClientBackend = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-/**
- * Identifies requests with the method JSONP and shifts them to the `JsonpClientBackend`.
- */
 function jsonpInterceptorFn(req, next) {
   if (req.method === 'JSONP') {
     return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(JsonpClientBackend).handle(req);
   }
-  // Fall through for normal HTTP requests.
   return next(req);
 }
-/**
- * Identifies requests with the method JSONP and
- * shifts them to the `JsonpClientBackend`.
- *
- * @see {@link HttpInterceptor}
- *
- * @publicApi
- */
 let JsonpInterceptor = /*#__PURE__*/(() => {
   class JsonpInterceptor {
     injector;
     constructor(injector) {
       this.injector = injector;
     }
-    /**
-     * Identifies and handles a given JSONP request.
-     * @param initialRequest The outgoing request object to handle.
-     * @param next The next interceptor in the chain, or the backend
-     * if no interceptors remain in the chain.
-     * @returns An observable of the event stream.
-     */
     intercept(initialRequest, next) {
       return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.runInInjectionContext)(this.injector, () => jsonpInterceptorFn(initialRequest, downstreamRequest => next.handle(downstreamRequest)));
     }
@@ -2811,347 +2264,24 @@ let JsonpInterceptor = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-const XSSI_PREFIX = /^\)\]\}',?\n/;
-const X_REQUEST_URL_REGEXP = /*#__PURE__*/RegExp(`^${X_REQUEST_URL_HEADER}:`, 'm');
-/**
- * Determine an appropriate URL for the response, by checking either
- * XMLHttpRequest.responseURL or the X-Request-URL header.
- */
-function getResponseUrl(xhr) {
-  if ('responseURL' in xhr && xhr.responseURL) {
-    return xhr.responseURL;
-  }
-  if (X_REQUEST_URL_REGEXP.test(xhr.getAllResponseHeaders())) {
-    return xhr.getResponseHeader(X_REQUEST_URL_HEADER);
-  }
-  return null;
-}
-/**
- * Uses `XMLHttpRequest` to send requests to a backend server.
- * @see {@link HttpHandler}
- * @see {@link JsonpClientBackend}
- *
- * @publicApi
- */
-let HttpXhrBackend = /*#__PURE__*/(() => {
-  class HttpXhrBackend {
-    xhrFactory;
-    constructor(xhrFactory) {
-      this.xhrFactory = xhrFactory;
-    }
-    /**
-     * Processes a request and returns a stream of response events.
-     * @param req The request object.
-     * @returns An observable of the response events.
-     */
-    handle(req) {
-      // Quick check to give a better error message when a user attempts to use
-      // HttpClient.jsonp() without installing the HttpClientJsonpModule
-      if (req.method === 'JSONP') {
-        throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](-2800 /* RuntimeErrorCode.MISSING_JSONP_MODULE */, (typeof ngDevMode === 'undefined' || ngDevMode) && `Cannot make a JSONP request without JSONP support. To fix the problem, either add the \`withJsonpSupport()\` call (if \`provideHttpClient()\` is used) or import the \`HttpClientJsonpModule\` in the root NgModule.`);
-      }
-      if (req.keepalive && ngDevMode) {
-        console.warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵformatRuntimeError"])(2813 /* RuntimeErrorCode.KEEPALIVE_NOT_SUPPORTED_WITH_XHR */, `Angular detected that a \`HttpClient\` request with the \`keepalive\` option was sent using XHR, which does not support it. To use the \`keepalive\` option, enable Fetch API support by passing \`withFetch()\` as an argument to \`provideHttpClient()\`.`));
-      }
-      // Check whether this factory has a special function to load an XHR implementation
-      // for various non-browser environments. We currently limit it to only `ServerXhr`
-      // class, which needs to load an XHR implementation.
-      const xhrFactory = this.xhrFactory;
-      const source = xhrFactory.ɵloadImpl ? (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.from)(xhrFactory.ɵloadImpl()) : (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.of)(null);
-      return source.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.switchMap)(() => {
-        // Everything happens on Observable subscription.
-        return new rxjs__WEBPACK_IMPORTED_MODULE_3__.Observable(observer => {
-          // Start by setting up the XHR object with request method, URL, and withCredentials
-          // flag.
-          const xhr = xhrFactory.build();
-          xhr.open(req.method, req.urlWithParams);
-          if (req.withCredentials) {
-            xhr.withCredentials = true;
-          }
-          // Add all the requested headers.
-          req.headers.forEach((name, values) => xhr.setRequestHeader(name, values.join(',')));
-          // Add an Accept header if one isn't present already.
-          if (!req.headers.has(ACCEPT_HEADER)) {
-            xhr.setRequestHeader(ACCEPT_HEADER, ACCEPT_HEADER_VALUE);
-          }
-          // Auto-detect the Content-Type header if one isn't present already.
-          if (!req.headers.has(CONTENT_TYPE_HEADER)) {
-            const detectedType = req.detectContentTypeHeader();
-            // Sometimes Content-Type detection fails.
-            if (detectedType !== null) {
-              xhr.setRequestHeader(CONTENT_TYPE_HEADER, detectedType);
-            }
-          }
-          // Set the responseType if one was requested.
-          if (req.responseType) {
-            const responseType = req.responseType.toLowerCase();
-            // JSON responses need to be processed as text. This is because if the server
-            // returns an XSSI-prefixed JSON response, the browser will fail to parse it,
-            // xhr.response will be null, and xhr.responseText cannot be accessed to
-            // retrieve the prefixed JSON data in order to strip the prefix. Thus, all JSON
-            // is parsed by first requesting text and then applying JSON.parse.
-            xhr.responseType = responseType !== 'json' ? responseType : 'text';
-          }
-          // Serialize the request body if one is present. If not, this will be set to null.
-          const reqBody = req.serializeBody();
-          // If progress events are enabled, response headers will be delivered
-          // in two events - the HttpHeaderResponse event and the full HttpResponse
-          // event. However, since response headers don't change in between these
-          // two events, it doesn't make sense to parse them twice. So headerResponse
-          // caches the data extracted from the response whenever it's first parsed,
-          // to ensure parsing isn't duplicated.
-          let headerResponse = null;
-          // partialFromXhr extracts the HttpHeaderResponse from the current XMLHttpRequest
-          // state, and memoizes it into headerResponse.
-          const partialFromXhr = () => {
-            if (headerResponse !== null) {
-              return headerResponse;
-            }
-            const statusText = xhr.statusText || 'OK';
-            // Parse headers from XMLHttpRequest - this step is lazy.
-            const headers = new HttpHeaders(xhr.getAllResponseHeaders());
-            // Read the response URL from the XMLHttpResponse instance and fall back on the
-            // request URL.
-            const url = getResponseUrl(xhr) || req.url;
-            // Construct the HttpHeaderResponse and memoize it.
-            headerResponse = new HttpHeaderResponse({
-              headers,
-              status: xhr.status,
-              statusText,
-              url
-            });
-            return headerResponse;
-          };
-          // Next, a few closures are defined for the various events which XMLHttpRequest can
-          // emit. This allows them to be unregistered as event listeners later.
-          // First up is the load event, which represents a response being fully available.
-          const onLoad = () => {
-            // Read response state from the memoized partial data.
-            let {
-              headers,
-              status,
-              statusText,
-              url
-            } = partialFromXhr();
-            // The body will be read out if present.
-            let body = null;
-            if (status !== HTTP_STATUS_CODE_NO_CONTENT) {
-              // Use XMLHttpRequest.response if set, responseText otherwise.
-              body = typeof xhr.response === 'undefined' ? xhr.responseText : xhr.response;
-            }
-            // Normalize another potential bug (this one comes from CORS).
-            if (status === 0) {
-              status = !!body ? HTTP_STATUS_CODE_OK : 0;
-            }
-            // ok determines whether the response will be transmitted on the event or
-            // error channel. Unsuccessful status codes (not 2xx) will always be errors,
-            // but a successful status code can still result in an error if the user
-            // asked for JSON data and the body cannot be parsed as such.
-            let ok = status >= 200 && status < 300;
-            // Check whether the body needs to be parsed as JSON (in many cases the browser
-            // will have done that already).
-            if (req.responseType === 'json' && typeof body === 'string') {
-              // Save the original body, before attempting XSSI prefix stripping.
-              const originalBody = body;
-              body = body.replace(XSSI_PREFIX, '');
-              try {
-                // Attempt the parse. If it fails, a parse error should be delivered to the
-                // user.
-                body = body !== '' ? JSON.parse(body) : null;
-              } catch (error) {
-                // Since the JSON.parse failed, it's reasonable to assume this might not have
-                // been a JSON response. Restore the original body (including any XSSI prefix)
-                // to deliver a better error response.
-                body = originalBody;
-                // If this was an error request to begin with, leave it as a string, it
-                // probably just isn't JSON. Otherwise, deliver the parsing error to the user.
-                if (ok) {
-                  // Even though the response status was 2xx, this is still an error.
-                  ok = false;
-                  // The parse error contains the text of the body that failed to parse.
-                  body = {
-                    error,
-                    text: body
-                  };
-                }
-              }
-            }
-            if (ok) {
-              // A successful response is delivered on the event stream.
-              observer.next(new HttpResponse({
-                body,
-                headers,
-                status,
-                statusText,
-                url: url || undefined
-              }));
-              // The full body has been received and delivered, no further events
-              // are possible. This request is complete.
-              observer.complete();
-            } else {
-              // An unsuccessful request is delivered on the error channel.
-              observer.error(new HttpErrorResponse({
-                // The error in this case is the response body (error from the server).
-                error: body,
-                headers,
-                status,
-                statusText,
-                url: url || undefined
-              }));
-            }
-          };
-          // The onError callback is called when something goes wrong at the network level.
-          // Connection timeout, DNS error, offline, etc. These are actual errors, and are
-          // transmitted on the error channel.
-          const onError = error => {
-            const {
-              url
-            } = partialFromXhr();
-            const res = new HttpErrorResponse({
-              error,
-              status: xhr.status || 0,
-              statusText: xhr.statusText || 'Unknown Error',
-              url: url || undefined
-            });
-            observer.error(res);
-          };
-          // The sentHeaders flag tracks whether the HttpResponseHeaders event
-          // has been sent on the stream. This is necessary to track if progress
-          // is enabled since the event will be sent on only the first download
-          // progress event.
-          let sentHeaders = false;
-          // The download progress event handler, which is only registered if
-          // progress events are enabled.
-          const onDownProgress = event => {
-            // Send the HttpResponseHeaders event if it hasn't been sent already.
-            if (!sentHeaders) {
-              observer.next(partialFromXhr());
-              sentHeaders = true;
-            }
-            // Start building the download progress event to deliver on the response
-            // event stream.
-            let progressEvent = {
-              type: HttpEventType.DownloadProgress,
-              loaded: event.loaded
-            };
-            // Set the total number of bytes in the event if it's available.
-            if (event.lengthComputable) {
-              progressEvent.total = event.total;
-            }
-            // If the request was for text content and a partial response is
-            // available on XMLHttpRequest, include it in the progress event
-            // to allow for streaming reads.
-            if (req.responseType === 'text' && !!xhr.responseText) {
-              progressEvent.partialText = xhr.responseText;
-            }
-            // Finally, fire the event.
-            observer.next(progressEvent);
-          };
-          // The upload progress event handler, which is only registered if
-          // progress events are enabled.
-          const onUpProgress = event => {
-            // Upload progress events are simpler. Begin building the progress
-            // event.
-            let progress = {
-              type: HttpEventType.UploadProgress,
-              loaded: event.loaded
-            };
-            // If the total number of bytes being uploaded is available, include
-            // it.
-            if (event.lengthComputable) {
-              progress.total = event.total;
-            }
-            // Send the event.
-            observer.next(progress);
-          };
-          // By default, register for load and error events.
-          xhr.addEventListener('load', onLoad);
-          xhr.addEventListener('error', onError);
-          xhr.addEventListener('timeout', onError);
-          xhr.addEventListener('abort', onError);
-          // Progress events are only enabled if requested.
-          if (req.reportProgress) {
-            // Download progress is always enabled if requested.
-            xhr.addEventListener('progress', onDownProgress);
-            // Upload progress depends on whether there is a body to upload.
-            if (reqBody !== null && xhr.upload) {
-              xhr.upload.addEventListener('progress', onUpProgress);
-            }
-          }
-          // Fire the request, and notify the event stream that it was fired.
-          xhr.send(reqBody);
-          observer.next({
-            type: HttpEventType.Sent
-          });
-          // This is the return from the Observable function, which is the
-          // request cancellation handler.
-          return () => {
-            // On a cancellation, remove all registered event listeners.
-            xhr.removeEventListener('error', onError);
-            xhr.removeEventListener('abort', onError);
-            xhr.removeEventListener('load', onLoad);
-            xhr.removeEventListener('timeout', onError);
-            if (req.reportProgress) {
-              xhr.removeEventListener('progress', onDownProgress);
-              if (reqBody !== null && xhr.upload) {
-                xhr.upload.removeEventListener('progress', onUpProgress);
-              }
-            }
-            // Finally, abort the in-flight request.
-            if (xhr.readyState !== xhr.DONE) {
-              xhr.abort();
-            }
-          };
-        });
-      }));
-    }
-    static ɵfac = function HttpXhrBackend_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || HttpXhrBackend)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_xhr_CEmSPUGj_mjs__WEBPACK_IMPORTED_MODULE_4__.XhrFactory));
-    };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
-      token: HttpXhrBackend,
-      factory: HttpXhrBackend.ɵfac
-    });
-  }
-  return HttpXhrBackend;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const XSRF_ENABLED = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(ngDevMode ? 'XSRF_ENABLED' : '');
+const XSRF_ENABLED = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(typeof ngDevMode !== 'undefined' && ngDevMode ? 'XSRF_ENABLED' : '', {
+  factory: () => true
+});
 const XSRF_DEFAULT_COOKIE_NAME = 'XSRF-TOKEN';
-const XSRF_COOKIE_NAME = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(ngDevMode ? 'XSRF_COOKIE_NAME' : '', {
-  providedIn: 'root',
+const XSRF_COOKIE_NAME = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(typeof ngDevMode !== 'undefined' && ngDevMode ? 'XSRF_COOKIE_NAME' : '', {
   factory: () => XSRF_DEFAULT_COOKIE_NAME
 });
 const XSRF_DEFAULT_HEADER_NAME = 'X-XSRF-TOKEN';
-const XSRF_HEADER_NAME = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(ngDevMode ? 'XSRF_HEADER_NAME' : '', {
-  providedIn: 'root',
+const XSRF_HEADER_NAME = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(typeof ngDevMode !== 'undefined' && ngDevMode ? 'XSRF_HEADER_NAME' : '', {
   factory: () => XSRF_DEFAULT_HEADER_NAME
 });
-/**
- * Retrieves the current XSRF token to use with the next outgoing request.
- *
- * @publicApi
- */
-class HttpXsrfTokenExtractor {}
-/**
- * `HttpXsrfTokenExtractor` which retrieves the token from a cookie.
- */
 let HttpXsrfCookieExtractor = /*#__PURE__*/(() => {
   class HttpXsrfCookieExtractor {
-    doc;
-    cookieName;
+    cookieName = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(XSRF_COOKIE_NAME);
+    doc = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT);
     lastCookieString = '';
     lastToken = null;
-    /**
-     * @internal for testing
-     */
     parseCount = 0;
-    constructor(doc, cookieName) {
-      this.doc = doc;
-      this.cookieName = cookieName;
-    }
     getToken() {
       if (typeof ngServerMode !== 'undefined' && ngServerMode) {
         return null;
@@ -3159,17 +2289,18 @@ let HttpXsrfCookieExtractor = /*#__PURE__*/(() => {
       const cookieString = this.doc.cookie || '';
       if (cookieString !== this.lastCookieString) {
         this.parseCount++;
-        this.lastToken = (0,_xhr_CEmSPUGj_mjs__WEBPACK_IMPORTED_MODULE_4__.parseCookieValue)(cookieString, this.cookieName);
+        this.lastToken = (0,_xhr_chunk_mjs__WEBPACK_IMPORTED_MODULE_4__.parseCookieValue)(cookieString, this.cookieName);
         this.lastCookieString = cookieString;
       }
       return this.lastToken;
     }
     static ɵfac = function HttpXsrfCookieExtractor_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || HttpXsrfCookieExtractor)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](XSRF_COOKIE_NAME));
+      return new (__ngFactoryType__ || HttpXsrfCookieExtractor)();
     };
     static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
       token: HttpXsrfCookieExtractor,
-      factory: HttpXsrfCookieExtractor.ɵfac
+      factory: HttpXsrfCookieExtractor.ɵfac,
+      providedIn: 'root'
     });
   }
   return HttpXsrfCookieExtractor;
@@ -3177,18 +2308,50 @@ let HttpXsrfCookieExtractor = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+let HttpXsrfTokenExtractor = /*#__PURE__*/(() => {
+  class HttpXsrfTokenExtractor {
+    static ɵfac = function HttpXsrfTokenExtractor_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || HttpXsrfTokenExtractor)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+      token: HttpXsrfTokenExtractor,
+      factory: function HttpXsrfTokenExtractor_Factory(__ngFactoryType__) {
+        let __ngConditionalFactory__ = null;
+        if (__ngFactoryType__) {
+          __ngConditionalFactory__ = new (__ngFactoryType__ || HttpXsrfTokenExtractor)();
+        } else {
+          __ngConditionalFactory__ = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](HttpXsrfCookieExtractor);
+        }
+        return __ngConditionalFactory__;
+      },
+      providedIn: 'root'
+    });
+  }
+  return HttpXsrfTokenExtractor;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
 function xsrfInterceptorFn(req, next) {
-  const lcUrl = req.url.toLowerCase();
-  // Skip both non-mutating requests and absolute URLs.
-  // Non-mutating requests don't require a token, and absolute URLs require special handling
-  // anyway as the cookie set
-  // on our origin is not the same as the token expected by another origin.
-  if (!(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(XSRF_ENABLED) || req.method === 'GET' || req.method === 'HEAD' || lcUrl.startsWith('http://') || lcUrl.startsWith('https://')) {
+  if (!(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(XSRF_ENABLED) || req.method === 'GET' || req.method === 'HEAD') {
+    return next(req);
+  }
+  try {
+    const locationHref = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_platform_location_chunk_mjs__WEBPACK_IMPORTED_MODULE_5__.PlatformLocation).href;
+    const {
+      origin: locationOrigin
+    } = new URL(locationHref);
+    const {
+      origin: requestOrigin
+    } = new URL(req.url, locationOrigin);
+    if (locationOrigin !== requestOrigin) {
+      return next(req);
+    }
+  } catch {
     return next(req);
   }
   const token = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(HttpXsrfTokenExtractor).getToken();
   const headerName = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(XSRF_HEADER_NAME);
-  // Be careful not to overwrite an existing header of the same name.
   if (token != null && !req.headers.has(headerName)) {
     req = req.clone({
       headers: req.headers.set(headerName, token)
@@ -3196,20 +2359,14 @@ function xsrfInterceptorFn(req, next) {
   }
   return next(req);
 }
-/**
- * `HttpInterceptor` which adds an XSRF token to eligible outgoing requests.
- */
 let HttpXsrfInterceptor = /*#__PURE__*/(() => {
   class HttpXsrfInterceptor {
-    injector;
-    constructor(injector) {
-      this.injector = injector;
-    }
+    injector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.EnvironmentInjector);
     intercept(initialRequest, next) {
       return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.runInInjectionContext)(this.injector, () => xsrfInterceptorFn(initialRequest, downstreamRequest => next.handle(downstreamRequest)));
     }
     static ɵfac = function HttpXsrfInterceptor_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || HttpXsrfInterceptor)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__.EnvironmentInjector));
+      return new (__ngFactoryType__ || HttpXsrfInterceptor)();
     };
     static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
       token: HttpXsrfInterceptor,
@@ -3221,12 +2378,6 @@ let HttpXsrfInterceptor = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-
-/**
- * Identifies a particular kind of `HttpFeature`.
- *
- * @publicApi
- */
 var HttpFeatureKind = /*#__PURE__*/function (HttpFeatureKind) {
   HttpFeatureKind[HttpFeatureKind["Interceptors"] = 0] = "Interceptors";
   HttpFeatureKind[HttpFeatureKind["LegacyInterceptors"] = 1] = "LegacyInterceptors";
@@ -3243,35 +2394,6 @@ function makeHttpFeature(kind, providers) {
     ɵproviders: providers
   };
 }
-/**
- * Configures Angular's `HttpClient` service to be available for injection.
- *
- * By default, `HttpClient` will be configured for injection with its default options for XSRF
- * protection of outgoing requests. Additional configuration options can be provided by passing
- * feature functions to `provideHttpClient`. For example, HTTP interceptors can be added using the
- * `withInterceptors(...)` feature.
- *
- * <div class="docs-alert docs-alert-helpful">
- *
- * It's strongly recommended to enable
- * [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) for applications that use
- * Server-Side Rendering for better performance and compatibility. To enable `fetch`, add
- * `withFetch()` feature to the `provideHttpClient()` call at the root of the application:
- *
- * ```ts
- * provideHttpClient(withFetch());
- * ```
- *
- * </div>
- *
- * @see {@link withInterceptors}
- * @see {@link withInterceptorsFromDi}
- * @see {@link withXsrfConfiguration}
- * @see {@link withNoXsrfProtection}
- * @see {@link withJsonpSupport}
- * @see {@link withRequestsMadeViaParent}
- * @see {@link withFetch}
- */
 function provideHttpClient(...features) {
   if (ngDevMode) {
     const featureKinds = new Set(features.map(f => f.ɵkind));
@@ -3279,7 +2401,7 @@ function provideHttpClient(...features) {
       throw new Error(ngDevMode ? `Configuration error: found both withXsrfConfiguration() and withNoXsrfProtection() in the same call to provideHttpClient(), which is a contradiction.` : '');
     }
   }
-  const providers = [HttpClient, HttpXhrBackend, HttpInterceptorHandler, {
+  const providers = [HttpClient, HttpInterceptorHandler, {
     provide: HttpHandler,
     useExisting: HttpInterceptorHandler
   }, {
@@ -3293,26 +2415,12 @@ function provideHttpClient(...features) {
     provide: HTTP_INTERCEPTOR_FNS,
     useValue: xsrfInterceptorFn,
     multi: true
-  }, {
-    provide: XSRF_ENABLED,
-    useValue: true
-  }, {
-    provide: HttpXsrfTokenExtractor,
-    useClass: HttpXsrfCookieExtractor
   }];
   for (const feature of features) {
     providers.push(...feature.ɵproviders);
   }
   return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.makeEnvironmentProviders)(providers);
 }
-/**
- * Adds one or more functional-style HTTP interceptors to the configuration of the `HttpClient`
- * instance.
- *
- * @see {@link HttpInterceptorFn}
- * @see {@link provideHttpClient}
- * @publicApi
- */
 function withInterceptors(interceptorFns) {
   return makeHttpFeature(HttpFeatureKind.Interceptors, interceptorFns.map(interceptorFn => {
     return {
@@ -3322,24 +2430,8 @@ function withInterceptors(interceptorFns) {
     };
   }));
 }
-const LEGACY_INTERCEPTOR_FN = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(ngDevMode ? 'LEGACY_INTERCEPTOR_FN' : '');
-/**
- * Includes class-based interceptors configured using a multi-provider in the current injector into
- * the configured `HttpClient` instance.
- *
- * Prefer `withInterceptors` and functional interceptors instead, as support for DI-provided
- * interceptors may be phased out in a later release.
- *
- * @see {@link HttpInterceptor}
- * @see {@link HTTP_INTERCEPTORS}
- * @see {@link provideHttpClient}
- */
+const LEGACY_INTERCEPTOR_FN = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(typeof ngDevMode !== 'undefined' && ngDevMode ? 'LEGACY_INTERCEPTOR_FN' : '');
 function withInterceptorsFromDi() {
-  // Note: the legacy interceptor function is provided here via an intermediate token
-  // (`LEGACY_INTERCEPTOR_FN`), using a pattern which guarantees that if these providers are
-  // included multiple times, all of the multi-provider entries will have the same instance of the
-  // interceptor function. That way, the `HttpINterceptorHandler` will dedup them and legacy
-  // interceptors will not run multiple times.
   return makeHttpFeature(HttpFeatureKind.LegacyInterceptors, [{
     provide: LEGACY_INTERCEPTOR_FN,
     useFactory: legacyInterceptorFnFactory
@@ -3349,13 +2441,6 @@ function withInterceptorsFromDi() {
     multi: true
   }]);
 }
-/**
- * Customizes the XSRF protection for the configuration of the current `HttpClient` instance.
- *
- * This feature is incompatible with the `withNoXsrfProtection` feature.
- *
- * @see {@link provideHttpClient}
- */
 function withXsrfConfiguration({
   cookieName,
   headerName
@@ -3375,24 +2460,12 @@ function withXsrfConfiguration({
   }
   return makeHttpFeature(HttpFeatureKind.CustomXsrfConfiguration, providers);
 }
-/**
- * Disables XSRF protection in the configuration of the current `HttpClient` instance.
- *
- * This feature is incompatible with the `withXsrfConfiguration` feature.
- *
- * @see {@link provideHttpClient}
- */
 function withNoXsrfProtection() {
   return makeHttpFeature(HttpFeatureKind.NoXsrfProtection, [{
     provide: XSRF_ENABLED,
     useValue: false
   }]);
 }
-/**
- * Add JSONP support to the configuration of the current `HttpClient` instance.
- *
- * @see {@link provideHttpClient}
- */
 function withJsonpSupport() {
   return makeHttpFeature(HttpFeatureKind.JsonpSupport, [JsonpClientBackend, {
     provide: JsonpCallbackContext,
@@ -3403,26 +2476,6 @@ function withJsonpSupport() {
     multi: true
   }]);
 }
-/**
- * Configures the current `HttpClient` instance to make requests via the parent injector's
- * `HttpClient` instead of directly.
- *
- * By default, `provideHttpClient` configures `HttpClient` in its injector to be an independent
- * instance. For example, even if `HttpClient` is configured in the parent injector with
- * one or more interceptors, they will not intercept requests made via this instance.
- *
- * With this option enabled, once the request has passed through the current injector's
- * interceptors, it will be delegated to the parent injector's `HttpClient` chain instead of
- * dispatched directly, and interceptors in the parent configuration will be applied to the request.
- *
- * If there are several `HttpClient` instances in the injector hierarchy, it's possible for
- * `withRequestsMadeViaParent` to be used at multiple levels, which will cause the request to
- * "bubble up" until either reaching the root level or an `HttpClient` which was not configured with
- * this option.
- *
- * @see {@link provideHttpClient}
- * @publicApi 19.0
- */
 function withRequestsMadeViaParent() {
   return makeHttpFeature(HttpFeatureKind.RequestsMadeViaParent, [{
     provide: HttpBackend,
@@ -3438,13 +2491,6 @@ function withRequestsMadeViaParent() {
     }
   }]);
 }
-/**
- * Configures the current `HttpClient` instance to make requests using the fetch API.
- *
- * Note: The Fetch API doesn't support progress report on uploads.
- *
- * @publicApi
- */
 function withFetch() {
   return makeHttpFeature(HttpFeatureKind.Fetch, [FetchBackend, {
     provide: FETCH_BACKEND,
@@ -3454,40 +2500,14 @@ function withFetch() {
     useExisting: FetchBackend
   }]);
 }
-
-/**
- * Configures XSRF protection support for outgoing requests.
- *
- * For a server that supports a cookie-based XSRF protection system,
- * use directly to configure XSRF protection with the correct
- * cookie and header names.
- *
- * If no names are supplied, the default cookie name is `XSRF-TOKEN`
- * and the default header name is `X-XSRF-TOKEN`.
- *
- * @publicApi
- * @deprecated Use withXsrfConfiguration({cookieName: 'XSRF-TOKEN', headerName: 'X-XSRF-TOKEN'}) as
- *     providers instead or `withNoXsrfProtection` if you want to disabled XSRF protection.
- */
 let HttpClientXsrfModule = /*#__PURE__*/(() => {
   class HttpClientXsrfModule {
-    /**
-     * Disable the default XSRF protection.
-     */
     static disable() {
       return {
         ngModule: HttpClientXsrfModule,
         providers: [withNoXsrfProtection().ɵproviders]
       };
     }
-    /**
-     * Configure XSRF protection.
-     * @param options An object that can specify either or both
-     * cookie name or header name.
-     * - Cookie name default is `XSRF-TOKEN`.
-     * - Header name default is `X-XSRF-TOKEN`.
-     *
-     */
     static withOptions(options = {}) {
       return {
         ngModule: HttpClientXsrfModule,
@@ -3522,16 +2542,6 @@ let HttpClientXsrfModule = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-/**
- * Configures the dependency injector for `HttpClient`
- * with supporting services for XSRF. Automatically imported by `HttpClientModule`.
- *
- * You can add interceptors to the chain behind `HttpClient` by binding them to the
- * multiprovider for built-in DI token `HTTP_INTERCEPTORS`.
- *
- * @publicApi
- * @deprecated use `provideHttpClient(withInterceptorsFromDi())` as providers instead
- */
 let HttpClientModule = /*#__PURE__*/(() => {
   class HttpClientModule {
     static ɵfac = function HttpClientModule_Factory(__ngFactoryType__) {
@@ -3549,15 +2559,6 @@ let HttpClientModule = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-/**
- * Configures the dependency injector for `HttpClient`
- * with supporting services for JSONP.
- * Without this module, Jsonp requests reach the backend
- * with method JSONP, where they are rejected.
- *
- * @publicApi
- * @deprecated `withJsonpSupport()` as providers instead
- */
 let HttpClientJsonpModule = /*#__PURE__*/(() => {
   class HttpClientJsonpModule {
     static ɵfac = function HttpClientJsonpModule_Factory(__ngFactoryType__) {
@@ -3577,13 +2578,13 @@ let HttpClientJsonpModule = /*#__PURE__*/(() => {
 })();
 
 
-/***/ }),
+/***/ },
 
-/***/ 89204:
+/***/ 89204
 /*!*********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js ***!
   \*********************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3616,7 +2617,40 @@ function _asyncToGenerator(n) {
 }
 
 
-/***/ })
+/***/ },
+
+/***/ 97516
+/*!**************************************************************!*\
+  !*** ./node_modules/@angular/common/fesm2022/_xhr-chunk.mjs ***!
+  \**************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   XhrFactory: () => (/* binding */ XhrFactory),
+/* harmony export */   parseCookieValue: () => (/* binding */ parseCookieValue)
+/* harmony export */ });
+/**
+ * @license Angular v21.1.0
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
+
+function parseCookieValue(cookieStr, name) {
+  name = encodeURIComponent(name);
+  for (const cookie of cookieStr.split(';')) {
+    const eqIndex = cookie.indexOf('=');
+    const [cookieName, cookieValue] = eqIndex == -1 ? [cookie, ''] : [cookie.slice(0, eqIndex), cookie.slice(eqIndex + 1)];
+    if (cookieName.trim() === name) {
+      return decodeURIComponent(cookieValue);
+    }
+  }
+  return null;
+}
+class XhrFactory {}
+
+
+/***/ }
 
 }])
 //# sourceMappingURL=6443.js.map

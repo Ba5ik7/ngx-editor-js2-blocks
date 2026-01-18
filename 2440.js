@@ -1,27 +1,27 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[2440],{
 
-/***/ 10059:
+/***/ 10059
 /*!***********************************************************************************!*\
   !*** ./dist/ngx-editor-js2-mermaidjs/fesm2022/tmdjr-ngx-editor-js2-mermaidjs.mjs ***!
   \***********************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   NgxEditorJs2MermaidjsComponent: () => (/* binding */ NgxEditorJs2MermaidjsComponent),
 /* harmony export */   SafeHtmlPipe: () => (/* binding */ SafeHtmlPipe)
 /* harmony export */ });
-/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 77947);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 85914);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 27940);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 7140);
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/button */ 33977);
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/icon */ 37409);
-/* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
-/* harmony import */ var mermaid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! mermaid */ 95575);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/form-field */ 76833);
+/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 8778);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 11674);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 51356);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 14332);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/button */ 31944);
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/icon */ 81836);
+/* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
+/* harmony import */ var mermaid__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! mermaid */ 95575);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/form-field */ 66080);
 /* harmony import */ var _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ctrl/ngx-codemirror */ 42642);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/platform-browser */ 53105);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/platform-browser */ 2649);
 
 
 
@@ -84,7 +84,9 @@ function NgxEditorJs2MermaidjsComponent_Conditional_3_Template(rf, ctx) {
 let MermaidjsConfigComponent = /*#__PURE__*/(() => {
   class MermaidjsConfigComponent {
     updateConfig = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.output)();
-    value = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.model)();
+    value = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.model)(...(ngDevMode ? [undefined, {
+      debugName: "value"
+    }] : []));
     codeMirrorOptions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.signal)({
       lineNumbers: true,
       theme: 'material-palenight',
@@ -98,7 +100,9 @@ let MermaidjsConfigComponent = /*#__PURE__*/(() => {
       indentUnit: 2,
       tabSize: 2,
       cursorScrollMargin: 5
-    });
+    }, ...(ngDevMode ? [{
+      debugName: "codeMirrorOptions"
+    }] : []));
     closeConfig() {
       this.updateConfig.emit();
     }
@@ -142,7 +146,7 @@ let MermaidjsConfigComponent = /*#__PURE__*/(() => {
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("options", ctx.codeMirrorOptions());
         }
       },
-      dependencies: [_angular_material_button__WEBPACK_IMPORTED_MODULE_4__.MatButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormFieldModule, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgModel, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_9__.CodemirrorModule, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_9__.CodemirrorComponent],
+      dependencies: [_angular_material_button__WEBPACK_IMPORTED_MODULE_4__.MatButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__.MatFormFieldModule, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgModel, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_9__.CodemirrorModule, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_9__.CodemirrorComponent],
       styles: ["[_nghost-%COMP%]{display:block;position:relative;padding:20px;border:1px solid #ccc;border-radius:var( --mat-card-outlined-container-shape, var(--mat-sys-corner-medium) )}[_nghost-%COMP%]   .action-group[_ngcontent-%COMP%]{margin-top:20px;display:flex;justify-content:flex-end}[_nghost-%COMP%]     .CodeMirror{font-family:Cascadia Code,Fira Code,Menlo,Monaco,Courier New,monospace;font-size:16px;font-weight:400;line-height:32px;letter-spacing:.5px;height:100%}"]
     });
   }
@@ -151,7 +155,7 @@ let MermaidjsConfigComponent = /*#__PURE__*/(() => {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-const mermaid = mermaid__WEBPACK_IMPORTED_MODULE_6__["default"] ? mermaid__WEBPACK_IMPORTED_MODULE_6__["default"] : mermaid__WEBPACK_IMPORTED_MODULE_6__;
+const mermaid = mermaid__WEBPACK_IMPORTED_MODULE_7__["default"] ? mermaid__WEBPACK_IMPORTED_MODULE_7__["default"] : mermaid__WEBPACK_IMPORTED_MODULE_7__;
 let SafeHtmlPipe = /*#__PURE__*/(() => {
   class SafeHtmlPipe {
     sanitized;
@@ -162,7 +166,7 @@ let SafeHtmlPipe = /*#__PURE__*/(() => {
       return this.sanitized.bypassSecurityTrustHtml(value);
     }
     static ɵfac = function SafeHtmlPipe_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || SafeHtmlPipe)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__.DomSanitizer, 16));
+      return new (__ngFactoryType__ || SafeHtmlPipe)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_10__.DomSanitizer, 16));
     };
     static ɵpipe = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefinePipe"]({
       name: "safeHtml",
@@ -182,11 +186,19 @@ let NgxEditorJs2MermaidjsComponent = /*#__PURE__*/(() => {
   class NgxEditorJs2MermaidjsComponent {
     ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_2__.NgZone);
     mermaid = mermaid;
-    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(0);
+    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(0, ...(ngDevMode ? [{
+      debugName: "sortIndex"
+    }] : []));
     componentInstanceName = 'NgxEditorJs2MermaidjsComponent';
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(true);
-    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required();
-    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required();
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(true, ...(ngDevMode ? [{
+      debugName: "autofocus"
+    }] : []));
+    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required(...(ngDevMode ? [{
+      debugName: "formGroup"
+    }] : []));
+    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required(...(ngDevMode ? [{
+      debugName: "formControlName"
+    }] : []));
     blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)([{
       action: 'flex-start',
       icon: 'format_align_left'
@@ -199,8 +211,12 @@ let NgxEditorJs2MermaidjsComponent = /*#__PURE__*/(() => {
     }, {
       action: 'stretch',
       icon: 'format_align_justify'
-    }]);
-    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.signal)('flex-start');
+    }], ...(ngDevMode ? [{
+      debugName: "blockOptionActions"
+    }] : []));
+    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.signal)('flex-start', ...(ngDevMode ? [{
+      debugName: "savedAction"
+    }] : []));
     actionCallbackBind = this.actionCallback.bind(this);
     mermaidDiagramSVG = '';
     value = `flowchart TD
@@ -209,7 +225,9 @@ let NgxEditorJs2MermaidjsComponent = /*#__PURE__*/(() => {
     C -->|One| D[Laptop]
     C -->|Two| E[iPhone]
     C -->|Three| F[fa:fa-car Car]`;
-    openOverlay = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.signal)(false);
+    openOverlay = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.signal)(false, ...(ngDevMode ? [{
+      debugName: "openOverlay"
+    }] : []));
     ngOnInit() {
       this.ngZone.runOutsideAngular(() => {
         this.mermaid.initialize({
@@ -272,7 +290,7 @@ let NgxEditorJs2MermaidjsComponent = /*#__PURE__*/(() => {
           _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵconditional"](!ctx.openOverlay() ? 2 : 3);
         }
       },
-      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControlName, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_10__.ControlAccessorDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_10__.AutofocusDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_10__.ToolbarFabDirective, _angular_material_button__WEBPACK_IMPORTED_MODULE_4__.MatFabButton, _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__.MatIcon, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgClass, MermaidjsConfigComponent, SafeHtmlPipe],
+      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControlName, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_6__.ControlAccessorDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_6__.AutofocusDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_6__.ToolbarFabDirective, _angular_material_button__WEBPACK_IMPORTED_MODULE_4__.MatFabButton, _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__.MatIcon, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgClass, MermaidjsConfigComponent, SafeHtmlPipe],
       styles: ["[_nghost-%COMP%]{position:relative;display:flex;flex-direction:column;margin:1.5rem 0}[_nghost-%COMP%]   .flex-start[_ngcontent-%COMP%]{justify-content:flex-start}[_nghost-%COMP%]   .flex-end[_ngcontent-%COMP%]{justify-content:flex-end}[_nghost-%COMP%]   .center[_ngcontent-%COMP%]{justify-content:center}[_nghost-%COMP%]   .stretch[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{width:100%}[_nghost-%COMP%]   .mermaid[_ngcontent-%COMP%]{width:100%;display:flex}[_nghost-%COMP%]   .mermaidjs-container-overlay[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;position:absolute}[_nghost-%COMP%]   .mermaid[_ngcontent-%COMP%]:hover ~ .mermaid-block-button[_ngcontent-%COMP%], [_nghost-%COMP%]   .mermaid-block-button[_ngcontent-%COMP%]:hover, [_nghost-%COMP%]   .mermaidjs-container-overlay[_ngcontent-%COMP%]:hover ~ .mermaidjs-container[_ngcontent-%COMP%]   .mermaidjs-block-button[_ngcontent-%COMP%], [_nghost-%COMP%]   .mermaidjs-block-button[_ngcontent-%COMP%]:hover{display:block}[_nghost-%COMP%]   .mermaidjs-container[_ngcontent-%COMP%]{display:flex}[_nghost-%COMP%]   .mermaidjs-container[_ngcontent-%COMP%]   .mermaidjs-block[_ngcontent-%COMP%]{min-width:0}[_nghost-%COMP%]   .mermaidjs-block-button[_ngcontent-%COMP%]{position:absolute;top:6px;left:6px;display:none}"]
     });
   }
@@ -292,13 +310,13 @@ let NgxEditorJs2MermaidjsComponent = /*#__PURE__*/(() => {
 
 
 
-/***/ }),
+/***/ },
 
-/***/ 42642:
+/***/ 42642
 /*!****************************************************************************!*\
   !*** ./node_modules/@ctrl/ngx-codemirror/fesm2022/ctrl-ngx-codemirror.mjs ***!
   \****************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -306,8 +324,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   CodemirrorModule: () => (/* binding */ CodemirrorModule)
 /* harmony export */ });
 /* harmony import */ var _Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ 7140);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ 14332);
 
 
 
@@ -560,7 +578,7 @@ let CodemirrorModule = /*#__PURE__*/(() => {
 
 
 
-/***/ })
+/***/ }
 
 }])
 //# sourceMappingURL=2440.js.map

@@ -1,10 +1,10 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[1273],{
 
-/***/ 81273:
+/***/ 81273
 /*!***************************************************!*\
   !*** ./node_modules/codemirror/lib/codemirror.js ***!
   \***************************************************/
-/***/ (function(module) {
+(module) {
 
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
 // Distributed under an MIT license: https://codemirror.net/5/LICENSE
@@ -12575,7 +12575,7 @@
   return CodeMirror;
 });
 
-/***/ })
+/***/ }
 
 }])
 //# sourceMappingURL=1273.js.map

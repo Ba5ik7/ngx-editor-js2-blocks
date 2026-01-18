@@ -62,9 +62,6 @@ ngx-editor-js2-codemirror.cdk-drag-preview .CodeMirror-lines {
 
 ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config {
   border: none !important;
-  /* Typography for headers and labels */
-  /* Style buttons */
-  /* Style input fields */
 }
 ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .answer-select {
   margin-bottom: 8px !important;
@@ -89,6 +86,9 @@ ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .choices-action-group {
 }
 ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .choices-action-group mat-icon {
   margin-right: var(--mat-button-text-icon-spacing, 8px) !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config {
+  /* Typography for headers and labels */
 }
 ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config h3 {
   margin-block-start: 1em !important;
@@ -117,11 +117,17 @@ ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .answers-action-group {
 ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .mat-step-icon {
   margin-right: 8px !important;
 }
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config {
+  /* Style buttons */
+}
 ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config [mat-button] {
   padding: 0 var(--mat-button-text-horizontal-padding, 12px) !important;
 }
 ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config [mat-flat-button] {
   padding: 0 var(--mat-button-filled-horizontal-padding, 24px) !important;
+}
+ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config {
+  /* Style input fields */
 }
 ngx-editor-js2-pop-quiz.cdk-drag-preview pop-quiz-config .mdc-text-field {
   padding: 0 16px !important;
@@ -141,15 +147,19 @@ ngx-editor-js2-image.cdk-drag-preview image-config {
   padding: 20px !important;
   border: none !important;
   /* Typography for headers and labels */
-  /* Style buttons */
-  /* Style input fields */
 }
 ngx-editor-js2-image.cdk-drag-preview image-config h2 {
   margin-block-start: 0.83em !important;
   margin-block-end: 0.83em !important;
 }
+ngx-editor-js2-image.cdk-drag-preview image-config {
+  /* Style buttons */
+}
 ngx-editor-js2-image.cdk-drag-preview image-config [mat-flat-button] {
   padding: 0 var(--mat-button-filled-horizontal-padding, 24px) !important;
+}
+ngx-editor-js2-image.cdk-drag-preview image-config {
+  /* Style input fields */
 }
 ngx-editor-js2-image.cdk-drag-preview image-config .mdc-text-field {
   padding: 0 16px !important;
@@ -180,11 +190,13 @@ ngx-editor-js2-mermaidjs.cdk-drag-preview mermaidjs-config {
   padding: 20px !important;
   border: none !important;
   /* Typography for headers and labels */
-  /* Style buttons */
 }
 ngx-editor-js2-mermaidjs.cdk-drag-preview mermaidjs-config h2 {
   margin-block-start: 0.83em !important;
   margin-block-end: 0.83em !important;
+}
+ngx-editor-js2-mermaidjs.cdk-drag-preview mermaidjs-config {
+  /* Style buttons */
 }
 ngx-editor-js2-mermaidjs.cdk-drag-preview mermaidjs-config [mat-flat-button] {
   padding: 0 var(--mat-button-filled-horizontal-padding, 24px) !important;

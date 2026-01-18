@@ -1,10 +1,10 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[2239],{
 
-/***/ 40623:
+/***/ 40623
 /*!******************************************************************************!*\
   !*** ./node_modules/@tmdjr/ngx-editor-js2/fesm2022/tmdjr-ngx-editor-js2.mjs ***!
   \******************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -16,19 +16,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   NgxEditorJs2Service: () => (/* binding */ NgxEditorJs2Service),
 /* harmony export */   ToolbarFabDirective: () => (/* binding */ ToolbarFabDirective)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ 7140);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 51356);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ 14332);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 44866);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/core */ 49217);
-/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 77947);
-/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/cdk/overlay */ 87351);
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/icon */ 37409);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 85914);
-/* harmony import */ var _angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core/rxjs-interop */ 33316);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/form-field */ 76833);
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/input */ 29757);
-/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/list */ 39633);
-/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/cdk/portal */ 35253);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/core */ 61488);
+/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 8778);
+/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/cdk/overlay */ 20026);
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/icon */ 81836);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 11674);
+/* harmony import */ var _angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core/rxjs-interop */ 51404);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/form-field */ 66080);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/input */ 91638);
+/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/list */ 53092);
+/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/cdk/portal */ 5978);
 
 
 
@@ -335,7 +335,9 @@ function ToolbarInlineComponent_Conditional_12_Template(rf, ctx) {
 let ControlAccessorDirective = /*#__PURE__*/(() => {
   class ControlAccessorDirective {
     elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
-    defaultValue = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)();
+    defaultValue = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(...(ngDevMode ? [undefined, {
+      debugName: "defaultValue"
+    }] : []));
     onChange = () => {};
     onTouched = () => {};
     writeValue() {
@@ -386,7 +388,9 @@ let ControlAccessorDirective = /*#__PURE__*/(() => {
 let AutofocusDirective = /*#__PURE__*/(() => {
   class AutofocusDirective {
     elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(false);
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(false, ...(ngDevMode ? [{
+      debugName: "autofocus"
+    }] : []));
     ngAfterContentInit() {
       this.autofocus() && this.elementRef.nativeElement.focus?.();
     }
@@ -415,7 +419,9 @@ var MovePositionActions = /*#__PURE__*/function (MovePositionActions) {
 let ToolbarBlockOptionsComponent = /*#__PURE__*/(() => {
   class ToolbarBlockOptionsComponent {
     Position = MovePositionActions;
-    blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)();
+    blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(...(ngDevMode ? [undefined, {
+      debugName: "blockOptionActions"
+    }] : []));
     handleActionEmitter = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.output)({
       alias: 'handleAction'
     });
@@ -489,7 +495,9 @@ let ToolbarBlocksComponent = /*#__PURE__*/(() => {
     addBlockEmitter = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.output)({
       alias: 'addBlock'
     });
-    supportedBlocks = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)([]);
+    supportedBlocks = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)([], ...(ngDevMode ? [{
+      debugName: "supportedBlocks"
+    }] : []));
     supportedBlocks$ = (0,_angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_8__.toObservable)(this.supportedBlocks);
     blockCtrl = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControl([]);
     filter$ = this.blockCtrl.valueChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_2__.startWith)(''));
@@ -549,15 +557,33 @@ let ToolbarBlocksComponent = /*#__PURE__*/(() => {
 })();
 let ToolbarComponent = /*#__PURE__*/(() => {
   class ToolbarComponent {
-    componentContextPositionIndex = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
-    supportedBlocks = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
-    blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)();
-    actionCallback = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(() => () => {});
-    formControlName = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)();
-    addBlockCallback = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
-    moveBlockPositionCallback = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
-    openBlocks = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false);
-    openBlocksOption = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false);
+    componentContextPositionIndex = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "componentContextPositionIndex"
+    }] : []));
+    supportedBlocks = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "supportedBlocks"
+    }] : []));
+    blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(...(ngDevMode ? [undefined, {
+      debugName: "blockOptionActions"
+    }] : []));
+    actionCallback = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(() => () => {}, ...(ngDevMode ? [{
+      debugName: "actionCallback"
+    }] : []));
+    formControlName = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(...(ngDevMode ? [undefined, {
+      debugName: "formControlName"
+    }] : []));
+    addBlockCallback = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "addBlockCallback"
+    }] : []));
+    moveBlockPositionCallback = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "moveBlockPositionCallback"
+    }] : []));
+    openBlocks = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false, ...(ngDevMode ? [{
+      debugName: "openBlocks"
+    }] : []));
+    openBlocksOption = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false, ...(ngDevMode ? [{
+      debugName: "openBlocksOption"
+    }] : []));
     openBlocksList() {
       this.openBlocks.update(prev => !prev);
     }
@@ -638,7 +664,7 @@ let ToolbarComponent = /*#__PURE__*/(() => {
         }
       },
       dependencies: [_angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_4__.CdkDragHandle, _angular_material_core__WEBPACK_IMPORTED_MODULE_3__.MatRipple, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_5__.OverlayModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_5__.CdkConnectedOverlay, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_5__.CdkOverlayOrigin, ToolbarBlockOptionsComponent, ToolbarBlocksComponent],
-      styles: ["[_nghost-%COMP%]   .toolbar-buttons-container[_ngcontent-%COMP%]{position:relative;display:flex;gap:10px}[_nghost-%COMP%]   .toolbar-buttons[_ngcontent-%COMP%]{cursor:pointer;width:30px;height:30px;display:flex;justify-content:center;align-items:center;border-radius:4px;margin-bottom:14px;-webkit-user-select:none;user-select:none;color:var(--mat-sys-on-tertiary-container);background:var(--mat-sys-tertiary-container);box-shadow:var(--mat-sys-level2)}[_nghost-%COMP%]   .toolbar-buttons[_ngcontent-%COMP%]:hover, [_nghost-%COMP%]   .toolbar-buttons[_ngcontent-%COMP%]:focus{background:var(--mat-sys-surface-bright)}@media (min-width: 768px){[_nghost-%COMP%]{position:absolute;margin-left:-80px;top:0}}"]
+      styles: ["[_nghost-%COMP%]   .toolbar-buttons-container[_ngcontent-%COMP%]{position:relative;display:flex;gap:10px}[_nghost-%COMP%]   .toolbar-buttons[_ngcontent-%COMP%]{cursor:pointer;width:30px;height:30px;display:flex;justify-content:center;align-items:center;border-radius:4px;margin-bottom:14px;-webkit-user-select:none;user-select:none;color:var(--mat-sys-on-tertiary-container);background:var(--mat-sys-tertiary-container);box-shadow:var(--mat-sys-level2)}[_nghost-%COMP%]   .toolbar-buttons[_ngcontent-%COMP%]:hover, [_nghost-%COMP%]   .toolbar-buttons[_ngcontent-%COMP%]:focus{background:var(--mat-sys-surface-bright)}@media(min-width:768px){[_nghost-%COMP%]{position:absolute;margin-left:-80px;top:0}}"]
     });
   }
   return ToolbarComponent;
@@ -869,11 +895,21 @@ let ToolbarFabDirective = /*#__PURE__*/(() => {
   class ToolbarFabDirective {
     toolFabService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(ToolFabService);
     viewContainerRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewContainerRef);
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)();
-    blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)();
-    actionCallback = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
-    componentContextPositionIndex = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
-    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(...(ngDevMode ? [undefined, {
+      debugName: "autofocus"
+    }] : []));
+    blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(...(ngDevMode ? [undefined, {
+      debugName: "blockOptionActions"
+    }] : []));
+    actionCallback = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "actionCallback"
+    }] : []));
+    componentContextPositionIndex = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "componentContextPositionIndex"
+    }] : []));
+    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "formControlName"
+    }] : []));
     onMouseEnter() {
       this.toolFabService.componentContext.next({
         viewContainerRef: this.viewContainerRef,
@@ -944,11 +980,19 @@ let CleanPasteDataDirective = /*#__PURE__*/(() => {
 })();
 let HeaderBlockComponent = /*#__PURE__*/(() => {
   class HeaderBlockComponent {
-    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(0);
+    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(0, ...(ngDevMode ? [{
+      debugName: "sortIndex"
+    }] : []));
     componentInstanceName = 'HeaderBlockComponent';
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true);
-    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
-    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true, ...(ngDevMode ? [{
+      debugName: "autofocus"
+    }] : []));
+    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "formGroup"
+    }] : []));
+    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "formControlName"
+    }] : []));
     blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)([{
       action: 'h1',
       text: 'H1'
@@ -967,8 +1011,12 @@ let HeaderBlockComponent = /*#__PURE__*/(() => {
     }, {
       action: 'h6',
       text: 'H6'
-    }]);
-    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('h1');
+    }], ...(ngDevMode ? [{
+      debugName: "blockOptionActions"
+    }] : []));
+    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('h1', ...(ngDevMode ? [{
+      debugName: "savedAction"
+    }] : []));
     actionCallbackBind = this.actionCallback.bind(this);
     actionCallback(selectedAction) {
       this.savedAction.set(selectedAction);
@@ -1014,11 +1062,19 @@ let HeaderBlockComponent = /*#__PURE__*/(() => {
 })();
 let ParagraphBlockComponent = /*#__PURE__*/(() => {
   class ParagraphBlockComponent {
-    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(0);
+    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(0, ...(ngDevMode ? [{
+      debugName: "sortIndex"
+    }] : []));
     componentInstanceName = 'ParagraphBlockComponent';
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true);
-    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
-    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true, ...(ngDevMode ? [{
+      debugName: "autofocus"
+    }] : []));
+    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "formGroup"
+    }] : []));
+    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "formControlName"
+    }] : []));
     blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)([{
       action: 'small',
       icon: 'density_small'
@@ -1037,8 +1093,12 @@ let ParagraphBlockComponent = /*#__PURE__*/(() => {
     }, {
       action: 'title-large',
       text: 'TL'
-    }]);
-    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('medium');
+    }], ...(ngDevMode ? [{
+      debugName: "blockOptionActions"
+    }] : []));
+    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('medium', ...(ngDevMode ? [{
+      debugName: "savedAction"
+    }] : []));
     actionCallbackBind = this.actionCallback.bind(this);
     actionCallback(action) {
       this.savedAction.update(() => action);
@@ -1083,7 +1143,7 @@ let ParagraphBlockComponent = /*#__PURE__*/(() => {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-const NGX_EDITORJS_OPTIONS = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('NGX_EDITORJS_OPTIONS');
+const NGX_EDITORJS_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('NGX_EDITORJS_OPTIONS');
 let NgxEditorJs2Service = /*#__PURE__*/(() => {
   class NgxEditorJs2Service {
     editorJsService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(EditorJsService);
@@ -1162,8 +1222,13 @@ let EditorJsComponent = /*#__PURE__*/(() => {
   class EditorJsComponent {
     editorJsService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(EditorJsService);
     ngxEditorJs2Service = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NgxEditorJs2Service);
-    bootstrapEditorJs = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)();
+    bootstrapEditorJs = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(...(ngDevMode ? [undefined, {
+      debugName: "bootstrapEditorJs"
+    }] : []));
     blocks = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required({
+      ...(ngDevMode ? {
+        debugName: "blocks"
+      } : {}),
       transform: value => this.ngxEditorJs2Service.blocksToLoad.next(value)
     });
     ngxEditor = _angular_core__WEBPACK_IMPORTED_MODULE_0__.viewChild.required('ngxEditor', {
@@ -1222,11 +1287,15 @@ let EditorJsComponent = /*#__PURE__*/(() => {
 let ToolbarInlineComponent = /*#__PURE__*/(() => {
   class ToolbarInlineComponent {
     // @Input() selection!: Selection;
-    selection = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
+    selection = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "selection"
+    }] : []));
     closeOverlayEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
     renderer = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2);
     url = '';
-    showURLInputField = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false);
+    showURLInputField = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false, ...(ngDevMode ? [{
+      debugName: "showURLInputField"
+    }] : []));
     savedRanges = [];
     options = [{
       icon: 'format_bold',
@@ -1422,10 +1491,15 @@ let NgxEditorJs2Component = /*#__PURE__*/(() => {
     constructor() {
       this.editorJsService.formGroup.valueChanges.pipe((0,_angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_8__.takeUntilDestroyed)(), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.debounceTime)(500), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.switchMap)(() => this.editorJsService.getBlocks$()), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.tap)(blocks => this.formChanged.emit(blocks))).subscribe();
     }
-    blocks = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)([]);
+    blocks = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)([], ...(ngDevMode ? [{
+      debugName: "blocks"
+    }] : []));
     // Allows the parent component to request the current blocks
     blocksRequested = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.output)();
     requestBlocks = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required({
+      ...(ngDevMode ? {
+        debugName: "requestBlocks"
+      } : {}),
       transform: value => value && this.blocksRequested.emit(this.editorJsService.getBlocks$())
     });
     // Tells the parent component when the form has changed
@@ -1477,22 +1551,22 @@ let NgxEditorJs2Component = /*#__PURE__*/(() => {
 
 
 
-/***/ }),
+/***/ },
 
-/***/ 52239:
+/***/ 52239
 /*!***************************************************************************************!*\
   !*** ./dist/ngx-editor-js2-blockquotes/fesm2022/tmdjr-ngx-editor-js2-blockquotes.mjs ***!
   \***************************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   NgxEditorJs2BlockquotesComponent: () => (/* binding */ NgxEditorJs2BlockquotesComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ 7140);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 85914);
-/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 77947);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 51356);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ 14332);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 11674);
+/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 8778);
 /* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
 
 
@@ -1504,11 +1578,19 @@ __webpack_require__.r(__webpack_exports__);
 
 let NgxEditorJs2BlockquotesComponent = /*#__PURE__*/(() => {
   class NgxEditorJs2BlockquotesComponent {
-    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(0);
+    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(0, ...(ngDevMode ? [{
+      debugName: "sortIndex"
+    }] : []));
     componentInstanceName = 'NgxEditorJs2BlockquotesComponent';
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true);
-    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
-    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required();
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true, ...(ngDevMode ? [{
+      debugName: "autofocus"
+    }] : []));
+    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "formGroup"
+    }] : []));
+    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+      debugName: "formControlName"
+    }] : []));
     blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)([{
       action: 'medium',
       icon: 'density_small'
@@ -1518,8 +1600,12 @@ let NgxEditorJs2BlockquotesComponent = /*#__PURE__*/(() => {
     }, {
       action: 'display-large',
       icon: 'density_large'
-    }]);
-    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('display-large');
+    }], ...(ngDevMode ? [{
+      debugName: "blockOptionActions"
+    }] : []));
+    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('display-large', ...(ngDevMode ? [{
+      debugName: "savedAction"
+    }] : []));
     actionCallbackBind = this.actionCallback.bind(this);
     actionCallback(action) {
       this.savedAction.update(() => action);
@@ -1575,7 +1661,7 @@ let NgxEditorJs2BlockquotesComponent = /*#__PURE__*/(() => {
 
 
 
-/***/ })
+/***/ }
 
 }])
 //# sourceMappingURL=2239.js.map

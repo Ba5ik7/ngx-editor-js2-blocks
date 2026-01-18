@@ -1,10 +1,10 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[7256],{
 
-/***/ 97256:
+/***/ 97256
 /*!*******************************************!*\
   !*** ./node_modules/katex/dist/katex.mjs ***!
   \*******************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -181,16 +181,9 @@ ParseError.prototype.__proto__ = Error.prototype;
  */
 
 /**
- * Return whether an element is contained in a list
- */
-var contains = function contains(list, elem) {
-  return list.indexOf(elem) !== -1;
-};
-/**
  * Provide a default value if a setting is undefined
  * NOTE: Couldn't use `T` as the output type due to facebook/flow#5022.
  */
-
 var deflt = function deflt(setting, defaultIfUndefined) {
   return setting === undefined ? defaultIfUndefined : setting;
 }; // hyphenate and escape adapted from Facebook's React under Apache 2 license
@@ -284,7 +277,6 @@ var protocolFromUrl = function protocolFromUrl(url) {
   return protocol[1].toLowerCase();
 };
 var utils = {
-  contains,
   deflt,
   escape,
   hyphenate,
@@ -956,13 +948,14 @@ var tallDelim = function tallDelim(label, midHeight) {
   }
 };
 
+// To ensure that all nodes have compatible signatures for these methods.
+
 /**
  * This node represents a document fragment, which contains elements, but when
  * placed into the DOM doesn't have any representation itself. It only contains
  * children and doesn't have any DOM node properties.
  */
 class DocumentFragment {
-  // HtmlDomNode
   // Never used; needed for satisfying interface.
   constructor(children) {
     this.children = void 0;
@@ -979,7 +972,7 @@ class DocumentFragment {
     this.style = {};
   }
   hasClass(className) {
-    return utils.contains(this.classes, className);
+    return this.classes.includes(className);
   }
   /** Convert the fragment into a node. */
 
@@ -3917,7 +3910,7 @@ class Span {
     this.attributes[attribute] = value;
   }
   hasClass(className) {
-    return utils.contains(this.classes, className);
+    return this.classes.includes(className);
   }
   toNode() {
     return toNode.call(this, "span");
@@ -3948,7 +3941,7 @@ class Anchor {
     this.attributes[attribute] = value;
   }
   hasClass(className) {
-    return utils.contains(this.classes, className);
+    return this.classes.includes(className);
   }
   toNode() {
     return toNode.call(this, "a");
@@ -3976,7 +3969,7 @@ class Img {
     this.style = style;
   }
   hasClass(className) {
-    return utils.contains(this.classes, className);
+    return this.classes.includes(className);
   }
   toNode() {
     var node = document.createElement("img");
@@ -4058,7 +4051,7 @@ class SymbolNode {
     }
   }
   hasClass(className) {
-    return utils.contains(this.classes, className);
+    return this.classes.includes(className);
   }
   /**
    * Creates a text node or span from a symbol node. Note that a span is only
@@ -6086,9 +6079,9 @@ var buildExpression$1 = function buildExpression(expression, options, isRealGrou
   traverseNonSpaceNodes(groups, (node, prev) => {
     var prevType = prev.classes[0];
     var type = node.classes[0];
-    if (prevType === "mbin" && utils.contains(binRightCanceller, type)) {
+    if (prevType === "mbin" && binRightCanceller.includes(type)) {
       prev.classes[0] = "mord";
-    } else if (type === "mbin" && utils.contains(binLeftCanceller, prevType)) {
+    } else if (type === "mbin" && binLeftCanceller.includes(prevType)) {
       node.classes[0] = "mord";
     }
   }, {
@@ -6625,7 +6618,7 @@ var getVariant = function getVariant(group, options) {
     return "monospace";
   }
   var text = group.text;
-  if (utils.contains(["\\imath", "\\jmath"], text)) {
+  if (["\\imath", "\\jmath"].includes(text)) {
     return null;
   }
   if (symbols[mode][text] && symbols[mode][text].replace) {
@@ -6761,7 +6754,7 @@ function buildMathML(tree, texExpression, options, isDisplayMode, forMathmlOnly)
   // tag correctly, unless it's a single <mrow> or <mtable>.
 
   var wrapper;
-  if (expression.length === 1 && expression[0] instanceof MathNode && utils.contains(["mrow", "mtable"], expression[0].type)) {
+  if (expression.length === 1 && expression[0] instanceof MathNode && ["mrow", "mtable"].includes(expression[0].type)) {
     wrapper = expression[0];
   } else {
     wrapper = new mathMLTree.MathNode("mrow", expression);
@@ -6978,7 +6971,7 @@ var svgSpan = function svgSpan(group, options) {
     var viewBoxWidth = 400000; // default
 
     var label = group.label.slice(1);
-    if (utils.contains(["widehat", "widecheck", "widetilde", "utilde"], label)) {
+    if (["widehat", "widecheck", "widetilde", "utilde"].includes(label)) {
       // Each type in the `if` statement corresponds to one of the ParseNode
       // types below. This narrowing is required to access `grp.base`.
       // $FlowFixMe
@@ -8589,11 +8582,11 @@ var makeStackedDelim = function makeStackedDelim(delim, heightTotal, center, opt
     top = "\\Uparrow";
     repeat = "\u2016";
     bottom = "\\Downarrow";
-  } else if (utils.contains(verts, delim)) {
+  } else if (verts.includes(delim)) {
     repeat = "\u2223";
     svgLabel = "vert";
     viewBoxWidth = 333;
-  } else if (utils.contains(doubleVerts, delim)) {
+  } else if (doubleVerts.includes(delim)) {
     repeat = "\u2225";
     svgLabel = "doublevert";
     viewBoxWidth = 556;
@@ -8884,9 +8877,9 @@ var makeSizedDelim = function makeSizedDelim(delim, size, options, mode, classes
     delim = "\\rangle";
   } // Sized delimiters are never centered.
 
-  if (utils.contains(stackLargeDelimiters, delim) || utils.contains(stackNeverDelimiters, delim)) {
+  if (stackLargeDelimiters.includes(delim) || stackNeverDelimiters.includes(delim)) {
     return makeLargeDelim(delim, size, false, options, mode, classes);
-  } else if (utils.contains(stackAlwaysDelimiters, delim)) {
+  } else if (stackAlwaysDelimiters.includes(delim)) {
     return makeStackedDelim(delim, sizeToMaxHeight[size], false, options, mode, classes);
   } else {
     throw new ParseError("Illegal delimiter: '" + delim + "'");
@@ -9027,9 +9020,9 @@ var makeCustomSizedDelim = function makeCustomSizedDelim(delim, height, center, 
   } // Decide what sequence to use
 
   var sequence;
-  if (utils.contains(stackNeverDelimiters, delim)) {
+  if (stackNeverDelimiters.includes(delim)) {
     sequence = stackNeverDelimiterSequence;
-  } else if (utils.contains(stackLargeDelimiters, delim)) {
+  } else if (stackLargeDelimiters.includes(delim)) {
     sequence = stackLargeDelimiterSequence;
   } else {
     sequence = stackAlwaysDelimiterSequence;
@@ -9155,7 +9148,7 @@ var delimiters = ["(", "\\lparen", ")", "\\rparen", "[", "\\lbrack", "]", "\\rbr
 // Delimiter functions
 function checkDelimiter(delim, context) {
   var symDelim = checkSymbolNodeType(delim);
-  if (symDelim && utils.contains(delimiters, symDelim.text)) {
+  if (symDelim && delimiters.includes(symDelim.text)) {
     return symDelim;
   } else if (symDelim) {
     throw new ParseError("Invalid delimiter '" + symDelim.text + "' after '" + context.funcName + "'", delim);
@@ -10656,7 +10649,7 @@ defineEnvironment({
     numArgs: 0
   },
   handler(context) {
-    if (utils.contains(["gather", "gather*"], context.envName)) {
+    if (["gather", "gather*"].includes(context.envName)) {
       validateAmsEnvironmentContext(context);
     }
     var res = {
@@ -11654,11 +11647,14 @@ defineFunction({
         {
           var data = value.split(",");
           for (var i = 0; i < data.length; i++) {
-            var keyVal = data[i].split("=");
-            if (keyVal.length !== 2) {
-              throw new ParseError("Error parsing key-value for \\htmlData");
+            var item = data[i];
+            var firstEquals = item.indexOf("=");
+            if (firstEquals < 0) {
+              throw new ParseError("\\htmlData key/value '" + item + "'" + " missing equals sign");
             }
-            attributes["data-" + keyVal[0].trim()] = keyVal[1].trim();
+            var key = item.slice(0, firstEquals);
+            var _value = item.slice(firstEquals + 1);
+            attributes["data-" + key.trim()] = _value;
           }
           trustContext = {
             command: "\\htmlData",
@@ -12202,7 +12198,7 @@ var htmlBuilder$2 = (grp, options) => {
   }
   var style = options.style;
   var large = false;
-  if (style.size === Style$1.DISPLAY.size && group.symbol && !utils.contains(noSuccessor, group.name)) {
+  if (style.size === Style$1.DISPLAY.size && group.symbol && !noSuccessor.includes(group.name)) {
     // Most symbol operators get larger in displaystyle (rule 13)
     large = true;
   }
@@ -12288,7 +12284,7 @@ var mathmlBuilder$1 = (group, options) => {
   if (group.symbol) {
     // This is a symbol. Just add the symbol.
     node = new MathNode("mo", [makeText(group.name, group.mode)]);
-    if (utils.contains(noSuccessor, group.name)) {
+    if (noSuccessor.includes(group.name)) {
       node.setAttribute("largeop", "false");
     }
   } else if (group.body) {
@@ -12440,7 +12436,8 @@ defineFunction({
   type: "op",
   names: ["\\int", "\\iint", "\\iiint", "\\oint", "\\oiint", "\\oiiint", "\u222b", "\u222c", "\u222d", "\u222e", "\u222f", "\u2230"],
   props: {
-    numArgs: 0
+    numArgs: 0,
+    allowedInArgument: true
   },
   handler(_ref5) {
     var {
@@ -14459,7 +14456,7 @@ defineMacro("\\dots", function (context) {
   } else if (next.slice(0, 4) === '\\not') {
     thedots = '\\dotsb';
   } else if (next in symbols.math) {
-    if (utils.contains(['bin', 'rel'], symbols.math[next].group)) {
+    if (['bin', 'rel'].includes(symbols.math[next].group)) {
       thedots = '\\dotsb';
     }
   }
@@ -15074,7 +15071,7 @@ class MacroExpander {
 
     this.pushToken(new Token("EOF", end.loc));
     this.pushTokens(tokens);
-    return start.range(end, "");
+    return new Token("", SourceLocation.range(start, end));
   }
   /**
    * Consume all following space tokens, without expansion.
@@ -16528,7 +16525,7 @@ let Parser = /*#__PURE__*/(() => {
       if (res == null) {
         return null;
       }
-      var match = /^(#[a-f0-9]{3}|#?[a-f0-9]{6}|[a-z]+)$/i.exec(res.text);
+      var match = /^(#[a-f0-9]{3,4}|#[a-f0-9]{6}|#[a-f0-9]{8}|[a-f0-9]{6}|[a-z]+)$/i.exec(res.text);
       if (!match) {
         throw new ParseError("Invalid color: '" + res.text + "'", res);
       }
@@ -16994,7 +16991,7 @@ var renderToHTMLTree = function renderToHTMLTree(expression, options) {
     return renderError(error, expression, settings);
   }
 };
-var version = "0.16.22";
+var version = "0.16.27";
 var __domTree = {
   Span,
   Anchor,
@@ -17084,7 +17081,7 @@ var katex = {
 };
 
 
-/***/ })
+/***/ }
 
 }])
 //# sourceMappingURL=7256.js.map

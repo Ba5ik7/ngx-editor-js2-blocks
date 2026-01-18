@@ -1,101 +1,34 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[8259],{
 
-/***/ 8126:
-/*!****************************************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2022/common-module-cKSwHniA.mjs ***!
-  \****************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+/***/ 15575
+/*!********************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/_tooltip-chunk.mjs ***!
+  \********************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   M: () => (/* binding */ MatCommonModule),
-/* harmony export */   a: () => (/* binding */ MATERIAL_SANITY_CHECKS)
+/* harmony export */   MAT_TOOLTIP_DEFAULT_OPTIONS: () => (/* binding */ MAT_TOOLTIP_DEFAULT_OPTIONS),
+/* harmony export */   MAT_TOOLTIP_SCROLL_STRATEGY: () => (/* binding */ MAT_TOOLTIP_SCROLL_STRATEGY),
+/* harmony export */   MatTooltip: () => (/* binding */ MatTooltip),
+/* harmony export */   SCROLL_THROTTLE_MS: () => (/* binding */ SCROLL_THROTTLE_MS),
+/* harmony export */   TOOLTIP_PANEL_CLASS: () => (/* binding */ TOOLTIP_PANEL_CLASS),
+/* harmony export */   TooltipComponent: () => (/* binding */ TooltipComponent),
+/* harmony export */   getMatTooltipInvalidPositionError: () => (/* binding */ getMatTooltipInvalidPositionError)
 /* harmony export */ });
-/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/a11y */ 56593);
-/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/bidi */ 48073);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 27940);
-
-
-
-
-
-/**
- * Injection token that configures whether the Material sanity checks are enabled.
- * @deprecated No longer used and will be removed.
- * @breaking-change 21.0.0
- */
-const MATERIAL_SANITY_CHECKS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_2__.InjectionToken('mat-sanity-checks', {
-  providedIn: 'root',
-  factory: () => true
-});
-/**
- * Module that captures anything that should be loaded and/or run for *all* Angular Material
- * components. This includes Bidi, etc.
- *
- * This module should be imported to each top-level component module (e.g., MatTabsModule).
- * @deprecated No longer used and will be removed.
- * @breaking-change 21.0.0
- */
-let MatCommonModule = /*#__PURE__*/(() => {
-  class MatCommonModule {
-    constructor() {
-      // While A11yModule also does this, we repeat it here to avoid importing A11yModule
-      // in MatCommonModule.
-      (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__.HighContrastModeDetector)._applyBodyHighContrastModeCssClasses();
-    }
-    static ɵfac = function MatCommonModule_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || MatCommonModule)();
-    };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({
-      type: MatCommonModule
-    });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({
-      imports: [_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__.BidiModule, _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__.BidiModule]
-    });
-  }
-  return MatCommonModule;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-
-/***/ }),
-
-/***/ 41380:
-/*!*********************************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2022/module-CWxMD37a.mjs ***!
-  \*********************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   M: () => (/* binding */ MAT_TOOLTIP_SCROLL_STRATEGY),
-/* harmony export */   S: () => (/* binding */ SCROLL_THROTTLE_MS),
-/* harmony export */   T: () => (/* binding */ TOOLTIP_PANEL_CLASS),
-/* harmony export */   a: () => (/* binding */ MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY),
-/* harmony export */   b: () => (/* binding */ MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY_PROVIDER),
-/* harmony export */   c: () => (/* binding */ MAT_TOOLTIP_DEFAULT_OPTIONS_FACTORY),
-/* harmony export */   d: () => (/* binding */ MAT_TOOLTIP_DEFAULT_OPTIONS),
-/* harmony export */   e: () => (/* binding */ MatTooltip),
-/* harmony export */   f: () => (/* binding */ TooltipComponent),
-/* harmony export */   g: () => (/* binding */ getMatTooltipInvalidPositionError),
-/* harmony export */   h: () => (/* binding */ MatTooltipModule)
-/* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
-/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/a11y */ 56593);
-/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/overlay */ 87351);
-/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/cdk/scrolling */ 25287);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 32778);
-/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/cdk/coercion */ 33981);
-/* harmony import */ var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/keycodes */ 48215);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 85914);
-/* harmony import */ var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/cdk/platform */ 49583);
-/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/cdk/bidi */ 48073);
-/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/cdk/portal */ 35253);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs/operators */ 32778);
+/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/coercion */ 32298);
+/* harmony import */ var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/keycodes */ 52444);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 51356);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 11674);
+/* harmony import */ var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/cdk/platform */ 86456);
+/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/a11y */ 45562);
+/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/cdk/bidi */ 13266);
+/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/cdk/overlay */ 20026);
+/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/cdk/portal */ 5978);
+/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/cdk/layout */ 42394);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs */ 44866);
-/* harmony import */ var _animation_DfMFjxHu_mjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./animation-DfMFjxHu.mjs */ 73388);
-/* harmony import */ var _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./common-module-cKSwHniA.mjs */ 8126);
+/* harmony import */ var _animation_chunk_mjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./_animation-chunk.mjs */ 87432);
 
 
 
@@ -110,106 +43,55 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-/** Time in ms to throttle repositioning after scroll events. */
 const _c0 = ["tooltip"];
 const SCROLL_THROTTLE_MS = 20;
-/**
- * Creates an error to be thrown if the user supplied an invalid tooltip position.
- * @docs-private
- */
 function getMatTooltipInvalidPositionError(position) {
   return Error(`Tooltip position "${position}" is invalid.`);
 }
-/** Injection token that determines the scroll handling while a tooltip is visible. */
-const MAT_TOOLTIP_SCROLL_STRATEGY = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('mat-tooltip-scroll-strategy', {
+const MAT_TOOLTIP_SCROLL_STRATEGY = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_3__.InjectionToken('mat-tooltip-scroll-strategy', {
   providedIn: 'root',
   factory: () => {
-    const injector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Injector);
-    return () => (0,_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_2__.createRepositionScrollStrategy)(injector, {
+    const injector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_3__.Injector);
+    return () => (0,_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.createRepositionScrollStrategy)(injector, {
       scrollThrottle: SCROLL_THROTTLE_MS
     });
   }
 });
-/**
- * @docs-private
- * @deprecated No longer used, will be removed.
- * @breaking-change 21.0.0
- */
-function MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY(_overlay) {
-  const injector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Injector);
-  return () => (0,_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_2__.createRepositionScrollStrategy)(injector, {
-    scrollThrottle: SCROLL_THROTTLE_MS
-  });
-}
-/**
- * @docs-private
- * @deprecated No longer used, will be removed.
- * @breaking-change 21.0.0
- */
-const MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY_PROVIDER = {
-  provide: MAT_TOOLTIP_SCROLL_STRATEGY,
-  deps: [],
-  useFactory: MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY
-};
-/**
- * @docs-private
- * @deprecated No longer used, will be removed.
- * @breaking-change 21.0.0
- */
-function MAT_TOOLTIP_DEFAULT_OPTIONS_FACTORY() {
-  return {
+const MAT_TOOLTIP_DEFAULT_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_3__.InjectionToken('mat-tooltip-default-options', {
+  providedIn: 'root',
+  factory: () => ({
     showDelay: 0,
     hideDelay: 0,
     touchendHideDelay: 1500
-  };
-}
-/** Injection token to be used to override the default options for `matTooltip`. */
-const MAT_TOOLTIP_DEFAULT_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('mat-tooltip-default-options', {
-  providedIn: 'root',
-  factory: MAT_TOOLTIP_DEFAULT_OPTIONS_FACTORY
+  })
 });
-/**
- * CSS class that will be attached to the overlay panel.
- * @deprecated
- * @breaking-change 13.0.0 remove this variable
- */
 const TOOLTIP_PANEL_CLASS = 'mat-mdc-tooltip-panel';
 const PANEL_CLASS = 'tooltip-panel';
-/** Options used to bind passive event listeners. */
-const passiveListenerOptions = /*#__PURE__*/(0,_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_8__.normalizePassiveListenerOptions)({
+const passiveListenerOptions = /*#__PURE__*/(0,_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_5__.normalizePassiveListenerOptions)({
   passive: true
 });
-// These constants were taken from MDC's `numbers` object. We can't import them from MDC,
-// because they have some top-level references to `window` which break during SSR.
 const MIN_VIEWPORT_TOOLTIP_THRESHOLD = 8;
 const UNBOUNDED_ANCHOR_GAP = 8;
 const MIN_HEIGHT = 24;
 const MAX_WIDTH = 200;
-/**
- * Directive that attaches a material design tooltip to the host element. Animates the showing and
- * hiding of a tooltip provided position (defaults to below the element).
- *
- * https://material.io/design/components/tooltips.html
- */
 let MatTooltip = /*#__PURE__*/(() => {
   class MatTooltip {
-    _elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
-    _ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone);
-    _platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_8__.Platform);
-    _ariaDescriber = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_1__.AriaDescriber);
-    _focusMonitor = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_1__.FocusMonitor);
-    _dir = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_9__.Directionality);
-    _injector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Injector);
-    _viewContainerRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewContainerRef);
-    _animationsDisabled = (0,_animation_DfMFjxHu_mjs__WEBPACK_IMPORTED_MODULE_12__._)();
-    _defaultOptions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(MAT_TOOLTIP_DEFAULT_OPTIONS, {
+    _elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_3__.ElementRef);
+    _ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_3__.NgZone);
+    _platform = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_5__.Platform);
+    _ariaDescriber = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_6__.AriaDescriber);
+    _focusMonitor = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_6__.FocusMonitor);
+    _dir = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_7__.Directionality);
+    _injector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_3__.Injector);
+    _viewContainerRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_3__.ViewContainerRef);
+    _mediaMatcher = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_10__.MediaMatcher);
+    _animationsDisabled = (0,_animation_chunk_mjs__WEBPACK_IMPORTED_MODULE_12__._animationsDisabled)();
+    _defaultOptions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(MAT_TOOLTIP_DEFAULT_OPTIONS, {
       optional: true
     });
-    _overlayRef;
-    _tooltipInstance;
-    _overlayPanelClass; // Used for styling internally.
+    _overlayRef = null;
+    _tooltipInstance = null;
+    _overlayPanelClass;
     _portal;
     _position = 'below';
     _positionAtOrigin = false;
@@ -221,9 +103,8 @@ let MatTooltip = /*#__PURE__*/(() => {
     _viewportMargin = 8;
     _currentPosition;
     _cssClassPrefix = 'mat-mdc';
-    _ariaDescriptionPending;
+    _ariaDescriptionPending = false;
     _dirSubscribed = false;
-    /** Allows the user to define the position of the tooltip relative to the parent element */
     get position() {
       return this._position;
     }
@@ -237,27 +118,21 @@ let MatTooltip = /*#__PURE__*/(() => {
         }
       }
     }
-    /**
-     * Whether tooltip should be relative to the click or touch origin
-     * instead of outside the element bounding box.
-     */
     get positionAtOrigin() {
       return this._positionAtOrigin;
     }
     set positionAtOrigin(value) {
-      this._positionAtOrigin = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_5__.coerceBooleanProperty)(value);
+      this._positionAtOrigin = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__.coerceBooleanProperty)(value);
       this._detach();
       this._overlayRef = null;
     }
-    /** Disables the display of the tooltip. */
     get disabled() {
       return this._disabled;
     }
     set disabled(value) {
-      const isDisabled = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_5__.coerceBooleanProperty)(value);
+      const isDisabled = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__.coerceBooleanProperty)(value);
       if (this._disabled !== isDisabled) {
         this._disabled = isDisabled;
-        // If tooltip is disabled, hide immediately.
         if (isDisabled) {
           this.hide(0);
         } else {
@@ -266,49 +141,29 @@ let MatTooltip = /*#__PURE__*/(() => {
         this._syncAriaDescription(this.message);
       }
     }
-    /** The default delay in ms before showing the tooltip after show is called */
     get showDelay() {
       return this._showDelay;
     }
     set showDelay(value) {
-      this._showDelay = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_5__.coerceNumberProperty)(value);
+      this._showDelay = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__.coerceNumberProperty)(value);
     }
     _showDelay;
-    /** The default delay in ms before hiding the tooltip after hide is called */
     get hideDelay() {
       return this._hideDelay;
     }
     set hideDelay(value) {
-      this._hideDelay = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_5__.coerceNumberProperty)(value);
+      this._hideDelay = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__.coerceNumberProperty)(value);
       if (this._tooltipInstance) {
         this._tooltipInstance._mouseLeaveHideDelay = this._hideDelay;
       }
     }
     _hideDelay;
-    /**
-     * How touch gestures should be handled by the tooltip. On touch devices the tooltip directive
-     * uses a long press gesture to show and hide, however it can conflict with the native browser
-     * gestures. To work around the conflict, Angular Material disables native gestures on the
-     * trigger, but that might not be desirable on particular elements (e.g. inputs and draggable
-     * elements). The different values for this option configure the touch event handling as follows:
-     * - `auto` - Enables touch gestures for all elements, but tries to avoid conflicts with native
-     *   browser gestures on particular elements. In particular, it allows text selection on inputs
-     *   and textareas, and preserves the native browser dragging on elements marked as `draggable`.
-     * - `on` - Enables touch gestures for all elements and disables native
-     *   browser gestures with no exceptions.
-     * - `off` - Disables touch gestures. Note that this will prevent the tooltip from
-     *   showing on touch devices.
-     */
     touchGestures = 'auto';
-    /** The message to be displayed in the tooltip */
     get message() {
       return this._message;
     }
     set message(value) {
       const oldMessage = this._message;
-      // If the message is not a string (e.g. number), convert it to a string and trim it.
-      // Must convert with `String(value)`, not `${value}`, otherwise Closure Compiler optimises
-      // away the string-conversion: https://github.com/angular/components/issues/20684
       this._message = value != null ? String(value).trim() : '';
       if (!this._message && this._isTooltipVisible()) {
         this.hide(0);
@@ -319,7 +174,6 @@ let MatTooltip = /*#__PURE__*/(() => {
       this._syncAriaDescription(oldMessage);
     }
     _message = '';
-    /** Classes to be passed to the tooltip. Supports the same syntax as `ngClass`. */
     get tooltipClass() {
       return this._tooltipClass;
     }
@@ -329,13 +183,9 @@ let MatTooltip = /*#__PURE__*/(() => {
         this._setTooltipClass(this._tooltipClass);
       }
     }
-    /** Manually-bound passive event listeners. */
     _passiveListeners = [];
-    /** Timer started at the last `touchstart` event. */
     _touchstartTimeout = null;
-    /** Emits when the component is destroyed. */
     _destroyed = new rxjs__WEBPACK_IMPORTED_MODULE_11__.Subject();
-    /** Whether ngOnDestroyed has been called. */
     _isDestroyed = false;
     constructor() {
       const defaultOptions = this._defaultOptions;
@@ -358,11 +208,9 @@ let MatTooltip = /*#__PURE__*/(() => {
       this._viewportMargin = MIN_VIEWPORT_TOOLTIP_THRESHOLD;
     }
     ngAfterViewInit() {
-      // This needs to happen after view init so the initial values for all inputs have been set.
       this._viewInitialized = true;
       this._setupPointerEnterEventsIfNeeded();
-      this._focusMonitor.monitor(this._elementRef).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.takeUntil)(this._destroyed)).subscribe(origin => {
-        // Note that the focus monitor runs outside the Angular zone.
+      this._focusMonitor.monitor(this._elementRef).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.takeUntil)(this._destroyed)).subscribe(origin => {
         if (!origin) {
           this._ngZone.run(() => this.hide(0));
         } else if (origin === 'keyboard') {
@@ -370,12 +218,8 @@ let MatTooltip = /*#__PURE__*/(() => {
         }
       });
     }
-    /**
-     * Dispose the tooltip when destroyed.
-     */
     ngOnDestroy() {
       const nativeElement = this._elementRef.nativeElement;
-      // Optimization: Do not call clearTimeout unless there is an active timer.
       if (this._touchstartTimeout) {
         clearTimeout(this._touchstartTimeout);
       }
@@ -383,7 +227,6 @@ let MatTooltip = /*#__PURE__*/(() => {
         this._overlayRef.dispose();
         this._tooltipInstance = null;
       }
-      // Clean up the event listeners set in the constructor
       this._passiveListeners.forEach(([event, listener]) => {
         nativeElement.removeEventListener(event, listener, passiveListenerOptions);
       });
@@ -394,7 +237,6 @@ let MatTooltip = /*#__PURE__*/(() => {
       this._ariaDescriber.removeDescription(nativeElement, this.message, 'tooltip');
       this._focusMonitor.stopMonitoring(nativeElement);
     }
-    /** Shows the tooltip after the delay in ms, defaults to tooltip-delay-show or 0ms if no input */
     show(delay = this.showDelay, origin) {
       if (this.disabled || !this.message || this._isTooltipVisible()) {
         this._tooltipInstance?._cancelPendingAnimations();
@@ -402,16 +244,15 @@ let MatTooltip = /*#__PURE__*/(() => {
       }
       const overlayRef = this._createOverlay(origin);
       this._detach();
-      this._portal = this._portal || new _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_10__.ComponentPortal(this._tooltipComponent, this._viewContainerRef);
+      this._portal = this._portal || new _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_9__.ComponentPortal(this._tooltipComponent, this._viewContainerRef);
       const instance = this._tooltipInstance = overlayRef.attach(this._portal).instance;
       instance._triggerElement = this._elementRef.nativeElement;
       instance._mouseLeaveHideDelay = this._hideDelay;
-      instance.afterHidden().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.takeUntil)(this._destroyed)).subscribe(() => this._detach());
+      instance.afterHidden().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.takeUntil)(this._destroyed)).subscribe(() => this._detach());
       this._setTooltipClass(this._tooltipClass);
       this._updateTooltipMessage();
       instance.show(delay);
     }
-    /** Hides the tooltip after the delay in ms, defaults to tooltip-delay-hide or 0ms if no input */
     hide(delay = this.hideDelay) {
       const instance = this._tooltipInstance;
       if (instance) {
@@ -423,38 +264,32 @@ let MatTooltip = /*#__PURE__*/(() => {
         }
       }
     }
-    /** Shows/hides the tooltip */
     toggle(origin) {
       this._isTooltipVisible() ? this.hide() : this.show(undefined, origin);
     }
-    /** Returns true if the tooltip is currently visible to the user */
     _isTooltipVisible() {
       return !!this._tooltipInstance && this._tooltipInstance.isVisible();
     }
-    /** Create the overlay config and position strategy */
     _createOverlay(origin) {
       if (this._overlayRef) {
         const existingStrategy = this._overlayRef.getConfig().positionStrategy;
-        if ((!this.positionAtOrigin || !origin) && existingStrategy._origin instanceof _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef) {
+        if ((!this.positionAtOrigin || !origin) && existingStrategy._origin instanceof _angular_core__WEBPACK_IMPORTED_MODULE_3__.ElementRef) {
           return this._overlayRef;
         }
         this._detach();
       }
-      const scrollableAncestors = this._injector.get(_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_2__.ScrollDispatcher).getAncestorScrollContainers(this._elementRef);
+      const scrollableAncestors = this._injector.get(_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.ScrollDispatcher).getAncestorScrollContainers(this._elementRef);
       const panelClass = `${this._cssClassPrefix}-${PANEL_CLASS}`;
-      // Create connected position strategy that listens for scroll events to reposition.
-      const strategy = (0,_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_2__.createFlexibleConnectedPositionStrategy)(this._injector, this.positionAtOrigin ? origin || this._elementRef : this._elementRef).withTransformOriginOn(`.${this._cssClassPrefix}-tooltip`).withFlexibleDimensions(false).withViewportMargin(this._viewportMargin).withScrollableContainers(scrollableAncestors);
-      strategy.positionChanges.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.takeUntil)(this._destroyed)).subscribe(change => {
+      const strategy = (0,_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.createFlexibleConnectedPositionStrategy)(this._injector, this.positionAtOrigin ? origin || this._elementRef : this._elementRef).withTransformOriginOn(`.${this._cssClassPrefix}-tooltip`).withFlexibleDimensions(false).withViewportMargin(this._viewportMargin).withScrollableContainers(scrollableAncestors).withPopoverLocation('global');
+      strategy.positionChanges.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.takeUntil)(this._destroyed)).subscribe(change => {
         this._updateCurrentPositionClass(change.connectionPair);
         if (this._tooltipInstance) {
           if (change.scrollableViewProperties.isOverlayClipped && this._tooltipInstance.isVisible()) {
-            // After position changes occur and the overlay is clipped by
-            // a parent scrollable then close the tooltip.
             this._ngZone.run(() => this.hide(0));
           }
         }
       });
-      this._overlayRef = (0,_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_2__.createOverlayRef)(this._injector, {
+      this._overlayRef = (0,_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_8__.createOverlayRef)(this._injector, {
         direction: this._dir,
         positionStrategy: strategy,
         panelClass: this._overlayPanelClass ? [...this._overlayPanelClass, panelClass] : panelClass,
@@ -462,10 +297,10 @@ let MatTooltip = /*#__PURE__*/(() => {
         disableAnimations: this._animationsDisabled
       });
       this._updatePosition(this._overlayRef);
-      this._overlayRef.detachments().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.takeUntil)(this._destroyed)).subscribe(() => this._detach());
-      this._overlayRef.outsidePointerEvents().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.takeUntil)(this._destroyed)).subscribe(() => this._tooltipInstance?._handleBodyInteraction());
-      this._overlayRef.keydownEvents().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.takeUntil)(this._destroyed)).subscribe(event => {
-        if (this._isTooltipVisible() && event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__.ESCAPE && !(0,_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_6__.hasModifierKey)(event)) {
+      this._overlayRef.detachments().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.takeUntil)(this._destroyed)).subscribe(() => this._detach());
+      this._overlayRef.outsidePointerEvents().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.takeUntil)(this._destroyed)).subscribe(() => this._tooltipInstance?._handleBodyInteraction());
+      this._overlayRef.keydownEvents().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.takeUntil)(this._destroyed)).subscribe(event => {
+        if (this._isTooltipVisible() && event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_2__.ESCAPE && !(0,_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_2__.hasModifierKey)(event)) {
           event.preventDefault();
           event.stopPropagation();
           this._ngZone.run(() => this.hide(0));
@@ -476,7 +311,7 @@ let MatTooltip = /*#__PURE__*/(() => {
       }
       if (!this._dirSubscribed) {
         this._dirSubscribed = true;
-        this._dir.change.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.takeUntil)(this._destroyed)).subscribe(() => {
+        this._dir.change.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.takeUntil)(this._destroyed)).subscribe(() => {
           if (this._overlayRef) {
             this._updatePosition(this._overlayRef);
           }
@@ -484,14 +319,12 @@ let MatTooltip = /*#__PURE__*/(() => {
       }
       return this._overlayRef;
     }
-    /** Detaches the currently-attached tooltip. */
     _detach() {
       if (this._overlayRef && this._overlayRef.hasAttached()) {
         this._overlayRef.detach();
       }
       this._tooltipInstance = null;
     }
-    /** Updates the position of the current tooltip. */
     _updatePosition(overlayRef) {
       const position = overlayRef.getConfig().positionStrategy;
       const origin = this._getOrigin();
@@ -504,7 +337,6 @@ let MatTooltip = /*#__PURE__*/(() => {
         ...overlay.fallback
       })]);
     }
-    /** Adds the configured offset to a position. Used as a hook for child classes. */
     _addOffset(position) {
       const offset = UNBOUNDED_ANCHOR_GAP;
       const isLtr = !this._dir || this._dir.value == 'ltr';
@@ -519,10 +351,6 @@ let MatTooltip = /*#__PURE__*/(() => {
       }
       return position;
     }
-    /**
-     * Returns the origin position and a fallback position based on the user's position preference.
-     * The fallback position is the inverse of the origin (e.g. `'below' -> 'above'`).
-     */
     _getOrigin() {
       const isLtr = !this._dir || this._dir.value == 'ltr';
       const position = this.position;
@@ -557,7 +385,6 @@ let MatTooltip = /*#__PURE__*/(() => {
         }
       };
     }
-    /** Returns the overlay position and a fallback position based on the user's preference */
     _getOverlayPosition() {
       const isLtr = !this._dir || this._dir.value == 'ltr';
       const position = this.position;
@@ -597,14 +424,11 @@ let MatTooltip = /*#__PURE__*/(() => {
         }
       };
     }
-    /** Updates the tooltip message and repositions the overlay according to the new message length */
     _updateTooltipMessage() {
-      // Must wait for the message to be painted to the tooltip so that the overlay can properly
-      // calculate the correct positioning based on the size of the text.
       if (this._tooltipInstance) {
         this._tooltipInstance.message = this.message;
         this._tooltipInstance._markForCheck();
-        (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.afterNextRender)(() => {
+        (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.afterNextRender)(() => {
           if (this._tooltipInstance) {
             this._overlayRef.updatePosition();
           }
@@ -613,14 +437,12 @@ let MatTooltip = /*#__PURE__*/(() => {
         });
       }
     }
-    /** Updates the tooltip class */
     _setTooltipClass(tooltipClass) {
       if (this._tooltipInstance) {
         this._tooltipInstance.tooltipClass = tooltipClass;
         this._tooltipInstance._markForCheck();
       }
     }
-    /** Inverts an overlay position. */
     _invertPosition(x, y) {
       if (this.position === 'above' || this.position === 'below') {
         if (y === 'top') {
@@ -640,7 +462,6 @@ let MatTooltip = /*#__PURE__*/(() => {
         y
       };
     }
-    /** Updates the class on the overlay panel based on the current position of the tooltip. */
     _updateCurrentPositionClass(connectionPair) {
       const {
         overlayY,
@@ -648,12 +469,7 @@ let MatTooltip = /*#__PURE__*/(() => {
         originY
       } = connectionPair;
       let newPosition;
-      // If the overlay is in the middle along the Y axis,
-      // it means that it's either before or after.
       if (overlayY === 'center') {
-        // Note that since this information is used for styling, we want to
-        // resolve `start` and `end` to their real values, otherwise consumers
-        // would have to remember to do it themselves on each consumption.
         if (this._dir && this._dir.value === 'rtl') {
           newPosition = originX === 'end' ? 'left' : 'right';
         } else {
@@ -672,15 +488,11 @@ let MatTooltip = /*#__PURE__*/(() => {
         this._currentPosition = newPosition;
       }
     }
-    /** Binds the pointer events to the tooltip trigger. */
     _setupPointerEnterEventsIfNeeded() {
-      // Optimization: Defer hooking up events if there's no message or the tooltip is disabled.
       if (this._disabled || !this.message || !this._viewInitialized || this._passiveListeners.length) {
         return;
       }
-      // The mouse events shouldn't be bound on mobile devices, because they can prevent the
-      // first tap from firing its click event or can cause the tooltip to open for clicks.
-      if (this._platformSupportsMouseEvents()) {
+      if (!this._isTouchPlatform()) {
         this._passiveListeners.push(['mouseenter', event => {
           this._setupPointerExitEventsIfNeeded();
           let point = undefined;
@@ -697,8 +509,6 @@ let MatTooltip = /*#__PURE__*/(() => {
             x: touch.clientX,
             y: touch.clientY
           } : undefined;
-          // Note that it's important that we don't `preventDefault` here,
-          // because it can prevent click events from firing on the element.
           this._setupPointerExitEventsIfNeeded();
           if (this._touchstartTimeout) {
             clearTimeout(this._touchstartTimeout);
@@ -718,7 +528,7 @@ let MatTooltip = /*#__PURE__*/(() => {
       }
       this._pointerExitEventsInitialized = true;
       const exitListeners = [];
-      if (this._platformSupportsMouseEvents()) {
+      if (!this._isTouchPlatform()) {
         exitListeners.push(['mouseleave', event => {
           const newTarget = event.relatedTarget;
           if (!newTarget || !this._overlayRef?.overlayElement.contains(newTarget)) {
@@ -743,36 +553,31 @@ let MatTooltip = /*#__PURE__*/(() => {
         this._elementRef.nativeElement.addEventListener(event, listener, passiveListenerOptions);
       });
     }
-    _platformSupportsMouseEvents() {
-      return !this._platform.IOS && !this._platform.ANDROID;
+    _isTouchPlatform() {
+      if (this._platform.IOS || this._platform.ANDROID) {
+        return true;
+      } else if (!this._platform.isBrowser) {
+        return false;
+      }
+      return !!this._defaultOptions?.detectHoverCapability && this._mediaMatcher.matchMedia('(any-hover: none)').matches;
     }
-    /** Listener for the `wheel` event on the element. */
     _wheelListener(event) {
       if (this._isTooltipVisible()) {
-        const elementUnderPointer = this._injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT).elementFromPoint(event.clientX, event.clientY);
+        const elementUnderPointer = this._injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_3__.DOCUMENT).elementFromPoint(event.clientX, event.clientY);
         const element = this._elementRef.nativeElement;
-        // On non-touch devices we depend on the `mouseleave` event to close the tooltip, but it
-        // won't fire if the user scrolls away using the wheel without moving their cursor. We
-        // work around it by finding the element under the user's cursor and closing the tooltip
-        // if it's not the trigger.
         if (elementUnderPointer !== element && !element.contains(elementUnderPointer)) {
           this.hide();
         }
       }
     }
-    /** Disables the native browser gestures, based on how the tooltip has been configured. */
     _disableNativeGesturesIfNecessary() {
       const gestures = this.touchGestures;
       if (gestures !== 'off') {
         const element = this._elementRef.nativeElement;
         const style = element.style;
-        // If gestures are set to `auto`, we don't disable text selection on inputs and
-        // textareas, because it prevents the user from typing into them on iOS Safari.
         if (gestures === 'on' || element.nodeName !== 'INPUT' && element.nodeName !== 'TEXTAREA') {
           style.userSelect = style.msUserSelect = style.webkitUserSelect = style.MozUserSelect = 'none';
         }
-        // If we have `auto` gestures and the element uses native HTML dragging,
-        // we don't set `-webkit-user-drag` because it prevents the native behavior.
         if (gestures === 'on' || !element.draggable) {
           style.webkitUserDrag = 'none';
         }
@@ -780,19 +585,14 @@ let MatTooltip = /*#__PURE__*/(() => {
         style.webkitTapHighlightColor = 'transparent';
       }
     }
-    /** Updates the tooltip's ARIA description based on it current state. */
     _syncAriaDescription(oldMessage) {
       if (this._ariaDescriptionPending) {
         return;
       }
       this._ariaDescriptionPending = true;
       this._ariaDescriber.removeDescription(this._elementRef.nativeElement, oldMessage, 'tooltip');
-      // The `AriaDescriber` has some functionality that avoids adding a description if it's the
-      // same as the `aria-label` of an element, however we can't know whether the tooltip trigger
-      // has a data-bound `aria-label` or when it'll be set for the first time. We can avoid the
-      // issue by deferring the description by a tick so Angular has time to set the `aria-label`.
       if (!this._isDestroyed) {
-        (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.afterNextRender)({
+        (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.afterNextRender)({
           write: () => {
             this._ariaDescriptionPending = false;
             if (this.message && !this.disabled) {
@@ -807,14 +607,14 @@ let MatTooltip = /*#__PURE__*/(() => {
     static ɵfac = function MatTooltip_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || MatTooltip)();
     };
-    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+    static ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineDirective"]({
       type: MatTooltip,
       selectors: [["", "matTooltip", ""]],
       hostAttrs: [1, "mat-mdc-tooltip-trigger"],
       hostVars: 2,
       hostBindings: function MatTooltip_HostBindings(rf, ctx) {
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-mdc-tooltip-disabled", ctx.disabled);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵclassProp"]("mat-mdc-tooltip-disabled", ctx.disabled);
         }
       },
       inputs: {
@@ -835,49 +635,26 @@ let MatTooltip = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-/**
- * Internal component that wraps the tooltip's content.
- * @docs-private
- */
 let TooltipComponent = /*#__PURE__*/(() => {
   class TooltipComponent {
-    _changeDetectorRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ChangeDetectorRef);
-    _elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
-    /* Whether the tooltip text overflows to multiple lines */
+    _changeDetectorRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_3__.ChangeDetectorRef);
+    _elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_3__.ElementRef);
     _isMultiline = false;
-    /** Message to display in the tooltip */
     message;
-    /** Classes to be added to the tooltip. Supports the same syntax as `ngClass`. */
     tooltipClass;
-    /** The timeout ID of any current timer set to show the tooltip */
     _showTimeoutId;
-    /** The timeout ID of any current timer set to hide the tooltip */
     _hideTimeoutId;
-    /** Element that caused the tooltip to open. */
     _triggerElement;
-    /** Amount of milliseconds to delay the closing sequence. */
     _mouseLeaveHideDelay;
-    /** Whether animations are currently disabled. */
-    _animationsDisabled = (0,_animation_DfMFjxHu_mjs__WEBPACK_IMPORTED_MODULE_12__._)();
-    /** Reference to the internal tooltip element. */
+    _animationsDisabled = (0,_animation_chunk_mjs__WEBPACK_IMPORTED_MODULE_12__._animationsDisabled)();
     _tooltip;
-    /** Whether interactions on the page should close the tooltip */
     _closeOnInteraction = false;
-    /** Whether the tooltip is currently visible. */
     _isVisible = false;
-    /** Subject for notifying that the tooltip has been hidden from the view */
     _onHide = new rxjs__WEBPACK_IMPORTED_MODULE_11__.Subject();
-    /** Name of the show animation and the class that toggles it. */
     _showAnimation = 'mat-mdc-tooltip-show';
-    /** Name of the hide animation and the class that toggles it. */
     _hideAnimation = 'mat-mdc-tooltip-hide';
     constructor() {}
-    /**
-     * Shows the tooltip with an animation originating from the provided origin
-     * @param delay Amount of milliseconds to the delay showing the tooltip.
-     */
     show(delay) {
-      // Cancel the delayed hide if it is scheduled
       if (this._hideTimeoutId != null) {
         clearTimeout(this._hideTimeoutId);
       }
@@ -886,12 +663,7 @@ let TooltipComponent = /*#__PURE__*/(() => {
         this._showTimeoutId = undefined;
       }, delay);
     }
-    /**
-     * Begins the animation to hide the tooltip after the provided delay in ms.
-     * @param delay Amount of milliseconds to delay showing the tooltip.
-     */
     hide(delay) {
-      // Cancel the delayed show if it is scheduled
       if (this._showTimeoutId != null) {
         clearTimeout(this._showTimeoutId);
       }
@@ -900,11 +672,9 @@ let TooltipComponent = /*#__PURE__*/(() => {
         this._hideTimeoutId = undefined;
       }, delay);
     }
-    /** Returns an observable that notifies when the tooltip has been hidden from view. */
     afterHidden() {
       return this._onHide;
     }
-    /** Whether the tooltip is being displayed. */
     isVisible() {
       return this._isVisible;
     }
@@ -913,21 +683,11 @@ let TooltipComponent = /*#__PURE__*/(() => {
       this._onHide.complete();
       this._triggerElement = null;
     }
-    /**
-     * Interactions on the HTML body should close the tooltip immediately as defined in the
-     * material design spec.
-     * https://material.io/design/components/tooltips.html#behavior
-     */
     _handleBodyInteraction() {
       if (this._closeOnInteraction) {
         this.hide(0);
       }
     }
-    /**
-     * Marks that the tooltip needs to be checked in the next change detection run.
-     * Mainly used for rendering the initial text before positioning a tooltip, which
-     * can be problematic in components with OnPush change detection.
-     */
     _markForCheck() {
       this._changeDetectorRef.markForCheck();
     }
@@ -942,21 +702,14 @@ let TooltipComponent = /*#__PURE__*/(() => {
         }
       }
     }
-    /**
-     * Callback for when the timeout in this.show() gets completed.
-     * This method is only needed by the mdc-tooltip, and so it is only implemented
-     * in the mdc-tooltip, not here.
-     */
     _onShow() {
       this._isMultiline = this._isTooltipMultiline();
       this._markForCheck();
     }
-    /** Whether the tooltip text has overflown to the next line */
     _isTooltipMultiline() {
       const rect = this._elementRef.nativeElement.getBoundingClientRect();
       return rect.height > MIN_HEIGHT && rect.width >= MAX_WIDTH;
     }
-    /** Event listener dispatched when an animation on the tooltip finishes. */
     _handleAnimationEnd({
       animationName
     }) {
@@ -964,7 +717,6 @@ let TooltipComponent = /*#__PURE__*/(() => {
         this._finalizeAnimation(animationName === this._showAnimation);
       }
     }
-    /** Cancels any pending animation sequences. */
     _cancelPendingAnimations() {
       if (this._showTimeoutId != null) {
         clearTimeout(this._showTimeoutId);
@@ -974,7 +726,6 @@ let TooltipComponent = /*#__PURE__*/(() => {
       }
       this._showTimeoutId = this._hideTimeoutId = undefined;
     }
-    /** Handles the cleanup after an animation has finished. */
     _finalizeAnimation(toVisible) {
       if (toVisible) {
         this._closeOnInteraction = true;
@@ -982,11 +733,7 @@ let TooltipComponent = /*#__PURE__*/(() => {
         this._onHide.next();
       }
     }
-    /** Toggles the visibility of the tooltip element. */
     _toggleVisibility(isVisible) {
-      // We set the classes directly here ourselves so that toggling the tooltip state
-      // isn't bound by change detection. This allows us to hide it even if the
-      // view ref has been detached from the CD tree.
       const tooltip = this._tooltip.nativeElement;
       const showClass = this._showAnimation;
       const hideClass = this._hideAnimation;
@@ -996,11 +743,8 @@ let TooltipComponent = /*#__PURE__*/(() => {
         this._isVisible = isVisible;
         this._changeDetectorRef.markForCheck();
       }
-      // It's common for internal apps to disable animations using `* { animation: none !important }`
-      // which can break the opening sequence. Try to detect such cases and work around them.
       if (isVisible && !this._animationsDisabled && typeof getComputedStyle === 'function') {
         const styles = getComputedStyle(tooltip);
-        // Use `getPropertyValue` to avoid issues with property renaming.
         if (styles.getPropertyValue('animation-duration') === '0s' || styles.getPropertyValue('animation-name') === 'none') {
           this._animationsDisabled = true;
         }
@@ -1016,22 +760,22 @@ let TooltipComponent = /*#__PURE__*/(() => {
     static ɵfac = function TooltipComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || TooltipComponent)();
     };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({
       type: TooltipComponent,
       selectors: [["mat-tooltip-component"]],
       viewQuery: function TooltipComponent_Query(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, 7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵviewQuery"](_c0, 7);
         }
         if (rf & 2) {
           let _t;
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx._tooltip = _t.first);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵloadQuery"]()) && (ctx._tooltip = _t.first);
         }
       },
       hostAttrs: ["aria-hidden", "true"],
       hostBindings: function TooltipComponent_HostBindings(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("mouseleave", function TooltipComponent_mouseleave_HostBindingHandler($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("mouseleave", function TooltipComponent_mouseleave_HostBindingHandler($event) {
             return ctx._handleMouseLeave($event);
           });
         }
@@ -1041,24 +785,24 @@ let TooltipComponent = /*#__PURE__*/(() => {
       consts: [["tooltip", ""], [1, "mdc-tooltip", "mat-mdc-tooltip", 3, "animationend", "ngClass"], [1, "mat-mdc-tooltip-surface", "mdc-tooltip__surface"]],
       template: function TooltipComponent_Template(rf, ctx) {
         if (rf & 1) {
-          const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 1, 0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("animationend", function TooltipComponent_Template_div_animationend_0_listener($event) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r1);
-            return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx._handleAnimationEnd($event));
+          const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 1, 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("animationend", function TooltipComponent_Template_div_animationend_0_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r1);
+            return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx._handleAnimationEnd($event));
           });
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "div", 2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
         }
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mdc-tooltip--multiline", ctx._isMultiline);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.tooltipClass);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.message);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵclassProp"]("mdc-tooltip--multiline", ctx._isMultiline);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngClass", ctx.tooltipClass);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx.message);
         }
       },
-      dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.NgClass],
+      dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.NgClass],
       styles: [".mat-mdc-tooltip{position:relative;transform:scale(0);display:inline-flex}.mat-mdc-tooltip::before{content:\"\";top:0;right:0;bottom:0;left:0;z-index:-1;position:absolute}.mat-mdc-tooltip-panel-below .mat-mdc-tooltip::before{top:-8px}.mat-mdc-tooltip-panel-above .mat-mdc-tooltip::before{bottom:-8px}.mat-mdc-tooltip-panel-right .mat-mdc-tooltip::before{left:-8px}.mat-mdc-tooltip-panel-left .mat-mdc-tooltip::before{right:-8px}.mat-mdc-tooltip._mat-animation-noopable{animation:none;transform:scale(1)}.mat-mdc-tooltip-surface{word-break:normal;overflow-wrap:anywhere;padding:4px 8px;min-width:40px;max-width:200px;min-height:24px;max-height:40vh;box-sizing:border-box;overflow:hidden;text-align:center;will-change:transform,opacity;background-color:var(--mat-tooltip-container-color, var(--mat-sys-inverse-surface));color:var(--mat-tooltip-supporting-text-color, var(--mat-sys-inverse-on-surface));border-radius:var(--mat-tooltip-container-shape, var(--mat-sys-corner-extra-small));font-family:var(--mat-tooltip-supporting-text-font, var(--mat-sys-body-small-font));font-size:var(--mat-tooltip-supporting-text-size, var(--mat-sys-body-small-size));font-weight:var(--mat-tooltip-supporting-text-weight, var(--mat-sys-body-small-weight));line-height:var(--mat-tooltip-supporting-text-line-height, var(--mat-sys-body-small-line-height));letter-spacing:var(--mat-tooltip-supporting-text-tracking, var(--mat-sys-body-small-tracking))}.mat-mdc-tooltip-surface::before{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;border:1px solid rgba(0,0,0,0);border-radius:inherit;content:\"\";pointer-events:none}.mdc-tooltip--multiline .mat-mdc-tooltip-surface{text-align:left}[dir=rtl] .mdc-tooltip--multiline .mat-mdc-tooltip-surface{text-align:right}.mat-mdc-tooltip-panel{line-height:normal}.mat-mdc-tooltip-panel.mat-mdc-tooltip-panel-non-interactive{pointer-events:none}@keyframes mat-mdc-tooltip-show{0%{opacity:0;transform:scale(0.8)}100%{opacity:1;transform:scale(1)}}@keyframes mat-mdc-tooltip-hide{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(0.8)}}.mat-mdc-tooltip-show{animation:mat-mdc-tooltip-show 150ms cubic-bezier(0, 0, 0.2, 1) forwards}.mat-mdc-tooltip-hide{animation:mat-mdc-tooltip-hide 75ms cubic-bezier(0.4, 0, 1, 1) forwards}\n"],
       encapsulation: 2,
       changeDetection: 0
@@ -1069,17 +813,68 @@ let TooltipComponent = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+
+
+/***/ },
+
+/***/ 80640
+/*!*************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/tooltip.mjs ***!
+  \*************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MAT_TOOLTIP_DEFAULT_OPTIONS: () => (/* reexport safe */ _tooltip_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.MAT_TOOLTIP_DEFAULT_OPTIONS),
+/* harmony export */   MAT_TOOLTIP_SCROLL_STRATEGY: () => (/* reexport safe */ _tooltip_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.MAT_TOOLTIP_SCROLL_STRATEGY),
+/* harmony export */   MatTooltip: () => (/* reexport safe */ _tooltip_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.MatTooltip),
+/* harmony export */   MatTooltipModule: () => (/* binding */ MatTooltipModule),
+/* harmony export */   SCROLL_THROTTLE_MS: () => (/* reexport safe */ _tooltip_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.SCROLL_THROTTLE_MS),
+/* harmony export */   TOOLTIP_PANEL_CLASS: () => (/* reexport safe */ _tooltip_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.TOOLTIP_PANEL_CLASS),
+/* harmony export */   TooltipComponent: () => (/* reexport safe */ _tooltip_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.TooltipComponent),
+/* harmony export */   getMatTooltipInvalidPositionError: () => (/* reexport safe */ _tooltip_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.getMatTooltipInvalidPositionError)
+/* harmony export */ });
+/* harmony import */ var _tooltip_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_tooltip-chunk.mjs */ 15575);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
+/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/a11y */ 45562);
+/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/cdk/bidi */ 13266);
+/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/overlay */ 20026);
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/cdk/scrolling */ 11094);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 32778);
+/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/cdk/coercion */ 32298);
+/* harmony import */ var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/cdk/keycodes */ 52444);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 11674);
+/* harmony import */ var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/cdk/platform */ 86456);
+/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/cdk/portal */ 5978);
+/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/cdk/layout */ 42394);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs */ 44866);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let MatTooltipModule = /*#__PURE__*/(() => {
   class MatTooltipModule {
     static ɵfac = function MatTooltipModule_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || MatTooltipModule)();
     };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
       type: MatTooltipModule
     });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-      providers: [MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY_PROVIDER],
-      imports: [_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_1__.A11yModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_2__.OverlayModule, _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_13__.M, _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_13__.M, _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_3__.CdkScrollableModule]
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
+      imports: [_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__.A11yModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_4__.OverlayModule, _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_3__.BidiModule, _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_5__.CdkScrollableModule]
     });
   }
   return MatTooltipModule;
@@ -1089,190 +884,43 @@ let MatTooltipModule = /*#__PURE__*/(() => {
 })();
 
 
-/***/ }),
+/***/ },
 
-/***/ 73388:
-/*!************************************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2022/animation-DfMFjxHu.mjs ***!
-  \************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+/***/ 87432
+/*!**********************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/_animation-chunk.mjs ***!
+  \**********************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ AnimationCurves),
-/* harmony export */   M: () => (/* binding */ MATERIAL_ANIMATIONS),
-/* harmony export */   _: () => (/* binding */ _animationsDisabled),
-/* harmony export */   a: () => (/* binding */ AnimationDurations)
+/* harmony export */   MATERIAL_ANIMATIONS: () => (/* binding */ MATERIAL_ANIMATIONS),
+/* harmony export */   _animationsDisabled: () => (/* binding */ _animationsDisabled),
+/* harmony export */   _getAnimationsState: () => (/* binding */ _getAnimationsState)
 /* harmony export */ });
-/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/layout */ 285);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/layout */ 42394);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
 
 
-
-/** Injection token used to configure the animations in Angular Material. */
 const MATERIAL_ANIMATIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('MATERIAL_ANIMATIONS');
-/**
- * @deprecated No longer used, will be removed.
- * @breaking-change 21.0.0
- * @docs-private
- */
-let AnimationCurves = /*#__PURE__*/(() => {
-  class AnimationCurves {
-    static STANDARD_CURVE = 'cubic-bezier(0.4,0.0,0.2,1)';
-    static DECELERATION_CURVE = 'cubic-bezier(0.0,0.0,0.2,1)';
-    static ACCELERATION_CURVE = 'cubic-bezier(0.4,0.0,1,1)';
-    static SHARP_CURVE = 'cubic-bezier(0.4,0.0,0.6,1)';
-  }
-  return AnimationCurves;
-})();
-/**
- * @deprecated No longer used, will be removed.
- * @breaking-change 21.0.0
- * @docs-private
- */
-let AnimationDurations = /*#__PURE__*/(() => {
-  class AnimationDurations {
-    static COMPLEX = '375ms';
-    static ENTERING = '225ms';
-    static EXITING = '195ms';
-  }
-  return AnimationDurations;
-})();
-/**
- * Returns whether animations have been disabled by DI. Must be called in a DI context.
- * @docs-private
- */
-function _animationsDisabled() {
+let reducedMotion = null;
+function _getAnimationsState() {
   if ((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(MATERIAL_ANIMATIONS, {
     optional: true
   })?.animationsDisabled || (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ANIMATION_MODULE_TYPE, {
     optional: true
   }) === 'NoopAnimations') {
-    return true;
+    return 'di-disabled';
   }
-  const mediaMatcher = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__.MediaMatcher);
-  return mediaMatcher.matchMedia('(prefers-reduced-motion)').matches;
+  reducedMotion ??= (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__.MediaMatcher).matchMedia('(prefers-reduced-motion)').matches;
+  return reducedMotion ? 'reduced-motion' : 'enabled';
+}
+function _animationsDisabled() {
+  return _getAnimationsState() !== 'enabled';
 }
 
 
-/***/ }),
-
-/***/ 80640:
-/*!*************************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2022/tooltip.mjs ***!
-  \*************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   MAT_TOOLTIP_DEFAULT_OPTIONS: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.d),
-/* harmony export */   MAT_TOOLTIP_DEFAULT_OPTIONS_FACTORY: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.c),
-/* harmony export */   MAT_TOOLTIP_SCROLL_STRATEGY: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.M),
-/* harmony export */   MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.a),
-/* harmony export */   MAT_TOOLTIP_SCROLL_STRATEGY_FACTORY_PROVIDER: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.b),
-/* harmony export */   MatTooltip: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.e),
-/* harmony export */   MatTooltipModule: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.h),
-/* harmony export */   SCROLL_THROTTLE_MS: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.S),
-/* harmony export */   TOOLTIP_PANEL_CLASS: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.T),
-/* harmony export */   TooltipComponent: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.f),
-/* harmony export */   getMatTooltipInvalidPositionError: () => (/* reexport safe */ _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__.g),
-/* harmony export */   matTooltipAnimations: () => (/* binding */ matTooltipAnimations)
-/* harmony export */ });
-/* harmony import */ var _module_CWxMD37a_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./module-CWxMD37a.mjs */ 41380);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
-/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/a11y */ 56593);
-/* harmony import */ var _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/cdk/overlay */ 87351);
-/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/cdk/scrolling */ 25287);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ 32778);
-/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/coercion */ 33981);
-/* harmony import */ var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/cdk/keycodes */ 48215);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ 85914);
-/* harmony import */ var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/cdk/platform */ 49583);
-/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/cdk/bidi */ 48073);
-/* harmony import */ var _angular_cdk_portal__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/cdk/portal */ 35253);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ 44866);
-/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/cdk/layout */ 285);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/**
- * Animations used by MatTooltip.
- * @docs-private
- * @deprecated No longer being used, to be removed.
- * @breaking-change 21.0.0
- */
-const matTooltipAnimations = {
-  // Represents:
-  // trigger('state', [
-  //   state('initial, void, hidden', style({opacity: 0, transform: 'scale(0.8)'})),
-  //   state('visible', style({transform: 'scale(1)'})),
-  //   transition('* => visible', animate('150ms cubic-bezier(0, 0, 0.2, 1)')),
-  //   transition('* => hidden', animate('75ms cubic-bezier(0.4, 0, 1, 1)')),
-  // ])
-  /** Animation that transitions a tooltip in and out. */
-  tooltipState: {
-    type: 7,
-    name: 'state',
-    definitions: [{
-      type: 0,
-      name: 'initial, void, hidden',
-      styles: {
-        type: 6,
-        styles: {
-          opacity: 0,
-          transform: 'scale(0.8)'
-        },
-        offset: null
-      }
-    }, {
-      type: 0,
-      name: 'visible',
-      styles: {
-        type: 6,
-        styles: {
-          transform: 'scale(1)'
-        },
-        offset: null
-      }
-    }, {
-      type: 1,
-      expr: '* => visible',
-      animation: {
-        type: 4,
-        styles: null,
-        timings: '150ms cubic-bezier(0, 0, 0.2, 1)'
-      },
-      options: null
-    }, {
-      type: 1,
-      expr: '* => hidden',
-      animation: {
-        type: 4,
-        styles: null,
-        timings: '75ms cubic-bezier(0.4, 0, 1, 1)'
-      },
-      options: null
-    }],
-    options: {}
-  }
-};
-
-
-/***/ })
+/***/ }
 
 }])
 //# sourceMappingURL=8259.js.map

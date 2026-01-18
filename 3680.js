@@ -1,52 +1,25 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[3680],{
 
-/***/ 32373:
-/*!************************************************************************!*\
-  !*** ./node_modules/@angular/cdk/fesm2022/directionality-CChdj3az.mjs ***!
-  \************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+/***/ 43433
+/*!**********************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/_directionality-chunk.mjs ***!
+  \**********************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   D: () => (/* binding */ Directionality),
-/* harmony export */   _: () => (/* binding */ _resolveDirectionality),
-/* harmony export */   a: () => (/* binding */ DIR_DOCUMENT)
+/* harmony export */   DIR_DOCUMENT: () => (/* binding */ DIR_DOCUMENT),
+/* harmony export */   Directionality: () => (/* binding */ Directionality),
+/* harmony export */   _resolveDirectionality: () => (/* binding */ _resolveDirectionality)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 51356);
 
 
-
-/**
- * Injection token used to inject the document into Directionality.
- * This is used so that the value can be faked in tests.
- *
- * We can't use the real document in tests because changing the real `dir` causes geometry-based
- * tests in Safari to fail.
- *
- * We also can't re-provide the DOCUMENT token from platform-browser because the unit tests
- * themselves use things like `querySelector` in test code.
- *
- * This token is defined in a separate file from Directionality as a workaround for
- * https://github.com/angular/angular/issues/22559
- *
- * @docs-private
- */
 const DIR_DOCUMENT = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('cdk-dir-doc', {
   providedIn: 'root',
-  factory: DIR_DOCUMENT_FACTORY
+  factory: () => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT)
 });
-/**
- * @docs-private
- * @deprecated No longer used, will be removed.
- * @breaking-change 21.0.0
- */
-function DIR_DOCUMENT_FACTORY() {
-  return (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT);
-}
-
-/** Regex that matches locales with an RTL script. Taken from `goog.i18n.bidi.isRtlLanguage`. */
 const RTL_LOCALE_PATTERN = /^(ar|ckb|dv|he|iw|fa|nqo|ps|sd|ug|ur|yi|.*[-_](Adlm|Arab|Hebr|Nkoo|Rohg|Thaa))(?!.*[-_](Latn|Cyrl)($|-|_))($|-|_)/i;
-/** Resolves a string value to a specific direction. */
 function _resolveDirectionality(rawValue) {
   const value = rawValue?.toLowerCase() || '';
   if (value === 'auto' && typeof navigator !== 'undefined' && navigator?.language) {
@@ -54,21 +27,14 @@ function _resolveDirectionality(rawValue) {
   }
   return value === 'rtl' ? 'rtl' : 'ltr';
 }
-/**
- * The directionality (LTR / RTL) context for the application (or a subtree of it).
- * Exposes the current direction and a stream of direction changes.
- */
 let Directionality = /*#__PURE__*/(() => {
   class Directionality {
-    /** The current 'ltr' or 'rtl' value. */
     get value() {
       return this.valueSignal();
     }
-    /**
-     * The current 'ltr' or 'rtl' value.
-     */
-    valueSignal = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('ltr');
-    /** Stream that emits whenever the 'ltr' / 'rtl' state changes. */
+    valueSignal = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('ltr', ...(ngDevMode ? [{
+      debugName: "valueSignal"
+    }] : []));
     change = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
     constructor() {
       const _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(DIR_DOCUMENT, {
@@ -99,63 +65,49 @@ let Directionality = /*#__PURE__*/(() => {
 })();
 
 
-/***/ }),
+/***/ },
 
-/***/ 63680:
+/***/ 63680
 /*!*****************************************************!*\
   !*** ./node_modules/@angular/cdk/fesm2022/bidi.mjs ***!
   \*****************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   BidiModule: () => (/* binding */ BidiModule),
-/* harmony export */   DIR_DOCUMENT: () => (/* reexport safe */ _directionality_CChdj3az_mjs__WEBPACK_IMPORTED_MODULE_0__.a),
+/* harmony export */   DIR_DOCUMENT: () => (/* reexport safe */ _directionality_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.DIR_DOCUMENT),
 /* harmony export */   Dir: () => (/* binding */ Dir),
-/* harmony export */   Directionality: () => (/* reexport safe */ _directionality_CChdj3az_mjs__WEBPACK_IMPORTED_MODULE_0__.D)
+/* harmony export */   Directionality: () => (/* reexport safe */ _directionality_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.Directionality)
 /* harmony export */ });
-/* harmony import */ var _directionality_CChdj3az_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./directionality-CChdj3az.mjs */ 32373);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _directionality_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_directionality-chunk.mjs */ 43433);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
 
 
 
 
-
-/**
- * Directive to listen for changes of direction of part of the DOM.
- *
- * Provides itself as Directionality such that descendant directives only need to ever inject
- * Directionality to get the closest direction.
- */
 let Dir = /*#__PURE__*/(() => {
   class Dir {
-    /** Whether the `value` has been set to its initial value. */
     _isInitialized = false;
-    /** Direction as passed in by the consumer. */
-    _rawDir;
-    /** Event emitted when the direction changes. */
+    _rawDir = '';
     change = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
-    /** @docs-private */
     get dir() {
       return this.valueSignal();
     }
     set dir(value) {
       const previousValue = this.valueSignal();
-      // Note: `_resolveDirectionality` resolves the language based on the browser's language,
-      // whereas the browser does it based on the content of the element. Since doing so based
-      // on the content can be expensive, for now we're doing the simpler matching.
-      this.valueSignal.set((0,_directionality_CChdj3az_mjs__WEBPACK_IMPORTED_MODULE_0__._)(value));
+      this.valueSignal.set((0,_directionality_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__._resolveDirectionality)(value));
       this._rawDir = value;
       if (previousValue !== this.valueSignal() && this._isInitialized) {
         this.change.emit(this.valueSignal());
       }
     }
-    /** Current layout direction of the element. */
     get value() {
       return this.dir;
     }
-    valueSignal = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.signal)('ltr');
-    /** Initialize once default value has been set. */
+    valueSignal = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.signal)('ltr', ...(ngDevMode ? [{
+      debugName: "valueSignal"
+    }] : []));
     ngAfterContentInit() {
       this._isInitialized = true;
     }
@@ -182,7 +134,7 @@ let Dir = /*#__PURE__*/(() => {
       },
       exportAs: ["dir"],
       features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([{
-        provide: _directionality_CChdj3az_mjs__WEBPACK_IMPORTED_MODULE_0__.D,
+        provide: _directionality_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.Directionality,
         useExisting: Dir
       }])]
     });
@@ -209,7 +161,7 @@ let BidiModule = /*#__PURE__*/(() => {
 })();
 
 
-/***/ })
+/***/ }
 
 }])
 //# sourceMappingURL=3680.js.map

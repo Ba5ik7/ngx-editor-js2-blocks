@@ -1,72 +1,10 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[3777],{
 
-/***/ 8126:
-/*!****************************************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2022/common-module-cKSwHniA.mjs ***!
-  \****************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   M: () => (/* binding */ MatCommonModule),
-/* harmony export */   a: () => (/* binding */ MATERIAL_SANITY_CHECKS)
-/* harmony export */ });
-/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/a11y */ 56593);
-/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/bidi */ 48073);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 27940);
-
-
-
-
-
-/**
- * Injection token that configures whether the Material sanity checks are enabled.
- * @deprecated No longer used and will be removed.
- * @breaking-change 21.0.0
- */
-const MATERIAL_SANITY_CHECKS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_2__.InjectionToken('mat-sanity-checks', {
-  providedIn: 'root',
-  factory: () => true
-});
-/**
- * Module that captures anything that should be loaded and/or run for *all* Angular Material
- * components. This includes Bidi, etc.
- *
- * This module should be imported to each top-level component module (e.g., MatTabsModule).
- * @deprecated No longer used and will be removed.
- * @breaking-change 21.0.0
- */
-let MatCommonModule = /*#__PURE__*/(() => {
-  class MatCommonModule {
-    constructor() {
-      // While A11yModule also does this, we repeat it here to avoid importing A11yModule
-      // in MatCommonModule.
-      (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__.HighContrastModeDetector)._applyBodyHighContrastModeCssClasses();
-    }
-    static ɵfac = function MatCommonModule_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || MatCommonModule)();
-    };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({
-      type: MatCommonModule
-    });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({
-      imports: [_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__.BidiModule, _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__.BidiModule]
-    });
-  }
-  return MatCommonModule;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-
-/***/ }),
-
-/***/ 53777:
+/***/ 53777
 /*!**********************************************************!*\
   !*** ./node_modules/@angular/material/fesm2022/card.mjs ***!
   \**********************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -87,29 +25,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   MatCardTitleGroup: () => (/* binding */ MatCardTitleGroup),
 /* harmony export */   MatCardXlImage: () => (/* binding */ MatCardXlImage)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
-/* harmony import */ var _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./common-module-cKSwHniA.mjs */ 8126);
-/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/a11y */ 56593);
-/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/bidi */ 48073);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 51356);
+/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/bidi */ 13266);
 
 
 
-
-
-
-/** Injection token that can be used to provide the default options the card module. */
 const _c0 = ["*"];
 const _c1 = [[["mat-card-title"], ["mat-card-subtitle"], ["", "mat-card-title", ""], ["", "mat-card-subtitle", ""], ["", "matCardTitle", ""], ["", "matCardSubtitle", ""]], [["", "mat-card-image", ""], ["", "matCardImage", ""], ["", "mat-card-sm-image", ""], ["", "matCardImageSmall", ""], ["", "mat-card-md-image", ""], ["", "matCardImageMedium", ""], ["", "mat-card-lg-image", ""], ["", "matCardImageLarge", ""], ["", "mat-card-xl-image", ""], ["", "matCardImageXLarge", ""]], "*"];
 const _c2 = ["mat-card-title, mat-card-subtitle,\n      [mat-card-title], [mat-card-subtitle],\n      [matCardTitle], [matCardSubtitle]", "[mat-card-image], [matCardImage],\n                    [mat-card-sm-image], [matCardImageSmall],\n                    [mat-card-md-image], [matCardImageMedium],\n                    [mat-card-lg-image], [matCardImageLarge],\n                    [mat-card-xl-image], [matCardImageXLarge]", "*"];
 const _c3 = [[["", "mat-card-avatar", ""], ["", "matCardAvatar", ""]], [["mat-card-title"], ["mat-card-subtitle"], ["", "mat-card-title", ""], ["", "mat-card-subtitle", ""], ["", "matCardTitle", ""], ["", "matCardSubtitle", ""]], "*"];
 const _c4 = ["[mat-card-avatar], [matCardAvatar]", "mat-card-title, mat-card-subtitle,\n      [mat-card-title], [mat-card-subtitle],\n      [matCardTitle], [matCardSubtitle]", "*"];
 const MAT_CARD_CONFIG = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('MAT_CARD_CONFIG');
-/**
- * Material Design card component. Cards contain content and actions about a single subject.
- * See https://material.io/design/components/cards.html
- *
- * MatCard provides no behaviors, instead serving as a purely visual treatment.
- */
 let MatCard = /*#__PURE__*/(() => {
   class MatCard {
     appearance;
@@ -155,14 +81,6 @@ let MatCard = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-// TODO(jelbourn): add `MatActionCard`, which is a card that acts like a button (and has a ripple).
-// Supported in MDC with `.mdc-card__primary-action`. Will require additional a11y docs for users.
-/**
- * Title of a card, intended for use within `<mat-card>`. This component is an optional
- * convenience for one variety of card title; any custom title element may be used in its place.
- *
- * MatCardTitle provides no behaviors, instead serving as a purely visual treatment.
- */
 let MatCardTitle = /*#__PURE__*/(() => {
   class MatCardTitle {
     static ɵfac = function MatCardTitle_Factory(__ngFactoryType__) {
@@ -179,11 +97,6 @@ let MatCardTitle = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-/**
- * Container intended to be used within the `<mat-card>` component. Can contain exactly one
- * `<mat-card-title>`, one `<mat-card-subtitle>` and one content image of any size
- * (e.g. `<img matCardLgImage>`).
- */
 let MatCardTitleGroup = /*#__PURE__*/(() => {
   class MatCardTitleGroup {
     static ɵfac = function MatCardTitleGroup_Factory(__ngFactoryType__) {
@@ -199,9 +112,9 @@ let MatCardTitleGroup = /*#__PURE__*/(() => {
       template: function MatCardTitleGroup_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomElementStart"](0, "div");
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomElementEnd"]();
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](2, 1);
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](3, 2);
         }
@@ -215,13 +128,6 @@ let MatCardTitleGroup = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-/**
- * Content of a card, intended for use within `<mat-card>`. This component is an optional
- * convenience for use with other convenience elements, such as `<mat-card-title>`; any custom
- * content block element may be used in its place.
- *
- * MatCardContent provides no behaviors, instead serving as a purely visual treatment.
- */
 let MatCardContent = /*#__PURE__*/(() => {
   class MatCardContent {
     static ɵfac = function MatCardContent_Factory(__ngFactoryType__) {
@@ -238,13 +144,6 @@ let MatCardContent = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-/**
- * Sub-title of a card, intended for use within `<mat-card>` beneath a `<mat-card-title>`. This
- * component is an optional convenience for use with other convenience elements, such as
- * `<mat-card-title>`.
- *
- * MatCardSubtitle provides no behaviors, instead serving as a purely visual treatment.
- */
 let MatCardSubtitle = /*#__PURE__*/(() => {
   class MatCardSubtitle {
     static ɵfac = function MatCardSubtitle_Factory(__ngFactoryType__) {
@@ -261,18 +160,8 @@ let MatCardSubtitle = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-/**
- * Bottom area of a card that contains action buttons, intended for use within `<mat-card>`.
- * This component is an optional convenience for use with other convenience elements, such as
- * `<mat-card-content>`; any custom action block element may be used in its place.
- *
- * MatCardActions provides no behaviors, instead serving as a purely visual treatment.
- */
 let MatCardActions = /*#__PURE__*/(() => {
   class MatCardActions {
-    // TODO(jelbourn): deprecate `align` in favor of `actionPosition` or `actionAlignment`
-    // as to not conflict with the native `align` attribute.
-    /** Position of the actions inside the card. */
     align = 'start';
     static ɵfac = function MatCardActions_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || MatCardActions)();
@@ -298,14 +187,6 @@ let MatCardActions = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-/**
- * Header region of a card, intended for use within `<mat-card>`. This header captures
- * a card title, subtitle, and avatar.  This component is an optional convenience for use with
- * other convenience elements, such as `<mat-card-footer>`; any custom header block element may be
- * used in its place.
- *
- * MatCardHeader provides no behaviors, instead serving as a purely visual treatment.
- */
 let MatCardHeader = /*#__PURE__*/(() => {
   class MatCardHeader {
     static ɵfac = function MatCardHeader_Factory(__ngFactoryType__) {
@@ -323,9 +204,9 @@ let MatCardHeader = /*#__PURE__*/(() => {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c3);
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomElementStart"](1, "div", 0);
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](2, 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdomElementEnd"]();
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](3, 2);
         }
       },
@@ -338,13 +219,6 @@ let MatCardHeader = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-/**
- * Footer area a card, intended for use within `<mat-card>`.
- * This component is an optional convenience for use with other convenience elements, such as
- * `<mat-card-content>`; any custom footer block element may be used in its place.
- *
- * MatCardFooter provides no behaviors, instead serving as a purely visual treatment.
- */
 let MatCardFooter = /*#__PURE__*/(() => {
   class MatCardFooter {
     static ɵfac = function MatCardFooter_Factory(__ngFactoryType__) {
@@ -361,17 +235,6 @@ let MatCardFooter = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-// TODO(jelbourn): deprecate the "image" selectors to replace with "media".
-// TODO(jelbourn): support `.mdc-card__media-content`.
-/**
- * Primary image content for a card, intended for use within `<mat-card>`. Can be applied to
- * any media element, such as `<img>` or `<picture>`.
- *
- * This component is an optional convenience for use with other convenience elements, such as
- * `<mat-card-content>`; any custom media element may be used in its place.
- *
- * MatCardImage provides no behaviors, instead serving as a purely visual treatment.
- */
 let MatCardImage = /*#__PURE__*/(() => {
   class MatCardImage {
     static ɵfac = function MatCardImage_Factory(__ngFactoryType__) {
@@ -388,7 +251,6 @@ let MatCardImage = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-/** Same as `MatCardImage`, but small. */
 let MatCardSmImage = /*#__PURE__*/(() => {
   class MatCardSmImage {
     static ɵfac = function MatCardSmImage_Factory(__ngFactoryType__) {
@@ -405,7 +267,6 @@ let MatCardSmImage = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-/** Same as `MatCardImage`, but medium. */
 let MatCardMdImage = /*#__PURE__*/(() => {
   class MatCardMdImage {
     static ɵfac = function MatCardMdImage_Factory(__ngFactoryType__) {
@@ -422,7 +283,6 @@ let MatCardMdImage = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-/** Same as `MatCardImage`, but large. */
 let MatCardLgImage = /*#__PURE__*/(() => {
   class MatCardLgImage {
     static ɵfac = function MatCardLgImage_Factory(__ngFactoryType__) {
@@ -439,7 +299,6 @@ let MatCardLgImage = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-/** Same as `MatCardImage`, but extra-large. */
 let MatCardXlImage = /*#__PURE__*/(() => {
   class MatCardXlImage {
     static ɵfac = function MatCardXlImage_Factory(__ngFactoryType__) {
@@ -456,15 +315,6 @@ let MatCardXlImage = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-/**
- * Avatar image content for a card, intended for use within `<mat-card>`. Can be applied to
- * any media element, such as `<img>` or `<picture>`.
- *
- * This component is an optional convenience for use with other convenience elements, such as
- * `<mat-card-title>`; any custom media element may be used in its place.
- *
- * MatCardAvatar provides no behaviors, instead serving as a purely visual treatment.
- */
 let MatCardAvatar = /*#__PURE__*/(() => {
   class MatCardAvatar {
     static ɵfac = function MatCardAvatar_Factory(__ngFactoryType__) {
@@ -491,7 +341,7 @@ let MatCardModule = /*#__PURE__*/(() => {
       type: MatCardModule
     });
     static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-      imports: [_common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_3__.M, _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_3__.M]
+      imports: [_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__.BidiModule]
     });
   }
   return MatCardModule;
@@ -501,7 +351,7 @@ let MatCardModule = /*#__PURE__*/(() => {
 })();
 
 
-/***/ })
+/***/ }
 
 }])
 //# sourceMappingURL=3777.js.map

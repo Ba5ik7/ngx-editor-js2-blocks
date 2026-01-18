@@ -1,88 +1,25 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[3840],{
 
-/***/ 8126:
-/*!****************************************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2022/common-module-cKSwHniA.mjs ***!
-  \****************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+/***/ 90935
+/*!**************************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/_icon-registry-chunk.mjs ***!
+  \**************************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   M: () => (/* binding */ MatCommonModule),
-/* harmony export */   a: () => (/* binding */ MATERIAL_SANITY_CHECKS)
+/* harmony export */   MatIconRegistry: () => (/* binding */ MatIconRegistry),
+/* harmony export */   getMatIconFailedToSanitizeLiteralError: () => (/* binding */ getMatIconFailedToSanitizeLiteralError),
+/* harmony export */   getMatIconFailedToSanitizeUrlError: () => (/* binding */ getMatIconFailedToSanitizeUrlError),
+/* harmony export */   getMatIconNameNotFoundError: () => (/* binding */ getMatIconNameNotFoundError),
+/* harmony export */   getMatIconNoHttpProviderError: () => (/* binding */ getMatIconNoHttpProviderError)
 /* harmony export */ });
-/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/a11y */ 56593);
-/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/bidi */ 48073);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 27940);
-
-
-
-
-
-/**
- * Injection token that configures whether the Material sanity checks are enabled.
- * @deprecated No longer used and will be removed.
- * @breaking-change 21.0.0
- */
-const MATERIAL_SANITY_CHECKS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_2__.InjectionToken('mat-sanity-checks', {
-  providedIn: 'root',
-  factory: () => true
-});
-/**
- * Module that captures anything that should be loaded and/or run for *all* Angular Material
- * components. This includes Bidi, etc.
- *
- * This module should be imported to each top-level component module (e.g., MatTabsModule).
- * @deprecated No longer used and will be removed.
- * @breaking-change 21.0.0
- */
-let MatCommonModule = /*#__PURE__*/(() => {
-  class MatCommonModule {
-    constructor() {
-      // While A11yModule also does this, we repeat it here to avoid importing A11yModule
-      // in MatCommonModule.
-      (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__.HighContrastModeDetector)._applyBodyHighContrastModeCssClasses();
-    }
-    static ɵfac = function MatCommonModule_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || MatCommonModule)();
-    };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({
-      type: MatCommonModule
-    });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({
-      imports: [_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__.BidiModule, _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_1__.BidiModule]
-    });
-  }
-  return MatCommonModule;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-
-/***/ }),
-
-/***/ 50069:
-/*!****************************************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2022/icon-registry-CwOTJ7YM.mjs ***!
-  \****************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   I: () => (/* binding */ ICON_REGISTRY_PROVIDER_FACTORY),
-/* harmony export */   M: () => (/* binding */ MatIconRegistry),
-/* harmony export */   a: () => (/* binding */ getMatIconNoHttpProviderError),
-/* harmony export */   b: () => (/* binding */ getMatIconFailedToSanitizeUrlError),
-/* harmony export */   c: () => (/* binding */ getMatIconFailedToSanitizeLiteralError),
-/* harmony export */   d: () => (/* binding */ ICON_REGISTRY_PROVIDER),
-/* harmony export */   g: () => (/* binding */ getMatIconNameNotFoundError)
-/* harmony export */ });
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common/http */ 52580);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser */ 53105);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 44866);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 32778);
+/* harmony import */ var _angular_cdk_private__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/private */ 74418);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ 54380);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 51356);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ 2649);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 44866);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ 32778);
 
 
 
@@ -90,126 +27,41 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-/**
- * The Trusted Types policy, or null if Trusted Types are not
- * enabled/supported, or undefined if the policy has not been created yet.
- */
-let policy;
-/**
- * Returns the Trusted Types policy, or null if Trusted Types are not
- * enabled/supported. The first call to this function will create the policy.
- */
-function getPolicy() {
-  if (policy === undefined) {
-    policy = null;
-    if (typeof window !== 'undefined') {
-      const ttWindow = window;
-      if (ttWindow.trustedTypes !== undefined) {
-        policy = ttWindow.trustedTypes.createPolicy('angular#components', {
-          createHTML: s => s
-        });
-      }
-    }
-  }
-  return policy;
-}
-/**
- * Unsafely promote a string to a TrustedHTML, falling back to strings when
- * Trusted Types are not available.
- * @security This is a security-sensitive function; any use of this function
- * must go through security review. In particular, it must be assured that the
- * provided string will never cause an XSS vulnerability if used in a context
- * that will be interpreted as HTML by a browser, e.g. when assigning to
- * element.innerHTML.
- */
-function trustedHTMLFromString(html) {
-  return getPolicy()?.createHTML(html) || html;
-}
-
-/**
- * Returns an exception to be thrown in the case when attempting to
- * load an icon with a name that cannot be found.
- * @docs-private
- */
 function getMatIconNameNotFoundError(iconName) {
   return Error(`Unable to find icon with the name "${iconName}"`);
 }
-/**
- * Returns an exception to be thrown when the consumer attempts to use
- * `<mat-icon>` without including @angular/common/http.
- * @docs-private
- */
 function getMatIconNoHttpProviderError() {
   return Error('Could not find HttpClient for use with Angular Material icons. ' + 'Please add provideHttpClient() to your providers.');
 }
-/**
- * Returns an exception to be thrown when a URL couldn't be sanitized.
- * @param url URL that was attempted to be sanitized.
- * @docs-private
- */
 function getMatIconFailedToSanitizeUrlError(url) {
   return Error(`The URL provided to MatIconRegistry was not trusted as a resource URL ` + `via Angular's DomSanitizer. Attempted URL was "${url}".`);
 }
-/**
- * Returns an exception to be thrown when a HTML string couldn't be sanitized.
- * @param literal HTML that was attempted to be sanitized.
- * @docs-private
- */
 function getMatIconFailedToSanitizeLiteralError(literal) {
   return Error(`The literal provided to MatIconRegistry was not trusted as safe HTML by ` + `Angular's DomSanitizer. Attempted literal was "${literal}".`);
 }
-/**
- * Configuration for an icon, including the URL and possibly the cached SVG element.
- * @docs-private
- */
 class SvgIconConfig {
   url;
   svgText;
   options;
-  svgElement;
+  svgElement = null;
   constructor(url, svgText, options) {
     this.url = url;
     this.svgText = svgText;
     this.options = options;
   }
 }
-/**
- * Service to register and display icons used by the `<mat-icon>` component.
- * - Registers icon URLs by namespace and name.
- * - Registers icon set URLs by namespace.
- * - Registers aliases for CSS classes, for use with icon fonts.
- * - Loads icons from URLs and extracts individual icons from icon sets.
- */
 let MatIconRegistry = /*#__PURE__*/(() => {
   class MatIconRegistry {
     _httpClient;
     _sanitizer;
     _errorHandler;
     _document;
-    /**
-     * URLs and cached SVG elements for individual icons. Keys are of the format "[namespace]:[icon]".
-     */
     _svgIconConfigs = new Map();
-    /**
-     * SvgIconConfig objects and cached SVG elements for icon sets, keyed by namespace.
-     * Multiple icon sets can be registered under the same namespace.
-     */
     _iconSetConfigs = new Map();
-    /** Cache for icons loaded by direct URLs. */
     _cachedIconsByUrl = new Map();
-    /** In-progress icon fetches. Used to coalesce multiple requests to the same URL. */
     _inProgressUrlFetches = new Map();
-    /** Map from font identifiers to their CSS class names. Used for icon fonts. */
     _fontCssClassesByAlias = new Map();
-    /** Registered icon resolver functions. */
     _resolvers = [];
-    /**
-     * The CSS classes to apply when an `<mat-icon>` component has no icon name, url, or font
-     * specified. The default 'material-icons' value assumes that the material icon font has been
-     * loaded as described at https://google.github.io/material-design-icons/#icon-font-for-the-web
-     */
     _defaultFontSetClass = ['material-icons', 'mat-ligature-font'];
     constructor(_httpClient, _sanitizer, document, _errorHandler) {
       this._httpClient = _httpClient;
@@ -217,188 +69,85 @@ let MatIconRegistry = /*#__PURE__*/(() => {
       this._errorHandler = _errorHandler;
       this._document = document;
     }
-    /**
-     * Registers an icon by URL in the default namespace.
-     * @param iconName Name under which the icon should be registered.
-     * @param url
-     */
     addSvgIcon(iconName, url, options) {
       return this.addSvgIconInNamespace('', iconName, url, options);
     }
-    /**
-     * Registers an icon using an HTML string in the default namespace.
-     * @param iconName Name under which the icon should be registered.
-     * @param literal SVG source of the icon.
-     */
     addSvgIconLiteral(iconName, literal, options) {
       return this.addSvgIconLiteralInNamespace('', iconName, literal, options);
     }
-    /**
-     * Registers an icon by URL in the specified namespace.
-     * @param namespace Namespace in which the icon should be registered.
-     * @param iconName Name under which the icon should be registered.
-     * @param url
-     */
     addSvgIconInNamespace(namespace, iconName, url, options) {
       return this._addSvgIconConfig(namespace, iconName, new SvgIconConfig(url, null, options));
     }
-    /**
-     * Registers an icon resolver function with the registry. The function will be invoked with the
-     * name and namespace of an icon when the registry tries to resolve the URL from which to fetch
-     * the icon. The resolver is expected to return a `SafeResourceUrl` that points to the icon,
-     * an object with the icon URL and icon options, or `null` if the icon is not supported. Resolvers
-     * will be invoked in the order in which they have been registered.
-     * @param resolver Resolver function to be registered.
-     */
     addSvgIconResolver(resolver) {
       this._resolvers.push(resolver);
       return this;
     }
-    /**
-     * Registers an icon using an HTML string in the specified namespace.
-     * @param namespace Namespace in which the icon should be registered.
-     * @param iconName Name under which the icon should be registered.
-     * @param literal SVG source of the icon.
-     */
     addSvgIconLiteralInNamespace(namespace, iconName, literal, options) {
-      const cleanLiteral = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_1__.SecurityContext.HTML, literal);
-      // TODO: add an ngDevMode check
+      const cleanLiteral = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_2__.SecurityContext.HTML, literal);
       if (!cleanLiteral) {
         throw getMatIconFailedToSanitizeLiteralError(literal);
       }
-      // Security: The literal is passed in as SafeHtml, and is thus trusted.
-      const trustedLiteral = trustedHTMLFromString(cleanLiteral);
+      const trustedLiteral = (0,_angular_cdk_private__WEBPACK_IMPORTED_MODULE_0__.trustedHTMLFromString)(cleanLiteral);
       return this._addSvgIconConfig(namespace, iconName, new SvgIconConfig('', trustedLiteral, options));
     }
-    /**
-     * Registers an icon set by URL in the default namespace.
-     * @param url
-     */
     addSvgIconSet(url, options) {
       return this.addSvgIconSetInNamespace('', url, options);
     }
-    /**
-     * Registers an icon set using an HTML string in the default namespace.
-     * @param literal SVG source of the icon set.
-     */
     addSvgIconSetLiteral(literal, options) {
       return this.addSvgIconSetLiteralInNamespace('', literal, options);
     }
-    /**
-     * Registers an icon set by URL in the specified namespace.
-     * @param namespace Namespace in which to register the icon set.
-     * @param url
-     */
     addSvgIconSetInNamespace(namespace, url, options) {
       return this._addSvgIconSetConfig(namespace, new SvgIconConfig(url, null, options));
     }
-    /**
-     * Registers an icon set using an HTML string in the specified namespace.
-     * @param namespace Namespace in which to register the icon set.
-     * @param literal SVG source of the icon set.
-     */
     addSvgIconSetLiteralInNamespace(namespace, literal, options) {
-      const cleanLiteral = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_1__.SecurityContext.HTML, literal);
+      const cleanLiteral = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_2__.SecurityContext.HTML, literal);
       if (!cleanLiteral) {
         throw getMatIconFailedToSanitizeLiteralError(literal);
       }
-      // Security: The literal is passed in as SafeHtml, and is thus trusted.
-      const trustedLiteral = trustedHTMLFromString(cleanLiteral);
+      const trustedLiteral = (0,_angular_cdk_private__WEBPACK_IMPORTED_MODULE_0__.trustedHTMLFromString)(cleanLiteral);
       return this._addSvgIconSetConfig(namespace, new SvgIconConfig('', trustedLiteral, options));
     }
-    /**
-     * Defines an alias for CSS class names to be used for icon fonts. Creating an matIcon
-     * component with the alias as the fontSet input will cause the class name to be applied
-     * to the `<mat-icon>` element.
-     *
-     * If the registered font is a ligature font, then don't forget to also include the special
-     * class `mat-ligature-font` to allow the usage via attribute. So register like this:
-     *
-     * ```ts
-     * iconRegistry.registerFontClassAlias('f1', 'font1 mat-ligature-font');
-     * ```
-     *
-     * And use like this:
-     *
-     * ```html
-     * <mat-icon fontSet="f1" fontIcon="home"></mat-icon>
-     * ```
-     *
-     * @param alias Alias for the font.
-     * @param classNames Class names override to be used instead of the alias.
-     */
     registerFontClassAlias(alias, classNames = alias) {
       this._fontCssClassesByAlias.set(alias, classNames);
       return this;
     }
-    /**
-     * Returns the CSS class name associated with the alias by a previous call to
-     * registerFontClassAlias. If no CSS class has been associated, returns the alias unmodified.
-     */
     classNameForFontAlias(alias) {
       return this._fontCssClassesByAlias.get(alias) || alias;
     }
-    /**
-     * Sets the CSS classes to be used for icon fonts when an `<mat-icon>` component does not
-     * have a fontSet input value, and is not loading an icon by name or URL.
-     */
     setDefaultFontSetClass(...classNames) {
       this._defaultFontSetClass = classNames;
       return this;
     }
-    /**
-     * Returns the CSS classes to be used for icon fonts when an `<mat-icon>` component does not
-     * have a fontSet input value, and is not loading an icon by name or URL.
-     */
     getDefaultFontSetClass() {
       return this._defaultFontSetClass;
     }
-    /**
-     * Returns an Observable that produces the icon (as an `<svg>` DOM element) from the given URL.
-     * The response from the URL may be cached so this will not always cause an HTTP request, but
-     * the produced element will always be a new copy of the originally fetched icon. (That is,
-     * it will not contain any modifications made to elements previously returned).
-     *
-     * @param safeUrl URL from which to fetch the SVG icon.
-     */
     getSvgIconFromUrl(safeUrl) {
-      const url = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_1__.SecurityContext.RESOURCE_URL, safeUrl);
+      const url = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_2__.SecurityContext.RESOURCE_URL, safeUrl);
       if (!url) {
         throw getMatIconFailedToSanitizeUrlError(safeUrl);
       }
       const cachedIcon = this._cachedIconsByUrl.get(url);
       if (cachedIcon) {
-        return (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.of)(cloneSvg(cachedIcon));
+        return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.of)(cloneSvg(cachedIcon));
       }
-      return this._loadSvgIconFromConfig(new SvgIconConfig(safeUrl, null)).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(svg => this._cachedIconsByUrl.set(url, svg)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(svg => cloneSvg(svg)));
+      return this._loadSvgIconFromConfig(new SvgIconConfig(safeUrl, null)).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.tap)(svg => this._cachedIconsByUrl.set(url, svg)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.map)(svg => cloneSvg(svg)));
     }
-    /**
-     * Returns an Observable that produces the icon (as an `<svg>` DOM element) with the given name
-     * and namespace. The icon must have been previously registered with addIcon or addIconSet;
-     * if not, the Observable will throw an error.
-     *
-     * @param name Name of the icon to be retrieved.
-     * @param namespace Namespace in which to look for the icon.
-     */
     getNamedSvgIcon(name, namespace = '') {
       const key = iconKey(namespace, name);
       let config = this._svgIconConfigs.get(key);
-      // Return (copy of) cached icon if possible.
       if (config) {
         return this._getSvgFromConfig(config);
       }
-      // Otherwise try to resolve the config from one of the resolver functions.
       config = this._getIconConfigFromResolvers(namespace, name);
       if (config) {
         this._svgIconConfigs.set(key, config);
         return this._getSvgFromConfig(config);
       }
-      // See if we have any icon sets registered for the namespace.
       const iconSetConfigs = this._iconSetConfigs.get(namespace);
       if (iconSetConfigs) {
         return this._getSvgFromIconSetConfigs(name, iconSetConfigs);
       }
-      return (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.throwError)(getMatIconNameNotFoundError(key));
+      return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.throwError)(getMatIconNameNotFoundError(key));
     }
     ngOnDestroy() {
       this._resolvers = [];
@@ -406,72 +155,37 @@ let MatIconRegistry = /*#__PURE__*/(() => {
       this._iconSetConfigs.clear();
       this._cachedIconsByUrl.clear();
     }
-    /**
-     * Returns the cached icon for a SvgIconConfig if available, or fetches it from its URL if not.
-     */
     _getSvgFromConfig(config) {
       if (config.svgText) {
-        // We already have the SVG element for this icon, return a copy.
-        return (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.of)(cloneSvg(this._svgElementFromConfig(config)));
+        return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.of)(cloneSvg(this._svgElementFromConfig(config)));
       } else {
-        // Fetch the icon from the config's URL, cache it, and return a copy.
-        return this._loadSvgIconFromConfig(config).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(svg => cloneSvg(svg)));
+        return this._loadSvgIconFromConfig(config).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.map)(svg => cloneSvg(svg)));
       }
     }
-    /**
-     * Attempts to find an icon with the specified name in any of the SVG icon sets.
-     * First searches the available cached icons for a nested element with a matching name, and
-     * if found copies the element to a new `<svg>` element. If not found, fetches all icon sets
-     * that have not been cached, and searches again after all fetches are completed.
-     * The returned Observable produces the SVG element if possible, and throws
-     * an error if no icon with the specified name can be found.
-     */
     _getSvgFromIconSetConfigs(name, iconSetConfigs) {
-      // For all the icon set SVG elements we've fetched, see if any contain an icon with the
-      // requested name.
       const namedIcon = this._extractIconWithNameFromAnySet(name, iconSetConfigs);
       if (namedIcon) {
-        // We could cache namedIcon in _svgIconConfigs, but since we have to make a copy every
-        // time anyway, there's probably not much advantage compared to just always extracting
-        // it from the icon set.
-        return (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.of)(namedIcon);
+        return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.of)(namedIcon);
       }
-      // Not found in any cached icon sets. If there are icon sets with URLs that we haven't
-      // fetched, fetch them now and look for iconName in the results.
       const iconSetFetchRequests = iconSetConfigs.filter(iconSetConfig => !iconSetConfig.svgText).map(iconSetConfig => {
-        return this._loadSvgIconSetFromConfig(iconSetConfig).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(err => {
-          const url = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_1__.SecurityContext.RESOURCE_URL, iconSetConfig.url);
-          // Swallow errors fetching individual URLs so the
-          // combined Observable won't necessarily fail.
+        return this._loadSvgIconSetFromConfig(iconSetConfig).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.catchError)(err => {
+          const url = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_2__.SecurityContext.RESOURCE_URL, iconSetConfig.url);
           const errorMessage = `Loading icon set URL: ${url} failed: ${err.message}`;
           this._errorHandler.handleError(new Error(errorMessage));
-          return (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.of)(null);
+          return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.of)(null);
         }));
       });
-      // Fetch all the icon set URLs. When the requests complete, every IconSet should have a
-      // cached SVG element (unless the request failed), and we can check again for the icon.
-      return (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.forkJoin)(iconSetFetchRequests).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(() => {
+      return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.forkJoin)(iconSetFetchRequests).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.map)(() => {
         const foundIcon = this._extractIconWithNameFromAnySet(name, iconSetConfigs);
-        // TODO: add an ngDevMode check
         if (!foundIcon) {
           throw getMatIconNameNotFoundError(name);
         }
         return foundIcon;
       }));
     }
-    /**
-     * Searches the cached SVG elements for the given icon sets for a nested icon element whose "id"
-     * tag matches the specified name. If found, copies the nested element to a new SVG element and
-     * returns it. Returns null if no matching element is found.
-     */
     _extractIconWithNameFromAnySet(iconName, iconSetConfigs) {
-      // Iterate backwards, so icon sets added later have precedence.
       for (let i = iconSetConfigs.length - 1; i >= 0; i--) {
         const config = iconSetConfigs[i];
-        // Parsing the icon set's text into an SVG element can be expensive. We can avoid some of
-        // the parsing by doing a quick check using `indexOf` to see if there's any chance for the
-        // icon to be in the set. This won't be 100% accurate, but it should help us avoid at least
-        // some of the parsing.
         if (config.svgText && config.svgText.toString().indexOf(iconName) > -1) {
           const svg = this._svgElementFromConfig(config);
           const foundIcon = this._extractSvgIconFromSet(svg, iconName, config.options);
@@ -482,80 +196,44 @@ let MatIconRegistry = /*#__PURE__*/(() => {
       }
       return null;
     }
-    /**
-     * Loads the content of the icon URL specified in the SvgIconConfig and creates an SVG element
-     * from it.
-     */
     _loadSvgIconFromConfig(config) {
-      return this._fetchIcon(config).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(svgText => config.svgText = svgText), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(() => this._svgElementFromConfig(config)));
+      return this._fetchIcon(config).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.tap)(svgText => config.svgText = svgText), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.map)(() => this._svgElementFromConfig(config)));
     }
-    /**
-     * Loads the content of the icon set URL specified in the
-     * SvgIconConfig and attaches it to the config.
-     */
     _loadSvgIconSetFromConfig(config) {
       if (config.svgText) {
-        return (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.of)(null);
+        return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.of)(null);
       }
-      return this._fetchIcon(config).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(svgText => config.svgText = svgText));
+      return this._fetchIcon(config).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.tap)(svgText => config.svgText = svgText));
     }
-    /**
-     * Searches the cached element of the given SvgIconConfig for a nested icon element whose "id"
-     * tag matches the specified name. If found, copies the nested element to a new SVG element and
-     * returns it. Returns null if no matching element is found.
-     */
     _extractSvgIconFromSet(iconSet, iconName, options) {
-      // Use the `id="iconName"` syntax in order to escape special
-      // characters in the ID (versus using the #iconName syntax).
       const iconSource = iconSet.querySelector(`[id="${iconName}"]`);
       if (!iconSource) {
         return null;
       }
-      // Clone the element and remove the ID to prevent multiple elements from being added
-      // to the page with the same ID.
       const iconElement = iconSource.cloneNode(true);
       iconElement.removeAttribute('id');
-      // If the icon node is itself an <svg> node, clone and return it directly. If not, set it as
-      // the content of a new <svg> node.
       if (iconElement.nodeName.toLowerCase() === 'svg') {
         return this._setSvgAttributes(iconElement, options);
       }
-      // If the node is a <symbol>, it won't be rendered so we have to convert it into <svg>. Note
-      // that the same could be achieved by referring to it via <use href="#id">, however the <use>
-      // tag is problematic on Firefox, because it needs to include the current page path.
       if (iconElement.nodeName.toLowerCase() === 'symbol') {
         return this._setSvgAttributes(this._toSvgElement(iconElement), options);
       }
-      // createElement('SVG') doesn't work as expected; the DOM ends up with
-      // the correct nodes, but the SVG content doesn't render. Instead we
-      // have to create an empty SVG node using innerHTML and append its content.
-      // Elements created using DOMParser.parseFromString have the same problem.
-      // http://stackoverflow.com/questions/23003278/svg-innerhtml-in-firefox-can-not-display
-      const svg = this._svgElementFromString(trustedHTMLFromString('<svg></svg>'));
-      // Clone the node so we don't remove it from the parent icon set element.
+      const svg = this._svgElementFromString((0,_angular_cdk_private__WEBPACK_IMPORTED_MODULE_0__.trustedHTMLFromString)('<svg></svg>'));
       svg.appendChild(iconElement);
       return this._setSvgAttributes(svg, options);
     }
-    /**
-     * Creates a DOM element from the given SVG string.
-     */
     _svgElementFromString(str) {
       const div = this._document.createElement('DIV');
       div.innerHTML = str;
       const svg = div.querySelector('svg');
-      // TODO: add an ngDevMode check
       if (!svg) {
         throw Error('<svg> tag not found');
       }
       return svg;
     }
-    /**
-     * Converts an element into an SVG node by cloning all of its children.
-     */
     _toSvgElement(element) {
-      const svg = this._svgElementFromString(trustedHTMLFromString('<svg></svg>'));
+      const svg = this._svgElementFromString((0,_angular_cdk_private__WEBPACK_IMPORTED_MODULE_0__.trustedHTMLFromString)('<svg></svg>'));
       const attributes = element.attributes;
-      // Copy over all the attributes from the `symbol` to the new SVG, except the id.
       for (let i = 0; i < attributes.length; i++) {
         const {
           name,
@@ -572,24 +250,17 @@ let MatIconRegistry = /*#__PURE__*/(() => {
       }
       return svg;
     }
-    /**
-     * Sets the default attributes for an SVG element to be used as an icon.
-     */
     _setSvgAttributes(svg, options) {
       svg.setAttribute('fit', '');
       svg.setAttribute('height', '100%');
       svg.setAttribute('width', '100%');
       svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
-      svg.setAttribute('focusable', 'false'); // Disable IE11 default behavior to make SVGs focusable.
+      svg.setAttribute('focusable', 'false');
       if (options && options.viewBox) {
         svg.setAttribute('viewBox', options.viewBox);
       }
       return svg;
     }
-    /**
-     * Returns an Observable which produces the string contents of the given icon. Results may be
-     * cached, so future calls with the same URL may not cause another HTTP request.
-     */
     _fetchIcon(iconConfig) {
       const {
         url: safeUrl,
@@ -599,18 +270,13 @@ let MatIconRegistry = /*#__PURE__*/(() => {
       if (!this._httpClient) {
         throw getMatIconNoHttpProviderError();
       }
-      // TODO: add an ngDevMode check
       if (safeUrl == null) {
         throw Error(`Cannot fetch icon from URL "${safeUrl}".`);
       }
-      const url = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_1__.SecurityContext.RESOURCE_URL, safeUrl);
-      // TODO: add an ngDevMode check
+      const url = this._sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_2__.SecurityContext.RESOURCE_URL, safeUrl);
       if (!url) {
         throw getMatIconFailedToSanitizeUrlError(safeUrl);
       }
-      // Store in-progress fetches to avoid sending a duplicate request for a URL when there is
-      // already a request in progress for that URL. It's necessary to call share() on the
-      // Observable returned by http.get() so that multiple subscribers don't cause multiple XHRs.
       const inProgressFetch = this._inProgressUrlFetches.get(url);
       if (inProgressFetch) {
         return inProgressFetch;
@@ -618,29 +284,16 @@ let MatIconRegistry = /*#__PURE__*/(() => {
       const req = this._httpClient.get(url, {
         responseType: 'text',
         withCredentials
-      }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(svg => {
-        // Security: This SVG is fetched from a SafeResourceUrl, and is thus
-        // trusted HTML.
-        return trustedHTMLFromString(svg);
-      }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.finalize)(() => this._inProgressUrlFetches.delete(url)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.share)());
+      }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.map)(svg => {
+        return (0,_angular_cdk_private__WEBPACK_IMPORTED_MODULE_0__.trustedHTMLFromString)(svg);
+      }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.finalize)(() => this._inProgressUrlFetches.delete(url)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.share)());
       this._inProgressUrlFetches.set(url, req);
       return req;
     }
-    /**
-     * Registers an icon config by name in the specified namespace.
-     * @param namespace Namespace in which to register the icon config.
-     * @param iconName Name under which to register the config.
-     * @param config Config to be registered.
-     */
     _addSvgIconConfig(namespace, iconName, config) {
       this._svgIconConfigs.set(iconKey(namespace, iconName), config);
       return this;
     }
-    /**
-     * Registers an icon set config in the specified namespace.
-     * @param namespace Namespace in which to register the icon config.
-     * @param config Config to be registered.
-     */
     _addSvgIconSetConfig(namespace, config) {
       const configNamespace = this._iconSetConfigs.get(namespace);
       if (configNamespace) {
@@ -650,7 +303,6 @@ let MatIconRegistry = /*#__PURE__*/(() => {
       }
       return this;
     }
-    /** Parses a config's text into an SVG element. */
     _svgElementFromConfig(config) {
       if (!config.svgElement) {
         const svg = this._svgElementFromString(config.svgText);
@@ -659,7 +311,6 @@ let MatIconRegistry = /*#__PURE__*/(() => {
       }
       return config.svgElement;
     }
-    /** Tries to create an icon config through the registered resolver functions. */
     _getIconConfigFromResolvers(namespace, name) {
       for (let i = 0; i < this._resolvers.length; i++) {
         const result = this._resolvers[i](name, namespace);
@@ -670,9 +321,9 @@ let MatIconRegistry = /*#__PURE__*/(() => {
       return undefined;
     }
     static ɵfac = function MatIconRegistry_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || MatIconRegistry)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpClient, 8), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__.DomSanitizer), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT, 8), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__.ErrorHandler));
+      return new (__ngFactoryType__ || MatIconRegistry)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpClient, 8), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__.DomSanitizer), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__.DOCUMENT, 8), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__.ErrorHandler));
     };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
       token: MatIconRegistry,
       factory: MatIconRegistry.ɵfac,
       providedIn: 'root'
@@ -683,30 +334,9 @@ let MatIconRegistry = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-/**
- * @docs-private
- * @deprecated No longer used, will be removed.
- * @breaking-change 21.0.0
- */
-function ICON_REGISTRY_PROVIDER_FACTORY(parentRegistry, httpClient, sanitizer, errorHandler, document) {
-  return parentRegistry || new MatIconRegistry(httpClient, sanitizer, document, errorHandler);
-}
-/**
- * @docs-private
- * @deprecated No longer used, will be removed.
- * @breaking-change 21.0.0
- */
-const ICON_REGISTRY_PROVIDER = {
-  // If there is already an MatIconRegistry available, use that. Otherwise, provide a new one.
-  provide: MatIconRegistry,
-  deps: [[/*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.Optional(), /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.SkipSelf(), MatIconRegistry], [/*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.Optional(), _angular_common_http__WEBPACK_IMPORTED_MODULE_0__.HttpClient], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__.DomSanitizer, _angular_core__WEBPACK_IMPORTED_MODULE_1__.ErrorHandler, [/*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.Optional(), _angular_core__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT]],
-  useFactory: ICON_REGISTRY_PROVIDER_FACTORY
-};
-/** Clones an SVGElement while preserving type information. */
 function cloneSvg(svg) {
   return svg.cloneNode(true);
 }
-/** Returns the cache key to use for an icon namespace and name. */
 function iconKey(namespace, name) {
   return namespace + ':' + name;
 }
@@ -715,38 +345,35 @@ function isSafeUrlWithOptions(value) {
 }
 
 
-/***/ }),
+/***/ },
 
-/***/ 93840:
+/***/ 93840
 /*!**********************************************************!*\
   !*** ./node_modules/@angular/material/fesm2022/icon.mjs ***!
   \**********************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   ICON_REGISTRY_PROVIDER: () => (/* reexport safe */ _icon_registry_CwOTJ7YM_mjs__WEBPACK_IMPORTED_MODULE_3__.d),
-/* harmony export */   ICON_REGISTRY_PROVIDER_FACTORY: () => (/* reexport safe */ _icon_registry_CwOTJ7YM_mjs__WEBPACK_IMPORTED_MODULE_3__.I),
 /* harmony export */   MAT_ICON_DEFAULT_OPTIONS: () => (/* binding */ MAT_ICON_DEFAULT_OPTIONS),
 /* harmony export */   MAT_ICON_LOCATION: () => (/* binding */ MAT_ICON_LOCATION),
-/* harmony export */   MAT_ICON_LOCATION_FACTORY: () => (/* binding */ MAT_ICON_LOCATION_FACTORY),
 /* harmony export */   MatIcon: () => (/* binding */ MatIcon),
 /* harmony export */   MatIconModule: () => (/* binding */ MatIconModule),
-/* harmony export */   MatIconRegistry: () => (/* reexport safe */ _icon_registry_CwOTJ7YM_mjs__WEBPACK_IMPORTED_MODULE_3__.M),
-/* harmony export */   getMatIconFailedToSanitizeLiteralError: () => (/* reexport safe */ _icon_registry_CwOTJ7YM_mjs__WEBPACK_IMPORTED_MODULE_3__.c),
-/* harmony export */   getMatIconFailedToSanitizeUrlError: () => (/* reexport safe */ _icon_registry_CwOTJ7YM_mjs__WEBPACK_IMPORTED_MODULE_3__.b),
-/* harmony export */   getMatIconNameNotFoundError: () => (/* reexport safe */ _icon_registry_CwOTJ7YM_mjs__WEBPACK_IMPORTED_MODULE_3__.g),
-/* harmony export */   getMatIconNoHttpProviderError: () => (/* reexport safe */ _icon_registry_CwOTJ7YM_mjs__WEBPACK_IMPORTED_MODULE_3__.a)
+/* harmony export */   MatIconRegistry: () => (/* reexport safe */ _icon_registry_chunk_mjs__WEBPACK_IMPORTED_MODULE_4__.MatIconRegistry),
+/* harmony export */   getMatIconFailedToSanitizeLiteralError: () => (/* reexport safe */ _icon_registry_chunk_mjs__WEBPACK_IMPORTED_MODULE_4__.getMatIconFailedToSanitizeLiteralError),
+/* harmony export */   getMatIconFailedToSanitizeUrlError: () => (/* reexport safe */ _icon_registry_chunk_mjs__WEBPACK_IMPORTED_MODULE_4__.getMatIconFailedToSanitizeUrlError),
+/* harmony export */   getMatIconNameNotFoundError: () => (/* reexport safe */ _icon_registry_chunk_mjs__WEBPACK_IMPORTED_MODULE_4__.getMatIconNameNotFoundError),
+/* harmony export */   getMatIconNoHttpProviderError: () => (/* reexport safe */ _icon_registry_chunk_mjs__WEBPACK_IMPORTED_MODULE_4__.getMatIconNoHttpProviderError)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 44866);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 32778);
-/* harmony import */ var _icon_registry_CwOTJ7YM_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./icon-registry-CwOTJ7YM.mjs */ 50069);
-/* harmony import */ var _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./common-module-cKSwHniA.mjs */ 8126);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ 52580);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser */ 53105);
-/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/a11y */ 56593);
-/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/cdk/bidi */ 48073);
+/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/bidi */ 13266);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 44866);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 32778);
+/* harmony import */ var _icon_registry_chunk_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_icon-registry-chunk.mjs */ 90935);
+/* harmony import */ var _angular_cdk_private__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/cdk/private */ 74418);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ 54380);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/platform-browser */ 2649);
+
 
 
 
@@ -757,86 +384,27 @@ const _c0 = ["*"];
 
 
 
-
-
-
-/** Injection token to be used to override the default options for `mat-icon`. */
-const MAT_ICON_DEFAULT_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('MAT_ICON_DEFAULT_OPTIONS');
-/**
- * Injection token used to provide the current location to `MatIcon`.
- * Used to handle server-side rendering and to stub out during unit tests.
- * @docs-private
- */
-const MAT_ICON_LOCATION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('mat-icon-location', {
+const MAT_ICON_DEFAULT_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('MAT_ICON_DEFAULT_OPTIONS');
+const MAT_ICON_LOCATION = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('mat-icon-location', {
   providedIn: 'root',
-  factory: MAT_ICON_LOCATION_FACTORY
+  factory: () => {
+    const _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT);
+    const _location = _document ? _document.location : null;
+    return {
+      getPathname: () => _location ? _location.pathname + _location.search : ''
+    };
+  }
 });
-/**
- * @docs-private
- * @deprecated No longer used, will be removed.
- * @breaking-change 21.0.0
- */
-function MAT_ICON_LOCATION_FACTORY() {
-  const _document = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT);
-  const _location = _document ? _document.location : null;
-  return {
-    // Note that this needs to be a function, rather than a property, because Angular
-    // will only resolve it once, but we want the current path on each call.
-    getPathname: () => _location ? _location.pathname + _location.search : ''
-  };
-}
-/** SVG attributes that accept a FuncIRI (e.g. `url(<something>)`). */
 const funcIriAttributes = ['clip-path', 'color-profile', 'src', 'cursor', 'fill', 'filter', 'marker', 'marker-start', 'marker-mid', 'marker-end', 'mask', 'stroke'];
-/** Selector that can be used to find all elements that are using a `FuncIRI`. */
 const funcIriAttributeSelector = /*#__PURE__*/ /*#__PURE__*/funcIriAttributes.map(attr => `[${attr}]`).join(', ');
-/** Regex that can be used to extract the id out of a FuncIRI. */
 const funcIriPattern = /^url\(['"]?#(.*?)['"]?\)$/;
-/**
- * Component to display an icon. It can be used in the following ways:
- *
- * - Specify the svgIcon input to load an SVG icon from a URL previously registered with the
- *   addSvgIcon, addSvgIconInNamespace, addSvgIconSet, or addSvgIconSetInNamespace methods of
- *   MatIconRegistry. If the svgIcon value contains a colon it is assumed to be in the format
- *   "[namespace]:[name]", if not the value will be the name of an icon in the default namespace.
- *   Examples:
- *     `<mat-icon svgIcon="left-arrow"></mat-icon>
- *     <mat-icon svgIcon="animals:cat"></mat-icon>`
- *
- * - Use a font ligature as an icon by putting the ligature text in the `fontIcon` attribute or the
- *   content of the `<mat-icon>` component. If you register a custom font class, don't forget to also
- *   include the special class `mat-ligature-font`. It is recommended to use the attribute alternative
- *   to prevent the ligature text to be selectable and to appear in search engine results.
- *   By default, the Material icons font is used as described at
- *   http://google.github.io/material-design-icons/#icon-font-for-the-web. You can specify an
- *   alternate font by setting the fontSet input to either the CSS class to apply to use the
- *   desired font, or to an alias previously registered with MatIconRegistry.registerFontClassAlias.
- *   Examples:
- *     `<mat-icon fontIcon="home"></mat-icon>
- *     <mat-icon>home</mat-icon>
- *     <mat-icon fontSet="myfont" fontIcon="sun"></mat-icon>
- *     <mat-icon fontSet="myfont">sun</mat-icon>`
- *
- * - Specify a font glyph to be included via CSS rules by setting the fontSet input to specify the
- *   font, and the fontIcon input to specify the icon. Typically the fontIcon will specify a
- *   CSS class which causes the glyph to be displayed via a :before selector, as in
- *   https://fontawesome-v4.github.io/examples/
- *   Example:
- *     `<mat-icon fontSet="fa" fontIcon="alarm"></mat-icon>`
- */
 let MatIcon = /*#__PURE__*/(() => {
   class MatIcon {
-    _elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
-    _iconRegistry = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_icon_registry_CwOTJ7YM_mjs__WEBPACK_IMPORTED_MODULE_3__.M);
-    _location = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(MAT_ICON_LOCATION);
-    _errorHandler = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ErrorHandler);
+    _elementRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ElementRef);
+    _iconRegistry = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_icon_registry_chunk_mjs__WEBPACK_IMPORTED_MODULE_4__.MatIconRegistry);
+    _location = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(MAT_ICON_LOCATION);
+    _errorHandler = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ErrorHandler);
     _defaultColor;
-    /**
-     * Theme color of the icon. This API is supported in M2 themes only, it
-     * has no effect in M3 themes. For color customization in M3, see https://material.angular.dev/components/icon/styling.
-     *
-     * For information on applying color variants in M3, see
-     * https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants
-     */
     get color() {
       return this._color || this._defaultColor;
     }
@@ -844,12 +412,7 @@ let MatIcon = /*#__PURE__*/(() => {
       this._color = value;
     }
     _color;
-    /**
-     * Whether the icon should be inlined, automatically sizing the icon to match the font size of
-     * the element the icon is contained in.
-     */
     inline = false;
-    /** Name of the icon in the SVG icon set. */
     get svgIcon() {
       return this._svgIcon;
     }
@@ -864,7 +427,6 @@ let MatIcon = /*#__PURE__*/(() => {
       }
     }
     _svgIcon;
-    /** Font set that the icon is a part of. */
     get fontSet() {
       return this._fontSet;
     }
@@ -876,7 +438,6 @@ let MatIcon = /*#__PURE__*/(() => {
       }
     }
     _fontSet;
-    /** Name of an icon within a font set. */
     get fontIcon() {
       return this._fontIcon;
     }
@@ -890,19 +451,16 @@ let MatIcon = /*#__PURE__*/(() => {
     _fontIcon;
     _previousFontSetClass = [];
     _previousFontIconClass;
-    _svgName;
-    _svgNamespace;
-    /** Keeps track of the current page path. */
+    _svgName = null;
+    _svgNamespace = null;
     _previousPath;
-    /** Keeps track of the elements and attributes that we've prefixed with the current path. */
     _elementsWithExternalReferences;
-    /** Subscription to the current in-progress SVG icon request. */
-    _currentIconFetch = rxjs__WEBPACK_IMPORTED_MODULE_1__.Subscription.EMPTY;
+    _currentIconFetch = rxjs__WEBPACK_IMPORTED_MODULE_2__.Subscription.EMPTY;
     constructor() {
-      const ariaHidden = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(new _angular_core__WEBPACK_IMPORTED_MODULE_0__.HostAttributeToken('aria-hidden'), {
+      const ariaHidden = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(new _angular_core__WEBPACK_IMPORTED_MODULE_1__.HostAttributeToken('aria-hidden'), {
         optional: true
       });
-      const defaults = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(MAT_ICON_DEFAULT_OPTIONS, {
+      const defaults = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(MAT_ICON_DEFAULT_OPTIONS, {
         optional: true
       });
       if (defaults) {
@@ -913,25 +471,10 @@ let MatIcon = /*#__PURE__*/(() => {
           this.fontSet = defaults.fontSet;
         }
       }
-      // If the user has not explicitly set aria-hidden, mark the icon as hidden, as this is
-      // the right thing to do for the majority of icon use-cases.
       if (!ariaHidden) {
         this._elementRef.nativeElement.setAttribute('aria-hidden', 'true');
       }
     }
-    /**
-     * Splits an svgIcon binding value into its icon set and icon name components.
-     * Returns a 2-element array of [(icon set), (icon name)].
-     * The separator for the two fields is ':'. If there is no separator, an empty
-     * string is returned for the icon set and the entire value is returned for
-     * the icon name. If the argument is falsy, returns an array of two empty strings.
-     * Throws an error if the name contains two or more ':' separators.
-     * Examples:
-     *   `'social:cake' -> ['social', 'cake']
-     *   'penguin' -> ['', 'penguin']
-     *   null -> ['', '']
-     *   'a:b:c' -> (throws Error)`
-     */
     _splitIconName(iconName) {
       if (!iconName) {
         return ['', ''];
@@ -940,29 +483,19 @@ let MatIcon = /*#__PURE__*/(() => {
       switch (parts.length) {
         case 1:
           return ['', parts[0]];
-        // Use default namespace.
         case 2:
           return parts;
         default:
           throw Error(`Invalid icon name: "${iconName}"`);
-        // TODO: add an ngDevMode check
       }
     }
     ngOnInit() {
-      // Update font classes because ngOnChanges won't be called if none of the inputs are present,
-      // e.g. <mat-icon>arrow</mat-icon> In this case we need to add a CSS class for the default font.
       this._updateFontIconClasses();
     }
     ngAfterViewChecked() {
       const cachedElements = this._elementsWithExternalReferences;
       if (cachedElements && cachedElements.size) {
         const newPath = this._location.getPathname();
-        // We need to check whether the URL has changed on each change detection since
-        // the browser doesn't have an API that will let us react on link clicks and
-        // we can't depend on the Angular router. The references need to be updated,
-        // because while most browsers don't care whether the URL is correct after
-        // the first render, Safari will break if the user navigates to a different
-        // page and the SVG isn't re-rendered.
         if (newPath !== this._previousPath) {
           this._previousPath = newPath;
           this._prependPathToReferences(newPath);
@@ -980,8 +513,6 @@ let MatIcon = /*#__PURE__*/(() => {
     }
     _setSvgElement(svg) {
       this._clearSvgElement();
-      // Note: we do this fix here, rather than the icon registry, because the
-      // references have to point to the URL at the time that the icon was created.
       const path = this._location.getPathname();
       this._previousPath = path;
       this._cacheChildrenWithExternalReferences(svg);
@@ -994,12 +525,8 @@ let MatIcon = /*#__PURE__*/(() => {
       if (this._elementsWithExternalReferences) {
         this._elementsWithExternalReferences.clear();
       }
-      // Remove existing non-element child nodes and SVGs, and add the new SVG element. Note that
-      // we can't use innerHTML, because IE will throw if the element has a data binding.
       while (childCount--) {
         const child = layoutElement.childNodes[childCount];
-        // 1 corresponds to Node.ELEMENT_NODE. We remove all non-element nodes in order to get rid
-        // of any loose text nodes, as well as any SVG elements in order to remove any old icons.
         if (child.nodeType !== 1 || child.nodeName.toLowerCase() === 'svg') {
           child.remove();
         }
@@ -1024,19 +551,9 @@ let MatIcon = /*#__PURE__*/(() => {
         this._previousFontIconClass = this.fontIcon;
       }
     }
-    /**
-     * Cleans up a value to be used as a fontIcon or fontSet.
-     * Since the value ends up being assigned as a CSS class, we
-     * have to trim the value and omit space-separated values.
-     */
     _cleanupFontValue(value) {
       return typeof value === 'string' ? value.trim().split(' ')[0] : value;
     }
-    /**
-     * Prepends the current path to all elements that have an attribute pointing to a `FuncIRI`
-     * reference. This is required because WebKit browsers require references to be prefixed with
-     * the current path, if the page has a `base` tag.
-     */
     _prependPathToReferences(path) {
       const elements = this._elementsWithExternalReferences;
       if (elements) {
@@ -1047,10 +564,6 @@ let MatIcon = /*#__PURE__*/(() => {
         });
       }
     }
-    /**
-     * Caches the children of an SVG element that have `url()`
-     * references that we need to prefix with the current path.
-     */
     _cacheChildrenWithExternalReferences(element) {
       const elementsWithFuncIri = element.querySelectorAll(funcIriAttributeSelector);
       const elements = this._elementsWithExternalReferences = this._elementsWithExternalReferences || new Map();
@@ -1073,7 +586,6 @@ let MatIcon = /*#__PURE__*/(() => {
         });
       }
     }
-    /** Sets a new SVG icon with a particular name. */
     _updateSvgIcon(rawName) {
       this._svgNamespace = null;
       this._svgName = null;
@@ -1086,7 +598,7 @@ let MatIcon = /*#__PURE__*/(() => {
         if (iconName) {
           this._svgName = iconName;
         }
-        this._currentIconFetch = this._iconRegistry.getNamedSvgIcon(iconName, namespace).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.take)(1)).subscribe(svg => this._setSvgElement(svg), err => {
+        this._currentIconFetch = this._iconRegistry.getNamedSvgIcon(iconName, namespace).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.take)(1)).subscribe(svg => this._setSvgElement(svg), err => {
           const errorMessage = `Error retrieving icon ${namespace}:${iconName}! ${err.message}`;
           this._errorHandler.handleError(new Error(errorMessage));
         });
@@ -1095,21 +607,21 @@ let MatIcon = /*#__PURE__*/(() => {
     static ɵfac = function MatIcon_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || MatIcon)();
     };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
       type: MatIcon,
       selectors: [["mat-icon"]],
       hostAttrs: ["role", "img", 1, "mat-icon", "notranslate"],
       hostVars: 10,
       hostBindings: function MatIcon_HostBindings(rf, ctx) {
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("data-mat-icon-type", ctx._usingFontIcon() ? "font" : "svg")("data-mat-icon-name", ctx._svgName || ctx.fontIcon)("data-mat-icon-namespace", ctx._svgNamespace || ctx.fontSet)("fontIcon", ctx._usingFontIcon() ? ctx.fontIcon : null);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](ctx.color ? "mat-" + ctx.color : "");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-icon-inline", ctx.inline)("mat-icon-no-color", ctx.color !== "primary" && ctx.color !== "accent" && ctx.color !== "warn");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵattribute"]("data-mat-icon-type", ctx._usingFontIcon() ? "font" : "svg")("data-mat-icon-name", ctx._svgName || ctx.fontIcon)("data-mat-icon-namespace", ctx._svgNamespace || ctx.fontSet)("fontIcon", ctx._usingFontIcon() ? ctx.fontIcon : null);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMap"](ctx.color ? "mat-" + ctx.color : "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassProp"]("mat-icon-inline", ctx.inline)("mat-icon-no-color", ctx.color !== "primary" && ctx.color !== "accent" && ctx.color !== "warn");
         }
       },
       inputs: {
         color: "color",
-        inline: [2, "inline", "inline", _angular_core__WEBPACK_IMPORTED_MODULE_0__.booleanAttribute],
+        inline: [2, "inline", "inline", _angular_core__WEBPACK_IMPORTED_MODULE_1__.booleanAttribute],
         svgIcon: "svgIcon",
         fontSet: "fontSet",
         fontIcon: "fontIcon"
@@ -1120,8 +632,8 @@ let MatIcon = /*#__PURE__*/(() => {
       vars: 0,
       template: function MatIcon_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojectionDef"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵprojection"](0);
         }
       },
       styles: ["mat-icon,mat-icon.mat-primary,mat-icon.mat-accent,mat-icon.mat-warn{color:var(--mat-icon-color, inherit)}.mat-icon{-webkit-user-select:none;user-select:none;background-repeat:no-repeat;display:inline-block;fill:currentColor;height:24px;width:24px;overflow:hidden}.mat-icon.mat-icon-inline{font-size:inherit;height:inherit;line-height:inherit;width:inherit}.mat-icon.mat-ligature-font[fontIcon]::before{content:attr(fontIcon)}[dir=rtl] .mat-icon-rtl-mirror{transform:scale(-1, 1)}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{display:block}.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button .mat-icon,.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button .mat-icon{margin:auto}\n"],
@@ -1139,11 +651,11 @@ let MatIconModule = /*#__PURE__*/(() => {
     static ɵfac = function MatIconModule_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || MatIconModule)();
     };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
       type: MatIconModule
     });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-      imports: [_common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_8__.M, _common_module_cKSwHniA_mjs__WEBPACK_IMPORTED_MODULE_8__.M]
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
+      imports: [_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_0__.BidiModule]
     });
   }
   return MatIconModule;
@@ -1153,7 +665,7 @@ let MatIconModule = /*#__PURE__*/(() => {
 })();
 
 
-/***/ })
+/***/ }
 
 }])
 //# sourceMappingURL=3840.js.map

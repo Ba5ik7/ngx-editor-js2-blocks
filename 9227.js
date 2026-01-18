@@ -1,32 +1,29 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[9227],{
 
-/***/ 9227:
+/***/ 9227
 /*!********************************************************!*\
   !*** ./node_modules/@angular/cdk/fesm2022/private.mjs ***!
   \********************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   _CdkPrivateStyleLoader: () => (/* reexport safe */ _style_loader_B2sGQXxD_mjs__WEBPACK_IMPORTED_MODULE_0__._),
-/* harmony export */   _VisuallyHiddenLoader: () => (/* binding */ _VisuallyHiddenLoader)
+/* harmony export */   _CdkPrivateStyleLoader: () => (/* reexport safe */ _style_loader_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__._CdkPrivateStyleLoader),
+/* harmony export */   _VisuallyHiddenLoader: () => (/* binding */ _VisuallyHiddenLoader),
+/* harmony export */   _setInnerHtml: () => (/* binding */ _setInnerHtml),
+/* harmony export */   trustedHTMLFromString: () => (/* binding */ trustedHTMLFromString)
 /* harmony export */ });
-/* harmony import */ var _style_loader_B2sGQXxD_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style-loader-B2sGQXxD.mjs */ 82981);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 51356);
+/* harmony import */ var _style_loader_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_style-loader-chunk.mjs */ 59504);
 
 
 
-
-/**
- * Component used to load the .cdk-visually-hidden styles.
- * @docs-private
- */
 let _VisuallyHiddenLoader = /*#__PURE__*/(() => {
   class _VisuallyHiddenLoader {
     static ɵfac = function _VisuallyHiddenLoader_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || _VisuallyHiddenLoader)();
     };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: _VisuallyHiddenLoader,
       selectors: [["ng-component"]],
       exportAs: ["cdkVisuallyHidden"],
@@ -43,57 +40,68 @@ let _VisuallyHiddenLoader = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
+let policy;
+function getPolicy() {
+  if (policy === undefined) {
+    policy = null;
+    if (typeof window !== 'undefined') {
+      const ttWindow = window;
+      if (ttWindow.trustedTypes !== undefined) {
+        policy = ttWindow.trustedTypes.createPolicy('angular#components', {
+          createHTML: s => s
+        });
+      }
+    }
+  }
+  return policy;
+}
+function trustedHTMLFromString(html) {
+  return getPolicy()?.createHTML(html) || html;
+}
+function _setInnerHtml(element, html, sanitizer) {
+  const cleanHtml = sanitizer.sanitize(_angular_core__WEBPACK_IMPORTED_MODULE_0__.SecurityContext.HTML, html);
+  if (cleanHtml === null && (typeof ngDevMode === 'undefined' || ngDevMode)) {
+    throw new Error(`Could not sanitize HTML: ${html}`);
+  }
+  element.innerHTML = trustedHTMLFromString(cleanHtml || '');
+}
 
 
-/***/ }),
+/***/ },
 
-/***/ 82981:
-/*!**********************************************************************!*\
-  !*** ./node_modules/@angular/cdk/fesm2022/style-loader-B2sGQXxD.mjs ***!
-  \**********************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+/***/ 59504
+/*!********************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/_style-loader-chunk.mjs ***!
+  \********************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   _: () => (/* binding */ _CdkPrivateStyleLoader)
+/* harmony export */   _CdkPrivateStyleLoader: () => (/* binding */ _CdkPrivateStyleLoader)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 27940);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 51356);
 
 
-
-/** Apps in which we've loaded styles. */
 const appsWithLoaders = /*#__PURE__*/new WeakMap();
-/**
- * Service that loads structural styles dynamically
- * and ensures that they're only loaded once per app.
- */
 let _CdkPrivateStyleLoader = /*#__PURE__*/(() => {
   class _CdkPrivateStyleLoader {
     _appRef;
     _injector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Injector);
     _environmentInjector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.EnvironmentInjector);
-    /**
-     * Loads a set of styles.
-     * @param loader Component which will be instantiated to load the styles.
-     */
     load(loader) {
-      // Resolve the app ref lazily to avoid circular dependency errors if this is called too early.
       const appRef = this._appRef = this._appRef || this._injector.get(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ApplicationRef);
       let data = appsWithLoaders.get(appRef);
-      // If we haven't loaded for this app before, we have to initialize it.
       if (!data) {
         data = {
           loaders: new Set(),
           refs: []
         };
         appsWithLoaders.set(appRef, data);
-        // When the app is destroyed, we need to clean up all the related loaders.
         appRef.onDestroy(() => {
           appsWithLoaders.get(appRef)?.refs.forEach(ref => ref.destroy());
           appsWithLoaders.delete(appRef);
         });
       }
-      // If the loader hasn't been loaded before, we need to instatiate it.
       if (!data.loaders.has(loader)) {
         data.loaders.add(loader);
         data.refs.push((0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.createComponent)(loader, {
@@ -117,7 +125,7 @@ let _CdkPrivateStyleLoader = /*#__PURE__*/(() => {
 })();
 
 
-/***/ })
+/***/ }
 
 }])
 //# sourceMappingURL=9227.js.map
