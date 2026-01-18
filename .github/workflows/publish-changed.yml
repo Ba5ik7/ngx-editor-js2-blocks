@@ -1,0 +1,101 @@
+name: Publish changed Angular libs
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - id: set-matrix
+        name: Detect changed projects/*
+        run: |
+          BEFORE="${{ github.event.before }}"
+          AFTER="${{ github.sha }}"
+
+          # Fallback for edge cases (e.g. first push)
+          if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            BEFORE="$(git rev-list --max-parents=0 HEAD)"
+          fi
+
+          CHANGED=$(git diff --name-only "$BEFORE" "$AFTER" \
+            | grep -E '^projects/[^/]+/' \
+            | cut -d/ -f2 \
+            | sort -u)
+
+          # Only publish actual libs (skip demo app)
+          # Adjust this filter to match your publishable libs
+          PUBLISHABLE=$(echo "$CHANGED" | grep -E '^ngx-editor-js2-' || true)
+
+          if [ -z "$PUBLISHABLE" ]; then
+            echo 'matrix={"include":[]}' >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          JSON=$(printf '%s\n' "$PUBLISHABLE" \
+            | awk '{printf "{\"project\":\"%s\"}\n",$1}' \
+            | jq -s '{include: .}')
+
+          echo "matrix=$JSON" >> $GITHUB_OUTPUT
+
+  publish:
+    needs: detect
+    if: ${{ fromJson(needs.detect.outputs.matrix).include[0] != null }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.detect.outputs.matrix) }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+          cache: npm
+          always-auth: true
+
+      - name: Use npm 11.6.0
+        run: npm i -g npm@11.6.0
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Stamp version (project) with build number
+        env:
+          GITHUB_RUN_NUMBER: ${{ github.run_number }}
+          PROJECT: ${{ matrix.project }}
+        run: |
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const path = `projects/${process.env.PROJECT}/package.json`;
+          const pkg = JSON.parse(fs.readFileSync(path, 'utf8'));
+          const [major='0', minor='0'] = String(pkg.version ?? '0.0.0').split('.');
+          const patch = process.env.GITHUB_RUN_NUMBER ?? '0';
+          pkg.version = `${major}.${minor}.${patch}`;
+          fs.writeFileSync(path, JSON.stringify(pkg, null, 2) + '\n');
+          console.log(`Publishing ${process.env.PROJECT} version ${pkg.version}`);
+          NODE
+
+      - name: Build library
+        env:
+          PROJECT: ${{ matrix.project }}
+        run: |
+          # relies on Angular CLI workspace projects; this works without custom scripts
+          npx ng build "$PROJECT" --configuration production
+          node ./postbuild.js "$PROJECT"
+
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          PROJECT: ${{ matrix.project }}
+        run: |
+          npm publish --access public "dist/$PROJECT"
