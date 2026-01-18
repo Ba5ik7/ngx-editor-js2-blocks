@@ -146,7 +146,6 @@ export class NgxEditorJs2ImageComponent implements BlockComponent {
 
   actionCallback(action: string) {
     this.savedAction.update(() => action);
-    // this.formGroup().updateValueAndValidity();
   }
 
   openEditUrlOverlay() {
