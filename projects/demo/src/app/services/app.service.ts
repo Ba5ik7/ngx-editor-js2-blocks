@@ -254,11 +254,174 @@ export const TEST_DATA_TWO: NgxEditorJsBlock[] = [
     savedAction: 'small',
   },
 ];
+
+export const BROKEN_TEST_DATA: NgxEditorJsBlock[] = [
+  {
+    blockId: 'yo9uq7',
+    sortIndex: 0,
+    componentInstanceName: 'NgxEditorJs2MfeLoaderComponent',
+    savedAction: 'display-large',
+    dataClean:
+      '{"url":"https://beta.ngx-workshop.io/remotes/seed-mfe-remote/remoteEntry.js","remoteName":"Testing","exposedModule":"Component"}',
+  },
+  {
+    blockId: 'eftkta822ke',
+    sortIndex: 1,
+    componentInstanceName: 'HeaderBlockComponent',
+    savedAction: 'h1',
+    dataClean:
+      'Embracing Idiomatic Reactive Data Streams with Angular and RxJS',
+  },
+  {
+    blockId: 'm97wlx',
+    sortIndex: 2,
+    componentInstanceName: 'NgxEditorJs2ImageComponent',
+    savedAction: 'stretch',
+    dataClean:
+      '{"url":"https://ngx-workshop.io/assets/img/5ea0ec6b-1997-4e13-b02f-17fad313ab1a.png","title":"Idiomati"}',
+  },
+  {
+    blockId: '6w9r48',
+    sortIndex: 3,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'large',
+    dataClean:
+      '<b>Objective:</b> This workshop is an invitation to explore the reactive programming paradigm within the Angular framework, offering both foundational knowledge and advanced techniques.',
+  },
+  {
+    blockId: 'oecj9',
+    sortIndex: 4,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'small',
+    dataClean:
+      '<div><span style="font-size: 16px;">Reference Material:</span></div><div><ul><li><a href="https://github.com/Ba5ik7/workshop-reactive-data-streams/tree/1-lab-complete">Workshop Lab Repo</a></li></ul></div>',
+  },
+  {
+    blockId: 'cnvf9',
+    sortIndex: 5,
+    componentInstanceName: 'NgxEditorJs2BlockquotesComponent',
+    savedAction: 'medium',
+    dataClean: '<i>After cloning the repo checkout the branch 1-lab-start.</i>',
+  },
+  {
+    blockId: 'lcl3c7',
+    sortIndex: 6,
+    componentInstanceName: 'HeaderBlockComponent',
+    savedAction: 'h2',
+    dataClean: 'Introduction to Angular and Reactive Programming with RxJS',
+  },
+  {
+    blockId: '6uh5qa',
+    sortIndex: 7,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'medium',
+    dataClean:
+      'Welcome to a comprehensive workshop designed to introduce and deepen your understanding of <i>idiomatic</i> reactive data streams utilizing Angular and RxJS. Angular, a platform and framework for building single-page client applications, incorporates a reactive programming style that is both robust and scalable. Coupled with RxJS, a library for asynchronous programming and stream manipulation, Angular provides a powerful suite of tools for modern web development.',
+  },
+  {
+    blockId: 'zr3abg',
+    sortIndex: 8,
+    componentInstanceName: 'HeaderBlockComponent',
+    savedAction: 'h3',
+    dataClean: "RxJS: The Backbone of Angular's Reactivity",
+  },
+  {
+    blockId: '6khq6q',
+    sortIndex: 9,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'medium',
+    dataClean:
+      "RxJS plays a pivotal role in Angular's ecosystem by offering a comprehensive set of operators and functions to manage asynchronous events and data streams. The library's capabilities allow developers to elegantly handle complex data flows, orchestrate asynchronous operations, and implement sophisticated event handling mechanisms, all within a reactive paradigm.",
+  },
+  {
+    blockId: '0krpie',
+    sortIndex: 10,
+    componentInstanceName: 'HeaderBlockComponent',
+    savedAction: 'h3',
+    dataClean: 'The Foundation of Angular: MVVM Architecture',
+  },
+  {
+    blockId: 'rzvpn8',
+    sortIndex: 11,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'medium',
+    dataClean:
+      "Angular's architectural approach, inspired by the Model-View-ViewModel (MVVM) pattern, facilitates a clear separation of concerns within applications. This architecture not only promotes maintainability but also enhances the scalability of applications by dividing the application logic, user interface, and data model. Angular's commitment to reactivity ensures that your applications remain responsive and performant, adapting seamlessly to user interactions and data changes.",
+  },
+  {
+    blockId: 'vclw7i',
+    sortIndex: 12,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'medium',
+    dataClean: '',
+  },
+  {
+    blockId: 'snk3z',
+    sortIndex: 13,
+    componentInstanceName: 'HeaderBlockComponent',
+    savedAction: 'h2',
+    dataClean: 'Getting Started: Initial Exploration',
+  },
+  {
+    blockId: 'ni74d',
+    sortIndex: 14,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'medium',
+    dataClean:
+      "In the initial phase of our workshop, specifically within the 1-lab-start branch, we introduce a foundational example through the AppComponent. This component serves as the initial touchpoint, demonstrating Angular's reactive capabilities in a simplified context.",
+  },
+  {
+    blockId: 'k755z',
+    sortIndex: 15,
+    componentInstanceName: 'HeaderBlockComponent',
+    savedAction: 'h3',
+    dataClean: 'Delving into Reactive Programming Principles',
+  },
+  {
+    blockId: '6uw92',
+    sortIndex: 16,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'medium',
+    dataClean:
+      "The journey begins with understanding the basics of Angular's template syntax and its integration with reactive programming concepts. The simple data binding showcased here paves the way for more complex reactive interactions, which will be explored as we progress through the workshop.",
+  },
+  {
+    blockId: '8h0zlp',
+    sortIndex: 17,
+    componentInstanceName: 'HeaderBlockComponent',
+    savedAction: 'h3',
+    dataClean: 'Key Insights and Best Practices',
+  },
+  {
+    blockId: 'ybkivt',
+    sortIndex: 18,
+    componentInstanceName: 'NgxEditorJs2BlockquotesComponent',
+    savedAction: 'display-small',
+    dataClean:
+      "<div><ul><li><b>Leveraging MVVM: </b>Angular's adoption of the MVVM pattern is critical for structuring applications that are both manageable and scalable. Embracing this pattern will facilitate better state management and UI/data separation.<br><br></li><li><b>Mastering RxJS:</b> Familiarity with RxJS operators is essential for effective reactive programming. Operators such as map, filter, and combineLatest are fundamental tools for data stream manipulation.<br><br></li><li><b>Utilizing Async Pipe:</b> The async pipe is a cornerstone of Angular's reactivity, simplifying subscription management and preventing memory leaks by automatically subscribing to and unsubscribing from Observables</li></ul></div>",
+  },
+  {
+    blockId: 'q7gpmo',
+    sortIndex: 19,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'medium',
+    dataClean:
+      'We look forward to guiding you through this journey into idiomatic reactive programming with Angular and RxJS.',
+  },
+  {
+    blockId: 'a8ii49',
+    sortIndex: 20,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'medium',
+    dataClean:
+      'This workshop is designed to equip you with the knowledge and skills necessary to harness the full potential of Angular and RxJS in building reactive applications. As we move forward, each lab will build upon the last, incrementally increasing in complexity and introducing more advanced concepts and techniques.',
+  },
+];
 @Injectable({
   providedIn: 'root',
 })
 export class AppService {
-  ngxEditorJsBlocks = new BehaviorSubject<NgxEditorJsBlock[]>(TEST_DATA);
+  ngxEditorJsBlocks = new BehaviorSubject<NgxEditorJsBlock[]>(BROKEN_TEST_DATA);
   ngxEditorJsBlocks$ = this.ngxEditorJsBlocks.asObservable();
 
   requestBlocks = new BehaviorSubject<{}>({});

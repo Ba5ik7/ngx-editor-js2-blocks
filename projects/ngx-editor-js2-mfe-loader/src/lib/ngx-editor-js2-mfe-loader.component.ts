@@ -9,15 +9,16 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import {
-  ControlAccessorDirective,
-  AutofocusDirective,
-  ToolbarFabDirective,
-  BlockOptionAction,
-} from '@tmdjr/ngx-editor-js2';
-import { MfeLoaderConfigComponent } from './mfe-loader-config/mfe-loader-config.component';
 import { MatFabButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
+import {
+  AutofocusDirective,
+  BlockOptionAction,
+  ControlAccessorDirective,
+  ToolbarFabDirective,
+} from '@tmdjr/ngx-editor-js2';
+import { ErrorDialog } from './error-dialog';
+import { MfeLoaderConfigComponent } from './mfe-loader-config/mfe-loader-config.component';
 
 type Value = {
   url: string; // remoteEntry
@@ -38,6 +39,7 @@ type Value = {
     MatFabButton,
     MatIcon,
     NgClass,
+    ErrorDialog,
   ],
   template: `
     <ng-container [formGroup]="formGroup()">
@@ -58,6 +60,7 @@ type Value = {
         </button>
       </div>
       } @else {
+
       <mfe-loader-config
         [value]="value()"
         (mfeValue)="updateMfeRemote($event)"
@@ -65,6 +68,12 @@ type Value = {
       }
       <ng-container #mfeHost></ng-container>
     </ng-container>
+    @if (errorLoadingMfe()) {
+    <mfe-loader-error-dialog
+      [errorMessage]="errorLoadingMfeMessage()"
+      (close)="closeErrorDialog()"
+    ></mfe-loader-error-dialog>
+    }
   `,
   styles: `
       :host {
@@ -97,6 +106,15 @@ type Value = {
             display: none;
           }
         }
+
+        mfe-loader-error-dialog {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 10;
+        }
       }
   `,
 })
@@ -120,6 +138,9 @@ export class NgxEditorJs2MfeLoaderComponent {
   actionCallbackBind = this.actionCallback.bind(this);
 
   openOverlay = signal<boolean>(true);
+
+  errorLoadingMfe = signal<boolean>(false);
+  errorLoadingMfeMessage = signal<string>('');
 
   ngOnInit() {
     try {
@@ -160,6 +181,12 @@ export class NgxEditorJs2MfeLoaderComponent {
       this.mfeHost.createComponent(remoteComponent[value.remoteName]);
     } catch (error) {
       console.error('[MFE LOAD ERROR]', error);
+      this.openOverlay.set(true);
+      this.errorLoadingMfeMessage.set(
+        (error as Error).message || 'Unknown error loading MFE'
+      );
+      this.errorLoadingMfe.set(true);
+      return;
     }
 
     this.value.set(value);
@@ -167,5 +194,10 @@ export class NgxEditorJs2MfeLoaderComponent {
       .get(this.formControlName())
       ?.setValue(JSON.stringify(value));
     this.openOverlay.set(false);
+  }
+
+  closeErrorDialog() {
+    this.errorLoadingMfe.set(false);
+    this.errorLoadingMfeMessage.set('');
   }
 }
