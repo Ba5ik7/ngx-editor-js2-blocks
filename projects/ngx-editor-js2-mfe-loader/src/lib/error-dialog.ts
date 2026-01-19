@@ -35,7 +35,6 @@ import { MatIcon } from '@angular/material/icon';
         padding: 20px;
         border-radius: 8px;
         max-width: 80%;
-        max-hieght: 90%;
       }
       .error-dialog-header {
         display: flex;
