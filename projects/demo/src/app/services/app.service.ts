@@ -257,44 +257,43 @@ export const TEST_DATA_TWO: NgxEditorJsBlock[] = [
 
 export const BROKEN_TEST_DATA: NgxEditorJsBlock[] = [
   {
-    blockId: 'yo9uq7',
+    blockId: 'cz7u8p',
     sortIndex: 0,
-    componentInstanceName: 'NgxEditorJs2MfeLoaderComponent',
-    savedAction: 'display-large',
-    dataClean:
-      '{"url":"https://beta.ngx-workshop.io/remotes/seed-mfe-remote/remoteEntry.js","remoteName":"Testing","exposedModule":"Component"}',
-  },
-  {
-    blockId: 'eftkta822ke',
-    sortIndex: 1,
-    componentInstanceName: 'HeaderBlockComponent',
-    savedAction: 'h1',
-    dataClean:
-      'Embracing Idiomatic Reactive Data Streams with Angular and RxJS',
+    componentInstanceName: 'NgxEditorJs2MermaidjsComponent',
+    savedAction: 'flex-start',
+    dataClean: '',
   },
   {
     blockId: 'm97wlx',
-    sortIndex: 2,
+    sortIndex: 1,
     componentInstanceName: 'NgxEditorJs2ImageComponent',
     savedAction: 'stretch',
     dataClean:
       '{"url":"https://ngx-workshop.io/assets/img/5ea0ec6b-1997-4e13-b02f-17fad313ab1a.png","title":"Idiomati"}',
   },
   {
-    blockId: '6w9r48',
-    sortIndex: 3,
-    componentInstanceName: 'ParagraphBlockComponent',
-    savedAction: 'large',
+    blockId: 'eftkta822ke',
+    sortIndex: 2,
+    componentInstanceName: 'HeaderBlockComponent',
+    savedAction: 'h1',
     dataClean:
-      '<b>Objective:</b> This workshop is an invitation to explore the reactive programming paradigm within the Angular framework, offering both foundational knowledge and advanced techniques.',
+      'Embracing Idiomatic Reactive Data Streams with Angular and RxJS',
   },
   {
     blockId: 'oecj9',
-    sortIndex: 4,
+    sortIndex: 3,
     componentInstanceName: 'ParagraphBlockComponent',
     savedAction: 'small',
     dataClean:
       '<div><span style="font-size: 16px;">Reference Material:</span></div><div><ul><li><a href="https://github.com/Ba5ik7/workshop-reactive-data-streams/tree/1-lab-complete">Workshop Lab Repo</a></li></ul></div>',
+  },
+  {
+    blockId: '6w9r48',
+    sortIndex: 4,
+    componentInstanceName: 'ParagraphBlockComponent',
+    savedAction: 'large',
+    dataClean:
+      '<b>Objective:</b> This workshop is an invitation to explore the reactive programming paradigm within the Angular framework, offering both foundational knowledge and advanced techniques.',
   },
   {
     blockId: 'cnvf9',

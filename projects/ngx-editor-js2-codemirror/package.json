@@ -1,6 +1,6 @@
 {
   "name": "@tmdjr/ngx-editor-js2-codemirror",
-  "version": "21.0.1",
+  "version": "21.0.2",
   "peerDependencies": {
     "@angular/animations": "^21.1.0",
     "@angular/cdk": "^21.1.0",
