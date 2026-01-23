@@ -161,8 +161,9 @@ export class NgxEditorJs2MfeLoaderComponent {
     this.updateMfeRemote(this.value());
   }
 
-  actionCallback(action: string) {
+  actionCallback(action: string, updateFormValue = true) {
     this.savedAction.update(() => action);
+    updateFormValue && this.formGroup().updateValueAndValidity();
   }
 
   openEditUrlOverlay() {

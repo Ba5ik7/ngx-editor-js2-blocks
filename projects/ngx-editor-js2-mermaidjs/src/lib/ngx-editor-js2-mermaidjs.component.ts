@@ -12,18 +12,20 @@ import {
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFabButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
-import {
-  ControlAccessorDirective,
-  AutofocusDirective,
-  ToolbarFabDirective,
-  BlockOptionAction,
-} from '@tmdjr/ngx-editor-js2';
-import MermaidImport from 'mermaid';
-import type { Mermaid } from 'mermaid';
-import { MermaidjsConfigComponent } from './mermaidjs-config/mermaidjs-config.component';
 import { DomSanitizer } from '@angular/platform-browser';
+import {
+  AutofocusDirective,
+  BlockOptionAction,
+  ControlAccessorDirective,
+  ToolbarFabDirective,
+} from '@tmdjr/ngx-editor-js2';
+import type { Mermaid } from 'mermaid';
+import MermaidImport from 'mermaid';
+import { MermaidjsConfigComponent } from './mermaidjs-config/mermaidjs-config.component';
 
-const mermaid: Mermaid = (MermaidImport as any).default ? (MermaidImport as any).default : MermaidImport;
+const mermaid: Mermaid = (MermaidImport as any).default
+  ? (MermaidImport as any).default
+  : MermaidImport;
 
 @Pipe({ name: 'safeHtml', standalone: true })
 export class SafeHtmlPipe implements PipeTransform {
@@ -187,8 +189,9 @@ export class NgxEditorJs2MermaidjsComponent {
     });
   }
 
-  actionCallback(action: string) {
+  actionCallback(action: string, updateFormValue = true) {
     this.savedAction.update(() => action);
+    updateFormValue && this.formGroup().updateValueAndValidity();
   }
 
   openEditOverlay() {

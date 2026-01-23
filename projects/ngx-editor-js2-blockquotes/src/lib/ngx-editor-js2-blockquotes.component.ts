@@ -1,15 +1,15 @@
+import { CdkDrag } from '@angular/cdk/drag-drop';
+import { NgClass } from '@angular/common';
 import { Component, input, signal } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { NgClass } from '@angular/common';
-import { CdkDrag } from '@angular/cdk/drag-drop';
 
 import {
   AutofocusDirective,
   BlockComponent,
   BlockOptionAction,
+  CleanPasteDataDirective,
   ControlAccessorDirective,
   ToolbarFabDirective,
-  CleanPasteDataDirective
 } from '@tmdjr/ngx-editor-js2';
 
 @Component({
@@ -23,7 +23,7 @@ import {
     ToolbarFabDirective,
     CleanPasteDataDirective,
     NgClass,
-],
+  ],
   template: `
     <ng-container [formGroup]="formGroup()">
       <blockquote
@@ -83,7 +83,8 @@ export class NgxEditorJs2BlockquotesComponent implements BlockComponent {
   savedAction = signal<string>('display-large');
   actionCallbackBind = this.actionCallback.bind(this);
 
-  actionCallback(action: string) {
+  actionCallback(action: string, updateFormValue = true) {
     this.savedAction.update(() => action);
+    updateFormValue && this.formGroup().updateValueAndValidity();
   }
 }

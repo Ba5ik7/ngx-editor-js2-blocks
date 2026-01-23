@@ -1,6 +1,6 @@
+import { CdkDrag } from '@angular/cdk/drag-drop';
 import { Component, inject, input, signal } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { CdkDrag } from '@angular/cdk/drag-drop';
 
 import {
   AutofocusDirective,
@@ -9,8 +9,8 @@ import {
   ControlAccessorDirective,
   ToolbarFabDirective,
 } from '@tmdjr/ngx-editor-js2';
-import { PopQuizConfigComponent } from './pop-quiz-config/pop-quiz-config.component';
 import { NgxEditorJs2PopQuizService } from './ngx-editor-js2-pop-quiz.service';
+import { PopQuizConfigComponent } from './pop-quiz-config/pop-quiz-config.component';
 
 @Component({
   selector: 'ngx-editor-js2-pop-quiz',
@@ -96,7 +96,8 @@ export class NgxEditorJs2PopQuizComponent implements BlockComponent {
     }
   }
 
-  actionCallback(action: string) {
+  actionCallback(action: string, updateFormValue = true) {
     this.savedAction.update(() => action);
+    updateFormValue && this.formGroup().updateValueAndValidity();
   }
 }

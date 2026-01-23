@@ -1,6 +1,6 @@
+import { CdkDrag } from '@angular/cdk/drag-drop';
 import { Component, input, signal } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { CdkDrag } from '@angular/cdk/drag-drop';
 import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 
 import {
@@ -11,7 +11,6 @@ import {
   ToolbarFabDirective,
 } from '@tmdjr/ngx-editor-js2';
 
-
 @Component({
   selector: 'ngx-editor-js2-codemirror',
   host: { class: 'cdk-drag-animating no-toolbar-inline' },
@@ -21,10 +20,10 @@ import {
     ControlAccessorDirective,
     AutofocusDirective,
     ToolbarFabDirective,
-    CodemirrorModule
-],
+    CodemirrorModule,
+  ],
   template: `
-  @if( waitForAnimation() ) {
+    @if( waitForAnimation() ) {
     <ng-container [formGroup]="formGroup()">
       <span controlAccessor [autofocus]="autofocus()"></span>
       <ngx-codemirror
@@ -37,7 +36,7 @@ import {
         [options]="codeMirrorOptions()"
       ></ngx-codemirror>
     </ng-container>
-  }
+    }
   `,
   styles: [
     `
@@ -92,9 +91,9 @@ export class NgxEditorJs2CodemirrorComponent implements BlockComponent {
   savedAction = signal<string>('display-large');
   actionCallbackBind = this.actionCallback.bind(this);
 
-  actionCallback(action: string) {
+  actionCallback(action: string, updateFormValue = true) {
     this.codeMirrorOptions.update((prev) => ({ ...prev, mode: action }));
-    this.savedAction.update(() => action);
+    updateFormValue && this.formGroup().updateValueAndValidity();
   }
 
   // ! Hotfix for perspective: 2500px;

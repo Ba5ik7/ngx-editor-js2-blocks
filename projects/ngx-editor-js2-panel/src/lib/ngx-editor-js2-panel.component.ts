@@ -108,7 +108,8 @@ export class NgxEditorJs2PanelComponent implements BlockComponent {
     warning: 'warning',
   };
 
-  actionCallback(action: string) {
+  actionCallback(action: string, updateFormValue = true) {
     this.savedAction.update(() => action);
+    updateFormValue && this.formGroup().updateValueAndValidity();
   }
 }

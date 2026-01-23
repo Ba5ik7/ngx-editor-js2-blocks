@@ -60,7 +60,7 @@
     "@angular/cli": "^21.1.0",
     "@angular/compiler-cli": "^21.1.0",
     "@ctrl/ngx-codemirror": "^7.0.0",
-    "@tmdjr/ngx-editor-js2": "^21.0.3",
+    "@tmdjr/ngx-editor-js2": "^21.0.6",
     "@types/codemirror": "5.60.13",
     "@types/jasmine": "~5.1.0",
     "chokidar-cli": "^3.0.0",
