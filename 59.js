@@ -243,8 +243,9 @@ let NgxEditorJs2MermaidjsComponent = /*#__PURE__*/(() => {
         this.mermaid.render(this.genUniqueId(), mermaidDiagram).then(data => this.ngZone.run(() => this.mermaidDiagramSVG = data.svg), error => console.warn(`Error: ${error}`));
       });
     }
-    actionCallback(action) {
+    actionCallback(action, updateFormValue = true) {
       this.savedAction.update(() => action);
+      updateFormValue && this.formGroup().updateValueAndValidity();
     }
     openEditOverlay() {
       this.openOverlay.set(true);
@@ -1110,7 +1111,7 @@ let EditorJsService = /*#__PURE__*/(() => {
         componentRef.setInput('formGroup', this.formGroup);
         componentRef.setInput('formControlName', controlName);
         componentRef.setInput('autofocus', autofocus);
-        savedAction && componentRef.instance.actionCallback?.(savedAction);
+        savedAction && componentRef.instance.actionCallback?.(savedAction, false);
         this.blockMovementService.newComponentAttached(componentRef);
         return componentRef;
       }));
@@ -1124,7 +1125,9 @@ let EditorJsService = /*#__PURE__*/(() => {
       }), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.switchMap)(() => this.blockMovementService.updateComponentIndices(this.ngxEditor)), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.defaultIfEmpty)(false));
     }
     removeBlockComponent(index, formControlName, clear = false) {
-      return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.combineLatest)([this.blockMovementService.removeBlockComponent(this.ngxEditor, index, clear), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(this.formGroup.removeControl(formControlName))]);
+      return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.combineLatest)([this.blockMovementService.removeBlockComponent(this.ngxEditor, index, clear), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(this.formGroup.removeControl(formControlName, {
+        emitEvent: !clear
+      }))]);
     }
     clearBlocks() {
       return this.blockMovementService.getNgxEditorJsBlocks().pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_2__.filter)(componentRefs => componentRefs.length > 0), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.map)(componentRefs => componentRefs.sort((a, b) => a.instance.sortIndex() - b.instance.sortIndex())), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.mergeMap)(componentRefs => (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.forkJoin)(Array.from(componentRefs.values()).map(componentRef => this.removeBlockComponent(componentRef.instance.sortIndex() + 1, componentRef.instance.formControlName(), true)))), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.switchMap)(() => this.blockMovementService.updateComponentIndices(this.ngxEditor)), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.tap)(() => {
@@ -1330,8 +1333,9 @@ let HeaderBlockComponent = /*#__PURE__*/(() => {
       debugName: "savedAction"
     }] : []));
     actionCallbackBind = this.actionCallback.bind(this);
-    actionCallback(selectedAction) {
+    actionCallback(selectedAction, updateFormValue = true) {
       this.savedAction.set(selectedAction);
+      updateFormValue && this.formGroup().updateValueAndValidity();
     }
     static ɵfac = function HeaderBlockComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || HeaderBlockComponent)();
@@ -1412,8 +1416,9 @@ let ParagraphBlockComponent = /*#__PURE__*/(() => {
       debugName: "savedAction"
     }] : []));
     actionCallbackBind = this.actionCallback.bind(this);
-    actionCallback(action) {
+    actionCallback(action, updateFormValue = true) {
       this.savedAction.update(() => action);
+      updateFormValue && this.formGroup().updateValueAndValidity();
     }
     static ɵfac = function ParagraphBlockComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || ParagraphBlockComponent)();

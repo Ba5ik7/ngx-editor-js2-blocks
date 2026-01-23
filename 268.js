@@ -286,8 +286,9 @@ let NgxEditorJs2ImageComponent = /*#__PURE__*/(() => {
         console.warn('Error parseing Image setting value', error);
       }
     }
-    actionCallback(action) {
+    actionCallback(action, updateFormValue = true) {
       this.savedAction.update(() => action);
+      updateFormValue && this.formGroup().updateValueAndValidity();
     }
     openEditUrlOverlay() {
       this.openOverlay.set(true);

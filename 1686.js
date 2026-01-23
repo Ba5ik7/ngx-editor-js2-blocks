@@ -278,9 +278,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   NgxEditorJs2CodemirrorComponent: () => (/* binding */ NgxEditorJs2CodemirrorComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 51356);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ 14332);
-/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 8778);
+/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 8778);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ 14332);
 /* harmony import */ var _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ctrl/ngx-codemirror */ 42642);
 /* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
 
@@ -294,35 +294,35 @@ __webpack_require__.r(__webpack_exports__);
 
 function NgxEditorJs2CodemirrorComponent_Conditional_0_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0, 0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "span", 1)(2, "ngx-codemirror", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerStart"](0, 0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 1)(2, "ngx-codemirror", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx_r0.formGroup());
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autofocus", ctx_r0.autofocus());
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("actionCallback", ctx_r0.actionCallbackBind)("blockOptionActions", ctx_r0.blockOptionActions())("formControlName", ctx_r0.formControlName())("componentContextPositionIndex", ctx_r0.sortIndex())("options", ctx_r0.codeMirrorOptions());
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx_r0.formGroup());
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("autofocus", ctx_r0.autofocus());
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("actionCallback", ctx_r0.actionCallbackBind)("blockOptionActions", ctx_r0.blockOptionActions())("formControlName", ctx_r0.formControlName())("componentContextPositionIndex", ctx_r0.sortIndex())("options", ctx_r0.codeMirrorOptions());
   }
 }
 let NgxEditorJs2CodemirrorComponent = /*#__PURE__*/(() => {
   class NgxEditorJs2CodemirrorComponent {
-    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(0, ...(ngDevMode ? [{
+    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.input)(0, ...(ngDevMode ? [{
       debugName: "sortIndex"
     }] : []));
     componentInstanceName = 'NgxEditorJs2CodemirrorComponent';
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true, ...(ngDevMode ? [{
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.input)(true, ...(ngDevMode ? [{
       debugName: "autofocus"
     }] : []));
-    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_1__.input.required(...(ngDevMode ? [{
       debugName: "formGroup"
     }] : []));
-    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_1__.input.required(...(ngDevMode ? [{
       debugName: "formControlName"
     }] : []));
-    blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)([{
+    blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.input)([{
       action: 'text/typescript',
       icon: 'javascript'
     }, {
@@ -334,7 +334,7 @@ let NgxEditorJs2CodemirrorComponent = /*#__PURE__*/(() => {
     }], ...(ngDevMode ? [{
       debugName: "blockOptionActions"
     }] : []));
-    codeMirrorOptions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)({
+    codeMirrorOptions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.signal)({
       lineNumbers: true,
       theme: 'material-palenight',
       mode: 'text/typescript',
@@ -350,20 +350,20 @@ let NgxEditorJs2CodemirrorComponent = /*#__PURE__*/(() => {
     }, ...(ngDevMode ? [{
       debugName: "codeMirrorOptions"
     }] : []));
-    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('display-large', ...(ngDevMode ? [{
+    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.signal)('display-large', ...(ngDevMode ? [{
       debugName: "savedAction"
     }] : []));
     actionCallbackBind = this.actionCallback.bind(this);
-    actionCallback(action) {
+    actionCallback(action, updateFormValue = true) {
       this.codeMirrorOptions.update(prev => ({
         ...prev,
         mode: action
       }));
-      this.savedAction.update(() => action);
+      updateFormValue && this.formGroup().updateValueAndValidity();
     }
     // ! Hotfix for perspective: 2500px;
     // Need create a delay to wait for the animation to finish before showing the component
-    waitForAnimation = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)(false, ...(ngDevMode ? [{
+    waitForAnimation = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.signal)(false, ...(ngDevMode ? [{
       debugName: "waitForAnimation"
     }] : []));
     constructor() {
@@ -374,7 +374,7 @@ let NgxEditorJs2CodemirrorComponent = /*#__PURE__*/(() => {
     static ɵfac = function NgxEditorJs2CodemirrorComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || NgxEditorJs2CodemirrorComponent)();
     };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
       type: NgxEditorJs2CodemirrorComponent,
       selectors: [["ngx-editor-js2-codemirror"]],
       hostAttrs: [1, "cdk-drag-animating", "no-toolbar-inline"],
@@ -385,19 +385,19 @@ let NgxEditorJs2CodemirrorComponent = /*#__PURE__*/(() => {
         formControlName: [1, "formControlName"],
         blockOptionActions: [1, "blockOptionActions"]
       },
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵHostDirectivesFeature"]([_angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_2__.CdkDrag])],
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵHostDirectivesFeature"]([_angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_0__.CdkDrag])],
       decls: 1,
       vars: 1,
       consts: [[3, "formGroup"], ["controlAccessor", "", 3, "autofocus"], ["toolbarFab", "", 1, "fade-in", 3, "actionCallback", "blockOptionActions", "formControlName", "componentContextPositionIndex", "options"]],
       template: function NgxEditorJs2CodemirrorComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](0, NgxEditorJs2CodemirrorComponent_Conditional_0_Template, 3, 7, "ng-container", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditionalCreate"](0, NgxEditorJs2CodemirrorComponent_Conditional_0_Template, 3, 7, "ng-container", 0);
         }
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"](ctx.waitForAnimation() ? 0 : -1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditional"](ctx.waitForAnimation() ? 0 : -1);
         }
       },
-      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControlName, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.ControlAccessorDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.AutofocusDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.ToolbarFabDirective, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_3__.CodemirrorModule, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_3__.CodemirrorComponent],
+      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormControlName, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.ControlAccessorDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.AutofocusDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.ToolbarFabDirective, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_3__.CodemirrorModule, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_3__.CodemirrorComponent],
       styles: ["[_nghost-%COMP%]{display:block;position:relative;margin:1.5rem 0}[_nghost-%COMP%]   .codemirror-container-overlay[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;position:absolute}[_nghost-%COMP%]     .CodeMirror{font-family:Cascadia Code,Fira Code,Menlo,Monaco,Courier New,monospace;font-size:16px;font-weight:400;line-height:32px;letter-spacing:.5px;height:100%}"]
     });
   }

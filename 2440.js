@@ -243,8 +243,9 @@ let NgxEditorJs2MermaidjsComponent = /*#__PURE__*/(() => {
         this.mermaid.render(this.genUniqueId(), mermaidDiagram).then(data => this.ngZone.run(() => this.mermaidDiagramSVG = data.svg), error => console.warn(`Error: ${error}`));
       });
     }
-    actionCallback(action) {
+    actionCallback(action, updateFormValue = true) {
       this.savedAction.update(() => action);
+      updateFormValue && this.formGroup().updateValueAndValidity();
     }
     openEditOverlay() {
       this.openOverlay.set(true);

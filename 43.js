@@ -165,6 +165,7 @@ let ThemePickerService = /*#__PURE__*/(() => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   AppService: () => (/* binding */ AppService),
+/* harmony export */   BROKEN_TEST_DATA: () => (/* binding */ BROKEN_TEST_DATA),
 /* harmony export */   TEST_DATA: () => (/* binding */ TEST_DATA),
 /* harmony export */   TEST_DATA_TWO: () => (/* binding */ TEST_DATA_TWO)
 /* harmony export */ });
@@ -374,9 +375,136 @@ const TEST_DATA_TWO = [{
   dataClean: 'Material Design uses color to create accessible, personal color schemes that communicate your products hierarchy, state, and brand. See Material Designs Color System page to learn more about its use and purpose.',
   savedAction: 'small'
 }];
+const BROKEN_TEST_DATA = [{
+  blockId: 'cz7u8p',
+  sortIndex: 0,
+  componentInstanceName: 'NgxEditorJs2MermaidjsComponent',
+  savedAction: 'flex-start',
+  dataClean: ''
+}, {
+  blockId: 'm97wlx',
+  sortIndex: 1,
+  componentInstanceName: 'NgxEditorJs2ImageComponent',
+  savedAction: 'stretch',
+  dataClean: '{"url":"https://ngx-workshop.io/assets/img/5ea0ec6b-1997-4e13-b02f-17fad313ab1a.png","title":"Idiomati"}'
+}, {
+  blockId: 'eftkta822ke',
+  sortIndex: 2,
+  componentInstanceName: 'HeaderBlockComponent',
+  savedAction: 'h1',
+  dataClean: 'Embracing Idiomatic Reactive Data Streams with Angular and RxJS'
+}, {
+  blockId: 'oecj9',
+  sortIndex: 3,
+  componentInstanceName: 'ParagraphBlockComponent',
+  savedAction: 'small',
+  dataClean: '<div><span style="font-size: 16px;">Reference Material:</span></div><div><ul><li><a href="https://github.com/Ba5ik7/workshop-reactive-data-streams/tree/1-lab-complete">Workshop Lab Repo</a></li></ul></div>'
+}, {
+  blockId: '6w9r48',
+  sortIndex: 4,
+  componentInstanceName: 'ParagraphBlockComponent',
+  savedAction: 'large',
+  dataClean: '<b>Objective:</b> This workshop is an invitation to explore the reactive programming paradigm within the Angular framework, offering both foundational knowledge and advanced techniques.'
+}, {
+  blockId: 'cnvf9',
+  sortIndex: 5,
+  componentInstanceName: 'NgxEditorJs2BlockquotesComponent',
+  savedAction: 'medium',
+  dataClean: '<i>After cloning the repo checkout the branch 1-lab-start.</i>'
+}, {
+  blockId: 'lcl3c7',
+  sortIndex: 6,
+  componentInstanceName: 'HeaderBlockComponent',
+  savedAction: 'h2',
+  dataClean: 'Introduction to Angular and Reactive Programming with RxJS'
+}, {
+  blockId: '6uh5qa',
+  sortIndex: 7,
+  componentInstanceName: 'ParagraphBlockComponent',
+  savedAction: 'medium',
+  dataClean: 'Welcome to a comprehensive workshop designed to introduce and deepen your understanding of <i>idiomatic</i> reactive data streams utilizing Angular and RxJS. Angular, a platform and framework for building single-page client applications, incorporates a reactive programming style that is both robust and scalable. Coupled with RxJS, a library for asynchronous programming and stream manipulation, Angular provides a powerful suite of tools for modern web development.'
+}, {
+  blockId: 'zr3abg',
+  sortIndex: 8,
+  componentInstanceName: 'HeaderBlockComponent',
+  savedAction: 'h3',
+  dataClean: "RxJS: The Backbone of Angular's Reactivity"
+}, {
+  blockId: '6khq6q',
+  sortIndex: 9,
+  componentInstanceName: 'ParagraphBlockComponent',
+  savedAction: 'medium',
+  dataClean: "RxJS plays a pivotal role in Angular's ecosystem by offering a comprehensive set of operators and functions to manage asynchronous events and data streams. The library's capabilities allow developers to elegantly handle complex data flows, orchestrate asynchronous operations, and implement sophisticated event handling mechanisms, all within a reactive paradigm."
+}, {
+  blockId: '0krpie',
+  sortIndex: 10,
+  componentInstanceName: 'HeaderBlockComponent',
+  savedAction: 'h3',
+  dataClean: 'The Foundation of Angular: MVVM Architecture'
+}, {
+  blockId: 'rzvpn8',
+  sortIndex: 11,
+  componentInstanceName: 'ParagraphBlockComponent',
+  savedAction: 'medium',
+  dataClean: "Angular's architectural approach, inspired by the Model-View-ViewModel (MVVM) pattern, facilitates a clear separation of concerns within applications. This architecture not only promotes maintainability but also enhances the scalability of applications by dividing the application logic, user interface, and data model. Angular's commitment to reactivity ensures that your applications remain responsive and performant, adapting seamlessly to user interactions and data changes."
+}, {
+  blockId: 'vclw7i',
+  sortIndex: 12,
+  componentInstanceName: 'ParagraphBlockComponent',
+  savedAction: 'medium',
+  dataClean: ''
+}, {
+  blockId: 'snk3z',
+  sortIndex: 13,
+  componentInstanceName: 'HeaderBlockComponent',
+  savedAction: 'h2',
+  dataClean: 'Getting Started: Initial Exploration'
+}, {
+  blockId: 'ni74d',
+  sortIndex: 14,
+  componentInstanceName: 'ParagraphBlockComponent',
+  savedAction: 'medium',
+  dataClean: "In the initial phase of our workshop, specifically within the 1-lab-start branch, we introduce a foundational example through the AppComponent. This component serves as the initial touchpoint, demonstrating Angular's reactive capabilities in a simplified context."
+}, {
+  blockId: 'k755z',
+  sortIndex: 15,
+  componentInstanceName: 'HeaderBlockComponent',
+  savedAction: 'h3',
+  dataClean: 'Delving into Reactive Programming Principles'
+}, {
+  blockId: '6uw92',
+  sortIndex: 16,
+  componentInstanceName: 'ParagraphBlockComponent',
+  savedAction: 'medium',
+  dataClean: "The journey begins with understanding the basics of Angular's template syntax and its integration with reactive programming concepts. The simple data binding showcased here paves the way for more complex reactive interactions, which will be explored as we progress through the workshop."
+}, {
+  blockId: '8h0zlp',
+  sortIndex: 17,
+  componentInstanceName: 'HeaderBlockComponent',
+  savedAction: 'h3',
+  dataClean: 'Key Insights and Best Practices'
+}, {
+  blockId: 'ybkivt',
+  sortIndex: 18,
+  componentInstanceName: 'NgxEditorJs2BlockquotesComponent',
+  savedAction: 'display-small',
+  dataClean: "<div><ul><li><b>Leveraging MVVM: </b>Angular's adoption of the MVVM pattern is critical for structuring applications that are both manageable and scalable. Embracing this pattern will facilitate better state management and UI/data separation.<br><br></li><li><b>Mastering RxJS:</b> Familiarity with RxJS operators is essential for effective reactive programming. Operators such as map, filter, and combineLatest are fundamental tools for data stream manipulation.<br><br></li><li><b>Utilizing Async Pipe:</b> The async pipe is a cornerstone of Angular's reactivity, simplifying subscription management and preventing memory leaks by automatically subscribing to and unsubscribing from Observables</li></ul></div>"
+}, {
+  blockId: 'q7gpmo',
+  sortIndex: 19,
+  componentInstanceName: 'ParagraphBlockComponent',
+  savedAction: 'medium',
+  dataClean: 'We look forward to guiding you through this journey into idiomatic reactive programming with Angular and RxJS.'
+}, {
+  blockId: 'a8ii49',
+  sortIndex: 20,
+  componentInstanceName: 'ParagraphBlockComponent',
+  savedAction: 'medium',
+  dataClean: 'This workshop is designed to equip you with the knowledge and skills necessary to harness the full potential of Angular and RxJS in building reactive applications. As we move forward, each lab will build upon the last, incrementally increasing in complexity and introducing more advanced concepts and techniques.'
+}];
 let AppService = /*#__PURE__*/(() => {
   class AppService {
-    ngxEditorJsBlocks = new rxjs__WEBPACK_IMPORTED_MODULE_0__.BehaviorSubject(TEST_DATA);
+    ngxEditorJsBlocks = new rxjs__WEBPACK_IMPORTED_MODULE_0__.BehaviorSubject(BROKEN_TEST_DATA);
     ngxEditorJsBlocks$ = this.ngxEditorJsBlocks.asObservable();
     requestBlocks = new rxjs__WEBPACK_IMPORTED_MODULE_0__.BehaviorSubject({});
     requestBlocks$ = this.requestBlocks.asObservable();
@@ -1065,14 +1193,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   DocumentComponent: () => (/* binding */ DocumentComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 51356);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/card */ 16888);
-/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_material_card__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
-/* harmony import */ var _services_app_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/app.service */ 4516);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 11674);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ 11674);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_common__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/card */ 16888);
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_angular_material_card__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
+/* harmony import */ var _services_app_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/app.service */ 4516);
 
 
 
@@ -1081,32 +1209,37 @@ __webpack_require__.r(__webpack_exports__);
 
 let DocumentComponent = /*#__PURE__*/(() => {
   class DocumentComponent {
-    appService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_services_app_service__WEBPACK_IMPORTED_MODULE_3__.AppService);
+    appService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_services_app_service__WEBPACK_IMPORTED_MODULE_4__.AppService);
+    formChanged(blocks) {
+      console.log('DocumentComponent - formChanged', blocks);
+    }
     static ɵfac = function DocumentComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || DocumentComponent)();
     };
-    static ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+    static ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
       type: DocumentComponent,
       selectors: [["app-document"]],
       decls: 5,
       vars: 6,
-      consts: [["appearance", "outlined"], [3, "blocksRequested", "blocks", "requestBlocks"]],
+      consts: [["appearance", "outlined"], [3, "blocksRequested", "formChanged", "blocks", "requestBlocks"]],
       template: function DocumentComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-card", 0)(1, "mat-card-content")(2, "ngx-editor-js2", 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](3, "async");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](4, "async");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("blocksRequested", function DocumentComponent_Template_ngx_editor_js2_blocksRequested_2_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-card", 0)(1, "mat-card-content")(2, "ngx-editor-js2", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](3, "async");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](4, "async");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("blocksRequested", function DocumentComponent_Template_ngx_editor_js2_blocksRequested_2_listener($event) {
             return ctx.appService.handleBlocks($event);
+          })("formChanged", function DocumentComponent_Template_ngx_editor_js2_formChanged_2_listener($event) {
+            return ctx.formChanged($event);
           });
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
         }
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("blocks", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](3, 2, ctx.appService.ngxEditorJsBlocks$))("requestBlocks", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](4, 4, ctx.appService.requestBlocks$));
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("blocks", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](3, 2, ctx.appService.ngxEditorJsBlocks$))("requestBlocks", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](4, 4, ctx.appService.requestBlocks$));
         }
       },
-      dependencies: [_angular_material_card__WEBPACK_IMPORTED_MODULE_1__.MatCard, _angular_material_card__WEBPACK_IMPORTED_MODULE_1__.MatCardContent, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_2__.NgxEditorJs2Component, _angular_common__WEBPACK_IMPORTED_MODULE_4__.AsyncPipe],
+      dependencies: [_angular_material_card__WEBPACK_IMPORTED_MODULE_2__.MatCard, _angular_material_card__WEBPACK_IMPORTED_MODULE_2__.MatCardContent, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_3__.NgxEditorJs2Component, _angular_common__WEBPACK_IMPORTED_MODULE_0__.AsyncPipe],
       styles: ["[_nghost-%COMP%] {\n  --mat-card-outlined-outline-width: 0.5px;\n  --mat-card-outlined-container-color: var(--mat-sys-surface-container-low);\n  --mat-card-outlined-outline-color: var(--mat-sys-on-surface);\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3Byb2plY3RzL2RlbW8vc3JjL2FwcC9jb21wb25lbnRzL2RvY3VtZW50LmNvbXBvbmVudC50cyIsIndlYnBhY2s6Ly8uL25vZGVfbW9kdWxlcy9AYW5ndWxhci9tYXRlcmlhbC9jb3JlL3Rva2Vucy9fdG9rZW4tdXRpbHMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFTTtFQzBFRSx3Q0FBQTtFQUFBLHlFQUFBO0VBQUEsNERBQUE7QUR4RVIiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgIEB1c2UgJ0Bhbmd1bGFyL21hdGVyaWFsJyBhcyBtYXQ7XG4gICAgICA6aG9zdCB7XG4gICAgICAgIEBpbmNsdWRlIG1hdC5jYXJkLW92ZXJyaWRlcyhcbiAgICAgICAgICAoXG4gICAgICAgICAgICBvdXRsaW5lZC1vdXRsaW5lLXdpZHRoOiAwLjVweCxcbiAgICAgICAgICAgIG91dGxpbmVkLWNvbnRhaW5lci1jb2xvcjogdmFyKC0tbWF0LXN5cy1zdXJmYWNlLWNvbnRhaW5lci1sb3cpLFxuICAgICAgICAgICAgb3V0bGluZWQtb3V0bGluZS1jb2xvcjogdmFyKC0tbWF0LXN5cy1vbi1zdXJmYWNlKSxcbiAgICAgICAgICApXG4gICAgICAgICk7XG4gICAgICB9XG4gICAgIiwiQHVzZSAnLi4vc3R5bGUvc2Fzcy11dGlscyc7XG5AdXNlICdzYXNzOmxpc3QnO1xuQHVzZSAnc2FzczptYXAnO1xuQHVzZSAnc2FzczpzdHJpbmcnO1xuXG4vLyBDcmVhdGVzIGEgQ1NTIHZhcmlhYmxlLCBpbmNsdWRpbmcgdGhlIGZhbGxiYWNrIGlmIHByb3ZpZGVkLlxuQGZ1bmN0aW9uIF9jcmVhdGUtdmFyKCRuYW1lLCAkZmFsbGJhY2s6IG51bGwpIHtcbiAgQGlmICgkZmFsbGJhY2spIHtcbiAgICBAcmV0dXJuIHZhcigkbmFtZSwgJGZhbGxiYWNrKTtcbiAgfSBAZWxzZSB7XG4gICAgQHJldHVybiB2YXIoJG5hbWUpO1xuICB9XG59XG5cbi8vIFJldHVybnMgYSBsaXN0IG9mIG92ZXJyaWRlcyBmb3IgdGhlIGdpdmVuIE0zIGdldC10b2tlbnMgbWl4aW4gYW5kIHByZWZpeC4gRWFjaCB0b2tlbiBoYXMgaXRzXG4vLyBwcmVmaXggcmVtb3ZlZCBzaW5jZSB0aGUgb3ZlcnJpZGVzIEFQSSBleHBlY3RzIGl0cyBhYnNlbmNlLiBUaGUgcmV0dXJuZWQgbWFwIGluY2x1ZGVzIFwiYWxsXCIgZm9yXG4vLyBhbGwgb3ZlcnJpZGUgdG9rZW5zLCBhbmQgYWxzbyB0aGUgc3Vic2V0cyB3aXRoIGtleXMgYmFzZSwgY29sb3IsIHR5cG9ncmFwaHksIGFuZCBkZW5zaXR5LlxuQGZ1bmN0aW9uIGdldC1vdmVycmlkZXMoJHRva2VucywgJHByZWZpeCkge1xuICAkYmFzZTogcmVtb3ZlLXRva2VuLXByZWZpeGVzKG1hcC5nZXQoJHRva2VucywgYmFzZSksICRwcmVmaXgpO1xuICAkY29sb3I6IHJlbW92ZS10b2tlbi1wcmVmaXhlcyhtYXAuZ2V0KCR0b2tlbnMsIGNvbG9yKSwgJHByZWZpeCk7XG4gICR0eXBvZ3JhcGh5OiByZW1vdmUtdG9rZW4tcHJlZml4ZXMobWFwLmdldCgkdG9rZW5zLCB0eXBvZ3JhcGh5KSwgJHByZWZpeCk7XG4gICRkZW5zaXR5OiByZW1vdmUtdG9rZW4tcHJlZml4ZXMobWFwLmdldCgkdG9rZW5zLCBkZW5zaXR5KSwgJHByZWZpeCk7XG4gICRhbGw6ICgpO1xuICBAZWFjaCAkbWFwIGluICgkYmFzZSwgJGNvbG9yLCAkdHlwb2dyYXBoeSwgJGRlbnNpdHkpIHtcbiAgICAkYWxsOiBtYXAubWVyZ2UoJGFsbCwgJG1hcCk7XG4gIH1cblxuICBAcmV0dXJuIChcbiAgICBhbGw6ICRhbGwsXG4gICAgYmFzZTogJGJhc2UsXG4gICAgY29sb3I6ICRjb2xvcixcbiAgICB0eXBvZ3JhcGh5OiAkdHlwb2dyYXBoeSxcbiAgICBkZW5zaXR5OiAkZGVuc2l0eSxcbiAgKTtcbn1cblxuLy8gUmVtb3ZlcyBhIHByZWZpeCBmcm9tIGVhY2ggY29tcG9uZW50IHRva2VuIGluIHRoZSBwcm92aWRlZCBtYXAgb2YgcHJlZml4ZWQgdG9rZW5zLlxuQGZ1bmN0aW9uIHJlbW92ZS10b2tlbi1wcmVmaXhlcygkcHJlZml4ZWQtdG9rZW5zOiAoKSwgJHByZWZpeCkge1xuICAkdG9rZW5zOiAoKTtcbiAgQGVhY2ggJHByZWZpeGVkLXRva2VuLCAkdmFsdWUgaW4gJHByZWZpeGVkLXRva2VucyB7XG4gICAgJHRva2VuOiBzdHJpbmcuc2xpY2UoJHByZWZpeGVkLXRva2VuLCBzdHJpbmcubGVuZ3RoKCRwcmVmaXgpICsgMik7XG4gICAgJHRva2VuczogbWFwLnNldCgkdG9rZW5zLCAkdG9rZW4sICR2YWx1ZSk7XG4gIH1cbiAgQHJldHVybiAkdG9rZW5zO1xufVxuXG4vLyBSZXR1cm5zIHRoZSB0b2tlbiBzbG90IHZhbHVlLlxuLy8gQWNjZXB0cyBhbiBvcHRpb25hbCBmYWxsYmFjayBwYXJhbWV0ZXIgdG8gaW5jbHVkZSBpbiB0aGUgQ1NTIHZhcmlhYmxlLlxuLy8gSWYgJGZhbGxiYWNrIGlzIGB0cnVlYCwgdGhlbiB1c2UgdGhlIHRva2VucyBtYXAgdG8gZ2V0IHRoZSBmYWxsYmFjay5cbkBmdW5jdGlvbiBzbG90KCR0b2tlbiwgJGZhbGxiYWNrcywgJGZhbGxiYWNrOiBudWxsKSB7XG4gIC8vIEZhbGxiYWNrcyBhcmUgYSBtYXAgb2YgYmFzZSwgY29sb3IsIHR5cG9ncmFwaHksIGFuZCBkZW5zaXR5IHRva2Vucy4gVG8gc2ltcGxpZnlcbiAgLy8gbG9va3VwLCBmbGF0dGVuIHRoZXNlIHRva2VuIGdyb3VwcyBpbnRvIGEgc2luZ2xlIG1hcC5cbiAgJGZhbGxiYWNrcy1mbGF0dGVuZWQ6ICgpO1xuICBAZWFjaCAkdG9rZW5zIGluIG1hcC52YWx1ZXMoJGZhbGxiYWNrcykge1xuICAgIEBlYWNoICR0b2tlbiwgJHZhbHVlIGluICR0b2tlbnMge1xuICAgICAgJGZhbGxiYWNrcy1mbGF0dGVuZWQ6IG1hcC5zZXQoJGZhbGxiYWNrcy1mbGF0dGVuZWQsICR0b2tlbiwgJHZhbHVlKTtcbiAgICB9XG4gIH1cbiAgQGlmIG5vdCBtYXAuaGFzLWtleSgkZmFsbGJhY2tzLWZsYXR0ZW5lZCwgJHRva2VuKSB7XG4gICAgQGVycm9yICdUb2tlbiAjeyR0b2tlbn0gZG9lcyBub3QgZXhpc3QuIENvbmZpZ3VyZWQgdG9rZW5zIGFyZTonICtcbiAgICAgICAgI3ttYXAua2V5cygkZmFsbGJhY2tzLWZsYXR0ZW5lZCl9O1xuICB9XG5cbiAgJHN5cy1mYWxsYmFjazogbWFwLmdldCgkZmFsbGJhY2tzLWZsYXR0ZW5lZCwgJHRva2VuKTtcbiAgQGlmIChzYXNzLXV0aWxzLmlzLWNzcy12YXItbmFtZSgkc3lzLWZhbGxiYWNrKSkge1xuICAgICRzeXMtZmFsbGJhY2s6IF9jcmVhdGUtdmFyKCRzeXMtZmFsbGJhY2ssICRmYWxsYmFjayk7XG4gIH1cblxuICBAcmV0dXJuIF9jcmVhdGUtdmFyKC0tbWF0LSN7JHRva2VufSwgJHN5cy1mYWxsYmFjayk7XG59XG5cbi8vIE91dHB1dHMgYSBtYXAgb2YgdG9rZW4gdmFsdWVzIGFzIENTUyB2YXJpYWJsZSBkZWZpbml0aW9ucy5cbkBtaXhpbiB2YWx1ZXMoJHRva2Vucykge1xuICBAaW5jbHVkZSBzYXNzLXV0aWxzLmN1cnJlbnQtc2VsZWN0b3Itb3Itcm9vdCgpIHtcbiAgICBAZWFjaCAka2V5LCAkdmFsdWUgaW4gJHRva2VucyB7XG4gICAgICBAaWYgJHZhbHVlICE9IG51bGwge1xuICAgICAgICAtLW1hdC0jeyRrZXl9OiAjeyR2YWx1ZX07XG4gICAgICB9XG4gICAgfVxuICB9XG59XG5cbi8vLyBFbWl0cyBuZXcgdG9rZW4gdmFsdWVzIGZvciB0aGUgZ2l2ZW4gdG9rZW4gb3ZlcnJpZGVzLlxuLy8vIFZlcmlmaWVzIHRoYXQgdGhlIG92ZXJyaWRlcyBwYXNzZWQgaW4gYXJlIHZhbGlkIHRva2Vucy5cbi8vLyBOZXcgdG9rZW4gdmFsdWVzIGFyZSBlbWl0dGVkIHVuZGVyIHRoZSBjdXJyZW50IHNlbGVjdG9yIG9yIHJvb3QuXG5AbWl4aW4gYmF0Y2gtY3JlYXRlLXRva2VuLXZhbHVlcygkb3ZlcnJpZGVzOiAoKSwgJG5hbWVzcGFjZS1jb25maWdzKSB7XG4gIEBpbmNsdWRlIHNhc3MtdXRpbHMuY3VycmVudC1zZWxlY3Rvci1vci1yb290KCkge1xuICAgICRwcmVmaXhlZC1uYW1lLWRhdGE6ICgpO1xuICAgICRhbGwtbmFtZXM6ICgpO1xuXG4gICAgQGVhY2ggJGNvbmZpZyBpbiAkbmFtZXNwYWNlLWNvbmZpZ3Mge1xuICAgICAgJG5hbWVzcGFjZTogbWFwLmdldCgkY29uZmlnLCBuYW1lc3BhY2UpO1xuICAgICAgJHByZWZpeDogaWYobWFwLmhhcy1rZXkoJGNvbmZpZywgcHJlZml4KSwgbWFwLmdldCgkY29uZmlnLCBwcmVmaXgpLCAnJyk7XG4gICAgICAkdG9rZW5zOiBtYXAuZ2V0KG1hcC5nZXQoJGNvbmZpZywgdG9rZW5zKSwgYWxsKTtcbiAgICAgIEBlYWNoICRuYW1lLCAkdmFsdWUgaW4gJHRva2VucyB7XG4gICAgICAgICRwcmVmaXhlZC1uYW1lOiAkcHJlZml4ICsgJG5hbWU7XG4gICAgICAgICRhbGwtbmFtZXM6IGxpc3QuYXBwZW5kKCRhbGwtbmFtZXMsICRwcmVmaXhlZC1uYW1lLCAkc2VwYXJhdG9yOiBjb21tYSk7XG4gICAgICAgICRwcmVmaXhlZC1uYW1lLWRhdGE6IG1hcC5zZXQoJHByZWZpeGVkLW5hbWUtZGF0YSwgJHByZWZpeGVkLW5hbWUsICgkbmFtZXNwYWNlLCAkbmFtZSkpO1xuICAgICAgfVxuICAgIH1cblxuICAgIEBlYWNoICRuYW1lLCAkdmFsdWUgaW4gJG92ZXJyaWRlcyB7XG4gICAgICBAaWYgbWFwLmhhcy1rZXkoJHByZWZpeGVkLW5hbWUtZGF0YSwgJG5hbWUpIHtcbiAgICAgICAgJGRhdGE6IG1hcC5nZXQoJHByZWZpeGVkLW5hbWUtZGF0YSwgJG5hbWUpO1xuICAgICAgICAkbmFtZXNwYWNlOiBsaXN0Lm50aCgkZGF0YSwgMSk7XG4gICAgICAgICRuYW1lOiBsaXN0Lm50aCgkZGF0YSwgMik7XG4gICAgICAgICRwcmVmaXhlZC1uYW1lOiAkbmFtZXNwYWNlICsgJy0nICsgJG5hbWU7XG4gICAgICAgIEBpbmNsdWRlIHZhbHVlcygoJHByZWZpeGVkLW5hbWU6ICR2YWx1ZSkpO1xuICAgICAgfSBAZWxzZSB7XG4gICAgICAgIEBlcnJvciAjeydJbnZhbGlkIHRva2VuIG5hbWUgYCd9I3skbmFtZX0jeydgLiAnfSN7J1ZhbGlkIHRva2VucyBhcmU6ICd9I3skYWxsLW5hbWVzfTtcbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */"]
     });
   }
@@ -1913,7 +2046,7 @@ let EditorJsService = /*#__PURE__*/(() => {
         componentRef.setInput('formGroup', this.formGroup);
         componentRef.setInput('formControlName', controlName);
         componentRef.setInput('autofocus', autofocus);
-        savedAction && componentRef.instance.actionCallback?.(savedAction);
+        savedAction && componentRef.instance.actionCallback?.(savedAction, false);
         this.blockMovementService.newComponentAttached(componentRef);
         return componentRef;
       }));
@@ -1927,7 +2060,9 @@ let EditorJsService = /*#__PURE__*/(() => {
       }), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.switchMap)(() => this.blockMovementService.updateComponentIndices(this.ngxEditor)), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.defaultIfEmpty)(false));
     }
     removeBlockComponent(index, formControlName, clear = false) {
-      return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.combineLatest)([this.blockMovementService.removeBlockComponent(this.ngxEditor, index, clear), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(this.formGroup.removeControl(formControlName))]);
+      return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.combineLatest)([this.blockMovementService.removeBlockComponent(this.ngxEditor, index, clear), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(this.formGroup.removeControl(formControlName, {
+        emitEvent: !clear
+      }))]);
     }
     clearBlocks() {
       return this.blockMovementService.getNgxEditorJsBlocks().pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_2__.filter)(componentRefs => componentRefs.length > 0), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.map)(componentRefs => componentRefs.sort((a, b) => a.instance.sortIndex() - b.instance.sortIndex())), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.mergeMap)(componentRefs => (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.forkJoin)(Array.from(componentRefs.values()).map(componentRef => this.removeBlockComponent(componentRef.instance.sortIndex() + 1, componentRef.instance.formControlName(), true)))), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.switchMap)(() => this.blockMovementService.updateComponentIndices(this.ngxEditor)), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.tap)(() => {
@@ -2133,8 +2268,9 @@ let HeaderBlockComponent = /*#__PURE__*/(() => {
       debugName: "savedAction"
     }] : []));
     actionCallbackBind = this.actionCallback.bind(this);
-    actionCallback(selectedAction) {
+    actionCallback(selectedAction, updateFormValue = true) {
       this.savedAction.set(selectedAction);
+      updateFormValue && this.formGroup().updateValueAndValidity();
     }
     static ɵfac = function HeaderBlockComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || HeaderBlockComponent)();
@@ -2215,8 +2351,9 @@ let ParagraphBlockComponent = /*#__PURE__*/(() => {
       debugName: "savedAction"
     }] : []));
     actionCallbackBind = this.actionCallback.bind(this);
-    actionCallback(action) {
+    actionCallback(action, updateFormValue = true) {
       this.savedAction.update(() => action);
+      updateFormValue && this.formGroup().updateValueAndValidity();
     }
     static ɵfac = function ParagraphBlockComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || ParagraphBlockComponent)();

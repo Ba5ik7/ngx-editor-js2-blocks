@@ -10,12 +10,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   NgxEditorJs2PopQuizComponent: () => (/* binding */ NgxEditorJs2PopQuizComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 51356);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ 14332);
-/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 8778);
+/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 8778);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ 14332);
 /* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
-/* harmony import */ var _angular_material_stepper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/stepper */ 37172);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 44866);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 44866);
+/* harmony import */ var _angular_material_stepper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/stepper */ 37172);
 /* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/button */ 31944);
 /* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/form-field */ 66080);
 /* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/input */ 91638);
@@ -49,23 +49,23 @@ __webpack_require__.r(__webpack_exports__);
 
 function QuestionComponent_Conditional_7_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Question is required ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " Question is required ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
   }
 }
 function ResponsesComponent_Conditional_7_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Question is required ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " Question is required ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
   }
 }
 function ResponsesComponent_Conditional_14_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Question is required ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " Question is required ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
   }
 }
 const _c0 = a0 => ({
@@ -73,204 +73,204 @@ const _c0 = a0 => ({
 });
 function ChoicesComponent_For_7_Conditional_6_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Question is required ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, " Question is required ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
   }
 }
 function ChoicesComponent_For_7_Template(rf, ctx) {
   if (rf & 1) {
-    const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0, 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 9)(2, "mat-form-field")(3, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "textarea", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](6, ChoicesComponent_For_7_Conditional_6_Template, 2, 0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "button", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ChoicesComponent_For_7_Template_button_click_7_listener() {
-      const $index_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r1).$index;
-      const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r2.removeRatioOption($index_r2));
+    const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerStart"](0, 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 9)(2, "mat-form-field")(3, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](5, "textarea", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditionalCreate"](6, ChoicesComponent_For_7_Conditional_6_Template, 2, 0, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "button", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ChoicesComponent_For_7_Template_button_click_7_listener() {
+      const $index_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r1).$index;
+      const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵresetView"](ctx_r2.removeRatioOption($index_r2));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "mat-icon", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "delete");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "mat-icon", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "delete");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
     let tmp_12_0;
     const $index_r2 = ctx.$index;
-    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroupName", $index_r2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Option ", $index_r2 + 1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"](((tmp_12_0 = ctx_r2.choicesFormGroup().get("choices")) == null ? null : tmp_12_0.get($index_r2.toString())) ? 6 : -1);
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroupName", $index_r2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("Option ", $index_r2 + 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditional"](((tmp_12_0 = ctx_r2.choicesFormGroup().get("choices")) == null ? null : tmp_12_0.get($index_r2.toString())) ? 6 : -1);
   }
 }
 function AnswerComponent_Conditional_0_For_8_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     let tmp_12_0;
     let tmp_13_0;
     const choice_r1 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", (tmp_12_0 = choice_r1.get("value")) == null ? null : tmp_12_0.value);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", (tmp_13_0 = choice_r1.get("value")) == null ? null : tmp_13_0.value, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", (tmp_12_0 = choice_r1.get("value")) == null ? null : tmp_12_0.value);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", (tmp_13_0 = choice_r1.get("value")) == null ? null : tmp_13_0.value, " ");
   }
 }
 function AnswerComponent_Conditional_0_Conditional_9_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Please choose an answer");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1, "Please choose an answer");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
   }
 }
 function AnswerComponent_Conditional_0_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form", 0)(1, "h3");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Select the Correct Answer");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-form-field", 1)(4, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Answer");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-select", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeaterCreate"](7, AnswerComponent_Conditional_0_For_8_Template, 2, 2, "mat-option", 3, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeaterTrackByIndex"]);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](9, AnswerComponent_Conditional_0_Conditional_9_Template, 2, 0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 4)(11, "button", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Previous");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "button", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "Next");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 0)(1, "h3");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Select the Correct Answer");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "mat-form-field", 1)(4, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](5, "Answer");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "mat-select", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrepeaterCreate"](7, AnswerComponent_Conditional_0_For_8_Template, 2, 2, "mat-option", 3, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrepeaterTrackByIndex"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditionalCreate"](9, AnswerComponent_Conditional_0_Conditional_9_Template, 2, 0, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "div", 4)(11, "button", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](12, "Previous");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "button", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](14, "Next");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
     let tmp_4_0;
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx_r1.answerFormGroup());
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeater"](ctx.controls);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"](((tmp_4_0 = ctx_r1.answerFormGroup().get("answer")) == null ? null : tmp_4_0.hasError("required")) ? 9 : -1);
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx_r1.answerFormGroup());
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrepeater"](ctx.controls);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditional"](((tmp_4_0 = ctx_r1.answerFormGroup().get("answer")) == null ? null : tmp_4_0.hasError("required")) ? 9 : -1);
   }
 }
 function ResultsComponent_Conditional_4_For_8_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-radio-button", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-radio-button", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     const option_r1 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", option_r1.value);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](option_r1.value);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", option_r1.value);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](option_r1.value);
   }
 }
 function ResultsComponent_Conditional_4_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 1)(1, "div", 5)(2, "h1");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Quiz");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "p");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-radio-group", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeaterCreate"](7, ResultsComponent_Conditional_4_For_8_Template, 2, 2, "mat-radio-button", 6, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeaterTrackByIndex"]);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 7)(10, "button", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Submit");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 1)(1, "div", 5)(2, "h1");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "Quiz");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "mat-radio-group", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrepeaterCreate"](7, ResultsComponent_Conditional_4_For_8_Template, 2, 2, "mat-radio-button", 6, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrepeaterTrackByIndex"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "div", 7)(10, "button", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "Submit");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
   }
   if (rf & 2) {
     const formPreview_r2 = ctx;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](formPreview_r2.question);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", formPreview_r2.answer);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeater"](formPreview_r2.choices);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](formPreview_r2.question);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", formPreview_r2.answer);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrepeater"](formPreview_r2.choices);
   }
 }
 function PopQuizConfigComponent_Conditional_0_ng_template_2_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](0, "Question?");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](0, "Question?");
   }
 }
 function PopQuizConfigComponent_Conditional_0_ng_template_5_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](0, "Choices");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](0, "Choices");
   }
 }
 function PopQuizConfigComponent_Conditional_0_ng_template_8_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](0, "Answer");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](0, "Answer");
   }
 }
 function PopQuizConfigComponent_Conditional_0_ng_template_11_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](0, "Responses");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](0, "Responses");
   }
 }
 function PopQuizConfigComponent_Conditional_0_ng_template_14_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](0, "Results");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](0, "Results");
   }
 }
 function PopQuizConfigComponent_Conditional_0_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-stepper", 0)(1, "mat-step", 1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, PopQuizConfigComponent_Conditional_0_ng_template_2_Template, 1, 0, "ng-template", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "pop-quiz-question", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mat-step", 1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, PopQuizConfigComponent_Conditional_0_ng_template_5_Template, 1, 0, "ng-template", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "pop-quiz-choices", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-step", 1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, PopQuizConfigComponent_Conditional_0_ng_template_8_Template, 1, 0, "ng-template", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "pop-quiz-answer", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-step", 1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, PopQuizConfigComponent_Conditional_0_ng_template_11_Template, 1, 0, "ng-template", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "pop-quiz-responses", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "mat-step", 1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, PopQuizConfigComponent_Conditional_0_ng_template_14_Template, 1, 0, "ng-template", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](15, "pop-quiz-results", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-stepper", 0)(1, "mat-step", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, PopQuizConfigComponent_Conditional_0_ng_template_2_Template, 1, 0, "ng-template", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "pop-quiz-question", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "mat-step", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](5, PopQuizConfigComponent_Conditional_0_ng_template_5_Template, 1, 0, "ng-template", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](6, "pop-quiz-choices", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "mat-step", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](8, PopQuizConfigComponent_Conditional_0_ng_template_8_Template, 1, 0, "ng-template", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](9, "pop-quiz-answer", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "mat-step", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](11, PopQuizConfigComponent_Conditional_0_ng_template_11_Template, 1, 0, "ng-template", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](12, "pop-quiz-responses", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "mat-step", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](14, PopQuizConfigComponent_Conditional_0_ng_template_14_Template, 1, 0, "ng-template", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](15, "pop-quiz-results", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
   }
   if (rf & 2) {
     const vm_r1 = ctx;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("selectedIndex", vm_r1.selectedIndex);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("stepControl", vm_r1.questionGroup)("completed", vm_r1.completed);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("questionFormGroup", vm_r1.questionGroup);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("stepControl", vm_r1.choicesOptionsGroup)("completed", vm_r1.completed);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("choicesFormGroup", vm_r1.choicesOptionsGroup);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("stepControl", vm_r1.answerGroup)("completed", vm_r1.completed);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("answerFormGroup", vm_r1.answerGroup);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("stepControl", vm_r1.responsesGroup)("completed", vm_r1.completed);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("responsesFormGroup", vm_r1.responsesGroup);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("stepControl", vm_r1.quizConfigForm)("completed", vm_r1.completed);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("resultsFormGroup", vm_r1.quizConfigForm);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("selectedIndex", vm_r1.selectedIndex);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("stepControl", vm_r1.questionGroup)("completed", vm_r1.completed);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("questionFormGroup", vm_r1.questionGroup);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("stepControl", vm_r1.choicesOptionsGroup)("completed", vm_r1.completed);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("choicesFormGroup", vm_r1.choicesOptionsGroup);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("stepControl", vm_r1.answerGroup)("completed", vm_r1.completed);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("answerFormGroup", vm_r1.answerGroup);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("stepControl", vm_r1.responsesGroup)("completed", vm_r1.completed);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("responsesFormGroup", vm_r1.responsesGroup);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("stepControl", vm_r1.quizConfigForm)("completed", vm_r1.completed);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("resultsFormGroup", vm_r1.quizConfigForm);
   }
 }
 function validateRatioOptions() {
@@ -286,10 +286,10 @@ function validateRatioOptions() {
 }
 let NgxEditorJs2PopQuizService = /*#__PURE__*/(() => {
   class NgxEditorJs2PopQuizService {
-    formBuilder = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_forms__WEBPACK_IMPORTED_MODULE_1__.NonNullableFormBuilder);
+    formBuilder = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_forms__WEBPACK_IMPORTED_MODULE_2__.NonNullableFormBuilder);
     parentFormGroup;
     parentFormControlName;
-    quizConfigValue = new rxjs__WEBPACK_IMPORTED_MODULE_5__.BehaviorSubject({
+    quizConfigValue = new rxjs__WEBPACK_IMPORTED_MODULE_4__.BehaviorSubject({
       question: '',
       answer: '',
       choices: [],
@@ -297,19 +297,19 @@ let NgxEditorJs2PopQuizService = /*#__PURE__*/(() => {
       incorrectResponse: ''
     });
     quizConfigValue$ = this.quizConfigValue.asObservable();
-    quizConfigForm = new rxjs__WEBPACK_IMPORTED_MODULE_5__.BehaviorSubject(this.formBuilder.group({
+    quizConfigForm = new rxjs__WEBPACK_IMPORTED_MODULE_4__.BehaviorSubject(this.formBuilder.group({
       questionGroup: this.formBuilder.group({
-        question: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.Validators.required])
+        question: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.required])
       }),
       choicesOptionsGroup: this.formBuilder.group({
         choices: this.formBuilder.array([], [validateRatioOptions()])
       }),
       answerGroup: this.formBuilder.group({
-        answer: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.Validators.required])
+        answer: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.required])
       }),
       responsesGroup: this.formBuilder.group({
-        correctResponse: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.Validators.required]),
-        incorrectResponse: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.Validators.required])
+        correctResponse: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.required]),
+        incorrectResponse: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormControl('', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.required])
       })
     }));
     quizConfigForm$ = this.quizConfigForm.asObservable();
@@ -323,7 +323,7 @@ let NgxEditorJs2PopQuizService = /*#__PURE__*/(() => {
       if (!choicesArray || choicesArray.length === 0) {
         value.choices.forEach(choice => {
           choicesArray.push(this.formBuilder.group({
-            value: [choice.value, [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.Validators.required]]
+            value: [choice.value, [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.required]]
           }));
         });
       }
@@ -366,7 +366,7 @@ let NgxEditorJs2PopQuizService = /*#__PURE__*/(() => {
     static ɵfac = function NgxEditorJs2PopQuizService_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || NgxEditorJs2PopQuizService)();
     };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
       token: NgxEditorJs2PopQuizService,
       factory: NgxEditorJs2PopQuizService.ɵfac
     });
@@ -378,13 +378,13 @@ let NgxEditorJs2PopQuizService = /*#__PURE__*/(() => {
 })();
 let QuestionComponent = /*#__PURE__*/(() => {
   class QuestionComponent {
-    questionFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+    questionFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_1__.input.required(...(ngDevMode ? [{
       debugName: "questionFormGroup"
     }] : []));
     static ɵfac = function QuestionComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || QuestionComponent)();
     };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
       type: QuestionComponent,
       selectors: [["pop-quiz-question"]],
       inputs: {
@@ -395,29 +395,29 @@ let QuestionComponent = /*#__PURE__*/(() => {
       consts: [[3, "formGroup"], ["matInput", "", 3, "formControlName"], [1, "action-group"], ["mat-flat-button", "", "matStepperNext", ""]],
       template: function QuestionComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form", 0)(1, "h3");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Create a Question to ask the User");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-form-field")(4, "mat-label");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Create a Question to ask.");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "textarea", 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](7, QuestionComponent_Conditional_7_Template, 2, 0, "mat-error");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 2)(9, "button", 3);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Next");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 0)(1, "h3");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Create a Question to ask the User");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "mat-form-field")(4, "mat-label");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](5, "Create a Question to ask.");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](6, "textarea", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditionalCreate"](7, QuestionComponent_Conditional_7_Template, 2, 0, "mat-error");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "div", 2)(9, "button", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](10, "Next");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
         }
         if (rf & 2) {
           let tmp_2_0;
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.questionFormGroup());
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formControlName", "question");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"](((tmp_2_0 = ctx.questionFormGroup().get("question")) == null ? null : tmp_2_0.hasError("required")) ? 7 : -1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.questionFormGroup());
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formControlName", "question");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditional"](((tmp_2_0 = ctx.questionFormGroup().get("question")) == null ? null : tmp_2_0.hasError("required")) ? 7 : -1);
         }
       },
-      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControlName, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormFieldModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatError, _angular_material_input__WEBPACK_IMPORTED_MODULE_8__.MatInput, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_4__.MatStepperNext, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatButton],
+      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormControlName, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormFieldModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatError, _angular_material_input__WEBPACK_IMPORTED_MODULE_8__.MatInput, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_5__.MatStepperNext, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatButton],
       styles: ["[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;margin-top:1rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font:var(--mat-sys-headline-small);font-weight:100}"]
     });
   }
@@ -428,13 +428,13 @@ let QuestionComponent = /*#__PURE__*/(() => {
 })();
 let ResponsesComponent = /*#__PURE__*/(() => {
   class ResponsesComponent {
-    responsesFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+    responsesFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_1__.input.required(...(ngDevMode ? [{
       debugName: "responsesFormGroup"
     }] : []));
     static ɵfac = function ResponsesComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || ResponsesComponent)();
     };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
       type: ResponsesComponent,
       selectors: [["pop-quiz-responses"]],
       inputs: {
@@ -445,46 +445,46 @@ let ResponsesComponent = /*#__PURE__*/(() => {
       consts: [[3, "formGroup"], ["matInput", "", 3, "formControlName"], [1, "action-group"], ["mat-flat-button", "", "matStepperPrevious", ""], ["mat-flat-button", "", "matStepperNext", ""]],
       template: function ResponsesComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form", 0)(1, "h3");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Create a Response when the User is Correct");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-form-field")(4, "mat-label");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Create a Response when the User is Correct");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "textarea", 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](7, ResponsesComponent_Conditional_7_Template, 2, 0, "mat-error");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "h3");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Create a Response when the User is Incorrect");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-form-field")(11, "mat-label");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Create a Response when the User is Incorrect");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "textarea", 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](14, ResponsesComponent_Conditional_14_Template, 2, 0, "mat-error");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 2)(16, "button", 3);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "Previous");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "button", 4);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Next");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 0)(1, "h3");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Create a Response when the User is Correct");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "mat-form-field")(4, "mat-label");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](5, "Create a Response when the User is Correct");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](6, "textarea", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditionalCreate"](7, ResponsesComponent_Conditional_7_Template, 2, 0, "mat-error");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "h3");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "Create a Response when the User is Incorrect");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "mat-form-field")(11, "mat-label");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](12, "Create a Response when the User is Incorrect");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](13, "textarea", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditionalCreate"](14, ResponsesComponent_Conditional_14_Template, 2, 0, "mat-error");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](15, "div", 2)(16, "button", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](17, "Previous");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "button", 4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](19, "Next");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
         }
         if (rf & 2) {
           let tmp_2_0;
           let tmp_4_0;
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.responsesFormGroup());
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formControlName", "correctResponse");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"](((tmp_2_0 = ctx.responsesFormGroup().get("correctResponse")) == null ? null : tmp_2_0.hasError("required")) ? 7 : -1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formControlName", "incorrectResponse");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"](((tmp_4_0 = ctx.responsesFormGroup().get("incorrectResponse")) == null ? null : tmp_4_0.hasError("required")) ? 14 : -1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.responsesFormGroup());
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formControlName", "correctResponse");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditional"](((tmp_2_0 = ctx.responsesFormGroup().get("correctResponse")) == null ? null : tmp_2_0.hasError("required")) ? 7 : -1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formControlName", "incorrectResponse");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditional"](((tmp_4_0 = ctx.responsesFormGroup().get("incorrectResponse")) == null ? null : tmp_4_0.hasError("required")) ? 14 : -1);
         }
       },
-      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControlName, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormFieldModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatError, _angular_material_input__WEBPACK_IMPORTED_MODULE_8__.MatInput, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_4__.MatStepperNext, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_4__.MatStepperPrevious, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatButton],
+      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormControlName, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormFieldModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatError, _angular_material_input__WEBPACK_IMPORTED_MODULE_8__.MatInput, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_5__.MatStepperNext, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_5__.MatStepperPrevious, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatButton],
       styles: ["[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:space-between;margin-top:1rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font:var(--mat-sys-headline-small);font-weight:100}"]
     });
   }
@@ -495,9 +495,9 @@ let ResponsesComponent = /*#__PURE__*/(() => {
 })();
 let ChoicesComponent = /*#__PURE__*/(() => {
   class ChoicesComponent {
-    formBuilder = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormBuilder);
-    popQuizService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NgxEditorJs2PopQuizService);
-    choicesFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required({
+    formBuilder = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormBuilder);
+    popQuizService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(NgxEditorJs2PopQuizService);
+    choicesFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_1__.input.required({
       ...(ngDevMode ? {
         debugName: "choicesFormGroup"
       } : {}),
@@ -506,15 +506,15 @@ let ChoicesComponent = /*#__PURE__*/(() => {
         return value;
       }
     });
-    choicesFormGroupSub = new rxjs__WEBPACK_IMPORTED_MODULE_5__.BehaviorSubject(this.formBuilder.group({
+    choicesFormGroupSub = new rxjs__WEBPACK_IMPORTED_MODULE_4__.BehaviorSubject(this.formBuilder.group({
       choices: this.formBuilder.array([])
     }));
     choicesFormGroup$ = this.choicesFormGroupSub.asObservable();
-    viewModel$ = this.choicesFormGroup$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_5__.map)(formGroup => formGroup.get('choices')));
+    viewModel$ = this.choicesFormGroup$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_4__.map)(formGroup => formGroup.get('choices')));
     addRatioOption() {
       const choices = this.choicesFormGroup().get('choices');
       choices.push(this.formBuilder.group({
-        value: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.Validators.required]]
+        value: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.Validators.required]]
       }));
       this.choicesFormGroupSub.next(this.choicesFormGroup());
     }
@@ -529,7 +529,7 @@ let ChoicesComponent = /*#__PURE__*/(() => {
     static ɵfac = function ChoicesComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || ChoicesComponent)();
     };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
       type: ChoicesComponent,
       selectors: [["pop-quiz-choices"]],
       inputs: {
@@ -540,42 +540,42 @@ let ChoicesComponent = /*#__PURE__*/(() => {
       consts: [[3, "formGroup"], [3, "ngClass"], ["formArrayName", "choices"], [3, "formGroupName"], [1, "choices-action-group"], ["mat-button", "", "type", "button", 3, "click"], [1, "action-group"], ["mat-flat-button", "", "matStepperPrevious", ""], ["mat-flat-button", "", "matStepperNext", ""], [1, "choices-radio-option-container"], ["matInput", "", "formControlName", "value"], ["mat-icon-button", "", 3, "click"], [1, "delete"]],
       template: function ChoicesComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form", 0)(1, "h3");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " Create the Possible Answers ");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "span", 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "(Create at least 2 choices)");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](5, 2);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeaterCreate"](6, ChoicesComponent_For_7_Template, 10, 3, "ng-container", 3, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeaterTrackByIdentity"]);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](8, "async");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 4)(10, "button", 5);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ChoicesComponent_Template_button_click_10_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 0)(1, "h3");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, " Create the Possible Answers ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "span", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4, "(Create at least 2 choices)");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerStart"](5, 2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrepeaterCreate"](6, ChoicesComponent_For_7_Template, 10, 3, "ng-container", 3, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrepeaterTrackByIdentity"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](8, "async");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "div", 4)(10, "button", 5);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ChoicesComponent_Template_button_click_10_listener() {
             return ctx.addRatioOption();
           });
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "mat-icon");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "add");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Add a Choice ");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "mat-divider");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 6)(16, "button", 7);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "Previous");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "button", 8);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Next");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](11, "mat-icon");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](12, "add");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](13, "Add a Choice ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](14, "mat-divider");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](15, "div", 6)(16, "button", 7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](17, "Previous");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "button", 8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](19, "Next");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
         }
         if (rf & 2) {
           let tmp_1_0;
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.choicesFormGroup());
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](4, _c0, (tmp_1_0 = ctx.choicesFormGroup().get("choices")) == null ? null : tmp_1_0.hasError("notEnoughOptions")));
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeater"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](8, 2, ctx.viewModel$).controls);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.choicesFormGroup());
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpureFunction1"](4, _c0, (tmp_1_0 = ctx.choicesFormGroup().get("choices")) == null ? null : tmp_1_0.hasError("notEnoughOptions")));
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrepeater"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](8, 2, ctx.viewModel$).controls);
         }
       },
-      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupName, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormArrayName, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormFieldModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatError, _angular_material_input__WEBPACK_IMPORTED_MODULE_8__.MatInput, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_4__.MatStepperNext, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_4__.MatStepperPrevious, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatButtonModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatIconButton, _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__.MatIcon, _angular_material_divider__WEBPACK_IMPORTED_MODULE_10__.MatDivider, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_9__.AsyncPipe],
+      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormControlName, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormGroupName, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormArrayName, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormFieldModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatError, _angular_material_input__WEBPACK_IMPORTED_MODULE_8__.MatInput, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_5__.MatStepperNext, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_5__.MatStepperPrevious, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatButtonModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatButton, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatIconButton, _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__.MatIcon, _angular_material_divider__WEBPACK_IMPORTED_MODULE_10__.MatDivider, _angular_common__WEBPACK_IMPORTED_MODULE_9__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_9__.AsyncPipe],
       styles: ["[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .error[_ngcontent-%COMP%]{color:var(--mat-sys-error)}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .choices-radio-option-container[_ngcontent-%COMP%]{display:flex;align-items:center;gap:1rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .choices-radio-option-container[_ngcontent-%COMP%]   mat-form-field[_ngcontent-%COMP%]{width:100%}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .choices-radio-option-container[_ngcontent-%COMP%]   .delete[_ngcontent-%COMP%]{color:var(--mat-sys-error)}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .choices-action-group[_ngcontent-%COMP%]{margin-bottom:1.7rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:space-between;margin-top:1rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font:var(--mat-sys-headline-small);font-weight:100}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]{font:var(--mat-sys-body-small)}"]
     });
   }
@@ -586,14 +586,14 @@ let ChoicesComponent = /*#__PURE__*/(() => {
 })();
 let AnswerComponent = /*#__PURE__*/(() => {
   class AnswerComponent {
-    answerFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+    answerFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_1__.input.required(...(ngDevMode ? [{
       debugName: "answerFormGroup"
     }] : []));
-    choices$ = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NgxEditorJs2PopQuizService).quizConfigForm$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_5__.map)(form => form.controls.choicesOptionsGroup.controls.choices));
+    choices$ = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(NgxEditorJs2PopQuizService).quizConfigForm$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_4__.map)(form => form.controls.choicesOptionsGroup.controls.choices));
     static ɵfac = function AnswerComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || AnswerComponent)();
     };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
       type: AnswerComponent,
       selectors: [["pop-quiz-answer"]],
       inputs: {
@@ -604,15 +604,15 @@ let AnswerComponent = /*#__PURE__*/(() => {
       consts: [[3, "formGroup"], [1, "answer-select"], ["formControlName", "answer", "required", ""], [3, "value"], [1, "action-group"], ["mat-flat-button", "", "matStepperPrevious", ""], ["mat-flat-button", "", "matStepperNext", ""]],
       template: function AnswerComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](0, AnswerComponent_Conditional_0_Template, 15, 2, "form", 0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](1, "async");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditionalCreate"](0, AnswerComponent_Conditional_0_Template, 15, 2, "form", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](1, "async");
         }
         if (rf & 2) {
           let tmp_0_0;
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"]((tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](1, 1, ctx.choices$)) ? 0 : -1, tmp_0_0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditional"]((tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](1, 1, ctx.choices$)) ? 0 : -1, tmp_0_0);
         }
       },
-      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControlName, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_4__.MatStepperNext, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_4__.MatStepperPrevious, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormFieldModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatError, _angular_material_core__WEBPACK_IMPORTED_MODULE_12__.MatOption, _angular_material_select__WEBPACK_IMPORTED_MODULE_13__.MatSelect, _angular_common__WEBPACK_IMPORTED_MODULE_9__.AsyncPipe],
+      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.RequiredValidator, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormControlName, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_5__.MatStepperNext, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_5__.MatStepperPrevious, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormFieldModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__.MatError, _angular_material_core__WEBPACK_IMPORTED_MODULE_12__.MatOption, _angular_material_select__WEBPACK_IMPORTED_MODULE_13__.MatSelect, _angular_common__WEBPACK_IMPORTED_MODULE_9__.AsyncPipe],
       styles: ["[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   mat-form-field[_ngcontent-%COMP%]{margin-bottom:1.5rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:space-between}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font:var(--mat-sys-headline-small);font-weight:100}"]
     });
   }
@@ -623,18 +623,18 @@ let AnswerComponent = /*#__PURE__*/(() => {
 })();
 let ResultsComponent = /*#__PURE__*/(() => {
   class ResultsComponent {
-    popQuizService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NgxEditorJs2PopQuizService);
-    resultsFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required(...(ngDevMode ? [{
+    popQuizService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(NgxEditorJs2PopQuizService);
+    resultsFormGroup = _angular_core__WEBPACK_IMPORTED_MODULE_1__.input.required(...(ngDevMode ? [{
       debugName: "resultsFormGroup"
     }] : []));
-    viewModel$ = this.popQuizService.quizConfigForm$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_5__.switchMap)(formGroup => formGroup.valueChanges), (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.map)(formValue => this.popQuizService.marshalFormGroupIntoFormValue(formValue)));
+    viewModel$ = this.popQuizService.quizConfigForm$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_4__.switchMap)(formGroup => formGroup.valueChanges), (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.map)(formValue => this.popQuizService.marshalFormGroupIntoFormValue(formValue)));
     emitNewFormValue() {
       this.popQuizService.updateParentFormGroupValue(this.resultsFormGroup().getRawValue());
     }
     static ɵfac = function ResultsComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || ResultsComponent)();
     };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
       type: ResultsComponent,
       selectors: [["pop-quiz-results"]],
       inputs: {
@@ -645,31 +645,31 @@ let ResultsComponent = /*#__PURE__*/(() => {
       consts: [[3, "formGroup"], [1, "preview-container"], [1, "action-group"], ["mat-flat-button", "", "matStepperPrevious", ""], ["mat-flat-button", "", 3, "click"], [1, "preview"], [3, "value"], [1, "preview-action-group"], ["mat-button", "", "type", "button"]],
       template: function ResultsComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form", 0)(1, "h3");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Preview of the Pop-Quiz");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "mat-divider");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](4, ResultsComponent_Conditional_4_Template, 12, 2, "div", 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](5, "async");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "mat-divider");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 2)(8, "button", 3);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Back");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "button", 4);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ResultsComponent_Template_button_click_10_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "form", 0)(1, "h3");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Preview of the Pop-Quiz");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "mat-divider");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditionalCreate"](4, ResultsComponent_Conditional_4_Template, 12, 2, "div", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](5, "async");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](6, "mat-divider");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "div", 2)(8, "button", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "Back");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "button", 4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ResultsComponent_Template_button_click_10_listener() {
             return ctx.emitNewFormValue();
           });
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Save");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "Save");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
         }
         if (rf & 2) {
           let tmp_1_0;
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.resultsFormGroup());
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"]((tmp_1_0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](5, 2, ctx.viewModel$)) ? 4 : -1, tmp_1_0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.resultsFormGroup());
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditional"]((tmp_1_0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](5, 2, ctx.viewModel$)) ? 4 : -1, tmp_1_0);
         }
       },
-      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_4__.MatStepperPrevious, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatButton, _angular_material_radio__WEBPACK_IMPORTED_MODULE_14__.MatRadioModule, _angular_material_radio__WEBPACK_IMPORTED_MODULE_14__.MatRadioGroup, _angular_material_radio__WEBPACK_IMPORTED_MODULE_14__.MatRadioButton, _angular_material_divider__WEBPACK_IMPORTED_MODULE_10__.MatDivider, _angular_common__WEBPACK_IMPORTED_MODULE_9__.AsyncPipe],
+      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormGroupDirective, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_5__.MatStepperPrevious, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatButton, _angular_material_radio__WEBPACK_IMPORTED_MODULE_14__.MatRadioModule, _angular_material_radio__WEBPACK_IMPORTED_MODULE_14__.MatRadioGroup, _angular_material_radio__WEBPACK_IMPORTED_MODULE_14__.MatRadioButton, _angular_material_divider__WEBPACK_IMPORTED_MODULE_10__.MatDivider, _angular_common__WEBPACK_IMPORTED_MODULE_9__.AsyncPipe],
       styles: ["[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:space-between;margin-top:1rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{font:var(--mat-sys-headline-small);font-weight:100}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   mat-radio-button[_ngcontent-%COMP%]{display:block}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .preview-container[_ngcontent-%COMP%]{display:flex;gap:1.5rem;flex-direction:column;align-items:flex-end;margin-bottom:1.5rem}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .preview-container[_ngcontent-%COMP%]   .preview[_ngcontent-%COMP%]{width:100%}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .preview-container[_ngcontent-%COMP%]   .preview-action-group[_ngcontent-%COMP%]{display:flex;flex-direction:row-reverse}"]
     });
   }
@@ -680,16 +680,16 @@ let ResultsComponent = /*#__PURE__*/(() => {
 })();
 let PopQuizConfigComponent = /*#__PURE__*/(() => {
   class PopQuizConfigComponent {
-    popQuizService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NgxEditorJs2PopQuizService);
-    viewModel$ = (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.combineLatest)({
+    popQuizService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(NgxEditorJs2PopQuizService);
+    viewModel$ = (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.combineLatest)({
       form: this.popQuizService.quizConfigForm$,
       value: this.popQuizService.quizConfigValue$
-    }).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_5__.map)(({
+    }).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_4__.map)(({
       value
     }) => ({
       form: this.popQuizService.initializeQuizConfigForm(value),
       value
-    })), (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.map)(({
+    })), (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.map)(({
       form,
       value
     }) => ({
@@ -704,7 +704,7 @@ let PopQuizConfigComponent = /*#__PURE__*/(() => {
     static ɵfac = function PopQuizConfigComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || PopQuizConfigComponent)();
     };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
       type: PopQuizConfigComponent,
       selectors: [["pop-quiz-config"]],
       decls: 2,
@@ -712,15 +712,15 @@ let PopQuizConfigComponent = /*#__PURE__*/(() => {
       consts: [["linear", "", 1, "mat-stepper", 3, "selectedIndex"], [3, "stepControl", "completed"], ["matStepLabel", ""], [3, "questionFormGroup"], [3, "choicesFormGroup"], [3, "answerFormGroup"], [3, "responsesFormGroup"], [3, "resultsFormGroup"]],
       template: function PopQuizConfigComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](0, PopQuizConfigComponent_Conditional_0_Template, 16, 16, "mat-stepper", 0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](1, "async");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditionalCreate"](0, PopQuizConfigComponent_Conditional_0_Template, 16, 16, "mat-stepper", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipe"](1, "async");
         }
         if (rf & 2) {
           let tmp_0_0;
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"]((tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](1, 1, ctx.viewModel$)) ? 0 : -1, tmp_0_0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵconditional"]((tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpipeBind1"](1, 1, ctx.viewModel$)) ? 0 : -1, tmp_0_0);
         }
       },
-      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_4__.MatStepperModule, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_4__.MatStep, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_4__.MatStepLabel, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_4__.MatStepper, QuestionComponent, ResponsesComponent, ChoicesComponent, AnswerComponent, ResultsComponent, _angular_common__WEBPACK_IMPORTED_MODULE_9__.AsyncPipe],
+      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.ReactiveFormsModule, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_5__.MatStepperModule, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_5__.MatStep, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_5__.MatStepLabel, _angular_material_stepper__WEBPACK_IMPORTED_MODULE_5__.MatStepper, QuestionComponent, ResponsesComponent, ChoicesComponent, AnswerComponent, ResultsComponent, _angular_common__WEBPACK_IMPORTED_MODULE_9__.AsyncPipe],
       styles: ["[_nghost-%COMP%]{border:1px solid #ccc;border-radius:var( --mat-card-outlined-container-shape, var(--mat-sys-corner-medium) )}[_nghost-%COMP%]   pop-quiz-question[_ngcontent-%COMP%]{padding-top:1rem}[_nghost-%COMP%]   mat-stepper.mat-stepper-vertical[_ngcontent-%COMP%], [_nghost-%COMP%]   mat-stepper.mat-stepper-horizontal[_ngcontent-%COMP%]{background:none}"]
     });
   }
@@ -731,15 +731,15 @@ let PopQuizConfigComponent = /*#__PURE__*/(() => {
 })();
 let NgxEditorJs2PopQuizComponent = /*#__PURE__*/(() => {
   class NgxEditorJs2PopQuizComponent {
-    popQuizService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(NgxEditorJs2PopQuizService);
-    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(0, ...(ngDevMode ? [{
+    popQuizService = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(NgxEditorJs2PopQuizService);
+    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.input)(0, ...(ngDevMode ? [{
       debugName: "sortIndex"
     }] : []));
     componentInstanceName = 'NgxEditorJs2PopQuizComponent';
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)(true, ...(ngDevMode ? [{
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.input)(true, ...(ngDevMode ? [{
       debugName: "autofocus"
     }] : []));
-    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required({
+    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_1__.input.required({
       ...(ngDevMode ? {
         debugName: "formGroup"
       } : {}),
@@ -748,7 +748,7 @@ let NgxEditorJs2PopQuizComponent = /*#__PURE__*/(() => {
         return value;
       }
     });
-    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_0__.input.required({
+    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_1__.input.required({
       ...(ngDevMode ? {
         debugName: "formControlName"
       } : {}),
@@ -757,7 +757,7 @@ let NgxEditorJs2PopQuizComponent = /*#__PURE__*/(() => {
         return value;
       }
     });
-    blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.input)([{
+    blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.input)([{
       action: 'medium',
       icon: 'density_small'
     }, {
@@ -770,7 +770,7 @@ let NgxEditorJs2PopQuizComponent = /*#__PURE__*/(() => {
       debugName: "blockOptionActions"
     }] : []));
     value = this.popQuizService.quizConfigValue$;
-    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.signal)('display-large', ...(ngDevMode ? [{
+    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.signal)('display-large', ...(ngDevMode ? [{
       debugName: "savedAction"
     }] : []));
     actionCallbackBind = this.actionCallback.bind(this);
@@ -782,13 +782,14 @@ let NgxEditorJs2PopQuizComponent = /*#__PURE__*/(() => {
         console.warn('Error parseing Quiz values', error);
       }
     }
-    actionCallback(action) {
+    actionCallback(action, updateFormValue = true) {
       this.savedAction.update(() => action);
+      updateFormValue && this.formGroup().updateValueAndValidity();
     }
     static ɵfac = function NgxEditorJs2PopQuizComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || NgxEditorJs2PopQuizComponent)();
     };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
       type: NgxEditorJs2PopQuizComponent,
       selectors: [["ngx-editor-js2-pop-quiz"]],
       hostAttrs: [1, "cdk-drag-animating", "no-toolbar-inline"],
@@ -799,23 +800,23 @@ let NgxEditorJs2PopQuizComponent = /*#__PURE__*/(() => {
         formControlName: [1, "formControlName"],
         blockOptionActions: [1, "blockOptionActions"]
       },
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([NgxEditorJs2PopQuizService]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵHostDirectivesFeature"]([_angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_2__.CdkDrag])],
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵProvidersFeature"]([NgxEditorJs2PopQuizService]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵHostDirectivesFeature"]([_angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_0__.CdkDrag])],
       decls: 3,
       vars: 6,
       consts: [[3, "formGroup"], ["controlAccessor", "", "toolbarFab", "", 1, "pop-quiz-container-overlay", 3, "actionCallback", "autofocus", "blockOptionActions", "formControlName", "componentContextPositionIndex"]],
       template: function NgxEditorJs2PopQuizComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0, 0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "span", 1)(2, "pop-quiz-config");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerStart"](0, 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "span", 1)(2, "pop-quiz-config");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementContainerEnd"]();
         }
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.formGroup());
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("actionCallback", ctx.actionCallbackBind)("autofocus", ctx.autofocus())("blockOptionActions", ctx.blockOptionActions())("formControlName", ctx.formControlName())("componentContextPositionIndex", ctx.sortIndex());
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.formGroup());
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("actionCallback", ctx.actionCallbackBind)("autofocus", ctx.autofocus())("blockOptionActions", ctx.blockOptionActions())("formControlName", ctx.formControlName())("componentContextPositionIndex", ctx.sortIndex());
         }
       },
-      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_1__.FormControlName, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_3__.ControlAccessorDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_3__.AutofocusDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_3__.ToolbarFabDirective, PopQuizConfigComponent],
+      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormControlName, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_3__.ControlAccessorDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_3__.AutofocusDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_3__.ToolbarFabDirective, PopQuizConfigComponent],
       styles: ["[_nghost-%COMP%]{position:relative;display:flex;flex-direction:column;margin:1.5rem 0}[_nghost-%COMP%]   .pop-quiz-container-overlay[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;position:absolute}"]
     });
   }
@@ -1635,7 +1636,7 @@ let EditorJsService = /*#__PURE__*/(() => {
         componentRef.setInput('formGroup', this.formGroup);
         componentRef.setInput('formControlName', controlName);
         componentRef.setInput('autofocus', autofocus);
-        savedAction && componentRef.instance.actionCallback?.(savedAction);
+        savedAction && componentRef.instance.actionCallback?.(savedAction, false);
         this.blockMovementService.newComponentAttached(componentRef);
         return componentRef;
       }));
@@ -1649,7 +1650,9 @@ let EditorJsService = /*#__PURE__*/(() => {
       }), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.switchMap)(() => this.blockMovementService.updateComponentIndices(this.ngxEditor)), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.defaultIfEmpty)(false));
     }
     removeBlockComponent(index, formControlName, clear = false) {
-      return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.combineLatest)([this.blockMovementService.removeBlockComponent(this.ngxEditor, index, clear), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(this.formGroup.removeControl(formControlName))]);
+      return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.combineLatest)([this.blockMovementService.removeBlockComponent(this.ngxEditor, index, clear), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(this.formGroup.removeControl(formControlName, {
+        emitEvent: !clear
+      }))]);
     }
     clearBlocks() {
       return this.blockMovementService.getNgxEditorJsBlocks().pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_2__.filter)(componentRefs => componentRefs.length > 0), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.map)(componentRefs => componentRefs.sort((a, b) => a.instance.sortIndex() - b.instance.sortIndex())), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.mergeMap)(componentRefs => (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.forkJoin)(Array.from(componentRefs.values()).map(componentRef => this.removeBlockComponent(componentRef.instance.sortIndex() + 1, componentRef.instance.formControlName(), true)))), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.switchMap)(() => this.blockMovementService.updateComponentIndices(this.ngxEditor)), (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.tap)(() => {
@@ -1855,8 +1858,9 @@ let HeaderBlockComponent = /*#__PURE__*/(() => {
       debugName: "savedAction"
     }] : []));
     actionCallbackBind = this.actionCallback.bind(this);
-    actionCallback(selectedAction) {
+    actionCallback(selectedAction, updateFormValue = true) {
       this.savedAction.set(selectedAction);
+      updateFormValue && this.formGroup().updateValueAndValidity();
     }
     static ɵfac = function HeaderBlockComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || HeaderBlockComponent)();
@@ -1937,8 +1941,9 @@ let ParagraphBlockComponent = /*#__PURE__*/(() => {
       debugName: "savedAction"
     }] : []));
     actionCallbackBind = this.actionCallback.bind(this);
-    actionCallback(action) {
+    actionCallback(action, updateFormValue = true) {
       this.savedAction.update(() => action);
+      updateFormValue && this.formGroup().updateValueAndValidity();
     }
     static ɵfac = function ParagraphBlockComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || ParagraphBlockComponent)();

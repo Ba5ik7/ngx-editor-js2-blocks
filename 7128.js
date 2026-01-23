@@ -65,8 +65,9 @@ let NgxEditorJs2PanelComponent = /*#__PURE__*/(() => {
       tip: 'lightbulb',
       warning: 'warning'
     };
-    actionCallback(action) {
+    actionCallback(action, updateFormValue = true) {
       this.savedAction.update(() => action);
+      updateFormValue && this.formGroup().updateValueAndValidity();
     }
     static ɵfac = function NgxEditorJs2PanelComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || NgxEditorJs2PanelComponent)();

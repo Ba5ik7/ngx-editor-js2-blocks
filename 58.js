@@ -746,13 +746,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 11674);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 51356);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 14332);
-/* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
-/* harmony import */ var _angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core/rxjs-interop */ 51404);
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/button */ 31944);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/form-field */ 66080);
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/input */ 91638);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs */ 44866);
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/icon */ 81836);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/button */ 31944);
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/icon */ 81836);
+/* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
+/* harmony import */ var _angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core/rxjs-interop */ 51404);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/form-field */ 66080);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/input */ 91638);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ 44866);
 
 
 
@@ -867,7 +867,7 @@ const _c0 = ["mfeHost"];
 function NgxEditorJs2MfeLoaderComponent_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 3)(1, "button", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 3)(1, "button", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function NgxEditorJs2MfeLoaderComponent_Conditional_2_Template_button_click_1_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r1);
       const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
@@ -885,7 +885,7 @@ function NgxEditorJs2MfeLoaderComponent_Conditional_2_Template(rf, ctx) {
 function NgxEditorJs2MfeLoaderComponent_Conditional_3_Template(rf, ctx) {
   if (rf & 1) {
     const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mfe-loader-config", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mfe-loader-config", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("mfeValue", function NgxEditorJs2MfeLoaderComponent_Conditional_3_Template_mfe_loader_config_mfeValue_0_listener($event) {
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r3);
       const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
@@ -898,6 +898,80 @@ function NgxEditorJs2MfeLoaderComponent_Conditional_3_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("value", ctx_r1.value());
   }
 }
+function NgxEditorJs2MfeLoaderComponent_Conditional_6_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mfe-loader-error-dialog", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("close", function NgxEditorJs2MfeLoaderComponent_Conditional_6_Template_mfe_loader_error_dialog_close_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r4);
+      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r1.closeErrorDialog());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("errorMessage", ctx_r1.errorLoadingMfeMessage());
+  }
+}
+let ErrorDialog = /*#__PURE__*/(() => {
+  class ErrorDialog {
+    errorMessage = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.input)(...(ngDevMode ? [undefined, {
+      debugName: "errorMessage"
+    }] : []));
+    close = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.output)();
+    static ɵfac = function ErrorDialog_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || ErrorDialog)();
+    };
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+      type: ErrorDialog,
+      selectors: [["mfe-loader-error-dialog"]],
+      inputs: {
+        errorMessage: [1, "errorMessage"]
+      },
+      outputs: {
+        close: "close"
+      },
+      decls: 12,
+      vars: 1,
+      consts: [[1, "error-dialog-backdrop", 3, "click"], [1, "error-dialog"], [1, "error-dialog-header"], [1, "close-icon", 3, "click"]],
+      template: function ErrorDialog_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ErrorDialog_Template_div_click_0_listener() {
+            return ctx.close.emit();
+          });
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 1)(2, "div", 2)(3, "h3");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "Error Loading MFE");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "mat-icon", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ErrorDialog_Template_mat_icon_click_5_listener() {
+            return ctx.close.emit();
+          });
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](6, "close");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](7, "p");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](8, "An error occurred while trying to load the MFE remote module:");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "pre")(10, "code");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
+        }
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](ctx.errorMessage());
+        }
+      },
+      dependencies: [_angular_material_icon__WEBPACK_IMPORTED_MODULE_7__.MatIcon],
+      styles: ["[_nghost-%COMP%]{display:flex;justify-content:center;align-items:center}.error-dialog-backdrop[_ngcontent-%COMP%]{position:absolute;width:100%;height:100%;z-index:-1;background:#000000b3}.error-dialog[_ngcontent-%COMP%]{color:var(--mat-sys-on-error-container);background:var(--mat-sys-error-container);padding:20px;border-radius:8px;max-width:80%}.error-dialog-header[_ngcontent-%COMP%]{display:flex;justify-content:space-between;align-items:center}.close-icon[_ngcontent-%COMP%]{cursor:pointer}pre[_ngcontent-%COMP%]{color:var(--mat-sys-on-background);background:var(--mat-sys-background);padding:10px;border-radius:4px;max-height:300px;overflow:auto}"]
+    });
+  }
+  return ErrorDialog;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
 let MfeLoaderConfigComponent = /*#__PURE__*/(() => {
   class MfeLoaderConfigComponent {
     formBuilder = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.inject)(_angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormBuilder);
@@ -908,9 +982,9 @@ let MfeLoaderConfigComponent = /*#__PURE__*/(() => {
     }, ...(ngDevMode ? [{
       debugName: "value"
     }] : []));
-    value$ = (0,_angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_7__.toObservable)(this.value);
+    value$ = (0,_angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_9__.toObservable)(this.value);
     mfeValue = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.output)();
-    viewModel$ = this.value$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_11__.map)(value => ({
+    viewModel$ = this.value$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_12__.map)(value => ({
       mfeLoaderConfigForm: this.formBuilder.group({
         url: [value.url, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]],
         remoteName: [value.remoteName, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]],
@@ -924,9 +998,9 @@ let MfeLoaderConfigComponent = /*#__PURE__*/(() => {
         remoteName: '',
         exposedModule: ''
       }
-    })), (0,rxjs__WEBPACK_IMPORTED_MODULE_11__.mergeMap)(viewModel => this.watchStatusChanges(viewModel).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_11__.startWith)(null), (0,rxjs__WEBPACK_IMPORTED_MODULE_11__.withLatestFrom)((0,rxjs__WEBPACK_IMPORTED_MODULE_11__.of)(viewModel)), (0,rxjs__WEBPACK_IMPORTED_MODULE_11__.map)(([_status, vm]) => vm))));
+    })), (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.mergeMap)(viewModel => this.watchStatusChanges(viewModel).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_12__.startWith)(null), (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.withLatestFrom)((0,rxjs__WEBPACK_IMPORTED_MODULE_12__.of)(viewModel)), (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.map)(([_status, vm]) => vm))));
     watchStatusChanges(viewModel) {
-      return viewModel.mfeLoaderConfigForm.statusChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_11__.tap)(() => this.setErrorsMessages(viewModel)));
+      return viewModel.mfeLoaderConfigForm.statusChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_12__.tap)(() => this.setErrorsMessages(viewModel)));
     }
     updateMfeURL(mfeLoaderConfigForm) {
       this.mfeValue.emit(mfeLoaderConfigForm.value);
@@ -978,7 +1052,7 @@ let MfeLoaderConfigComponent = /*#__PURE__*/(() => {
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditional"]((tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](1, 1, ctx.viewModel$)) ? 0 : -1, tmp_0_0);
         }
       },
-      dependencies: [_angular_material_input__WEBPACK_IMPORTED_MODULE_10__.MatInput, _angular_material_button__WEBPACK_IMPORTED_MODULE_8__.MatButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__.MatFormFieldModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__.MatError, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControlName, _angular_common__WEBPACK_IMPORTED_MODULE_3__.AsyncPipe],
+      dependencies: [_angular_material_input__WEBPACK_IMPORTED_MODULE_11__.MatInput, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__.MatFormFieldModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__.MatError, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControlName, _angular_common__WEBPACK_IMPORTED_MODULE_3__.AsyncPipe],
       styles: ["[_nghost-%COMP%]{border:.5px solid #ccc;border-radius:4px;padding:20px}[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:10px}"]
     });
   }
@@ -1029,6 +1103,12 @@ let NgxEditorJs2MfeLoaderComponent = /*#__PURE__*/(() => {
     openOverlay = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.signal)(true, ...(ngDevMode ? [{
       debugName: "openOverlay"
     }] : []));
+    errorLoadingMfe = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.signal)(false, ...(ngDevMode ? [{
+      debugName: "errorLoadingMfe"
+    }] : []));
+    errorLoadingMfeMessage = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.signal)('', ...(ngDevMode ? [{
+      debugName: "errorLoadingMfeMessage"
+    }] : []));
     ngOnInit() {
       try {
         const possibleSavedValue = this.formGroup().get(this.formControlName());
@@ -1047,8 +1127,9 @@ let NgxEditorJs2MfeLoaderComponent = /*#__PURE__*/(() => {
       if (!url || !remoteName || !exposedModule) return;
       this.updateMfeRemote(this.value());
     }
-    actionCallback(action) {
+    actionCallback(action, updateFormValue = true) {
       this.savedAction.update(() => action);
+      updateFormValue && this.formGroup().updateValueAndValidity();
     }
     openEditUrlOverlay() {
       this.openOverlay.set(true);
@@ -1066,11 +1147,19 @@ let NgxEditorJs2MfeLoaderComponent = /*#__PURE__*/(() => {
           _this.mfeHost.createComponent(remoteComponent[value.remoteName]);
         } catch (error) {
           console.error('[MFE LOAD ERROR]', error);
+          _this.openOverlay.set(true);
+          _this.errorLoadingMfeMessage.set(error.message || 'Unknown error loading MFE');
+          _this.errorLoadingMfe.set(true);
+          return;
         }
         _this.value.set(value);
         _this.formGroup().get(_this.formControlName())?.setValue(JSON.stringify(value));
         _this.openOverlay.set(false);
       })();
+    }
+    closeErrorDialog() {
+      this.errorLoadingMfe.set(false);
+      this.errorLoadingMfeMessage.set('');
     }
     static ɵfac = function NgxEditorJs2MfeLoaderComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || NgxEditorJs2MfeLoaderComponent)();
@@ -1096,9 +1185,9 @@ let NgxEditorJs2MfeLoaderComponent = /*#__PURE__*/(() => {
         blockOptionActions: [1, "blockOptionActions"]
       },
       features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵHostDirectivesFeature"]([_angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_2__.CdkDrag])],
-      decls: 6,
-      vars: 7,
-      consts: [["mfeHost", ""], [3, "formGroup"], ["controlAccessor", "", "toolbarFab", "", 1, "mfe-container-overlay", 3, "actionCallback", "autofocus", "blockOptionActions", "formControlName", "componentContextPositionIndex"], [1, "mfe-container", 3, "ngClass"], [3, "value"], ["mat-fab", "", 1, "mfe-block-button", 3, "click"], [3, "mfeValue", "value"]],
+      decls: 7,
+      vars: 8,
+      consts: [["mfeHost", ""], [3, "formGroup"], ["controlAccessor", "", "toolbarFab", "", 1, "mfe-container-overlay", 3, "actionCallback", "autofocus", "blockOptionActions", "formControlName", "componentContextPositionIndex"], [1, "mfe-container", 3, "ngClass"], [3, "value"], [3, "errorMessage"], ["mat-fab", "", 1, "mfe-block-button", 3, "click"], [3, "mfeValue", "value"], [3, "close", "errorMessage"]],
       template: function NgxEditorJs2MfeLoaderComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerStart"](0, 1);
@@ -1106,6 +1195,7 @@ let NgxEditorJs2MfeLoaderComponent = /*#__PURE__*/(() => {
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditionalCreate"](2, NgxEditorJs2MfeLoaderComponent_Conditional_2_Template, 4, 1, "div", 3)(3, NgxEditorJs2MfeLoaderComponent_Conditional_3_Template, 1, 1, "mfe-loader-config", 4);
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainer"](4, null, 0);
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditionalCreate"](6, NgxEditorJs2MfeLoaderComponent_Conditional_6_Template, 1, 1, "mfe-loader-error-dialog", 5);
         }
         if (rf & 2) {
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("formGroup", ctx.formGroup());
@@ -1113,10 +1203,12 @@ let NgxEditorJs2MfeLoaderComponent = /*#__PURE__*/(() => {
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("actionCallback", ctx.actionCallbackBind)("autofocus", ctx.autofocus())("blockOptionActions", ctx.blockOptionActions())("formControlName", ctx.formControlName())("componentContextPositionIndex", ctx.sortIndex());
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
           _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditional"](!ctx.openOverlay() ? 2 : 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditional"](ctx.errorLoadingMfe() ? 6 : -1);
         }
       },
-      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControlName, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_6__.ControlAccessorDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_6__.AutofocusDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_6__.ToolbarFabDirective, MfeLoaderConfigComponent, _angular_material_button__WEBPACK_IMPORTED_MODULE_8__.MatFabButton, _angular_material_icon__WEBPACK_IMPORTED_MODULE_12__.MatIcon, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgClass],
-      styles: ["[_nghost-%COMP%]{position:relative;display:flex;flex-direction:column;margin:1.5rem 0}[_nghost-%COMP%]   .mfe-container-overlay[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;position:absolute}[_nghost-%COMP%]   .mfe-container-overlay[_ngcontent-%COMP%]:hover ~ .mfe-container[_ngcontent-%COMP%]   .mfe-block-button[_ngcontent-%COMP%], [_nghost-%COMP%]   .mfe-block-button[_ngcontent-%COMP%]:hover{display:block}[_nghost-%COMP%]   .mfe-container[_ngcontent-%COMP%]{display:flex}[_nghost-%COMP%]   .mfe-container[_ngcontent-%COMP%]   .mfe-block[_ngcontent-%COMP%]{min-width:0}[_nghost-%COMP%]   .mfe-container[_ngcontent-%COMP%]   .mfe-block-button[_ngcontent-%COMP%]{position:absolute;top:6px;left:6px;display:none}"]
+      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControlName, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_8__.ControlAccessorDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_8__.AutofocusDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_8__.ToolbarFabDirective, MfeLoaderConfigComponent, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatFabButton, _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__.MatIcon, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgClass, ErrorDialog],
+      styles: ["[_nghost-%COMP%]{position:relative;display:flex;flex-direction:column;margin:1.5rem 0}[_nghost-%COMP%]   .mfe-container-overlay[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;position:absolute}[_nghost-%COMP%]   .mfe-container-overlay[_ngcontent-%COMP%]:hover ~ .mfe-container[_ngcontent-%COMP%]   .mfe-block-button[_ngcontent-%COMP%], [_nghost-%COMP%]   .mfe-block-button[_ngcontent-%COMP%]:hover{display:block}[_nghost-%COMP%]   .mfe-container[_ngcontent-%COMP%]{display:flex}[_nghost-%COMP%]   .mfe-container[_ngcontent-%COMP%]   .mfe-block[_ngcontent-%COMP%]{min-width:0}[_nghost-%COMP%]   .mfe-container[_ngcontent-%COMP%]   .mfe-block-button[_ngcontent-%COMP%]{position:absolute;top:6px;left:6px;display:none}[_nghost-%COMP%]   mfe-loader-error-dialog[_ngcontent-%COMP%]{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}"]
     });
   }
   return NgxEditorJs2MfeLoaderComponent;

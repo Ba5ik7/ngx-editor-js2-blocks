@@ -307,13 +307,13 @@ __webpack_require__.d(exports, {
 /******/ 				register("@angular/platform-browser/animations/async", "21.1.0", () => (__webpack_require__.e(9192).then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/platform-browser/fesm2022/animations-async.mjs */ 39192))))));
 /******/ 				register("@angular/platform-browser", "21.1.0", () => (__webpack_require__.e(436).then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs */ 80436))))));
 /******/ 				register("mermaid", "11.7.0", () => (__webpack_require__.e(3939).then(() => (() => (__webpack_require__(/*! ./node_modules/mermaid/dist/mermaid.core.mjs */ 3939))))));
-/******/ 				register("ngx-editor-js2-blockquotes", "21.0.1", () => (__webpack_require__.e(2239).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-blockquotes/fesm2022/tmdjr-ngx-editor-js2-blockquotes.mjs */ 52239))))));
-/******/ 				register("ngx-editor-js2-codemirror", "21.0.1", () => (__webpack_require__.e(9305).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-codemirror/fesm2022/tmdjr-ngx-editor-js2-codemirror.mjs */ 59305))))));
-/******/ 				register("ngx-editor-js2-image", "21.0.1", () => (__webpack_require__.e(7887).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-image/fesm2022/tmdjr-ngx-editor-js2-image.mjs */ 57887))))));
-/******/ 				register("ngx-editor-js2-mermaidjs", "21.0.1", () => (__webpack_require__.e(59).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-mermaidjs/fesm2022/tmdjr-ngx-editor-js2-mermaidjs.mjs */ 10059))))));
-/******/ 				register("ngx-editor-js2-mfe-loader", "21.0.1", () => (__webpack_require__.e(7677).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-mfe-loader/fesm2022/tmdjr-ngx-editor-js2-mfe-loader.mjs */ 87677))))));
-/******/ 				register("ngx-editor-js2-panel", "21.0.1", () => (__webpack_require__.e(4747).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-panel/fesm2022/tmdjr-ngx-editor-js2-panel.mjs */ 44747))))));
-/******/ 				register("ngx-editor-js2-pop-quiz", "21.0.1", () => (__webpack_require__.e(2015).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-pop-quiz/fesm2022/tmdjr-ngx-editor-js2-pop-quiz.mjs */ 2015))))));
+/******/ 				register("ngx-editor-js2-blockquotes", "21.0.2", () => (__webpack_require__.e(2239).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-blockquotes/fesm2022/tmdjr-ngx-editor-js2-blockquotes.mjs */ 52239))))));
+/******/ 				register("ngx-editor-js2-codemirror", "21.0.2", () => (__webpack_require__.e(9305).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-codemirror/fesm2022/tmdjr-ngx-editor-js2-codemirror.mjs */ 59305))))));
+/******/ 				register("ngx-editor-js2-image", "21.0.2", () => (__webpack_require__.e(7887).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-image/fesm2022/tmdjr-ngx-editor-js2-image.mjs */ 57887))))));
+/******/ 				register("ngx-editor-js2-mermaidjs", "21.0.2", () => (__webpack_require__.e(59).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-mermaidjs/fesm2022/tmdjr-ngx-editor-js2-mermaidjs.mjs */ 10059))))));
+/******/ 				register("ngx-editor-js2-mfe-loader", "21.0.3", () => (__webpack_require__.e(7677).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-mfe-loader/fesm2022/tmdjr-ngx-editor-js2-mfe-loader.mjs */ 87677))))));
+/******/ 				register("ngx-editor-js2-panel", "21.0.2", () => (__webpack_require__.e(4747).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-panel/fesm2022/tmdjr-ngx-editor-js2-panel.mjs */ 44747))))));
+/******/ 				register("ngx-editor-js2-pop-quiz", "21.0.2", () => (__webpack_require__.e(2015).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-pop-quiz/fesm2022/tmdjr-ngx-editor-js2-pop-quiz.mjs */ 2015))))));
 /******/ 				register("rxjs/operators", "7.8.0", () => (__webpack_require__.e(8219).then(() => (() => (__webpack_require__(/*! ./node_modules/rxjs/dist/esm/operators/index.js */ 98219))))));
 /******/ 				register("rxjs", "7.8.0", () => (__webpack_require__.e(845).then(() => (() => (__webpack_require__(/*! ./node_modules/rxjs/dist/esm/index.js */ 80845))))));
 /******/ 			}
@@ -489,12 +489,12 @@ __webpack_require__.d(exports, {
 /******/ 		91200: () => (loadStrictSingletonVersion("default", "@angular/material/tooltip", false, [1,21,1,0], () => (__webpack_require__.e(640).then(() => (() => (__webpack_require__(/*! @angular/material/tooltip */ 80640))))))),
 /******/ 		79452: () => (loadStrictSingletonVersion("default", "@angular/material/slide-toggle", false, [1,21,1,0], () => (__webpack_require__.e(8827).then(() => (() => (__webpack_require__(/*! @angular/material/slide-toggle */ 8827))))))),
 /******/ 		44866: () => (loadStrictSingletonVersion("default", "rxjs", false, [2,7,8,0], () => (__webpack_require__.e(845).then(() => (() => (__webpack_require__(/*! rxjs */ 80845))))))),
+/******/ 		11674: () => (loadStrictSingletonVersion("default", "@angular/common", false, [1,21,1,0], () => (__webpack_require__.e(7935).then(() => (() => (__webpack_require__(/*! @angular/common */ 60316))))))),
 /******/ 		16888: () => (loadStrictSingletonVersion("default", "@angular/material/card", false, [1,21,1,0], () => (__webpack_require__.e(3777).then(() => (() => (__webpack_require__(/*! @angular/material/card */ 53777))))))),
 /******/ 		14332: () => (loadStrictSingletonVersion("default", "@angular/forms", false, [1,21,1,0], () => (__webpack_require__.e(4456).then(() => (() => (__webpack_require__(/*! @angular/forms */ 34456))))))),
 /******/ 		61488: () => (loadStrictSingletonVersion("default", "@angular/material/core", false, [1,21,1,0], () => (__webpack_require__.e(2265).then(() => (() => (__webpack_require__(/*! @angular/material/core */ 74646))))))),
 /******/ 		8778: () => (loadStrictSingletonVersion("default", "@angular/cdk/drag-drop", false, [1,21,1,0], () => (__webpack_require__.e(8473).then(() => (() => (__webpack_require__(/*! @angular/cdk/drag-drop */ 50854))))))),
 /******/ 		20026: () => (loadStrictSingletonVersion("default", "@angular/cdk/overlay", false, [1,21,1,0], () => (__webpack_require__.e(9189).then(() => (() => (__webpack_require__(/*! @angular/cdk/overlay */ 81570))))))),
-/******/ 		11674: () => (loadStrictSingletonVersion("default", "@angular/common", false, [1,21,1,0], () => (__webpack_require__.e(7935).then(() => (() => (__webpack_require__(/*! @angular/common */ 60316))))))),
 /******/ 		51404: () => (loadStrictSingletonVersion("default", "@angular/core/rxjs-interop", false, [1,21,1,0], () => (__webpack_require__.e(6693).then(() => (() => (__webpack_require__(/*! @angular/core/rxjs-interop */ 49074))))))),
 /******/ 		66080: () => (loadStrictSingletonVersion("default", "@angular/material/form-field", false, [1,21,1,0], () => (__webpack_require__.e(2569).then(() => (() => (__webpack_require__(/*! @angular/material/form-field */ 24950))))))),
 /******/ 		91638: () => (loadStrictSingletonVersion("default", "@angular/material/input", false, [1,21,1,0], () => (__webpack_require__.e(7922).then(() => (() => (__webpack_require__(/*! @angular/material/input */ 95541))))))),
@@ -814,12 +814,12 @@ __webpack_require__.d(exports, {
 /******/ 			91200,
 /******/ 			79452,
 /******/ 			44866,
+/******/ 			11674,
 /******/ 			16888,
 /******/ 			14332,
 /******/ 			61488,
 /******/ 			8778,
 /******/ 			20026,
-/******/ 			11674,
 /******/ 			51404,
 /******/ 			66080,
 /******/ 			91638,

@@ -32,11 +32,8 @@ paragraph-block.cdk-drag-preview *:not(toolbar, ul) {
   margin: 0 !important;
 }
 paragraph-block.cdk-drag-preview p ul {
-  margin: 0 0 14px 0 !important;
   padding-left: 40px !important;
-}
-paragraph-block.cdk-drag-preview p ul:not(:first-child) {
-  margin: 14px 0 14px 0 !important;
+  margin: 1em 0 !important;
 }
 
 ngx-editor-js2-blockquotes.cdk-drag-preview *:not(toolbar, ul) {
