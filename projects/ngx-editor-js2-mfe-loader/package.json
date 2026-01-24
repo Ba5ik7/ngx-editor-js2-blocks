@@ -1,6 +1,6 @@
 {
   "name": "@tmdjr/ngx-editor-js2-mfe-loader",
-  "version": "21.0.3",
+  "version": "21.0.4",
   "peerDependencies": {
     "@angular/animations": "^21.1.0",
     "@angular/cdk": "^21.1.0",

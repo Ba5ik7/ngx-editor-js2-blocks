@@ -1,6 +1,7 @@
 import { CdkDrag } from '@angular/cdk/drag-drop';
 import { NgClass } from '@angular/common';
 import {
+  ChangeDetectorRef,
   Component,
   inject,
   input,
@@ -141,6 +142,7 @@ mermaid.parseError = function (err: any, hash: any) {
   `,
 })
 export class NgxEditorJs2MermaidjsComponent {
+  changeDetectorRef = inject(ChangeDetectorRef);
   ngZone = inject(NgZone);
   mermaid = mermaid;
 
@@ -172,6 +174,7 @@ export class NgxEditorJs2MermaidjsComponent {
   ngOnInit() {
     this.ngZone.runOutsideAngular(() => {
       this.mermaid.initialize({ startOnLoad: false });
+      this.changeDetectorRef.markForCheck();
     });
     const possibleSavedValue = this.formGroup().get(this.formControlName());
     this.value = possibleSavedValue?.value
