@@ -180,13 +180,15 @@ export class NgxEditorJs2MermaidjsComponent {
       ? possibleSavedValue.value
       : this.value;
     this.renderMermaidDiagram(this.value);
-    this.changeDetectorRef.markForCheck();
   }
 
   renderMermaidDiagram(mermaidDiagram: string): void {
     this.ngZone.runOutsideAngular(() => {
       this.mermaid.render(this.genUniqueId(), mermaidDiagram).then(
-        (data) => this.ngZone.run(() => (this.mermaidDiagramSVG = data.svg)),
+        (data) => {
+          this.changeDetectorRef.markForCheck();
+          this.ngZone.run(() => (this.mermaidDiagramSVG = data.svg));
+        },
         (error) => console.warn(`Error: ${error}`)
       );
     });
