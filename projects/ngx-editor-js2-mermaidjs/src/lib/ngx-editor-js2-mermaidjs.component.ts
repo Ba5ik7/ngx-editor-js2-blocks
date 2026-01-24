@@ -174,13 +174,13 @@ export class NgxEditorJs2MermaidjsComponent {
   ngOnInit() {
     this.ngZone.runOutsideAngular(() => {
       this.mermaid.initialize({ startOnLoad: false });
-      this.changeDetectorRef.markForCheck();
     });
     const possibleSavedValue = this.formGroup().get(this.formControlName());
     this.value = possibleSavedValue?.value
       ? possibleSavedValue.value
       : this.value;
     this.renderMermaidDiagram(this.value);
+    this.changeDetectorRef.markForCheck();
   }
 
   renderMermaidDiagram(mermaidDiagram: string): void {
