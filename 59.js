@@ -238,11 +238,13 @@ let NgxEditorJs2MermaidjsComponent = /*#__PURE__*/(() => {
       const possibleSavedValue = this.formGroup().get(this.formControlName());
       this.value = possibleSavedValue?.value ? possibleSavedValue.value : this.value;
       this.renderMermaidDiagram(this.value);
-      this.changeDetectorRef.markForCheck();
     }
     renderMermaidDiagram(mermaidDiagram) {
       this.ngZone.runOutsideAngular(() => {
-        this.mermaid.render(this.genUniqueId(), mermaidDiagram).then(data => this.ngZone.run(() => this.mermaidDiagramSVG = data.svg), error => console.warn(`Error: ${error}`));
+        this.mermaid.render(this.genUniqueId(), mermaidDiagram).then(data => {
+          this.changeDetectorRef.markForCheck();
+          this.ngZone.run(() => this.mermaidDiagramSVG = data.svg);
+        }, error => console.warn(`Error: ${error}`));
       });
     }
     actionCallback(action, updateFormValue = true) {
