@@ -19,7 +19,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _not_found_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_not_found-chunk.mjs */ 78330);
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */

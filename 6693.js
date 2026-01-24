@@ -302,7 +302,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core/primitives/signals */ 95094);
 /* harmony import */ var _angular_core_primitives_di__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core/primitives/di */ 20144);
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -325,7 +325,7 @@ class Version {
     this.patch = parts.slice(2).join('.');
   }
 }
-const VERSION = /* @__PURE__ */new Version('21.1.0');
+const VERSION = /* @__PURE__ */new Version('21.1.1');
 const DOC_PAGE_BASE_URL = /*#__PURE__*/(() => {
   const full = VERSION.full;
   const isPreRelease = full.includes('-next') || full.includes('-rc') || full === '0.0.0' + '-PLACEHOLDER';
@@ -3275,7 +3275,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   untracked: () => (/* binding */ untracked)
 /* harmony export */ });
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -3724,7 +3724,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core/primitives/signals */ 95094);
 /* harmony import */ var _angular_core_primitives_di__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core/primitives/di */ 20144);
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -3999,7 +3999,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _linked_signal_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_linked_signal-chunk.mjs */ 68262);
 
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -4403,7 +4403,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_effect-chunk.mjs */ 29843);
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -4505,7 +4505,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setCurrentInjector: () => (/* binding */ setCurrentInjector)
 /* harmony export */ });
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */

@@ -184,6 +184,7 @@ mermaid.parseError = function (err, hash) {
 };
 let NgxEditorJs2MermaidjsComponent = /*#__PURE__*/(() => {
   class NgxEditorJs2MermaidjsComponent {
+    changeDetectorRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_2__.ChangeDetectorRef);
     ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_2__.NgZone);
     mermaid = mermaid;
     sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(0, ...(ngDevMode ? [{
@@ -233,6 +234,7 @@ let NgxEditorJs2MermaidjsComponent = /*#__PURE__*/(() => {
         this.mermaid.initialize({
           startOnLoad: false
         });
+        this.changeDetectorRef.markForCheck();
       });
       const possibleSavedValue = this.formGroup().get(this.formControlName());
       this.value = possibleSavedValue?.value ? possibleSavedValue.value : this.value;

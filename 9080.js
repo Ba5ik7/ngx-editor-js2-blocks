@@ -11,7 +11,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setAlternateWeakRefImpl: () => (/* binding */ setAlternateWeakRefImpl)
 /* harmony export */ });
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -74,7 +74,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _linked_signal_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_linked_signal-chunk.mjs */ 68262);
 /* harmony import */ var _weak_ref_chunk_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_weak_ref-chunk.mjs */ 6550);
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */

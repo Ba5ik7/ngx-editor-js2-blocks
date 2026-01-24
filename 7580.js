@@ -11,7 +11,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setAlternateWeakRefImpl: () => (/* binding */ setAlternateWeakRefImpl)
 /* harmony export */ });
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -323,7 +323,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core/primitives/signals */ 95094);
 /* harmony import */ var _angular_core_primitives_di__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core/primitives/di */ 20144);
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -346,7 +346,7 @@ class Version {
     this.patch = parts.slice(2).join('.');
   }
 }
-const VERSION = /* @__PURE__ */new Version('21.1.0');
+const VERSION = /* @__PURE__ */new Version('21.1.1');
 const DOC_PAGE_BASE_URL = /*#__PURE__*/(() => {
   const full = VERSION.full;
   const isPreRelease = full.includes('-next') || full.includes('-rc') || full === '0.0.0' + '-PLACEHOLDER';
@@ -3275,7 +3275,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _attribute_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_attribute-chunk.mjs */ 66248);
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -4096,7 +4096,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   untracked: () => (/* binding */ untracked)
 /* harmony export */ });
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -4987,7 +4987,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _attribute_chunk_mjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./_attribute-chunk.mjs */ 66248);
 
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -13199,7 +13199,7 @@ class ComponentFactory extends ComponentFactory$1 {
   }
 }
 function createRootTView(rootSelectorOrNode, componentDef, componentBindings, directives) {
-  const tAttributes = rootSelectorOrNode ? ['ng-version', '21.1.0'] : extractAttrsAndClassesFromSelector(componentDef.selectors[0]);
+  const tAttributes = rootSelectorOrNode ? ['ng-version', '21.1.1'] : extractAttrsAndClassesFromSelector(componentDef.selectors[0]);
   let creationBindings = null;
   let updateBindings = null;
   let varsToAllocate = 0;
@@ -18195,7 +18195,7 @@ function ɵɵcontrolCreate() {
   } else if (tNode.flags & 8192) {
     initializeNativeControl(lView, tNode, fieldDirective);
   }
-  fieldDirective.ɵregister();
+  fieldDirective.registerAsBinding(getCustomControl(tNode, lView));
 }
 function ɵɵcontrol(value, name, sanitizer) {
   const lView = (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.getLView)();
@@ -18296,7 +18296,11 @@ function isNativeControlFirstCreatePass(tNode) {
 }
 function getFieldDirective(tNode, lView) {
   const index = tNode.fieldIndex;
-  return index === -1 ? null : lView[index];
+  return index === -1 ? undefined : lView[index];
+}
+function getCustomControl(tNode, lView) {
+  const index = tNode.customControlIndex;
+  return index === -1 ? undefined : lView[index];
 }
 function hasModelInput(directiveDef, name) {
   return hasInput(directiveDef, name) && hasOutput(directiveDef, name + 'Change');
@@ -18317,14 +18321,11 @@ function initializeCustomControl(lView, tNode, fieldDirective, modelName) {
   if (hasOutput(directiveDef, touchedOutputName)) {
     listenToOutput(tNode, lView, directiveIndex, touchedOutputName, touchedOutputName, wrapListener(tNode, lView, () => fieldDirective.state().markAsTouched()));
   }
-  const customControl = lView[directiveIndex];
-  fieldDirective.focus = () => customControl.focus ? customControl.focus() : fieldDirective.element.focus();
 }
 function initializeInteropControl(fieldDirective) {
   const interopControl = fieldDirective.ɵinteropControl;
   interopControl.registerOnChange(value => fieldDirective.state().setControlValue(value));
   interopControl.registerOnTouched(() => fieldDirective.state().markAsTouched());
-  fieldDirective.focus = () => fieldDirective.element.focus();
 }
 function isNativeControl(tNode) {
   if (tNode.type !== 2) {
@@ -18350,7 +18351,6 @@ function initializeNativeControl(lView, tNode, fieldDirective) {
     const observer = observeSelectMutations(element, fieldDirective);
     (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.storeCleanupWithContext)(tView, lView, observer, observer.disconnect);
   }
-  fieldDirective.focus = () => element.focus();
 }
 function observeSelectMutations(select, controlDirective) {
   const observer = new MutationObserver(mutations => {
@@ -21132,6 +21132,10 @@ function toStylingKeyValueArray(keyValueArraySet, stringParser, value) {
   if (Array.isArray(unwrappedValue)) {
     for (let i = 0; i < unwrappedValue.length; i++) {
       keyValueArraySet(styleKeyValueArray, unwrappedValue[i], true);
+    }
+  } else if (unwrappedValue instanceof Set) {
+    for (const current of unwrappedValue) {
+      keyValueArraySet(styleKeyValueArray, current, true);
     }
   } else if (typeof unwrappedValue === 'object') {
     for (const key in unwrappedValue) {
@@ -24174,7 +24178,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core_primitives_di__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core/primitives/di */ 20144);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 32778);
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -27099,7 +27103,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _linked_signal_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_linked_signal-chunk.mjs */ 68262);
 
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -27500,7 +27504,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   Attribute: () => (/* binding */ Attribute)
 /* harmony export */ });
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -27526,7 +27530,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_effect-chunk.mjs */ 29843);
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -27628,7 +27632,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setCurrentInjector: () => (/* binding */ setCurrentInjector)
 /* harmony export */ });
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */

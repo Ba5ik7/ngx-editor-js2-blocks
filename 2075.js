@@ -79,7 +79,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 44866);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 32778);
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -727,7 +727,7 @@ const ngModelWithFormGroupExample = `
       <input [(ngModel)]="showMoreControls" [ngModelOptions]="{standalone: true}">
   </div>
 `;
-const VERSION = /* @__PURE__ */new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('21.1.0');
+const VERSION = /* @__PURE__ */new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('21.1.1');
 function controlParentException(nameOrIndex) {
   return new _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵRuntimeError"](1050, `formControlName must be used with a parent formGroup or formArray directive. You'll want to add a formGroup/formArray
       directive and pass it an existing FormGroup/FormArray instance (you can create one in your class).

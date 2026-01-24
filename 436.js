@@ -19,7 +19,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ 11674);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -691,7 +691,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_dom_renderer-chunk.mjs */ 78547);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ 54380);
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -1224,7 +1224,7 @@ function provideClientHydration(...features) {
   }
   return (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.makeEnvironmentProviders)([typeof ngDevMode !== 'undefined' && ngDevMode ? provideEnabledBlockingInitialNavigationDetector() : [], typeof ngDevMode !== 'undefined' && ngDevMode ? (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.provideStabilityDebugging)() : [], (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵwithDomHydration"])(), featuresKind.has(HydrationFeatureKind.NoHttpTransferCache) || hasHttpTransferCacheOptions ? [] : (0,_angular_common_http__WEBPACK_IMPORTED_MODULE_4__["ɵwithHttpTransferCache"])({}), providers]);
 }
-const VERSION = /* @__PURE__ */new _angular_core__WEBPACK_IMPORTED_MODULE_2__.Version('21.1.0');
+const VERSION = /* @__PURE__ */new _angular_core__WEBPACK_IMPORTED_MODULE_2__.Version('21.1.1');
 
 
 /***/ },
@@ -1291,7 +1291,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_dom_renderer-chunk.mjs */ 78547);
 
 /**
- * @license Angular v21.1.0
+ * @license Angular v21.1.1
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
