@@ -1,5 +1,22 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[5531],{
 
+/***/ 61440
+/*!*************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/_array-chunk.mjs ***!
+  \*************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   coerceArray: () => (/* binding */ coerceArray)
+/* harmony export */ });
+function coerceArray(value) {
+  return Array.isArray(value) ? value : [value];
+}
+
+
+/***/ },
+
 /***/ 38438
 /*!****************************************************************************!*\
   !*** ./node_modules/@angular/cdk/fesm2022/_breakpoints-observer-chunk.mjs ***!
@@ -163,19 +180,54 @@ function splitQueries(queries) {
 
 /***/ },
 
-/***/ 61440
-/*!*************************************************************!*\
-  !*** ./node_modules/@angular/cdk/fesm2022/_array-chunk.mjs ***!
-  \*************************************************************/
+/***/ 98508
+/*!****************************************************************!*\
+  !*** ./node_modules/@angular/cdk/fesm2022/_platform-chunk.mjs ***!
+  \****************************************************************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   coerceArray: () => (/* binding */ coerceArray)
+/* harmony export */   Platform: () => (/* binding */ Platform)
 /* harmony export */ });
-function coerceArray(value) {
-  return Array.isArray(value) ? value : [value];
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 51356);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 11674);
+
+
+
+let hasV8BreakIterator;
+try {
+  hasV8BreakIterator = typeof Intl !== 'undefined' && Intl.v8BreakIterator;
+} catch {
+  hasV8BreakIterator = false;
 }
+let Platform = /*#__PURE__*/(() => {
+  class Platform {
+    _platformId = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.PLATFORM_ID);
+    isBrowser = this._platformId ? (0,_angular_common__WEBPACK_IMPORTED_MODULE_1__.isPlatformBrowser)(this._platformId) : typeof document === 'object' && !!document;
+    EDGE = this.isBrowser && /(edge)/i.test(navigator.userAgent);
+    TRIDENT = this.isBrowser && /(msie|trident)/i.test(navigator.userAgent);
+    BLINK = this.isBrowser && !!(window.chrome || hasV8BreakIterator) && typeof CSS !== 'undefined' && !this.EDGE && !this.TRIDENT;
+    WEBKIT = this.isBrowser && /AppleWebKit/i.test(navigator.userAgent) && !this.BLINK && !this.EDGE && !this.TRIDENT;
+    IOS = this.isBrowser && /iPad|iPhone|iPod/.test(navigator.userAgent) && !('MSStream' in window);
+    FIREFOX = this.isBrowser && /(firefox|minefield)/i.test(navigator.userAgent);
+    ANDROID = this.isBrowser && /android/i.test(navigator.userAgent) && !this.TRIDENT;
+    SAFARI = this.isBrowser && /safari/i.test(navigator.userAgent) && this.WEBKIT;
+    constructor() {}
+    static ɵfac = function Platform_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || Platform)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: Platform,
+      factory: Platform.ɵfac,
+      providedIn: 'root'
+    });
+  }
+  return Platform;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
 
 
 /***/ },
@@ -237,58 +289,6 @@ const Breakpoints = {
   TabletLandscape: '(min-width: 960px) and (max-width: 1279.98px) and (orientation: landscape)',
   WebLandscape: '(min-width: 1280px) and (orientation: landscape)'
 };
-
-
-/***/ },
-
-/***/ 98508
-/*!****************************************************************!*\
-  !*** ./node_modules/@angular/cdk/fesm2022/_platform-chunk.mjs ***!
-  \****************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Platform: () => (/* binding */ Platform)
-/* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 51356);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 11674);
-
-
-
-let hasV8BreakIterator;
-try {
-  hasV8BreakIterator = typeof Intl !== 'undefined' && Intl.v8BreakIterator;
-} catch {
-  hasV8BreakIterator = false;
-}
-let Platform = /*#__PURE__*/(() => {
-  class Platform {
-    _platformId = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.PLATFORM_ID);
-    isBrowser = this._platformId ? (0,_angular_common__WEBPACK_IMPORTED_MODULE_1__.isPlatformBrowser)(this._platformId) : typeof document === 'object' && !!document;
-    EDGE = this.isBrowser && /(edge)/i.test(navigator.userAgent);
-    TRIDENT = this.isBrowser && /(msie|trident)/i.test(navigator.userAgent);
-    BLINK = this.isBrowser && !!(window.chrome || hasV8BreakIterator) && typeof CSS !== 'undefined' && !this.EDGE && !this.TRIDENT;
-    WEBKIT = this.isBrowser && /AppleWebKit/i.test(navigator.userAgent) && !this.BLINK && !this.EDGE && !this.TRIDENT;
-    IOS = this.isBrowser && /iPad|iPhone|iPod/.test(navigator.userAgent) && !('MSStream' in window);
-    FIREFOX = this.isBrowser && /(firefox|minefield)/i.test(navigator.userAgent);
-    ANDROID = this.isBrowser && /android/i.test(navigator.userAgent) && !this.TRIDENT;
-    SAFARI = this.isBrowser && /safari/i.test(navigator.userAgent) && this.WEBKIT;
-    constructor() {}
-    static ɵfac = function Platform_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || Platform)();
-    };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: Platform,
-      factory: Platform.ɵfac,
-      providedIn: 'root'
-    });
-  }
-  return Platform;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
 
 
 /***/ }

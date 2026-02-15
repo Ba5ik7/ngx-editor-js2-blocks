@@ -1,5 +1,912 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[655],{
 
+/***/ 98130
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@angular/animations/fesm2022/_private_export-chunk.mjs ***!
+  \*****************************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AUTO_STYLE: () => (/* binding */ AUTO_STYLE),
+/* harmony export */   AnimationGroupPlayer: () => (/* binding */ AnimationGroupPlayer),
+/* harmony export */   AnimationMetadataType: () => (/* binding */ AnimationMetadataType),
+/* harmony export */   NoopAnimationPlayer: () => (/* binding */ NoopAnimationPlayer),
+/* harmony export */   animate: () => (/* binding */ animate),
+/* harmony export */   animateChild: () => (/* binding */ animateChild),
+/* harmony export */   animation: () => (/* binding */ animation),
+/* harmony export */   group: () => (/* binding */ group),
+/* harmony export */   keyframes: () => (/* binding */ keyframes),
+/* harmony export */   query: () => (/* binding */ query),
+/* harmony export */   sequence: () => (/* binding */ sequence),
+/* harmony export */   stagger: () => (/* binding */ stagger),
+/* harmony export */   state: () => (/* binding */ state),
+/* harmony export */   style: () => (/* binding */ style),
+/* harmony export */   transition: () => (/* binding */ transition),
+/* harmony export */   trigger: () => (/* binding */ trigger),
+/* harmony export */   useAnimation: () => (/* binding */ useAnimation),
+/* harmony export */   "ɵPRE_STYLE": () => (/* binding */ ɵPRE_STYLE)
+/* harmony export */ });
+/**
+ * @license Angular v21.1.4
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
+
+var AnimationMetadataType = /*#__PURE__*/function (AnimationMetadataType) {
+  AnimationMetadataType[AnimationMetadataType["State"] = 0] = "State";
+  AnimationMetadataType[AnimationMetadataType["Transition"] = 1] = "Transition";
+  AnimationMetadataType[AnimationMetadataType["Sequence"] = 2] = "Sequence";
+  AnimationMetadataType[AnimationMetadataType["Group"] = 3] = "Group";
+  AnimationMetadataType[AnimationMetadataType["Animate"] = 4] = "Animate";
+  AnimationMetadataType[AnimationMetadataType["Keyframes"] = 5] = "Keyframes";
+  AnimationMetadataType[AnimationMetadataType["Style"] = 6] = "Style";
+  AnimationMetadataType[AnimationMetadataType["Trigger"] = 7] = "Trigger";
+  AnimationMetadataType[AnimationMetadataType["Reference"] = 8] = "Reference";
+  AnimationMetadataType[AnimationMetadataType["AnimateChild"] = 9] = "AnimateChild";
+  AnimationMetadataType[AnimationMetadataType["AnimateRef"] = 10] = "AnimateRef";
+  AnimationMetadataType[AnimationMetadataType["Query"] = 11] = "Query";
+  AnimationMetadataType[AnimationMetadataType["Stagger"] = 12] = "Stagger";
+  return AnimationMetadataType;
+}(AnimationMetadataType || {});
+const AUTO_STYLE = '*';
+function trigger(name, definitions) {
+  return {
+    type: AnimationMetadataType.Trigger,
+    name,
+    definitions,
+    options: {}
+  };
+}
+function animate(timings, styles = null) {
+  return {
+    type: AnimationMetadataType.Animate,
+    styles,
+    timings
+  };
+}
+function group(steps, options = null) {
+  return {
+    type: AnimationMetadataType.Group,
+    steps,
+    options
+  };
+}
+function sequence(steps, options = null) {
+  return {
+    type: AnimationMetadataType.Sequence,
+    steps,
+    options
+  };
+}
+function style(tokens) {
+  return {
+    type: AnimationMetadataType.Style,
+    styles: tokens,
+    offset: null
+  };
+}
+function state(name, styles, options) {
+  return {
+    type: AnimationMetadataType.State,
+    name,
+    styles,
+    options
+  };
+}
+function keyframes(steps) {
+  return {
+    type: AnimationMetadataType.Keyframes,
+    steps
+  };
+}
+function transition(stateChangeExpr, steps, options = null) {
+  return {
+    type: AnimationMetadataType.Transition,
+    expr: stateChangeExpr,
+    animation: steps,
+    options
+  };
+}
+function animation(steps, options = null) {
+  return {
+    type: AnimationMetadataType.Reference,
+    animation: steps,
+    options
+  };
+}
+function animateChild(options = null) {
+  return {
+    type: AnimationMetadataType.AnimateChild,
+    options
+  };
+}
+function useAnimation(animation, options = null) {
+  return {
+    type: AnimationMetadataType.AnimateRef,
+    animation,
+    options
+  };
+}
+function query(selector, animation, options = null) {
+  return {
+    type: AnimationMetadataType.Query,
+    selector,
+    animation,
+    options
+  };
+}
+function stagger(timings, animation) {
+  return {
+    type: AnimationMetadataType.Stagger,
+    timings,
+    animation
+  };
+}
+class NoopAnimationPlayer {
+  _onDoneFns = [];
+  _onStartFns = [];
+  _onDestroyFns = [];
+  _originalOnDoneFns = [];
+  _originalOnStartFns = [];
+  _started = false;
+  _destroyed = false;
+  _finished = false;
+  _position = 0;
+  parentPlayer = null;
+  totalTime;
+  constructor(duration = 0, delay = 0) {
+    this.totalTime = duration + delay;
+  }
+  _onFinish() {
+    if (!this._finished) {
+      this._finished = true;
+      this._onDoneFns.forEach(fn => fn());
+      this._onDoneFns = [];
+    }
+  }
+  onStart(fn) {
+    this._originalOnStartFns.push(fn);
+    this._onStartFns.push(fn);
+  }
+  onDone(fn) {
+    this._originalOnDoneFns.push(fn);
+    this._onDoneFns.push(fn);
+  }
+  onDestroy(fn) {
+    this._onDestroyFns.push(fn);
+  }
+  hasStarted() {
+    return this._started;
+  }
+  init() {}
+  play() {
+    if (!this.hasStarted()) {
+      this._onStart();
+      this.triggerMicrotask();
+    }
+    this._started = true;
+  }
+  triggerMicrotask() {
+    queueMicrotask(() => this._onFinish());
+  }
+  _onStart() {
+    this._onStartFns.forEach(fn => fn());
+    this._onStartFns = [];
+  }
+  pause() {}
+  restart() {}
+  finish() {
+    this._onFinish();
+  }
+  destroy() {
+    if (!this._destroyed) {
+      this._destroyed = true;
+      if (!this.hasStarted()) {
+        this._onStart();
+      }
+      this.finish();
+      this._onDestroyFns.forEach(fn => fn());
+      this._onDestroyFns = [];
+    }
+  }
+  reset() {
+    this._started = false;
+    this._finished = false;
+    this._onStartFns = this._originalOnStartFns;
+    this._onDoneFns = this._originalOnDoneFns;
+  }
+  setPosition(position) {
+    this._position = this.totalTime ? position * this.totalTime : 1;
+  }
+  getPosition() {
+    return this.totalTime ? this._position / this.totalTime : 1;
+  }
+  triggerCallback(phaseName) {
+    const methods = phaseName == 'start' ? this._onStartFns : this._onDoneFns;
+    methods.forEach(fn => fn());
+    methods.length = 0;
+  }
+}
+class AnimationGroupPlayer {
+  _onDoneFns = [];
+  _onStartFns = [];
+  _finished = false;
+  _started = false;
+  _destroyed = false;
+  _onDestroyFns = [];
+  parentPlayer = null;
+  totalTime = 0;
+  players;
+  constructor(_players) {
+    this.players = _players;
+    let doneCount = 0;
+    let destroyCount = 0;
+    let startCount = 0;
+    const total = this.players.length;
+    if (total == 0) {
+      queueMicrotask(() => this._onFinish());
+    } else {
+      this.players.forEach(player => {
+        player.onDone(() => {
+          if (++doneCount == total) {
+            this._onFinish();
+          }
+        });
+        player.onDestroy(() => {
+          if (++destroyCount == total) {
+            this._onDestroy();
+          }
+        });
+        player.onStart(() => {
+          if (++startCount == total) {
+            this._onStart();
+          }
+        });
+      });
+    }
+    this.totalTime = this.players.reduce((time, player) => Math.max(time, player.totalTime), 0);
+  }
+  _onFinish() {
+    if (!this._finished) {
+      this._finished = true;
+      this._onDoneFns.forEach(fn => fn());
+      this._onDoneFns = [];
+    }
+  }
+  init() {
+    this.players.forEach(player => player.init());
+  }
+  onStart(fn) {
+    this._onStartFns.push(fn);
+  }
+  _onStart() {
+    if (!this.hasStarted()) {
+      this._started = true;
+      this._onStartFns.forEach(fn => fn());
+      this._onStartFns = [];
+    }
+  }
+  onDone(fn) {
+    this._onDoneFns.push(fn);
+  }
+  onDestroy(fn) {
+    this._onDestroyFns.push(fn);
+  }
+  hasStarted() {
+    return this._started;
+  }
+  play() {
+    if (!this.parentPlayer) {
+      this.init();
+    }
+    this._onStart();
+    this.players.forEach(player => player.play());
+  }
+  pause() {
+    this.players.forEach(player => player.pause());
+  }
+  restart() {
+    this.players.forEach(player => player.restart());
+  }
+  finish() {
+    this._onFinish();
+    this.players.forEach(player => player.finish());
+  }
+  destroy() {
+    this._onDestroy();
+  }
+  _onDestroy() {
+    if (!this._destroyed) {
+      this._destroyed = true;
+      this._onFinish();
+      this.players.forEach(player => player.destroy());
+      this._onDestroyFns.forEach(fn => fn());
+      this._onDestroyFns = [];
+    }
+  }
+  reset() {
+    this.players.forEach(player => player.reset());
+    this._destroyed = false;
+    this._finished = false;
+    this._started = false;
+  }
+  setPosition(p) {
+    const timeAtPosition = p * this.totalTime;
+    this.players.forEach(player => {
+      const position = player.totalTime ? Math.min(1, timeAtPosition / player.totalTime) : 1;
+      player.setPosition(position);
+    });
+  }
+  getPosition() {
+    const longestPlayer = this.players.reduce((longestSoFar, player) => {
+      const newPlayerIsLongest = longestSoFar === null || player.totalTime > longestSoFar.totalTime;
+      return newPlayerIsLongest ? player : longestSoFar;
+    }, null);
+    return longestPlayer != null ? longestPlayer.getPosition() : 0;
+  }
+  beforeDestroy() {
+    this.players.forEach(player => {
+      if (player.beforeDestroy) {
+        player.beforeDestroy();
+      }
+    });
+  }
+  triggerCallback(phaseName) {
+    const methods = phaseName == 'start' ? this._onStartFns : this._onDoneFns;
+    methods.forEach(fn => fn());
+    methods.length = 0;
+  }
+}
+const ɵPRE_STYLE = '!';
+
+
+/***/ },
+
+/***/ 67444
+/*!*******************************************************************!*\
+  !*** ./node_modules/@angular/animations/fesm2022/_util-chunk.mjs ***!
+  \*******************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ENTER_CLASSNAME: () => (/* binding */ ENTER_CLASSNAME),
+/* harmony export */   LEAVE_CLASSNAME: () => (/* binding */ LEAVE_CLASSNAME),
+/* harmony export */   NG_ANIMATING_CLASSNAME: () => (/* binding */ NG_ANIMATING_CLASSNAME),
+/* harmony export */   NG_ANIMATING_SELECTOR: () => (/* binding */ NG_ANIMATING_SELECTOR),
+/* harmony export */   NG_TRIGGER_CLASSNAME: () => (/* binding */ NG_TRIGGER_CLASSNAME),
+/* harmony export */   NG_TRIGGER_SELECTOR: () => (/* binding */ NG_TRIGGER_SELECTOR),
+/* harmony export */   SUBSTITUTION_EXPR_START: () => (/* binding */ SUBSTITUTION_EXPR_START),
+/* harmony export */   allowPreviousPlayerStylesMerge: () => (/* binding */ allowPreviousPlayerStylesMerge),
+/* harmony export */   balancePreviousStylesIntoKeyframes: () => (/* binding */ balancePreviousStylesIntoKeyframes),
+/* harmony export */   buildingFailed: () => (/* binding */ buildingFailed),
+/* harmony export */   camelCaseToDashCase: () => (/* binding */ camelCaseToDashCase),
+/* harmony export */   computeStyle: () => (/* binding */ computeStyle),
+/* harmony export */   containsElement: () => (/* binding */ containsElement),
+/* harmony export */   createAnimationFailed: () => (/* binding */ createAnimationFailed),
+/* harmony export */   dashCaseToCamelCase: () => (/* binding */ dashCaseToCamelCase),
+/* harmony export */   eraseStyles: () => (/* binding */ eraseStyles),
+/* harmony export */   extractStyleParams: () => (/* binding */ extractStyleParams),
+/* harmony export */   getOrSetDefaultValue: () => (/* binding */ getOrSetDefaultValue),
+/* harmony export */   getParentElement: () => (/* binding */ getParentElement),
+/* harmony export */   interpolateParams: () => (/* binding */ interpolateParams),
+/* harmony export */   invalidCssUnitValue: () => (/* binding */ invalidCssUnitValue),
+/* harmony export */   invalidDefinition: () => (/* binding */ invalidDefinition),
+/* harmony export */   invalidExpression: () => (/* binding */ invalidExpression),
+/* harmony export */   invalidKeyframes: () => (/* binding */ invalidKeyframes),
+/* harmony export */   invalidOffset: () => (/* binding */ invalidOffset),
+/* harmony export */   invalidParallelAnimation: () => (/* binding */ invalidParallelAnimation),
+/* harmony export */   invalidQuery: () => (/* binding */ invalidQuery),
+/* harmony export */   invalidStagger: () => (/* binding */ invalidStagger),
+/* harmony export */   invalidState: () => (/* binding */ invalidState),
+/* harmony export */   invalidStyleValue: () => (/* binding */ invalidStyleValue),
+/* harmony export */   invalidTransitionAlias: () => (/* binding */ invalidTransitionAlias),
+/* harmony export */   invalidTrigger: () => (/* binding */ invalidTrigger),
+/* harmony export */   invokeQuery: () => (/* binding */ invokeQuery),
+/* harmony export */   keyframeOffsetsOutOfOrder: () => (/* binding */ keyframeOffsetsOutOfOrder),
+/* harmony export */   keyframesMissingOffsets: () => (/* binding */ keyframesMissingOffsets),
+/* harmony export */   listenOnPlayer: () => (/* binding */ listenOnPlayer),
+/* harmony export */   makeAnimationEvent: () => (/* binding */ makeAnimationEvent),
+/* harmony export */   missingEvent: () => (/* binding */ missingEvent),
+/* harmony export */   missingOrDestroyedAnimation: () => (/* binding */ missingOrDestroyedAnimation),
+/* harmony export */   missingPlayer: () => (/* binding */ missingPlayer),
+/* harmony export */   missingTrigger: () => (/* binding */ missingTrigger),
+/* harmony export */   normalizeAnimationEntry: () => (/* binding */ normalizeAnimationEntry),
+/* harmony export */   normalizeKeyframes: () => (/* binding */ normalizeKeyframes$1),
+/* harmony export */   normalizeKeyframes$1: () => (/* binding */ normalizeKeyframes),
+/* harmony export */   normalizeStyles: () => (/* binding */ normalizeStyles),
+/* harmony export */   optimizeGroupPlayer: () => (/* binding */ optimizeGroupPlayer),
+/* harmony export */   parseTimelineCommand: () => (/* binding */ parseTimelineCommand),
+/* harmony export */   registerFailed: () => (/* binding */ registerFailed),
+/* harmony export */   resolveTiming: () => (/* binding */ resolveTiming),
+/* harmony export */   resolveTimingValue: () => (/* binding */ resolveTimingValue),
+/* harmony export */   setStyles: () => (/* binding */ setStyles),
+/* harmony export */   transitionFailed: () => (/* binding */ transitionFailed),
+/* harmony export */   triggerBuildFailed: () => (/* binding */ triggerBuildFailed),
+/* harmony export */   triggerTransitionsFailed: () => (/* binding */ triggerTransitionsFailed),
+/* harmony export */   unregisteredTrigger: () => (/* binding */ unregisteredTrigger),
+/* harmony export */   unsupportedTriggerEvent: () => (/* binding */ unsupportedTriggerEvent),
+/* harmony export */   validateStyleParams: () => (/* binding */ validateStyleParams),
+/* harmony export */   validateStyleProperty: () => (/* binding */ validateStyleProperty),
+/* harmony export */   validateWebAnimatableStyleProperty: () => (/* binding */ validateWebAnimatableStyleProperty),
+/* harmony export */   validationFailed: () => (/* binding */ validationFailed),
+/* harmony export */   visitDslNode: () => (/* binding */ visitDslNode)
+/* harmony export */ });
+/* harmony import */ var _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_private_export-chunk.mjs */ 98130);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
+/**
+ * @license Angular v21.1.4
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
+
+
+
+const LINE_START = '\n - ';
+function invalidTimingValue(exp) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3000, ngDevMode && `The provided timing value "${exp}" is invalid.`);
+}
+function negativeStepValue() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3100, ngDevMode && 'Duration values below 0 are not allowed for this animation step.');
+}
+function negativeDelayValue() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3101, ngDevMode && 'Delay values below 0 are not allowed for this animation step.');
+}
+function invalidStyleParams(varName) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3001, ngDevMode && `Unable to resolve the local animation param ${varName} in the given list of values`);
+}
+function invalidParamValue(varName) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3003, ngDevMode && `Please provide a value for the animation param ${varName}`);
+}
+function invalidNodeType(nodeType) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3004, ngDevMode && `Unable to resolve animation metadata node #${nodeType}`);
+}
+function invalidCssUnitValue(userProvidedProperty, value) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3005, ngDevMode && `Please provide a CSS unit value for ${userProvidedProperty}:${value}`);
+}
+function invalidTrigger() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3006, ngDevMode && "animation triggers cannot be prefixed with an `@` sign (e.g. trigger('@foo', [...]))");
+}
+function invalidDefinition() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3007, ngDevMode && 'only state() and transition() definitions can sit inside of a trigger()');
+}
+function invalidState(metadataName, missingSubs) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3008, ngDevMode && `state("${metadataName}", ...) must define default values for all the following style substitutions: ${missingSubs.join(', ')}`);
+}
+function invalidStyleValue(value) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3002, ngDevMode && `The provided style string value ${value} is not allowed.`);
+}
+function invalidParallelAnimation(prop, firstStart, firstEnd, secondStart, secondEnd) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3010, ngDevMode && `The CSS property "${prop}" that exists between the times of "${firstStart}ms" and "${firstEnd}ms" is also being animated in a parallel animation between the times of "${secondStart}ms" and "${secondEnd}ms"`);
+}
+function invalidKeyframes() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3011, ngDevMode && `keyframes() must be placed inside of a call to animate()`);
+}
+function invalidOffset() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3012, ngDevMode && `Please ensure that all keyframe offsets are between 0 and 1`);
+}
+function keyframeOffsetsOutOfOrder() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3200, ngDevMode && `Please ensure that all keyframe offsets are in order`);
+}
+function keyframesMissingOffsets() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3202, ngDevMode && `Not all style() steps within the declared keyframes() contain offsets`);
+}
+function invalidStagger() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3013, ngDevMode && `stagger() can only be used inside of query()`);
+}
+function invalidQuery(selector) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3014, ngDevMode && `\`query("${selector}")\` returned zero elements. (Use \`query("${selector}", { optional: true })\` if you wish to allow this.)`);
+}
+function invalidExpression(expr) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3015, ngDevMode && `The provided transition expression "${expr}" is not supported`);
+}
+function invalidTransitionAlias(alias) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3016, ngDevMode && `The transition alias value "${alias}" is not supported`);
+}
+function validationFailed(errors) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3500, ngDevMode && `animation validation failed:\n${errors.map(err => err.message).join('\n')}`);
+}
+function buildingFailed(errors) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3501, ngDevMode && `animation building failed:\n${errors.map(err => err.message).join('\n')}`);
+}
+function triggerBuildFailed(name, errors) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3404, ngDevMode && `The animation trigger "${name}" has failed to build due to the following errors:\n - ${errors.map(err => err.message).join('\n - ')}`);
+}
+function animationFailed(errors) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3502, ngDevMode && `Unable to animate due to the following errors:${LINE_START}${errors.map(err => err.message).join(LINE_START)}`);
+}
+function registerFailed(errors) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3503, ngDevMode && `Unable to build the animation due to the following errors: ${errors.map(err => err.message).join('\n')}`);
+}
+function missingOrDestroyedAnimation() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3300, ngDevMode && "The requested animation doesn't exist or has already been destroyed");
+}
+function createAnimationFailed(errors) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3504, ngDevMode && `Unable to create the animation due to the following errors:${errors.map(err => err.message).join('\n')}`);
+}
+function missingPlayer(id) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3301, ngDevMode && `Unable to find the timeline player referenced by ${id}`);
+}
+function missingTrigger(phase, name) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3302, ngDevMode && `Unable to listen on the animation trigger event "${phase}" because the animation trigger "${name}" doesn\'t exist!`);
+}
+function missingEvent(name) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3303, ngDevMode && `Unable to listen on the animation trigger "${name}" because the provided event is undefined!`);
+}
+function unsupportedTriggerEvent(phase, name) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3400, ngDevMode && `The provided animation trigger event "${phase}" for the animation trigger "${name}" is not supported!`);
+}
+function unregisteredTrigger(name) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3401, ngDevMode && `The provided animation trigger "${name}" has not been registered!`);
+}
+function triggerTransitionsFailed(errors) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3402, ngDevMode && `Unable to process animations due to the following failed trigger transitions\n ${errors.map(err => err.message).join('\n')}`);
+}
+function transitionFailed(name, errors) {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3505, ngDevMode && `@${name} has failed due to:\n ${errors.map(err => err.message).join('\n- ')}`);
+}
+const ANIMATABLE_PROP_SET = /*#__PURE__*/new Set(['-moz-outline-radius', '-moz-outline-radius-bottomleft', '-moz-outline-radius-bottomright', '-moz-outline-radius-topleft', '-moz-outline-radius-topright', '-ms-grid-columns', '-ms-grid-rows', '-webkit-line-clamp', '-webkit-text-fill-color', '-webkit-text-stroke', '-webkit-text-stroke-color', 'accent-color', 'all', 'backdrop-filter', 'background', 'background-color', 'background-position', 'background-size', 'block-size', 'border', 'border-block-end', 'border-block-end-color', 'border-block-end-width', 'border-block-start', 'border-block-start-color', 'border-block-start-width', 'border-bottom', 'border-bottom-color', 'border-bottom-left-radius', 'border-bottom-right-radius', 'border-bottom-width', 'border-color', 'border-end-end-radius', 'border-end-start-radius', 'border-image-outset', 'border-image-slice', 'border-image-width', 'border-inline-end', 'border-inline-end-color', 'border-inline-end-width', 'border-inline-start', 'border-inline-start-color', 'border-inline-start-width', 'border-left', 'border-left-color', 'border-left-width', 'border-radius', 'border-right', 'border-right-color', 'border-right-width', 'border-start-end-radius', 'border-start-start-radius', 'border-top', 'border-top-color', 'border-top-left-radius', 'border-top-right-radius', 'border-top-width', 'border-width', 'bottom', 'box-shadow', 'caret-color', 'clip', 'clip-path', 'color', 'column-count', 'column-gap', 'column-rule', 'column-rule-color', 'column-rule-width', 'column-width', 'columns', 'filter', 'flex', 'flex-basis', 'flex-grow', 'flex-shrink', 'font', 'font-size', 'font-size-adjust', 'font-stretch', 'font-variation-settings', 'font-weight', 'gap', 'grid-column-gap', 'grid-gap', 'grid-row-gap', 'grid-template-columns', 'grid-template-rows', 'height', 'inline-size', 'input-security', 'inset', 'inset-block', 'inset-block-end', 'inset-block-start', 'inset-inline', 'inset-inline-end', 'inset-inline-start', 'left', 'letter-spacing', 'line-clamp', 'line-height', 'margin', 'margin-block-end', 'margin-block-start', 'margin-bottom', 'margin-inline-end', 'margin-inline-start', 'margin-left', 'margin-right', 'margin-top', 'mask', 'mask-border', 'mask-position', 'mask-size', 'max-block-size', 'max-height', 'max-inline-size', 'max-lines', 'max-width', 'min-block-size', 'min-height', 'min-inline-size', 'min-width', 'object-position', 'offset', 'offset-anchor', 'offset-distance', 'offset-path', 'offset-position', 'offset-rotate', 'opacity', 'order', 'outline', 'outline-color', 'outline-offset', 'outline-width', 'padding', 'padding-block-end', 'padding-block-start', 'padding-bottom', 'padding-inline-end', 'padding-inline-start', 'padding-left', 'padding-right', 'padding-top', 'perspective', 'perspective-origin', 'right', 'rotate', 'row-gap', 'scale', 'scroll-margin', 'scroll-margin-block', 'scroll-margin-block-end', 'scroll-margin-block-start', 'scroll-margin-bottom', 'scroll-margin-inline', 'scroll-margin-inline-end', 'scroll-margin-inline-start', 'scroll-margin-left', 'scroll-margin-right', 'scroll-margin-top', 'scroll-padding', 'scroll-padding-block', 'scroll-padding-block-end', 'scroll-padding-block-start', 'scroll-padding-bottom', 'scroll-padding-inline', 'scroll-padding-inline-end', 'scroll-padding-inline-start', 'scroll-padding-left', 'scroll-padding-right', 'scroll-padding-top', 'scroll-snap-coordinate', 'scroll-snap-destination', 'scrollbar-color', 'shape-image-threshold', 'shape-margin', 'shape-outside', 'tab-size', 'text-decoration', 'text-decoration-color', 'text-decoration-thickness', 'text-emphasis', 'text-emphasis-color', 'text-indent', 'text-shadow', 'text-underline-offset', 'top', 'transform', 'transform-origin', 'translate', 'vertical-align', 'visibility', 'width', 'word-spacing', 'z-index', 'zoom']);
+function optimizeGroupPlayer(players) {
+  switch (players.length) {
+    case 0:
+      return new _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.NoopAnimationPlayer();
+    case 1:
+      return players[0];
+    default:
+      return new _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationGroupPlayer(players);
+  }
+}
+function normalizeKeyframes$1(normalizer, keyframes, preStyles = new Map(), postStyles = new Map()) {
+  const errors = [];
+  const normalizedKeyframes = [];
+  let previousOffset = -1;
+  let previousKeyframe = null;
+  keyframes.forEach(kf => {
+    const offset = kf.get('offset');
+    const isSameOffset = offset == previousOffset;
+    const normalizedKeyframe = isSameOffset && previousKeyframe || new Map();
+    kf.forEach((val, prop) => {
+      let normalizedProp = prop;
+      let normalizedValue = val;
+      if (prop !== 'offset') {
+        normalizedProp = normalizer.normalizePropertyName(normalizedProp, errors);
+        switch (normalizedValue) {
+          case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__["ɵPRE_STYLE"]:
+            normalizedValue = preStyles.get(prop);
+            break;
+          case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AUTO_STYLE:
+            normalizedValue = postStyles.get(prop);
+            break;
+          default:
+            normalizedValue = normalizer.normalizeStyleValue(prop, normalizedProp, normalizedValue, errors);
+            break;
+        }
+      }
+      normalizedKeyframe.set(normalizedProp, normalizedValue);
+    });
+    if (!isSameOffset) {
+      normalizedKeyframes.push(normalizedKeyframe);
+    }
+    previousKeyframe = normalizedKeyframe;
+    previousOffset = offset;
+  });
+  if (errors.length) {
+    throw animationFailed(errors);
+  }
+  return normalizedKeyframes;
+}
+function listenOnPlayer(player, eventName, event, callback) {
+  switch (eventName) {
+    case 'start':
+      player.onStart(() => callback(event && copyAnimationEvent(event, 'start', player)));
+      break;
+    case 'done':
+      player.onDone(() => callback(event && copyAnimationEvent(event, 'done', player)));
+      break;
+    case 'destroy':
+      player.onDestroy(() => callback(event && copyAnimationEvent(event, 'destroy', player)));
+      break;
+  }
+}
+function copyAnimationEvent(e, phaseName, player) {
+  const totalTime = player.totalTime;
+  const disabled = player.disabled ? true : false;
+  const event = makeAnimationEvent(e.element, e.triggerName, e.fromState, e.toState, phaseName || e.phaseName, totalTime == undefined ? e.totalTime : totalTime, disabled);
+  const data = e['_data'];
+  if (data != null) {
+    event['_data'] = data;
+  }
+  return event;
+}
+function makeAnimationEvent(element, triggerName, fromState, toState, phaseName = '', totalTime = 0, disabled) {
+  return {
+    element,
+    triggerName,
+    fromState,
+    toState,
+    phaseName,
+    totalTime,
+    disabled: !!disabled
+  };
+}
+function getOrSetDefaultValue(map, key, defaultValue) {
+  let value = map.get(key);
+  if (!value) {
+    map.set(key, value = defaultValue);
+  }
+  return value;
+}
+function parseTimelineCommand(command) {
+  const separatorPos = command.indexOf(':');
+  const id = command.substring(1, separatorPos);
+  const action = command.slice(separatorPos + 1);
+  return [id, action];
+}
+const documentElement = /* @__PURE__ */(() => typeof document === 'undefined' ? null : document.documentElement)();
+function getParentElement(element) {
+  const parent = element.parentNode || element.host || null;
+  if (parent === documentElement) {
+    return null;
+  }
+  return parent;
+}
+function containsVendorPrefix(prop) {
+  return prop.substring(1, 6) == 'ebkit';
+}
+let _CACHED_BODY = null;
+let _IS_WEBKIT = false;
+function validateStyleProperty(prop) {
+  if (!_CACHED_BODY) {
+    _CACHED_BODY = getBodyNode() || {};
+    _IS_WEBKIT = _CACHED_BODY.style ? 'WebkitAppearance' in _CACHED_BODY.style : false;
+  }
+  let result = true;
+  if (_CACHED_BODY.style && !containsVendorPrefix(prop)) {
+    result = prop in _CACHED_BODY.style;
+    if (!result && _IS_WEBKIT) {
+      const camelProp = 'Webkit' + prop.charAt(0).toUpperCase() + prop.slice(1);
+      result = camelProp in _CACHED_BODY.style;
+    }
+  }
+  return result;
+}
+function validateWebAnimatableStyleProperty(prop) {
+  return ANIMATABLE_PROP_SET.has(prop);
+}
+function getBodyNode() {
+  if (typeof document != 'undefined') {
+    return document.body;
+  }
+  return null;
+}
+function containsElement(elm1, elm2) {
+  while (elm2) {
+    if (elm2 === elm1) {
+      return true;
+    }
+    elm2 = getParentElement(elm2);
+  }
+  return false;
+}
+function invokeQuery(element, selector, multi) {
+  if (multi) {
+    return Array.from(element.querySelectorAll(selector));
+  }
+  const elem = element.querySelector(selector);
+  return elem ? [elem] : [];
+}
+const ONE_SECOND = 1000;
+const SUBSTITUTION_EXPR_START = '{{';
+const SUBSTITUTION_EXPR_END = '}}';
+const ENTER_CLASSNAME = 'ng-enter';
+const LEAVE_CLASSNAME = 'ng-leave';
+const NG_TRIGGER_CLASSNAME = 'ng-trigger';
+const NG_TRIGGER_SELECTOR = '.ng-trigger';
+const NG_ANIMATING_CLASSNAME = 'ng-animating';
+const NG_ANIMATING_SELECTOR = '.ng-animating';
+function resolveTimingValue(value) {
+  if (typeof value == 'number') return value;
+  const matches = value.match(/^(-?[\.\d]+)(m?s)/);
+  if (!matches || matches.length < 2) return 0;
+  return _convertTimeValueToMS(parseFloat(matches[1]), matches[2]);
+}
+function _convertTimeValueToMS(value, unit) {
+  switch (unit) {
+    case 's':
+      return value * ONE_SECOND;
+    default:
+      return value;
+  }
+}
+function resolveTiming(timings, errors, allowNegativeValues) {
+  return timings.hasOwnProperty('duration') ? timings : parseTimeExpression(timings, errors, allowNegativeValues);
+}
+const PARSE_TIME_EXPRESSION_REGEX = /^(-?[\.\d]+)(m?s)(?:\s+(-?[\.\d]+)(m?s))?(?:\s+([-a-z]+(?:\(.+?\))?))?$/i;
+function parseTimeExpression(exp, errors, allowNegativeValues) {
+  let duration;
+  let delay = 0;
+  let easing = '';
+  if (typeof exp === 'string') {
+    const matches = exp.match(PARSE_TIME_EXPRESSION_REGEX);
+    if (matches === null) {
+      errors.push(invalidTimingValue(exp));
+      return {
+        duration: 0,
+        delay: 0,
+        easing: ''
+      };
+    }
+    duration = _convertTimeValueToMS(parseFloat(matches[1]), matches[2]);
+    const delayMatch = matches[3];
+    if (delayMatch != null) {
+      delay = _convertTimeValueToMS(parseFloat(delayMatch), matches[4]);
+    }
+    const easingVal = matches[5];
+    if (easingVal) {
+      easing = easingVal;
+    }
+  } else {
+    duration = exp;
+  }
+  if (!allowNegativeValues) {
+    let containsErrors = false;
+    let startIndex = errors.length;
+    if (duration < 0) {
+      errors.push(negativeStepValue());
+      containsErrors = true;
+    }
+    if (delay < 0) {
+      errors.push(negativeDelayValue());
+      containsErrors = true;
+    }
+    if (containsErrors) {
+      errors.splice(startIndex, 0, invalidTimingValue(exp));
+    }
+  }
+  return {
+    duration,
+    delay,
+    easing
+  };
+}
+function normalizeKeyframes(keyframes) {
+  if (!keyframes.length) {
+    return [];
+  }
+  if (keyframes[0] instanceof Map) {
+    return keyframes;
+  }
+  return keyframes.map(kf => new Map(Object.entries(kf)));
+}
+function normalizeStyles(styles) {
+  return Array.isArray(styles) ? new Map(...styles) : new Map(styles);
+}
+function setStyles(element, styles, formerStyles) {
+  styles.forEach((val, prop) => {
+    const camelProp = dashCaseToCamelCase(prop);
+    if (formerStyles && !formerStyles.has(prop)) {
+      formerStyles.set(prop, element.style[camelProp]);
+    }
+    element.style[camelProp] = val;
+  });
+}
+function eraseStyles(element, styles) {
+  styles.forEach((_, prop) => {
+    const camelProp = dashCaseToCamelCase(prop);
+    element.style[camelProp] = '';
+  });
+}
+function normalizeAnimationEntry(steps) {
+  if (Array.isArray(steps)) {
+    if (steps.length == 1) return steps[0];
+    return (0,_private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.sequence)(steps);
+  }
+  return steps;
+}
+function validateStyleParams(value, options, errors) {
+  const params = options.params || {};
+  const matches = extractStyleParams(value);
+  if (matches.length) {
+    matches.forEach(varName => {
+      if (!params.hasOwnProperty(varName)) {
+        errors.push(invalidStyleParams(varName));
+      }
+    });
+  }
+}
+const PARAM_REGEX = /* @__PURE__ */new RegExp(`${SUBSTITUTION_EXPR_START}\\s*(.+?)\\s*${SUBSTITUTION_EXPR_END}`, 'g');
+function extractStyleParams(value) {
+  let params = [];
+  if (typeof value === 'string') {
+    let match;
+    while (match = PARAM_REGEX.exec(value)) {
+      params.push(match[1]);
+    }
+    PARAM_REGEX.lastIndex = 0;
+  }
+  return params;
+}
+function interpolateParams(value, params, errors) {
+  const original = `${value}`;
+  const str = original.replace(PARAM_REGEX, (_, varName) => {
+    let localVal = params[varName];
+    if (localVal == null) {
+      errors.push(invalidParamValue(varName));
+      localVal = '';
+    }
+    return localVal.toString();
+  });
+  return str == original ? value : str;
+}
+const DASH_CASE_REGEXP = /-+([a-z0-9])/g;
+function dashCaseToCamelCase(input) {
+  return input.replace(DASH_CASE_REGEXP, (...m) => m[1].toUpperCase());
+}
+function camelCaseToDashCase(input) {
+  return input.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+}
+function allowPreviousPlayerStylesMerge(duration, delay) {
+  return duration === 0 || delay === 0;
+}
+function balancePreviousStylesIntoKeyframes(element, keyframes, previousStyles) {
+  if (previousStyles.size && keyframes.length) {
+    let startingKeyframe = keyframes[0];
+    let missingStyleProps = [];
+    previousStyles.forEach((val, prop) => {
+      if (!startingKeyframe.has(prop)) {
+        missingStyleProps.push(prop);
+      }
+      startingKeyframe.set(prop, val);
+    });
+    if (missingStyleProps.length) {
+      for (let i = 1; i < keyframes.length; i++) {
+        let kf = keyframes[i];
+        missingStyleProps.forEach(prop => kf.set(prop, computeStyle(element, prop)));
+      }
+    }
+  }
+  return keyframes;
+}
+function visitDslNode(visitor, node, context) {
+  switch (node.type) {
+    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Trigger:
+      return visitor.visitTrigger(node, context);
+    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.State:
+      return visitor.visitState(node, context);
+    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Transition:
+      return visitor.visitTransition(node, context);
+    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Sequence:
+      return visitor.visitSequence(node, context);
+    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Group:
+      return visitor.visitGroup(node, context);
+    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Animate:
+      return visitor.visitAnimate(node, context);
+    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Keyframes:
+      return visitor.visitKeyframes(node, context);
+    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Style:
+      return visitor.visitStyle(node, context);
+    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Reference:
+      return visitor.visitReference(node, context);
+    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.AnimateChild:
+      return visitor.visitAnimateChild(node, context);
+    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.AnimateRef:
+      return visitor.visitAnimateRef(node, context);
+    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Query:
+      return visitor.visitQuery(node, context);
+    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Stagger:
+      return visitor.visitStagger(node, context);
+    default:
+      throw invalidNodeType(node.type);
+  }
+}
+function computeStyle(element, prop) {
+  return window.getComputedStyle(element)[prop];
+}
+
+
+/***/ },
+
 /***/ 10655
 /*!***************************************************************!*\
   !*** ./node_modules/@angular/animations/fesm2022/browser.mjs ***!
@@ -37,7 +944,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_util-chunk.mjs */ 67444);
 /* harmony import */ var _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_private_export-chunk.mjs */ 98130);
 /**
- * @license Angular v21.1.1
+ * @license Angular v21.1.4
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -3618,913 +4525,6 @@ class AnimationRendererFactory {
     this.delegate.componentReplaced?.(componentId);
   }
 }
-
-
-/***/ },
-
-/***/ 67444
-/*!*******************************************************************!*\
-  !*** ./node_modules/@angular/animations/fesm2022/_util-chunk.mjs ***!
-  \*******************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   ENTER_CLASSNAME: () => (/* binding */ ENTER_CLASSNAME),
-/* harmony export */   LEAVE_CLASSNAME: () => (/* binding */ LEAVE_CLASSNAME),
-/* harmony export */   NG_ANIMATING_CLASSNAME: () => (/* binding */ NG_ANIMATING_CLASSNAME),
-/* harmony export */   NG_ANIMATING_SELECTOR: () => (/* binding */ NG_ANIMATING_SELECTOR),
-/* harmony export */   NG_TRIGGER_CLASSNAME: () => (/* binding */ NG_TRIGGER_CLASSNAME),
-/* harmony export */   NG_TRIGGER_SELECTOR: () => (/* binding */ NG_TRIGGER_SELECTOR),
-/* harmony export */   SUBSTITUTION_EXPR_START: () => (/* binding */ SUBSTITUTION_EXPR_START),
-/* harmony export */   allowPreviousPlayerStylesMerge: () => (/* binding */ allowPreviousPlayerStylesMerge),
-/* harmony export */   balancePreviousStylesIntoKeyframes: () => (/* binding */ balancePreviousStylesIntoKeyframes),
-/* harmony export */   buildingFailed: () => (/* binding */ buildingFailed),
-/* harmony export */   camelCaseToDashCase: () => (/* binding */ camelCaseToDashCase),
-/* harmony export */   computeStyle: () => (/* binding */ computeStyle),
-/* harmony export */   containsElement: () => (/* binding */ containsElement),
-/* harmony export */   createAnimationFailed: () => (/* binding */ createAnimationFailed),
-/* harmony export */   dashCaseToCamelCase: () => (/* binding */ dashCaseToCamelCase),
-/* harmony export */   eraseStyles: () => (/* binding */ eraseStyles),
-/* harmony export */   extractStyleParams: () => (/* binding */ extractStyleParams),
-/* harmony export */   getOrSetDefaultValue: () => (/* binding */ getOrSetDefaultValue),
-/* harmony export */   getParentElement: () => (/* binding */ getParentElement),
-/* harmony export */   interpolateParams: () => (/* binding */ interpolateParams),
-/* harmony export */   invalidCssUnitValue: () => (/* binding */ invalidCssUnitValue),
-/* harmony export */   invalidDefinition: () => (/* binding */ invalidDefinition),
-/* harmony export */   invalidExpression: () => (/* binding */ invalidExpression),
-/* harmony export */   invalidKeyframes: () => (/* binding */ invalidKeyframes),
-/* harmony export */   invalidOffset: () => (/* binding */ invalidOffset),
-/* harmony export */   invalidParallelAnimation: () => (/* binding */ invalidParallelAnimation),
-/* harmony export */   invalidQuery: () => (/* binding */ invalidQuery),
-/* harmony export */   invalidStagger: () => (/* binding */ invalidStagger),
-/* harmony export */   invalidState: () => (/* binding */ invalidState),
-/* harmony export */   invalidStyleValue: () => (/* binding */ invalidStyleValue),
-/* harmony export */   invalidTransitionAlias: () => (/* binding */ invalidTransitionAlias),
-/* harmony export */   invalidTrigger: () => (/* binding */ invalidTrigger),
-/* harmony export */   invokeQuery: () => (/* binding */ invokeQuery),
-/* harmony export */   keyframeOffsetsOutOfOrder: () => (/* binding */ keyframeOffsetsOutOfOrder),
-/* harmony export */   keyframesMissingOffsets: () => (/* binding */ keyframesMissingOffsets),
-/* harmony export */   listenOnPlayer: () => (/* binding */ listenOnPlayer),
-/* harmony export */   makeAnimationEvent: () => (/* binding */ makeAnimationEvent),
-/* harmony export */   missingEvent: () => (/* binding */ missingEvent),
-/* harmony export */   missingOrDestroyedAnimation: () => (/* binding */ missingOrDestroyedAnimation),
-/* harmony export */   missingPlayer: () => (/* binding */ missingPlayer),
-/* harmony export */   missingTrigger: () => (/* binding */ missingTrigger),
-/* harmony export */   normalizeAnimationEntry: () => (/* binding */ normalizeAnimationEntry),
-/* harmony export */   normalizeKeyframes: () => (/* binding */ normalizeKeyframes$1),
-/* harmony export */   normalizeKeyframes$1: () => (/* binding */ normalizeKeyframes),
-/* harmony export */   normalizeStyles: () => (/* binding */ normalizeStyles),
-/* harmony export */   optimizeGroupPlayer: () => (/* binding */ optimizeGroupPlayer),
-/* harmony export */   parseTimelineCommand: () => (/* binding */ parseTimelineCommand),
-/* harmony export */   registerFailed: () => (/* binding */ registerFailed),
-/* harmony export */   resolveTiming: () => (/* binding */ resolveTiming),
-/* harmony export */   resolveTimingValue: () => (/* binding */ resolveTimingValue),
-/* harmony export */   setStyles: () => (/* binding */ setStyles),
-/* harmony export */   transitionFailed: () => (/* binding */ transitionFailed),
-/* harmony export */   triggerBuildFailed: () => (/* binding */ triggerBuildFailed),
-/* harmony export */   triggerTransitionsFailed: () => (/* binding */ triggerTransitionsFailed),
-/* harmony export */   unregisteredTrigger: () => (/* binding */ unregisteredTrigger),
-/* harmony export */   unsupportedTriggerEvent: () => (/* binding */ unsupportedTriggerEvent),
-/* harmony export */   validateStyleParams: () => (/* binding */ validateStyleParams),
-/* harmony export */   validateStyleProperty: () => (/* binding */ validateStyleProperty),
-/* harmony export */   validateWebAnimatableStyleProperty: () => (/* binding */ validateWebAnimatableStyleProperty),
-/* harmony export */   validationFailed: () => (/* binding */ validationFailed),
-/* harmony export */   visitDslNode: () => (/* binding */ visitDslNode)
-/* harmony export */ });
-/* harmony import */ var _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_private_export-chunk.mjs */ 98130);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
-/**
- * @license Angular v21.1.1
- * (c) 2010-2026 Google LLC. https://angular.dev/
- * License: MIT
- */
-
-
-
-const LINE_START = '\n - ';
-function invalidTimingValue(exp) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3000, ngDevMode && `The provided timing value "${exp}" is invalid.`);
-}
-function negativeStepValue() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3100, ngDevMode && 'Duration values below 0 are not allowed for this animation step.');
-}
-function negativeDelayValue() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3101, ngDevMode && 'Delay values below 0 are not allowed for this animation step.');
-}
-function invalidStyleParams(varName) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3001, ngDevMode && `Unable to resolve the local animation param ${varName} in the given list of values`);
-}
-function invalidParamValue(varName) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3003, ngDevMode && `Please provide a value for the animation param ${varName}`);
-}
-function invalidNodeType(nodeType) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3004, ngDevMode && `Unable to resolve animation metadata node #${nodeType}`);
-}
-function invalidCssUnitValue(userProvidedProperty, value) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3005, ngDevMode && `Please provide a CSS unit value for ${userProvidedProperty}:${value}`);
-}
-function invalidTrigger() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3006, ngDevMode && "animation triggers cannot be prefixed with an `@` sign (e.g. trigger('@foo', [...]))");
-}
-function invalidDefinition() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3007, ngDevMode && 'only state() and transition() definitions can sit inside of a trigger()');
-}
-function invalidState(metadataName, missingSubs) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3008, ngDevMode && `state("${metadataName}", ...) must define default values for all the following style substitutions: ${missingSubs.join(', ')}`);
-}
-function invalidStyleValue(value) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3002, ngDevMode && `The provided style string value ${value} is not allowed.`);
-}
-function invalidParallelAnimation(prop, firstStart, firstEnd, secondStart, secondEnd) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3010, ngDevMode && `The CSS property "${prop}" that exists between the times of "${firstStart}ms" and "${firstEnd}ms" is also being animated in a parallel animation between the times of "${secondStart}ms" and "${secondEnd}ms"`);
-}
-function invalidKeyframes() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3011, ngDevMode && `keyframes() must be placed inside of a call to animate()`);
-}
-function invalidOffset() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3012, ngDevMode && `Please ensure that all keyframe offsets are between 0 and 1`);
-}
-function keyframeOffsetsOutOfOrder() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3200, ngDevMode && `Please ensure that all keyframe offsets are in order`);
-}
-function keyframesMissingOffsets() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3202, ngDevMode && `Not all style() steps within the declared keyframes() contain offsets`);
-}
-function invalidStagger() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3013, ngDevMode && `stagger() can only be used inside of query()`);
-}
-function invalidQuery(selector) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3014, ngDevMode && `\`query("${selector}")\` returned zero elements. (Use \`query("${selector}", { optional: true })\` if you wish to allow this.)`);
-}
-function invalidExpression(expr) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3015, ngDevMode && `The provided transition expression "${expr}" is not supported`);
-}
-function invalidTransitionAlias(alias) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3016, ngDevMode && `The transition alias value "${alias}" is not supported`);
-}
-function validationFailed(errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3500, ngDevMode && `animation validation failed:\n${errors.map(err => err.message).join('\n')}`);
-}
-function buildingFailed(errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3501, ngDevMode && `animation building failed:\n${errors.map(err => err.message).join('\n')}`);
-}
-function triggerBuildFailed(name, errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3404, ngDevMode && `The animation trigger "${name}" has failed to build due to the following errors:\n - ${errors.map(err => err.message).join('\n - ')}`);
-}
-function animationFailed(errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3502, ngDevMode && `Unable to animate due to the following errors:${LINE_START}${errors.map(err => err.message).join(LINE_START)}`);
-}
-function registerFailed(errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3503, ngDevMode && `Unable to build the animation due to the following errors: ${errors.map(err => err.message).join('\n')}`);
-}
-function missingOrDestroyedAnimation() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3300, ngDevMode && "The requested animation doesn't exist or has already been destroyed");
-}
-function createAnimationFailed(errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3504, ngDevMode && `Unable to create the animation due to the following errors:${errors.map(err => err.message).join('\n')}`);
-}
-function missingPlayer(id) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3301, ngDevMode && `Unable to find the timeline player referenced by ${id}`);
-}
-function missingTrigger(phase, name) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3302, ngDevMode && `Unable to listen on the animation trigger event "${phase}" because the animation trigger "${name}" doesn\'t exist!`);
-}
-function missingEvent(name) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3303, ngDevMode && `Unable to listen on the animation trigger "${name}" because the provided event is undefined!`);
-}
-function unsupportedTriggerEvent(phase, name) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3400, ngDevMode && `The provided animation trigger event "${phase}" for the animation trigger "${name}" is not supported!`);
-}
-function unregisteredTrigger(name) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3401, ngDevMode && `The provided animation trigger "${name}" has not been registered!`);
-}
-function triggerTransitionsFailed(errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3402, ngDevMode && `Unable to process animations due to the following failed trigger transitions\n ${errors.map(err => err.message).join('\n')}`);
-}
-function transitionFailed(name, errors) {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](3505, ngDevMode && `@${name} has failed due to:\n ${errors.map(err => err.message).join('\n- ')}`);
-}
-const ANIMATABLE_PROP_SET = /*#__PURE__*/new Set(['-moz-outline-radius', '-moz-outline-radius-bottomleft', '-moz-outline-radius-bottomright', '-moz-outline-radius-topleft', '-moz-outline-radius-topright', '-ms-grid-columns', '-ms-grid-rows', '-webkit-line-clamp', '-webkit-text-fill-color', '-webkit-text-stroke', '-webkit-text-stroke-color', 'accent-color', 'all', 'backdrop-filter', 'background', 'background-color', 'background-position', 'background-size', 'block-size', 'border', 'border-block-end', 'border-block-end-color', 'border-block-end-width', 'border-block-start', 'border-block-start-color', 'border-block-start-width', 'border-bottom', 'border-bottom-color', 'border-bottom-left-radius', 'border-bottom-right-radius', 'border-bottom-width', 'border-color', 'border-end-end-radius', 'border-end-start-radius', 'border-image-outset', 'border-image-slice', 'border-image-width', 'border-inline-end', 'border-inline-end-color', 'border-inline-end-width', 'border-inline-start', 'border-inline-start-color', 'border-inline-start-width', 'border-left', 'border-left-color', 'border-left-width', 'border-radius', 'border-right', 'border-right-color', 'border-right-width', 'border-start-end-radius', 'border-start-start-radius', 'border-top', 'border-top-color', 'border-top-left-radius', 'border-top-right-radius', 'border-top-width', 'border-width', 'bottom', 'box-shadow', 'caret-color', 'clip', 'clip-path', 'color', 'column-count', 'column-gap', 'column-rule', 'column-rule-color', 'column-rule-width', 'column-width', 'columns', 'filter', 'flex', 'flex-basis', 'flex-grow', 'flex-shrink', 'font', 'font-size', 'font-size-adjust', 'font-stretch', 'font-variation-settings', 'font-weight', 'gap', 'grid-column-gap', 'grid-gap', 'grid-row-gap', 'grid-template-columns', 'grid-template-rows', 'height', 'inline-size', 'input-security', 'inset', 'inset-block', 'inset-block-end', 'inset-block-start', 'inset-inline', 'inset-inline-end', 'inset-inline-start', 'left', 'letter-spacing', 'line-clamp', 'line-height', 'margin', 'margin-block-end', 'margin-block-start', 'margin-bottom', 'margin-inline-end', 'margin-inline-start', 'margin-left', 'margin-right', 'margin-top', 'mask', 'mask-border', 'mask-position', 'mask-size', 'max-block-size', 'max-height', 'max-inline-size', 'max-lines', 'max-width', 'min-block-size', 'min-height', 'min-inline-size', 'min-width', 'object-position', 'offset', 'offset-anchor', 'offset-distance', 'offset-path', 'offset-position', 'offset-rotate', 'opacity', 'order', 'outline', 'outline-color', 'outline-offset', 'outline-width', 'padding', 'padding-block-end', 'padding-block-start', 'padding-bottom', 'padding-inline-end', 'padding-inline-start', 'padding-left', 'padding-right', 'padding-top', 'perspective', 'perspective-origin', 'right', 'rotate', 'row-gap', 'scale', 'scroll-margin', 'scroll-margin-block', 'scroll-margin-block-end', 'scroll-margin-block-start', 'scroll-margin-bottom', 'scroll-margin-inline', 'scroll-margin-inline-end', 'scroll-margin-inline-start', 'scroll-margin-left', 'scroll-margin-right', 'scroll-margin-top', 'scroll-padding', 'scroll-padding-block', 'scroll-padding-block-end', 'scroll-padding-block-start', 'scroll-padding-bottom', 'scroll-padding-inline', 'scroll-padding-inline-end', 'scroll-padding-inline-start', 'scroll-padding-left', 'scroll-padding-right', 'scroll-padding-top', 'scroll-snap-coordinate', 'scroll-snap-destination', 'scrollbar-color', 'shape-image-threshold', 'shape-margin', 'shape-outside', 'tab-size', 'text-decoration', 'text-decoration-color', 'text-decoration-thickness', 'text-emphasis', 'text-emphasis-color', 'text-indent', 'text-shadow', 'text-underline-offset', 'top', 'transform', 'transform-origin', 'translate', 'vertical-align', 'visibility', 'width', 'word-spacing', 'z-index', 'zoom']);
-function optimizeGroupPlayer(players) {
-  switch (players.length) {
-    case 0:
-      return new _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.NoopAnimationPlayer();
-    case 1:
-      return players[0];
-    default:
-      return new _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationGroupPlayer(players);
-  }
-}
-function normalizeKeyframes$1(normalizer, keyframes, preStyles = new Map(), postStyles = new Map()) {
-  const errors = [];
-  const normalizedKeyframes = [];
-  let previousOffset = -1;
-  let previousKeyframe = null;
-  keyframes.forEach(kf => {
-    const offset = kf.get('offset');
-    const isSameOffset = offset == previousOffset;
-    const normalizedKeyframe = isSameOffset && previousKeyframe || new Map();
-    kf.forEach((val, prop) => {
-      let normalizedProp = prop;
-      let normalizedValue = val;
-      if (prop !== 'offset') {
-        normalizedProp = normalizer.normalizePropertyName(normalizedProp, errors);
-        switch (normalizedValue) {
-          case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__["ɵPRE_STYLE"]:
-            normalizedValue = preStyles.get(prop);
-            break;
-          case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AUTO_STYLE:
-            normalizedValue = postStyles.get(prop);
-            break;
-          default:
-            normalizedValue = normalizer.normalizeStyleValue(prop, normalizedProp, normalizedValue, errors);
-            break;
-        }
-      }
-      normalizedKeyframe.set(normalizedProp, normalizedValue);
-    });
-    if (!isSameOffset) {
-      normalizedKeyframes.push(normalizedKeyframe);
-    }
-    previousKeyframe = normalizedKeyframe;
-    previousOffset = offset;
-  });
-  if (errors.length) {
-    throw animationFailed(errors);
-  }
-  return normalizedKeyframes;
-}
-function listenOnPlayer(player, eventName, event, callback) {
-  switch (eventName) {
-    case 'start':
-      player.onStart(() => callback(event && copyAnimationEvent(event, 'start', player)));
-      break;
-    case 'done':
-      player.onDone(() => callback(event && copyAnimationEvent(event, 'done', player)));
-      break;
-    case 'destroy':
-      player.onDestroy(() => callback(event && copyAnimationEvent(event, 'destroy', player)));
-      break;
-  }
-}
-function copyAnimationEvent(e, phaseName, player) {
-  const totalTime = player.totalTime;
-  const disabled = player.disabled ? true : false;
-  const event = makeAnimationEvent(e.element, e.triggerName, e.fromState, e.toState, phaseName || e.phaseName, totalTime == undefined ? e.totalTime : totalTime, disabled);
-  const data = e['_data'];
-  if (data != null) {
-    event['_data'] = data;
-  }
-  return event;
-}
-function makeAnimationEvent(element, triggerName, fromState, toState, phaseName = '', totalTime = 0, disabled) {
-  return {
-    element,
-    triggerName,
-    fromState,
-    toState,
-    phaseName,
-    totalTime,
-    disabled: !!disabled
-  };
-}
-function getOrSetDefaultValue(map, key, defaultValue) {
-  let value = map.get(key);
-  if (!value) {
-    map.set(key, value = defaultValue);
-  }
-  return value;
-}
-function parseTimelineCommand(command) {
-  const separatorPos = command.indexOf(':');
-  const id = command.substring(1, separatorPos);
-  const action = command.slice(separatorPos + 1);
-  return [id, action];
-}
-const documentElement = /* @__PURE__ */(() => typeof document === 'undefined' ? null : document.documentElement)();
-function getParentElement(element) {
-  const parent = element.parentNode || element.host || null;
-  if (parent === documentElement) {
-    return null;
-  }
-  return parent;
-}
-function containsVendorPrefix(prop) {
-  return prop.substring(1, 6) == 'ebkit';
-}
-let _CACHED_BODY = null;
-let _IS_WEBKIT = false;
-function validateStyleProperty(prop) {
-  if (!_CACHED_BODY) {
-    _CACHED_BODY = getBodyNode() || {};
-    _IS_WEBKIT = _CACHED_BODY.style ? 'WebkitAppearance' in _CACHED_BODY.style : false;
-  }
-  let result = true;
-  if (_CACHED_BODY.style && !containsVendorPrefix(prop)) {
-    result = prop in _CACHED_BODY.style;
-    if (!result && _IS_WEBKIT) {
-      const camelProp = 'Webkit' + prop.charAt(0).toUpperCase() + prop.slice(1);
-      result = camelProp in _CACHED_BODY.style;
-    }
-  }
-  return result;
-}
-function validateWebAnimatableStyleProperty(prop) {
-  return ANIMATABLE_PROP_SET.has(prop);
-}
-function getBodyNode() {
-  if (typeof document != 'undefined') {
-    return document.body;
-  }
-  return null;
-}
-function containsElement(elm1, elm2) {
-  while (elm2) {
-    if (elm2 === elm1) {
-      return true;
-    }
-    elm2 = getParentElement(elm2);
-  }
-  return false;
-}
-function invokeQuery(element, selector, multi) {
-  if (multi) {
-    return Array.from(element.querySelectorAll(selector));
-  }
-  const elem = element.querySelector(selector);
-  return elem ? [elem] : [];
-}
-const ONE_SECOND = 1000;
-const SUBSTITUTION_EXPR_START = '{{';
-const SUBSTITUTION_EXPR_END = '}}';
-const ENTER_CLASSNAME = 'ng-enter';
-const LEAVE_CLASSNAME = 'ng-leave';
-const NG_TRIGGER_CLASSNAME = 'ng-trigger';
-const NG_TRIGGER_SELECTOR = '.ng-trigger';
-const NG_ANIMATING_CLASSNAME = 'ng-animating';
-const NG_ANIMATING_SELECTOR = '.ng-animating';
-function resolveTimingValue(value) {
-  if (typeof value == 'number') return value;
-  const matches = value.match(/^(-?[\.\d]+)(m?s)/);
-  if (!matches || matches.length < 2) return 0;
-  return _convertTimeValueToMS(parseFloat(matches[1]), matches[2]);
-}
-function _convertTimeValueToMS(value, unit) {
-  switch (unit) {
-    case 's':
-      return value * ONE_SECOND;
-    default:
-      return value;
-  }
-}
-function resolveTiming(timings, errors, allowNegativeValues) {
-  return timings.hasOwnProperty('duration') ? timings : parseTimeExpression(timings, errors, allowNegativeValues);
-}
-const PARSE_TIME_EXPRESSION_REGEX = /^(-?[\.\d]+)(m?s)(?:\s+(-?[\.\d]+)(m?s))?(?:\s+([-a-z]+(?:\(.+?\))?))?$/i;
-function parseTimeExpression(exp, errors, allowNegativeValues) {
-  let duration;
-  let delay = 0;
-  let easing = '';
-  if (typeof exp === 'string') {
-    const matches = exp.match(PARSE_TIME_EXPRESSION_REGEX);
-    if (matches === null) {
-      errors.push(invalidTimingValue(exp));
-      return {
-        duration: 0,
-        delay: 0,
-        easing: ''
-      };
-    }
-    duration = _convertTimeValueToMS(parseFloat(matches[1]), matches[2]);
-    const delayMatch = matches[3];
-    if (delayMatch != null) {
-      delay = _convertTimeValueToMS(parseFloat(delayMatch), matches[4]);
-    }
-    const easingVal = matches[5];
-    if (easingVal) {
-      easing = easingVal;
-    }
-  } else {
-    duration = exp;
-  }
-  if (!allowNegativeValues) {
-    let containsErrors = false;
-    let startIndex = errors.length;
-    if (duration < 0) {
-      errors.push(negativeStepValue());
-      containsErrors = true;
-    }
-    if (delay < 0) {
-      errors.push(negativeDelayValue());
-      containsErrors = true;
-    }
-    if (containsErrors) {
-      errors.splice(startIndex, 0, invalidTimingValue(exp));
-    }
-  }
-  return {
-    duration,
-    delay,
-    easing
-  };
-}
-function normalizeKeyframes(keyframes) {
-  if (!keyframes.length) {
-    return [];
-  }
-  if (keyframes[0] instanceof Map) {
-    return keyframes;
-  }
-  return keyframes.map(kf => new Map(Object.entries(kf)));
-}
-function normalizeStyles(styles) {
-  return Array.isArray(styles) ? new Map(...styles) : new Map(styles);
-}
-function setStyles(element, styles, formerStyles) {
-  styles.forEach((val, prop) => {
-    const camelProp = dashCaseToCamelCase(prop);
-    if (formerStyles && !formerStyles.has(prop)) {
-      formerStyles.set(prop, element.style[camelProp]);
-    }
-    element.style[camelProp] = val;
-  });
-}
-function eraseStyles(element, styles) {
-  styles.forEach((_, prop) => {
-    const camelProp = dashCaseToCamelCase(prop);
-    element.style[camelProp] = '';
-  });
-}
-function normalizeAnimationEntry(steps) {
-  if (Array.isArray(steps)) {
-    if (steps.length == 1) return steps[0];
-    return (0,_private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.sequence)(steps);
-  }
-  return steps;
-}
-function validateStyleParams(value, options, errors) {
-  const params = options.params || {};
-  const matches = extractStyleParams(value);
-  if (matches.length) {
-    matches.forEach(varName => {
-      if (!params.hasOwnProperty(varName)) {
-        errors.push(invalidStyleParams(varName));
-      }
-    });
-  }
-}
-const PARAM_REGEX = /* @__PURE__ */new RegExp(`${SUBSTITUTION_EXPR_START}\\s*(.+?)\\s*${SUBSTITUTION_EXPR_END}`, 'g');
-function extractStyleParams(value) {
-  let params = [];
-  if (typeof value === 'string') {
-    let match;
-    while (match = PARAM_REGEX.exec(value)) {
-      params.push(match[1]);
-    }
-    PARAM_REGEX.lastIndex = 0;
-  }
-  return params;
-}
-function interpolateParams(value, params, errors) {
-  const original = `${value}`;
-  const str = original.replace(PARAM_REGEX, (_, varName) => {
-    let localVal = params[varName];
-    if (localVal == null) {
-      errors.push(invalidParamValue(varName));
-      localVal = '';
-    }
-    return localVal.toString();
-  });
-  return str == original ? value : str;
-}
-const DASH_CASE_REGEXP = /-+([a-z0-9])/g;
-function dashCaseToCamelCase(input) {
-  return input.replace(DASH_CASE_REGEXP, (...m) => m[1].toUpperCase());
-}
-function camelCaseToDashCase(input) {
-  return input.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
-}
-function allowPreviousPlayerStylesMerge(duration, delay) {
-  return duration === 0 || delay === 0;
-}
-function balancePreviousStylesIntoKeyframes(element, keyframes, previousStyles) {
-  if (previousStyles.size && keyframes.length) {
-    let startingKeyframe = keyframes[0];
-    let missingStyleProps = [];
-    previousStyles.forEach((val, prop) => {
-      if (!startingKeyframe.has(prop)) {
-        missingStyleProps.push(prop);
-      }
-      startingKeyframe.set(prop, val);
-    });
-    if (missingStyleProps.length) {
-      for (let i = 1; i < keyframes.length; i++) {
-        let kf = keyframes[i];
-        missingStyleProps.forEach(prop => kf.set(prop, computeStyle(element, prop)));
-      }
-    }
-  }
-  return keyframes;
-}
-function visitDslNode(visitor, node, context) {
-  switch (node.type) {
-    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Trigger:
-      return visitor.visitTrigger(node, context);
-    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.State:
-      return visitor.visitState(node, context);
-    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Transition:
-      return visitor.visitTransition(node, context);
-    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Sequence:
-      return visitor.visitSequence(node, context);
-    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Group:
-      return visitor.visitGroup(node, context);
-    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Animate:
-      return visitor.visitAnimate(node, context);
-    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Keyframes:
-      return visitor.visitKeyframes(node, context);
-    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Style:
-      return visitor.visitStyle(node, context);
-    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Reference:
-      return visitor.visitReference(node, context);
-    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.AnimateChild:
-      return visitor.visitAnimateChild(node, context);
-    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.AnimateRef:
-      return visitor.visitAnimateRef(node, context);
-    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Query:
-      return visitor.visitQuery(node, context);
-    case _private_export_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.AnimationMetadataType.Stagger:
-      return visitor.visitStagger(node, context);
-    default:
-      throw invalidNodeType(node.type);
-  }
-}
-function computeStyle(element, prop) {
-  return window.getComputedStyle(element)[prop];
-}
-
-
-/***/ },
-
-/***/ 98130
-/*!*****************************************************************************!*\
-  !*** ./node_modules/@angular/animations/fesm2022/_private_export-chunk.mjs ***!
-  \*****************************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   AUTO_STYLE: () => (/* binding */ AUTO_STYLE),
-/* harmony export */   AnimationGroupPlayer: () => (/* binding */ AnimationGroupPlayer),
-/* harmony export */   AnimationMetadataType: () => (/* binding */ AnimationMetadataType),
-/* harmony export */   NoopAnimationPlayer: () => (/* binding */ NoopAnimationPlayer),
-/* harmony export */   animate: () => (/* binding */ animate),
-/* harmony export */   animateChild: () => (/* binding */ animateChild),
-/* harmony export */   animation: () => (/* binding */ animation),
-/* harmony export */   group: () => (/* binding */ group),
-/* harmony export */   keyframes: () => (/* binding */ keyframes),
-/* harmony export */   query: () => (/* binding */ query),
-/* harmony export */   sequence: () => (/* binding */ sequence),
-/* harmony export */   stagger: () => (/* binding */ stagger),
-/* harmony export */   state: () => (/* binding */ state),
-/* harmony export */   style: () => (/* binding */ style),
-/* harmony export */   transition: () => (/* binding */ transition),
-/* harmony export */   trigger: () => (/* binding */ trigger),
-/* harmony export */   useAnimation: () => (/* binding */ useAnimation),
-/* harmony export */   "ɵPRE_STYLE": () => (/* binding */ ɵPRE_STYLE)
-/* harmony export */ });
-/**
- * @license Angular v21.1.1
- * (c) 2010-2026 Google LLC. https://angular.dev/
- * License: MIT
- */
-
-var AnimationMetadataType = /*#__PURE__*/function (AnimationMetadataType) {
-  AnimationMetadataType[AnimationMetadataType["State"] = 0] = "State";
-  AnimationMetadataType[AnimationMetadataType["Transition"] = 1] = "Transition";
-  AnimationMetadataType[AnimationMetadataType["Sequence"] = 2] = "Sequence";
-  AnimationMetadataType[AnimationMetadataType["Group"] = 3] = "Group";
-  AnimationMetadataType[AnimationMetadataType["Animate"] = 4] = "Animate";
-  AnimationMetadataType[AnimationMetadataType["Keyframes"] = 5] = "Keyframes";
-  AnimationMetadataType[AnimationMetadataType["Style"] = 6] = "Style";
-  AnimationMetadataType[AnimationMetadataType["Trigger"] = 7] = "Trigger";
-  AnimationMetadataType[AnimationMetadataType["Reference"] = 8] = "Reference";
-  AnimationMetadataType[AnimationMetadataType["AnimateChild"] = 9] = "AnimateChild";
-  AnimationMetadataType[AnimationMetadataType["AnimateRef"] = 10] = "AnimateRef";
-  AnimationMetadataType[AnimationMetadataType["Query"] = 11] = "Query";
-  AnimationMetadataType[AnimationMetadataType["Stagger"] = 12] = "Stagger";
-  return AnimationMetadataType;
-}(AnimationMetadataType || {});
-const AUTO_STYLE = '*';
-function trigger(name, definitions) {
-  return {
-    type: AnimationMetadataType.Trigger,
-    name,
-    definitions,
-    options: {}
-  };
-}
-function animate(timings, styles = null) {
-  return {
-    type: AnimationMetadataType.Animate,
-    styles,
-    timings
-  };
-}
-function group(steps, options = null) {
-  return {
-    type: AnimationMetadataType.Group,
-    steps,
-    options
-  };
-}
-function sequence(steps, options = null) {
-  return {
-    type: AnimationMetadataType.Sequence,
-    steps,
-    options
-  };
-}
-function style(tokens) {
-  return {
-    type: AnimationMetadataType.Style,
-    styles: tokens,
-    offset: null
-  };
-}
-function state(name, styles, options) {
-  return {
-    type: AnimationMetadataType.State,
-    name,
-    styles,
-    options
-  };
-}
-function keyframes(steps) {
-  return {
-    type: AnimationMetadataType.Keyframes,
-    steps
-  };
-}
-function transition(stateChangeExpr, steps, options = null) {
-  return {
-    type: AnimationMetadataType.Transition,
-    expr: stateChangeExpr,
-    animation: steps,
-    options
-  };
-}
-function animation(steps, options = null) {
-  return {
-    type: AnimationMetadataType.Reference,
-    animation: steps,
-    options
-  };
-}
-function animateChild(options = null) {
-  return {
-    type: AnimationMetadataType.AnimateChild,
-    options
-  };
-}
-function useAnimation(animation, options = null) {
-  return {
-    type: AnimationMetadataType.AnimateRef,
-    animation,
-    options
-  };
-}
-function query(selector, animation, options = null) {
-  return {
-    type: AnimationMetadataType.Query,
-    selector,
-    animation,
-    options
-  };
-}
-function stagger(timings, animation) {
-  return {
-    type: AnimationMetadataType.Stagger,
-    timings,
-    animation
-  };
-}
-class NoopAnimationPlayer {
-  _onDoneFns = [];
-  _onStartFns = [];
-  _onDestroyFns = [];
-  _originalOnDoneFns = [];
-  _originalOnStartFns = [];
-  _started = false;
-  _destroyed = false;
-  _finished = false;
-  _position = 0;
-  parentPlayer = null;
-  totalTime;
-  constructor(duration = 0, delay = 0) {
-    this.totalTime = duration + delay;
-  }
-  _onFinish() {
-    if (!this._finished) {
-      this._finished = true;
-      this._onDoneFns.forEach(fn => fn());
-      this._onDoneFns = [];
-    }
-  }
-  onStart(fn) {
-    this._originalOnStartFns.push(fn);
-    this._onStartFns.push(fn);
-  }
-  onDone(fn) {
-    this._originalOnDoneFns.push(fn);
-    this._onDoneFns.push(fn);
-  }
-  onDestroy(fn) {
-    this._onDestroyFns.push(fn);
-  }
-  hasStarted() {
-    return this._started;
-  }
-  init() {}
-  play() {
-    if (!this.hasStarted()) {
-      this._onStart();
-      this.triggerMicrotask();
-    }
-    this._started = true;
-  }
-  triggerMicrotask() {
-    queueMicrotask(() => this._onFinish());
-  }
-  _onStart() {
-    this._onStartFns.forEach(fn => fn());
-    this._onStartFns = [];
-  }
-  pause() {}
-  restart() {}
-  finish() {
-    this._onFinish();
-  }
-  destroy() {
-    if (!this._destroyed) {
-      this._destroyed = true;
-      if (!this.hasStarted()) {
-        this._onStart();
-      }
-      this.finish();
-      this._onDestroyFns.forEach(fn => fn());
-      this._onDestroyFns = [];
-    }
-  }
-  reset() {
-    this._started = false;
-    this._finished = false;
-    this._onStartFns = this._originalOnStartFns;
-    this._onDoneFns = this._originalOnDoneFns;
-  }
-  setPosition(position) {
-    this._position = this.totalTime ? position * this.totalTime : 1;
-  }
-  getPosition() {
-    return this.totalTime ? this._position / this.totalTime : 1;
-  }
-  triggerCallback(phaseName) {
-    const methods = phaseName == 'start' ? this._onStartFns : this._onDoneFns;
-    methods.forEach(fn => fn());
-    methods.length = 0;
-  }
-}
-class AnimationGroupPlayer {
-  _onDoneFns = [];
-  _onStartFns = [];
-  _finished = false;
-  _started = false;
-  _destroyed = false;
-  _onDestroyFns = [];
-  parentPlayer = null;
-  totalTime = 0;
-  players;
-  constructor(_players) {
-    this.players = _players;
-    let doneCount = 0;
-    let destroyCount = 0;
-    let startCount = 0;
-    const total = this.players.length;
-    if (total == 0) {
-      queueMicrotask(() => this._onFinish());
-    } else {
-      this.players.forEach(player => {
-        player.onDone(() => {
-          if (++doneCount == total) {
-            this._onFinish();
-          }
-        });
-        player.onDestroy(() => {
-          if (++destroyCount == total) {
-            this._onDestroy();
-          }
-        });
-        player.onStart(() => {
-          if (++startCount == total) {
-            this._onStart();
-          }
-        });
-      });
-    }
-    this.totalTime = this.players.reduce((time, player) => Math.max(time, player.totalTime), 0);
-  }
-  _onFinish() {
-    if (!this._finished) {
-      this._finished = true;
-      this._onDoneFns.forEach(fn => fn());
-      this._onDoneFns = [];
-    }
-  }
-  init() {
-    this.players.forEach(player => player.init());
-  }
-  onStart(fn) {
-    this._onStartFns.push(fn);
-  }
-  _onStart() {
-    if (!this.hasStarted()) {
-      this._started = true;
-      this._onStartFns.forEach(fn => fn());
-      this._onStartFns = [];
-    }
-  }
-  onDone(fn) {
-    this._onDoneFns.push(fn);
-  }
-  onDestroy(fn) {
-    this._onDestroyFns.push(fn);
-  }
-  hasStarted() {
-    return this._started;
-  }
-  play() {
-    if (!this.parentPlayer) {
-      this.init();
-    }
-    this._onStart();
-    this.players.forEach(player => player.play());
-  }
-  pause() {
-    this.players.forEach(player => player.pause());
-  }
-  restart() {
-    this.players.forEach(player => player.restart());
-  }
-  finish() {
-    this._onFinish();
-    this.players.forEach(player => player.finish());
-  }
-  destroy() {
-    this._onDestroy();
-  }
-  _onDestroy() {
-    if (!this._destroyed) {
-      this._destroyed = true;
-      this._onFinish();
-      this.players.forEach(player => player.destroy());
-      this._onDestroyFns.forEach(fn => fn());
-      this._onDestroyFns = [];
-    }
-  }
-  reset() {
-    this.players.forEach(player => player.reset());
-    this._destroyed = false;
-    this._finished = false;
-    this._started = false;
-  }
-  setPosition(p) {
-    const timeAtPosition = p * this.totalTime;
-    this.players.forEach(player => {
-      const position = player.totalTime ? Math.min(1, timeAtPosition / player.totalTime) : 1;
-      player.setPosition(position);
-    });
-  }
-  getPosition() {
-    const longestPlayer = this.players.reduce((longestSoFar, player) => {
-      const newPlayerIsLongest = longestSoFar === null || player.totalTime > longestSoFar.totalTime;
-      return newPlayerIsLongest ? player : longestSoFar;
-    }, null);
-    return longestPlayer != null ? longestPlayer.getPosition() : 0;
-  }
-  beforeDestroy() {
-    this.players.forEach(player => {
-      if (player.beforeDestroy) {
-        player.beforeDestroy();
-      }
-    });
-  }
-  triggerCallback(phaseName) {
-    const methods = phaseName == 'start' ? this._onStartFns : this._onDoneFns;
-    methods.forEach(fn => fn());
-    methods.length = 0;
-  }
-}
-const ɵPRE_STYLE = '!';
 
 
 /***/ }

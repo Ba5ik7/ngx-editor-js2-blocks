@@ -1,5 +1,41 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[8653],{
 
+/***/ 87432
+/*!**********************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/_animation-chunk.mjs ***!
+  \**********************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MATERIAL_ANIMATIONS: () => (/* binding */ MATERIAL_ANIMATIONS),
+/* harmony export */   _animationsDisabled: () => (/* binding */ _animationsDisabled),
+/* harmony export */   _getAnimationsState: () => (/* binding */ _getAnimationsState)
+/* harmony export */ });
+/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/layout */ 42394);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
+
+
+const MATERIAL_ANIMATIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('MATERIAL_ANIMATIONS');
+let reducedMotion = null;
+function _getAnimationsState() {
+  if ((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(MATERIAL_ANIMATIONS, {
+    optional: true
+  })?.animationsDisabled || (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ANIMATION_MODULE_TYPE, {
+    optional: true
+  }) === 'NoopAnimations') {
+    return 'di-disabled';
+  }
+  reducedMotion ??= (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__.MediaMatcher).matchMedia('(prefers-reduced-motion)').matches;
+  return reducedMotion ? 'reduced-motion' : 'enabled';
+}
+function _animationsDisabled() {
+  return _getAnimationsState() !== 'enabled';
+}
+
+
+/***/ },
+
 /***/ 17828
 /*!*******************************************************************!*\
   !*** ./node_modules/@angular/material/fesm2022/_ripple-chunk.mjs ***!
@@ -480,6 +516,43 @@ let MatRipple = /*#__PURE__*/(() => {
     });
   }
   return MatRipple;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+
+/***/ },
+
+/***/ 85309
+/*!**************************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/_ripple-module-chunk.mjs ***!
+  \**************************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MatRippleModule: () => (/* binding */ MatRippleModule)
+/* harmony export */ });
+/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/bidi */ 13266);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
+
+
+
+
+let MatRippleModule = /*#__PURE__*/(() => {
+  class MatRippleModule {
+    static ɵfac = function MatRippleModule_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || MatRippleModule)();
+    };
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
+      type: MatRippleModule
+    });
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
+      imports: [_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_0__.BidiModule]
+    });
+  }
+  return MatRippleModule;
 })();
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
@@ -1735,79 +1808,6 @@ let MatMenuModule = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-
-
-/***/ },
-
-/***/ 85309
-/*!**************************************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2022/_ripple-module-chunk.mjs ***!
-  \**************************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   MatRippleModule: () => (/* binding */ MatRippleModule)
-/* harmony export */ });
-/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/bidi */ 13266);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
-
-
-
-
-let MatRippleModule = /*#__PURE__*/(() => {
-  class MatRippleModule {
-    static ɵfac = function MatRippleModule_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || MatRippleModule)();
-    };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
-      type: MatRippleModule
-    });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
-      imports: [_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_0__.BidiModule]
-    });
-  }
-  return MatRippleModule;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-
-/***/ },
-
-/***/ 87432
-/*!**********************************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2022/_animation-chunk.mjs ***!
-  \**********************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   MATERIAL_ANIMATIONS: () => (/* binding */ MATERIAL_ANIMATIONS),
-/* harmony export */   _animationsDisabled: () => (/* binding */ _animationsDisabled),
-/* harmony export */   _getAnimationsState: () => (/* binding */ _getAnimationsState)
-/* harmony export */ });
-/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/layout */ 42394);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
-
-
-const MATERIAL_ANIMATIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('MATERIAL_ANIMATIONS');
-let reducedMotion = null;
-function _getAnimationsState() {
-  if ((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(MATERIAL_ANIMATIONS, {
-    optional: true
-  })?.animationsDisabled || (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ANIMATION_MODULE_TYPE, {
-    optional: true
-  }) === 'NoopAnimations') {
-    return 'di-disabled';
-  }
-  reducedMotion ??= (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__.MediaMatcher).matchMedia('(prefers-reduced-motion)').matches;
-  return reducedMotion ? 'reduced-motion' : 'enabled';
-}
-function _animationsDisabled() {
-  return _getAnimationsState() !== 'enabled';
-}
 
 
 /***/ }

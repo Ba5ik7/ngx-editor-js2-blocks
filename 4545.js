@@ -1,5 +1,29 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[4545],{
 
+/***/ 61187
+/*!*****************************************************!*\
+  !*** ./node_modules/khroma/dist/methods/channel.js ***!
+  \*****************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/index.js */ 16191);
+/* harmony import */ var _color_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../color/index.js */ 79537);
+/* IMPORT */
+
+
+/* MAIN */
+const channel = (color, channel) => {
+  return _utils_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].lang.round(_color_index_js__WEBPACK_IMPORTED_MODULE_1__["default"].parse(color)[channel]);
+};
+/* EXPORT */
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (channel);
+
+/***/ },
+
 /***/ 5675
 /*!**************************************************************************!*\
   !*** ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-55IACEB6.mjs ***!
@@ -25,6 +49,39 @@ var getDiagramElement = /* @__PURE__ */(0,_chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_
   const svg = root.select(`[id="${id}"]`);
   return svg;
 }, "getDiagramElement");
+
+
+/***/ },
+
+/***/ 97787
+/*!**************************************************************************!*\
+  !*** ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-FMBD7UC4.mjs ***!
+  \**************************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getIconStyles: () => (/* binding */ getIconStyles)
+/* harmony export */ });
+/* harmony import */ var _chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chunk-AGHRB4JF.mjs */ 32303);
+
+
+// src/diagrams/globalStyles.ts
+var getIconStyles = /* @__PURE__ */(0,_chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(() => `
+  /* Font Awesome icon styling - consolidated */
+  .label-icon {
+    display: inline-block;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+  }
+  
+  .node .label-icon path {
+    fill: currentColor;
+    stroke: revert;
+    stroke-width: revert;
+  }
+`, "getIconStyles");
 
 
 /***/ },
@@ -76,30 +133,6 @@ var createViewBox = /* @__PURE__ */(0,_chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODU
   return `${x - padding} ${y - padding} ${width} ${height}`;
 }, "createViewBox");
 
-
-/***/ },
-
-/***/ 61187
-/*!*****************************************************!*\
-  !*** ./node_modules/khroma/dist/methods/channel.js ***!
-  \*****************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/index.js */ 16191);
-/* harmony import */ var _color_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../color/index.js */ 79537);
-/* IMPORT */
-
-
-/* MAIN */
-const channel = (color, channel) => {
-  return _utils_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].lang.round(_color_index_js__WEBPACK_IMPORTED_MODULE_1__["default"].parse(color)[channel]);
-};
-/* EXPORT */
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (channel);
 
 /***/ },
 
@@ -4383,39 +4416,6 @@ var diagram = {
     });
   }, "init")
 };
-
-
-/***/ },
-
-/***/ 97787
-/*!**************************************************************************!*\
-  !*** ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-FMBD7UC4.mjs ***!
-  \**************************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getIconStyles: () => (/* binding */ getIconStyles)
-/* harmony export */ });
-/* harmony import */ var _chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chunk-AGHRB4JF.mjs */ 32303);
-
-
-// src/diagrams/globalStyles.ts
-var getIconStyles = /* @__PURE__ */(0,_chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(() => `
-  /* Font Awesome icon styling - consolidated */
-  .label-icon {
-    display: inline-block;
-    height: 1em;
-    overflow: visible;
-    vertical-align: -0.125em;
-  }
-  
-  .node .label-icon path {
-    fill: currentColor;
-    stroke: revert;
-    stroke-width: revert;
-  }
-`, "getIconStyles");
 
 
 /***/ }

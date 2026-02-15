@@ -1,5 +1,38 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[543],{
 
+/***/ 97787
+/*!**************************************************************************!*\
+  !*** ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-FMBD7UC4.mjs ***!
+  \**************************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getIconStyles: () => (/* binding */ getIconStyles)
+/* harmony export */ });
+/* harmony import */ var _chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chunk-AGHRB4JF.mjs */ 32303);
+
+
+// src/diagrams/globalStyles.ts
+var getIconStyles = /* @__PURE__ */(0,_chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(() => `
+  /* Font Awesome icon styling - consolidated */
+  .label-icon {
+    display: inline-block;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+  }
+  
+  .node .label-icon path {
+    fill: currentColor;
+    stroke: revert;
+    stroke-width: revert;
+  }
+`, "getIconStyles");
+
+
+/***/ },
+
 /***/ 90543
 /*!**************************************************************************************!*\
   !*** ./node_modules/mermaid/dist/chunks/mermaid.core/kanban-definition-3W4ZIXB7.mjs ***!
@@ -1413,39 +1446,6 @@ var diagram = {
   parser: kanban_default,
   styles: styles_default
 };
-
-
-/***/ },
-
-/***/ 97787
-/*!**************************************************************************!*\
-  !*** ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-FMBD7UC4.mjs ***!
-  \**************************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getIconStyles: () => (/* binding */ getIconStyles)
-/* harmony export */ });
-/* harmony import */ var _chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chunk-AGHRB4JF.mjs */ 32303);
-
-
-// src/diagrams/globalStyles.ts
-var getIconStyles = /* @__PURE__ */(0,_chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(() => `
-  /* Font Awesome icon styling - consolidated */
-  .label-icon {
-    display: inline-block;
-    height: 1em;
-    overflow: visible;
-    vertical-align: -0.125em;
-  }
-  
-  .node .label-icon path {
-    fill: currentColor;
-    stroke: revert;
-    stroke-width: revert;
-  }
-`, "getIconStyles");
 
 
 /***/ }

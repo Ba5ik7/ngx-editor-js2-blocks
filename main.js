@@ -51,48 +51,6 @@ __webpack_require__.e(/*! import() */ 43).then(__webpack_require__.bind(__webpac
 /******/ __webpack_require__.c = __webpack_module_cache__;
 /******/ 
 /************************************************************************/
-/******/ /* webpack/runtime/compat get default export */
-/******/ (() => {
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = (module) => {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			() => (module['default']) :
-/******/ 			() => (module);
-/******/ 		__webpack_require__.d(getter, { a: getter });
-/******/ 		return getter;
-/******/ 	};
-/******/ })();
-/******/ 
-/******/ /* webpack/runtime/create fake namespace object */
-/******/ (() => {
-/******/ 	var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
-/******/ 	var leafPrototypes;
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 16: return value when it's Promise-like
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = this(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if(typeof value === 'object' && value) {
-/******/ 			if((mode & 4) && value.__esModule) return value;
-/******/ 			if((mode & 16) && typeof value.then === 'function') return value;
-/******/ 		}
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		var def = {};
-/******/ 		leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
-/******/ 		for(var current = mode & 2 && value; (typeof current == 'object' || typeof current == 'function') && !~leafPrototypes.indexOf(current); current = getProto(current)) {
-/******/ 			Object.getOwnPropertyNames(current).forEach((key) => (def[key] = () => (value[key])));
-/******/ 		}
-/******/ 		def['default'] = () => (value);
-/******/ 		__webpack_require__.d(ns, def);
-/******/ 		return ns;
-/******/ 	};
-/******/ })();
-/******/ 
 /******/ /* webpack/runtime/define property getters */
 /******/ (() => {
 /******/ 	// define getter functions for harmony exports
@@ -280,9 +238,9 @@ __webpack_require__.e(/*! import() */ 43).then(__webpack_require__.bind(__webpac
 /******/ 				register("@angular/platform-browser", "21.1.0", () => (__webpack_require__.e(436).then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs */ 80436))))));
 /******/ 				register("mermaid", "11.7.0", () => (__webpack_require__.e(3939).then(() => (() => (__webpack_require__(/*! ./node_modules/mermaid/dist/mermaid.core.mjs */ 3939))))));
 /******/ 				register("ngx-editor-js2-blockquotes", "21.0.3", () => (__webpack_require__.e(2239).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-blockquotes/fesm2022/tmdjr-ngx-editor-js2-blockquotes.mjs */ 52239))))));
-/******/ 				register("ngx-editor-js2-codemirror", "21.0.3", () => (__webpack_require__.e(9305).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-codemirror/fesm2022/tmdjr-ngx-editor-js2-codemirror.mjs */ 59305))))));
+/******/ 				register("ngx-editor-js2-codemirror", "21.0.4", () => (__webpack_require__.e(9305).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-codemirror/fesm2022/tmdjr-ngx-editor-js2-codemirror.mjs */ 59305))))));
 /******/ 				register("ngx-editor-js2-image", "21.0.3", () => (__webpack_require__.e(7887).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-image/fesm2022/tmdjr-ngx-editor-js2-image.mjs */ 57887))))));
-/******/ 				register("ngx-editor-js2-mermaidjs", "21.0.6", () => (__webpack_require__.e(59).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-mermaidjs/fesm2022/tmdjr-ngx-editor-js2-mermaidjs.mjs */ 10059))))));
+/******/ 				register("ngx-editor-js2-mermaidjs", "21.0.7", () => (__webpack_require__.e(59).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-mermaidjs/fesm2022/tmdjr-ngx-editor-js2-mermaidjs.mjs */ 10059))))));
 /******/ 				register("ngx-editor-js2-mfe-loader", "21.0.4", () => (__webpack_require__.e(7677).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-mfe-loader/fesm2022/tmdjr-ngx-editor-js2-mfe-loader.mjs */ 87677))))));
 /******/ 				register("ngx-editor-js2-panel", "21.0.3", () => (__webpack_require__.e(4747).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-panel/fesm2022/tmdjr-ngx-editor-js2-panel.mjs */ 44747))))));
 /******/ 				register("ngx-editor-js2-pop-quiz", "21.0.3", () => (__webpack_require__.e(2015).then(() => (() => (__webpack_require__(/*! ./dist/ngx-editor-js2-pop-quiz/fesm2022/tmdjr-ngx-editor-js2-pop-quiz.mjs */ 2015))))));
@@ -486,7 +444,7 @@ __webpack_require__.e(/*! import() */ 43).then(__webpack_require__.bind(__webpac
 /******/ 		81836: () => (loadStrictSingletonVersion("default", "@angular/material/icon", false, [1,21,1,0], () => (__webpack_require__.e(1459).then(() => (() => (__webpack_require__(/*! @angular/material/icon */ 93840))))))),
 /******/ 		91638: () => (loadStrictSingletonVersion("default", "@angular/material/input", false, [1,21,1,0], () => (__webpack_require__.e(7922).then(() => (() => (__webpack_require__(/*! @angular/material/input */ 95541))))))),
 /******/ 		31944: () => (loadStrictSingletonVersion("default", "@angular/material/button", false, [1,21,1,0], () => (__webpack_require__.e(6556).then(() => (() => (__webpack_require__(/*! @angular/material/button */ 84175))))))),
-/******/ 		95575: () => (loadStrictSingletonVersion("default", "mermaid", false, [1,11,7,0], () => (__webpack_require__.e(6320).then(() => (() => (__webpack_require__(/*! mermaid */ 3939))))))),
+/******/ 		95575: () => (loadStrictSingletonVersion("default", "mermaid", false, [1,11,7,0], () => (__webpack_require__.e(3939).then(() => (() => (__webpack_require__(/*! mermaid */ 3939))))))),
 /******/ 		19220: () => (loadStrictSingletonVersion("default", "@angular/material/divider", false, [1,21,1,0], () => (__webpack_require__.e(4102).then(() => (() => (__webpack_require__(/*! @angular/material/divider */ 14102))))))),
 /******/ 		35360: () => (loadStrictSingletonVersion("default", "@angular/material/radio", false, [1,21,1,0], () => (__webpack_require__.e(1423).then(() => (() => (__webpack_require__(/*! @angular/material/radio */ 53804))))))),
 /******/ 		37172: () => (loadStrictSingletonVersion("default", "@angular/material/stepper", false, [1,21,1,0], () => (__webpack_require__.e(4241).then(() => (() => (__webpack_require__(/*! @angular/material/stepper */ 56622))))))),

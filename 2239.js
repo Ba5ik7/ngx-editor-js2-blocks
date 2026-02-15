@@ -1,5 +1,116 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[2239],{
 
+/***/ 52239
+/*!***************************************************************************************!*\
+  !*** ./dist/ngx-editor-js2-blockquotes/fesm2022/tmdjr-ngx-editor-js2-blockquotes.mjs ***!
+  \***************************************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   NgxEditorJs2BlockquotesComponent: () => (/* binding */ NgxEditorJs2BlockquotesComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 8778);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 11674);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 51356);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 14332);
+/* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
+
+
+
+
+
+
+
+
+let NgxEditorJs2BlockquotesComponent = /*#__PURE__*/(() => {
+  class NgxEditorJs2BlockquotesComponent {
+    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(0, ...(ngDevMode ? [{
+      debugName: "sortIndex"
+    }] : []));
+    componentInstanceName = 'NgxEditorJs2BlockquotesComponent';
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(true, ...(ngDevMode ? [{
+      debugName: "autofocus"
+    }] : []));
+    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required(...(ngDevMode ? [{
+      debugName: "formGroup"
+    }] : []));
+    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required(...(ngDevMode ? [{
+      debugName: "formControlName"
+    }] : []));
+    blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)([{
+      action: 'medium',
+      icon: 'density_small'
+    }, {
+      action: 'display-small',
+      icon: 'density_medium'
+    }, {
+      action: 'display-large',
+      icon: 'density_large'
+    }], ...(ngDevMode ? [{
+      debugName: "blockOptionActions"
+    }] : []));
+    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.signal)('display-large', ...(ngDevMode ? [{
+      debugName: "savedAction"
+    }] : []));
+    actionCallbackBind = this.actionCallback.bind(this);
+    actionCallback(action, updateFormValue = true) {
+      this.savedAction.update(() => action);
+      updateFormValue && this.formGroup().updateValueAndValidity();
+    }
+    static ɵfac = function NgxEditorJs2BlockquotesComponent_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || NgxEditorJs2BlockquotesComponent)();
+    };
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
+      type: NgxEditorJs2BlockquotesComponent,
+      selectors: [["ngx-editor-js2-blockquotes"]],
+      hostAttrs: [1, "cdk-drag-animating"],
+      inputs: {
+        sortIndex: [1, "sortIndex"],
+        autofocus: [1, "autofocus"],
+        formGroup: [1, "formGroup"],
+        formControlName: [1, "formControlName"],
+        blockOptionActions: [1, "blockOptionActions"]
+      },
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵHostDirectivesFeature"]([_angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_0__.CdkDrag])],
+      decls: 2,
+      vars: 8,
+      consts: [[3, "formGroup"], ["controlAccessor", "", "contentEditable", "", "toolbarFab", "", "cleanPasteData", "", 3, "ngClass", "defaultValue", "actionCallback", "autofocus", "blockOptionActions", "formControlName", "componentContextPositionIndex"]],
+      template: function NgxEditorJs2BlockquotesComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0, 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "blockquote", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
+        }
+        if (rf & 2) {
+          let tmp_2_0;
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("formGroup", ctx.formGroup());
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngClass", ctx.savedAction())("defaultValue", (tmp_2_0 = ctx.formGroup().get(ctx.formControlName())) == null ? null : tmp_2_0.value)("actionCallback", ctx.actionCallbackBind)("autofocus", ctx.autofocus())("blockOptionActions", ctx.blockOptionActions())("formControlName", ctx.formControlName())("componentContextPositionIndex", ctx.sortIndex());
+        }
+      },
+      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControlName, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.ControlAccessorDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.AutofocusDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.ToolbarFabDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.CleanPasteDataDirective, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgClass],
+      styles: ["[_nghost-%COMP%]{display:block;position:relative}[_nghost-%COMP%]   .medium[_ngcontent-%COMP%]{font:var(--mat-sys-body-medium);font-weight:100}[_nghost-%COMP%]   .display-small[_ngcontent-%COMP%]{font:var(--mat-sys-display-small);font-weight:100}[_nghost-%COMP%]   .display-large[_ngcontent-%COMP%]{font:var(--mat-sys-display-large);font-weight:100}[_nghost-%COMP%]   blockquote[_ngcontent-%COMP%]{margin:20px 0;padding:5px 0 5px 1em;border-left:5px solid var(--mat-sys-primary)}"]
+    });
+  }
+  return NgxEditorJs2BlockquotesComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/*
+ * Public API Surface of ngx-editor-js2-blockquotes
+ */
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+
+/***/ },
+
 /***/ 40623
 /*!******************************************************************************!*\
   !*** ./node_modules/@tmdjr/ngx-editor-js2/fesm2022/tmdjr-ngx-editor-js2.mjs ***!
@@ -49,15 +160,6 @@ __webpack_require__.r(__webpack_exports__);
 
 function ToolbarBlockOptionsComponent_For_11_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](0);
-  }
-  if (rf & 2) {
-    const blockOptionAction_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", blockOptionAction_r2.text, " ");
-  }
-}
-function ToolbarBlockOptionsComponent_For_11_Conditional_2_Template(rf, ctx) {
-  if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -66,6 +168,24 @@ function ToolbarBlockOptionsComponent_For_11_Conditional_2_Template(rf, ctx) {
     const blockOptionAction_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](blockOptionAction_r2.icon);
+  }
+}
+function ToolbarBlockOptionsComponent_For_11_Conditional_2_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "i");
+  }
+  if (rf & 2) {
+    const blockOptionAction_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMap"](blockOptionAction_r2.devIcon);
+  }
+}
+function ToolbarBlockOptionsComponent_For_11_Conditional_3_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](0);
+  }
+  if (rf & 2) {
+    const blockOptionAction_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", blockOptionAction_r2.text, " ");
   }
 }
 function ToolbarBlockOptionsComponent_For_11_Template(rf, ctx) {
@@ -77,13 +197,13 @@ function ToolbarBlockOptionsComponent_For_11_Template(rf, ctx) {
       const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
       return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r2.handleAction(blockOptionAction_r2.action));
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](1, ToolbarBlockOptionsComponent_For_11_Conditional_1_Template, 1, 1)(2, ToolbarBlockOptionsComponent_For_11_Conditional_2_Template, 2, 1, "mat-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditionalCreate"](1, ToolbarBlockOptionsComponent_For_11_Conditional_1_Template, 2, 1, "mat-icon")(2, ToolbarBlockOptionsComponent_For_11_Conditional_2_Template, 1, 2, "i", 3)(3, ToolbarBlockOptionsComponent_For_11_Conditional_3_Template, 1, 1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     const blockOptionAction_r2 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"](blockOptionAction_r2.text ? 1 : 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵconditional"](blockOptionAction_r2.icon ? 1 : blockOptionAction_r2.devIcon ? 2 : 3);
   }
 }
 function ToolbarBlocksComponent_Conditional_5_Conditional_1_Template(rf, ctx) {
@@ -449,7 +569,7 @@ let ToolbarBlockOptionsComponent = /*#__PURE__*/(() => {
       },
       decls: 12,
       vars: 0,
-      consts: [[1, "actions-panel"], ["matRipple", "", 1, "action-btn", 3, "click"], ["matRipple", "", 1, "action-btn"]],
+      consts: [[1, "actions-panel"], ["matRipple", "", 1, "action-btn", 3, "click"], ["matRipple", "", 1, "action-btn"], [3, "class"]],
       template: function ToolbarBlockOptionsComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0)(1, "div", 1);
@@ -473,7 +593,7 @@ let ToolbarBlockOptionsComponent = /*#__PURE__*/(() => {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "mat-icon");
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "arrow_downward");
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeaterCreate"](10, ToolbarBlockOptionsComponent_For_11_Template, 3, 1, "div", 2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeaterTrackByIndex"]);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeaterCreate"](10, ToolbarBlockOptionsComponent_For_11_Template, 4, 1, "div", 2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrepeaterTrackByIndex"]);
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
         if (rf & 2) {
@@ -1547,117 +1667,6 @@ let NgxEditorJs2Component = /*#__PURE__*/(() => {
 
 /*
  * Public API Surface of ngx-editor-js2
- */
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-
-/***/ },
-
-/***/ 52239
-/*!***************************************************************************************!*\
-  !*** ./dist/ngx-editor-js2-blockquotes/fesm2022/tmdjr-ngx-editor-js2-blockquotes.mjs ***!
-  \***************************************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   NgxEditorJs2BlockquotesComponent: () => (/* binding */ NgxEditorJs2BlockquotesComponent)
-/* harmony export */ });
-/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 8778);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 11674);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 51356);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 14332);
-/* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
-
-
-
-
-
-
-
-
-let NgxEditorJs2BlockquotesComponent = /*#__PURE__*/(() => {
-  class NgxEditorJs2BlockquotesComponent {
-    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(0, ...(ngDevMode ? [{
-      debugName: "sortIndex"
-    }] : []));
-    componentInstanceName = 'NgxEditorJs2BlockquotesComponent';
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)(true, ...(ngDevMode ? [{
-      debugName: "autofocus"
-    }] : []));
-    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required(...(ngDevMode ? [{
-      debugName: "formGroup"
-    }] : []));
-    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_2__.input.required(...(ngDevMode ? [{
-      debugName: "formControlName"
-    }] : []));
-    blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.input)([{
-      action: 'medium',
-      icon: 'density_small'
-    }, {
-      action: 'display-small',
-      icon: 'density_medium'
-    }, {
-      action: 'display-large',
-      icon: 'density_large'
-    }], ...(ngDevMode ? [{
-      debugName: "blockOptionActions"
-    }] : []));
-    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.signal)('display-large', ...(ngDevMode ? [{
-      debugName: "savedAction"
-    }] : []));
-    actionCallbackBind = this.actionCallback.bind(this);
-    actionCallback(action, updateFormValue = true) {
-      this.savedAction.update(() => action);
-      updateFormValue && this.formGroup().updateValueAndValidity();
-    }
-    static ɵfac = function NgxEditorJs2BlockquotesComponent_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || NgxEditorJs2BlockquotesComponent)();
-    };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
-      type: NgxEditorJs2BlockquotesComponent,
-      selectors: [["ngx-editor-js2-blockquotes"]],
-      hostAttrs: [1, "cdk-drag-animating"],
-      inputs: {
-        sortIndex: [1, "sortIndex"],
-        autofocus: [1, "autofocus"],
-        formGroup: [1, "formGroup"],
-        formControlName: [1, "formControlName"],
-        blockOptionActions: [1, "blockOptionActions"]
-      },
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵHostDirectivesFeature"]([_angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_0__.CdkDrag])],
-      decls: 2,
-      vars: 8,
-      consts: [[3, "formGroup"], ["controlAccessor", "", "contentEditable", "", "toolbarFab", "", "cleanPasteData", "", 3, "ngClass", "defaultValue", "actionCallback", "autofocus", "blockOptionActions", "formControlName", "componentContextPositionIndex"]],
-      template: function NgxEditorJs2BlockquotesComponent_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerStart"](0, 0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "blockquote", 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementContainerEnd"]();
-        }
-        if (rf & 2) {
-          let tmp_2_0;
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("formGroup", ctx.formGroup());
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngClass", ctx.savedAction())("defaultValue", (tmp_2_0 = ctx.formGroup().get(ctx.formControlName())) == null ? null : tmp_2_0.value)("actionCallback", ctx.actionCallbackBind)("autofocus", ctx.autofocus())("blockOptionActions", ctx.blockOptionActions())("formControlName", ctx.formControlName())("componentContextPositionIndex", ctx.sortIndex());
-        }
-      },
-      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControlName, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.ControlAccessorDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.AutofocusDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.ToolbarFabDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_4__.CleanPasteDataDirective, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgClass],
-      styles: ["[_nghost-%COMP%]{display:block;position:relative}[_nghost-%COMP%]   .medium[_ngcontent-%COMP%]{font:var(--mat-sys-body-medium);font-weight:100}[_nghost-%COMP%]   .display-small[_ngcontent-%COMP%]{font:var(--mat-sys-display-small);font-weight:100}[_nghost-%COMP%]   .display-large[_ngcontent-%COMP%]{font:var(--mat-sys-display-large);font-weight:100}[_nghost-%COMP%]   blockquote[_ngcontent-%COMP%]{margin:20px 0;padding:5px 0 5px 1em;border-left:5px solid var(--mat-sys-primary)}"]
-    });
-  }
-  return NgxEditorJs2BlockquotesComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/*
- * Public API Surface of ngx-editor-js2-blockquotes
  */
 
 /**

@@ -1,5 +1,1047 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[6693],{
 
+/***/ 29843
+/*!***************************************************************!*\
+  !*** ./node_modules/@angular/core/fesm2022/_effect-chunk.mjs ***!
+  \***************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BASE_EFFECT_NODE: () => (/* binding */ BASE_EFFECT_NODE),
+/* harmony export */   COMPUTING: () => (/* binding */ COMPUTING),
+/* harmony export */   ERRORED: () => (/* binding */ ERRORED),
+/* harmony export */   REACTIVE_NODE: () => (/* binding */ REACTIVE_NODE),
+/* harmony export */   SIGNAL: () => (/* binding */ SIGNAL),
+/* harmony export */   SIGNAL_NODE: () => (/* binding */ SIGNAL_NODE),
+/* harmony export */   UNSET: () => (/* binding */ UNSET),
+/* harmony export */   consumerAfterComputation: () => (/* binding */ consumerAfterComputation),
+/* harmony export */   consumerBeforeComputation: () => (/* binding */ consumerBeforeComputation),
+/* harmony export */   consumerDestroy: () => (/* binding */ consumerDestroy),
+/* harmony export */   consumerMarkDirty: () => (/* binding */ consumerMarkDirty),
+/* harmony export */   consumerPollProducersForChange: () => (/* binding */ consumerPollProducersForChange),
+/* harmony export */   createComputed: () => (/* binding */ createComputed),
+/* harmony export */   createSignal: () => (/* binding */ createSignal),
+/* harmony export */   defaultEquals: () => (/* binding */ defaultEquals),
+/* harmony export */   finalizeConsumerAfterComputation: () => (/* binding */ finalizeConsumerAfterComputation),
+/* harmony export */   getActiveConsumer: () => (/* binding */ getActiveConsumer),
+/* harmony export */   isInNotificationPhase: () => (/* binding */ isInNotificationPhase),
+/* harmony export */   isReactive: () => (/* binding */ isReactive),
+/* harmony export */   producerAccessed: () => (/* binding */ producerAccessed),
+/* harmony export */   producerIncrementEpoch: () => (/* binding */ producerIncrementEpoch),
+/* harmony export */   producerMarkClean: () => (/* binding */ producerMarkClean),
+/* harmony export */   producerNotifyConsumers: () => (/* binding */ producerNotifyConsumers),
+/* harmony export */   producerUpdateValueVersion: () => (/* binding */ producerUpdateValueVersion),
+/* harmony export */   producerUpdatesAllowed: () => (/* binding */ producerUpdatesAllowed),
+/* harmony export */   resetConsumerBeforeComputation: () => (/* binding */ resetConsumerBeforeComputation),
+/* harmony export */   runEffect: () => (/* binding */ runEffect),
+/* harmony export */   runPostProducerCreatedFn: () => (/* binding */ runPostProducerCreatedFn),
+/* harmony export */   runPostSignalSetFn: () => (/* binding */ runPostSignalSetFn),
+/* harmony export */   setActiveConsumer: () => (/* binding */ setActiveConsumer),
+/* harmony export */   setPostProducerCreatedFn: () => (/* binding */ setPostProducerCreatedFn),
+/* harmony export */   setPostSignalSetFn: () => (/* binding */ setPostSignalSetFn),
+/* harmony export */   setThrowInvalidWriteToSignalError: () => (/* binding */ setThrowInvalidWriteToSignalError),
+/* harmony export */   signalGetFn: () => (/* binding */ signalGetFn),
+/* harmony export */   signalSetFn: () => (/* binding */ signalSetFn),
+/* harmony export */   signalUpdateFn: () => (/* binding */ signalUpdateFn),
+/* harmony export */   untracked: () => (/* binding */ untracked)
+/* harmony export */ });
+/**
+ * @license Angular v21.1.4
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
+
+let activeConsumer = null;
+let inNotificationPhase = false;
+let epoch = 1;
+let postProducerCreatedFn = null;
+const SIGNAL = /* @__PURE__ */Symbol('SIGNAL');
+function setActiveConsumer(consumer) {
+  const prev = activeConsumer;
+  activeConsumer = consumer;
+  return prev;
+}
+function getActiveConsumer() {
+  return activeConsumer;
+}
+function isInNotificationPhase() {
+  return inNotificationPhase;
+}
+function isReactive(value) {
+  return value[SIGNAL] !== undefined;
+}
+const REACTIVE_NODE = {
+  version: 0,
+  lastCleanEpoch: 0,
+  dirty: false,
+  producers: undefined,
+  producersTail: undefined,
+  consumers: undefined,
+  consumersTail: undefined,
+  recomputing: false,
+  consumerAllowSignalWrites: false,
+  consumerIsAlwaysLive: false,
+  kind: 'unknown',
+  producerMustRecompute: () => false,
+  producerRecomputeValue: () => {},
+  consumerMarkedDirty: () => {},
+  consumerOnSignalRead: () => {}
+};
+function producerAccessed(node) {
+  if (inNotificationPhase) {
+    throw new Error(typeof ngDevMode !== 'undefined' && ngDevMode ? `Assertion error: signal read during notification phase` : '');
+  }
+  if (activeConsumer === null) {
+    return;
+  }
+  activeConsumer.consumerOnSignalRead(node);
+  const prevProducerLink = activeConsumer.producersTail;
+  if (prevProducerLink !== undefined && prevProducerLink.producer === node) {
+    return;
+  }
+  let nextProducerLink = undefined;
+  const isRecomputing = activeConsumer.recomputing;
+  if (isRecomputing) {
+    nextProducerLink = prevProducerLink !== undefined ? prevProducerLink.nextProducer : activeConsumer.producers;
+    if (nextProducerLink !== undefined && nextProducerLink.producer === node) {
+      activeConsumer.producersTail = nextProducerLink;
+      nextProducerLink.lastReadVersion = node.version;
+      return;
+    }
+  }
+  const prevConsumerLink = node.consumersTail;
+  if (prevConsumerLink !== undefined && prevConsumerLink.consumer === activeConsumer && (!isRecomputing || isValidLink(prevConsumerLink, activeConsumer))) {
+    return;
+  }
+  const isLive = consumerIsLive(activeConsumer);
+  const newLink = {
+    producer: node,
+    consumer: activeConsumer,
+    nextProducer: nextProducerLink,
+    prevConsumer: prevConsumerLink,
+    lastReadVersion: node.version,
+    nextConsumer: undefined
+  };
+  activeConsumer.producersTail = newLink;
+  if (prevProducerLink !== undefined) {
+    prevProducerLink.nextProducer = newLink;
+  } else {
+    activeConsumer.producers = newLink;
+  }
+  if (isLive) {
+    producerAddLiveConsumer(node, newLink);
+  }
+}
+function producerIncrementEpoch() {
+  epoch++;
+}
+function producerUpdateValueVersion(node) {
+  if (consumerIsLive(node) && !node.dirty) {
+    return;
+  }
+  if (!node.dirty && node.lastCleanEpoch === epoch) {
+    return;
+  }
+  if (!node.producerMustRecompute(node) && !consumerPollProducersForChange(node)) {
+    producerMarkClean(node);
+    return;
+  }
+  node.producerRecomputeValue(node);
+  producerMarkClean(node);
+}
+function producerNotifyConsumers(node) {
+  if (node.consumers === undefined) {
+    return;
+  }
+  const prev = inNotificationPhase;
+  inNotificationPhase = true;
+  try {
+    for (let link = node.consumers; link !== undefined; link = link.nextConsumer) {
+      const consumer = link.consumer;
+      if (!consumer.dirty) {
+        consumerMarkDirty(consumer);
+      }
+    }
+  } finally {
+    inNotificationPhase = prev;
+  }
+}
+function producerUpdatesAllowed() {
+  return activeConsumer?.consumerAllowSignalWrites !== false;
+}
+function consumerMarkDirty(node) {
+  node.dirty = true;
+  producerNotifyConsumers(node);
+  node.consumerMarkedDirty?.(node);
+}
+function producerMarkClean(node) {
+  node.dirty = false;
+  node.lastCleanEpoch = epoch;
+}
+function consumerBeforeComputation(node) {
+  if (node) resetConsumerBeforeComputation(node);
+  return setActiveConsumer(node);
+}
+function resetConsumerBeforeComputation(node) {
+  node.producersTail = undefined;
+  node.recomputing = true;
+}
+function consumerAfterComputation(node, prevConsumer) {
+  setActiveConsumer(prevConsumer);
+  if (node) finalizeConsumerAfterComputation(node);
+}
+function finalizeConsumerAfterComputation(node) {
+  node.recomputing = false;
+  const producersTail = node.producersTail;
+  let toRemove = producersTail !== undefined ? producersTail.nextProducer : node.producers;
+  if (toRemove !== undefined) {
+    if (consumerIsLive(node)) {
+      do {
+        toRemove = producerRemoveLiveConsumerLink(toRemove);
+      } while (toRemove !== undefined);
+    }
+    if (producersTail !== undefined) {
+      producersTail.nextProducer = undefined;
+    } else {
+      node.producers = undefined;
+    }
+  }
+}
+function consumerPollProducersForChange(node) {
+  for (let link = node.producers; link !== undefined; link = link.nextProducer) {
+    const producer = link.producer;
+    const seenVersion = link.lastReadVersion;
+    if (seenVersion !== producer.version) {
+      return true;
+    }
+    producerUpdateValueVersion(producer);
+    if (seenVersion !== producer.version) {
+      return true;
+    }
+  }
+  return false;
+}
+function consumerDestroy(node) {
+  if (consumerIsLive(node)) {
+    let link = node.producers;
+    while (link !== undefined) {
+      link = producerRemoveLiveConsumerLink(link);
+    }
+  }
+  node.producers = undefined;
+  node.producersTail = undefined;
+  node.consumers = undefined;
+  node.consumersTail = undefined;
+}
+function producerAddLiveConsumer(node, link) {
+  const consumersTail = node.consumersTail;
+  const wasLive = consumerIsLive(node);
+  if (consumersTail !== undefined) {
+    link.nextConsumer = consumersTail.nextConsumer;
+    consumersTail.nextConsumer = link;
+  } else {
+    link.nextConsumer = undefined;
+    node.consumers = link;
+  }
+  link.prevConsumer = consumersTail;
+  node.consumersTail = link;
+  if (!wasLive) {
+    for (let link = node.producers; link !== undefined; link = link.nextProducer) {
+      producerAddLiveConsumer(link.producer, link);
+    }
+  }
+}
+function producerRemoveLiveConsumerLink(link) {
+  const producer = link.producer;
+  const nextProducer = link.nextProducer;
+  const nextConsumer = link.nextConsumer;
+  const prevConsumer = link.prevConsumer;
+  link.nextConsumer = undefined;
+  link.prevConsumer = undefined;
+  if (nextConsumer !== undefined) {
+    nextConsumer.prevConsumer = prevConsumer;
+  } else {
+    producer.consumersTail = prevConsumer;
+  }
+  if (prevConsumer !== undefined) {
+    prevConsumer.nextConsumer = nextConsumer;
+  } else {
+    producer.consumers = nextConsumer;
+    if (!consumerIsLive(producer)) {
+      let producerLink = producer.producers;
+      while (producerLink !== undefined) {
+        producerLink = producerRemoveLiveConsumerLink(producerLink);
+      }
+    }
+  }
+  return nextProducer;
+}
+function consumerIsLive(node) {
+  return node.consumerIsAlwaysLive || node.consumers !== undefined;
+}
+function runPostProducerCreatedFn(node) {
+  postProducerCreatedFn?.(node);
+}
+function setPostProducerCreatedFn(fn) {
+  const prev = postProducerCreatedFn;
+  postProducerCreatedFn = fn;
+  return prev;
+}
+function isValidLink(checkLink, consumer) {
+  const producersTail = consumer.producersTail;
+  if (producersTail !== undefined) {
+    let link = consumer.producers;
+    do {
+      if (link === checkLink) {
+        return true;
+      }
+      if (link === producersTail) {
+        break;
+      }
+      link = link.nextProducer;
+    } while (link !== undefined);
+  }
+  return false;
+}
+function defaultEquals(a, b) {
+  return Object.is(a, b);
+}
+function createComputed(computation, equal) {
+  const node = Object.create(COMPUTED_NODE);
+  node.computation = computation;
+  if (equal !== undefined) {
+    node.equal = equal;
+  }
+  const computed = () => {
+    producerUpdateValueVersion(node);
+    producerAccessed(node);
+    if (node.value === ERRORED) {
+      throw node.error;
+    }
+    return node.value;
+  };
+  computed[SIGNAL] = node;
+  if (typeof ngDevMode !== 'undefined' && ngDevMode) {
+    const debugName = node.debugName ? ' (' + node.debugName + ')' : '';
+    computed.toString = () => `[Computed${debugName}: ${String(node.value)}]`;
+  }
+  runPostProducerCreatedFn(node);
+  return computed;
+}
+const UNSET = /* @__PURE__ */Symbol('UNSET');
+const COMPUTING = /* @__PURE__ */Symbol('COMPUTING');
+const ERRORED = /* @__PURE__ */Symbol('ERRORED');
+const COMPUTED_NODE = /* @__PURE__ */(() => {
+  return {
+    ...REACTIVE_NODE,
+    value: UNSET,
+    dirty: true,
+    error: null,
+    equal: defaultEquals,
+    kind: 'computed',
+    producerMustRecompute(node) {
+      return node.value === UNSET || node.value === COMPUTING;
+    },
+    producerRecomputeValue(node) {
+      if (node.value === COMPUTING) {
+        throw new Error(typeof ngDevMode !== 'undefined' && ngDevMode ? 'Detected cycle in computations.' : '');
+      }
+      const oldValue = node.value;
+      node.value = COMPUTING;
+      const prevConsumer = consumerBeforeComputation(node);
+      let newValue;
+      let wasEqual = false;
+      try {
+        newValue = node.computation();
+        setActiveConsumer(null);
+        wasEqual = oldValue !== UNSET && oldValue !== ERRORED && newValue !== ERRORED && node.equal(oldValue, newValue);
+      } catch (err) {
+        newValue = ERRORED;
+        node.error = err;
+      } finally {
+        consumerAfterComputation(node, prevConsumer);
+      }
+      if (wasEqual) {
+        node.value = oldValue;
+        return;
+      }
+      node.value = newValue;
+      node.version++;
+    }
+  };
+})();
+function defaultThrowError() {
+  throw new Error();
+}
+let throwInvalidWriteToSignalErrorFn = defaultThrowError;
+function throwInvalidWriteToSignalError(node) {
+  throwInvalidWriteToSignalErrorFn(node);
+}
+function setThrowInvalidWriteToSignalError(fn) {
+  throwInvalidWriteToSignalErrorFn = fn;
+}
+let postSignalSetFn = null;
+function createSignal(initialValue, equal) {
+  const node = Object.create(SIGNAL_NODE);
+  node.value = initialValue;
+  if (equal !== undefined) {
+    node.equal = equal;
+  }
+  const getter = () => signalGetFn(node);
+  getter[SIGNAL] = node;
+  if (typeof ngDevMode !== 'undefined' && ngDevMode) {
+    const debugName = node.debugName ? ' (' + node.debugName + ')' : '';
+    getter.toString = () => `[Signal${debugName}: ${String(node.value)}]`;
+  }
+  runPostProducerCreatedFn(node);
+  const set = newValue => signalSetFn(node, newValue);
+  const update = updateFn => signalUpdateFn(node, updateFn);
+  return [getter, set, update];
+}
+function setPostSignalSetFn(fn) {
+  const prev = postSignalSetFn;
+  postSignalSetFn = fn;
+  return prev;
+}
+function signalGetFn(node) {
+  producerAccessed(node);
+  return node.value;
+}
+function signalSetFn(node, newValue) {
+  if (!producerUpdatesAllowed()) {
+    throwInvalidWriteToSignalError(node);
+  }
+  if (!node.equal(node.value, newValue)) {
+    node.value = newValue;
+    signalValueChanged(node);
+  }
+}
+function signalUpdateFn(node, updater) {
+  if (!producerUpdatesAllowed()) {
+    throwInvalidWriteToSignalError(node);
+  }
+  signalSetFn(node, updater(node.value));
+}
+function runPostSignalSetFn(node) {
+  postSignalSetFn?.(node);
+}
+const SIGNAL_NODE = /* @__PURE__ */(() => {
+  return {
+    ...REACTIVE_NODE,
+    equal: defaultEquals,
+    value: undefined,
+    kind: 'signal'
+  };
+})();
+function signalValueChanged(node) {
+  node.version++;
+  producerIncrementEpoch();
+  producerNotifyConsumers(node);
+  postSignalSetFn?.(node);
+}
+function untracked(nonReactiveReadsFn) {
+  const prevConsumer = setActiveConsumer(null);
+  try {
+    return nonReactiveReadsFn();
+  } finally {
+    setActiveConsumer(prevConsumer);
+  }
+}
+const BASE_EFFECT_NODE = /* @__PURE__ */(() => ({
+  ...REACTIVE_NODE,
+  consumerIsAlwaysLive: true,
+  consumerAllowSignalWrites: true,
+  dirty: true,
+  kind: 'effect'
+}))();
+function runEffect(node) {
+  node.dirty = false;
+  if (node.version > 0 && !consumerPollProducersForChange(node)) {
+    return;
+  }
+  node.version++;
+  const prevNode = consumerBeforeComputation(node);
+  try {
+    node.cleanup();
+    node.fn();
+  } finally {
+    consumerAfterComputation(node, prevNode);
+  }
+}
+
+
+/***/ },
+
+/***/ 68262
+/*!**********************************************************************!*\
+  !*** ./node_modules/@angular/core/fesm2022/_linked_signal-chunk.mjs ***!
+  \**********************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createLinkedSignal: () => (/* binding */ createLinkedSignal),
+/* harmony export */   linkedSignalSetFn: () => (/* binding */ linkedSignalSetFn),
+/* harmony export */   linkedSignalUpdateFn: () => (/* binding */ linkedSignalUpdateFn)
+/* harmony export */ });
+/* harmony import */ var _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_effect-chunk.mjs */ 29843);
+/**
+ * @license Angular v21.1.4
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
+
+
+function createLinkedSignal(sourceFn, computationFn, equalityFn) {
+  const node = Object.create(LINKED_SIGNAL_NODE);
+  node.source = sourceFn;
+  node.computation = computationFn;
+  if (equalityFn != undefined) {
+    node.equal = equalityFn;
+  }
+  const linkedSignalGetter = () => {
+    (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
+    (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerAccessed)(node);
+    if (node.value === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED) {
+      throw node.error;
+    }
+    return node.value;
+  };
+  const getter = linkedSignalGetter;
+  getter[_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.SIGNAL] = node;
+  if (typeof ngDevMode !== 'undefined' && ngDevMode) {
+    const debugName = node.debugName ? ' (' + node.debugName + ')' : '';
+    getter.toString = () => `[LinkedSignal${debugName}: ${String(node.value)}]`;
+  }
+  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.runPostProducerCreatedFn)(node);
+  return getter;
+}
+function linkedSignalSetFn(node, newValue) {
+  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
+  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.signalSetFn)(node, newValue);
+  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerMarkClean)(node);
+}
+function linkedSignalUpdateFn(node, updater) {
+  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
+  if (node.value === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED) {
+    throw node.error;
+  }
+  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.signalUpdateFn)(node, updater);
+  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerMarkClean)(node);
+}
+const LINKED_SIGNAL_NODE = /* @__PURE__ */(() => {
+  return {
+    ..._effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.REACTIVE_NODE,
+    value: _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET,
+    dirty: true,
+    error: null,
+    equal: _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.defaultEquals,
+    kind: 'linkedSignal',
+    producerMustRecompute(node) {
+      return node.value === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET || node.value === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING;
+    },
+    producerRecomputeValue(node) {
+      if (node.value === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING) {
+        throw new Error(typeof ngDevMode !== 'undefined' && ngDevMode ? 'Detected cycle in computations.' : '');
+      }
+      const oldValue = node.value;
+      node.value = _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING;
+      const prevConsumer = (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerBeforeComputation)(node);
+      let newValue;
+      try {
+        const newSourceValue = node.source();
+        const prev = oldValue === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET || oldValue === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED ? undefined : {
+          source: node.sourceValue,
+          value: oldValue
+        };
+        newValue = node.computation(newSourceValue, prev);
+        node.sourceValue = newSourceValue;
+      } catch (err) {
+        newValue = _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED;
+        node.error = err;
+      } finally {
+        (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerAfterComputation)(node, prevConsumer);
+      }
+      if (oldValue !== _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET && newValue !== _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED && node.equal(oldValue, newValue)) {
+        node.value = oldValue;
+        return;
+      }
+      node.value = newValue;
+      node.version++;
+    }
+  };
+})();
+
+
+/***/ },
+
+/***/ 78330
+/*!******************************************************************!*\
+  !*** ./node_modules/@angular/core/fesm2022/_not_found-chunk.mjs ***!
+  \******************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   NOT_FOUND: () => (/* binding */ NOT_FOUND),
+/* harmony export */   NotFoundError: () => (/* binding */ NotFoundError),
+/* harmony export */   getCurrentInjector: () => (/* binding */ getCurrentInjector),
+/* harmony export */   inject: () => (/* binding */ inject),
+/* harmony export */   isNotFound: () => (/* binding */ isNotFound),
+/* harmony export */   setCurrentInjector: () => (/* binding */ setCurrentInjector)
+/* harmony export */ });
+/**
+ * @license Angular v21.1.4
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
+
+let _currentInjector = undefined;
+function getCurrentInjector() {
+  return _currentInjector;
+}
+function setCurrentInjector(injector) {
+  const former = _currentInjector;
+  _currentInjector = injector;
+  return former;
+}
+function inject(token, options) {
+  const currentInjector = getCurrentInjector();
+  if (!currentInjector) {
+    throw new Error('Current injector is not set.');
+  }
+  if (!token.ɵprov) {
+    throw new Error('Token is not an injectable');
+  }
+  return currentInjector.retrieve(token, options);
+}
+const NOT_FOUND = /*#__PURE__*/Symbol('NotFound');
+class NotFoundError extends Error {
+  name = 'ɵNotFound';
+  constructor(message) {
+    super(message);
+  }
+}
+function isNotFound(e) {
+  return e === NOT_FOUND || e?.name === 'ɵNotFound';
+}
+
+
+/***/ },
+
+/***/ 52260
+/*!*****************************************************************!*\
+  !*** ./node_modules/@angular/core/fesm2022/_resource-chunk.mjs ***!
+  \*****************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   OutputEmitterRef: () => (/* binding */ OutputEmitterRef),
+/* harmony export */   ResourceImpl: () => (/* binding */ ResourceImpl),
+/* harmony export */   computed: () => (/* binding */ computed),
+/* harmony export */   encapsulateResourceError: () => (/* binding */ encapsulateResourceError),
+/* harmony export */   getOutputDestroyRef: () => (/* binding */ getOutputDestroyRef),
+/* harmony export */   linkedSignal: () => (/* binding */ linkedSignal),
+/* harmony export */   resource: () => (/* binding */ resource)
+/* harmony export */ });
+/* harmony import */ var _Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
+/* harmony import */ var _untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_untracked-chunk.mjs */ 11817);
+/* harmony import */ var _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_effect-chunk.mjs */ 29843);
+/* harmony import */ var _linked_signal_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_linked_signal-chunk.mjs */ 68262);
+
+/**
+ * @license Angular v21.1.4
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
+
+
+
+
+class OutputEmitterRef {
+  destroyed = false;
+  listeners = null;
+  errorHandler = /*#__PURE__*/(0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.inject)(_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.ErrorHandler, {
+    optional: true
+  });
+  destroyRef = /*#__PURE__*/(0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.inject)(_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.DestroyRef);
+  constructor() {
+    this.destroyRef.onDestroy(() => {
+      this.destroyed = true;
+      this.listeners = null;
+    });
+  }
+  subscribe(callback) {
+    if (this.destroyed) {
+      throw new _untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.RuntimeError(953, ngDevMode && 'Unexpected subscription to destroyed `OutputRef`. ' + 'The owning directive/component is destroyed.');
+    }
+    (this.listeners ??= []).push(callback);
+    return {
+      unsubscribe: () => {
+        const idx = this.listeners?.indexOf(callback);
+        if (idx !== undefined && idx !== -1) {
+          this.listeners?.splice(idx, 1);
+        }
+      }
+    };
+  }
+  emit(value) {
+    if (this.destroyed) {
+      console.warn((0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.formatRuntimeError)(953, ngDevMode && 'Unexpected emit for destroyed `OutputRef`. ' + 'The owning directive/component is destroyed.'));
+      return;
+    }
+    if (this.listeners === null) {
+      return;
+    }
+    const previousConsumer = (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_2__.setActiveConsumer)(null);
+    try {
+      for (const listenerFn of this.listeners) {
+        try {
+          listenerFn(value);
+        } catch (err) {
+          this.errorHandler?.handleError(err);
+        }
+      }
+    } finally {
+      (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_2__.setActiveConsumer)(previousConsumer);
+    }
+  }
+}
+function getOutputDestroyRef(ref) {
+  return ref.destroyRef;
+}
+function computed(computation, options) {
+  const getter = (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_2__.createComputed)(computation, options?.equal);
+  if (ngDevMode) {
+    getter.toString = () => `[Computed: ${getter()}]`;
+    getter[_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_2__.SIGNAL].debugName = options?.debugName;
+  }
+  return getter;
+}
+const identityFn = v => v;
+function linkedSignal(optionsOrComputation, options) {
+  if (typeof optionsOrComputation === 'function') {
+    const getter = (0,_linked_signal_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.createLinkedSignal)(optionsOrComputation, identityFn, options?.equal);
+    return upgradeLinkedSignalGetter(getter, options?.debugName);
+  } else {
+    const getter = (0,_linked_signal_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.createLinkedSignal)(optionsOrComputation.source, optionsOrComputation.computation, optionsOrComputation.equal);
+    return upgradeLinkedSignalGetter(getter, optionsOrComputation.debugName);
+  }
+}
+function upgradeLinkedSignalGetter(getter, debugName) {
+  if (ngDevMode) {
+    getter.toString = () => `[LinkedSignal: ${getter()}]`;
+    getter[_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_2__.SIGNAL].debugName = debugName;
+  }
+  const node = getter[_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_2__.SIGNAL];
+  const upgradedGetter = getter;
+  upgradedGetter.set = newValue => (0,_linked_signal_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.linkedSignalSetFn)(node, newValue);
+  upgradedGetter.update = updateFn => (0,_linked_signal_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.linkedSignalUpdateFn)(node, updateFn);
+  upgradedGetter.asReadonly = _untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.signalAsReadonlyFn.bind(getter);
+  return upgradedGetter;
+}
+function resource(options) {
+  if (ngDevMode && !options?.injector) {
+    (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.assertInInjectionContext)(resource);
+  }
+  const oldNameForParams = options.request;
+  const params = options.params ?? oldNameForParams ?? (() => null);
+  return new ResourceImpl(params, getLoader(options), options.defaultValue, options.equal ? wrapEqualityFn(options.equal) : undefined, options.debugName, options.injector ?? (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.inject)(_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.Injector));
+}
+class BaseWritableResource {
+  value;
+  isLoading;
+  constructor(value, debugName) {
+    this.value = value;
+    this.value.set = this.set.bind(this);
+    this.value.update = this.update.bind(this);
+    this.value.asReadonly = _untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.signalAsReadonlyFn;
+    this.isLoading = computed(() => this.status() === 'loading' || this.status() === 'reloading', ngDevMode ? createDebugNameObject(debugName, 'isLoading') : undefined);
+  }
+  isError = /*#__PURE__*/computed(() => this.status() === 'error');
+  update(updateFn) {
+    this.set(updateFn((0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(this.value)));
+  }
+  isValueDefined = /*#__PURE__*/computed(() => {
+    if (this.isError()) {
+      return false;
+    }
+    return this.value() !== undefined;
+  });
+  hasValue() {
+    return this.isValueDefined();
+  }
+  asReadonly() {
+    return this;
+  }
+}
+class ResourceImpl extends BaseWritableResource {
+  loaderFn;
+  equal;
+  debugName;
+  pendingTasks;
+  state;
+  extRequest;
+  effectRef;
+  pendingController;
+  resolvePendingTask = undefined;
+  destroyed = false;
+  unregisterOnDestroy;
+  status;
+  error;
+  constructor(request, loaderFn, defaultValue, equal, debugName, injector) {
+    super(computed(() => {
+      const streamValue = this.state().stream?.();
+      if (!streamValue) {
+        return defaultValue;
+      }
+      if (this.state().status === 'loading' && this.error()) {
+        return defaultValue;
+      }
+      if (!isResolved(streamValue)) {
+        throw new ResourceValueError(this.error());
+      }
+      return streamValue.value;
+    }, {
+      equal,
+      ...(ngDevMode ? createDebugNameObject(debugName, 'value') : undefined)
+    }), debugName);
+    this.loaderFn = loaderFn;
+    this.equal = equal;
+    this.debugName = debugName;
+    this.extRequest = linkedSignal({
+      source: request,
+      computation: request => ({
+        request,
+        reload: 0
+      }),
+      ...(ngDevMode ? createDebugNameObject(debugName, 'extRequest') : undefined)
+    });
+    this.state = linkedSignal({
+      source: this.extRequest,
+      computation: (extRequest, previous) => {
+        const status = extRequest.request === undefined ? 'idle' : 'loading';
+        if (!previous) {
+          return {
+            extRequest,
+            status,
+            previousStatus: 'idle',
+            stream: undefined
+          };
+        } else {
+          return {
+            extRequest,
+            status,
+            previousStatus: projectStatusOfState(previous.value),
+            stream: previous.value.extRequest.request === extRequest.request ? previous.value.stream : undefined
+          };
+        }
+      },
+      ...(ngDevMode ? createDebugNameObject(debugName, 'state') : undefined)
+    });
+    this.effectRef = (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.effect)(this.loadEffect.bind(this), {
+      injector,
+      manualCleanup: true,
+      ...(ngDevMode ? createDebugNameObject(debugName, 'loadEffect') : undefined)
+    });
+    this.pendingTasks = injector.get(_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.PendingTasks);
+    this.unregisterOnDestroy = injector.get(_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.DestroyRef).onDestroy(() => this.destroy());
+    this.status = computed(() => projectStatusOfState(this.state()), ngDevMode ? createDebugNameObject(debugName, 'status') : undefined);
+    this.error = computed(() => {
+      const stream = this.state().stream?.();
+      return stream && !isResolved(stream) ? stream.error : undefined;
+    }, ngDevMode ? createDebugNameObject(debugName, 'error') : undefined);
+  }
+  set(value) {
+    if (this.destroyed) {
+      return;
+    }
+    const error = (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(this.error);
+    const state = (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(this.state);
+    if (!error) {
+      const current = (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(this.value);
+      if (state.status === 'local' && (this.equal ? this.equal(current, value) : current === value)) {
+        return;
+      }
+    }
+    this.state.set({
+      extRequest: state.extRequest,
+      status: 'local',
+      previousStatus: 'local',
+      stream: (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.signal)({
+        value
+      }, ngDevMode ? createDebugNameObject(this.debugName, 'stream') : undefined)
+    });
+    this.abortInProgressLoad();
+  }
+  reload() {
+    const {
+      status
+    } = (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(this.state);
+    if (status === 'idle' || status === 'loading') {
+      return false;
+    }
+    this.extRequest.update(({
+      request,
+      reload
+    }) => ({
+      request,
+      reload: reload + 1
+    }));
+    return true;
+  }
+  destroy() {
+    this.destroyed = true;
+    this.unregisterOnDestroy();
+    this.effectRef.destroy();
+    this.abortInProgressLoad();
+    this.state.set({
+      extRequest: {
+        request: undefined,
+        reload: 0
+      },
+      status: 'idle',
+      previousStatus: 'idle',
+      stream: undefined
+    });
+  }
+  loadEffect() {
+    var _this = this;
+    return (0,_Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      const extRequest = _this.extRequest();
+      const {
+        status: currentStatus,
+        previousStatus
+      } = (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(_this.state);
+      if (extRequest.request === undefined) {
+        return;
+      } else if (currentStatus !== 'loading') {
+        return;
+      }
+      _this.abortInProgressLoad();
+      let resolvePendingTask = _this.resolvePendingTask = _this.pendingTasks.add();
+      const {
+        signal: abortSignal
+      } = _this.pendingController = new AbortController();
+      try {
+        const stream = yield (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(() => {
+          return _this.loaderFn({
+            params: extRequest.request,
+            request: extRequest.request,
+            abortSignal,
+            previous: {
+              status: previousStatus
+            }
+          });
+        });
+        if (abortSignal.aborted || (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(_this.extRequest) !== extRequest) {
+          return;
+        }
+        _this.state.set({
+          extRequest,
+          status: 'resolved',
+          previousStatus: 'resolved',
+          stream
+        });
+      } catch (err) {
+        if (abortSignal.aborted || (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(_this.extRequest) !== extRequest) {
+          return;
+        }
+        _this.state.set({
+          extRequest,
+          status: 'resolved',
+          previousStatus: 'error',
+          stream: (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.signal)({
+            error: encapsulateResourceError(err)
+          }, ngDevMode ? createDebugNameObject(_this.debugName, 'stream') : undefined)
+        });
+      } finally {
+        resolvePendingTask?.();
+        resolvePendingTask = undefined;
+      }
+    })();
+  }
+  abortInProgressLoad() {
+    (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(() => this.pendingController?.abort());
+    this.pendingController = undefined;
+    this.resolvePendingTask?.();
+    this.resolvePendingTask = undefined;
+  }
+}
+function wrapEqualityFn(equal) {
+  return (a, b) => a === undefined || b === undefined ? a === b : equal(a, b);
+}
+function getLoader(options) {
+  if (isStreamingResourceOptions(options)) {
+    return options.stream;
+  }
+  return /*#__PURE__*/function () {
+    var _ref = (0,_Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (params) {
+      try {
+        return (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.signal)({
+          value: yield options.loader(params)
+        }, ngDevMode ? createDebugNameObject(options.debugName, 'stream') : undefined);
+      } catch (err) {
+        return (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.signal)({
+          error: encapsulateResourceError(err)
+        }, ngDevMode ? createDebugNameObject(options.debugName, 'stream') : undefined);
+      }
+    });
+    return function (_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+}
+function isStreamingResourceOptions(options) {
+  return !!options.stream;
+}
+function projectStatusOfState(state) {
+  switch (state.status) {
+    case 'loading':
+      return state.extRequest.reload === 0 ? 'loading' : 'reloading';
+    case 'resolved':
+      return isResolved(state.stream()) ? 'resolved' : 'error';
+    default:
+      return state.status;
+  }
+}
+function isResolved(state) {
+  return state.error === undefined;
+}
+function createDebugNameObject(resourceDebugName, internalSignalDebugName) {
+  return {
+    debugName: `Resource${resourceDebugName ? '#' + resourceDebugName : ''}.${internalSignalDebugName}`
+  };
+}
+function encapsulateResourceError(error) {
+  if (isErrorLike(error)) {
+    return error;
+  }
+  return new ResourceWrappedError(error);
+}
+function isErrorLike(error) {
+  return error instanceof Error || typeof error === 'object' && typeof error.name === 'string' && typeof error.message === 'string';
+}
+class ResourceValueError extends Error {
+  constructor(error) {
+    super(ngDevMode ? `Resource is currently in an error state (see Error.cause for details): ${error.message}` : error.message, {
+      cause: error
+    });
+  }
+}
+class ResourceWrappedError extends Error {
+  constructor(error) {
+    super(ngDevMode ? `Resource returned an error that's not an Error instance: ${String(error)}. Check this error's .cause for the actual error.` : String(error), {
+      cause: error
+    });
+  }
+}
+
+
+/***/ },
+
 /***/ 11817
 /*!******************************************************************!*\
   !*** ./node_modules/@angular/core/fesm2022/_untracked-chunk.mjs ***!
@@ -302,7 +1344,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core/primitives/signals */ 95094);
 /* harmony import */ var _angular_core_primitives_di__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core/primitives/di */ 20144);
 /**
- * @license Angular v21.1.1
+ * @license Angular v21.1.4
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -325,7 +1367,7 @@ class Version {
     this.patch = parts.slice(2).join('.');
   }
 }
-const VERSION = /* @__PURE__ */new Version('21.1.1');
+const VERSION = /* @__PURE__ */new Version('21.1.4');
 const DOC_PAGE_BASE_URL = /*#__PURE__*/(() => {
   const full = VERSION.full;
   const isPreRelease = full.includes('-next') || full.includes('-rc') || full === '0.0.0' + '-PLACEHOLDER';
@@ -3228,479 +4270,6 @@ function untracked(nonReactiveReadsFn) {
 
 /***/ },
 
-/***/ 29843
-/*!***************************************************************!*\
-  !*** ./node_modules/@angular/core/fesm2022/_effect-chunk.mjs ***!
-  \***************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   BASE_EFFECT_NODE: () => (/* binding */ BASE_EFFECT_NODE),
-/* harmony export */   COMPUTING: () => (/* binding */ COMPUTING),
-/* harmony export */   ERRORED: () => (/* binding */ ERRORED),
-/* harmony export */   REACTIVE_NODE: () => (/* binding */ REACTIVE_NODE),
-/* harmony export */   SIGNAL: () => (/* binding */ SIGNAL),
-/* harmony export */   SIGNAL_NODE: () => (/* binding */ SIGNAL_NODE),
-/* harmony export */   UNSET: () => (/* binding */ UNSET),
-/* harmony export */   consumerAfterComputation: () => (/* binding */ consumerAfterComputation),
-/* harmony export */   consumerBeforeComputation: () => (/* binding */ consumerBeforeComputation),
-/* harmony export */   consumerDestroy: () => (/* binding */ consumerDestroy),
-/* harmony export */   consumerMarkDirty: () => (/* binding */ consumerMarkDirty),
-/* harmony export */   consumerPollProducersForChange: () => (/* binding */ consumerPollProducersForChange),
-/* harmony export */   createComputed: () => (/* binding */ createComputed),
-/* harmony export */   createSignal: () => (/* binding */ createSignal),
-/* harmony export */   defaultEquals: () => (/* binding */ defaultEquals),
-/* harmony export */   finalizeConsumerAfterComputation: () => (/* binding */ finalizeConsumerAfterComputation),
-/* harmony export */   getActiveConsumer: () => (/* binding */ getActiveConsumer),
-/* harmony export */   isInNotificationPhase: () => (/* binding */ isInNotificationPhase),
-/* harmony export */   isReactive: () => (/* binding */ isReactive),
-/* harmony export */   producerAccessed: () => (/* binding */ producerAccessed),
-/* harmony export */   producerIncrementEpoch: () => (/* binding */ producerIncrementEpoch),
-/* harmony export */   producerMarkClean: () => (/* binding */ producerMarkClean),
-/* harmony export */   producerNotifyConsumers: () => (/* binding */ producerNotifyConsumers),
-/* harmony export */   producerUpdateValueVersion: () => (/* binding */ producerUpdateValueVersion),
-/* harmony export */   producerUpdatesAllowed: () => (/* binding */ producerUpdatesAllowed),
-/* harmony export */   resetConsumerBeforeComputation: () => (/* binding */ resetConsumerBeforeComputation),
-/* harmony export */   runEffect: () => (/* binding */ runEffect),
-/* harmony export */   runPostProducerCreatedFn: () => (/* binding */ runPostProducerCreatedFn),
-/* harmony export */   runPostSignalSetFn: () => (/* binding */ runPostSignalSetFn),
-/* harmony export */   setActiveConsumer: () => (/* binding */ setActiveConsumer),
-/* harmony export */   setPostProducerCreatedFn: () => (/* binding */ setPostProducerCreatedFn),
-/* harmony export */   setPostSignalSetFn: () => (/* binding */ setPostSignalSetFn),
-/* harmony export */   setThrowInvalidWriteToSignalError: () => (/* binding */ setThrowInvalidWriteToSignalError),
-/* harmony export */   signalGetFn: () => (/* binding */ signalGetFn),
-/* harmony export */   signalSetFn: () => (/* binding */ signalSetFn),
-/* harmony export */   signalUpdateFn: () => (/* binding */ signalUpdateFn),
-/* harmony export */   untracked: () => (/* binding */ untracked)
-/* harmony export */ });
-/**
- * @license Angular v21.1.1
- * (c) 2010-2026 Google LLC. https://angular.dev/
- * License: MIT
- */
-
-let activeConsumer = null;
-let inNotificationPhase = false;
-let epoch = 1;
-let postProducerCreatedFn = null;
-const SIGNAL = /* @__PURE__ */Symbol('SIGNAL');
-function setActiveConsumer(consumer) {
-  const prev = activeConsumer;
-  activeConsumer = consumer;
-  return prev;
-}
-function getActiveConsumer() {
-  return activeConsumer;
-}
-function isInNotificationPhase() {
-  return inNotificationPhase;
-}
-function isReactive(value) {
-  return value[SIGNAL] !== undefined;
-}
-const REACTIVE_NODE = {
-  version: 0,
-  lastCleanEpoch: 0,
-  dirty: false,
-  producers: undefined,
-  producersTail: undefined,
-  consumers: undefined,
-  consumersTail: undefined,
-  recomputing: false,
-  consumerAllowSignalWrites: false,
-  consumerIsAlwaysLive: false,
-  kind: 'unknown',
-  producerMustRecompute: () => false,
-  producerRecomputeValue: () => {},
-  consumerMarkedDirty: () => {},
-  consumerOnSignalRead: () => {}
-};
-function producerAccessed(node) {
-  if (inNotificationPhase) {
-    throw new Error(typeof ngDevMode !== 'undefined' && ngDevMode ? `Assertion error: signal read during notification phase` : '');
-  }
-  if (activeConsumer === null) {
-    return;
-  }
-  activeConsumer.consumerOnSignalRead(node);
-  const prevProducerLink = activeConsumer.producersTail;
-  if (prevProducerLink !== undefined && prevProducerLink.producer === node) {
-    return;
-  }
-  let nextProducerLink = undefined;
-  const isRecomputing = activeConsumer.recomputing;
-  if (isRecomputing) {
-    nextProducerLink = prevProducerLink !== undefined ? prevProducerLink.nextProducer : activeConsumer.producers;
-    if (nextProducerLink !== undefined && nextProducerLink.producer === node) {
-      activeConsumer.producersTail = nextProducerLink;
-      nextProducerLink.lastReadVersion = node.version;
-      return;
-    }
-  }
-  const prevConsumerLink = node.consumersTail;
-  if (prevConsumerLink !== undefined && prevConsumerLink.consumer === activeConsumer && (!isRecomputing || isValidLink(prevConsumerLink, activeConsumer))) {
-    return;
-  }
-  const isLive = consumerIsLive(activeConsumer);
-  const newLink = {
-    producer: node,
-    consumer: activeConsumer,
-    nextProducer: nextProducerLink,
-    prevConsumer: prevConsumerLink,
-    lastReadVersion: node.version,
-    nextConsumer: undefined
-  };
-  activeConsumer.producersTail = newLink;
-  if (prevProducerLink !== undefined) {
-    prevProducerLink.nextProducer = newLink;
-  } else {
-    activeConsumer.producers = newLink;
-  }
-  if (isLive) {
-    producerAddLiveConsumer(node, newLink);
-  }
-}
-function producerIncrementEpoch() {
-  epoch++;
-}
-function producerUpdateValueVersion(node) {
-  if (consumerIsLive(node) && !node.dirty) {
-    return;
-  }
-  if (!node.dirty && node.lastCleanEpoch === epoch) {
-    return;
-  }
-  if (!node.producerMustRecompute(node) && !consumerPollProducersForChange(node)) {
-    producerMarkClean(node);
-    return;
-  }
-  node.producerRecomputeValue(node);
-  producerMarkClean(node);
-}
-function producerNotifyConsumers(node) {
-  if (node.consumers === undefined) {
-    return;
-  }
-  const prev = inNotificationPhase;
-  inNotificationPhase = true;
-  try {
-    for (let link = node.consumers; link !== undefined; link = link.nextConsumer) {
-      const consumer = link.consumer;
-      if (!consumer.dirty) {
-        consumerMarkDirty(consumer);
-      }
-    }
-  } finally {
-    inNotificationPhase = prev;
-  }
-}
-function producerUpdatesAllowed() {
-  return activeConsumer?.consumerAllowSignalWrites !== false;
-}
-function consumerMarkDirty(node) {
-  node.dirty = true;
-  producerNotifyConsumers(node);
-  node.consumerMarkedDirty?.(node);
-}
-function producerMarkClean(node) {
-  node.dirty = false;
-  node.lastCleanEpoch = epoch;
-}
-function consumerBeforeComputation(node) {
-  if (node) resetConsumerBeforeComputation(node);
-  return setActiveConsumer(node);
-}
-function resetConsumerBeforeComputation(node) {
-  node.producersTail = undefined;
-  node.recomputing = true;
-}
-function consumerAfterComputation(node, prevConsumer) {
-  setActiveConsumer(prevConsumer);
-  if (node) finalizeConsumerAfterComputation(node);
-}
-function finalizeConsumerAfterComputation(node) {
-  node.recomputing = false;
-  const producersTail = node.producersTail;
-  let toRemove = producersTail !== undefined ? producersTail.nextProducer : node.producers;
-  if (toRemove !== undefined) {
-    if (consumerIsLive(node)) {
-      do {
-        toRemove = producerRemoveLiveConsumerLink(toRemove);
-      } while (toRemove !== undefined);
-    }
-    if (producersTail !== undefined) {
-      producersTail.nextProducer = undefined;
-    } else {
-      node.producers = undefined;
-    }
-  }
-}
-function consumerPollProducersForChange(node) {
-  for (let link = node.producers; link !== undefined; link = link.nextProducer) {
-    const producer = link.producer;
-    const seenVersion = link.lastReadVersion;
-    if (seenVersion !== producer.version) {
-      return true;
-    }
-    producerUpdateValueVersion(producer);
-    if (seenVersion !== producer.version) {
-      return true;
-    }
-  }
-  return false;
-}
-function consumerDestroy(node) {
-  if (consumerIsLive(node)) {
-    let link = node.producers;
-    while (link !== undefined) {
-      link = producerRemoveLiveConsumerLink(link);
-    }
-  }
-  node.producers = undefined;
-  node.producersTail = undefined;
-  node.consumers = undefined;
-  node.consumersTail = undefined;
-}
-function producerAddLiveConsumer(node, link) {
-  const consumersTail = node.consumersTail;
-  const wasLive = consumerIsLive(node);
-  if (consumersTail !== undefined) {
-    link.nextConsumer = consumersTail.nextConsumer;
-    consumersTail.nextConsumer = link;
-  } else {
-    link.nextConsumer = undefined;
-    node.consumers = link;
-  }
-  link.prevConsumer = consumersTail;
-  node.consumersTail = link;
-  if (!wasLive) {
-    for (let link = node.producers; link !== undefined; link = link.nextProducer) {
-      producerAddLiveConsumer(link.producer, link);
-    }
-  }
-}
-function producerRemoveLiveConsumerLink(link) {
-  const producer = link.producer;
-  const nextProducer = link.nextProducer;
-  const nextConsumer = link.nextConsumer;
-  const prevConsumer = link.prevConsumer;
-  link.nextConsumer = undefined;
-  link.prevConsumer = undefined;
-  if (nextConsumer !== undefined) {
-    nextConsumer.prevConsumer = prevConsumer;
-  } else {
-    producer.consumersTail = prevConsumer;
-  }
-  if (prevConsumer !== undefined) {
-    prevConsumer.nextConsumer = nextConsumer;
-  } else {
-    producer.consumers = nextConsumer;
-    if (!consumerIsLive(producer)) {
-      let producerLink = producer.producers;
-      while (producerLink !== undefined) {
-        producerLink = producerRemoveLiveConsumerLink(producerLink);
-      }
-    }
-  }
-  return nextProducer;
-}
-function consumerIsLive(node) {
-  return node.consumerIsAlwaysLive || node.consumers !== undefined;
-}
-function runPostProducerCreatedFn(node) {
-  postProducerCreatedFn?.(node);
-}
-function setPostProducerCreatedFn(fn) {
-  const prev = postProducerCreatedFn;
-  postProducerCreatedFn = fn;
-  return prev;
-}
-function isValidLink(checkLink, consumer) {
-  const producersTail = consumer.producersTail;
-  if (producersTail !== undefined) {
-    let link = consumer.producers;
-    do {
-      if (link === checkLink) {
-        return true;
-      }
-      if (link === producersTail) {
-        break;
-      }
-      link = link.nextProducer;
-    } while (link !== undefined);
-  }
-  return false;
-}
-function defaultEquals(a, b) {
-  return Object.is(a, b);
-}
-function createComputed(computation, equal) {
-  const node = Object.create(COMPUTED_NODE);
-  node.computation = computation;
-  if (equal !== undefined) {
-    node.equal = equal;
-  }
-  const computed = () => {
-    producerUpdateValueVersion(node);
-    producerAccessed(node);
-    if (node.value === ERRORED) {
-      throw node.error;
-    }
-    return node.value;
-  };
-  computed[SIGNAL] = node;
-  if (typeof ngDevMode !== 'undefined' && ngDevMode) {
-    const debugName = node.debugName ? ' (' + node.debugName + ')' : '';
-    computed.toString = () => `[Computed${debugName}: ${String(node.value)}]`;
-  }
-  runPostProducerCreatedFn(node);
-  return computed;
-}
-const UNSET = /* @__PURE__ */Symbol('UNSET');
-const COMPUTING = /* @__PURE__ */Symbol('COMPUTING');
-const ERRORED = /* @__PURE__ */Symbol('ERRORED');
-const COMPUTED_NODE = /* @__PURE__ */(() => {
-  return {
-    ...REACTIVE_NODE,
-    value: UNSET,
-    dirty: true,
-    error: null,
-    equal: defaultEquals,
-    kind: 'computed',
-    producerMustRecompute(node) {
-      return node.value === UNSET || node.value === COMPUTING;
-    },
-    producerRecomputeValue(node) {
-      if (node.value === COMPUTING) {
-        throw new Error(typeof ngDevMode !== 'undefined' && ngDevMode ? 'Detected cycle in computations.' : '');
-      }
-      const oldValue = node.value;
-      node.value = COMPUTING;
-      const prevConsumer = consumerBeforeComputation(node);
-      let newValue;
-      let wasEqual = false;
-      try {
-        newValue = node.computation();
-        setActiveConsumer(null);
-        wasEqual = oldValue !== UNSET && oldValue !== ERRORED && newValue !== ERRORED && node.equal(oldValue, newValue);
-      } catch (err) {
-        newValue = ERRORED;
-        node.error = err;
-      } finally {
-        consumerAfterComputation(node, prevConsumer);
-      }
-      if (wasEqual) {
-        node.value = oldValue;
-        return;
-      }
-      node.value = newValue;
-      node.version++;
-    }
-  };
-})();
-function defaultThrowError() {
-  throw new Error();
-}
-let throwInvalidWriteToSignalErrorFn = defaultThrowError;
-function throwInvalidWriteToSignalError(node) {
-  throwInvalidWriteToSignalErrorFn(node);
-}
-function setThrowInvalidWriteToSignalError(fn) {
-  throwInvalidWriteToSignalErrorFn = fn;
-}
-let postSignalSetFn = null;
-function createSignal(initialValue, equal) {
-  const node = Object.create(SIGNAL_NODE);
-  node.value = initialValue;
-  if (equal !== undefined) {
-    node.equal = equal;
-  }
-  const getter = () => signalGetFn(node);
-  getter[SIGNAL] = node;
-  if (typeof ngDevMode !== 'undefined' && ngDevMode) {
-    const debugName = node.debugName ? ' (' + node.debugName + ')' : '';
-    getter.toString = () => `[Signal${debugName}: ${String(node.value)}]`;
-  }
-  runPostProducerCreatedFn(node);
-  const set = newValue => signalSetFn(node, newValue);
-  const update = updateFn => signalUpdateFn(node, updateFn);
-  return [getter, set, update];
-}
-function setPostSignalSetFn(fn) {
-  const prev = postSignalSetFn;
-  postSignalSetFn = fn;
-  return prev;
-}
-function signalGetFn(node) {
-  producerAccessed(node);
-  return node.value;
-}
-function signalSetFn(node, newValue) {
-  if (!producerUpdatesAllowed()) {
-    throwInvalidWriteToSignalError(node);
-  }
-  if (!node.equal(node.value, newValue)) {
-    node.value = newValue;
-    signalValueChanged(node);
-  }
-}
-function signalUpdateFn(node, updater) {
-  if (!producerUpdatesAllowed()) {
-    throwInvalidWriteToSignalError(node);
-  }
-  signalSetFn(node, updater(node.value));
-}
-function runPostSignalSetFn(node) {
-  postSignalSetFn?.(node);
-}
-const SIGNAL_NODE = /* @__PURE__ */(() => {
-  return {
-    ...REACTIVE_NODE,
-    equal: defaultEquals,
-    value: undefined,
-    kind: 'signal'
-  };
-})();
-function signalValueChanged(node) {
-  node.version++;
-  producerIncrementEpoch();
-  producerNotifyConsumers(node);
-  postSignalSetFn?.(node);
-}
-function untracked(nonReactiveReadsFn) {
-  const prevConsumer = setActiveConsumer(null);
-  try {
-    return nonReactiveReadsFn();
-  } finally {
-    setActiveConsumer(prevConsumer);
-  }
-}
-const BASE_EFFECT_NODE = /* @__PURE__ */(() => ({
-  ...REACTIVE_NODE,
-  consumerIsAlwaysLive: true,
-  consumerAllowSignalWrites: true,
-  dirty: true,
-  kind: 'effect'
-}))();
-function runEffect(node) {
-  node.dirty = false;
-  if (node.version > 0 && !consumerPollProducersForChange(node)) {
-    return;
-  }
-  node.version++;
-  const prevNode = consumerBeforeComputation(node);
-  try {
-    node.cleanup();
-    node.fn();
-  } finally {
-    consumerAfterComputation(node, prevNode);
-  }
-}
-
-
-/***/ },
-
 /***/ 49074
 /*!**************************************************************!*\
   !*** ./node_modules/@angular/core/fesm2022/rxjs-interop.mjs ***!
@@ -3724,7 +4293,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core_primitives_signals__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core/primitives/signals */ 95094);
 /* harmony import */ var _angular_core_primitives_di__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core/primitives/di */ 20144);
 /**
- * @license Angular v21.1.1
+ * @license Angular v21.1.4
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -3972,572 +4541,6 @@ function rxResource(opts) {
       return promise;
     }
   });
-}
-
-
-/***/ },
-
-/***/ 52260
-/*!*****************************************************************!*\
-  !*** ./node_modules/@angular/core/fesm2022/_resource-chunk.mjs ***!
-  \*****************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   OutputEmitterRef: () => (/* binding */ OutputEmitterRef),
-/* harmony export */   ResourceImpl: () => (/* binding */ ResourceImpl),
-/* harmony export */   computed: () => (/* binding */ computed),
-/* harmony export */   encapsulateResourceError: () => (/* binding */ encapsulateResourceError),
-/* harmony export */   getOutputDestroyRef: () => (/* binding */ getOutputDestroyRef),
-/* harmony export */   linkedSignal: () => (/* binding */ linkedSignal),
-/* harmony export */   resource: () => (/* binding */ resource)
-/* harmony export */ });
-/* harmony import */ var _Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
-/* harmony import */ var _untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_untracked-chunk.mjs */ 11817);
-/* harmony import */ var _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_effect-chunk.mjs */ 29843);
-/* harmony import */ var _linked_signal_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_linked_signal-chunk.mjs */ 68262);
-
-/**
- * @license Angular v21.1.1
- * (c) 2010-2026 Google LLC. https://angular.dev/
- * License: MIT
- */
-
-
-
-
-class OutputEmitterRef {
-  destroyed = false;
-  listeners = null;
-  errorHandler = /*#__PURE__*/(0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.inject)(_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.ErrorHandler, {
-    optional: true
-  });
-  destroyRef = /*#__PURE__*/(0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.inject)(_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.DestroyRef);
-  constructor() {
-    this.destroyRef.onDestroy(() => {
-      this.destroyed = true;
-      this.listeners = null;
-    });
-  }
-  subscribe(callback) {
-    if (this.destroyed) {
-      throw new _untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.RuntimeError(953, ngDevMode && 'Unexpected subscription to destroyed `OutputRef`. ' + 'The owning directive/component is destroyed.');
-    }
-    (this.listeners ??= []).push(callback);
-    return {
-      unsubscribe: () => {
-        const idx = this.listeners?.indexOf(callback);
-        if (idx !== undefined && idx !== -1) {
-          this.listeners?.splice(idx, 1);
-        }
-      }
-    };
-  }
-  emit(value) {
-    if (this.destroyed) {
-      console.warn((0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.formatRuntimeError)(953, ngDevMode && 'Unexpected emit for destroyed `OutputRef`. ' + 'The owning directive/component is destroyed.'));
-      return;
-    }
-    if (this.listeners === null) {
-      return;
-    }
-    const previousConsumer = (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_2__.setActiveConsumer)(null);
-    try {
-      for (const listenerFn of this.listeners) {
-        try {
-          listenerFn(value);
-        } catch (err) {
-          this.errorHandler?.handleError(err);
-        }
-      }
-    } finally {
-      (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_2__.setActiveConsumer)(previousConsumer);
-    }
-  }
-}
-function getOutputDestroyRef(ref) {
-  return ref.destroyRef;
-}
-function computed(computation, options) {
-  const getter = (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_2__.createComputed)(computation, options?.equal);
-  if (ngDevMode) {
-    getter.toString = () => `[Computed: ${getter()}]`;
-    getter[_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_2__.SIGNAL].debugName = options?.debugName;
-  }
-  return getter;
-}
-const identityFn = v => v;
-function linkedSignal(optionsOrComputation, options) {
-  if (typeof optionsOrComputation === 'function') {
-    const getter = (0,_linked_signal_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.createLinkedSignal)(optionsOrComputation, identityFn, options?.equal);
-    return upgradeLinkedSignalGetter(getter, options?.debugName);
-  } else {
-    const getter = (0,_linked_signal_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.createLinkedSignal)(optionsOrComputation.source, optionsOrComputation.computation, optionsOrComputation.equal);
-    return upgradeLinkedSignalGetter(getter, optionsOrComputation.debugName);
-  }
-}
-function upgradeLinkedSignalGetter(getter, debugName) {
-  if (ngDevMode) {
-    getter.toString = () => `[LinkedSignal: ${getter()}]`;
-    getter[_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_2__.SIGNAL].debugName = debugName;
-  }
-  const node = getter[_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_2__.SIGNAL];
-  const upgradedGetter = getter;
-  upgradedGetter.set = newValue => (0,_linked_signal_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.linkedSignalSetFn)(node, newValue);
-  upgradedGetter.update = updateFn => (0,_linked_signal_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.linkedSignalUpdateFn)(node, updateFn);
-  upgradedGetter.asReadonly = _untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.signalAsReadonlyFn.bind(getter);
-  return upgradedGetter;
-}
-function resource(options) {
-  if (ngDevMode && !options?.injector) {
-    (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.assertInInjectionContext)(resource);
-  }
-  const oldNameForParams = options.request;
-  const params = options.params ?? oldNameForParams ?? (() => null);
-  return new ResourceImpl(params, getLoader(options), options.defaultValue, options.equal ? wrapEqualityFn(options.equal) : undefined, options.debugName, options.injector ?? (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.inject)(_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.Injector));
-}
-class BaseWritableResource {
-  value;
-  isLoading;
-  constructor(value, debugName) {
-    this.value = value;
-    this.value.set = this.set.bind(this);
-    this.value.update = this.update.bind(this);
-    this.value.asReadonly = _untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.signalAsReadonlyFn;
-    this.isLoading = computed(() => this.status() === 'loading' || this.status() === 'reloading', ngDevMode ? createDebugNameObject(debugName, 'isLoading') : undefined);
-  }
-  isError = /*#__PURE__*/computed(() => this.status() === 'error');
-  update(updateFn) {
-    this.set(updateFn((0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(this.value)));
-  }
-  isValueDefined = /*#__PURE__*/computed(() => {
-    if (this.isError()) {
-      return false;
-    }
-    return this.value() !== undefined;
-  });
-  hasValue() {
-    return this.isValueDefined();
-  }
-  asReadonly() {
-    return this;
-  }
-}
-class ResourceImpl extends BaseWritableResource {
-  loaderFn;
-  equal;
-  debugName;
-  pendingTasks;
-  state;
-  extRequest;
-  effectRef;
-  pendingController;
-  resolvePendingTask = undefined;
-  destroyed = false;
-  unregisterOnDestroy;
-  status;
-  error;
-  constructor(request, loaderFn, defaultValue, equal, debugName, injector) {
-    super(computed(() => {
-      const streamValue = this.state().stream?.();
-      if (!streamValue) {
-        return defaultValue;
-      }
-      if (this.state().status === 'loading' && this.error()) {
-        return defaultValue;
-      }
-      if (!isResolved(streamValue)) {
-        throw new ResourceValueError(this.error());
-      }
-      return streamValue.value;
-    }, {
-      equal,
-      ...(ngDevMode ? createDebugNameObject(debugName, 'value') : undefined)
-    }), debugName);
-    this.loaderFn = loaderFn;
-    this.equal = equal;
-    this.debugName = debugName;
-    this.extRequest = linkedSignal({
-      source: request,
-      computation: request => ({
-        request,
-        reload: 0
-      }),
-      ...(ngDevMode ? createDebugNameObject(debugName, 'extRequest') : undefined)
-    });
-    this.state = linkedSignal({
-      source: this.extRequest,
-      computation: (extRequest, previous) => {
-        const status = extRequest.request === undefined ? 'idle' : 'loading';
-        if (!previous) {
-          return {
-            extRequest,
-            status,
-            previousStatus: 'idle',
-            stream: undefined
-          };
-        } else {
-          return {
-            extRequest,
-            status,
-            previousStatus: projectStatusOfState(previous.value),
-            stream: previous.value.extRequest.request === extRequest.request ? previous.value.stream : undefined
-          };
-        }
-      },
-      ...(ngDevMode ? createDebugNameObject(debugName, 'state') : undefined)
-    });
-    this.effectRef = (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.effect)(this.loadEffect.bind(this), {
-      injector,
-      manualCleanup: true,
-      ...(ngDevMode ? createDebugNameObject(debugName, 'loadEffect') : undefined)
-    });
-    this.pendingTasks = injector.get(_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.PendingTasks);
-    this.unregisterOnDestroy = injector.get(_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.DestroyRef).onDestroy(() => this.destroy());
-    this.status = computed(() => projectStatusOfState(this.state()), ngDevMode ? createDebugNameObject(debugName, 'status') : undefined);
-    this.error = computed(() => {
-      const stream = this.state().stream?.();
-      return stream && !isResolved(stream) ? stream.error : undefined;
-    }, ngDevMode ? createDebugNameObject(debugName, 'error') : undefined);
-  }
-  set(value) {
-    if (this.destroyed) {
-      return;
-    }
-    const error = (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(this.error);
-    const state = (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(this.state);
-    if (!error) {
-      const current = (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(this.value);
-      if (state.status === 'local' && (this.equal ? this.equal(current, value) : current === value)) {
-        return;
-      }
-    }
-    this.state.set({
-      extRequest: state.extRequest,
-      status: 'local',
-      previousStatus: 'local',
-      stream: (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.signal)({
-        value
-      }, ngDevMode ? createDebugNameObject(this.debugName, 'stream') : undefined)
-    });
-    this.abortInProgressLoad();
-  }
-  reload() {
-    const {
-      status
-    } = (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(this.state);
-    if (status === 'idle' || status === 'loading') {
-      return false;
-    }
-    this.extRequest.update(({
-      request,
-      reload
-    }) => ({
-      request,
-      reload: reload + 1
-    }));
-    return true;
-  }
-  destroy() {
-    this.destroyed = true;
-    this.unregisterOnDestroy();
-    this.effectRef.destroy();
-    this.abortInProgressLoad();
-    this.state.set({
-      extRequest: {
-        request: undefined,
-        reload: 0
-      },
-      status: 'idle',
-      previousStatus: 'idle',
-      stream: undefined
-    });
-  }
-  loadEffect() {
-    var _this = this;
-    return (0,_Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      const extRequest = _this.extRequest();
-      const {
-        status: currentStatus,
-        previousStatus
-      } = (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(_this.state);
-      if (extRequest.request === undefined) {
-        return;
-      } else if (currentStatus !== 'loading') {
-        return;
-      }
-      _this.abortInProgressLoad();
-      let resolvePendingTask = _this.resolvePendingTask = _this.pendingTasks.add();
-      const {
-        signal: abortSignal
-      } = _this.pendingController = new AbortController();
-      try {
-        const stream = yield (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(() => {
-          return _this.loaderFn({
-            params: extRequest.request,
-            request: extRequest.request,
-            abortSignal,
-            previous: {
-              status: previousStatus
-            }
-          });
-        });
-        if (abortSignal.aborted || (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(_this.extRequest) !== extRequest) {
-          return;
-        }
-        _this.state.set({
-          extRequest,
-          status: 'resolved',
-          previousStatus: 'resolved',
-          stream
-        });
-      } catch (err) {
-        if (abortSignal.aborted || (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(_this.extRequest) !== extRequest) {
-          return;
-        }
-        _this.state.set({
-          extRequest,
-          status: 'resolved',
-          previousStatus: 'error',
-          stream: (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.signal)({
-            error: encapsulateResourceError(err)
-          }, ngDevMode ? createDebugNameObject(_this.debugName, 'stream') : undefined)
-        });
-      } finally {
-        resolvePendingTask?.();
-        resolvePendingTask = undefined;
-      }
-    })();
-  }
-  abortInProgressLoad() {
-    (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.untracked)(() => this.pendingController?.abort());
-    this.pendingController = undefined;
-    this.resolvePendingTask?.();
-    this.resolvePendingTask = undefined;
-  }
-}
-function wrapEqualityFn(equal) {
-  return (a, b) => a === undefined || b === undefined ? a === b : equal(a, b);
-}
-function getLoader(options) {
-  if (isStreamingResourceOptions(options)) {
-    return options.stream;
-  }
-  return /*#__PURE__*/function () {
-    var _ref = (0,_Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (params) {
-      try {
-        return (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.signal)({
-          value: yield options.loader(params)
-        }, ngDevMode ? createDebugNameObject(options.debugName, 'stream') : undefined);
-      } catch (err) {
-        return (0,_untracked_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__.signal)({
-          error: encapsulateResourceError(err)
-        }, ngDevMode ? createDebugNameObject(options.debugName, 'stream') : undefined);
-      }
-    });
-    return function (_x) {
-      return _ref.apply(this, arguments);
-    };
-  }();
-}
-function isStreamingResourceOptions(options) {
-  return !!options.stream;
-}
-function projectStatusOfState(state) {
-  switch (state.status) {
-    case 'loading':
-      return state.extRequest.reload === 0 ? 'loading' : 'reloading';
-    case 'resolved':
-      return isResolved(state.stream()) ? 'resolved' : 'error';
-    default:
-      return state.status;
-  }
-}
-function isResolved(state) {
-  return state.error === undefined;
-}
-function createDebugNameObject(resourceDebugName, internalSignalDebugName) {
-  return {
-    debugName: `Resource${resourceDebugName ? '#' + resourceDebugName : ''}.${internalSignalDebugName}`
-  };
-}
-function encapsulateResourceError(error) {
-  if (isErrorLike(error)) {
-    return error;
-  }
-  return new ResourceWrappedError(error);
-}
-function isErrorLike(error) {
-  return error instanceof Error || typeof error === 'object' && typeof error.name === 'string' && typeof error.message === 'string';
-}
-class ResourceValueError extends Error {
-  constructor(error) {
-    super(ngDevMode ? `Resource is currently in an error state (see Error.cause for details): ${error.message}` : error.message, {
-      cause: error
-    });
-  }
-}
-class ResourceWrappedError extends Error {
-  constructor(error) {
-    super(ngDevMode ? `Resource returned an error that's not an Error instance: ${String(error)}. Check this error's .cause for the actual error.` : String(error), {
-      cause: error
-    });
-  }
-}
-
-
-/***/ },
-
-/***/ 68262
-/*!**********************************************************************!*\
-  !*** ./node_modules/@angular/core/fesm2022/_linked_signal-chunk.mjs ***!
-  \**********************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   createLinkedSignal: () => (/* binding */ createLinkedSignal),
-/* harmony export */   linkedSignalSetFn: () => (/* binding */ linkedSignalSetFn),
-/* harmony export */   linkedSignalUpdateFn: () => (/* binding */ linkedSignalUpdateFn)
-/* harmony export */ });
-/* harmony import */ var _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_effect-chunk.mjs */ 29843);
-/**
- * @license Angular v21.1.1
- * (c) 2010-2026 Google LLC. https://angular.dev/
- * License: MIT
- */
-
-
-function createLinkedSignal(sourceFn, computationFn, equalityFn) {
-  const node = Object.create(LINKED_SIGNAL_NODE);
-  node.source = sourceFn;
-  node.computation = computationFn;
-  if (equalityFn != undefined) {
-    node.equal = equalityFn;
-  }
-  const linkedSignalGetter = () => {
-    (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
-    (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerAccessed)(node);
-    if (node.value === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED) {
-      throw node.error;
-    }
-    return node.value;
-  };
-  const getter = linkedSignalGetter;
-  getter[_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.SIGNAL] = node;
-  if (typeof ngDevMode !== 'undefined' && ngDevMode) {
-    const debugName = node.debugName ? ' (' + node.debugName + ')' : '';
-    getter.toString = () => `[LinkedSignal${debugName}: ${String(node.value)}]`;
-  }
-  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.runPostProducerCreatedFn)(node);
-  return getter;
-}
-function linkedSignalSetFn(node, newValue) {
-  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
-  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.signalSetFn)(node, newValue);
-  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerMarkClean)(node);
-}
-function linkedSignalUpdateFn(node, updater) {
-  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
-  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.signalUpdateFn)(node, updater);
-  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerMarkClean)(node);
-}
-const LINKED_SIGNAL_NODE = /* @__PURE__ */(() => {
-  return {
-    ..._effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.REACTIVE_NODE,
-    value: _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET,
-    dirty: true,
-    error: null,
-    equal: _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.defaultEquals,
-    kind: 'linkedSignal',
-    producerMustRecompute(node) {
-      return node.value === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET || node.value === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING;
-    },
-    producerRecomputeValue(node) {
-      if (node.value === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING) {
-        throw new Error(typeof ngDevMode !== 'undefined' && ngDevMode ? 'Detected cycle in computations.' : '');
-      }
-      const oldValue = node.value;
-      node.value = _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING;
-      const prevConsumer = (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerBeforeComputation)(node);
-      let newValue;
-      try {
-        const newSourceValue = node.source();
-        const prev = oldValue === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET || oldValue === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED ? undefined : {
-          source: node.sourceValue,
-          value: oldValue
-        };
-        newValue = node.computation(newSourceValue, prev);
-        node.sourceValue = newSourceValue;
-      } catch (err) {
-        newValue = _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED;
-        node.error = err;
-      } finally {
-        (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerAfterComputation)(node, prevConsumer);
-      }
-      if (oldValue !== _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET && newValue !== _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED && node.equal(oldValue, newValue)) {
-        node.value = oldValue;
-        return;
-      }
-      node.value = newValue;
-      node.version++;
-    }
-  };
-})();
-
-
-/***/ },
-
-/***/ 78330
-/*!******************************************************************!*\
-  !*** ./node_modules/@angular/core/fesm2022/_not_found-chunk.mjs ***!
-  \******************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   NOT_FOUND: () => (/* binding */ NOT_FOUND),
-/* harmony export */   NotFoundError: () => (/* binding */ NotFoundError),
-/* harmony export */   getCurrentInjector: () => (/* binding */ getCurrentInjector),
-/* harmony export */   inject: () => (/* binding */ inject),
-/* harmony export */   isNotFound: () => (/* binding */ isNotFound),
-/* harmony export */   setCurrentInjector: () => (/* binding */ setCurrentInjector)
-/* harmony export */ });
-/**
- * @license Angular v21.1.1
- * (c) 2010-2026 Google LLC. https://angular.dev/
- * License: MIT
- */
-
-let _currentInjector = undefined;
-function getCurrentInjector() {
-  return _currentInjector;
-}
-function setCurrentInjector(injector) {
-  const former = _currentInjector;
-  _currentInjector = injector;
-  return former;
-}
-function inject(token, options) {
-  const currentInjector = getCurrentInjector();
-  if (!currentInjector) {
-    throw new Error('Current injector is not set.');
-  }
-  if (!token.ɵprov) {
-    throw new Error('Token is not an injectable');
-  }
-  return currentInjector.retrieve(token, options);
-}
-const NOT_FOUND = /*#__PURE__*/Symbol('NotFound');
-class NotFoundError extends Error {
-  name = 'ɵNotFound';
-  constructor(message) {
-    super(message);
-  }
-}
-function isNotFound(e) {
-  return e === NOT_FOUND || e?.name === 'ɵNotFound';
 }
 
 

@@ -1,26 +1,5 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[6699],{
 
-/***/ 6550
-/*!*****************************************************************!*\
-  !*** ./node_modules/@angular/core/fesm2022/_weak_ref-chunk.mjs ***!
-  \*****************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   setAlternateWeakRefImpl: () => (/* binding */ setAlternateWeakRefImpl)
-/* harmony export */ });
-/**
- * @license Angular v21.1.1
- * (c) 2010-2026 Google LLC. https://angular.dev/
- * License: MIT
- */
-
-function setAlternateWeakRefImpl(impl) {}
-
-
-/***/ },
-
 /***/ 29843
 /*!***************************************************************!*\
   !*** ./node_modules/@angular/core/fesm2022/_effect-chunk.mjs ***!
@@ -68,7 +47,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   untracked: () => (/* binding */ untracked)
 /* harmony export */ });
 /**
- * @license Angular v21.1.1
+ * @license Angular v21.1.4
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -494,6 +473,130 @@ function runEffect(node) {
 
 /***/ },
 
+/***/ 68262
+/*!**********************************************************************!*\
+  !*** ./node_modules/@angular/core/fesm2022/_linked_signal-chunk.mjs ***!
+  \**********************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createLinkedSignal: () => (/* binding */ createLinkedSignal),
+/* harmony export */   linkedSignalSetFn: () => (/* binding */ linkedSignalSetFn),
+/* harmony export */   linkedSignalUpdateFn: () => (/* binding */ linkedSignalUpdateFn)
+/* harmony export */ });
+/* harmony import */ var _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_effect-chunk.mjs */ 29843);
+/**
+ * @license Angular v21.1.4
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
+
+
+function createLinkedSignal(sourceFn, computationFn, equalityFn) {
+  const node = Object.create(LINKED_SIGNAL_NODE);
+  node.source = sourceFn;
+  node.computation = computationFn;
+  if (equalityFn != undefined) {
+    node.equal = equalityFn;
+  }
+  const linkedSignalGetter = () => {
+    (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
+    (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerAccessed)(node);
+    if (node.value === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED) {
+      throw node.error;
+    }
+    return node.value;
+  };
+  const getter = linkedSignalGetter;
+  getter[_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.SIGNAL] = node;
+  if (typeof ngDevMode !== 'undefined' && ngDevMode) {
+    const debugName = node.debugName ? ' (' + node.debugName + ')' : '';
+    getter.toString = () => `[LinkedSignal${debugName}: ${String(node.value)}]`;
+  }
+  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.runPostProducerCreatedFn)(node);
+  return getter;
+}
+function linkedSignalSetFn(node, newValue) {
+  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
+  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.signalSetFn)(node, newValue);
+  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerMarkClean)(node);
+}
+function linkedSignalUpdateFn(node, updater) {
+  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
+  if (node.value === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED) {
+    throw node.error;
+  }
+  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.signalUpdateFn)(node, updater);
+  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerMarkClean)(node);
+}
+const LINKED_SIGNAL_NODE = /* @__PURE__ */(() => {
+  return {
+    ..._effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.REACTIVE_NODE,
+    value: _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET,
+    dirty: true,
+    error: null,
+    equal: _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.defaultEquals,
+    kind: 'linkedSignal',
+    producerMustRecompute(node) {
+      return node.value === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET || node.value === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING;
+    },
+    producerRecomputeValue(node) {
+      if (node.value === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING) {
+        throw new Error(typeof ngDevMode !== 'undefined' && ngDevMode ? 'Detected cycle in computations.' : '');
+      }
+      const oldValue = node.value;
+      node.value = _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING;
+      const prevConsumer = (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerBeforeComputation)(node);
+      let newValue;
+      try {
+        const newSourceValue = node.source();
+        const prev = oldValue === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET || oldValue === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED ? undefined : {
+          source: node.sourceValue,
+          value: oldValue
+        };
+        newValue = node.computation(newSourceValue, prev);
+        node.sourceValue = newSourceValue;
+      } catch (err) {
+        newValue = _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED;
+        node.error = err;
+      } finally {
+        (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerAfterComputation)(node, prevConsumer);
+      }
+      if (oldValue !== _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET && newValue !== _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED && node.equal(oldValue, newValue)) {
+        node.value = oldValue;
+        return;
+      }
+      node.value = newValue;
+      node.version++;
+    }
+  };
+})();
+
+
+/***/ },
+
+/***/ 6550
+/*!*****************************************************************!*\
+  !*** ./node_modules/@angular/core/fesm2022/_weak_ref-chunk.mjs ***!
+  \*****************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   setAlternateWeakRefImpl: () => (/* binding */ setAlternateWeakRefImpl)
+/* harmony export */ });
+/**
+ * @license Angular v21.1.4
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
+
+function setAlternateWeakRefImpl(impl) {}
+
+
+/***/ },
+
 /***/ 36699
 /*!********************************************************************!*\
   !*** ./node_modules/@angular/core/fesm2022/primitives-signals.mjs ***!
@@ -547,7 +650,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _linked_signal_chunk_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_linked_signal-chunk.mjs */ 68262);
 /* harmony import */ var _weak_ref_chunk_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_weak_ref-chunk.mjs */ 6550);
 /**
- * @license Angular v21.1.1
+ * @license Angular v21.1.4
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -727,106 +830,6 @@ const WATCH_NODE = /* @__PURE__ */(() => {
 if (typeof ngDevMode === 'undefined' || ngDevMode) {
   /*#__PURE__*/installDevToolsSignalFormatter();
 }
-
-
-/***/ },
-
-/***/ 68262
-/*!**********************************************************************!*\
-  !*** ./node_modules/@angular/core/fesm2022/_linked_signal-chunk.mjs ***!
-  \**********************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   createLinkedSignal: () => (/* binding */ createLinkedSignal),
-/* harmony export */   linkedSignalSetFn: () => (/* binding */ linkedSignalSetFn),
-/* harmony export */   linkedSignalUpdateFn: () => (/* binding */ linkedSignalUpdateFn)
-/* harmony export */ });
-/* harmony import */ var _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_effect-chunk.mjs */ 29843);
-/**
- * @license Angular v21.1.1
- * (c) 2010-2026 Google LLC. https://angular.dev/
- * License: MIT
- */
-
-
-function createLinkedSignal(sourceFn, computationFn, equalityFn) {
-  const node = Object.create(LINKED_SIGNAL_NODE);
-  node.source = sourceFn;
-  node.computation = computationFn;
-  if (equalityFn != undefined) {
-    node.equal = equalityFn;
-  }
-  const linkedSignalGetter = () => {
-    (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
-    (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerAccessed)(node);
-    if (node.value === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED) {
-      throw node.error;
-    }
-    return node.value;
-  };
-  const getter = linkedSignalGetter;
-  getter[_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.SIGNAL] = node;
-  if (typeof ngDevMode !== 'undefined' && ngDevMode) {
-    const debugName = node.debugName ? ' (' + node.debugName + ')' : '';
-    getter.toString = () => `[LinkedSignal${debugName}: ${String(node.value)}]`;
-  }
-  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.runPostProducerCreatedFn)(node);
-  return getter;
-}
-function linkedSignalSetFn(node, newValue) {
-  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
-  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.signalSetFn)(node, newValue);
-  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerMarkClean)(node);
-}
-function linkedSignalUpdateFn(node, updater) {
-  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerUpdateValueVersion)(node);
-  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.signalUpdateFn)(node, updater);
-  (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.producerMarkClean)(node);
-}
-const LINKED_SIGNAL_NODE = /* @__PURE__ */(() => {
-  return {
-    ..._effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.REACTIVE_NODE,
-    value: _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET,
-    dirty: true,
-    error: null,
-    equal: _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.defaultEquals,
-    kind: 'linkedSignal',
-    producerMustRecompute(node) {
-      return node.value === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET || node.value === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING;
-    },
-    producerRecomputeValue(node) {
-      if (node.value === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING) {
-        throw new Error(typeof ngDevMode !== 'undefined' && ngDevMode ? 'Detected cycle in computations.' : '');
-      }
-      const oldValue = node.value;
-      node.value = _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.COMPUTING;
-      const prevConsumer = (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerBeforeComputation)(node);
-      let newValue;
-      try {
-        const newSourceValue = node.source();
-        const prev = oldValue === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET || oldValue === _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED ? undefined : {
-          source: node.sourceValue,
-          value: oldValue
-        };
-        newValue = node.computation(newSourceValue, prev);
-        node.sourceValue = newSourceValue;
-      } catch (err) {
-        newValue = _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED;
-        node.error = err;
-      } finally {
-        (0,_effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.consumerAfterComputation)(node, prevConsumer);
-      }
-      if (oldValue !== _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.UNSET && newValue !== _effect_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.ERRORED && node.equal(oldValue, newValue)) {
-        node.value = oldValue;
-        return;
-      }
-      node.value = newValue;
-      node.version++;
-    }
-  };
-})();
 
 
 /***/ }

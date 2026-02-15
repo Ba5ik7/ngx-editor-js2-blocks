@@ -1,5 +1,41 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[640],{
 
+/***/ 87432
+/*!**********************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/_animation-chunk.mjs ***!
+  \**********************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MATERIAL_ANIMATIONS: () => (/* binding */ MATERIAL_ANIMATIONS),
+/* harmony export */   _animationsDisabled: () => (/* binding */ _animationsDisabled),
+/* harmony export */   _getAnimationsState: () => (/* binding */ _getAnimationsState)
+/* harmony export */ });
+/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/layout */ 42394);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
+
+
+const MATERIAL_ANIMATIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('MATERIAL_ANIMATIONS');
+let reducedMotion = null;
+function _getAnimationsState() {
+  if ((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(MATERIAL_ANIMATIONS, {
+    optional: true
+  })?.animationsDisabled || (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ANIMATION_MODULE_TYPE, {
+    optional: true
+  }) === 'NoopAnimations') {
+    return 'di-disabled';
+  }
+  reducedMotion ??= (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__.MediaMatcher).matchMedia('(prefers-reduced-motion)').matches;
+  return reducedMotion ? 'reduced-motion' : 'enabled';
+}
+function _animationsDisabled() {
+  return _getAnimationsState() !== 'enabled';
+}
+
+
+/***/ },
+
 /***/ 15575
 /*!********************************************************************!*\
   !*** ./node_modules/@angular/material/fesm2022/_tooltip-chunk.mjs ***!
@@ -292,17 +328,16 @@ let MatTooltip = /*#__PURE__*/(() => {
         positionStrategy: strategy,
         panelClass: this._overlayPanelClass ? [...this._overlayPanelClass, panelClass] : panelClass,
         scrollStrategy: this._injector.get(MAT_TOOLTIP_SCROLL_STRATEGY)(),
-        disableAnimations: this._animationsDisabled
+        disableAnimations: this._animationsDisabled,
+        eventPredicate: this._overlayEventPredicate
       });
       this._updatePosition(this._overlayRef);
       this._overlayRef.detachments().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.takeUntil)(this._destroyed)).subscribe(() => this._detach());
       this._overlayRef.outsidePointerEvents().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.takeUntil)(this._destroyed)).subscribe(() => this._tooltipInstance?._handleBodyInteraction());
       this._overlayRef.keydownEvents().pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.takeUntil)(this._destroyed)).subscribe(event => {
-        if (this._isTooltipVisible() && event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_2__.ESCAPE && !(0,_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_2__.hasModifierKey)(event)) {
-          event.preventDefault();
-          event.stopPropagation();
-          this._ngZone.run(() => this.hide(0));
-        }
+        event.preventDefault();
+        event.stopPropagation();
+        this._ngZone.run(() => this.hide(0));
       });
       if (this._defaultOptions?.disableTooltipInteractivity) {
         this._overlayRef.addPanelClass(`${this._cssClassPrefix}-tooltip-panel-non-interactive`);
@@ -597,6 +632,12 @@ let MatTooltip = /*#__PURE__*/(() => {
         });
       }
     }
+    _overlayEventPredicate = event => {
+      if (event.type === 'keydown') {
+        return this._isTooltipVisible() && event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_2__.ESCAPE && !(0,_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_2__.hasModifierKey)(event);
+      }
+      return true;
+    };
     static ɵfac = function MatTooltip_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || MatTooltip)();
     };
@@ -872,42 +913,6 @@ let MatTooltipModule = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-
-
-/***/ },
-
-/***/ 87432
-/*!**********************************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2022/_animation-chunk.mjs ***!
-  \**********************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   MATERIAL_ANIMATIONS: () => (/* binding */ MATERIAL_ANIMATIONS),
-/* harmony export */   _animationsDisabled: () => (/* binding */ _animationsDisabled),
-/* harmony export */   _getAnimationsState: () => (/* binding */ _getAnimationsState)
-/* harmony export */ });
-/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/layout */ 42394);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
-
-
-const MATERIAL_ANIMATIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('MATERIAL_ANIMATIONS');
-let reducedMotion = null;
-function _getAnimationsState() {
-  if ((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(MATERIAL_ANIMATIONS, {
-    optional: true
-  })?.animationsDisabled || (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ANIMATION_MODULE_TYPE, {
-    optional: true
-  }) === 'NoopAnimations') {
-    return 'di-disabled';
-  }
-  reducedMotion ??= (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__.MediaMatcher).matchMedia('(prefers-reduced-motion)').matches;
-  return reducedMotion ? 'reduced-motion' : 'enabled';
-}
-function _animationsDisabled() {
-  return _getAnimationsState() !== 'enabled';
-}
 
 
 /***/ }

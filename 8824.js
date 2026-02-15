@@ -1,548 +1,5 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[8824],{
 
-/***/ 8963
-/*!****************************************************************************!*\
-  !*** ./node_modules/@angular/common/fesm2022/_platform_location-chunk.mjs ***!
-  \****************************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   BrowserPlatformLocation: () => (/* binding */ BrowserPlatformLocation),
-/* harmony export */   DomAdapter: () => (/* binding */ DomAdapter),
-/* harmony export */   LOCATION_INITIALIZED: () => (/* binding */ LOCATION_INITIALIZED),
-/* harmony export */   PlatformLocation: () => (/* binding */ PlatformLocation),
-/* harmony export */   getDOM: () => (/* binding */ getDOM),
-/* harmony export */   setRootDomAdapter: () => (/* binding */ setRootDomAdapter)
-/* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 51356);
-/**
- * @license Angular v21.1.1
- * (c) 2010-2026 Google LLC. https://angular.dev/
- * License: MIT
- */
-
-
-
-let _DOM = null;
-function getDOM() {
-  return _DOM;
-}
-function setRootDomAdapter(adapter) {
-  _DOM ??= adapter;
-}
-class DomAdapter {}
-let PlatformLocation = /*#__PURE__*/(() => {
-  class PlatformLocation {
-    historyGo(relativePosition) {
-      throw new Error(ngDevMode ? 'Not implemented' : '');
-    }
-    static ɵfac = function PlatformLocation_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || PlatformLocation)();
-    };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: PlatformLocation,
-      factory: () => (() => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(BrowserPlatformLocation))(),
-      providedIn: 'platform'
-    });
-  }
-  return PlatformLocation;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const LOCATION_INITIALIZED = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(typeof ngDevMode !== 'undefined' && ngDevMode ? 'Location Initialized' : '');
-let BrowserPlatformLocation = /*#__PURE__*/(() => {
-  class BrowserPlatformLocation extends PlatformLocation {
-    _location;
-    _history;
-    _doc = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT);
-    constructor() {
-      super();
-      this._location = window.location;
-      this._history = window.history;
-    }
-    getBaseHrefFromDOM() {
-      return getDOM().getBaseHref(this._doc);
-    }
-    onPopState(fn) {
-      const window = getDOM().getGlobalEventTarget(this._doc, 'window');
-      window.addEventListener('popstate', fn, false);
-      return () => window.removeEventListener('popstate', fn);
-    }
-    onHashChange(fn) {
-      const window = getDOM().getGlobalEventTarget(this._doc, 'window');
-      window.addEventListener('hashchange', fn, false);
-      return () => window.removeEventListener('hashchange', fn);
-    }
-    get href() {
-      return this._location.href;
-    }
-    get protocol() {
-      return this._location.protocol;
-    }
-    get hostname() {
-      return this._location.hostname;
-    }
-    get port() {
-      return this._location.port;
-    }
-    get pathname() {
-      return this._location.pathname;
-    }
-    get search() {
-      return this._location.search;
-    }
-    get hash() {
-      return this._location.hash;
-    }
-    set pathname(newPath) {
-      this._location.pathname = newPath;
-    }
-    pushState(state, title, url) {
-      this._history.pushState(state, title, url);
-    }
-    replaceState(state, title, url) {
-      this._history.replaceState(state, title, url);
-    }
-    forward() {
-      this._history.forward();
-    }
-    back() {
-      this._history.back();
-    }
-    historyGo(relativePosition = 0) {
-      this._history.go(relativePosition);
-    }
-    getState() {
-      return this._history.state;
-    }
-    static ɵfac = function BrowserPlatformLocation_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || BrowserPlatformLocation)();
-    };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: BrowserPlatformLocation,
-      factory: () => (() => new BrowserPlatformLocation())(),
-      providedIn: 'platform'
-    });
-  }
-  return BrowserPlatformLocation;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-
-/***/ },
-
-/***/ 46443
-/*!********************************************************!*\
-  !*** ./node_modules/@angular/common/fesm2022/http.mjs ***!
-  \********************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   FetchBackend: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.FetchBackend),
-/* harmony export */   HTTP_INTERCEPTORS: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HTTP_INTERCEPTORS),
-/* harmony export */   HTTP_TRANSFER_CACHE_ORIGIN_MAP: () => (/* binding */ HTTP_TRANSFER_CACHE_ORIGIN_MAP),
-/* harmony export */   HttpBackend: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpBackend),
-/* harmony export */   HttpClient: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClient),
-/* harmony export */   HttpClientJsonpModule: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClientJsonpModule),
-/* harmony export */   HttpClientModule: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClientModule),
-/* harmony export */   HttpClientXsrfModule: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClientXsrfModule),
-/* harmony export */   HttpContext: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpContext),
-/* harmony export */   HttpContextToken: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpContextToken),
-/* harmony export */   HttpErrorResponse: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpErrorResponse),
-/* harmony export */   HttpEventType: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpEventType),
-/* harmony export */   HttpFeatureKind: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpFeatureKind),
-/* harmony export */   HttpHandler: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHandler),
-/* harmony export */   HttpHeaderResponse: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaderResponse),
-/* harmony export */   HttpHeaders: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders),
-/* harmony export */   HttpParams: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpParams),
-/* harmony export */   HttpRequest: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpRequest),
-/* harmony export */   HttpResponse: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponse),
-/* harmony export */   HttpResponseBase: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponseBase),
-/* harmony export */   HttpStatusCode: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpStatusCode),
-/* harmony export */   HttpUrlEncodingCodec: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpUrlEncodingCodec),
-/* harmony export */   HttpXhrBackend: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpXhrBackend),
-/* harmony export */   HttpXsrfTokenExtractor: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpXsrfTokenExtractor),
-/* harmony export */   JsonpClientBackend: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.JsonpClientBackend),
-/* harmony export */   JsonpInterceptor: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.JsonpInterceptor),
-/* harmony export */   httpResource: () => (/* binding */ httpResource),
-/* harmony export */   provideHttpClient: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.provideHttpClient),
-/* harmony export */   withFetch: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withFetch),
-/* harmony export */   withInterceptors: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withInterceptors),
-/* harmony export */   withInterceptorsFromDi: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withInterceptorsFromDi),
-/* harmony export */   withJsonpSupport: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withJsonpSupport),
-/* harmony export */   withNoXsrfProtection: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withNoXsrfProtection),
-/* harmony export */   withRequestsMadeViaParent: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withRequestsMadeViaParent),
-/* harmony export */   withXsrfConfiguration: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withXsrfConfiguration),
-/* harmony export */   "ɵHTTP_ROOT_INTERCEPTOR_FNS": () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HTTP_ROOT_INTERCEPTOR_FNS),
-/* harmony export */   "ɵHttpInterceptingHandler": () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpInterceptorHandler),
-/* harmony export */   "ɵREQUESTS_CONTRIBUTE_TO_STABILITY": () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.REQUESTS_CONTRIBUTE_TO_STABILITY),
-/* harmony export */   "ɵwithHttpTransferCache": () => (/* binding */ withHttpTransferCache)
-/* harmony export */ });
-/* harmony import */ var _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_module-chunk.mjs */ 50698);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 44866);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 32778);
-/**
- * @license Angular v21.1.1
- * (c) 2010-2026 Google LLC. https://angular.dev/
- * License: MIT
- */
-
-
-
-
-
-
-
-
-const httpResource = /*#__PURE__*/(() => {
-  const jsonFn = makeHttpResourceFn('json');
-  jsonFn.arrayBuffer = makeHttpResourceFn('arraybuffer');
-  jsonFn.blob = makeHttpResourceFn('blob');
-  jsonFn.text = makeHttpResourceFn('text');
-  return jsonFn;
-})();
-function makeHttpResourceFn(responseType) {
-  return function httpResource(request, options) {
-    if (ngDevMode && !options?.injector) {
-      (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.assertInInjectionContext)(httpResource);
-    }
-    const injector = options?.injector ?? (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injector);
-    return new HttpResourceImpl(injector, () => normalizeRequest(request, responseType), options?.defaultValue, options?.debugName, options?.parse, options?.equal);
-  };
-}
-function normalizeRequest(request, responseType) {
-  let unwrappedRequest = typeof request === 'function' ? request() : request;
-  if (unwrappedRequest === undefined) {
-    return undefined;
-  } else if (typeof unwrappedRequest === 'string') {
-    unwrappedRequest = {
-      url: unwrappedRequest
-    };
-  }
-  const headers = unwrappedRequest.headers instanceof _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders ? unwrappedRequest.headers : new _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders(unwrappedRequest.headers);
-  const params = unwrappedRequest.params instanceof _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpParams ? unwrappedRequest.params : new _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpParams({
-    fromObject: unwrappedRequest.params
-  });
-  return new _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpRequest(unwrappedRequest.method ?? 'GET', unwrappedRequest.url, unwrappedRequest.body ?? null, {
-    headers,
-    params,
-    reportProgress: unwrappedRequest.reportProgress,
-    withCredentials: unwrappedRequest.withCredentials,
-    keepalive: unwrappedRequest.keepalive,
-    cache: unwrappedRequest.cache,
-    priority: unwrappedRequest.priority,
-    mode: unwrappedRequest.mode,
-    redirect: unwrappedRequest.redirect,
-    responseType,
-    context: unwrappedRequest.context,
-    transferCache: unwrappedRequest.transferCache,
-    credentials: unwrappedRequest.credentials,
-    referrer: unwrappedRequest.referrer,
-    referrerPolicy: unwrappedRequest.referrerPolicy,
-    integrity: unwrappedRequest.integrity,
-    timeout: unwrappedRequest.timeout
-  });
-}
-class HttpResourceImpl extends _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵResourceImpl"] {
-  client;
-  _headers = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.linkedSignal)({
-    ...(ngDevMode ? {
-      debugName: "_headers"
-    } : {}),
-    source: this.extRequest,
-    computation: () => undefined
-  });
-  _progress = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.linkedSignal)({
-    ...(ngDevMode ? {
-      debugName: "_progress"
-    } : {}),
-    source: this.extRequest,
-    computation: () => undefined
-  });
-  _statusCode = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.linkedSignal)({
-    ...(ngDevMode ? {
-      debugName: "_statusCode"
-    } : {}),
-    source: this.extRequest,
-    computation: () => undefined
-  });
-  headers = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.computed)(() => this.status() === 'resolved' || this.status() === 'error' ? this._headers() : undefined, ...(ngDevMode ? [{
-    debugName: "headers"
-  }] : []));
-  progress = /*#__PURE__*/this._progress.asReadonly();
-  statusCode = /*#__PURE__*/this._statusCode.asReadonly();
-  constructor(injector, request, defaultValue, debugName, parse, equal) {
-    super(request, ({
-      params: request,
-      abortSignal
-    }) => {
-      let sub;
-      const onAbort = () => sub.unsubscribe();
-      abortSignal.addEventListener('abort', onAbort);
-      const stream = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.signal)({
-        value: undefined
-      }, ...(ngDevMode ? [{
-        debugName: "stream"
-      }] : []));
-      let resolve;
-      const promise = new Promise(r => resolve = r);
-      const send = value => {
-        stream.set(value);
-        resolve?.(stream);
-        resolve = undefined;
-      };
-      sub = this.client.request(request).subscribe({
-        next: event => {
-          switch (event.type) {
-            case _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpEventType.Response:
-              this._headers.set(event.headers);
-              this._statusCode.set(event.status);
-              try {
-                send({
-                  value: parse ? parse(event.body) : event.body
-                });
-              } catch (error) {
-                send({
-                  error: (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵencapsulateResourceError"])(error)
-                });
-              }
-              break;
-            case _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpEventType.DownloadProgress:
-              this._progress.set(event);
-              break;
-          }
-        },
-        error: error => {
-          if (error instanceof _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpErrorResponse) {
-            this._headers.set(error.headers);
-            this._statusCode.set(error.status);
-          }
-          send({
-            error
-          });
-          abortSignal.removeEventListener('abort', onAbort);
-        },
-        complete: () => {
-          if (resolve) {
-            send({
-              error: new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](991, ngDevMode && 'Resource completed before producing a value')
-            });
-          }
-          abortSignal.removeEventListener('abort', onAbort);
-        }
-      });
-      return promise;
-    }, defaultValue, equal, debugName, injector);
-    this.client = injector.get(_module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClient);
-  }
-  set(value) {
-    super.set(value);
-    this._headers.set(undefined);
-    this._progress.set(undefined);
-    this._statusCode.set(undefined);
-  }
-}
-const HTTP_TRANSFER_CACHE_ORIGIN_MAP = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(typeof ngDevMode !== 'undefined' && ngDevMode ? 'HTTP_TRANSFER_CACHE_ORIGIN_MAP' : '');
-const BODY = 'b';
-const HEADERS = 'h';
-const STATUS = 's';
-const STATUS_TEXT = 'st';
-const REQ_URL = 'u';
-const RESPONSE_TYPE = 'rt';
-const CACHE_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(typeof ngDevMode !== 'undefined' && ngDevMode ? 'HTTP_TRANSFER_STATE_CACHE_OPTIONS' : '');
-const ALLOWED_METHODS = ['GET', 'HEAD'];
-function transferCacheInterceptorFn(req, next) {
-  const {
-    isCacheActive,
-    ...globalOptions
-  } = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(CACHE_OPTIONS);
-  const {
-    transferCache: requestOptions,
-    method: requestMethod
-  } = req;
-  if (!isCacheActive || requestOptions === false || requestMethod === 'POST' && !globalOptions.includePostRequests && !requestOptions || requestMethod !== 'POST' && !ALLOWED_METHODS.includes(requestMethod) || !globalOptions.includeRequestsWithAuthHeaders && hasAuthHeaders(req) || globalOptions.filter?.(req) === false) {
-    return next(req);
-  }
-  const transferState = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.TransferState);
-  const originMap = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(HTTP_TRANSFER_CACHE_ORIGIN_MAP, {
-    optional: true
-  });
-  if (typeof ngServerMode !== 'undefined' && !ngServerMode && originMap) {
-    throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2803, ngDevMode && 'Angular detected that the `HTTP_TRANSFER_CACHE_ORIGIN_MAP` token is configured and ' + 'present in the client side code. Please ensure that this token is only provided in the ' + 'server code of the application.');
-  }
-  const requestUrl = typeof ngServerMode !== 'undefined' && ngServerMode && originMap ? mapRequestOriginUrl(req.url, originMap) : req.url;
-  const storeKey = makeCacheKey(req, requestUrl);
-  const response = transferState.get(storeKey, null);
-  let headersToInclude = globalOptions.includeHeaders;
-  if (typeof requestOptions === 'object' && requestOptions.includeHeaders) {
-    headersToInclude = requestOptions.includeHeaders;
-  }
-  if (response) {
-    const {
-      [BODY]: undecodedBody,
-      [RESPONSE_TYPE]: responseType,
-      [HEADERS]: httpHeaders,
-      [STATUS]: status,
-      [STATUS_TEXT]: statusText,
-      [REQ_URL]: url
-    } = response;
-    let body = undecodedBody;
-    switch (responseType) {
-      case 'arraybuffer':
-        body = new TextEncoder().encode(undecodedBody).buffer;
-        break;
-      case 'blob':
-        body = new Blob([undecodedBody]);
-        break;
-    }
-    let headers = new _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders(httpHeaders);
-    if (typeof ngDevMode === 'undefined' || ngDevMode) {
-      headers = appendMissingHeadersDetection(req.url, headers, headersToInclude ?? []);
-    }
-    return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(new _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponse({
-      body,
-      headers,
-      status,
-      statusText,
-      url
-    }));
-  }
-  const event$ = next(req);
-  if (typeof ngServerMode !== 'undefined' && ngServerMode) {
-    return event$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.tap)(event => {
-      if (event instanceof _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponse) {
-        transferState.set(storeKey, {
-          [BODY]: event.body,
-          [HEADERS]: getFilteredHeaders(event.headers, headersToInclude),
-          [STATUS]: event.status,
-          [STATUS_TEXT]: event.statusText,
-          [REQ_URL]: requestUrl,
-          [RESPONSE_TYPE]: req.responseType
-        });
-      }
-    }));
-  }
-  return event$;
-}
-function hasAuthHeaders(req) {
-  return req.headers.has('authorization') || req.headers.has('proxy-authorization');
-}
-function getFilteredHeaders(headers, includeHeaders) {
-  if (!includeHeaders) {
-    return {};
-  }
-  const headersMap = {};
-  for (const key of includeHeaders) {
-    const values = headers.getAll(key);
-    if (values !== null) {
-      headersMap[key] = values;
-    }
-  }
-  return headersMap;
-}
-function sortAndConcatParams(params) {
-  return [...params.keys()].sort().map(k => `${k}=${params.getAll(k)}`).join('&');
-}
-function makeCacheKey(request, mappedRequestUrl) {
-  const {
-    params,
-    method,
-    responseType
-  } = request;
-  const encodedParams = sortAndConcatParams(params);
-  let serializedBody = request.serializeBody();
-  if (serializedBody instanceof URLSearchParams) {
-    serializedBody = sortAndConcatParams(serializedBody);
-  } else if (typeof serializedBody !== 'string') {
-    serializedBody = '';
-  }
-  const key = [method, responseType, mappedRequestUrl, serializedBody, encodedParams].join('|');
-  const hash = generateHash(key);
-  return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.makeStateKey)(hash);
-}
-function generateHash(value) {
-  let hash = 0;
-  for (const char of value) {
-    hash = Math.imul(31, hash) + char.charCodeAt(0) << 0;
-  }
-  hash += 2147483647 + 1;
-  return hash.toString();
-}
-function withHttpTransferCache(cacheOptions) {
-  return [{
-    provide: CACHE_OPTIONS,
-    useFactory: () => {
-      (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵperformanceMarkFeature"])('NgHttpTransferCache');
-      return {
-        isCacheActive: true,
-        ...cacheOptions
-      };
-    }
-  }, {
-    provide: _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HTTP_ROOT_INTERCEPTOR_FNS,
-    useValue: transferCacheInterceptorFn,
-    multi: true
-  }, {
-    provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__.APP_BOOTSTRAP_LISTENER,
-    multi: true,
-    useFactory: () => {
-      const appRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ApplicationRef);
-      const cacheState = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(CACHE_OPTIONS);
-      return () => {
-        appRef.whenStable().then(() => {
-          cacheState.isCacheActive = false;
-        });
-      };
-    }
-  }];
-}
-function appendMissingHeadersDetection(url, headers, headersToInclude) {
-  const warningProduced = new Set();
-  return new Proxy(headers, {
-    get(target, prop) {
-      const value = Reflect.get(target, prop);
-      const methods = new Set(['get', 'has', 'getAll']);
-      if (typeof value !== 'function' || !methods.has(prop)) {
-        return value;
-      }
-      return headerName => {
-        const key = (prop + ':' + headerName).toLowerCase();
-        if (!headersToInclude.includes(headerName) && !warningProduced.has(key)) {
-          warningProduced.add(key);
-          const truncatedUrl = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵtruncateMiddle"])(url);
-          console.warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵformatRuntimeError"])(-2802, `Angular detected that the \`${headerName}\` header is accessed, but the value of the header ` + `was not transferred from the server to the client by the HttpTransferCache. ` + `To include the value of the \`${headerName}\` header for the \`${truncatedUrl}\` request, ` + `use the \`includeHeaders\` list. The \`includeHeaders\` can be defined either ` + `on a request level by adding the \`transferCache\` parameter, or on an application ` + `level by adding the \`httpCacheTransfer.includeHeaders\` argument to the ` + `\`provideClientHydration()\` call. `));
-        }
-        return value.apply(target, [headerName]);
-      };
-    }
-  });
-}
-function mapRequestOriginUrl(url, originMap) {
-  const origin = new URL(url, 'resolve://').origin;
-  const mappedOrigin = originMap[origin];
-  if (!mappedOrigin) {
-    return url;
-  }
-  if (typeof ngDevMode === 'undefined' || ngDevMode) {
-    verifyMappedOrigin(mappedOrigin);
-  }
-  return url.replace(origin, mappedOrigin);
-}
-function verifyMappedOrigin(url) {
-  if (new URL(url, 'resolve://').pathname !== '/') {
-    throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2804, 'Angular detected a URL with a path segment in the value provided for the ' + `\`HTTP_TRANSFER_CACHE_ORIGIN_MAP\` token: ${url}. The map should only contain origins ` + 'without any other segments.');
-  }
-}
-
-
-/***/ },
-
 /***/ 50698
 /*!*****************************************************************!*\
   !*** ./node_modules/@angular/common/fesm2022/_module-chunk.mjs ***!
@@ -596,7 +53,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _platform_location_chunk_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./_platform_location-chunk.mjs */ 8963);
 
 /**
- * @license Angular v21.1.1
+ * @license Angular v21.1.4
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -2580,6 +2037,597 @@ let HttpClientJsonpModule = /*#__PURE__*/(() => {
 
 /***/ },
 
+/***/ 8963
+/*!****************************************************************************!*\
+  !*** ./node_modules/@angular/common/fesm2022/_platform_location-chunk.mjs ***!
+  \****************************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BrowserPlatformLocation: () => (/* binding */ BrowserPlatformLocation),
+/* harmony export */   DomAdapter: () => (/* binding */ DomAdapter),
+/* harmony export */   LOCATION_INITIALIZED: () => (/* binding */ LOCATION_INITIALIZED),
+/* harmony export */   PlatformLocation: () => (/* binding */ PlatformLocation),
+/* harmony export */   getDOM: () => (/* binding */ getDOM),
+/* harmony export */   setRootDomAdapter: () => (/* binding */ setRootDomAdapter)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 51356);
+/**
+ * @license Angular v21.1.4
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
+
+
+
+let _DOM = null;
+function getDOM() {
+  return _DOM;
+}
+function setRootDomAdapter(adapter) {
+  _DOM ??= adapter;
+}
+class DomAdapter {}
+let PlatformLocation = /*#__PURE__*/(() => {
+  class PlatformLocation {
+    historyGo(relativePosition) {
+      throw new Error(ngDevMode ? 'Not implemented' : '');
+    }
+    static ɵfac = function PlatformLocation_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || PlatformLocation)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: PlatformLocation,
+      factory: () => (() => (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(BrowserPlatformLocation))(),
+      providedIn: 'platform'
+    });
+  }
+  return PlatformLocation;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const LOCATION_INITIALIZED = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken(typeof ngDevMode !== 'undefined' && ngDevMode ? 'Location Initialized' : '');
+let BrowserPlatformLocation = /*#__PURE__*/(() => {
+  class BrowserPlatformLocation extends PlatformLocation {
+    _location;
+    _history;
+    _doc = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.DOCUMENT);
+    constructor() {
+      super();
+      this._location = window.location;
+      this._history = window.history;
+    }
+    getBaseHrefFromDOM() {
+      return getDOM().getBaseHref(this._doc);
+    }
+    onPopState(fn) {
+      const window = getDOM().getGlobalEventTarget(this._doc, 'window');
+      window.addEventListener('popstate', fn, false);
+      return () => window.removeEventListener('popstate', fn);
+    }
+    onHashChange(fn) {
+      const window = getDOM().getGlobalEventTarget(this._doc, 'window');
+      window.addEventListener('hashchange', fn, false);
+      return () => window.removeEventListener('hashchange', fn);
+    }
+    get href() {
+      return this._location.href;
+    }
+    get protocol() {
+      return this._location.protocol;
+    }
+    get hostname() {
+      return this._location.hostname;
+    }
+    get port() {
+      return this._location.port;
+    }
+    get pathname() {
+      return this._location.pathname;
+    }
+    get search() {
+      return this._location.search;
+    }
+    get hash() {
+      return this._location.hash;
+    }
+    set pathname(newPath) {
+      this._location.pathname = newPath;
+    }
+    pushState(state, title, url) {
+      this._history.pushState(state, title, url);
+    }
+    replaceState(state, title, url) {
+      this._history.replaceState(state, title, url);
+    }
+    forward() {
+      this._history.forward();
+    }
+    back() {
+      this._history.back();
+    }
+    historyGo(relativePosition = 0) {
+      this._history.go(relativePosition);
+    }
+    getState() {
+      return this._history.state;
+    }
+    static ɵfac = function BrowserPlatformLocation_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || BrowserPlatformLocation)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: BrowserPlatformLocation,
+      factory: () => (() => new BrowserPlatformLocation())(),
+      providedIn: 'platform'
+    });
+  }
+  return BrowserPlatformLocation;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+
+/***/ },
+
+/***/ 97516
+/*!**************************************************************!*\
+  !*** ./node_modules/@angular/common/fesm2022/_xhr-chunk.mjs ***!
+  \**************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   XhrFactory: () => (/* binding */ XhrFactory),
+/* harmony export */   parseCookieValue: () => (/* binding */ parseCookieValue)
+/* harmony export */ });
+/**
+ * @license Angular v21.1.4
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
+
+function parseCookieValue(cookieStr, name) {
+  name = encodeURIComponent(name);
+  for (const cookie of cookieStr.split(';')) {
+    const eqIndex = cookie.indexOf('=');
+    const [cookieName, cookieValue] = eqIndex == -1 ? [cookie, ''] : [cookie.slice(0, eqIndex), cookie.slice(eqIndex + 1)];
+    if (cookieName.trim() === name) {
+      return decodeURIComponent(cookieValue);
+    }
+  }
+  return null;
+}
+class XhrFactory {}
+
+
+/***/ },
+
+/***/ 46443
+/*!********************************************************!*\
+  !*** ./node_modules/@angular/common/fesm2022/http.mjs ***!
+  \********************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   FetchBackend: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.FetchBackend),
+/* harmony export */   HTTP_INTERCEPTORS: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HTTP_INTERCEPTORS),
+/* harmony export */   HTTP_TRANSFER_CACHE_ORIGIN_MAP: () => (/* binding */ HTTP_TRANSFER_CACHE_ORIGIN_MAP),
+/* harmony export */   HttpBackend: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpBackend),
+/* harmony export */   HttpClient: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClient),
+/* harmony export */   HttpClientJsonpModule: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClientJsonpModule),
+/* harmony export */   HttpClientModule: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClientModule),
+/* harmony export */   HttpClientXsrfModule: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClientXsrfModule),
+/* harmony export */   HttpContext: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpContext),
+/* harmony export */   HttpContextToken: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpContextToken),
+/* harmony export */   HttpErrorResponse: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpErrorResponse),
+/* harmony export */   HttpEventType: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpEventType),
+/* harmony export */   HttpFeatureKind: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpFeatureKind),
+/* harmony export */   HttpHandler: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHandler),
+/* harmony export */   HttpHeaderResponse: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaderResponse),
+/* harmony export */   HttpHeaders: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders),
+/* harmony export */   HttpParams: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpParams),
+/* harmony export */   HttpRequest: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpRequest),
+/* harmony export */   HttpResponse: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponse),
+/* harmony export */   HttpResponseBase: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponseBase),
+/* harmony export */   HttpStatusCode: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpStatusCode),
+/* harmony export */   HttpUrlEncodingCodec: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpUrlEncodingCodec),
+/* harmony export */   HttpXhrBackend: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpXhrBackend),
+/* harmony export */   HttpXsrfTokenExtractor: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpXsrfTokenExtractor),
+/* harmony export */   JsonpClientBackend: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.JsonpClientBackend),
+/* harmony export */   JsonpInterceptor: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.JsonpInterceptor),
+/* harmony export */   httpResource: () => (/* binding */ httpResource),
+/* harmony export */   provideHttpClient: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.provideHttpClient),
+/* harmony export */   withFetch: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withFetch),
+/* harmony export */   withInterceptors: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withInterceptors),
+/* harmony export */   withInterceptorsFromDi: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withInterceptorsFromDi),
+/* harmony export */   withJsonpSupport: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withJsonpSupport),
+/* harmony export */   withNoXsrfProtection: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withNoXsrfProtection),
+/* harmony export */   withRequestsMadeViaParent: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withRequestsMadeViaParent),
+/* harmony export */   withXsrfConfiguration: () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.withXsrfConfiguration),
+/* harmony export */   "ɵHTTP_ROOT_INTERCEPTOR_FNS": () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HTTP_ROOT_INTERCEPTOR_FNS),
+/* harmony export */   "ɵHttpInterceptingHandler": () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpInterceptorHandler),
+/* harmony export */   "ɵREQUESTS_CONTRIBUTE_TO_STABILITY": () => (/* reexport safe */ _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.REQUESTS_CONTRIBUTE_TO_STABILITY),
+/* harmony export */   "ɵwithHttpTransferCache": () => (/* binding */ withHttpTransferCache)
+/* harmony export */ });
+/* harmony import */ var _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_module-chunk.mjs */ 50698);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 44866);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 32778);
+/**
+ * @license Angular v21.1.4
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
+
+
+
+
+
+
+
+
+const httpResource = /*#__PURE__*/(() => {
+  const jsonFn = makeHttpResourceFn('json');
+  jsonFn.arrayBuffer = makeHttpResourceFn('arraybuffer');
+  jsonFn.blob = makeHttpResourceFn('blob');
+  jsonFn.text = makeHttpResourceFn('text');
+  return jsonFn;
+})();
+function makeHttpResourceFn(responseType) {
+  return function httpResource(request, options) {
+    if (ngDevMode && !options?.injector) {
+      (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.assertInInjectionContext)(httpResource);
+    }
+    const injector = options?.injector ?? (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injector);
+    return new HttpResourceImpl(injector, () => normalizeRequest(request, responseType), options?.defaultValue, options?.debugName, options?.parse, options?.equal);
+  };
+}
+function normalizeRequest(request, responseType) {
+  let unwrappedRequest = typeof request === 'function' ? request() : request;
+  if (unwrappedRequest === undefined) {
+    return undefined;
+  } else if (typeof unwrappedRequest === 'string') {
+    unwrappedRequest = {
+      url: unwrappedRequest
+    };
+  }
+  const headers = unwrappedRequest.headers instanceof _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders ? unwrappedRequest.headers : new _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders(unwrappedRequest.headers);
+  const params = unwrappedRequest.params instanceof _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpParams ? unwrappedRequest.params : new _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpParams({
+    fromObject: unwrappedRequest.params
+  });
+  return new _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpRequest(unwrappedRequest.method ?? 'GET', unwrappedRequest.url, unwrappedRequest.body ?? null, {
+    headers,
+    params,
+    reportProgress: unwrappedRequest.reportProgress,
+    withCredentials: unwrappedRequest.withCredentials,
+    keepalive: unwrappedRequest.keepalive,
+    cache: unwrappedRequest.cache,
+    priority: unwrappedRequest.priority,
+    mode: unwrappedRequest.mode,
+    redirect: unwrappedRequest.redirect,
+    responseType,
+    context: unwrappedRequest.context,
+    transferCache: unwrappedRequest.transferCache,
+    credentials: unwrappedRequest.credentials,
+    referrer: unwrappedRequest.referrer,
+    referrerPolicy: unwrappedRequest.referrerPolicy,
+    integrity: unwrappedRequest.integrity,
+    timeout: unwrappedRequest.timeout
+  });
+}
+class HttpResourceImpl extends _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵResourceImpl"] {
+  client;
+  _headers = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.linkedSignal)({
+    ...(ngDevMode ? {
+      debugName: "_headers"
+    } : {}),
+    source: this.extRequest,
+    computation: () => undefined
+  });
+  _progress = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.linkedSignal)({
+    ...(ngDevMode ? {
+      debugName: "_progress"
+    } : {}),
+    source: this.extRequest,
+    computation: () => undefined
+  });
+  _statusCode = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.linkedSignal)({
+    ...(ngDevMode ? {
+      debugName: "_statusCode"
+    } : {}),
+    source: this.extRequest,
+    computation: () => undefined
+  });
+  headers = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.computed)(() => this.status() === 'resolved' || this.status() === 'error' ? this._headers() : undefined, ...(ngDevMode ? [{
+    debugName: "headers"
+  }] : []));
+  progress = /*#__PURE__*/this._progress.asReadonly();
+  statusCode = /*#__PURE__*/this._statusCode.asReadonly();
+  constructor(injector, request, defaultValue, debugName, parse, equal) {
+    super(request, ({
+      params: request,
+      abortSignal
+    }) => {
+      let sub;
+      const onAbort = () => sub.unsubscribe();
+      abortSignal.addEventListener('abort', onAbort);
+      const stream = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.signal)({
+        value: undefined
+      }, ...(ngDevMode ? [{
+        debugName: "stream"
+      }] : []));
+      let resolve;
+      const promise = new Promise(r => resolve = r);
+      const send = value => {
+        stream.set(value);
+        resolve?.(stream);
+        resolve = undefined;
+      };
+      sub = this.client.request(request).subscribe({
+        next: event => {
+          switch (event.type) {
+            case _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpEventType.Response:
+              this._headers.set(event.headers);
+              this._statusCode.set(event.status);
+              try {
+                send({
+                  value: parse ? parse(event.body) : event.body
+                });
+              } catch (error) {
+                send({
+                  error: (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵencapsulateResourceError"])(error)
+                });
+              }
+              break;
+            case _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpEventType.DownloadProgress:
+              this._progress.set(event);
+              break;
+          }
+        },
+        error: error => {
+          if (error instanceof _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpErrorResponse) {
+            this._headers.set(error.headers);
+            this._statusCode.set(error.status);
+          }
+          send({
+            error
+          });
+          abortSignal.removeEventListener('abort', onAbort);
+        },
+        complete: () => {
+          if (resolve) {
+            send({
+              error: new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](991, ngDevMode && 'Resource completed before producing a value')
+            });
+          }
+          abortSignal.removeEventListener('abort', onAbort);
+        }
+      });
+      return promise;
+    }, defaultValue, equal, debugName, injector);
+    this.client = injector.get(_module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpClient);
+  }
+  set(value) {
+    super.set(value);
+    this._headers.set(undefined);
+    this._progress.set(undefined);
+    this._statusCode.set(undefined);
+  }
+}
+const HTTP_TRANSFER_CACHE_ORIGIN_MAP = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(typeof ngDevMode !== 'undefined' && ngDevMode ? 'HTTP_TRANSFER_CACHE_ORIGIN_MAP' : '');
+const BODY = 'b';
+const HEADERS = 'h';
+const STATUS = 's';
+const STATUS_TEXT = 'st';
+const REQ_URL = 'u';
+const RESPONSE_TYPE = 'rt';
+const CACHE_OPTIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken(typeof ngDevMode !== 'undefined' && ngDevMode ? 'HTTP_TRANSFER_STATE_CACHE_OPTIONS' : '');
+const ALLOWED_METHODS = ['GET', 'HEAD'];
+function transferCacheInterceptorFn(req, next) {
+  const {
+    isCacheActive,
+    ...globalOptions
+  } = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(CACHE_OPTIONS);
+  const {
+    transferCache: requestOptions,
+    method: requestMethod
+  } = req;
+  if (!isCacheActive || requestOptions === false || requestMethod === 'POST' && !globalOptions.includePostRequests && !requestOptions || requestMethod !== 'POST' && !ALLOWED_METHODS.includes(requestMethod) || !globalOptions.includeRequestsWithAuthHeaders && hasAuthHeaders(req) || globalOptions.filter?.(req) === false) {
+    return next(req);
+  }
+  const transferState = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.TransferState);
+  const originMap = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(HTTP_TRANSFER_CACHE_ORIGIN_MAP, {
+    optional: true
+  });
+  if (typeof ngServerMode !== 'undefined' && !ngServerMode && originMap) {
+    throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2803, ngDevMode && 'Angular detected that the `HTTP_TRANSFER_CACHE_ORIGIN_MAP` token is configured and ' + 'present in the client side code. Please ensure that this token is only provided in the ' + 'server code of the application.');
+  }
+  const requestUrl = typeof ngServerMode !== 'undefined' && ngServerMode && originMap ? mapRequestOriginUrl(req.url, originMap) : req.url;
+  const storeKey = makeCacheKey(req, requestUrl);
+  const response = transferState.get(storeKey, null);
+  let headersToInclude = globalOptions.includeHeaders;
+  if (typeof requestOptions === 'object' && requestOptions.includeHeaders) {
+    headersToInclude = requestOptions.includeHeaders;
+  }
+  if (response) {
+    const {
+      [BODY]: undecodedBody,
+      [RESPONSE_TYPE]: responseType,
+      [HEADERS]: httpHeaders,
+      [STATUS]: status,
+      [STATUS_TEXT]: statusText,
+      [REQ_URL]: url
+    } = response;
+    let body = undecodedBody;
+    switch (responseType) {
+      case 'arraybuffer':
+        body = fromBase64(undecodedBody);
+        break;
+      case 'blob':
+        body = new Blob([fromBase64(undecodedBody)]);
+        break;
+    }
+    let headers = new _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpHeaders(httpHeaders);
+    if (typeof ngDevMode === 'undefined' || ngDevMode) {
+      headers = appendMissingHeadersDetection(req.url, headers, headersToInclude ?? []);
+    }
+    return (0,rxjs__WEBPACK_IMPORTED_MODULE_2__.of)(new _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponse({
+      body,
+      headers,
+      status,
+      statusText,
+      url
+    }));
+  }
+  const event$ = next(req);
+  if (typeof ngServerMode !== 'undefined' && ngServerMode) {
+    return event$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.tap)(event => {
+      if (event instanceof _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HttpResponse) {
+        transferState.set(storeKey, {
+          [BODY]: req.responseType === 'arraybuffer' || req.responseType === 'blob' ? toBase64(event.body) : event.body,
+          [HEADERS]: getFilteredHeaders(event.headers, headersToInclude),
+          [STATUS]: event.status,
+          [STATUS_TEXT]: event.statusText,
+          [REQ_URL]: requestUrl,
+          [RESPONSE_TYPE]: req.responseType
+        });
+      }
+    }));
+  }
+  return event$;
+}
+function hasAuthHeaders(req) {
+  return req.headers.has('authorization') || req.headers.has('proxy-authorization');
+}
+function getFilteredHeaders(headers, includeHeaders) {
+  if (!includeHeaders) {
+    return {};
+  }
+  const headersMap = {};
+  for (const key of includeHeaders) {
+    const values = headers.getAll(key);
+    if (values !== null) {
+      headersMap[key] = values;
+    }
+  }
+  return headersMap;
+}
+function sortAndConcatParams(params) {
+  return [...params.keys()].sort().map(k => `${k}=${params.getAll(k)}`).join('&');
+}
+function makeCacheKey(request, mappedRequestUrl) {
+  const {
+    params,
+    method,
+    responseType
+  } = request;
+  const encodedParams = sortAndConcatParams(params);
+  let serializedBody = request.serializeBody();
+  if (serializedBody instanceof URLSearchParams) {
+    serializedBody = sortAndConcatParams(serializedBody);
+  } else if (typeof serializedBody !== 'string') {
+    serializedBody = '';
+  }
+  const key = [method, responseType, mappedRequestUrl, serializedBody, encodedParams].join('|');
+  const hash = generateHash(key);
+  return (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.makeStateKey)(hash);
+}
+function generateHash(value) {
+  let hash = 0;
+  for (const char of value) {
+    hash = Math.imul(31, hash) + char.charCodeAt(0) << 0;
+  }
+  hash += 2147483647 + 1;
+  return hash.toString();
+}
+function toBase64(buffer) {
+  const bytes = new Uint8Array(buffer);
+  const CHUNK_SIZE = 0x8000;
+  let binaryString = '';
+  for (let i = 0; i < bytes.length; i += CHUNK_SIZE) {
+    const chunk = bytes.subarray(i, i + CHUNK_SIZE);
+    binaryString += String.fromCharCode.apply(null, chunk);
+  }
+  return btoa(binaryString);
+}
+function fromBase64(base64) {
+  const binary = atob(base64);
+  const bytes = Uint8Array.from(binary, c => c.charCodeAt(0));
+  return bytes.buffer;
+}
+function withHttpTransferCache(cacheOptions) {
+  return [{
+    provide: CACHE_OPTIONS,
+    useFactory: () => {
+      (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵperformanceMarkFeature"])('NgHttpTransferCache');
+      return {
+        isCacheActive: true,
+        ...cacheOptions
+      };
+    }
+  }, {
+    provide: _module_chunk_mjs__WEBPACK_IMPORTED_MODULE_0__.HTTP_ROOT_INTERCEPTOR_FNS,
+    useValue: transferCacheInterceptorFn,
+    multi: true
+  }, {
+    provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__.APP_BOOTSTRAP_LISTENER,
+    multi: true,
+    useFactory: () => {
+      const appRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ApplicationRef);
+      const cacheState = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(CACHE_OPTIONS);
+      return () => {
+        appRef.whenStable().then(() => {
+          cacheState.isCacheActive = false;
+        });
+      };
+    }
+  }];
+}
+function appendMissingHeadersDetection(url, headers, headersToInclude) {
+  const warningProduced = new Set();
+  return new Proxy(headers, {
+    get(target, prop) {
+      const value = Reflect.get(target, prop);
+      const methods = new Set(['get', 'has', 'getAll']);
+      if (typeof value !== 'function' || !methods.has(prop)) {
+        return value;
+      }
+      return headerName => {
+        const key = (prop + ':' + headerName).toLowerCase();
+        if (!headersToInclude.includes(headerName) && !warningProduced.has(key)) {
+          warningProduced.add(key);
+          const truncatedUrl = (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵtruncateMiddle"])(url);
+          console.warn((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵformatRuntimeError"])(-2802, `Angular detected that the \`${headerName}\` header is accessed, but the value of the header ` + `was not transferred from the server to the client by the HttpTransferCache. ` + `To include the value of the \`${headerName}\` header for the \`${truncatedUrl}\` request, ` + `use the \`includeHeaders\` list. The \`includeHeaders\` can be defined either ` + `on a request level by adding the \`transferCache\` parameter, or on an application ` + `level by adding the \`httpCacheTransfer.includeHeaders\` argument to the ` + `\`provideClientHydration()\` call. `));
+        }
+        return value.apply(target, [headerName]);
+      };
+    }
+  });
+}
+function mapRequestOriginUrl(url, originMap) {
+  const origin = new URL(url, 'resolve://').origin;
+  const mappedOrigin = originMap[origin];
+  if (!mappedOrigin) {
+    return url;
+  }
+  if (typeof ngDevMode === 'undefined' || ngDevMode) {
+    verifyMappedOrigin(mappedOrigin);
+  }
+  return url.replace(origin, mappedOrigin);
+}
+function verifyMappedOrigin(url) {
+  if (new URL(url, 'resolve://').pathname !== '/') {
+    throw new _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵRuntimeError"](2804, 'Angular detected a URL with a path segment in the value provided for the ' + `\`HTTP_TRANSFER_CACHE_ORIGIN_MAP\` token: ${url}. The map should only contain origins ` + 'without any other segments.');
+  }
+}
+
+
+/***/ },
+
 /***/ 89204
 /*!*********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js ***!
@@ -2615,39 +2663,6 @@ function _asyncToGenerator(n) {
     });
   };
 }
-
-
-/***/ },
-
-/***/ 97516
-/*!**************************************************************!*\
-  !*** ./node_modules/@angular/common/fesm2022/_xhr-chunk.mjs ***!
-  \**************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   XhrFactory: () => (/* binding */ XhrFactory),
-/* harmony export */   parseCookieValue: () => (/* binding */ parseCookieValue)
-/* harmony export */ });
-/**
- * @license Angular v21.1.1
- * (c) 2010-2026 Google LLC. https://angular.dev/
- * License: MIT
- */
-
-function parseCookieValue(cookieStr, name) {
-  name = encodeURIComponent(name);
-  for (const cookie of cookieStr.split(';')) {
-    const eqIndex = cookie.indexOf('=');
-    const [cookieName, cookieValue] = eqIndex == -1 ? [cookie, ''] : [cookie.slice(0, eqIndex), cookie.slice(eqIndex + 1)];
-    if (cookieName.trim() === name) {
-      return decodeURIComponent(cookieValue);
-    }
-  }
-  return null;
-}
-class XhrFactory {}
 
 
 /***/ }

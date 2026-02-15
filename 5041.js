@@ -29,56 +29,6 @@ var getDiagramElement = /* @__PURE__ */(0,_chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_
 
 /***/ },
 
-/***/ 8086
-/*!**************************************************************************!*\
-  !*** ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-QN33PNHL.mjs ***!
-  \**************************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   setupViewPortForSVG: () => (/* binding */ setupViewPortForSVG)
-/* harmony export */ });
-/* harmony import */ var _chunk_ABZYJK2D_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chunk-ABZYJK2D.mjs */ 79006);
-/* harmony import */ var _chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./chunk-AGHRB4JF.mjs */ 32303);
-
-
-
-// src/rendering-util/setupViewPortForSVG.ts
-var setupViewPortForSVG = /* @__PURE__ */(0,_chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_1__.__name)((svg, padding, cssDiagram, useMaxWidth) => {
-  svg.attr("class", cssDiagram);
-  const {
-    width,
-    height,
-    x,
-    y
-  } = calculateDimensionsWithPadding(svg, padding);
-  (0,_chunk_ABZYJK2D_mjs__WEBPACK_IMPORTED_MODULE_0__.configureSvgSize)(svg, height, width, useMaxWidth);
-  const viewBox = createViewBox(x, y, width, height, padding);
-  svg.attr("viewBox", viewBox);
-  _chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_1__.log.debug(`viewBox configured: ${viewBox} with padding: ${padding}`);
-}, "setupViewPortForSVG");
-var calculateDimensionsWithPadding = /* @__PURE__ */(0,_chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_1__.__name)((svg, padding) => {
-  const bounds = svg.node()?.getBBox() || {
-    width: 0,
-    height: 0,
-    x: 0,
-    y: 0
-  };
-  return {
-    width: bounds.width + padding * 2,
-    height: bounds.height + padding * 2,
-    x: bounds.x,
-    y: bounds.y
-  };
-}, "calculateDimensionsWithPadding");
-var createViewBox = /* @__PURE__ */(0,_chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_1__.__name)((x, y, width, height, padding) => {
-  return `${x - padding} ${y - padding} ${width} ${height}`;
-}, "createViewBox");
-
-
-/***/ },
-
 /***/ 54256
 /*!**************************************************************************!*\
   !*** ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-B4BG7PRW.mjs ***!
@@ -2994,6 +2944,89 @@ var classRenderer_v3_unified_default = {
 
 /***/ },
 
+/***/ 97787
+/*!**************************************************************************!*\
+  !*** ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-FMBD7UC4.mjs ***!
+  \**************************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getIconStyles: () => (/* binding */ getIconStyles)
+/* harmony export */ });
+/* harmony import */ var _chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chunk-AGHRB4JF.mjs */ 32303);
+
+
+// src/diagrams/globalStyles.ts
+var getIconStyles = /* @__PURE__ */(0,_chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(() => `
+  /* Font Awesome icon styling - consolidated */
+  .label-icon {
+    display: inline-block;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+  }
+  
+  .node .label-icon path {
+    fill: currentColor;
+    stroke: revert;
+    stroke-width: revert;
+  }
+`, "getIconStyles");
+
+
+/***/ },
+
+/***/ 8086
+/*!**************************************************************************!*\
+  !*** ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-QN33PNHL.mjs ***!
+  \**************************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   setupViewPortForSVG: () => (/* binding */ setupViewPortForSVG)
+/* harmony export */ });
+/* harmony import */ var _chunk_ABZYJK2D_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chunk-ABZYJK2D.mjs */ 79006);
+/* harmony import */ var _chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./chunk-AGHRB4JF.mjs */ 32303);
+
+
+
+// src/rendering-util/setupViewPortForSVG.ts
+var setupViewPortForSVG = /* @__PURE__ */(0,_chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_1__.__name)((svg, padding, cssDiagram, useMaxWidth) => {
+  svg.attr("class", cssDiagram);
+  const {
+    width,
+    height,
+    x,
+    y
+  } = calculateDimensionsWithPadding(svg, padding);
+  (0,_chunk_ABZYJK2D_mjs__WEBPACK_IMPORTED_MODULE_0__.configureSvgSize)(svg, height, width, useMaxWidth);
+  const viewBox = createViewBox(x, y, width, height, padding);
+  svg.attr("viewBox", viewBox);
+  _chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_1__.log.debug(`viewBox configured: ${viewBox} with padding: ${padding}`);
+}, "setupViewPortForSVG");
+var calculateDimensionsWithPadding = /* @__PURE__ */(0,_chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_1__.__name)((svg, padding) => {
+  const bounds = svg.node()?.getBBox() || {
+    width: 0,
+    height: 0,
+    x: 0,
+    y: 0
+  };
+  return {
+    width: bounds.width + padding * 2,
+    height: bounds.height + padding * 2,
+    x: bounds.x,
+    y: bounds.y
+  };
+}, "calculateDimensionsWithPadding");
+var createViewBox = /* @__PURE__ */(0,_chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_1__.__name)((x, y, width, height, padding) => {
+  return `${x - padding} ${y - padding} ${width} ${height}`;
+}, "createViewBox");
+
+
+/***/ },
+
 /***/ 55041
 /*!************************************************************************************!*\
   !*** ./node_modules/mermaid/dist/chunks/mermaid.core/classDiagram-v2-WZHVMYZB.mjs ***!
@@ -3048,39 +3081,6 @@ var diagram = {
     cnf.class.arrowMarkerAbsolute = cnf.arrowMarkerAbsolute;
   }, "init")
 };
-
-
-/***/ },
-
-/***/ 97787
-/*!**************************************************************************!*\
-  !*** ./node_modules/mermaid/dist/chunks/mermaid.core/chunk-FMBD7UC4.mjs ***!
-  \**************************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getIconStyles: () => (/* binding */ getIconStyles)
-/* harmony export */ });
-/* harmony import */ var _chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chunk-AGHRB4JF.mjs */ 32303);
-
-
-// src/diagrams/globalStyles.ts
-var getIconStyles = /* @__PURE__ */(0,_chunk_AGHRB4JF_mjs__WEBPACK_IMPORTED_MODULE_0__.__name)(() => `
-  /* Font Awesome icon styling - consolidated */
-  .label-icon {
-    display: inline-block;
-    height: 1em;
-    overflow: visible;
-    vertical-align: -0.125em;
-  }
-  
-  .node .label-icon path {
-    fill: currentColor;
-    stroke: revert;
-    stroke-width: revert;
-  }
-`, "getIconStyles");
 
 
 /***/ }

@@ -1,5 +1,422 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[8055],{
 
+/***/ 94967
+/*!****************************************************************************!*\
+  !*** ./node_modules/@angular/platform-browser/fesm2022/_browser-chunk.mjs ***!
+  \****************************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BrowserDomAdapter: () => (/* binding */ BrowserDomAdapter),
+/* harmony export */   BrowserGetTestability: () => (/* binding */ BrowserGetTestability),
+/* harmony export */   BrowserModule: () => (/* binding */ BrowserModule),
+/* harmony export */   KeyEventsPlugin: () => (/* binding */ KeyEventsPlugin),
+/* harmony export */   bootstrapApplication: () => (/* binding */ bootstrapApplication),
+/* harmony export */   createApplication: () => (/* binding */ createApplication),
+/* harmony export */   platformBrowser: () => (/* binding */ platformBrowser),
+/* harmony export */   provideProtractorTestingSupport: () => (/* binding */ provideProtractorTestingSupport)
+/* harmony export */ });
+/* harmony import */ var _Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 11674);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 51356);
+/* harmony import */ var _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_dom_renderer-chunk.mjs */ 78547);
+
+/**
+ * @license Angular v21.1.4
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
+
+
+
+
+
+class BrowserDomAdapter extends _angular_common__WEBPACK_IMPORTED_MODULE_1__["ɵDomAdapter"] {
+  supportsDOMEvents = true;
+  static makeCurrent() {
+    (0,_angular_common__WEBPACK_IMPORTED_MODULE_1__["ɵsetRootDomAdapter"])(new BrowserDomAdapter());
+  }
+  onAndCancel(el, evt, listener, options) {
+    el.addEventListener(evt, listener, options);
+    return () => {
+      el.removeEventListener(evt, listener, options);
+    };
+  }
+  dispatchEvent(el, evt) {
+    el.dispatchEvent(evt);
+  }
+  remove(node) {
+    node.remove();
+  }
+  createElement(tagName, doc) {
+    doc = doc || this.getDefaultDocument();
+    return doc.createElement(tagName);
+  }
+  createHtmlDocument() {
+    return document.implementation.createHTMLDocument('fakeTitle');
+  }
+  getDefaultDocument() {
+    return document;
+  }
+  isElementNode(node) {
+    return node.nodeType === Node.ELEMENT_NODE;
+  }
+  isShadowRoot(node) {
+    return node instanceof DocumentFragment;
+  }
+  getGlobalEventTarget(doc, target) {
+    if (target === 'window') {
+      return window;
+    }
+    if (target === 'document') {
+      return doc;
+    }
+    if (target === 'body') {
+      return doc.body;
+    }
+    return null;
+  }
+  getBaseHref(doc) {
+    const href = getBaseElementHref();
+    return href == null ? null : relativePath(href);
+  }
+  resetBaseElement() {
+    baseElement = null;
+  }
+  getUserAgent() {
+    return window.navigator.userAgent;
+  }
+  getCookie(name) {
+    return (0,_angular_common__WEBPACK_IMPORTED_MODULE_1__["ɵparseCookieValue"])(document.cookie, name);
+  }
+}
+let baseElement = null;
+function getBaseElementHref() {
+  baseElement = baseElement || document.head.querySelector('base');
+  return baseElement ? baseElement.getAttribute('href') : null;
+}
+function relativePath(url) {
+  return new URL(url, document.baseURI).pathname;
+}
+class BrowserGetTestability {
+  addToWindow(registry) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵglobal"]['getAngularTestability'] = (elem, findInAncestors = true) => {
+      const testability = registry.findTestabilityInTree(elem, findInAncestors);
+      if (testability == null) {
+        throw new _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵRuntimeError"](5103, (typeof ngDevMode === 'undefined' || ngDevMode) && 'Could not find testability for element.');
+      }
+      return testability;
+    };
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵglobal"]['getAllAngularTestabilities'] = () => registry.getAllTestabilities();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵglobal"]['getAllAngularRootElements'] = () => registry.getAllRootElements();
+    const whenAllStable = callback => {
+      const testabilities = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵglobal"]['getAllAngularTestabilities']();
+      let count = testabilities.length;
+      const decrement = function () {
+        count--;
+        if (count == 0) {
+          callback();
+        }
+      };
+      testabilities.forEach(testability => {
+        testability.whenStable(decrement);
+      });
+    };
+    if (!_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵglobal"]['frameworkStabilizers']) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵglobal"]['frameworkStabilizers'] = [];
+    }
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵglobal"]['frameworkStabilizers'].push(whenAllStable);
+  }
+  findTestabilityInTree(registry, elem, findInAncestors) {
+    if (elem == null) {
+      return null;
+    }
+    const t = registry.getTestability(elem);
+    if (t != null) {
+      return t;
+    } else if (!findInAncestors) {
+      return null;
+    }
+    if ((0,_angular_common__WEBPACK_IMPORTED_MODULE_1__["ɵgetDOM"])().isShadowRoot(elem)) {
+      return this.findTestabilityInTree(registry, elem.host, true);
+    }
+    return this.findTestabilityInTree(registry, elem.parentElement, true);
+  }
+}
+let BrowserXhr = /*#__PURE__*/(() => {
+  class BrowserXhr {
+    build() {
+      return new XMLHttpRequest();
+    }
+    static ɵfac = function BrowserXhr_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || BrowserXhr)();
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
+      token: BrowserXhr,
+      factory: BrowserXhr.ɵfac
+    });
+  }
+  return BrowserXhr;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+const MODIFIER_KEYS = ['alt', 'control', 'meta', 'shift'];
+const _keyMap = {
+  '\b': 'Backspace',
+  '\t': 'Tab',
+  '\x7F': 'Delete',
+  '\x1B': 'Escape',
+  'Del': 'Delete',
+  'Esc': 'Escape',
+  'Left': 'ArrowLeft',
+  'Right': 'ArrowRight',
+  'Up': 'ArrowUp',
+  'Down': 'ArrowDown',
+  'Menu': 'ContextMenu',
+  'Scroll': 'ScrollLock',
+  'Win': 'OS'
+};
+const MODIFIER_KEY_GETTERS = {
+  'alt': event => event.altKey,
+  'control': event => event.ctrlKey,
+  'meta': event => event.metaKey,
+  'shift': event => event.shiftKey
+};
+let KeyEventsPlugin = /*#__PURE__*/(() => {
+  class KeyEventsPlugin extends _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.EventManagerPlugin {
+    constructor(doc) {
+      super(doc);
+    }
+    supports(eventName) {
+      return KeyEventsPlugin.parseEventName(eventName) != null;
+    }
+    addEventListener(element, eventName, handler, options) {
+      const parsedEvent = KeyEventsPlugin.parseEventName(eventName);
+      const outsideHandler = KeyEventsPlugin.eventCallback(parsedEvent['fullKey'], handler, this.manager.getZone());
+      return this.manager.getZone().runOutsideAngular(() => {
+        return (0,_angular_common__WEBPACK_IMPORTED_MODULE_1__["ɵgetDOM"])().onAndCancel(element, parsedEvent['domEventName'], outsideHandler, options);
+      });
+    }
+    static parseEventName(eventName) {
+      const parts = eventName.toLowerCase().split('.');
+      const domEventName = parts.shift();
+      if (parts.length === 0 || !(domEventName === 'keydown' || domEventName === 'keyup')) {
+        return null;
+      }
+      const key = KeyEventsPlugin._normalizeKey(parts.pop());
+      let fullKey = '';
+      let codeIX = parts.indexOf('code');
+      if (codeIX > -1) {
+        parts.splice(codeIX, 1);
+        fullKey = 'code.';
+      }
+      MODIFIER_KEYS.forEach(modifierName => {
+        const index = parts.indexOf(modifierName);
+        if (index > -1) {
+          parts.splice(index, 1);
+          fullKey += modifierName + '.';
+        }
+      });
+      fullKey += key;
+      if (parts.length != 0 || key.length === 0) {
+        return null;
+      }
+      const result = {};
+      result['domEventName'] = domEventName;
+      result['fullKey'] = fullKey;
+      return result;
+    }
+    static matchEventFullKeyCode(event, fullKeyCode) {
+      let keycode = _keyMap[event.key] || event.key;
+      let key = '';
+      if (fullKeyCode.indexOf('code.') > -1) {
+        keycode = event.code;
+        key = 'code.';
+      }
+      if (keycode == null || !keycode) return false;
+      keycode = keycode.toLowerCase();
+      if (keycode === ' ') {
+        keycode = 'space';
+      } else if (keycode === '.') {
+        keycode = 'dot';
+      }
+      MODIFIER_KEYS.forEach(modifierName => {
+        if (modifierName !== keycode) {
+          const modifierGetter = MODIFIER_KEY_GETTERS[modifierName];
+          if (modifierGetter(event)) {
+            key += modifierName + '.';
+          }
+        }
+      });
+      key += keycode;
+      return key === fullKeyCode;
+    }
+    static eventCallback(fullKey, handler, zone) {
+      return event => {
+        if (KeyEventsPlugin.matchEventFullKeyCode(event, fullKey)) {
+          zone.runGuarded(() => handler(event));
+        }
+      };
+    }
+    static _normalizeKey(keyName) {
+      return keyName === 'esc' ? 'escape' : keyName;
+    }
+    static ɵfac = function KeyEventsPlugin_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || KeyEventsPlugin)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
+    };
+    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
+      token: KeyEventsPlugin,
+      factory: KeyEventsPlugin.ɵfac
+    });
+  }
+  return KeyEventsPlugin;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+function bootstrapApplication(_x, _x2, _x3) {
+  return _bootstrapApplication.apply(this, arguments);
+}
+function _bootstrapApplication() {
+  _bootstrapApplication = (0,_Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (rootComponent, options, context) {
+    const config = {
+      rootComponent,
+      ...createProvidersConfig(options, context)
+    };
+    if ((typeof ngJitMode === 'undefined' || ngJitMode) && typeof fetch === 'function') {
+      yield resolveJitResources();
+    }
+    return (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵinternalCreateApplication"])(config);
+  });
+  return _bootstrapApplication.apply(this, arguments);
+}
+function createApplication(_x4, _x5) {
+  return _createApplication.apply(this, arguments);
+}
+function _createApplication() {
+  _createApplication = (0,_Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (options, context) {
+    if ((typeof ngJitMode === 'undefined' || ngJitMode) && typeof fetch === 'function') {
+      yield resolveJitResources();
+    }
+    return (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵinternalCreateApplication"])(createProvidersConfig(options, context));
+  });
+  return _createApplication.apply(this, arguments);
+}
+function createProvidersConfig(options, context) {
+  return {
+    platformRef: context?.platformRef,
+    appProviders: [...BROWSER_MODULE_PROVIDERS, ...(options?.providers ?? [])],
+    platformProviders: INTERNAL_BROWSER_PLATFORM_PROVIDERS
+  };
+}
+function resolveJitResources() {
+  return _resolveJitResources.apply(this, arguments);
+}
+function _resolveJitResources() {
+  _resolveJitResources = (0,_Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    try {
+      return yield (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵresolveComponentResources"])(fetch);
+    } catch (error) {
+      console.error(error);
+    }
+  });
+  return _resolveJitResources.apply(this, arguments);
+}
+function provideProtractorTestingSupport() {
+  return [...TESTABILITY_PROVIDERS];
+}
+function initDomAdapter() {
+  BrowserDomAdapter.makeCurrent();
+}
+function errorHandler() {
+  return new _angular_core__WEBPACK_IMPORTED_MODULE_2__.ErrorHandler();
+}
+function _document() {
+  (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵsetDocument"])(document);
+  return document;
+}
+const INTERNAL_BROWSER_PLATFORM_PROVIDERS = [{
+  provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__.PLATFORM_ID,
+  useValue: _angular_common__WEBPACK_IMPORTED_MODULE_1__["ɵPLATFORM_BROWSER_ID"]
+}, {
+  provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__.PLATFORM_INITIALIZER,
+  useValue: initDomAdapter,
+  multi: true
+}, {
+  provide: _angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT,
+  useFactory: _document
+}];
+const platformBrowser = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.createPlatformFactory)(_angular_core__WEBPACK_IMPORTED_MODULE_2__.platformCore, 'browser', INTERNAL_BROWSER_PLATFORM_PROVIDERS);
+const BROWSER_MODULE_PROVIDERS_MARKER = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_2__.InjectionToken(typeof ngDevMode === 'undefined' || ngDevMode ? 'BrowserModule Providers Marker' : '');
+const TESTABILITY_PROVIDERS = [{
+  provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵTESTABILITY_GETTER"],
+  useClass: BrowserGetTestability
+}, {
+  provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵTESTABILITY"],
+  useClass: _angular_core__WEBPACK_IMPORTED_MODULE_2__.Testability
+}, {
+  provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__.Testability,
+  useClass: _angular_core__WEBPACK_IMPORTED_MODULE_2__.Testability
+}];
+const BROWSER_MODULE_PROVIDERS = [{
+  provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵINJECTOR_SCOPE"],
+  useValue: 'root'
+}, {
+  provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__.ErrorHandler,
+  useFactory: errorHandler
+}, {
+  provide: _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.EVENT_MANAGER_PLUGINS,
+  useClass: _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.DomEventsPlugin,
+  multi: true
+}, {
+  provide: _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.EVENT_MANAGER_PLUGINS,
+  useClass: KeyEventsPlugin,
+  multi: true
+}, _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.DomRendererFactory2, _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.SharedStylesHost, _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.EventManager, {
+  provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__.RendererFactory2,
+  useExisting: _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.DomRendererFactory2
+}, {
+  provide: _angular_common__WEBPACK_IMPORTED_MODULE_1__.XhrFactory,
+  useClass: BrowserXhr
+}, typeof ngDevMode === 'undefined' || ngDevMode ? {
+  provide: BROWSER_MODULE_PROVIDERS_MARKER,
+  useValue: true
+} : []];
+let BrowserModule = /*#__PURE__*/(() => {
+  class BrowserModule {
+    constructor() {
+      if (typeof ngDevMode === 'undefined' || ngDevMode) {
+        const providersAlreadyPresent = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(BROWSER_MODULE_PROVIDERS_MARKER, {
+          optional: true,
+          skipSelf: true
+        });
+        if (providersAlreadyPresent) {
+          throw new _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵRuntimeError"](5100, `Providers from the \`BrowserModule\` have already been loaded. If you need access ` + `to common directives such as NgIf and NgFor, import the \`CommonModule\` instead.`);
+        }
+      }
+    }
+    static ɵfac = function BrowserModule_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || BrowserModule)();
+    };
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({
+      type: BrowserModule
+    });
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({
+      providers: [...BROWSER_MODULE_PROVIDERS, ...TESTABILITY_PROVIDERS],
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.CommonModule, _angular_core__WEBPACK_IMPORTED_MODULE_2__.ApplicationModule]
+    });
+  }
+  return BrowserModule;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+
+/***/ },
+
 /***/ 78547
 /*!*********************************************************************************!*\
   !*** ./node_modules/@angular/platform-browser/fesm2022/_dom_renderer-chunk.mjs ***!
@@ -19,7 +436,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ 11674);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
 /**
- * @license Angular v21.1.1
+ * @license Angular v21.1.4
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -691,7 +1108,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_dom_renderer-chunk.mjs */ 78547);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ 54380);
 /**
- * @license Angular v21.1.1
+ * @license Angular v21.1.4
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -1224,7 +1641,7 @@ function provideClientHydration(...features) {
   }
   return (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.makeEnvironmentProviders)([typeof ngDevMode !== 'undefined' && ngDevMode ? provideEnabledBlockingInitialNavigationDetector() : [], typeof ngDevMode !== 'undefined' && ngDevMode ? (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.provideStabilityDebugging)() : [], (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵwithDomHydration"])(), featuresKind.has(HydrationFeatureKind.NoHttpTransferCache) || hasHttpTransferCacheOptions ? [] : (0,_angular_common_http__WEBPACK_IMPORTED_MODULE_4__["ɵwithHttpTransferCache"])({}), providers]);
 }
-const VERSION = /* @__PURE__ */new _angular_core__WEBPACK_IMPORTED_MODULE_2__.Version('21.1.1');
+const VERSION = /* @__PURE__ */new _angular_core__WEBPACK_IMPORTED_MODULE_2__.Version('21.1.4');
 
 
 /***/ },
@@ -1264,423 +1681,6 @@ function _asyncToGenerator(n) {
     });
   };
 }
-
-
-/***/ },
-
-/***/ 94967
-/*!****************************************************************************!*\
-  !*** ./node_modules/@angular/platform-browser/fesm2022/_browser-chunk.mjs ***!
-  \****************************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   BrowserDomAdapter: () => (/* binding */ BrowserDomAdapter),
-/* harmony export */   BrowserGetTestability: () => (/* binding */ BrowserGetTestability),
-/* harmony export */   BrowserModule: () => (/* binding */ BrowserModule),
-/* harmony export */   KeyEventsPlugin: () => (/* binding */ KeyEventsPlugin),
-/* harmony export */   bootstrapApplication: () => (/* binding */ bootstrapApplication),
-/* harmony export */   createApplication: () => (/* binding */ createApplication),
-/* harmony export */   platformBrowser: () => (/* binding */ platformBrowser),
-/* harmony export */   provideProtractorTestingSupport: () => (/* binding */ provideProtractorTestingSupport)
-/* harmony export */ });
-/* harmony import */ var _Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 11674);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 51356);
-/* harmony import */ var _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_dom_renderer-chunk.mjs */ 78547);
-
-/**
- * @license Angular v21.1.1
- * (c) 2010-2026 Google LLC. https://angular.dev/
- * License: MIT
- */
-
-
-
-
-
-class BrowserDomAdapter extends _angular_common__WEBPACK_IMPORTED_MODULE_1__["ɵDomAdapter"] {
-  supportsDOMEvents = true;
-  static makeCurrent() {
-    (0,_angular_common__WEBPACK_IMPORTED_MODULE_1__["ɵsetRootDomAdapter"])(new BrowserDomAdapter());
-  }
-  onAndCancel(el, evt, listener, options) {
-    el.addEventListener(evt, listener, options);
-    return () => {
-      el.removeEventListener(evt, listener, options);
-    };
-  }
-  dispatchEvent(el, evt) {
-    el.dispatchEvent(evt);
-  }
-  remove(node) {
-    node.remove();
-  }
-  createElement(tagName, doc) {
-    doc = doc || this.getDefaultDocument();
-    return doc.createElement(tagName);
-  }
-  createHtmlDocument() {
-    return document.implementation.createHTMLDocument('fakeTitle');
-  }
-  getDefaultDocument() {
-    return document;
-  }
-  isElementNode(node) {
-    return node.nodeType === Node.ELEMENT_NODE;
-  }
-  isShadowRoot(node) {
-    return node instanceof DocumentFragment;
-  }
-  getGlobalEventTarget(doc, target) {
-    if (target === 'window') {
-      return window;
-    }
-    if (target === 'document') {
-      return doc;
-    }
-    if (target === 'body') {
-      return doc.body;
-    }
-    return null;
-  }
-  getBaseHref(doc) {
-    const href = getBaseElementHref();
-    return href == null ? null : relativePath(href);
-  }
-  resetBaseElement() {
-    baseElement = null;
-  }
-  getUserAgent() {
-    return window.navigator.userAgent;
-  }
-  getCookie(name) {
-    return (0,_angular_common__WEBPACK_IMPORTED_MODULE_1__["ɵparseCookieValue"])(document.cookie, name);
-  }
-}
-let baseElement = null;
-function getBaseElementHref() {
-  baseElement = baseElement || document.head.querySelector('base');
-  return baseElement ? baseElement.getAttribute('href') : null;
-}
-function relativePath(url) {
-  return new URL(url, document.baseURI).pathname;
-}
-class BrowserGetTestability {
-  addToWindow(registry) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵglobal"]['getAngularTestability'] = (elem, findInAncestors = true) => {
-      const testability = registry.findTestabilityInTree(elem, findInAncestors);
-      if (testability == null) {
-        throw new _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵRuntimeError"](5103, (typeof ngDevMode === 'undefined' || ngDevMode) && 'Could not find testability for element.');
-      }
-      return testability;
-    };
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵglobal"]['getAllAngularTestabilities'] = () => registry.getAllTestabilities();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵglobal"]['getAllAngularRootElements'] = () => registry.getAllRootElements();
-    const whenAllStable = callback => {
-      const testabilities = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵglobal"]['getAllAngularTestabilities']();
-      let count = testabilities.length;
-      const decrement = function () {
-        count--;
-        if (count == 0) {
-          callback();
-        }
-      };
-      testabilities.forEach(testability => {
-        testability.whenStable(decrement);
-      });
-    };
-    if (!_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵglobal"]['frameworkStabilizers']) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵglobal"]['frameworkStabilizers'] = [];
-    }
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵglobal"]['frameworkStabilizers'].push(whenAllStable);
-  }
-  findTestabilityInTree(registry, elem, findInAncestors) {
-    if (elem == null) {
-      return null;
-    }
-    const t = registry.getTestability(elem);
-    if (t != null) {
-      return t;
-    } else if (!findInAncestors) {
-      return null;
-    }
-    if ((0,_angular_common__WEBPACK_IMPORTED_MODULE_1__["ɵgetDOM"])().isShadowRoot(elem)) {
-      return this.findTestabilityInTree(registry, elem.host, true);
-    }
-    return this.findTestabilityInTree(registry, elem.parentElement, true);
-  }
-}
-let BrowserXhr = /*#__PURE__*/(() => {
-  class BrowserXhr {
-    build() {
-      return new XMLHttpRequest();
-    }
-    static ɵfac = function BrowserXhr_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || BrowserXhr)();
-    };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
-      token: BrowserXhr,
-      factory: BrowserXhr.ɵfac
-    });
-  }
-  return BrowserXhr;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-const MODIFIER_KEYS = ['alt', 'control', 'meta', 'shift'];
-const _keyMap = {
-  '\b': 'Backspace',
-  '\t': 'Tab',
-  '\x7F': 'Delete',
-  '\x1B': 'Escape',
-  'Del': 'Delete',
-  'Esc': 'Escape',
-  'Left': 'ArrowLeft',
-  'Right': 'ArrowRight',
-  'Up': 'ArrowUp',
-  'Down': 'ArrowDown',
-  'Menu': 'ContextMenu',
-  'Scroll': 'ScrollLock',
-  'Win': 'OS'
-};
-const MODIFIER_KEY_GETTERS = {
-  'alt': event => event.altKey,
-  'control': event => event.ctrlKey,
-  'meta': event => event.metaKey,
-  'shift': event => event.shiftKey
-};
-let KeyEventsPlugin = /*#__PURE__*/(() => {
-  class KeyEventsPlugin extends _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.EventManagerPlugin {
-    constructor(doc) {
-      super(doc);
-    }
-    supports(eventName) {
-      return KeyEventsPlugin.parseEventName(eventName) != null;
-    }
-    addEventListener(element, eventName, handler, options) {
-      const parsedEvent = KeyEventsPlugin.parseEventName(eventName);
-      const outsideHandler = KeyEventsPlugin.eventCallback(parsedEvent['fullKey'], handler, this.manager.getZone());
-      return this.manager.getZone().runOutsideAngular(() => {
-        return (0,_angular_common__WEBPACK_IMPORTED_MODULE_1__["ɵgetDOM"])().onAndCancel(element, parsedEvent['domEventName'], outsideHandler, options);
-      });
-    }
-    static parseEventName(eventName) {
-      const parts = eventName.toLowerCase().split('.');
-      const domEventName = parts.shift();
-      if (parts.length === 0 || !(domEventName === 'keydown' || domEventName === 'keyup')) {
-        return null;
-      }
-      const key = KeyEventsPlugin._normalizeKey(parts.pop());
-      let fullKey = '';
-      let codeIX = parts.indexOf('code');
-      if (codeIX > -1) {
-        parts.splice(codeIX, 1);
-        fullKey = 'code.';
-      }
-      MODIFIER_KEYS.forEach(modifierName => {
-        const index = parts.indexOf(modifierName);
-        if (index > -1) {
-          parts.splice(index, 1);
-          fullKey += modifierName + '.';
-        }
-      });
-      fullKey += key;
-      if (parts.length != 0 || key.length === 0) {
-        return null;
-      }
-      const result = {};
-      result['domEventName'] = domEventName;
-      result['fullKey'] = fullKey;
-      return result;
-    }
-    static matchEventFullKeyCode(event, fullKeyCode) {
-      let keycode = _keyMap[event.key] || event.key;
-      let key = '';
-      if (fullKeyCode.indexOf('code.') > -1) {
-        keycode = event.code;
-        key = 'code.';
-      }
-      if (keycode == null || !keycode) return false;
-      keycode = keycode.toLowerCase();
-      if (keycode === ' ') {
-        keycode = 'space';
-      } else if (keycode === '.') {
-        keycode = 'dot';
-      }
-      MODIFIER_KEYS.forEach(modifierName => {
-        if (modifierName !== keycode) {
-          const modifierGetter = MODIFIER_KEY_GETTERS[modifierName];
-          if (modifierGetter(event)) {
-            key += modifierName + '.';
-          }
-        }
-      });
-      key += keycode;
-      return key === fullKeyCode;
-    }
-    static eventCallback(fullKey, handler, zone) {
-      return event => {
-        if (KeyEventsPlugin.matchEventFullKeyCode(event, fullKey)) {
-          zone.runGuarded(() => handler(event));
-        }
-      };
-    }
-    static _normalizeKey(keyName) {
-      return keyName === 'esc' ? 'escape' : keyName;
-    }
-    static ɵfac = function KeyEventsPlugin_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || KeyEventsPlugin)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT));
-    };
-    static ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({
-      token: KeyEventsPlugin,
-      factory: KeyEventsPlugin.ɵfac
-    });
-  }
-  return KeyEventsPlugin;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-function bootstrapApplication(_x, _x2, _x3) {
-  return _bootstrapApplication.apply(this, arguments);
-}
-function _bootstrapApplication() {
-  _bootstrapApplication = (0,_Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (rootComponent, options, context) {
-    const config = {
-      rootComponent,
-      ...createProvidersConfig(options, context)
-    };
-    if ((typeof ngJitMode === 'undefined' || ngJitMode) && typeof fetch === 'function') {
-      yield resolveJitResources();
-    }
-    return (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵinternalCreateApplication"])(config);
-  });
-  return _bootstrapApplication.apply(this, arguments);
-}
-function createApplication(_x4, _x5) {
-  return _createApplication.apply(this, arguments);
-}
-function _createApplication() {
-  _createApplication = (0,_Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (options, context) {
-    if ((typeof ngJitMode === 'undefined' || ngJitMode) && typeof fetch === 'function') {
-      yield resolveJitResources();
-    }
-    return (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵinternalCreateApplication"])(createProvidersConfig(options, context));
-  });
-  return _createApplication.apply(this, arguments);
-}
-function createProvidersConfig(options, context) {
-  return {
-    platformRef: context?.platformRef,
-    appProviders: [...BROWSER_MODULE_PROVIDERS, ...(options?.providers ?? [])],
-    platformProviders: INTERNAL_BROWSER_PLATFORM_PROVIDERS
-  };
-}
-function resolveJitResources() {
-  return _resolveJitResources.apply(this, arguments);
-}
-function _resolveJitResources() {
-  _resolveJitResources = (0,_Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-    try {
-      return yield (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵresolveComponentResources"])(fetch);
-    } catch (error) {
-      console.error(error);
-    }
-  });
-  return _resolveJitResources.apply(this, arguments);
-}
-function provideProtractorTestingSupport() {
-  return [...TESTABILITY_PROVIDERS];
-}
-function initDomAdapter() {
-  BrowserDomAdapter.makeCurrent();
-}
-function errorHandler() {
-  return new _angular_core__WEBPACK_IMPORTED_MODULE_2__.ErrorHandler();
-}
-function _document() {
-  (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵsetDocument"])(document);
-  return document;
-}
-const INTERNAL_BROWSER_PLATFORM_PROVIDERS = [{
-  provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__.PLATFORM_ID,
-  useValue: _angular_common__WEBPACK_IMPORTED_MODULE_1__["ɵPLATFORM_BROWSER_ID"]
-}, {
-  provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__.PLATFORM_INITIALIZER,
-  useValue: initDomAdapter,
-  multi: true
-}, {
-  provide: _angular_common__WEBPACK_IMPORTED_MODULE_1__.DOCUMENT,
-  useFactory: _document
-}];
-const platformBrowser = /*#__PURE__*/(0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.createPlatformFactory)(_angular_core__WEBPACK_IMPORTED_MODULE_2__.platformCore, 'browser', INTERNAL_BROWSER_PLATFORM_PROVIDERS);
-const BROWSER_MODULE_PROVIDERS_MARKER = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_2__.InjectionToken(typeof ngDevMode === 'undefined' || ngDevMode ? 'BrowserModule Providers Marker' : '');
-const TESTABILITY_PROVIDERS = [{
-  provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵTESTABILITY_GETTER"],
-  useClass: BrowserGetTestability
-}, {
-  provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵTESTABILITY"],
-  useClass: _angular_core__WEBPACK_IMPORTED_MODULE_2__.Testability
-}, {
-  provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__.Testability,
-  useClass: _angular_core__WEBPACK_IMPORTED_MODULE_2__.Testability
-}];
-const BROWSER_MODULE_PROVIDERS = [{
-  provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵINJECTOR_SCOPE"],
-  useValue: 'root'
-}, {
-  provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__.ErrorHandler,
-  useFactory: errorHandler
-}, {
-  provide: _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.EVENT_MANAGER_PLUGINS,
-  useClass: _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.DomEventsPlugin,
-  multi: true
-}, {
-  provide: _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.EVENT_MANAGER_PLUGINS,
-  useClass: KeyEventsPlugin,
-  multi: true
-}, _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.DomRendererFactory2, _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.SharedStylesHost, _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.EventManager, {
-  provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__.RendererFactory2,
-  useExisting: _dom_renderer_chunk_mjs__WEBPACK_IMPORTED_MODULE_3__.DomRendererFactory2
-}, {
-  provide: _angular_common__WEBPACK_IMPORTED_MODULE_1__.XhrFactory,
-  useClass: BrowserXhr
-}, typeof ngDevMode === 'undefined' || ngDevMode ? {
-  provide: BROWSER_MODULE_PROVIDERS_MARKER,
-  useValue: true
-} : []];
-let BrowserModule = /*#__PURE__*/(() => {
-  class BrowserModule {
-    constructor() {
-      if (typeof ngDevMode === 'undefined' || ngDevMode) {
-        const providersAlreadyPresent = (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.inject)(BROWSER_MODULE_PROVIDERS_MARKER, {
-          optional: true,
-          skipSelf: true
-        });
-        if (providersAlreadyPresent) {
-          throw new _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵRuntimeError"](5100, `Providers from the \`BrowserModule\` have already been loaded. If you need access ` + `to common directives such as NgIf and NgFor, import the \`CommonModule\` instead.`);
-        }
-      }
-    }
-    static ɵfac = function BrowserModule_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || BrowserModule)();
-    };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({
-      type: BrowserModule
-    });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({
-      providers: [...BROWSER_MODULE_PROVIDERS, ...TESTABILITY_PROVIDERS],
-      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.CommonModule, _angular_core__WEBPACK_IMPORTED_MODULE_2__.ApplicationModule]
-    });
-  }
-  return BrowserModule;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
 
 
 /***/ }

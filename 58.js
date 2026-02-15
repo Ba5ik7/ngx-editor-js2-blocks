@@ -1,5 +1,520 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[58],{
 
+/***/ 67081
+/*!*************************************************************************!*\
+  !*** ./node_modules/@angular-architects/module-federation/src/index.js ***!
+  \*************************************************************************/
+(__unused_webpack_module, exports, __webpack_require__) {
+
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+const tslib_1 = __webpack_require__(/*! tslib */ 24398);
+tslib_1.__exportStar(__webpack_require__(/*! @angular-architects/module-federation-runtime */ 23879), exports);
+
+/***/ },
+
+/***/ 87677
+/*!*************************************************************************************!*\
+  !*** ./dist/ngx-editor-js2-mfe-loader/fesm2022/tmdjr-ngx-editor-js2-mfe-loader.mjs ***!
+  \*************************************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   NgxEditorJs2MfeLoaderComponent: () => (/* binding */ NgxEditorJs2MfeLoaderComponent)
+/* harmony export */ });
+/* harmony import */ var _Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
+/* harmony import */ var _angular_architects_module_federation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular-architects/module-federation */ 67081);
+/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 8778);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 11674);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 51356);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 14332);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/button */ 31944);
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/icon */ 81836);
+/* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
+/* harmony import */ var _angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core/rxjs-interop */ 51404);
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/form-field */ 66080);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/input */ 91638);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ 44866);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function MfeLoaderConfigComponent_Conditional_0_Conditional_7_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const vm_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](vm_r2.configFormErrorMessages["remoteName"]);
+  }
+}
+function MfeLoaderConfigComponent_Conditional_0_Conditional_12_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const vm_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](vm_r2.configFormErrorMessages["url"]);
+  }
+}
+function MfeLoaderConfigComponent_Conditional_0_Conditional_17_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const vm_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](vm_r2.configFormErrorMessages["exposedModule"]);
+  }
+}
+function MfeLoaderConfigComponent_Conditional_0_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "form", 0)(1, "h2", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "MFE Remote Configurations");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "mat-form-field")(4, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](5, "MFE Remote Name");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](6, "input", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditionalCreate"](7, MfeLoaderConfigComponent_Conditional_0_Conditional_7_Template, 2, 1, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "mat-form-field")(9, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](10, "Remote URL");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](11, "input", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditionalCreate"](12, MfeLoaderConfigComponent_Conditional_0_Conditional_12_Template, 2, 1, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](13, "mat-form-field")(14, "mat-label");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](15, "Exposed Module");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](16, "input", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditionalCreate"](17, MfeLoaderConfigComponent_Conditional_0_Conditional_17_Template, 2, 1, "mat-error");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](18, "div", 5)(19, "button", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function MfeLoaderConfigComponent_Conditional_0_Template_button_click_19_listener() {
+      const vm_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r1);
+      const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r2.updateMfeURL(vm_r2.mfeLoaderConfigForm));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](20, " Save ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](21, "button", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function MfeLoaderConfigComponent_Conditional_0_Template_button_click_21_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r1);
+      const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r2.closeConfig());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](22, " Cancel ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
+  }
+  if (rf & 2) {
+    let tmp_3_0;
+    let tmp_4_0;
+    let tmp_5_0;
+    const vm_r2 = ctx;
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("formGroup", vm_r2.mfeLoaderConfigForm);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditional"](((tmp_3_0 = vm_r2.mfeLoaderConfigForm.get("remoteName")) == null ? null : tmp_3_0.errors) ? 7 : -1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditional"](((tmp_4_0 = vm_r2.mfeLoaderConfigForm.get("url")) == null ? null : tmp_4_0.errors) ? 12 : -1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditional"](((tmp_5_0 = vm_r2.mfeLoaderConfigForm.get("exposedModule")) == null ? null : tmp_5_0.errors) ? 17 : -1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("disabled", vm_r2.mfeLoaderConfigForm.invalid);
+  }
+}
+const _c0 = ["mfeHost"];
+function NgxEditorJs2MfeLoaderComponent_Conditional_2_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 3)(1, "button", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function NgxEditorJs2MfeLoaderComponent_Conditional_2_Template_button_click_1_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r1);
+      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r1.openEditUrlOverlay());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "mat-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "edit");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngClass", ctx_r1.savedAction());
+  }
+}
+function NgxEditorJs2MfeLoaderComponent_Conditional_3_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mfe-loader-config", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("mfeValue", function NgxEditorJs2MfeLoaderComponent_Conditional_3_Template_mfe_loader_config_mfeValue_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r3);
+      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r1.updateMfeRemote($event));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("value", ctx_r1.value());
+  }
+}
+function NgxEditorJs2MfeLoaderComponent_Conditional_6_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mfe-loader-error-dialog", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("close", function NgxEditorJs2MfeLoaderComponent_Conditional_6_Template_mfe_loader_error_dialog_close_0_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r4);
+      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r1.closeErrorDialog());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("errorMessage", ctx_r1.errorLoadingMfeMessage());
+  }
+}
+let ErrorDialog = /*#__PURE__*/(() => {
+  class ErrorDialog {
+    errorMessage = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.input)(...(ngDevMode ? [undefined, {
+      debugName: "errorMessage"
+    }] : []));
+    close = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.output)();
+    static ɵfac = function ErrorDialog_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || ErrorDialog)();
+    };
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+      type: ErrorDialog,
+      selectors: [["mfe-loader-error-dialog"]],
+      inputs: {
+        errorMessage: [1, "errorMessage"]
+      },
+      outputs: {
+        close: "close"
+      },
+      decls: 12,
+      vars: 1,
+      consts: [[1, "error-dialog-backdrop", 3, "click"], [1, "error-dialog"], [1, "error-dialog-header"], [1, "close-icon", 3, "click"]],
+      template: function ErrorDialog_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ErrorDialog_Template_div_click_0_listener() {
+            return ctx.close.emit();
+          });
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 1)(2, "div", 2)(3, "h3");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "Error Loading MFE");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "mat-icon", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ErrorDialog_Template_mat_icon_click_5_listener() {
+            return ctx.close.emit();
+          });
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](6, "close");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](7, "p");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](8, "An error occurred while trying to load the MFE remote module:");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "pre")(10, "code");
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
+        }
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](ctx.errorMessage());
+        }
+      },
+      dependencies: [_angular_material_icon__WEBPACK_IMPORTED_MODULE_7__.MatIcon],
+      styles: ["[_nghost-%COMP%]{display:flex;justify-content:center;align-items:center}.error-dialog-backdrop[_ngcontent-%COMP%]{position:absolute;width:100%;height:100%;z-index:-1;background:#000000b3}.error-dialog[_ngcontent-%COMP%]{color:var(--mat-sys-on-error-container);background:var(--mat-sys-error-container);padding:20px;border-radius:8px;max-width:80%}.error-dialog-header[_ngcontent-%COMP%]{display:flex;justify-content:space-between;align-items:center}.close-icon[_ngcontent-%COMP%]{cursor:pointer}pre[_ngcontent-%COMP%]{color:var(--mat-sys-on-background);background:var(--mat-sys-background);padding:10px;border-radius:4px;max-height:300px;overflow:auto}"]
+    });
+  }
+  return ErrorDialog;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let MfeLoaderConfigComponent = /*#__PURE__*/(() => {
+  class MfeLoaderConfigComponent {
+    formBuilder = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.inject)(_angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormBuilder);
+    value = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.input)({
+      url: '',
+      remoteName: '',
+      exposedModule: ''
+    }, ...(ngDevMode ? [{
+      debugName: "value"
+    }] : []));
+    value$ = (0,_angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_9__.toObservable)(this.value);
+    mfeValue = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.output)();
+    viewModel$ = this.value$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_12__.map)(value => ({
+      mfeLoaderConfigForm: this.formBuilder.group({
+        url: [value.url, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]],
+        remoteName: [value.remoteName, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]],
+        exposedModule: [value.exposedModule, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]]
+      }),
+      errorMessages: {
+        required: 'Required'
+      },
+      configFormErrorMessages: {
+        url: '',
+        remoteName: '',
+        exposedModule: ''
+      }
+    })), (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.mergeMap)(viewModel => this.watchStatusChanges(viewModel).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_12__.startWith)(null), (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.withLatestFrom)((0,rxjs__WEBPACK_IMPORTED_MODULE_12__.of)(viewModel)), (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.map)(([_status, vm]) => vm))));
+    watchStatusChanges(viewModel) {
+      return viewModel.mfeLoaderConfigForm.statusChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_12__.tap)(() => this.setErrorsMessages(viewModel)));
+    }
+    updateMfeURL(mfeLoaderConfigForm) {
+      this.mfeValue.emit(mfeLoaderConfigForm.value);
+    }
+    closeConfig() {
+      this.mfeValue.emit(this.value().url ? this.value() : {
+        url: '',
+        remoteName: '',
+        exposedModule: ''
+      });
+    }
+    // ! Quick and Drity way to set error messages
+    // ! Breaks all my believes in "clean code"
+    setErrorsMessages({
+      mfeLoaderConfigForm,
+      configFormErrorMessages,
+      errorMessages
+    }) {
+      Object.keys(mfeLoaderConfigForm.controls).forEach(element => {
+        const errors = mfeLoaderConfigForm.get(element)?.errors;
+        if (errors) {
+          const error = Object.keys(errors)[0];
+          configFormErrorMessages[element] = errorMessages[error];
+        }
+      });
+    }
+    static ɵfac = function MfeLoaderConfigComponent_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || MfeLoaderConfigComponent)();
+    };
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+      type: MfeLoaderConfigComponent,
+      selectors: [["mfe-loader-config"]],
+      inputs: {
+        value: [1, "value"]
+      },
+      outputs: {
+        mfeValue: "mfeValue"
+      },
+      decls: 2,
+      vars: 3,
+      consts: [[3, "formGroup"], ["mat-dialog-title", ""], ["matInput", "", "type", "text", "formControlName", "remoteName"], ["matInput", "", "type", "text", "formControlName", "url"], ["matInput", "", "type", "text", "formControlName", "exposedModule"], [1, "action-group"], ["type", "button", "mat-raised-button", "", 3, "click", "disabled"], ["type", "button", "mat-raised-button", "", 3, "click"]],
+      template: function MfeLoaderConfigComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditionalCreate"](0, MfeLoaderConfigComponent_Conditional_0_Template, 23, 5, "form", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](1, "async");
+        }
+        if (rf & 2) {
+          let tmp_0_0;
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditional"]((tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](1, 1, ctx.viewModel$)) ? 0 : -1, tmp_0_0);
+        }
+      },
+      dependencies: [_angular_material_input__WEBPACK_IMPORTED_MODULE_11__.MatInput, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__.MatFormFieldModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__.MatError, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControlName, _angular_common__WEBPACK_IMPORTED_MODULE_3__.AsyncPipe],
+      styles: ["[_nghost-%COMP%]{border:.5px solid #ccc;border-radius:4px;padding:20px}[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:10px}"]
+    });
+  }
+  return MfeLoaderConfigComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let NgxEditorJs2MfeLoaderComponent = /*#__PURE__*/(() => {
+  class NgxEditorJs2MfeLoaderComponent {
+    mfeHost;
+    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.input)(0, ...(ngDevMode ? [{
+      debugName: "sortIndex"
+    }] : []));
+    componentInstanceName = 'NgxEditorJs2MfeLoaderComponent';
+    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.input)(true, ...(ngDevMode ? [{
+      debugName: "autofocus"
+    }] : []));
+    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_4__.input.required(...(ngDevMode ? [{
+      debugName: "formGroup"
+    }] : []));
+    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_4__.input.required(...(ngDevMode ? [{
+      debugName: "formControlName"
+    }] : []));
+    blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.input)([{
+      action: 'medium',
+      icon: 'density_small'
+    }, {
+      action: 'display-small',
+      icon: 'density_medium'
+    }, {
+      action: 'display-large',
+      icon: 'density_large'
+    }], ...(ngDevMode ? [{
+      debugName: "blockOptionActions"
+    }] : []));
+    value = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.signal)({
+      url: '',
+      remoteName: '',
+      exposedModule: ''
+    }, ...(ngDevMode ? [{
+      debugName: "value"
+    }] : []));
+    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.signal)('display-large', ...(ngDevMode ? [{
+      debugName: "savedAction"
+    }] : []));
+    actionCallbackBind = this.actionCallback.bind(this);
+    openOverlay = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.signal)(true, ...(ngDevMode ? [{
+      debugName: "openOverlay"
+    }] : []));
+    errorLoadingMfe = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.signal)(false, ...(ngDevMode ? [{
+      debugName: "errorLoadingMfe"
+    }] : []));
+    errorLoadingMfeMessage = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.signal)('', ...(ngDevMode ? [{
+      debugName: "errorLoadingMfeMessage"
+    }] : []));
+    ngOnInit() {
+      try {
+        const possibleSavedValue = this.formGroup().get(this.formControlName());
+        this.value.set(JSON.parse(possibleSavedValue?.value ? possibleSavedValue.value : '{}'));
+        this.value()?.url && this.openOverlay.set(false);
+      } catch (error) {
+        console.warn('Error parseing MFE Loader setting value', error);
+      }
+    }
+    ngAfterViewInit() {
+      const {
+        url,
+        remoteName,
+        exposedModule
+      } = this.value();
+      if (!url || !remoteName || !exposedModule) return;
+      this.updateMfeRemote(this.value());
+    }
+    actionCallback(action, updateFormValue = true) {
+      this.savedAction.update(() => action);
+      updateFormValue && this.formGroup().updateValueAndValidity();
+    }
+    openEditUrlOverlay() {
+      this.openOverlay.set(true);
+    }
+    updateMfeRemote(value) {
+      var _this = this;
+      return (0,_Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+        try {
+          const remoteComponent = yield (0,_angular_architects_module_federation__WEBPACK_IMPORTED_MODULE_1__.loadRemoteModule)({
+            type: 'module',
+            remoteEntry: value.url,
+            exposedModule: './' + value.exposedModule
+          });
+          _this.mfeHost.clear();
+          _this.mfeHost.createComponent(remoteComponent[value.remoteName]);
+        } catch (error) {
+          console.error('[MFE LOAD ERROR]', error);
+          _this.openOverlay.set(true);
+          _this.errorLoadingMfeMessage.set(error.message || 'Unknown error loading MFE');
+          _this.errorLoadingMfe.set(true);
+          return;
+        }
+        _this.value.set(value);
+        _this.formGroup().get(_this.formControlName())?.setValue(JSON.stringify(value));
+        _this.openOverlay.set(false);
+      })();
+    }
+    closeErrorDialog() {
+      this.errorLoadingMfe.set(false);
+      this.errorLoadingMfeMessage.set('');
+    }
+    static ɵfac = function NgxEditorJs2MfeLoaderComponent_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || NgxEditorJs2MfeLoaderComponent)();
+    };
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
+      type: NgxEditorJs2MfeLoaderComponent,
+      selectors: [["ngx-editor-js2-mfe-loader"]],
+      viewQuery: function NgxEditorJs2MfeLoaderComponent_Query(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵviewQuery"](_c0, 7, _angular_core__WEBPACK_IMPORTED_MODULE_4__.ViewContainerRef);
+        }
+        if (rf & 2) {
+          let _t;
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx.mfeHost = _t.first);
+        }
+      },
+      hostAttrs: [1, "cdk-drag-animating", "no-toolbar-inline"],
+      inputs: {
+        sortIndex: [1, "sortIndex"],
+        autofocus: [1, "autofocus"],
+        formGroup: [1, "formGroup"],
+        formControlName: [1, "formControlName"],
+        blockOptionActions: [1, "blockOptionActions"]
+      },
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵHostDirectivesFeature"]([_angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_2__.CdkDrag])],
+      decls: 7,
+      vars: 8,
+      consts: [["mfeHost", ""], [3, "formGroup"], ["controlAccessor", "", "toolbarFab", "", 1, "mfe-container-overlay", 3, "actionCallback", "autofocus", "blockOptionActions", "formControlName", "componentContextPositionIndex"], [1, "mfe-container", 3, "ngClass"], [3, "value"], [3, "errorMessage"], ["mat-fab", "", 1, "mfe-block-button", 3, "click"], [3, "mfeValue", "value"], [3, "close", "errorMessage"]],
+      template: function NgxEditorJs2MfeLoaderComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerStart"](0, 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "span", 2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditionalCreate"](2, NgxEditorJs2MfeLoaderComponent_Conditional_2_Template, 4, 1, "div", 3)(3, NgxEditorJs2MfeLoaderComponent_Conditional_3_Template, 1, 1, "mfe-loader-config", 4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainer"](4, null, 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditionalCreate"](6, NgxEditorJs2MfeLoaderComponent_Conditional_6_Template, 1, 1, "mfe-loader-error-dialog", 5);
+        }
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("formGroup", ctx.formGroup());
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("actionCallback", ctx.actionCallbackBind)("autofocus", ctx.autofocus())("blockOptionActions", ctx.blockOptionActions())("formControlName", ctx.formControlName())("componentContextPositionIndex", ctx.sortIndex());
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditional"](!ctx.openOverlay() ? 2 : 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditional"](ctx.errorLoadingMfe() ? 6 : -1);
+        }
+      },
+      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControlName, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_8__.ControlAccessorDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_8__.AutofocusDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_8__.ToolbarFabDirective, MfeLoaderConfigComponent, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatFabButton, _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__.MatIcon, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgClass, ErrorDialog],
+      styles: ["[_nghost-%COMP%]{position:relative;display:flex;flex-direction:column;margin:1.5rem 0}[_nghost-%COMP%]   .mfe-container-overlay[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;position:absolute}[_nghost-%COMP%]   .mfe-container-overlay[_ngcontent-%COMP%]:hover ~ .mfe-container[_ngcontent-%COMP%]   .mfe-block-button[_ngcontent-%COMP%], [_nghost-%COMP%]   .mfe-block-button[_ngcontent-%COMP%]:hover{display:block}[_nghost-%COMP%]   .mfe-container[_ngcontent-%COMP%]{display:flex}[_nghost-%COMP%]   .mfe-container[_ngcontent-%COMP%]   .mfe-block[_ngcontent-%COMP%]{min-width:0}[_nghost-%COMP%]   .mfe-container[_ngcontent-%COMP%]   .mfe-block-button[_ngcontent-%COMP%]{position:absolute;top:6px;left:6px;display:none}[_nghost-%COMP%]   mfe-loader-error-dialog[_ngcontent-%COMP%]{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}"]
+    });
+  }
+  return NgxEditorJs2MfeLoaderComponent;
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+/*
+ * Public API Surface of ngx-editor-js2-mfe-loader
+ */
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+
+/***/ },
+
 /***/ 23879
 /*!******************************************************************************************************************************!*\
   !*** ./node_modules/@angular-architects/module-federation-runtime/fesm2022/angular-architects-module-federation-runtime.mjs ***!
@@ -710,521 +1225,6 @@ function __rewriteRelativeImportExtension(path, preserveJsx) {
   __disposeResources,
   __rewriteRelativeImportExtension,
 });
-
-
-/***/ },
-
-/***/ 67081
-/*!*************************************************************************!*\
-  !*** ./node_modules/@angular-architects/module-federation/src/index.js ***!
-  \*************************************************************************/
-(__unused_webpack_module, exports, __webpack_require__) {
-
-
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-const tslib_1 = __webpack_require__(/*! tslib */ 24398);
-tslib_1.__exportStar(__webpack_require__(/*! @angular-architects/module-federation-runtime */ 23879), exports);
-
-/***/ },
-
-/***/ 87677
-/*!*************************************************************************************!*\
-  !*** ./dist/ngx-editor-js2-mfe-loader/fesm2022/tmdjr-ngx-editor-js2-mfe-loader.mjs ***!
-  \*************************************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   NgxEditorJs2MfeLoaderComponent: () => (/* binding */ NgxEditorJs2MfeLoaderComponent)
-/* harmony export */ });
-/* harmony import */ var _Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 89204);
-/* harmony import */ var _angular_architects_module_federation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular-architects/module-federation */ 67081);
-/* harmony import */ var _angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/drag-drop */ 8778);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 11674);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 51356);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 14332);
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/button */ 31944);
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/icon */ 81836);
-/* harmony import */ var _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @tmdjr/ngx-editor-js2 */ 40623);
-/* harmony import */ var _angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core/rxjs-interop */ 51404);
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/form-field */ 66080);
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/input */ 91638);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ 44866);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function MfeLoaderConfigComponent_Conditional_0_Conditional_7_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const vm_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](vm_r2.configFormErrorMessages["remoteName"]);
-  }
-}
-function MfeLoaderConfigComponent_Conditional_0_Conditional_12_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const vm_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](vm_r2.configFormErrorMessages["url"]);
-  }
-}
-function MfeLoaderConfigComponent_Conditional_0_Conditional_17_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const vm_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](vm_r2.configFormErrorMessages["exposedModule"]);
-  }
-}
-function MfeLoaderConfigComponent_Conditional_0_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "form", 0)(1, "h2", 1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](2, "MFE Remote Configurations");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](3, "mat-form-field")(4, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](5, "MFE Remote Name");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](6, "input", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditionalCreate"](7, MfeLoaderConfigComponent_Conditional_0_Conditional_7_Template, 2, 1, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](8, "mat-form-field")(9, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](10, "Remote URL");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](11, "input", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditionalCreate"](12, MfeLoaderConfigComponent_Conditional_0_Conditional_12_Template, 2, 1, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](13, "mat-form-field")(14, "mat-label");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](15, "Exposed Module");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](16, "input", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditionalCreate"](17, MfeLoaderConfigComponent_Conditional_0_Conditional_17_Template, 2, 1, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](18, "div", 5)(19, "button", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function MfeLoaderConfigComponent_Conditional_0_Template_button_click_19_listener() {
-      const vm_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r1);
-      const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r2.updateMfeURL(vm_r2.mfeLoaderConfigForm));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](20, " Save ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](21, "button", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function MfeLoaderConfigComponent_Conditional_0_Template_button_click_21_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r1);
-      const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r2.closeConfig());
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](22, " Cancel ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
-  }
-  if (rf & 2) {
-    let tmp_3_0;
-    let tmp_4_0;
-    let tmp_5_0;
-    const vm_r2 = ctx;
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("formGroup", vm_r2.mfeLoaderConfigForm);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditional"](((tmp_3_0 = vm_r2.mfeLoaderConfigForm.get("remoteName")) == null ? null : tmp_3_0.errors) ? 7 : -1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditional"](((tmp_4_0 = vm_r2.mfeLoaderConfigForm.get("url")) == null ? null : tmp_4_0.errors) ? 12 : -1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditional"](((tmp_5_0 = vm_r2.mfeLoaderConfigForm.get("exposedModule")) == null ? null : tmp_5_0.errors) ? 17 : -1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("disabled", vm_r2.mfeLoaderConfigForm.invalid);
-  }
-}
-const _c0 = ["mfeHost"];
-function NgxEditorJs2MfeLoaderComponent_Conditional_2_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 3)(1, "button", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function NgxEditorJs2MfeLoaderComponent_Conditional_2_Template_button_click_1_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r1);
-      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r1.openEditUrlOverlay());
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "mat-icon");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3, "edit");
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngClass", ctx_r1.savedAction());
-  }
-}
-function NgxEditorJs2MfeLoaderComponent_Conditional_3_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mfe-loader-config", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("mfeValue", function NgxEditorJs2MfeLoaderComponent_Conditional_3_Template_mfe_loader_config_mfeValue_0_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r3);
-      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r1.updateMfeRemote($event));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("value", ctx_r1.value());
-  }
-}
-function NgxEditorJs2MfeLoaderComponent_Conditional_6_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "mfe-loader-error-dialog", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("close", function NgxEditorJs2MfeLoaderComponent_Conditional_6_Template_mfe_loader_error_dialog_close_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵrestoreView"](_r4);
-      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵresetView"](ctx_r1.closeErrorDialog());
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("errorMessage", ctx_r1.errorLoadingMfeMessage());
-  }
-}
-let ErrorDialog = /*#__PURE__*/(() => {
-  class ErrorDialog {
-    errorMessage = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.input)(...(ngDevMode ? [undefined, {
-      debugName: "errorMessage"
-    }] : []));
-    close = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.output)();
-    static ɵfac = function ErrorDialog_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || ErrorDialog)();
-    };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
-      type: ErrorDialog,
-      selectors: [["mfe-loader-error-dialog"]],
-      inputs: {
-        errorMessage: [1, "errorMessage"]
-      },
-      outputs: {
-        close: "close"
-      },
-      decls: 12,
-      vars: 1,
-      consts: [[1, "error-dialog-backdrop", 3, "click"], [1, "error-dialog"], [1, "error-dialog-header"], [1, "close-icon", 3, "click"]],
-      template: function ErrorDialog_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ErrorDialog_Template_div_click_0_listener() {
-            return ctx.close.emit();
-          });
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](1, "div", 1)(2, "div", 2)(3, "h3");
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](4, "Error Loading MFE");
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](5, "mat-icon", 3);
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵlistener"]("click", function ErrorDialog_Template_mat_icon_click_5_listener() {
-            return ctx.close.emit();
-          });
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](6, "close");
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](7, "p");
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](8, "An error occurred while trying to load the MFE remote module:");
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](9, "pre")(10, "code");
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](11);
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()()();
-        }
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](11);
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate"](ctx.errorMessage());
-        }
-      },
-      dependencies: [_angular_material_icon__WEBPACK_IMPORTED_MODULE_7__.MatIcon],
-      styles: ["[_nghost-%COMP%]{display:flex;justify-content:center;align-items:center}.error-dialog-backdrop[_ngcontent-%COMP%]{position:absolute;width:100%;height:100%;z-index:-1;background:#000000b3}.error-dialog[_ngcontent-%COMP%]{color:var(--mat-sys-on-error-container);background:var(--mat-sys-error-container);padding:20px;border-radius:8px;max-width:80%}.error-dialog-header[_ngcontent-%COMP%]{display:flex;justify-content:space-between;align-items:center}.close-icon[_ngcontent-%COMP%]{cursor:pointer}pre[_ngcontent-%COMP%]{color:var(--mat-sys-on-background);background:var(--mat-sys-background);padding:10px;border-radius:4px;max-height:300px;overflow:auto}"]
-    });
-  }
-  return ErrorDialog;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let MfeLoaderConfigComponent = /*#__PURE__*/(() => {
-  class MfeLoaderConfigComponent {
-    formBuilder = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.inject)(_angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormBuilder);
-    value = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.input)({
-      url: '',
-      remoteName: '',
-      exposedModule: ''
-    }, ...(ngDevMode ? [{
-      debugName: "value"
-    }] : []));
-    value$ = (0,_angular_core_rxjs_interop__WEBPACK_IMPORTED_MODULE_9__.toObservable)(this.value);
-    mfeValue = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.output)();
-    viewModel$ = this.value$.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_12__.map)(value => ({
-      mfeLoaderConfigForm: this.formBuilder.group({
-        url: [value.url, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]],
-        remoteName: [value.remoteName, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]],
-        exposedModule: [value.exposedModule, [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.Validators.required]]
-      }),
-      errorMessages: {
-        required: 'Required'
-      },
-      configFormErrorMessages: {
-        url: '',
-        remoteName: '',
-        exposedModule: ''
-      }
-    })), (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.mergeMap)(viewModel => this.watchStatusChanges(viewModel).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_12__.startWith)(null), (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.withLatestFrom)((0,rxjs__WEBPACK_IMPORTED_MODULE_12__.of)(viewModel)), (0,rxjs__WEBPACK_IMPORTED_MODULE_12__.map)(([_status, vm]) => vm))));
-    watchStatusChanges(viewModel) {
-      return viewModel.mfeLoaderConfigForm.statusChanges.pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_12__.tap)(() => this.setErrorsMessages(viewModel)));
-    }
-    updateMfeURL(mfeLoaderConfigForm) {
-      this.mfeValue.emit(mfeLoaderConfigForm.value);
-    }
-    closeConfig() {
-      this.mfeValue.emit(this.value().url ? this.value() : {
-        url: '',
-        remoteName: '',
-        exposedModule: ''
-      });
-    }
-    // ! Quick and Drity way to set error messages
-    // ! Breaks all my believes in "clean code"
-    setErrorsMessages({
-      mfeLoaderConfigForm,
-      configFormErrorMessages,
-      errorMessages
-    }) {
-      Object.keys(mfeLoaderConfigForm.controls).forEach(element => {
-        const errors = mfeLoaderConfigForm.get(element)?.errors;
-        if (errors) {
-          const error = Object.keys(errors)[0];
-          configFormErrorMessages[element] = errorMessages[error];
-        }
-      });
-    }
-    static ɵfac = function MfeLoaderConfigComponent_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || MfeLoaderConfigComponent)();
-    };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
-      type: MfeLoaderConfigComponent,
-      selectors: [["mfe-loader-config"]],
-      inputs: {
-        value: [1, "value"]
-      },
-      outputs: {
-        mfeValue: "mfeValue"
-      },
-      decls: 2,
-      vars: 3,
-      consts: [[3, "formGroup"], ["mat-dialog-title", ""], ["matInput", "", "type", "text", "formControlName", "remoteName"], ["matInput", "", "type", "text", "formControlName", "url"], ["matInput", "", "type", "text", "formControlName", "exposedModule"], [1, "action-group"], ["type", "button", "mat-raised-button", "", 3, "click", "disabled"], ["type", "button", "mat-raised-button", "", 3, "click"]],
-      template: function MfeLoaderConfigComponent_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditionalCreate"](0, MfeLoaderConfigComponent_Conditional_0_Template, 23, 5, "form", 0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipe"](1, "async");
-        }
-        if (rf & 2) {
-          let tmp_0_0;
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditional"]((tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵpipeBind1"](1, 1, ctx.viewModel$)) ? 0 : -1, tmp_0_0);
-        }
-      },
-      dependencies: [_angular_material_input__WEBPACK_IMPORTED_MODULE_11__.MatInput, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatButton, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__.MatFormFieldModule, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__.MatFormField, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__.MatLabel, _angular_material_form_field__WEBPACK_IMPORTED_MODULE_10__.MatError, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControlName, _angular_common__WEBPACK_IMPORTED_MODULE_3__.AsyncPipe],
-      styles: ["[_nghost-%COMP%]{border:.5px solid #ccc;border-radius:4px;padding:20px}[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:10px}"]
-    });
-  }
-  return MfeLoaderConfigComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let NgxEditorJs2MfeLoaderComponent = /*#__PURE__*/(() => {
-  class NgxEditorJs2MfeLoaderComponent {
-    mfeHost;
-    sortIndex = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.input)(0, ...(ngDevMode ? [{
-      debugName: "sortIndex"
-    }] : []));
-    componentInstanceName = 'NgxEditorJs2MfeLoaderComponent';
-    autofocus = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.input)(true, ...(ngDevMode ? [{
-      debugName: "autofocus"
-    }] : []));
-    formGroup = _angular_core__WEBPACK_IMPORTED_MODULE_4__.input.required(...(ngDevMode ? [{
-      debugName: "formGroup"
-    }] : []));
-    formControlName = _angular_core__WEBPACK_IMPORTED_MODULE_4__.input.required(...(ngDevMode ? [{
-      debugName: "formControlName"
-    }] : []));
-    blockOptionActions = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.input)([{
-      action: 'medium',
-      icon: 'density_small'
-    }, {
-      action: 'display-small',
-      icon: 'density_medium'
-    }, {
-      action: 'display-large',
-      icon: 'density_large'
-    }], ...(ngDevMode ? [{
-      debugName: "blockOptionActions"
-    }] : []));
-    value = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.signal)({
-      url: '',
-      remoteName: '',
-      exposedModule: ''
-    }, ...(ngDevMode ? [{
-      debugName: "value"
-    }] : []));
-    savedAction = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.signal)('display-large', ...(ngDevMode ? [{
-      debugName: "savedAction"
-    }] : []));
-    actionCallbackBind = this.actionCallback.bind(this);
-    openOverlay = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.signal)(true, ...(ngDevMode ? [{
-      debugName: "openOverlay"
-    }] : []));
-    errorLoadingMfe = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.signal)(false, ...(ngDevMode ? [{
-      debugName: "errorLoadingMfe"
-    }] : []));
-    errorLoadingMfeMessage = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.signal)('', ...(ngDevMode ? [{
-      debugName: "errorLoadingMfeMessage"
-    }] : []));
-    ngOnInit() {
-      try {
-        const possibleSavedValue = this.formGroup().get(this.formControlName());
-        this.value.set(JSON.parse(possibleSavedValue?.value ? possibleSavedValue.value : '{}'));
-        this.value()?.url && this.openOverlay.set(false);
-      } catch (error) {
-        console.warn('Error parseing MFE Loader setting value', error);
-      }
-    }
-    ngAfterViewInit() {
-      const {
-        url,
-        remoteName,
-        exposedModule
-      } = this.value();
-      if (!url || !remoteName || !exposedModule) return;
-      this.updateMfeRemote(this.value());
-    }
-    actionCallback(action, updateFormValue = true) {
-      this.savedAction.update(() => action);
-      updateFormValue && this.formGroup().updateValueAndValidity();
-    }
-    openEditUrlOverlay() {
-      this.openOverlay.set(true);
-    }
-    updateMfeRemote(value) {
-      var _this = this;
-      return (0,_Users_ba5ik7_Documents_GIT_tmdjr_ngx_editor_js2_blocks_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-        try {
-          const remoteComponent = yield (0,_angular_architects_module_federation__WEBPACK_IMPORTED_MODULE_1__.loadRemoteModule)({
-            type: 'module',
-            remoteEntry: value.url,
-            exposedModule: './' + value.exposedModule
-          });
-          _this.mfeHost.clear();
-          _this.mfeHost.createComponent(remoteComponent[value.remoteName]);
-        } catch (error) {
-          console.error('[MFE LOAD ERROR]', error);
-          _this.openOverlay.set(true);
-          _this.errorLoadingMfeMessage.set(error.message || 'Unknown error loading MFE');
-          _this.errorLoadingMfe.set(true);
-          return;
-        }
-        _this.value.set(value);
-        _this.formGroup().get(_this.formControlName())?.setValue(JSON.stringify(value));
-        _this.openOverlay.set(false);
-      })();
-    }
-    closeErrorDialog() {
-      this.errorLoadingMfe.set(false);
-      this.errorLoadingMfeMessage.set('');
-    }
-    static ɵfac = function NgxEditorJs2MfeLoaderComponent_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || NgxEditorJs2MfeLoaderComponent)();
-    };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineComponent"]({
-      type: NgxEditorJs2MfeLoaderComponent,
-      selectors: [["ngx-editor-js2-mfe-loader"]],
-      viewQuery: function NgxEditorJs2MfeLoaderComponent_Query(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵviewQuery"](_c0, 7, _angular_core__WEBPACK_IMPORTED_MODULE_4__.ViewContainerRef);
-        }
-        if (rf & 2) {
-          let _t;
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵloadQuery"]()) && (ctx.mfeHost = _t.first);
-        }
-      },
-      hostAttrs: [1, "cdk-drag-animating", "no-toolbar-inline"],
-      inputs: {
-        sortIndex: [1, "sortIndex"],
-        autofocus: [1, "autofocus"],
-        formGroup: [1, "formGroup"],
-        formControlName: [1, "formControlName"],
-        blockOptionActions: [1, "blockOptionActions"]
-      },
-      features: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵHostDirectivesFeature"]([_angular_cdk_drag_drop__WEBPACK_IMPORTED_MODULE_2__.CdkDrag])],
-      decls: 7,
-      vars: 8,
-      consts: [["mfeHost", ""], [3, "formGroup"], ["controlAccessor", "", "toolbarFab", "", 1, "mfe-container-overlay", 3, "actionCallback", "autofocus", "blockOptionActions", "formControlName", "componentContextPositionIndex"], [1, "mfe-container", 3, "ngClass"], [3, "value"], [3, "errorMessage"], ["mat-fab", "", 1, "mfe-block-button", 3, "click"], [3, "mfeValue", "value"], [3, "close", "errorMessage"]],
-      template: function NgxEditorJs2MfeLoaderComponent_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerStart"](0, 1);
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](1, "span", 2);
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditionalCreate"](2, NgxEditorJs2MfeLoaderComponent_Conditional_2_Template, 4, 1, "div", 3)(3, NgxEditorJs2MfeLoaderComponent_Conditional_3_Template, 1, 1, "mfe-loader-config", 4);
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainer"](4, null, 0);
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementContainerEnd"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditionalCreate"](6, NgxEditorJs2MfeLoaderComponent_Conditional_6_Template, 1, 1, "mfe-loader-error-dialog", 5);
-        }
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("formGroup", ctx.formGroup());
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("actionCallback", ctx.actionCallbackBind)("autofocus", ctx.autofocus())("blockOptionActions", ctx.blockOptionActions())("formControlName", ctx.formControlName())("componentContextPositionIndex", ctx.sortIndex());
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"]();
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditional"](!ctx.openOverlay() ? 2 : 3);
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](4);
-          _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵconditional"](ctx.errorLoadingMfe() ? 6 : -1);
-        }
-      },
-      dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControlName, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_8__.ControlAccessorDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_8__.AutofocusDirective, _tmdjr_ngx_editor_js2__WEBPACK_IMPORTED_MODULE_8__.ToolbarFabDirective, MfeLoaderConfigComponent, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatFabButton, _angular_material_icon__WEBPACK_IMPORTED_MODULE_7__.MatIcon, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgClass, ErrorDialog],
-      styles: ["[_nghost-%COMP%]{position:relative;display:flex;flex-direction:column;margin:1.5rem 0}[_nghost-%COMP%]   .mfe-container-overlay[_ngcontent-%COMP%]{display:flex;height:100%;width:100%;position:absolute}[_nghost-%COMP%]   .mfe-container-overlay[_ngcontent-%COMP%]:hover ~ .mfe-container[_ngcontent-%COMP%]   .mfe-block-button[_ngcontent-%COMP%], [_nghost-%COMP%]   .mfe-block-button[_ngcontent-%COMP%]:hover{display:block}[_nghost-%COMP%]   .mfe-container[_ngcontent-%COMP%]{display:flex}[_nghost-%COMP%]   .mfe-container[_ngcontent-%COMP%]   .mfe-block[_ngcontent-%COMP%]{min-width:0}[_nghost-%COMP%]   .mfe-container[_ngcontent-%COMP%]   .mfe-block-button[_ngcontent-%COMP%]{position:absolute;top:6px;left:6px;display:none}[_nghost-%COMP%]   mfe-loader-error-dialog[_ngcontent-%COMP%]{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1}"]
-    });
-  }
-  return NgxEditorJs2MfeLoaderComponent;
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-/*
- * Public API Surface of ngx-editor-js2-mfe-loader
- */
-
-/**
- * Generated bundle index. Do not edit.
- */
-
 
 
 /***/ }

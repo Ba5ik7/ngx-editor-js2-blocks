@@ -1,83 +1,70 @@
 (self["webpackChunkdemo"] = self["webpackChunkdemo"] || []).push([[943],{
 
-/***/ 14102
-/*!*************************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2022/divider.mjs ***!
-  \*************************************************************/
+/***/ 87432
+/*!**********************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/_animation-chunk.mjs ***!
+  \**********************************************************************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   MatDivider: () => (/* binding */ MatDivider),
-/* harmony export */   MatDividerModule: () => (/* binding */ MatDividerModule)
+/* harmony export */   MATERIAL_ANIMATIONS: () => (/* binding */ MATERIAL_ANIMATIONS),
+/* harmony export */   _animationsDisabled: () => (/* binding */ _animationsDisabled),
+/* harmony export */   _getAnimationsState: () => (/* binding */ _getAnimationsState)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 51356);
-/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/coercion */ 32298);
-/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/bidi */ 13266);
+/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/layout */ 42394);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
+
+
+const MATERIAL_ANIMATIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('MATERIAL_ANIMATIONS');
+let reducedMotion = null;
+function _getAnimationsState() {
+  if ((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(MATERIAL_ANIMATIONS, {
+    optional: true
+  })?.animationsDisabled || (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ANIMATION_MODULE_TYPE, {
+    optional: true
+  }) === 'NoopAnimations') {
+    return 'di-disabled';
+  }
+  reducedMotion ??= (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__.MediaMatcher).matchMedia('(prefers-reduced-motion)').matches;
+  return reducedMotion ? 'reduced-motion' : 'enabled';
+}
+function _animationsDisabled() {
+  return _getAnimationsState() !== 'enabled';
+}
+
+
+/***/ },
+
+/***/ 33115
+/*!***********************************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/_pseudo-checkbox-module-chunk.mjs ***!
+  \***********************************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MatPseudoCheckboxModule: () => (/* binding */ MatPseudoCheckboxModule)
+/* harmony export */ });
+/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/bidi */ 13266);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
 
 
 
 
-let MatDivider = /*#__PURE__*/(() => {
-  class MatDivider {
-    get vertical() {
-      return this._vertical;
-    }
-    set vertical(value) {
-      this._vertical = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__.coerceBooleanProperty)(value);
-    }
-    _vertical = false;
-    get inset() {
-      return this._inset;
-    }
-    set inset(value) {
-      this._inset = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__.coerceBooleanProperty)(value);
-    }
-    _inset = false;
-    static ɵfac = function MatDivider_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || MatDivider)();
+let MatPseudoCheckboxModule = /*#__PURE__*/(() => {
+  class MatPseudoCheckboxModule {
+    static ɵfac = function MatPseudoCheckboxModule_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || MatPseudoCheckboxModule)();
     };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: MatDivider,
-      selectors: [["mat-divider"]],
-      hostAttrs: ["role", "separator", 1, "mat-divider"],
-      hostVars: 7,
-      hostBindings: function MatDivider_HostBindings(rf, ctx) {
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-orientation", ctx.vertical ? "vertical" : "horizontal");
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-divider-vertical", ctx.vertical)("mat-divider-horizontal", !ctx.vertical)("mat-divider-inset", ctx.inset);
-        }
-      },
-      inputs: {
-        vertical: "vertical",
-        inset: "inset"
-      },
-      decls: 0,
-      vars: 0,
-      template: function MatDivider_Template(rf, ctx) {},
-      styles: [".mat-divider{display:block;margin:0;border-top-style:solid;border-top-color:var(--mat-divider-color, var(--mat-sys-outline-variant));border-top-width:var(--mat-divider-width, 1px)}.mat-divider.mat-divider-vertical{border-top:0;border-right-style:solid;border-right-color:var(--mat-divider-color, var(--mat-sys-outline-variant));border-right-width:var(--mat-divider-width, 1px)}.mat-divider.mat-divider-inset{margin-left:80px}[dir=rtl] .mat-divider.mat-divider-inset{margin-left:auto;margin-right:80px}\n"],
-      encapsulation: 2,
-      changeDetection: 0
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
+      type: MatPseudoCheckboxModule
+    });
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
+      imports: [_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_0__.BidiModule]
     });
   }
-  return MatDivider;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-let MatDividerModule = /*#__PURE__*/(() => {
-  class MatDividerModule {
-    static ɵfac = function MatDividerModule_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || MatDividerModule)();
-    };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
-      type: MatDividerModule
-    });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-      imports: [_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_2__.BidiModule]
-    });
-  }
-  return MatDividerModule;
+  return MatPseudoCheckboxModule;
 })();
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
@@ -566,6 +553,167 @@ let MatRipple = /*#__PURE__*/(() => {
     });
   }
   return MatRipple;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+
+/***/ },
+
+/***/ 85309
+/*!**************************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/_ripple-module-chunk.mjs ***!
+  \**************************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MatRippleModule: () => (/* binding */ MatRippleModule)
+/* harmony export */ });
+/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/bidi */ 13266);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
+
+
+
+
+let MatRippleModule = /*#__PURE__*/(() => {
+  class MatRippleModule {
+    static ɵfac = function MatRippleModule_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || MatRippleModule)();
+    };
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
+      type: MatRippleModule
+    });
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
+      imports: [_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_0__.BidiModule]
+    });
+  }
+  return MatRippleModule;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+
+/***/ },
+
+/***/ 22158
+/*!******************************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/_structural-styles-chunk.mjs ***!
+  \******************************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   _StructuralStylesLoader: () => (/* binding */ _StructuralStylesLoader)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 51356);
+
+
+let _StructuralStylesLoader = /*#__PURE__*/(() => {
+  class _StructuralStylesLoader {
+    static ɵfac = function _StructuralStylesLoader_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _StructuralStylesLoader)();
+    };
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: _StructuralStylesLoader,
+      selectors: [["structural-styles"]],
+      decls: 0,
+      vars: 0,
+      template: function _StructuralStylesLoader_Template(rf, ctx) {},
+      styles: [".mat-focus-indicator{position:relative}.mat-focus-indicator::before{top:0;left:0;right:0;bottom:0;position:absolute;box-sizing:border-box;pointer-events:none;display:var(--mat-focus-indicator-display, none);border-width:var(--mat-focus-indicator-border-width, 3px);border-style:var(--mat-focus-indicator-border-style, solid);border-color:var(--mat-focus-indicator-border-color, transparent);border-radius:var(--mat-focus-indicator-border-radius, 4px)}.mat-focus-indicator:focus-visible::before{content:\"\"}@media(forced-colors: active){html{--mat-focus-indicator-display: block}}\n"],
+      encapsulation: 2,
+      changeDetection: 0
+    });
+  }
+  return _StructuralStylesLoader;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+
+
+/***/ },
+
+/***/ 14102
+/*!*************************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2022/divider.mjs ***!
+  \*************************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MatDivider: () => (/* binding */ MatDivider),
+/* harmony export */   MatDividerModule: () => (/* binding */ MatDividerModule)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 51356);
+/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/coercion */ 32298);
+/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/cdk/bidi */ 13266);
+
+
+
+
+let MatDivider = /*#__PURE__*/(() => {
+  class MatDivider {
+    get vertical() {
+      return this._vertical;
+    }
+    set vertical(value) {
+      this._vertical = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__.coerceBooleanProperty)(value);
+    }
+    _vertical = false;
+    get inset() {
+      return this._inset;
+    }
+    set inset(value) {
+      this._inset = (0,_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__.coerceBooleanProperty)(value);
+    }
+    _inset = false;
+    static ɵfac = function MatDivider_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || MatDivider)();
+    };
+    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: MatDivider,
+      selectors: [["mat-divider"]],
+      hostAttrs: ["role", "separator", 1, "mat-divider"],
+      hostVars: 7,
+      hostBindings: function MatDivider_HostBindings(rf, ctx) {
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵattribute"]("aria-orientation", ctx.vertical ? "vertical" : "horizontal");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-divider-vertical", ctx.vertical)("mat-divider-horizontal", !ctx.vertical)("mat-divider-inset", ctx.inset);
+        }
+      },
+      inputs: {
+        vertical: "vertical",
+        inset: "inset"
+      },
+      decls: 0,
+      vars: 0,
+      template: function MatDivider_Template(rf, ctx) {},
+      styles: [".mat-divider{display:block;margin:0;border-top-style:solid;border-top-color:var(--mat-divider-color, var(--mat-sys-outline-variant));border-top-width:var(--mat-divider-width, 1px)}.mat-divider.mat-divider-vertical{border-top:0;border-right-style:solid;border-right-color:var(--mat-divider-color, var(--mat-sys-outline-variant));border-right-width:var(--mat-divider-width, 1px)}.mat-divider.mat-divider-inset{margin-left:80px}[dir=rtl] .mat-divider.mat-divider-inset{margin-left:auto;margin-right:80px}\n"],
+      encapsulation: 2,
+      changeDetection: 0
+    });
+  }
+  return MatDivider;
+})();
+/*#__PURE__*/(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
+})();
+let MatDividerModule = /*#__PURE__*/(() => {
+  class MatDividerModule {
+    static ɵfac = function MatDividerModule_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || MatDividerModule)();
+    };
+    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+      type: MatDividerModule
+    });
+    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+      imports: [_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_2__.BidiModule]
+    });
+  }
+  return MatDividerModule;
 })();
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
@@ -1887,154 +2035,6 @@ let MatListModule = /*#__PURE__*/(() => {
 /*#__PURE__*/(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
 })();
-
-
-/***/ },
-
-/***/ 22158
-/*!******************************************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2022/_structural-styles-chunk.mjs ***!
-  \******************************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   _StructuralStylesLoader: () => (/* binding */ _StructuralStylesLoader)
-/* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 51356);
-
-
-let _StructuralStylesLoader = /*#__PURE__*/(() => {
-  class _StructuralStylesLoader {
-    static ɵfac = function _StructuralStylesLoader_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _StructuralStylesLoader)();
-    };
-    static ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: _StructuralStylesLoader,
-      selectors: [["structural-styles"]],
-      decls: 0,
-      vars: 0,
-      template: function _StructuralStylesLoader_Template(rf, ctx) {},
-      styles: [".mat-focus-indicator{position:relative}.mat-focus-indicator::before{top:0;left:0;right:0;bottom:0;position:absolute;box-sizing:border-box;pointer-events:none;display:var(--mat-focus-indicator-display, none);border-width:var(--mat-focus-indicator-border-width, 3px);border-style:var(--mat-focus-indicator-border-style, solid);border-color:var(--mat-focus-indicator-border-color, transparent);border-radius:var(--mat-focus-indicator-border-radius, 4px)}.mat-focus-indicator:focus-visible::before{content:\"\"}@media(forced-colors: active){html{--mat-focus-indicator-display: block}}\n"],
-      encapsulation: 2,
-      changeDetection: 0
-    });
-  }
-  return _StructuralStylesLoader;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-
-/***/ },
-
-/***/ 33115
-/*!***********************************************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2022/_pseudo-checkbox-module-chunk.mjs ***!
-  \***********************************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   MatPseudoCheckboxModule: () => (/* binding */ MatPseudoCheckboxModule)
-/* harmony export */ });
-/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/bidi */ 13266);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
-
-
-
-
-let MatPseudoCheckboxModule = /*#__PURE__*/(() => {
-  class MatPseudoCheckboxModule {
-    static ɵfac = function MatPseudoCheckboxModule_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || MatPseudoCheckboxModule)();
-    };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
-      type: MatPseudoCheckboxModule
-    });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
-      imports: [_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_0__.BidiModule]
-    });
-  }
-  return MatPseudoCheckboxModule;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-
-/***/ },
-
-/***/ 85309
-/*!**************************************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2022/_ripple-module-chunk.mjs ***!
-  \**************************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   MatRippleModule: () => (/* binding */ MatRippleModule)
-/* harmony export */ });
-/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/bidi */ 13266);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
-
-
-
-
-let MatRippleModule = /*#__PURE__*/(() => {
-  class MatRippleModule {
-    static ɵfac = function MatRippleModule_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || MatRippleModule)();
-    };
-    static ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
-      type: MatRippleModule
-    });
-    static ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
-      imports: [_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_0__.BidiModule]
-    });
-  }
-  return MatRippleModule;
-})();
-/*#__PURE__*/(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && void 0;
-})();
-
-
-/***/ },
-
-/***/ 87432
-/*!**********************************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2022/_animation-chunk.mjs ***!
-  \**********************************************************************/
-(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   MATERIAL_ANIMATIONS: () => (/* binding */ MATERIAL_ANIMATIONS),
-/* harmony export */   _animationsDisabled: () => (/* binding */ _animationsDisabled),
-/* harmony export */   _getAnimationsState: () => (/* binding */ _getAnimationsState)
-/* harmony export */ });
-/* harmony import */ var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/layout */ 42394);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 51356);
-
-
-const MATERIAL_ANIMATIONS = /*#__PURE__*/new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('MATERIAL_ANIMATIONS');
-let reducedMotion = null;
-function _getAnimationsState() {
-  if ((0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(MATERIAL_ANIMATIONS, {
-    optional: true
-  })?.animationsDisabled || (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_1__.ANIMATION_MODULE_TYPE, {
-    optional: true
-  }) === 'NoopAnimations') {
-    return 'di-disabled';
-  }
-  reducedMotion ??= (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.inject)(_angular_cdk_layout__WEBPACK_IMPORTED_MODULE_0__.MediaMatcher).matchMedia('(prefers-reduced-motion)').matches;
-  return reducedMotion ? 'reduced-motion' : 'enabled';
-}
-function _animationsDisabled() {
-  return _getAnimationsState() !== 'enabled';
-}
 
 
 /***/ }
