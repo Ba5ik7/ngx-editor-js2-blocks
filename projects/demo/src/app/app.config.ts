@@ -1,7 +1,4 @@
-import {
-  ApplicationConfig,
-  // provideExperimentalZonelessChangeDetection,
-} from '@angular/core';
+import { ApplicationConfig } from '@angular/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { NGX_EDITORJS_OPTIONS } from '@tmdjr/ngx-editor-js2';
 // Imports are for debugging purposes only
@@ -9,10 +6,10 @@ import { NGX_EDITORJS_OPTIONS } from '@tmdjr/ngx-editor-js2';
 import { NgxEditorJs2BlockquotesComponent } from 'ngx-editor-js2-blockquotes';
 import { NgxEditorJs2CodemirrorComponent } from 'ngx-editor-js2-codemirror';
 import { NgxEditorJs2ImageComponent } from 'ngx-editor-js2-image';
-import { NgxEditorJs2MfeLoaderComponent } from 'ngx-editor-js2-mfe-loader';
-import { NgxEditorJs2PopQuizComponent } from 'ngx-editor-js2-pop-quiz';
 import { NgxEditorJs2MermaidjsComponent } from 'ngx-editor-js2-mermaidjs';
+import { NgxEditorJs2MfeLoaderComponent } from 'ngx-editor-js2-mfe-loader';
 import { NgxEditorJs2PanelComponent } from 'ngx-editor-js2-panel';
+import { NgxEditorJs2PopQuizComponent } from 'ngx-editor-js2-pop-quiz';
 
 export const appConfig: ApplicationConfig = {
   providers: [

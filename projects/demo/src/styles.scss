@@ -13,11 +13,6 @@
 @use "styles/ngx-editor-js2-mermaidjs-drag-preview.scss";
 @use "styles/ngx-editor-js2-panel-drag-preview.scss";
 
-// ! CODEMIRROR Dependencies
-@use "codemirror/lib/codemirror";
-@use "codemirror/theme/material-palenight";
-// ! END CODEMIRROR Dependencies
-
 html,
 body {
   height: 100%;
@@ -237,9 +232,11 @@ body {
 }
 
 .cm-editor {
-  font-family: Cascadia Code, Fira Code, Menlo, Monaco, "Courier New", monospace;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 32px;
-  letter-spacing: 0.5px;
+  font-size: 1rem;
+}
+
+.cm-content {
+  font-family: "JetBrains Mono", "Victor Mono", ui-monospace, SFMono-Regular,
+    Menlo, Monaco, Consolas, monospace;
+  font-variant-ligatures: contextual;
 }

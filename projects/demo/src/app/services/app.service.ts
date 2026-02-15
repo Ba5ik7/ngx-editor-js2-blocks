@@ -420,7 +420,7 @@ export const BROKEN_TEST_DATA: NgxEditorJsBlock[] = [
   providedIn: 'root',
 })
 export class AppService {
-  ngxEditorJsBlocks = new BehaviorSubject<NgxEditorJsBlock[]>(BROKEN_TEST_DATA);
+  ngxEditorJsBlocks = new BehaviorSubject<NgxEditorJsBlock[]>(TEST_DATA);
   ngxEditorJsBlocks$ = this.ngxEditorJsBlocks.asObservable();
 
   requestBlocks = new BehaviorSubject<{}>({});

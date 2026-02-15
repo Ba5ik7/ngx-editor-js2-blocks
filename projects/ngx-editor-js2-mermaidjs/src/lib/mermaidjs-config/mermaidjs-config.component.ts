@@ -1,8 +1,8 @@
-import { Component, effect, model, output, signal } from '@angular/core';
+import { Component, model, output, signal } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { CodemirrorModule } from '@ctrl/ngx-codemirror';
+import { CodemirrorEditorComponent } from './codemirror-editor.component';
 
 @Component({
   selector: 'mermaidjs-config',
@@ -11,13 +11,14 @@ import { CodemirrorModule } from '@ctrl/ngx-codemirror';
     MatFormFieldModule,
     ReactiveFormsModule,
     FormsModule,
-    CodemirrorModule,
+    CodemirrorEditorComponent,
   ],
   template: `
     <div class="mermaidjs-block-modal">
       <h2 mat-dialog-title>MermaidJs Configurations</h2>
-      <ngx-codemirror [(ngModel)]="value" [options]="codeMirrorOptions()">
-      </ngx-codemirror>
+      <ngx-codemirror-editor-test
+        [(ngModel)]="value"
+      ></ngx-codemirror-editor-test>
       <div class="action-group">
         <button type="button" mat-flat-button (click)="closeConfig()">
           Update

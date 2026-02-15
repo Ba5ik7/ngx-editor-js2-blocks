@@ -1,15 +1,15 @@
 import { CdkDrag } from '@angular/cdk/drag-drop';
 import { Component, input, signal } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { CodemirrorModule } from '@ctrl/ngx-codemirror';
-
 import {
-  AutofocusDirective,
   BlockComponent,
   BlockOptionAction,
-  ControlAccessorDirective,
   ToolbarFabDirective,
 } from '@tmdjr/ngx-editor-js2';
+import {
+  CodemirrorEditorComponent,
+  CodeMirrorLanguage,
+} from './codemirror-editor.component';
 
 @Component({
   selector: 'ngx-editor-js2-codemirror',
@@ -17,24 +17,21 @@ import {
   hostDirectives: [CdkDrag],
   imports: [
     ReactiveFormsModule,
-    ControlAccessorDirective,
-    AutofocusDirective,
     ToolbarFabDirective,
-    CodemirrorModule,
+    CodemirrorEditorComponent,
   ],
   template: `
     @if( waitForAnimation() ) {
     <ng-container [formGroup]="formGroup()">
-      <span controlAccessor [autofocus]="autofocus()"></span>
-      <ngx-codemirror
+      <ngx-codemirror-editor
         class="fade-in"
         toolbarFab
         [actionCallback]="actionCallbackBind"
         [blockOptionActions]="blockOptionActions()"
+        [language]="savedAction()"
         [formControlName]="formControlName()"
         [componentContextPositionIndex]="sortIndex()"
-        [options]="codeMirrorOptions()"
-      ></ngx-codemirror>
+      ></ngx-codemirror-editor>
     </ng-container>
     }
   `,
@@ -51,16 +48,6 @@ import {
           position: absolute;
         }
       }
-
-      :host ::ng-deep .CodeMirror {
-        font-family: Cascadia Code, Fira Code, Menlo, Monaco, 'Courier New',
-          monospace;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 32px;
-        letter-spacing: 0.5px;
-        height: 100%;
-      }
     `,
   ],
 })
@@ -71,28 +58,19 @@ export class NgxEditorJs2CodemirrorComponent implements BlockComponent {
   formGroup = input.required<FormGroup>();
   formControlName = input.required<string>();
   blockOptionActions = input<BlockOptionAction[]>([
-    { action: 'text/typescript', icon: 'javascript' },
-    { action: 'css', icon: 'css' },
-    { action: 'xml', icon: 'html' },
+    { action: 'typescript', devIcon: 'devicon-typescript-plain' },
+    { action: 'javascript', devIcon: 'devicon-javascript-plain' },
+    { action: 'html', devIcon: 'devicon-html5-plain' },
+    { action: 'json', devIcon: 'devicon-json-plain' },
+    { action: 'markdown', devIcon: 'devicon-markdown-original' },
+    { action: 'css', devIcon: 'devicon-css3-plain' },
   ]);
 
-  codeMirrorOptions = signal({
-    lineNumbers: true,
-    theme: 'material-palenight',
-    mode: 'text/typescript',
-    extraKeys: { 'Ctrl-Space': 'autocomplete' },
-    styleActiveLine: true, // Highlight active line
-    matchBrackets: true,
-    indentUnit: 2,
-    tabSize: 2,
-    cursorScrollMargin: 5,
-  });
-
-  savedAction = signal<string>('display-large');
+  savedAction = signal<CodeMirrorLanguage>('typescript');
   actionCallbackBind = this.actionCallback.bind(this);
 
   actionCallback(action: string, updateFormValue = true) {
-    this.codeMirrorOptions.update((prev) => ({ ...prev, mode: action }));
+    this.savedAction.set(action as CodeMirrorLanguage);
     updateFormValue && this.formGroup().updateValueAndValidity();
   }
 

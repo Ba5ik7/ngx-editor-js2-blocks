@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { NavBarComponent } from './components/nav-bar.component';
-import { HeroComponent } from './components/hero.component';
 import { DocumentComponent } from './components/document.component';
 import { FooterComponent } from './components/footer.component';
+import { HeroComponent } from './components/hero.component';
+import { NavBarComponent } from './components/nav-bar.component';
 
 @Component({
   selector: 'app-root',
